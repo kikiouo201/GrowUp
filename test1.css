@@ -1,0 +1,241 @@
+.head{
+  width: auto;
+  height: 40px;
+  background-color:#ffb906cf;
+  text-align: center;
+  opacity: .7;
+}
+.style{
+  background-repeat:no-repeat;
+  background-size:100%; 
+  background-attachment:fixed;
+  margin-top: auto;
+}
+.arrow{
+  width: 50px;
+  height: 10px;
+}
+.button1{
+    position: absolute;
+    background-color:#C4E1E1	;
+    margin-top: 1%;
+    margin-left: 1%;
+    border-radius: 30px;
+    width:31%;
+    height:40%;
+  }
+  .button1:hover{
+    background-color:white ;
+    opacity: .7;
+    display:inline-block;
+  }
+
+  .button2{
+    position: absolute;
+    background-color: #EBD3E8;
+    margin-top:1%;
+    margin-left: 33.5%;
+    border-radius:30px;
+    width:31%;
+    height:40%;
+  }
+  .button2:hover{
+    background-color:white ;
+    opacity:.7;
+  }
+
+  .button3{
+    position: absolute;
+    background-color: 	#FFD2D2;
+    margin-top:1%;
+    margin-left: 66%;
+    border-radius: 30px;
+    width:31%;
+    height:40%;
+  }
+  .button3:hover{
+    background-color:white ;
+    opacity: .7;
+  }
+
+  .button4{
+    position: absolute;
+    background-color:#C4E1FF;
+    margin-top:30%;
+    margin-left: 1%;
+    border-radius: 30px;
+    width:31%;
+    height:40%;
+  }
+  .button4:hover{
+    background-color:white ;
+    opacity: .7;
+  }
+
+  .button5{
+    position: absolute;
+    background-color: #E6E6F2;
+    margin-top:30%;
+    margin-left: 33.5%;
+    border-radius:30px;
+    width:31%;
+    height:40%;
+  }
+  .button5:hover{
+    background-color:white ;
+    opacity: .7;
+  }
+
+  .button6{
+    position: absolute;
+    background-color: 		#FFEEDD;
+    margin-top:30%;
+    margin-left: 66%;
+    border-radius: 30px;
+    width:31%;
+    height:40%;
+  }
+  .button6:hover{
+    background-color:white ;
+    opacity: .7;
+  }
+
+  body{
+    font-family:Verdana, Geneva, sans-serif;
+    background-color:#CCC;
+    font-size:12px;
+  }
+  
+  .label-container{
+    position:fixed;
+    bottom:48px;
+    right:105px;
+    display:table;
+    visibility: hidden;
+  }
+  
+  .label-text{
+    color:#FFF;
+    background:rgba(51,51,51,0.5);
+    display:table-cell;
+    vertical-align:middle;
+    padding:10px;
+    border-radius:3px;
+  }
+  
+  .label-arrow{
+    display:table-cell;
+    vertical-align:middle;
+    color:#333;
+    opacity:0.5;
+  }
+  
+  .float{
+    position:fixed;
+    width:40px;
+    height:40px;
+    bottom:10px;
+    left:50px;
+    background-color:rgb(155, 154, 154);
+    color:#FFF;
+    border-radius:50px;
+    text-align:center;
+    z-index:1000;
+    animation: lef-to-rig 2s ease-out;
+  }
+
+  .sosfloat{
+    position:fixed;
+    width:40px;
+    height:40px;
+    bottom:10px;
+    left:8px;
+    background-color:rgb(155, 154, 154);
+    color:#FFF;
+    border-radius:50px;
+    text-align:center;
+    z-index:1000;
+    animation: lef-to-rig 2s ease-out;
+    margin-top:6px;
+  }
+  
+  ul{
+    position:fixed;
+    left:10px;
+    padding-bottom:20px;
+    bottom:10px;
+    z-index:100;
+  }
+  
+  ul li{
+    list-style:none;
+    margin-bottom:10px;
+  }
+  
+  ul li a{
+    background-color:rgb(155, 154, 154);
+    color:black;
+    border-radius:50px;
+    text-align: center;
+    width:40px;
+    height:40px;
+    display:block;
+    margin-top:4px;
+  }
+  
+  ul:hover{
+    visibility:visible!important;
+    opacity:1!important;
+  }
+  
+  .fab {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .my-float{
+    text-align: center;
+    font-size:24px;
+    margin-top:8px;
+  }
+  
+  a#menu-share + ul{
+    visibility: hidden;
+  }
+  
+  a#menu-share:hover + ul{
+    visibility: visible;
+    animation: scale-in 0.5s;
+  }
+  
+  a#menu-share i{
+    animation: rotate-in 0.5s;
+  }
+  
+  a#menu-share:hover > i{
+    animation: rotate-out 0.5s;
+  }
+  
+  @keyframes lef-to-rig {
+      0%   {left:-20px}
+      50%  {left:20px}
+  }
+  
+  @keyframes scale-in {
+      from {transform: scale(0);opacity: 0;}
+      to {transform: scale(1);opacity: 1;}
+  }
+  
+  @keyframes rotate-in {
+      from {transform: rotate(0deg);}
+      to {transform: rotate(360deg);}
+  }
+  
+  @keyframes rotate-out {
+      from {transform: rotate(360deg);}
+      to {transform: rotate(0deg);}
+  }

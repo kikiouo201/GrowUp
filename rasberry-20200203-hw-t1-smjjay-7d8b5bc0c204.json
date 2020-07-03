@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "rasberry-20200203-hw-t1-smjjay",
+  "private_key_id": "7d8b5bc0c2044bb324ac0274f47aeb17ba184837",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDOEo/jjGlw/KPI\nJ+i/QGWqk8WA+K2FY/WKM3o0CrNrlaGgv9dkOl78Ypcc/sXe9V3RbKsXaOZC+POh\nuo9yn0FZpZX3JvRmROxzFBjhyXkx2hOGtDzExCuNG2UqdRbaAsD0RiG1ztBldtJZ\nwsKPtuOcKCLRcb2a1Quz2xV9aTY3f+RiMswJEtjGfxje4p7WcVPjzQhaNOxab69N\nhdJvxjhx55xGZ0Jg7lST2bM6840kZeGarBoInbBOs6X8EOtQOZuUYg2XZ71y6M0I\nW6Ljd3GpE+Bw8bdp4yOPoL9yNdZOAV6/LbJTylz0LRVdwJQhFj1n44xsDjwdb2qs\njN5sAtr1AgMBAAECggEABOmL3QqCk/Mty05qPa7hDYsmvN+QsVqT5pa6DcYIh2LC\nftS743OBwqXuAL6xBFLYiO68eFsjjAqnsh4Cn+KcefDYzZKz5kEz2r1qp204UqAm\ncYJX5X/gouU5iOTQJePFaj1GvfD/Zj/KHWInZaogLF+HjvMVaDy2YfPxw/LPXEzI\n9X0Ep8hMFJv+iuUgm2Mnejn7XSLuqiSA09CO2HqhJsbAqZ5+07YKzSvT6aZ38XNL\nQX/6rAhP45gfqgsHgyWP+SgXew0mNITqcATtr/GoOEHHAHHAzdwaxLHKldUvQrL+\nzmYcA2F2LM65CGm3LudWWGWEXhajn9W4IGIA5p3dwQKBgQDuRiLYu+nJEZTFtKbI\nYkq1Yix/to26ZMommnc2vEsqJqPBEvNBpYqX/cqx1M/SbLzcc/COwGEXJZRHdP9j\nAlHD2CBChHZGYrBt2kQCALjTxhnJ8IXDCMYAPP2sUVaNcCsZoBR5r7YmHxUUJy2n\nNGQlIeHj+eMZmxBTfaDyjsrFNQKBgQDdZyhiRYHmOQ+pVfVLAEus0r9d5EpwQeYa\nKRm5j0U0U45X7JiYRj8mxwiPWghuKgp8mkK/GltWCCRynWeNmeLoNYHiJ9sYphjV\nqn0cF9Jgc2zqbSAqrrgs5qOvMM4QOpWVOnpeC4YNFZeE0QSiBKhiy1WOIM7NYpDp\nh6JCCb82wQKBgFzgxfCJvyV7TuyJ8IEnn0t4yzO1KyW+5/WIPHP/jaUOjsJR6rRq\nHM4GRZ5v/9pcPHoKT3i1kKL/KP95oZssakbW1ixXiesByRfo/p1xPpp+G8tVkC5o\nGxY4sAEda4mScZp5hcGxNmVBtGu4odkNWQQIYw8EdvuiMAj7bWNfObcJAoGAU3sd\nEAjTVQJ49EmUBuaiohSI0ZdNtgwy/fQ3Xe82kedbia2NUAVUtINhp+OzwA4cDCWC\nO1pty/+f9pOBQzQeCZ57TdHnW+DtBkuVhu04huOe0rm44j8k9NE2MM1/NUFRu4Xk\nM+e2cOKOUicZzxlggHfY15FpSKn8qAFbXfkc30ECgYAgXVW6WyPP4NdMu13luR4u\n7ZipwWph2AA7VgVLzIpqhtwSpOKLAqkBfcT5v6k6r57Ww3iMbKqYZi2YhOaHt5bY\ngCfbi2VRhc/zqsjurdS/X/LissibwLa7xi40T7baNi05EACG5ahP88kC50y4Cw2m\nZfLq1KlcqcB/zYlotCvkzw==\n-----END PRIVATE KEY-----\n",
+  "client_email": "dialogflow-apddbi@rasberry-20200203-hw-t1-smjjay.iam.gserviceaccount.com",
+  "client_id": "116022220414248821326",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/dialogflow-apddbi%40rasberry-20200203-hw-t1-smjjay.iam.gserviceaccount.com"
+}

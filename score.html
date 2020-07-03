@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <link href="./tool.css" type="text/css" rel="stylesheet">
+    <script src="https://github.com/timqian/chart.xkcd/releases/download/1.0.1/chart.xkcd.js"></script>
+    <title>grow up children</title>
+    
+</head>
+
+<body class="style" background="photo/background.png">
+    <div class="head">
+        <div class="arrow">
+          <a href="test1.html"><img type="image" src="photo/return.png"></a>
+          </div>
+        <a href="test1.html">學習歷程</a>
+      </div>
+      <p style="position:absolute;left: 47%;"><b>grade</b></p>
+      <svg id="chart"></svg>
+      <script>
+        const svg = document.getElementById('chart');
+
+        const chart = new chartXkcd.Bar(svg, {
+            data: {
+            labels:['鳥類', '水果類','注音'],
+            datasets: [{
+                data: [95,72,100],
+            }]
+            },
+        });
+    
+    </script>
+  <div>
+    <a href="" class="sosfloat" id="menu-share">
+        <i class="fab fa-share my-float"><img src="photo/help.png" width="70%"></i>
+    </a>
+  </div>    
+  <div>
+    <a class="float" id="menu-share">
+      <i class="fab fa-share my-float"><img src="photo/settings.png" width="70%"></i>
+      </a>
+      <ul>
+      <li><a href="#">
+      <i class="fab-buttons  fab-buttons-right my-float"><img src="photo/analysis.png" title="學習歷程" width="55%"></i>
+      </a></li>
+      <li><a href="history.html">
+      <i class="fab-buttons  fab-buttons-right my-float"><img src="photo/record.png" title="歷史紀錄" width="55%"></i>
+      </a></li>
+      <li><a href="#">
+      <i class="fab-buttons  fab-buttons-right my-float"><img src="photo/question.png" title="個人簡介" width="55%"></i>
+      </a></li>
+      </ul>
+  </div>
+  
+</body>
+</html>

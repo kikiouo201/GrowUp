@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+
+    <link href="./collect.css" type="text/css" rel="stylesheet">
+    <title>grow up children</title>
+    
+</head>
+<script>
+  function collection(){
+    var str = document.getElementById('collection').src;
+    if(str.includes('heart.png')){
+        document.getElementById('collection').src = "photo/heartpink.png";
+    }else{
+        document.getElementById('collection').src = "photo/heart.png";
+      }
+  }
+</script>
+<body class="style" background="photo/background.png">
+  <div class="head">
+    <div class="arrow">
+      <a href="vocabularyitem.html"><img type="image" src="photo/return.png"></a>
+      </div>
+    <a href="test1.html".>水果類</a>
+  </div>
+  <br><br>
+
+  <div class="scene scene--card" >
+    <div>
+      <img src="photo/heart.png" id="collection" onclick="collection()">
+      <img src="photo/sound.png" width="5%" onclick="" id="ansvoice">
+      <p id="time" style="height: 50px;">2020/05/16<br>16:00</p>
+    </div>
+    <div class="card">
+      <div class="card__face card__face--front">
+       
+        <img src="photo/apple.jpg" width="15%" style="border-radius: 20%;" id="picture">
+    </div>
+      <div class="card__face card__face--back">
+        <h2 id="ansbackword">A:這是蘋果</h2>
+        <h3 id="ansbackword">This is an apple.</h3>
+      </div>
+    </div>
+  </div>
+  
+  <div>
+    <a href="" class="sosfloat" id="menu-share">
+      <i class="fab fa-share my-float"><img src="photo/help.png" width="70%"></i>
+      </a>
+  </div>
+  <div>
+    <a class="float" id="menu-share">
+      <i class="fab fa-share my-float"><img src="photo/settings.png" width="70%"></i>
+      </a>
+      <ul>
+      <li><a href="#">
+      <i class="fab-buttons  fab-buttons-right my-float"><img src="photo/analysis.png" title="學習歷程" width="55%"></i>
+      </a></li>
+      <li><a href="history.html">
+      <i class="fab-buttons  fab-buttons-right my-float"><img src="photo/record.png" title="歷史紀錄" width="55%"></i>
+      </a></li>
+      <li><a href="#">
+      <i class="fab-buttons  fab-buttons-right my-float"><img src="photo/question.png" title="個人簡介" width="55%"></i>
+      </a></li>
+      </ul>
+  </div>
+</body>
+</html>

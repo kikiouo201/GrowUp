@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "growup-276412",
+  "private_key_id": "72587cb2c566ca442d403a087c04fad214fd5f36",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCq6mn3stbqFekq\nE5RG7lCRGKbcmLBVWPSM21E7TA8oWH97ivXIiPhc1P24SlTA9BMAT7U/eDXMs53/\nAE/72+L8oPlTwrYvYFku0oVqNWGdsNpm2t0aZWPrgfBjrGjSTiSqc3F7Y+sfVD/5\nH0fc4GG1O86MGi0M8RStMVCnTSdKfh9w+k3JXyeeE0ItbytyfHXkFvwGT1hZFm7i\nOsYJhLft8vnlAAz2b2+Vf3Jks7oj5Y7Kz0d9uDi9YpkJKW4MpdbkozV97pXAgulX\nsGEZAEjIreWnNK1Xq4+jlLSws4SCkehxAPuf3bdI3Vn87nQ+qDt6NxpU158izGGD\nKggbnyivAgMBAAECggEAOMb0eteLM2oh8dtdN471bq38yG1kroWFf8Ffo84pfuKf\nPuAzs/FkaBpNSspOi2bJZSIVeMcrQBwvEUX+TBGIvxmOmfel4+ki1z4SGe0vx123\nv9FW/+zMm7CntcTRcYOKBKGjAjV4Jwkq00xD6CkV7Em43KvZaWIw1zP5sgocUk81\nvapBXkyXtF/7T0IkzyNOt+3mEs0DHT4I+PDPbQcGrnt62EMP3Tgna5CDuiexnSRs\nQidfL22h5Tu6E13T0lFgWUuo2HPfdAPCcZP0eRqYwWTLGyWm36grPEVAJKkaTVMo\nHGeoGwblr3opqYuUyCcaMgCvK4OgHzuIhCQQZQEDUQKBgQDpXG8oEigghdsgOh4g\nVxB40FDUKLnAUYAH4rce0GnNerp7NL6fCAMYUukxxbZWp1hkPDXG5HXg4ktyfALG\n+r7OPBtyUM0rXuFAfrsGLF8CzKI1IBjOKSd/b/mHSgVW44Z9+i+GK7iEuK/raeqv\nVDSOKiNO+EuXRyqO5fUioRdn6QKBgQC7fyMC5zn3pNuVRw6hDTE+VejqIraN/xWM\nG+oLUMgvQaHQc0CRzdPki4D3NAbzgoA9GARQoBHSnm5xqk1WNAYpxly5Qyhyyksx\nJq3cflH5VEzr2fbFzXto/KDUFSRpuh6f46v6RcrPsO1qZD9MypxJpPEUmsDU8bUW\nJgNTsVVE1wKBgQCV4RRTfDXhjZdLf4hR5RljPwhq+y0yZCYC6o4KcHlDzAtxjlLP\n+WljefzkRsPxq9GNr04qzBkZsr4abaOrAOkDtH88UME1ld6+eabNNDphpeSYkmDc\nKHqB0v1E8zmysLd0ufdECVidhbEXVhOxQDfxBwdedQK3yrF+zhs/fo914QKBgD7W\nYRl7/QVuDtl8sv5uuW42xJSThbMZJlOKl2mrbSvJRz3hIma7IKSbzGEM4reBqRDQ\nl8Gdo9t+lW0qsjiNvvMJM9IzG7885O5YFDStcTOqeQ0iQ34PW6jX4d6yJz33zoOv\nfdemxE3O8gKSDlTiInbb/J/3LWEwkIwXuU23ROiJAoGAfDvkwHkky0HU9+3iXCZ8\nKxk5HX+K14CmAuIh/uVzYy6jNuepH5VldBlE7qK9CGuhg13g9sRf9zfcQvRM6muu\n5F3F86zylmA/DZhTT6G8l0RxD2NRF48oZfqr7O6B8up6n6aooQnbGf1C/Hyox3PV\nx5RX26TuynZAsFbKPRT6X40=\n-----END PRIVATE KEY-----\n",
+  "client_email": "growupvision@growup-276412.iam.gserviceaccount.com",
+  "client_id": "103633847223679786676",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/growupvision%40growup-276412.iam.gserviceaccount.com"
+}

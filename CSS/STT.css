@@ -1,0 +1,186 @@
+body{
+  background-color: blanchedalmond;
+  width:100%;
+  height:100%;
+  margin:0;
+  padding:0;
+  background-size:cover;
+  background-image: url("../icons/background1.png");
+}
+a:-webkit-any-link {
+  color: black;
+  outline: none;
+  vertical-align: middle;
+  text-decoration:none;
+}
+
+.main_area{
+  bottom: 0px;
+  position: fixed;
+  width: 100%;
+  margin:60px auto;
+  text-align:center;
+  z-index: 100;
+  box-sizing:border-box;
+}
+
+.return{
+  top: 0px;
+  width: auto;
+  height: 40px;
+  /* background-color: #ffb906cf; */
+  /* text-align: center; */
+  margin:0px auto;  /* 置中*/
+  float: left;
+  position: fixed;
+  z-index: 99;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+.home_page{
+  top: 0px;
+  width: 100%;
+  height: 8.7%;
+  font-size: 18px;
+  font-weight: bolder;
+  background-color: #ffb906cf;
+  text-align: center;
+  margin:0px auto;  /* 置中*/
+  padding-top: 8px;
+  line-height:40px;   /*配合高度px 垂直置中*/
+  position: fixed;
+  z-index: 98;
+}
+.arrow{
+  width: 50px;
+  height: 10px;
+  font-weight: bolder;
+}
+
+.btn_askQ{
+  width: 200px;
+  height: 50px;
+  font-size: 20px;
+}
+
+
+#yourQuestion {
+  border:2px rgb(3, 5, 134) solid;
+  border-width: 5px;
+  font-size:30px;
+  background-color:rgb(97, 160, 255);
+  padding:10px;
+  overflow-wrap: break-word;
+  float: right;
+  border-radius: 30px 40px 3px 20px;
+  position: relative;
+  /* border-image:url("../icons/client_ask.png") 27 27 round;     css到icons路徑要注意*/
+}
+
+#yourAnswer{
+  border:2px rgb(134, 3, 3) solid;
+  border-width: 5px;
+  font-size:30px;
+  background-color:rgb(255, 97, 97);
+  padding:10px;
+  padding-left: 25px;
+  overflow-wrap: break-word;
+  float: left;
+  border-radius: 40px 30px 20px 3px;
+  position: relative;
+}
+
+.home_title{
+  padding-right: 38px;  /*強迫症配合左邊返回按鈕，代研究還可以怎麼改，問kiki*/
+  font-size: 36px;
+}
+
+#messageSystem{
+  width: 300px;
+  height: 50px;
+  text-align: center;
+  font-size: 20px;
+}
+
+#messages {
+  color: #000;
+  font-size: 30px;
+}
+
+#show_card {
+  position:absolute;
+  top:0;
+  left:0;
+  z-index:1;
+  width:100%;
+  height:calc(100% - 62px);
+  overflow-y:scroll;
+  padding:20px;
+  box-sizing:border-box;
+}
+
+.card_Q {
+  font-size: 30px;
+  margin-left: 60px;
+}
+.card_A {
+  font-size: 30px;
+  margin-left: 60px;
+}
+
+/* 收藏 */
+.collect_rightTop {
+  top: 0px;
+  left: 0px;
+  width: 42px;
+  height: 42px;
+  position: absolute;
+  margin-top: 8px;
+  margin-left: 20px;
+  cursor: pointer; 
+}
+
+/* 念問題 */
+.speaker_Q{
+  width: 36px;
+  height: 36px;
+  position: relative;
+  cursor: pointer; 
+  float: right;
+}
+/* 念答案 */
+.speaker_A{
+  width: 36px;
+  height: 36px;
+  position: relative;
+  cursor: pointer; 
+  float: right;
+}
+
+/* .card-bg-color{
+  background-color: #92337eba;
+} */
+/* #messages > .q {
+  border:2px rgb(3, 5, 134) solid;
+  border-width: 5px;
+  font-size:30px;
+  background-color:rgb(97, 160, 255);
+  padding:10px;
+  overflow-wrap: break-word;
+  text-align: right;
+  border-radius: 30px 40px 3px 20px;
+  position: relative;
+}
+
+#messages > .a {
+  border:2px rgb(134, 3, 3) solid;
+  border-width: 5px;
+  font-size:30px;
+  background-color:rgb(255, 97, 97);
+  padding:10px;
+  padding-left: 25px;
+  overflow-wrap: break-word;
+  text-align: left;
+  border-radius: 40px 30px 20px 3px;
+  position: relative;
+} */

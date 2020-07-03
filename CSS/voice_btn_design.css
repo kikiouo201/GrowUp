@@ -1,0 +1,119 @@
+/* 語音按按鈕動畫 */
+.voice-btn{
+    /* width: auto; */
+    height: 50px;
+    font-size: 24px; 
+    /* padding-top: 10px;  */
+    display: block;
+    /* margin-left: 20%; */
+    margin-right: 3%; 
+    text-align: center;
+    background-color: #ffcd2bc9;
+    float: right;
+    position: relative;
+}
+.mh5 {
+    transition: all 0.5s;
+    border: 1px solid #ffcd2bc9;
+    position: relative;
+    border-radius: 30px;
+}
+
+.mh5 span {
+    z-index: 2;
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+}
+
+.mh5::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* margin-left: 30%;
+    margin-right: 30%; */
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    /* background-color: rgba(255, 123, 0, 0.329); */
+    transition: all 0.4s;
+    transform: scale(0.5, 1);
+}
+
+.mh5:hover::before {
+    opacity: 1;
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+    border-radius: 250px;
+    background-color: tomato;
+}
+
+
+
+.mh1 {
+    position: relative;
+    border: 1px solid #ffcd2bc9;
+    transition: all 0.5s linear;
+    border-radius: 30px;
+}
+
+.mh1:hover {
+    border-radius: 250px;
+    transition: all 0.5s linear;
+    background-color: tomato;
+    border-color: tomato;
+}
+
+
+
+
+/* 按鈕旁邊系統ING */
+.system-show {
+    /* width: auto; */
+    height: 62px;
+    font-size: 24px; 
+    /* padding-top: 10px;  */
+    display: block;
+    margin-left: 20%;
+    margin-right: 20%; 
+    text-align: center;
+    background-color: #ffce2b;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.mh0 {
+    position: relative;
+    border: 1px solid #ffce2b;
+    transition: all 0.5s linear;
+    border-radius: 30px;
+}
+
+.mh0:hover {
+    border-radius: 250px;
+    transition: all 0.5s linear;
+    background-color: #ffa947;
+    border-color: #ffa947;
+}
+
+
+/* top card region */
+.QA_card_area {
+    width: auto;
+    margin:80px 90px 60px 90px;
+    text-align:center;
+}
+
+
+/* im setting */
+#im {
+    position:relative;
+    margin:0 auto;
+    width:100%;
+    height:100%;
+    box-sizing:border-box;
+}

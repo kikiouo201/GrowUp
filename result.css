@@ -1,0 +1,131 @@
+.resultTxt{
+    position: absolute;
+    top: 20%;
+    left: 40%;
+    text-decoration: underline;
+    font-size: 24pt; 
+}
+
+.imgSize{
+    position: absolute;
+    top: 30%;
+    left: 10%;
+}
+body{
+  width: auto;
+  height: 500px;
+}
+.head{
+    width: auto;
+    height: auto;
+    text-align:center;
+    background-color: rgba(223, 231, 149, 0.719);
+}
+
+p{
+  font-size: 12pt;
+}
+.arrorw{
+    width: 50px;
+    height: 10px;
+}
+
+.translet{
+  position: relative;
+  left: 40%;
+  width: 75px;
+  height: 40px;
+  background-color: blue;
+  color: white;
+}
+
+.cambtn{
+  position: relative;
+  margin-top: 4%;
+  margin-left: 10%;
+  width: 100px;
+  height: 40px;
+  border-radius: 20%;
+  background-color:rgb(252, 103, 5) ;
+  color: white;
+  font-family: Microsoft JhengHei;
+}
+
+.colbtn{
+  position: relative;
+  text-align: center;
+  margin-top: 5%;
+  margin-left: 1%;
+  width: 100px;
+  height: 40px;
+  border-radius: 20%;
+  background-color: rgb(252, 103, 5);
+  color: white;
+  font-family: Microsoft JhengHei;
+}
+
+.capture{
+    position: absolute;
+    top: 40%;
+}
+
+
+
+img#AnsImg{
+  position: absolute;
+  border-style: double;
+  padding: 5px;
+  border-width: 10px;
+  top: 26%;
+  left: 5%;
+}
+
+.resultbackground{
+  overflow: hidden;
+  width: auto;
+  height:140%;
+  background-image: url("./photo/background.png");
+
+}
+
+.AnsTxt{
+  text-align: center;
+  font-size: 36px;
+  font-weight:bold ;
+}
+.PsTxt{
+  text-align: center;
+  font-size: 24px;
+  font-weight:bold ;
+}
+
+#capture{
+  position: absolute;
+  width: 125px;
+  height: 125px;
+  top:80%;
+  left:45%;
+  background-color: rgb(150, 212, 231);
+  font-family: Microsoft JhengHei;
+  border-radius: 50%;
+}
+
+.ansshow{
+  position: absolute;
+  top: 25%;
+  left: 35%;
+  width: 50%;
+  height: 45%;
+  background-color: white;
+  border-color: rgb(241, 134, 114);
+  border: outset;
+  border-radius: 10%;
+}
+
+.collection{
+  position: absolute;
+  width: 30px;
+  height: 30px; 
+  margin-left: 5%; 
+  margin-top: 4%;
+}

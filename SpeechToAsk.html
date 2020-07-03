@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="big-5">
+    <!-- <meta charset="utf-8"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- <script src="app-call-python-child-process.js" id="callPy"></script> -->
+
+    <title>Grow up children</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" type="twxt/css">
+    <link href="CSS/STT.css" type="text/css" rel="stylesheet">
+    <link href="CSS/voice_btn_design.css" type="text/css" rel="stylesheet">
+    <link href="CSS/dialog-region.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+    <div id="im">
+        <a href="test1.html" class="return"><img src="icons/return.png"></a>
+        <div class="home_page">
+            
+            <a href="test1.html" class="home_title">語音問問題</a>
+        </div>
+
+        <div class="QA_card_area" id="QA_card">
+            <div class="card text-white  mb-3" style="background-color: #92337eba;">
+                <!-- <div class="card-header" id="QA_num_">#${QAnum}</div> -->
+                <div class="card-body" style="margin-top: 30px;">
+                    <img class="collect_rightTop" onclick="collect()" id="heart_collect" src="icons/bookmark.png"
+                        title="" />
+                    <div>
+                        <h5 class="card-title card_Q" style="float: left;text-align:left ; display: inline;">Q:為什麼天空是藍的？</h5>
+                        <img class="speaker_Q" id="speaker_Q" src="icons/speaker.png" />
+                    </div>
+                    <div>
+                        <p class="card-text card_A" style="float:left ; display: inline;">
+                            A:因為光經水氣折射後，大部分藍光被散射，所以整個天空都呈現藍色。</p>
+                        <img class="speaker_A" id="speaker_Q" src="icons/speaker.png" />
+                    </div>
+                    <script>
+                        
+                        function collect() {
+                            // function heart_collect()
+                            // $(document).ready(function( {
+                            //     $("#QA_num").
+                            // }))
+                            // $(document).ready(function () {
+                            //     $(".collect_rightTop").click(function () {                                 //click事件
+                            //         $("#heart_collect").attr("src", "icons/heart.png");      //要更換的圖片位置
+                            //     });
+                            // });
+
+                            $(document).ready(function () {
+                                $('.card-header').each(function(i) { 
+                                    $(".collect_rightTop").click(function () {                                 //click事件
+                                        $("#heart_collect").attr("src", "icons/heart.png");      //要更換的圖片位置
+                                        $(this).attr('id', 'QA_num_'+(i+1)); 
+                                    });
+                                });
+                            });
+                        }
+                        // const heart_collect = document.getElementById('heart_collect')
+                        // if (heart_collect.title == "加入收藏") {
+                        //     heart_collect.src = "icons/heart.png"
+                        //     heart_collect.title = "取消收藏"
+                        // } else {
+                        //     heart_collect.src = "icons/heart_empty.png"
+                        //     heart_collect.title = "加入收藏"
+                        // }
+                    </script>
+                </div>
+            </div>
+
+
+            <div class="card text-white bg-dark mb-3">
+                <div class="card-header">#3</div>
+                <div class="card-body">
+                    <h5 class="card-title">Q:為什麼天空是藍的？</h5>
+                    <p class="card-text">A:因為光經水氣折射後，大部分藍光被散射，所以整個天空都呈現藍色。</p>
+                </div>
+            </div>
+
+            <div class="card text-white bg-dark mb-3">
+                <div class="card-header">#2</div>
+                <div class="card-body">
+                    <h5 class="card-title">Q:為什麼天空是藍的？</h5>
+                    <p class="card-text">A:因為光經水氣折射後，大部分藍光被散射，所以整個天空都呈現藍色。</p>
+                </div>
+            </div>
+
+            <div class="card text-white bg-dark mb-3">
+                <div class="card-header">#1</div>
+                <div class="card-body">
+                    <h5 class="card-title">Q:為什麼天空是藍的？</h5>
+                    <p class="card-text card_A">A:因為光經水氣折射後，大部分藍光被散射，所以整個天空都呈現藍色。</p>
+                </div>
+            </div>
+        </div>
+        <div class="main_area">
+
+            <span class="mh0 system-show w3-btn w3-ripple" id="voice">
+                <h2 style="font-family: Microsoft JhengHei; display:inline-block; margin-top: 8px; margin-bottom: 0px;">
+                    開始問問題!</h2>
+                <!-- <img src="https://image.flaticon.com/icons/svg/2368/2368264.svg" style="height: 80%; width: 80px;"> -->
+                <!-- <h5 style="font-family: Microsoft JhengHei; margin-top: 0px;">開始問問題!</h5> -->
+                <span class="mh1 voice-btn w3-btn w3-ripple" style="width: auto; height: 50px; margin-top: 2px;"
+                    id="voice">
+                    <img src="https://image.flaticon.com/icons/svg/2368/2368264.svg"
+                        style="height: 80%; width: 80px; margin-top: 5px; cursor: pointer; ">
+                    <!-- <h5 style="font-family: Microsoft JhengHei; margin-top: 0px;">開始問問題!</h5> -->
+                </span>
+            </span>
+        </div>
+
+        <!-- <br /><br /><br />
+        <input type="text" font-size="18px" id="messageSystem" name="系統就緒了"
+            style="font-family: Microsoft JhengHei; display:inline-block; margin-top: 18px; margin-bottom: 0px;">
+        <br />
+
+        <div id="messages">
+
+        </div> -->
+
+        <br><br><br> <!-- 空行啦 -->
+
+
+        <!-- <button id="close">Close Windows</button> -->
+        <!-- <script src="index.js"></script> -->
+        <script type="text/javascript">
+                        // function speechResourse(){
+
+                        //     document.getElementById("result").innerHTML = "Hello World";
+                        //     const pyRequestValue=document.getElementById("voice");
+                        //     pyRequestValue.addEventListener('click', () => {
+
+                        //         // document.getElementById("result").innerHTML = "Hello World";
+                        // });
+                        // }
+                        // // console.log(callpy);
+        </script>
+
+
+        <!-- </p> -->
+        <!-- </center> -->
+        <script>if (window.module) module = window.module;  //如果要使用jQuery function 可能可以減少問題</script>
+        <script src="https://www.gstatic.com/firebasejs/3.6.2/firebase.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="index.js"></script>
+        <br><br>
+    </div>
+</body>
+
+</html>

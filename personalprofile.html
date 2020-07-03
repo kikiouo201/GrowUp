@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <link href="./tool.css" type="text/css" rel="stylesheet">
+    <title>grow up children</title>
+    
+</head>
+
+<body class="style" background="photo/background.png">
+    <div class="head">
+        <div class="arrow">
+          <a href="test1.html"><img type="image" src="photo/return.png"></a>
+          </div>
+        <a href="test1.html">個人簡介</a>
+      </div>
+      <br><br> 
+      <script>
+
+            function readURL(input){
+
+            if(input.files && input.files[0]){
+
+            var imageTagID = input.getAttribute("targetID");
+
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+
+                var img = document.getElementById(imageTagID);
+
+                img.setAttribute("src", e.target.result)
+
+            }
+
+            reader.readAsDataURL(input.files[0]);
+
+            }
+
+            }
+                    
+        </script>
+      <div>
+        <form  action="/somewhere/to/upload" enctype="multipart/form-data">
+            <img class="image" id="preview_progressbarTW_img" src="photo/boy.png" width="15%" height="25%"/>
+            <br>
+
+            <input class="uploadimage" type="file" onchange="readURL(this)" targetID="preview_progressbarTW_img" accept="image/gif, image/jpeg, image/png"/>
+         </form>
+      </div>
+      <div>
+          <img id="userimg" src="photo/user.png"><p style="position:absolute;right: 20%; top: 23%;"><b>麥可華斯基</b></p>
+          <img id="birthimg" src="photo/birthday.png"><p style="position:absolute;right: 23%; top: 43%;"><b>11/11</b></p>
+          <img id="likeimg" src="photo/userheart.png"><p style="position:absolute;right: 23%; top: 63%;"><b>嚇人</b></p>
+      </div>
+  <div>
+    <a href="" class="sosfloat" id="menu-share">
+        <i class="fab fa-share my-float"><img src="photo/help.png" width="70%"></i>
+    </a>
+  </div>    
+  <div>
+    <a class="float" id="menu-share">
+      <i class="fab fa-share my-float"><img src="photo/settings.png" width="70%"></i>
+      </a>
+      <ul>
+      <li><a href="#">
+      <i class="fab-buttons  fab-buttons-right my-float"><img src="photo/analysis.png" title="學習歷程" width="55%"></i>
+      </a></li>
+      <li><a href="history.html">
+      <i class="fab-buttons  fab-buttons-right my-float"><img src="photo/record.png" title="歷史紀錄" width="55%"></i>
+      </a></li>
+      <li><a href="#">
+      <i class="fab-buttons  fab-buttons-right my-float"><img src="photo/question.png" title="個人簡介" width="55%"></i>
+      </a></li>
+      </ul>
+  </div>
+  
+</body>
+</html>
