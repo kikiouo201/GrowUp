@@ -5,6 +5,7 @@ from google.oauth2 import service_account
 import speech_recognition as sr
 import sys
 import json
+import time
 
 # sys.setdefaultencoding('utf8')    #python3已經設定UTF-8無須再設定
 
@@ -27,21 +28,23 @@ session = session_client.session_path(DIALOGFLOW_PROJECT_ID, SESSION_ID)
 r=sr.Recognizer()
 with sr.Microphone() as source:
     waitStr = "Wait...coraporate Microphone..."
-    sys.stdout.reconfigure(encoding='utf-8')
+    # sys.stdout.reconfigure(encoding='utf-8')
     print(waitStr)
     #listen for 5 seconds and create the ambient noise energy level
-    r.adjust_for_ambient_noise(source, duration=2) # turn 5s to 2s
-    sys.stdout.reconfigure(encoding='utf-8')
+    r.adjust_for_ambient_noise(source, duration=3) # turn 5s to 2s
+    # sys.stdout.reconfigure(encoding='utf-8')
     speakHint = "Speak Now!"
     print(speakHint)
     audio=r.listen(source)
-
+    thinkYouSaid = "Google Speech Recognition thinks you said:"
+    print(thinkYouSaid)
+    time.sleep(5)
 
 
 # while 0:      #重複執行 1(或其他數字)==true(無限迴圈) / 0==false(直接不執行) 壞掉會一直問問題
-    sys.stdout.reconfigure(encoding='utf-8')
-    print("You said>>",end = " ")
+    # sys.stdout.reconfigure(encoding='utf-8')
     
+    print("You said>>",end = " ")
     # text_to_be_analyzed = input()
     # text_input = dialogflow.types.TextInput(text=text_to_be_analyzed, language_code=DIALOGFLOW_LANGUAGE_CODE)
     # query_input = dialogflow.types.QueryInput(text=text_input)
@@ -52,21 +55,22 @@ with sr.Microphone() as source:
     # query_input = dialogflow.types.QueryInput(text=r.recognize_google(audio, language="zh-TW"))
    
     # print(type(r.recognize_google(audio, language="zh-TW")),end=" ")
-    sys.stdout.reconfigure(encoding='utf-8')
+    # sys.stdout.reconfigure(encoding='utf-8')
     print(speech_to_text)   #問題的中文
     
 
     try:
         response = session_client.detect_intent(session=session, query_input=query_input)
+        # print("response = ? =>"+response)
         
-        # print(response)
+        
     except InvalidArgument:
         raise
     except sr.UnknownValueError:
         print("Google Speech Recognition could not understand audio")
     except sr.RequestError as e:
         print("No response from Google Speech Recognition service: {0}".format(e))
-    sys.stdout.reconfigure(encoding='utf-8')
+    # sys.stdout.reconfigure(encoding='utf-8')
     print("chatbot>>", response.query_result.fulfillment_text)  #問題的答案
 
 
@@ -76,7 +80,7 @@ with sr.Microphone() as source:
     'Answer': response.query_result.fulfillment_text
     }
 
-    sys.stdout.reconfigure(encoding='utf-8')
+    # sys.stdout.reconfigure(encoding='utf-8')
     print("sys="+sys.getdefaultencoding())
    
 # sys.stdout.flush()

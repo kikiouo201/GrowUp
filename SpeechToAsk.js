@@ -22,7 +22,7 @@ if (voiceBtn) {
 
         ipcRenderer.once('voice-require-to-py-reply-start', () => {
             // status.value = '系統提示：  請開始說話！';
-            SystemVal.innerHTML = '系統提示：  請開始說話！';
+            SystemVal.innerHTML = '系統提示：請開始說話！';
         });
 
         const createQ = (text) => `<div class="q">${text}</div>`;
