@@ -6,7 +6,9 @@ const appCallPython = require('./app-call-python-child-process')
 const callVis = require('./vision')   
 const { StillCamera } = require("pi-camera-connect");
 const fs = require('fs');
-// const api = require('./model/api');
+const equals = require('equals');
+const { type } = require('process');
+// const api = require('./model/api');  //伺服器測試暫關
 
 // let {PythonShell} = require('python-shell')
   // Keep a global reference of the window object, if you don't, the window will
@@ -87,15 +89,32 @@ const fs = require('fs');
     appCallPython.startSpeak(
       () => {
         event.reply('voice-require-to-py-reply-start')
+        console.log('voice-require-to-py-reply-start')
       },
       () => {
         event.reply('voice-require-to-py-anaysis-voice')
+        console.log('anaysis-voice')
       },
+      // () => {
+      //   event.reply('voice-require-to-py-when-ask-what-isThat')
+      // },
       (result) => {
         
         event.reply('voice-require-to-py-reply-result', result)
         
-        console.log("Q="+result.q+" A="+result.a+" result(?)="+result)
+        // console.log("Q="+result.q)
+        console.log("A="+result.a)
+        var x = result.a.toString().trim()
+        console.log(typeof x + typeof result.a.toString())
+        console.log("Testing Log => "+result.a.toString()+"\r\nTest2=>" + x)
+        if(x === 'TurnToOpenCamera'){
+          console.log("BinGO!")
+        }
+        else{
+          console.log("NOOOOOOOO!")
+        }
+        console.log(" result(?)="+result.toString())
+        //api code
       //   api.Question.addQa(1, result.q, result.a, "", "知識", (event) => {
       //     console.log("callback=" + JSON.stringify(event));
       // });
