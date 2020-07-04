@@ -88,6 +88,9 @@ const fs = require('fs');
       () => {
         event.reply('voice-require-to-py-reply-start')
       },
+      () => {
+        event.reply('voice-require-to-py-anaysis-voice')
+      },
       (result) => {
         
         event.reply('voice-require-to-py-reply-result', result)

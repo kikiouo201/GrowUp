@@ -25,6 +25,9 @@ if (voiceBtn) {
             SystemVal.innerHTML = '系統提示：請開始說話！';
         });
 
+        ipcRenderer.once('voice-require-to-py-anaysis-voice', () => {
+            SystemVal.innerHTML = '系統分析你的問題中...請稍後...'
+        });
         const createQ = (text) => `<div class="q">${text}</div>`;
         const createA = (text) => `<div class="a">${text}</div>`;
 

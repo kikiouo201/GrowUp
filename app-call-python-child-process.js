@@ -125,6 +125,7 @@ function callPythonProcess(req, res) {
 
 function startSpeak(
   callbackWhenCanSpeak,
+  callbackWhenAnaysisVoice,
   callbackWhenSuccess
 ) {
   const process = spawn('python', ["-u", "./dialogFlow-perfect.py"]);
@@ -135,6 +136,10 @@ function startSpeak(
 
     if (result.includes('Speak Now!')) {
       callbackWhenCanSpeak()
+    }
+
+    if(result.includes('Google Speech Recognition thinks you said:')){
+      callbackWhenAnaysisVoice()
     }
 
     if (result.includes('data[Q]')) {
