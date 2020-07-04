@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,38 +8,46 @@
   <link rel="stylesheet" href="../CSS/game/pickingUpIsALittleRed.css" type="text/css" />
   <script src="../model/game/pickingUpisALittleRed.js"></script>
   <title>翻牌記憶遊戲</title>
- 
+
 </head>
+
 <body>
- <div class="wrap">
-  <div class="card"><div class="front"></div><div class="back"></div></div>
-  <div class="card"><div class="front"></div><div class="back"></div></div>
-  <div class="card"><div class="front"></div><div class="back"></div></div>
-  <div class="card"><div class="front"></div><div class="back"></div></div>
-  <div class="card"><div class="front"></div><div class="back"></div></div>
-  <div class="card"><div class="front"></div><div class="back"></div></div>
-  <div class="card"><div class="front"></div><div class="back"></div></div>
-  <div class="card"><div class="front"></div><div class="back"></div></div>
-  <div class="card"><div class="front"></div><div class="back"></div></div>
-  <div class="card"><div class="front"></div><div class="back"></div></div>
-  <div class="card"><div class="front"></div><div class="back"></div></div>
-  <div class="card"><div class="front"></div><div class="back"></div></div>
-  <div class="card"><div class="front"></div><div class="back"></div></div>
-  <div class="card"><div class="front"></div><div class="back"></div></div>
-  <div class="card"><div class="front"></div><div class="back"></div></div>
-  <div class="card"><div class="front"></div><div class="back"></div></div>
-  <div id="wall"></div>
- </div>
- <div id="tiktok"><div id="counter"></div></div>
-<div class="mask">
-  <div class="intro">
-    遊戲方式：
+  <div class="wrap">
+    <div class="cards">
+      <div class="card"><div class="front"></div><div class="back"></div></div>
+      <div class="card"><div class="front"></div><div class="back"></div></div>
+      <div class="card"><div class="front"></div><div class="back"></div></div>
+      <div class="card"><div class="front"></div><div class="back"></div></div>
+      <div class="card"><div class="front"></div><div class="back"></div></div>
+      <div class="card"><div class="front"></div><div class="back"></div></div>
+      <div class="card"><div class="front"></div><div class="back"></div></div>
+      <div class="card"><div class="front"></div><div class="back"></div></div>
+      <div class="card"><div class="front"></div><div class="back"></div></div>
+      <div class="card"><div class="front"></div><div class="back"></div></div>
+      <div class="card"><div class="front"></div><div class="back"></div></div>
+      <div class="card"><div class="front"></div><div class="back"></div></div>
+      <div class="card"><div class="front"></div><div class="back"></div></div>
+      <div class="card"><div class="front"></div><div class="back"></div></div>
+      <div class="card"><div class="front"></div><div class="back"></div></div>
+      <div class="card"><div class="front"></div><div class="back"></div></div>
+
+      <div id="wall"></div>
+
+    </div>
+  </div>
+
+  <div id="tiktok">
+    <div id="counter"></div>
+  </div>
+  <div class="mask">
+    <div class="intro">
+      遊戲方式：
       1.翻牌後記住牌面花色及位置
       2.連續翻出兩張同花色的牌就可以消除
       3.在時間內消除所有的牌即完成遊戲
-    <button onclick="startGame()">開始遊戲</button>
+      <button onclick="startGame()">開始遊戲</button>
+    </div>
   </div>
-</div>
 </body>
-</html>
 
+</html>
