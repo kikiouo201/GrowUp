@@ -2,7 +2,8 @@ const express = require('express')
 const app = express()
 const es = require('event-stream')
 const { spawn } = require("child_process")
-const api = require('./model/api');
+
+// const api = require('./model/api'); api
 // const iconv = require('iconv-lite')
 // const BufferHelper = require('bufferhelper')
 
@@ -126,6 +127,7 @@ function callPythonProcess(req, res) {
 function startSpeak(
   callbackWhenCanSpeak,
   callbackWhenAnaysisVoice,
+  // callbackWhenAskWhatIsThat,
   callbackWhenSuccess
 ) {
   const process = spawn('python', ["-u", "./dialogFlow-perfect.py"]);
@@ -145,9 +147,12 @@ function startSpeak(
     if (result.includes('data[Q]')) {
       const [q, a] = result.split('\n').map((el) => el.split('=')[1])
 
-      api.Question.addQa(1, q, a, "", "知識", (event) => {
-        console.log("callback=" + JSON.stringify(event));
-    });
+      // if(a=='TurnToOpenCamera'){
+      //   callbackWhenAskWhatIsThat()
+      // }
+    //   api.Question.addQa(1, q, a, "", "知識", (event) => {
+    //     console.log("callback=" + JSON.stringify(event));
+    // });
       process.kill()
 
       callbackWhenSuccess({ q, a })

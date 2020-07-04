@@ -28,6 +28,10 @@ if (voiceBtn) {
         ipcRenderer.once('voice-require-to-py-anaysis-voice', () => {
             SystemVal.innerHTML = '系統分析你的問題中...請稍後...'
         });
+
+        // ipcRenderer.once('voice-require-to-py-when-ask-what-isThat', () => {
+           
+        // });
         const createQ = (text) => `<div class="q">${text}</div>`;
         const createA = (text) => `<div class="a">${text}</div>`;
 
@@ -47,6 +51,7 @@ if (voiceBtn) {
                                             </div>
                                         </div>
                                     </div>`;
+                                    
 
         // const createQA = function (t1, t2) {
         //     `<h5 class="card-title">Q:${t1}</h5> <p class="card-text">A:${t2}</p>`                       
@@ -70,8 +75,18 @@ if (voiceBtn) {
         const QA_card = document.querySelector('#QA_card');
         console.log("Q:" + createQA)
         ipcRenderer.once('voice-require-to-py-reply-result', (event, data) => {
+
+            if(data.a.toString().trim() == 'TurnToOpenCamera'){     //如果偵測到「問這是什麼」類型的問題
+                SystemVal.innerHTML = '切換至「你拍我答」'
+                setTimeout(document.location.href="result.html",5000);
+                // document.location.href="result.html";   //直接跳轉到camera的html
+                console.log("true")
+            }
             // messages.innerHTML = messages.innerHTML + createQ(data.q) + createA(data.a);
             QA_card.innerHTML = QA_card.innerHTML + createQA(data.q, data.a);
+            // console.log("dataA="+data.a.toString())
+            // console.log("test=A? =>"+document.getElementById('Answer01').textContent);
+            
             
             console.log("data=" + data )
             // status.value = '再問一次問題';
