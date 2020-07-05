@@ -148,6 +148,8 @@ const { type } = require('process');
    event.sender.send('reply-mainjsfunction',array)
   })
   
+
+ 
   ipcMain.on('captrue',async(event, args)=>{
     const stillCamera = new StillCamera();
   
