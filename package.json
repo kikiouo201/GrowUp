@@ -11,6 +11,7 @@
     "electron": "^8.2.4"
   },
   "dependencies": {
+    "@google-cloud/translate": "^6.0.1",
     "@google-cloud/vision": "^1.11.0",
     "bufferhelper": "^0.2.1",
     "child_process": "^1.0.2",
