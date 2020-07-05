@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
   <head>
     <meta charset="BIG-5">
@@ -8,32 +8,33 @@
     <script src="https://apis.google.com/js/client.js"></script>
    
   </head>
-  <body>
+  <body background="photo/background.png">
       <div class="head">
         <div class="arrorw">
           <a href="test1.html"><input type="image" src="./photo/multimedia-option.png"></a>
         </div>  
         <a href="test1.html"><img src="./title.png" style="width: 350px; height: 40px;" ></a>
       </div>
-<div class="resultbackground">
+
       <div >
         <img id="AnsImg" src="" style="width: 300px; height: 300px; ">
       </div>
       <div class="ansshow">
             <div>
               <img id="collection" class="collection" src="./icons/bookmark.png" >
-              <p style="text-align: center; font-family: Microsoft JhengHei; font-size: 24pt; color: rgb(248, 7, 7);">答案</p>
+              <p id="AnsTitle" style="text-align: center; font-family: Microsoft JhengHei; font-size: 24pt; color: rgb(248, 7, 7);"></p>
+              <p id="leadTxt" class="leadTxt">請先拍下你想知道的事物</p>
               <p id="AnsTxt" class="AnsTxt"></p>
-              <p id="PsTxt" class="PsTxt"></p>
             </div>
+            
       </div>
-      <div>
+      </div>
         <button id="capture" valign="center">
            <img id ="identify-js" src="./photo/photo.png"><br>
        </button>
       </div>
        
-</div>
+
    <script src="render.js"></script>
   </body>
 </html>

@@ -1,25 +1,22 @@
-.resultTxt{
-    position: absolute;
-    top: 20%;
-    left: 40%;
-    text-decoration: underline;
-    font-size: 24pt; 
+body{
+  background-repeat:no-repeat;
+  background-size:100%; 
+  background-attachment:fixed;
+  margin-top: auto;
 }
+
 
 .imgSize{
     position: absolute;
     top: 30%;
     left: 10%;
 }
-body{
-  width: auto;
-  height: 500px;
-}
+
 .head{
     width: auto;
     height: auto;
     text-align:center;
-    background-color: rgba(223, 231, 149, 0.719);
+    background-color: #ffd306;
 }
 
 p{
@@ -81,23 +78,27 @@ img#AnsImg{
 }
 
 .resultbackground{
-  overflow: hidden;
   width: auto;
-  height:140%;
+  height: auto;
   background-image: url("./photo/background.png");
-
 }
-
-.AnsTxt{
-  text-align: center;
+.leadTxt{
+  position: absolute;
+  top: 30%;
+  left: 20%;
+  color: white;
   font-size: 36px;
   font-weight:bold ;
 }
-.PsTxt{
-  text-align: center;
-  font-size: 24px;
+.AnsTxt{
+  position: absolute;
+  top: 30%;
+  left: 10%;
+  color: white;
+  font-size: 36px;
   font-weight:bold ;
 }
+
 
 #capture{
   position: absolute;
@@ -110,17 +111,19 @@ img#AnsImg{
   border-radius: 50%;
 }
 
+
 .ansshow{
   position: absolute;
   top: 25%;
   left: 35%;
   width: 50%;
   height: 45%;
-  background-color: white;
+  background-color:  #92337eba;
   border-color: rgb(241, 134, 114);
   border: outset;
   border-radius: 10%;
 }
+
 
 .collection{
   position: absolute;

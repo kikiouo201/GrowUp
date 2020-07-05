@@ -36,6 +36,7 @@ if(identifyBtn){
 identifyBtn.addEventListener('click',()=>{
     ipcRenderer.send('vision');
     ipcRenderer.send('captrue');
+    document.getElementById('leadTxt').innerHTML="辨識中。。。";
     console.log('ready');
 
     })
@@ -46,7 +47,8 @@ ipcRenderer.on('reply-mainjsfunction',(event,data)=>{
     console.log("yo="+data);
     
     // data.forEach(label => all+="\nyo="+label);
-    document.getElementById('AnsTxt').innerHTML="Ans:"+" "+data;
+    document.getElementById('AnsTxt').innerHTML="答案:"+" "+data;
+    document.getElementById('leadTxt').innerHTML="";
 })
 
 
