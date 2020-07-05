@@ -80,7 +80,17 @@ if (voiceBtn) {
                 SystemVal.innerHTML = '切換至「你拍我答」'
                 setTimeout(document.location.href="result.html",5000);
                 // document.location.href="result.html";   //直接跳轉到camera的html
-                console.log("true")
+                console.log("camera true")
+            }
+            else if(data.a.toString().trim() == 'OpenPickingUpIsALittleRed'){        //玩翻牌
+                SystemVal.innerHTML = '開啟小遊戲至「翻牌遊戲」'
+                setTimeout(document.location.href="./view/pickingUpIsALittleRed.html",5000);
+                console.log("picking true")
+            }
+            else if(data.a.toString().trim() == 'OpenGophers'){      //玩打地鼠
+                SystemVal.innerHTML = '開啟小遊戲至「打地鼠遊戲」'
+                setTimeout(document.location.href="./view/gophers.html",5000);
+                console.log("gophers true")
             }
             // messages.innerHTML = messages.innerHTML + createQ(data.q) + createA(data.a);
             QA_card.innerHTML = QA_card.innerHTML + createQA(data.q, data.a);
