@@ -1,6 +1,6 @@
 .head{
   width: auto;
-  height: 40px;
+  height: auto;
   background-color:#ffb906cf;
   text-align: center;
   opacity: .7;
@@ -15,14 +15,27 @@
   width: 50px;
   height: 10px;
 }
+#showtime{
+  position: fixed;
+  top: 2.7%;
+  right: 4%;
+  font-size: 18px;
+}
+#today{
+  position: fixed;
+  top: 0%;
+  right: 2%;
+  font-size: 18px;
+}
 .button1{
     position: absolute;
-    background-color:#C4E1E1	;
+    background-color:#FFD2D2	;
     margin-top: 1%;
     margin-left: 1%;
     border-radius: 30px;
     width:31%;
     height:40%;
+    font-size: 24px;
   }
   .button1:hover{
     background-color:white ;
@@ -32,12 +45,13 @@
 
   .button2{
     position: absolute;
-    background-color: #EBD3E8;
+    background-color:#f0e49f  ;
     margin-top:1%;
     margin-left: 33.5%;
     border-radius:30px;
     width:31%;
     height:40%;
+    font-size: 24px;
   }
   .button2:hover{
     background-color:white ;
@@ -46,12 +60,13 @@
 
   .button3{
     position: absolute;
-    background-color: 	#FFD2D2;
+    background-color:  #a7cdf7;
     margin-top:1%;
     margin-left: 66%;
     border-radius: 30px;
     width:31%;
     height:40%;
+    font-size: 24px;
   }
   .button3:hover{
     background-color:white ;
@@ -60,12 +75,13 @@
 
   .button4{
     position: absolute;
-    background-color:#C4E1FF;
-    margin-top:30%;
+    background-color:#f3d2b2;
+    top: 50%;
     margin-left: 1%;
     border-radius: 30px;
     width:31%;
     height:40%;
+    font-size: 24px;
   }
   .button4:hover{
     background-color:white ;
@@ -74,12 +90,13 @@
 
   .button5{
     position: absolute;
-    background-color: #E6E6F2;
-    margin-top:30%;
+    background-color: #bbf7bb;
+    top: 50%;
     margin-left: 33.5%;
     border-radius:30px;
     width:31%;
     height:40%;
+    font-size: 24px;
   }
   .button5:hover{
     background-color:white ;
@@ -88,12 +105,13 @@
 
   .button6{
     position: absolute;
-    background-color: 		#FFEEDD;
-    margin-top:30%;
+    background-color:  #f0bce9;
+    top: 50%;
     margin-left: 66%;
     border-radius: 30px;
     width:31%;
     height:40%;
+    font-size: 24px;
   }
   .button6:hover{
     background-color:white ;
@@ -136,21 +154,21 @@
     height:40px;
     bottom:10px;
     left:50px;
-    background-color:rgb(155, 154, 154);
+    background-color:rgb(211, 211, 211);
     color:#FFF;
     border-radius:50px;
     text-align:center;
     z-index:1000;
     animation: lef-to-rig 2s ease-out;
   }
-
+  
   .sosfloat{
     position:fixed;
     width:40px;
     height:40px;
     bottom:10px;
     left:8px;
-    background-color:rgb(155, 154, 154);
+    background-color:rgb(211, 211, 211);
     color:#FFF;
     border-radius:50px;
     text-align:center;
@@ -173,7 +191,7 @@
   }
   
   ul li a{
-    background-color:rgb(155, 154, 154);
+    background-color:rgb(211, 211, 211);
     color:black;
     border-radius:50px;
     text-align: center;
@@ -239,3 +257,6 @@
       from {transform: rotate(360deg);}
       to {transform: rotate(0deg);}
   }
+
+
+ 

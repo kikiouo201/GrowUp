@@ -9,37 +9,71 @@
   </head>
   <body class="style" background="photo/background.png" > 
     <div class="head">
-      <a href="test1.html"><img src="photo/grow up.png" ></a>
+      <a href="test1.html"><img src="title.png" style="width: 350px; height: 40px;"></a>
+      
+      <body onload="ShowTime()">
+        <div id="today"></div>
+        <br>
+        <div id="showtime"></div>
+        </body>
     </div>
-    
+   
+    <script language="JavaScript">
+
+      function ShowTime(){
+
+        var fullDate = new Date();
+  var yyyy = fullDate.getFullYear();
+  var MM = (fullDate.getMonth() + 1) >= 10 ? (fullDate.getMonth() + 1) : ("0" + (fullDate.getMonth() + 1));
+  var dd = fullDate.getDate() < 10 ? ("0"+fullDate.getDate()) : fullDate.getDate();
+  document.getElementById('today').innerHTML = yyyy + "/" + MM + "/" + dd;
+ 
+      　var NowDate=new Date();
+      　var h=NowDate.getHours();
+      　var m=NowDate.getMinutes();
+      　document.getElementById('showtime').innerHTML = h+':'+m;
+      　setTimeout('ShowTime()',1000);
+      }
+      </script>
+      
       <div >
         <button class="button1" onclick=""  >
-                    <a href="SpeechToAsk.html"><img src="photo/recordmachine.png"width="40%"></a><br>
-          錄音</button>
+                    <a href="https://www.mcu.edu.tw/student/new-query/default.asp"><img src="photo/recordmachine.png"width="40%"></a><br>
+          問問題</button>
 
           <button class="button2" onclick=""  >
             <a href="pronunciation.html"><img src="photo/phonetic.png" width="40%"></a><br>
-            注音表</button>
+            ㄅㄆㄇ</button>
 
         <button class="button3" onclick=""  >
               <a href="result.html"><img src="photo/camera.png" width="40%"></a><br>
-              相機</button>
+              你拍我答</button>
   
         <button class="button4" onclick=""  >
                     <a href="collect.html"><img src="photo/learning.png"width="40%"></a><br>
-          收藏模組</button>
+                    我的最愛</button>
     
      
-          <button class="button5" onclick=""  >
-            <a href="exam.html"><img src="photo/test.png"width="40%"></a><br>
-            測驗模組</button>
+          <button class="button5" onclick="myFunction()"  >
+            <img src="photo/test.png"width="40%"><br>
+            每日任務</button>
 
         <button class="button6" onclick="">
-        <a href="gps.html"><img src="photo/save.png"width="40%"></a><br>
-        安全模組</button>
+        <a href=""><img src="photo/level.png"width="40%"></a><br>
+        成長關卡</button>
     </div>
+    <script>
+      function myFunction() {
+        if (confirm("要來做要來做每日任務嗎?")) {
+          location.href='exam_phonetic.html';
+        } else {
+          location.href='test1.html'; 
+        }
+      }
+      </script>
+    
     <div>
-      <a href="" class="sosfloat" id="menu-share">
+      <a href="exam_phonetic copy.html" class="sosfloat" id="menu-share">
         <i class="fab fa-share my-float"><img src="photo/help.png" width="70%"></i>
         </a>
     </div>
@@ -49,13 +83,13 @@
         </a>
         <ul>
         <li><a href="score.html">
-        <i class="fab-buttons  fab-buttons-right my-float"><img src="photo/analysis.png" title="學習歷程" width="55%"></i>
+        <i class="fab-buttons  fab-buttons-right my-float"> <img src="photo/analysis.png" title="學習歷程" width="58%"></i>
         </a></li>
         <li><a href="history.html">
-        <i class="fab-buttons  fab-buttons-right my-float"><img src="photo/record.png" title="歷史紀錄" width="55%"></i>
+        <i class="fab-buttons  fab-buttons-right my-float"><img src="photo/record.png" title="歷史紀錄" width="58%"></i>
         </a></li>
         <li><a href="personalprofile.html">
-        <i class="fab-buttons  fab-buttons-right my-float"><img src="photo/question.png" title="個人簡介" width="55%"></i>
+        <i class="fab-buttons  fab-buttons-right my-float"><img src="photo/user.png" title="個人簡介" width="58%"></i>
         </a></li>
         </ul>
     </div>
