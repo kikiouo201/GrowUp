@@ -277,6 +277,7 @@
             animation-delay: 2s;
     -webkit-animation-duration: 10s;
             animation-duration: 10s;
+
   }
   @-webkit-keyframes gopher2 {
     0% {
@@ -319,6 +320,7 @@
             animation-delay: 4s;
     -webkit-animation-duration: 8s;
             animation-duration: 8s;
+
   }
   @-webkit-keyframes gopher3 {
     0% {
@@ -361,6 +363,7 @@
             animation-delay: 2s;
     -webkit-animation-duration: 8s;
             animation-duration: 8s;
+
   }
   @-webkit-keyframes gopher4 {
     0% {
@@ -397,6 +400,7 @@
             animation-delay: 4s;
     -webkit-animation-duration: 10s;
             animation-duration: 10s;
+
   }
   @-webkit-keyframes gopher5 {
     0% {
@@ -433,6 +437,7 @@
             animation-delay: 4s;
     -webkit-animation-duration: 6s;
             animation-duration: 6s;
+
   }
   @-webkit-keyframes gopher6 {
     0% {
@@ -469,6 +474,7 @@
             animation-delay: 2s;
     -webkit-animation-duration: 6s;
             animation-duration: 6s;
+
   }
   @-webkit-keyframes gopher7 {
     0% {
@@ -505,6 +511,7 @@
             animation-delay: 4s;
     -webkit-animation-duration: 8s;
             animation-duration: 8s;
+
   }
   @-webkit-keyframes gopher8 {
     0% {
@@ -613,6 +620,7 @@
             animation-delay: 0s;
     -webkit-animation-duration: 10s;
             animation-duration: 10s;
+    
   }
   @-webkit-keyframes gopher11 {
     0% {
