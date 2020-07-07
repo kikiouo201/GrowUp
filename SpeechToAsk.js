@@ -63,7 +63,7 @@ if (voiceBtn) {
                     $(this).attr('id', 'QA_num_'+click_num); 
                 });
 
-                $(".collect_rightTop").click(function () {                                 //click事件
+                $(".collect_rightTop").click(function (value) {                                 //click事件
                     $("#heart_collect").attr("src", "icons/heart.png");      //要更換的圖片位置
                     
                 });
