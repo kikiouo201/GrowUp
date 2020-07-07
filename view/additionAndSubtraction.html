@@ -43,6 +43,12 @@
     flex-direction: row;
     justify-content:center;
   }
+  .number{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-size: contain;
+  }
   #drag-drop-basic {
     display: flex;
     flex-direction: column;
@@ -187,9 +193,10 @@
    
     <div class="counting">
         <div id="target-container" data-role="drag-drop-container"></div>
-        <div>+</div>
+        <img src="../image/numbers/plus.png" class="number" />
         <div id="target2-container" data-role="drag-drop-container"></div>
-        <div>=5</div>
+        <img src="../image/numbers/equal.png" class="number" />
+        <img src="../image/numbers/5.png" class="number" />
     </div>
    
 
