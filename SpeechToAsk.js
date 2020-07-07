@@ -35,24 +35,34 @@ if (voiceBtn) {
         const createQ = (text) => `<div class="q">${text}</div>`;
         const createA = (text) => `<div class="a">${text}</div>`;
 
+        var countCardNum = 0
+        countCardNum++
+        var CardID_Collect = 'collect_select_'+countCardNum
+        console.log("collect "+'collect_select_'+countCardNum)
+        var CardID_Q = 'speaker_Q_'+countCardNum
+        console.log("Q= "+'speaker_Q_'+countCardNum)
+        var CardID_A = 'speaker_A_'+countCardNum
+        console.log("A= "+'speaker_A_'+countCardNum)
+
         const createQA = (text, text2) => `<div class="card text-white mb-3" style="background-color: #92337eba;">
                                         
                                             <div class="card-body" style="margin-top: 30px;">
-                                            <img class="collect_rightTop" onclick="collect()" id="heart_collect" src="icons/bookmark.png"
-                                                title="" />
-                                            <div>
-                                                <h5 class="card-title card_Q" style="float: left;text-align:left ; display: inline;">Q:${text}</h5>
-                                                <img class="speaker_Q" id="speaker_Q" src="icons/speaker.png" />
+                                                <img class="collect_LeftTop" onclick="collect()" id="`+CardID_Collect+`" src="icons/bookmark.png"
+                                                    title="" />
+                                                <div>
+                                                    <h5 class="card-title card_Q" style="float: left;text-align:left ; display: inline;">Q:${text}</h5>
+                                                    <img class="speaker_Q" id="`+CardID_Q+`" src="icons/speaker.png" />
+                                                </div>
+                                                <div>
+                                                    <p class="card-text card_A" style="float:left ; display: inline;">
+                                                        A:${text2}</p>
+                                                    <img class="speaker_A" id="`+CardID_A+`" src="icons/speaker.png" />
+                                                </div>
                                             </div>
-                                            <div>
-                                                <p class="card-text card_A" style="float:left ; display: inline;">
-                                                    A:${text2}</p>
-                                                <img class="speaker_A" id="speaker_Q" src="icons/speaker.png" />
-                                            </div>
-                                        </div>
-                                    </div>`;
+                                        </div>`;
                                     
-
+        
+        
         // const createQA = function (t1, t2) {
         //     `<h5 class="card-title">Q:${t1}</h5> <p class="card-text">A:${t2}</p>`                       
         // }
@@ -63,7 +73,7 @@ if (voiceBtn) {
                     $(this).attr('id', 'QA_num_'+click_num); 
                 });
 
-                $(".collect_rightTop").click(function () {                                 //click事件
+                $(".collect_rightTop").click(function (value) {                                 //click事件
                     $("#heart_collect").attr("src", "icons/heart.png");      //要更換的圖片位置
                     
                 });
