@@ -130,7 +130,18 @@ a:-webkit-any-link {
 }
 
 /* 收藏 */
-.collect_rightTop {
+.collect_rightTop { /*舊的收藏愛心位置*/
+  top: 0px;
+  left: 0px;
+  width: 42px;
+  height: 42px;
+  position: absolute;
+  margin-top: 8px;
+  margin-left: 20px;
+  cursor: pointer; 
+}
+
+.collect_LeftTop {  /*新的收藏本本位置 左上*/
   top: 0px;
   left: 0px;
   width: 42px;
