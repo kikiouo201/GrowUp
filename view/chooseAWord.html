@@ -75,7 +75,7 @@
     align-items:center;
   }
 
-  #drag-drop-basic #drag-source {
+  #drag-drop-basic #drag-source1 {
     width: 100px;
     height: 100px;
     border-radius: 50%;
@@ -83,7 +83,7 @@
     background:url('../image/words/apple.jpg') no-repeat;
     background-size:cover;
   }
-  #drag-drop-basic #drag-source1 {
+  #drag-drop-basic #drag-source2 {
     width: 100px;
     height: 100px;
     border-radius: 50%;
@@ -91,7 +91,7 @@
     background:url('../image/words/peach.jpg') no-repeat;
     background-size:cover;
   }
-  #drag-drop-basic #drag-source2 {
+  #drag-drop-basic #drag-source3 {
     width: 100px;
     height: 100px;
     border-radius: 50%;
@@ -99,7 +99,7 @@
     background:url('../image/words/pineapple.jpeg') no-repeat;
     background-size:cover;
   }
-  #drag-drop-basic #drag-source3 {
+  #drag-drop-basic #drag-source4 {
     width: 100px;
     height: 100px;
     border-radius: 50%;
@@ -107,7 +107,7 @@
     background:url('../image/words/strawberry.jpg') no-repeat;
     background-size:cover;
   }
-  #drag-drop-basic #drag-source4 {
+  #drag-drop-basic #drag-source5 {
     width: 100px;
     height: 100px;
     border-radius: 50%;
@@ -157,11 +157,12 @@
    
 
     <div id="source-container" data-role="drag-drop-container">
-        <div id="drag-source" draggable="true"></div>
+       
         <div id="drag-source1" draggable="true"></div>
         <div id="drag-source2" draggable="true"></div>
         <div id="drag-source3" draggable="true"></div>
         <div id="drag-source4" draggable="true"></div>
+        <div id="drag-source5" draggable="true"></div>
       </div>
   </div>
   
@@ -178,6 +179,8 @@
   
   let sourceContainerId = '';
   let number=0;
+  let ans=[0,2,1,5,4];
+  let reply=[0,0,0,0,0];
   // Allow multiple draggable items
   let dragSources = document.querySelectorAll('[draggable="true"]');
   dragSources.forEach(dragSource => {
@@ -201,38 +204,39 @@
   function dragStart(e) {
     e.dataTransfer.setData('text/plain', e.target.id);
     sourceContainerId = this.parentElement.id;
-    console.log('sourceContainerId', sourceContainerId);
-    
-    
-   
+
   }
   
   function dropped(e) {
     // execute function only when target container is different from source container
+    
     if (this.id !== sourceContainerId) {
       cancelDefault(e);
       let id = e.dataTransfer.getData('text/plain');
       let num = parseInt(id.substring(11,12));
+      let chooseNum =parseInt(e.path[0].id.substring(6,7));
       if(sourceContainerId == "source-container"){
-       
-       number+=num;
-      
-    }else{
-        number-=num;
-    }
-    console.log('id',id);
-      
+       reply[chooseNum]=num;
+       console.log('reply',reply);
+      }
+   
     document.querySelector('#num').innerHTML="目前是"+number;
        
       e.target.appendChild(document.querySelector('#' + id));
     }
-    
-    console.log('sourceContainerId', sourceContainerId);
-  
+
   }
   
   function end(){
-    if(number==5){
+      let correctNum=0;
+      console.log('reply',reply);
+    for(let i=0;i <ans.length;i++){
+            if(ans[i] == reply[i]){
+                correctNum++;
+
+            }
+    }
+    if(correctNum==5){
         alert("答對喔!");
     }
     else{
