@@ -123,10 +123,14 @@ a:-webkit-any-link {
 .card_Q {
   font-size: 30px;
   margin-left: 60px;
+  display: inline;
+  margin-right: 0px;
 }
 .card_A {
   font-size: 30px;
   margin-left: 60px;
+  display: inline;
+  margin-right: 0px;
 }
 
 /* 收藏 */
@@ -156,17 +160,25 @@ a:-webkit-any-link {
 .speaker_Q{
   width: 36px;
   height: 36px;
-  position: relative;
+  position: absolute;
+  right: 0px;
   cursor: pointer; 
   float: right;
+  margin-top: 5px; 
+  margin-bottom: 5px;
+  margin-right: 20px;
 }
 /* 念答案 */
 .speaker_A{
   width: 36px;
   height: 36px;
-  position: relative;
+  position: absolute;
+  right: 0px;
   cursor: pointer; 
   float: right;
+  margin-top: 5px; 
+  margin-bottom: 5px;
+  margin-right: 20px;
 }
 
 /* .card-bg-color{

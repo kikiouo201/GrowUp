@@ -10,6 +10,7 @@
     <!-- <script src="app-call-python-child-process.js" id="callPy"></script> -->
 
     <title>Grow up children</title>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" type="twxt/css">
     <link href="CSS/STT.css" type="text/css" rel="stylesheet">
     <link href="CSS/voice_btn_design.css" type="text/css" rel="stylesheet">
@@ -30,16 +31,17 @@
             <div class="card text-white  mb-3" style="background-color: #92337eba;">
                 <!-- <div class="card-header" id="QA_num_">#${QAnum}</div> -->
                 <div class="card-body" style="margin-top: 30px;">
-                    <img class="collect_rightTop" onclick="collect()" id="heart_collect" src="icons/bookmark.png"
-                        title="" />
-                    <div>
-                        <h5 class="card-title card_Q" style="float: left; display: inline;">Q:蘋果是什麼</h5>
-                        <img class="speaker_Q" id="speaker_Q" src="icons/speaker.png" />
-                    </div>
-                    <div>
-                        <p class="card-text card_A" style="float:left ; display: inline;">A:一種可食用果實，有大量的維他命C，俗語說：「一天一蘋果，醫生遠離我」。</p>
-                        <img class="speaker_A" id="speaker_Q" src="icons/speaker.png" />
-                    </div>
+                    <img class="collect_rightTop" onclick="collect()" id="heart_collect" src="icons/bookmark.png"/>
+                        <div style="float:left; display: block;">
+                            <p class="card-title card_Q">Q:</p>
+                            <p class="card-title card_Q" style="margin-left: 0px;">蘋果是什麼</p>
+                            <img class="speaker_Q" id="speaker_Q_" src="icons/speaker.png">
+                        </div>
+                        <div style="float:left; display: block;">
+                            <p class="card-text card_A" style="float: left;">A:</p>
+                            <p class="card-text card_A" style="margin-left: 0px;">一種可食用果實，有大量的維他命C，俗語說：「一天一蘋果，醫生遠離我」。</p>
+                            <img class="speaker_A" id="speaker_A" src="icons/speaker.png" />
+                        </div>
                     <script>
                         
                         function collect() {
@@ -82,16 +84,51 @@
                         title="" />
                     <div>
                         <h5 class="card-title card_Q" style="float: left;text-align:left ; display: inline;">Q:草莓是什麼</h5>
-                        <img class="speaker_Q" id="speaker_Q" src="icons/speaker.png" />
+                        <img class="speaker_Q" onclick="speakerTest(this)" id="speaker_Q_" src="icons/speaker.png" />
                     </div>
                     <div>
                         <p class="card-text card_A" style="float:left ; display: inline;">
                             A:草莓是多年生草本植物，果實略呈心形，鮮紅多汁，質地柔軟，氣味芳香。</p>
-                        <img class="speaker_A" id="speaker_Q" src="icons/speaker.png" />
+                        <!-- <img class="speaker_A" id="speaker_A" src="icons/speaker.png" /> -->
                     </div>
                 </div>
             </div>
 
+            <div class="card text-white  mb-3" style="background-color: #92337eba;">
+                <!-- <div class="card-header" id="QA_num_">#${QAnum}</div> -->
+                <div class="card-body" style="margin-top: 30px;">
+                    <img class="collect_rightTop" onclick="collect()" id="heart_collect" src="icons/bookmark.png"
+                        title="" />
+                    <div>
+                        <h5 class="card-title card_Q" style="float: left;text-align:left ; display: inline;">Q:莓是什麼</h5>
+                        <img class="speaker_Q" onclick="speakerTest(this)" id="speaker_Q_" src="icons/speaker.png" />
+                    </div>
+                    <div>
+                        <p class="card-text card_A" style="float:left ; display: inline;">
+                            A:草莓是多年生草本植物，果實略呈心形，鮮紅多汁，質地柔軟，氣味芳香。</p>
+                        <!-- <img class="speaker_A" id="speaker_A" src="icons/speaker.png" /> -->
+                    </div>
+                </div>
+            </div>
+<script>
+    const SSU = new SpeechSynthesisUtterance();
+    
+function speakerTest(index){
+    if (index) {
+        SSU.text = index.value;
+        index.addEventListener('click', toggle);
+        console.log("click =? " + index.parentNode.childNodes)
+    
+    }
+}
+
+function toggle(startOver = true) {
+    speechSynthesis.cancel();
+    if (startOver) {
+        speechSynthesis.speak(SSU);
+    }
+}
+</script>
             <!-- <div class="card text-white bg-dark mb-3">
                 <div class="card-header">#2</div>
                 <div class="card-body">
@@ -159,6 +196,33 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script src="SpeechToAsk.js"></script>
         <br><br>
+        
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+            Launch demo modal
+        </button>
+        
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                ...
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+            </div>
+        </div>
+
     </div>
 </body>
 

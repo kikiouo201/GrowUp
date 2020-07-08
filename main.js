@@ -26,7 +26,7 @@ const { type } = require('process');
       fullscreen: true,
       webSecurity: false,
         webPreferences:{
-            nodeIntegration: true,
+            nodeIntegration: true, //如果出bug改回true看看
             width: 1200, height: 1000
           }
     })
