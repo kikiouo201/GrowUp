@@ -214,7 +214,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-  
+
   .my-float{
     text-align: center;
     font-size:24px;
@@ -238,10 +238,6 @@
     animation: rotate-out 0.5s;
   }
   
-  @keyframes lef-to-rig {
-      0%   {left:-20px}
-      50%  {left:20px}
-  }
   
   @keyframes scale-in {
       from {transform: scale(0);opacity: 0;}
