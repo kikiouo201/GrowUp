@@ -5,10 +5,21 @@
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
     <title>Hello World!</title>
     <link rel="stylesheet" type="text/css" href="./result.css">  
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" type="twxt/css">
+    <link href="CSS/STT.css" type="text/css" rel="stylesheet">
+    <link href="CSS/voice_btn_design.css" type="text/css" rel="stylesheet">
+    <link href="CSS/dialog-region.css" type="text/css" rel="stylesheet">
     <script src="https://apis.google.com/js/client.js"></script>
+    <script type="text/javascript" src="jquery.js"></script>
    
   </head>
   <body background="photo/background.png">
+
+    
+      <div id="collectionShow">
+        <input type="checkbox" value="預設單字本">
+        <input type="checkbox" value="水果本">
+      </div>
       <div class="head">
         <div class="arrorw">
           <a href="test1.html"><input type="image" src="./photo/multimedia-option.png"></a>
@@ -17,23 +28,61 @@
       </div>
 
       <div >
-        <img id="AnsImg" src="" style="width: 300px; height: 300px; ">
+        <img id="AnsImg" src="./still-image.jpg" style="width: 300px; height: 300px; ">
       </div>
+
       <div class="ansshow">
             <div>
-              <img id="collection" class="collection" src="./icons/bookmark.png" >
-              <p id="AnsTitle" style="text-align: center; font-family: Microsoft JhengHei; font-size: 24pt; color: rgb(248, 7, 7);"></p>
-              <p id="leadTxt" class="leadTxt">請先拍下你想知道的事物</p>
-              <p id="AnsTxt" class="AnsTxt"></p>
+              <img id="collection" class="collection" src="./icons/bookmark.png" onclick="centerHandler()" >
+
+              <p id="Ans" class="Ans"></p><p id="AnsTxt" class="AnsTxt"></p>
+              <p id="explain"><p id="explainTxt"></p></p>
             </div>
             
       </div>
       </div>
-        <button id="capture" valign="center">
-           <img id ="identify-js" src="./photo/photo.png"><br>
-       </button>
+      <div class="main_area">
+        <span class="mh0 system-show w3-btn w3-ripple" id="voice">
+          <h2 id="leadTxt" style="font-family: Microsoft JhengHei; display:inline-block; margin-top: 8px; margin-bottom: 0px;">
+            請先拍下你想知道的事物</h2>
+          <!-- <img src="https://image.flaticon.com/icons/svg/2368/2368264.svg" style="height: 80%; width: 80px;"> -->
+          <!-- <h5 style="font-family: Microsoft JhengHei; margin-top: 0px;">開始問問題!</h5> -->
+          <span class="mh1 voice-btn w3-btn w3-ripple" style="width: auto; height: 50px; margin-top: 2px;"
+              id="identify-js" onclick="changecss()">
+              <img id="identify-js" src="./photo/camera.png"
+                  style="height: 80%; width: 50px; margin-top: 5px; cursor: pointer; ">
+              <!-- <h5 style="font-family: Microsoft JhengHei; margin-top: 0px;">開始問問題!</h5> -->
+          </span>
+        </span>
       </div>
-       
+      </div>
+      <script>
+        function changecss(){
+          var ShowVisibility = document.querySelector('.ansshow');
+          var ImgVisibility = document.querySelector('img#AnsImg');
+
+          ShowVisibility.style.visibility = "visible";
+          ImgVisibility.style.visibility = "visible";
+}
+      </script>
+
+
+      <script >
+        function centerHandler(){/*設定置中的函式*/
+        var show = document.getElementById("collectionShow");
+        show.style.visibility = "visible";
+        var scrollDist=$(window).scrollTop();/*取得捲動長度*/
+        var myTop=($(window).height()-$("#popWindow").height())/2+scrollDist;
+        /*取得垂直中央位置*/
+        var myLeft=($(window).width()-$("#popWindow").width())/2;
+        /*取得水平中央位置*/
+        $("#popWindow").offset({top:myTop,left:myLeft});
+        /*設定區塊於水平與垂直置中*/
+        }
+        
+        $(window).scroll(centerHandler); /*當網頁捲動時呼叫置中函式*/
+        $(window).resize(centerHandler); /*當視窗縮放時呼叫置中函式*/
+        </script>
 
    <script src="render.js"></script>
   </body>

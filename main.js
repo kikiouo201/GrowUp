@@ -143,10 +143,11 @@ const { type } = require('process');
   ipcMain.on('vision',async (event, args)=>{
     let array=await callVis.start();
    console.log("call vision"+" "+array);
-  
+   
    //array.forEach(label => console.log("vis="+label.description));
    event.sender.send('reply-mainjsfunction',array)
   })
+
   
 
  
