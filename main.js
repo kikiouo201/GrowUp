@@ -8,6 +8,7 @@ const { StillCamera } = require("pi-camera-connect");
 const fs = require('fs');
 const equals = require('equals');
 const { type } = require('process');
+const api = require('./node/model/api');
 // const api = require('./model/api');  //伺服器測試暫關
 
 // let {PythonShell} = require('python-shell')
@@ -165,3 +166,18 @@ const { type } = require('process');
 //   var result = processData(data);
 //   event.sender.send('actionReply', result);
 // });
+
+//addQA
+ipcMain.on('getApi-addQuiz',async (event, args)=>{
+  api.Question.addQuiz(5, (req) => {
+    // console.log("addQuiz=" + JSON.stringify(event));
+     const data = JSON.parse(JSON.stringify(req));
+     const contents = data.content;        
+    //  contents.forEach(content => {
+    //    content.choose = content.options2;
+    //  });
+     console.log("contents=" + JSON.stringify(contents));
+     event.sender.send('replyApi-addQuiz',contents);
+ });
+
+})
