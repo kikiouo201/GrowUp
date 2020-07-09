@@ -86,7 +86,13 @@ const api = require('./node/model/api');
   
   //> ipcMain is ipc of main process
   //> ipcMain listen to voice-require-to-py channel here 是否有被按下去
- ipcMain.on('voice-require-to-py', (event, arg) => {
+    ipcMain.on('voice-require-to-py', (event, arg) => {
+    //   api.Question.showQuizContent(1, (event) => {
+    //           const data = JSON.parse(JSON.stringify(event));
+    //           const content = data.content;        
+    //           console.log("showQuizContent =" + JSON.stringify(content)  );       
+    // });
+
     appCallPython.startSpeak(
       () => {
         event.reply('voice-require-to-py-reply-start')
@@ -176,8 +182,9 @@ ipcMain.on('getApi-addQuiz',async (event, args)=>{
     //  contents.forEach(content => {
     //    content.choose = content.options2;
     //  });
-     console.log("contents=" + JSON.stringify(contents));
-     event.sender.send('replyApi-addQuiz',contents);
+    let text=JSON.stringify(contents);
+     console.log("contents=" + text);
+     event.sender.send('replyApi-addQuiz',text);
  });
 
 })

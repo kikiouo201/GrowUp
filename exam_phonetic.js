@@ -18,11 +18,11 @@ let { ipcRenderer } = require('electron');
                 console.log("startTest");
                 console.log("ipcRenderer"+ ipcRenderer);
               
-                //  ipcRenderer.send('getApi-addQuiz');
+                 ipcRenderer.send('getApi-addQuiz');
                  
-                //  ipcRenderer.on('replyApi-addQuiz', (event) => {
-                //   console.log(`event=${event}`);
-                // });
+                 ipcRenderer.on('replyApi-addQuiz', (event,data) => {
+                  console.log(`event=${JSON.stringify(data)}`);
+                });
                   var start = document.getElementById("startTest");
                   var option1 = document.getElementById("option1");
                   var option2 = document.getElementById("option2");
