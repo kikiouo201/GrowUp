@@ -1,0 +1,30 @@
+*{
+    margin: 0 auto;
+}
+a {
+    text-decoration:none;
+    color:black;
+}
+.all{
+    display: flex;
+    height: 400px;
+    padding: 15px;
+    background-color: #61a0f8;
+    flex-wrap: wrap;
+}
+.level{
+    flex: 0 0 15%;
+    background-color: #f08bc3;
+    border-radius: 30px;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-size: 2rem;
+    font-size: 24px;
+}
+.level:hover{
+    background-color: white ;
+    opacity: .7;
+}
