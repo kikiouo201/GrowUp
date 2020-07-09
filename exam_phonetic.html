@@ -5,6 +5,8 @@
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
     <title>grow up children</title>
     <link href="./collect.css" type="text/css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+  
   </head>
 
  
@@ -14,16 +16,18 @@
     </div>
     <br><br>
     <div>
-        <img src="photo/apple.jpg" width="40%" style="top: 3%;" >
+        <button id="startTest" class="startTest">開始測驗</button>
+        <img id="AnsImg" src="photo/apple.jpg" width="40%" style="top: 3%; visibility: hidden" >
         &nbsp;
-        <button class="button9" >蘋果</button>
+        <button id="option1" class="option1" >蘋果</button>
         <img src="photo/sound.png" width="5%" onclick="" id="voice2">
-        <button class="button10">香蕉</button>
-        <button class="button11" >葡萄</button>
-        <button class="button12" >西瓜</button>
+        <button id="option2" class="option2">香蕉</button>
+        <button id="option3" class="option3" >葡萄</button>
+        <button id="option4" class="option4" >西瓜</button>
     </div>
     <div>
-      <button class="button13">下一題</button>
+      <button id="endTest" class="endTest">提交</button>
+      <button id="nextQ" class="nextQ">下一題</button>
       <a href="test1.html"><button class="button14" onclick="myFunction()">離開</button>
         <div>
           <a href="" class="sosfloat" id="menu-share">
@@ -35,6 +39,9 @@
             confirm("確定離開嗎?");
           }
           </script>
+
+        
     </div>
+    <script src="exam_phonetic.js"></script>
     </body>
     </html>
