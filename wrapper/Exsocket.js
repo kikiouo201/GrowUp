@@ -22,6 +22,8 @@ const app = {
         sendQueues.set(event, json);
       });
     
+      sendMes();
+   
     },
   };
 
