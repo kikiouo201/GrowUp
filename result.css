@@ -69,6 +69,7 @@ p{
 
 
 img#AnsImg{
+  visibility: hidden;
   position: absolute;
   border-style: double;
   padding: 5px;
@@ -82,22 +83,47 @@ img#AnsImg{
   height: auto;
   background-image: url("./photo/background.png");
 }
-.leadTxt{
-  position: absolute;
-  top: 30%;
-  left: 20%;
-  color: white;
-  font-size: 36px;
-  font-weight:bold ;
-}
+
 .AnsTxt{
   position: absolute;
-  top: 30%;
+  top: 10%;
+  left: 25%;
+  color: white;
+  font-size: 54px;
+  font-weight:bold ;
+  font-family: Microsoft JhengHei;
+}
+.Ans{
+  position: absolute;
+  top: 20%;
   left: 10%;
   color: white;
   font-size: 36px;
   font-weight:bold ;
+  font-family: Microsoft JhengHei;
 }
+
+#explain{
+  position: absolute;
+  top: 40%;
+  left: 10%;
+  color: white;
+  font-size: 36px;
+  font-weight:bold ;
+  font-family: Microsoft JhengHei;
+}
+
+#explainTxt{
+  position: absolute;
+  top: 35%;
+  left: 25%;
+  padding-right: 5%;
+  color: white;
+  font-size: 48px;
+  font-weight:bold ;
+  font-family: Microsoft JhengHei;
+}
+
 
 
 #capture{
@@ -115,13 +141,14 @@ img#AnsImg{
 .ansshow{
   position: absolute;
   top: 25%;
-  left: 35%;
+  left: 30%;
   width: 50%;
   height: 45%;
   background-color:  #92337eba;
   border-color: rgb(241, 134, 114);
   border: outset;
   border-radius: 10%;
+  visibility: hidden;
 }
 
 
@@ -132,3 +159,14 @@ img#AnsImg{
   margin-left: 5%; 
   margin-top: 4%;
 }
+
+
+#popWindow{ /*此行指定放置廣告的div */
+  width:666px; /*此行設定div的寬度*/
+  height:488px; /*此行設定div的高度*/ 
+  box-shadow:5px 5px 10px black; /*此行設定div的外框陰影*/
+  border:2px gray solid; /*此行設定div的外框線條*/
+  border-radius:20px; /*此行設定div的外框圓角*/
+  position:fixed; /*此行設定div為不隨捲動而移動的模式*/
+  visibility: hidden;
+  }

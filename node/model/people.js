@@ -1,4 +1,4 @@
-const { createRouter } = require('../wrapper/Exsocket');
+const { createRouter } = require('../../wrapper/Exsocket');
 
 
 const router = createRouter();

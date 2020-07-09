@@ -33,9 +33,9 @@ if(voiceBtn){
 
 let identifyBtn = document.querySelector('#identify-js');
 if(identifyBtn){
-identifyBtn.addEventListener('click',()=>{
-    ipcRenderer.send('vision');
+identifyBtn.addEventListener('click',()=>{   
     ipcRenderer.send('captrue');
+    ipcRenderer.send('vision');
     document.getElementById('leadTxt').innerHTML="辨識中。。。";
     console.log('ready');
 
@@ -47,8 +47,11 @@ ipcRenderer.on('reply-mainjsfunction',(event,data)=>{
     console.log("yo="+data);
     
     // data.forEach(label => all+="\nyo="+label);
-    document.getElementById('AnsTxt').innerHTML="答案:"+" "+data;
-    document.getElementById('leadTxt').innerHTML="";
+    document.getElementById('Ans').innerHTML="答案:";
+    document.getElementById('AnsTxt').innerHTML=" "+data;
+    document.getElementById('explain').innerHTML="敘述:";
+    document.getElementById('explainTxt').innerHTML=" "+"西瓜是個消暑聖品，晚上別喝太多會尿床喔!!";
+    document.getElementById('leadTxt').innerHTML="辨識成功!!";
 })
 
 

@@ -8,6 +8,7 @@ const { StillCamera } = require("pi-camera-connect");
 const fs = require('fs');
 const equals = require('equals');
 const { type } = require('process');
+const api = require('./node/model/api');
 // const api = require('./model/api');  //伺服器測試暫關
 
 // let {PythonShell} = require('python-shell')
@@ -85,7 +86,13 @@ const { type } = require('process');
   
   //> ipcMain is ipc of main process
   //> ipcMain listen to voice-require-to-py channel here 是否有被按下去
- ipcMain.on('voice-require-to-py', (event, arg) => {
+    ipcMain.on('voice-require-to-py', (event, arg) => {
+    //   api.Question.showQuizContent(1, (event) => {
+    //           const data = JSON.parse(JSON.stringify(event));
+    //           const content = data.content;        
+    //           console.log("showQuizContent =" + JSON.stringify(content)  );       
+    // });
+
     appCallPython.startSpeak(
       () => {
         event.reply('voice-require-to-py-reply-start')
@@ -143,10 +150,11 @@ const { type } = require('process');
   ipcMain.on('vision',async (event, args)=>{
     let array=await callVis.start();
    console.log("call vision"+" "+array);
-  
+   
    //array.forEach(label => console.log("vis="+label.description));
    event.sender.send('reply-mainjsfunction',array)
   })
+
   
 
  
@@ -164,3 +172,19 @@ const { type } = require('process');
 //   var result = processData(data);
 //   event.sender.send('actionReply', result);
 // });
+
+//addQA
+ipcMain.on('getApi-addQuiz',async (event, args)=>{
+  api.Question.addQuiz(5, (req) => {
+    // console.log("addQuiz=" + JSON.stringify(event));
+     const data = JSON.parse(JSON.stringify(req));
+     const contents = data.content;        
+    //  contents.forEach(content => {
+    //    content.choose = content.options2;
+    //  });
+    let text=JSON.stringify(contents);
+     console.log("contents=" + text);
+     event.sender.send('replyApi-addQuiz',text);
+ });
+
+})
