@@ -15,8 +15,10 @@
     <link href="CSS/STT.css" type="text/css" rel="stylesheet">
     <link href="CSS/voice_btn_design.css" type="text/css" rel="stylesheet">
     <link href="CSS/dialog-region.css" type="text/css" rel="stylesheet">
+    <link href="CSS/collect.css" type="text/css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
 </head>
 
 <body>
@@ -97,7 +99,7 @@
             <div class="card text-white  mb-3" style="background-color: #92337eba;">
                 <!-- <div class="card-header" id="QA_num_">#${QAnum}</div> -->
                 <div class="card-body" style="margin-top: 30px;">
-                    <img class="collect_rightTop" onclick="collect()" id="heart_collect" src="icons/bookmark.png"
+                    <img class="collect_rightTop" onclick="changecss()" id="heart_collect" src="icons/bookmark.png"
                         title="" />
                     <div>
                         <h5 class="card-title card_Q" style="float: left;text-align:left ; display: inline;">Q:莓是什麼</h5>
@@ -169,7 +171,7 @@
         </button>
         
         <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -187,8 +189,43 @@
                 </div>
             </div>
             </div>
+        </div> -->
+        <div class="black_overlay"></div>
+        <div id="showCollect">
+          
+            <div style="padding: 10px; border-bottom: black; margin-bottom: 5px;">請選擇想儲存至哪個本本</div>
+            <input type="image" id="close" src="./icons/close.png" style="width: 20px; height: 20px;" onclick="closecollection()">
+            <input id="yoKnowledgeChk" type="checkbox" value="yo知識本"><label style="padding-left: 7%;">yo知識本</label><br>
+            <input id="fruitKnowledgeChk" type="checkbox" value="水果知識本"><label style="padding-left: 7%;">水果知識本</label>
         </div>
+        <script >
 
+
+            var chk1 = document.querySelector("#yoKnowledgeChk");
+            var chk2 = document.querySelector("#fruitKnowledgeChk")
+            var show = document.querySelector("#showCollect")
+            var black_overlay = document.querySelector(".black_overlay")
+            function changecss(){/*設定置中的函式*/
+    
+              chk1.style.visibility = "visible";
+              chk2.style.visibility = "visible";
+              show.style.visibility = "visible";
+              black_overlay.style.visibility = "visible"
+            
+            }
+    
+            function closecollection(){
+    
+              chk1.style.visibility = "hidden";
+              chk2.style.visibility = "hidden";
+              show.style.visibility = "hidden";
+              black_overlay.style.visibility = "hidden";
+    
+            }
+
+            
+            </script>
+    
     </div>
 </body>
 

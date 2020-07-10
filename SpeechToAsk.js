@@ -1,7 +1,7 @@
 
 
 //> ipc for renderer process
-let { ipcRenderer} = require('electron');
+let { ipcRenderer } = require('electron');
 let remote = require('electron').remote;
 let dialog = remote.dialog;
 const { text } = require('express');
@@ -116,8 +116,16 @@ if (voiceBtn) {
             console.log("data=" + data)
             // status.value = '再問一次問題';
             SystemVal.innerHTML = '再問一次問題';
+
+
+            $(document).ready
+                (
+                    function () {
+                        $("html").scrollTop($(document).height() + 100);
+                    }
+                );
         });
-        
+
     });
 }
 
@@ -148,7 +156,7 @@ function speakerTest(index) {
     }
 }
 
-function speaker(QA){
+function speaker(QA) {
     SSU.text = QA.parentNode.childNodes[3].childNodes[0].nodeValue;
     toggle();
 }
@@ -171,7 +179,7 @@ function toggle(startOver = true) {
 let collection = document.getElementById('Collection')
 collection.addEventListener('click', (e) => {
     console.log(dialog)
-    dialog.showMessageBox({message: "Hey:))", title: '測試'}, () =>{
+    dialog.showMessageBox({ message: "Hey:))", title: '測試' }, () => {
         console.log("OK")
     })
 });
