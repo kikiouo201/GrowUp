@@ -101,6 +101,7 @@ const api = require('./node/model/api');
       () => {
         event.reply('voice-require-to-py-anaysis-voice')
         console.log('anaysis-voice')
+        
       },
       // () => {
       //   event.reply('voice-require-to-py-when-ask-what-isThat')
@@ -121,14 +122,20 @@ const api = require('./node/model/api');
           console.log("NOOOOOOOO!")
         }
         console.log(" result(?)="+result.toString())
+        
         //api code
-      //   api.Question.addQa(1, result.q, result.a, "", "知識", (event) => {
-      //     console.log("callback=" + JSON.stringify(event));
-      // });
+        api.Question.addQa(1, result.q, result.a, "", "知識", (event) => {
+        console.log("callback=" + JSON.stringify(event));
+      });
 
       }
     )
 });
+
+//     ipcMain.on('AddQA-to-server', (event, data) => {
+      
+
+// })
 
 
 // ipcMain.handle('voice-require-to-py', async (event, args) => {

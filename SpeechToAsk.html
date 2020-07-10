@@ -110,40 +110,6 @@
                     </div>
                 </div>
             </div>
-<script>
-    const SSU = new SpeechSynthesisUtterance();
-    
-function speakerTest(index){
-    if (index) {
-        SSU.text = index.value;
-        index.addEventListener('click', toggle);
-        console.log("click =? " + index.parentNode.childNodes)
-    
-    }
-}
-
-function toggle(startOver = true) {
-    speechSynthesis.cancel();
-    if (startOver) {
-        speechSynthesis.speak(SSU);
-    }
-}
-</script>
-            <!-- <div class="card text-white bg-dark mb-3">
-                <div class="card-header">#2</div>
-                <div class="card-body">
-                    <h5 class="card-title">Q:為什麼天空是藍的？</h5>
-                    <p class="card-text">A:因為光經水氣折射後，大部分藍光被散射，所以整個天空都呈現藍色。</p>
-                </div>
-            </div>
-
-            <div class="card text-white bg-dark mb-3">
-                <div class="card-header">#1</div>
-                <div class="card-body">
-                    <h5 class="card-title">Q:為什麼天空是藍的？</h5>
-                    <p class="card-text card_A">A:因為光經水氣折射後，大部分藍光被散射，所以整個天空都呈現藍色。</p>
-                </div>
-            </div> -->
         </div>
         <div class="main_area">
 
