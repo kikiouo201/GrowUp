@@ -1,10 +1,12 @@
 
 
 //> ipc for renderer process
-let { ipcRenderer } = require('electron');
+let { ipcRenderer} = require('electron');
+let remote = require('electron').remote;
+let dialog = remote.dialog;
 const { text } = require('express');
 const messageSystem = document.getElementById('messageSystem')
-// const SSU = new SpeechSynthesisUtterance();
+const SSU = new SpeechSynthesisUtterance();
 let click_num = 0;
 
 //> voice button
@@ -46,7 +48,7 @@ if (voiceBtn) {
         const createQA = (text, text2) => `<div class="card text-white mb-3" style="background-color: #92337eba;">
                                         
                                             <div class="card-body" style="margin-top: 30px;">
-                                            <img class="collect_LeftTop" onclick="collect()" id="`+ CardID_Collect + `" src="icons/bookmark.png"/>
+                                            <img class="collect_LeftTop" onclick="collect(this)" id="`+ CardID_Collect + `" src="icons/bookmark.png"/>
                                                 <div style="float:left; display: block;">
                                                     <p class="card-title card_Q">Q:</p>
                                                     <p class="card-title card_Q" style="margin-left: 0px;">${text}</p>
@@ -67,18 +69,18 @@ if (voiceBtn) {
         //     `<h5 class="card-title">Q:${t1}</h5> <p class="card-text">A:${t2}</p>`                       
         // }
 
-        function collect() {
-            $(document).ready(function () {
-                $('.card-header').each(function (i) {
-                    $(this).attr('id', 'QA_num_' + click_num);
-                });
+        // function collect() {
+        //     $(document).ready(function () {
+        //         $('.card-header').each(function (i) {
+        //             $(this).attr('id', 'QA_num_' + click_num);
+        //         });
 
-                $(".collect_rightTop").click(function (value) {                                 //click事件
-                    $("#heart_collect").attr("src", "icons/heart.png");      //要更換的圖片位置
+        //         $(".collect_rightTop").click(function (value) {                                 //click事件
+        //             $("#heart_collect").attr("src", "icons/heart.png");      //要更換的圖片位置
 
-                });
-            });
-        }
+        //         });
+        //     });
+        // }
 
 
         const messages = document.querySelector('#messages');
@@ -107,11 +109,15 @@ if (voiceBtn) {
             // console.log("dataA="+data.a.toString())
             // console.log("test=A? =>"+document.getElementById('Answer01').textContent);
 
+            //傳伺服器
+            // ipcRenderer.send('AddQA-to-server');
+            // console.log('call Server Success');
 
             console.log("data=" + data)
             // status.value = '再問一次問題';
             SystemVal.innerHTML = '再問一次問題';
         });
+        
     });
 }
 
@@ -124,6 +130,8 @@ if (closeBtn) {
     });
 }
 
+
+//語音唸出來
 let voices = [];
 // const speaker_Q_btn = document.querySelector('.speaker_Q');
 
@@ -159,3 +167,16 @@ function toggle(startOver = true) {
 // }
 
 // console.log(callpy);
+
+let collection = document.getElementById('Collection')
+collection.addEventListener('click', (e) => {
+    console.log(dialog)
+    dialog.showMessageBox({message: "Hey:))", title: '測試'}, () =>{
+        console.log("OK")
+    })
+});
+// function collect(select){
+//     dialog.showMessageBox({message: "Hey:))", title: '測試'}, () =>{
+
+//     })
+// }

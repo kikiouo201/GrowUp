@@ -111,23 +111,23 @@
                 </div>
             </div>
 <script>
-    const SSU = new SpeechSynthesisUtterance();
+//     const SSU = new SpeechSynthesisUtterance();
     
-function speakerTest(index){
-    if (index) {
-        SSU.text = index.value;
-        index.addEventListener('click', toggle);
-        console.log("click =? " + index.parentNode.childNodes)
+// function speakerTest(index){
+//     if (index) {
+//         SSU.text = index.value;
+//         index.addEventListener('click', toggle);
+//         console.log("click =? " + index.parentNode.childNodes)
     
-    }
-}
+//     }
+// }
 
-function toggle(startOver = true) {
-    speechSynthesis.cancel();
-    if (startOver) {
-        speechSynthesis.speak(SSU);
-    }
-}
+// function toggle(startOver = true) {
+//     speechSynthesis.cancel();
+//     if (startOver) {
+//         speechSynthesis.speak(SSU);
+//     }
+// }
 </script>
             <!-- <div class="card text-white bg-dark mb-3">
                 <div class="card-header">#2</div>
