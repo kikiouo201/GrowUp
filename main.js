@@ -188,3 +188,67 @@ ipcMain.on('getApi-addQuiz',async (event, args)=>{
  });
 
 })
+
+
+ipcMain.on('getApi-option1',async (event, args)=>{
+  api.Question.addQuiz(5, (req) => {
+    // console.log("addQuiz=" + JSON.stringify(event));
+     const data = JSON.parse(JSON.stringify(req));
+     const contents = data.content;        
+    //  contents.forEach(content => {
+    //    content.choose = content.options2;
+    //  });
+    let text=JSON.stringify(contents);
+     console.log("contents=" + text);
+     event.sender.send('replyApi-option1',text);
+ });
+
+})
+
+
+ipcMain.on('getApi-option2',async (event, args)=>{
+  api.Question.addQuiz(5, (req) => {
+    // console.log("addQuiz=" + JSON.stringify(event));
+     const data = JSON.parse(JSON.stringify(req));
+     const contents = data.content;        
+    //  contents.forEach(content => {
+    //    content.choose = content.options2;
+    //  });
+    let text=JSON.stringify(contents);
+     console.log("contents=" + text);
+     event.sender.send('replyApi-option2',text);
+ });
+
+})
+
+
+ipcMain.on('getApi-option3',async (event, args)=>{
+  api.Question.addQuiz(5, (req) => {
+    // console.log("addQuiz=" + JSON.stringify(event));
+     const data = JSON.parse(JSON.stringify(req));
+     const contents = data.content;        
+    //  contents.forEach(content => {
+    //    content.choose = content.options2;
+    //  });
+    let text=JSON.stringify(contents);
+     console.log("contents=" + text);
+     event.sender.send('replyApi-option3',text);
+ });
+
+})
+
+
+ipcMain.on('getApi-option4',async (event, args)=>{
+  api.Question.addQuiz(5, (req) => {
+    // console.log("addQuiz=" + JSON.stringify(event));
+     const data = JSON.parse(JSON.stringify(req));
+     const contents = data.content;        
+    //  contents.forEach(content => {
+    //    content.choose = content.options2;
+    //  });
+    let text=JSON.stringify(contents);
+     console.log("contents=" + text);
+     event.sender.send('replyApi-option4',text);
+ });
+
+})
