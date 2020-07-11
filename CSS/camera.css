@@ -1,0 +1,225 @@
+body{
+  background-repeat:no-repeat;
+  background-size:100%; 
+  background-attachment:fixed;
+  margin-top: auto;
+}
+
+
+.imgSize{
+    position: absolute;
+    top: 30%;
+    left: 10%;
+}
+
+.head{
+    width: auto;
+    height: auto;
+    text-align:center;
+    background-color: #ffd306;
+}
+
+p{
+  font-size: 12pt;
+}
+.arrorw{
+    width: 50px;
+    height: 10px;
+}
+
+.translet{
+  position: relative;
+  left: 40%;
+  width: 75px;
+  height: 40px;
+  background-color: blue;
+  color: white;
+}
+
+.cambtn{
+  position: relative;
+  margin-top: 4%;
+  margin-left: 10%;
+  width: 100px;
+  height: 40px;
+  border-radius: 20%;
+  background-color:rgb(252, 103, 5) ;
+  color: white;
+  font-family: Microsoft JhengHei;
+}
+
+.colbtn{
+  position: relative;
+  text-align: center;
+  margin-top: 5%;
+  margin-left: 1%;
+  width: 100px;
+  height: 40px;
+  border-radius: 20%;
+  background-color: rgb(252, 103, 5);
+  color: white;
+  font-family: Microsoft JhengHei;
+}
+
+.capture{
+    position: absolute;
+    top: 40%;
+}
+
+
+
+img#AnsImg{
+  visibility: hidden;
+  position: absolute;
+  border-style: double;
+  padding: 5px;
+  border-width: 10px;
+  top: 26%;
+  left: 5%;
+}
+
+.resultbackground{
+  width: auto;
+  height: auto;
+  background-image: url("./photo/background.png");
+}
+
+.AnsTxt{
+  position: absolute;
+  top: 10%;
+  left: 25%;
+  color: white;
+  font-size: 54px;
+  font-weight:bold ;
+  font-family: Microsoft JhengHei;
+}
+.Ans{
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  color: white;
+  font-size: 36px;
+  font-weight:bold ;
+  font-family: Microsoft JhengHei;
+}
+
+#explain{
+  position: absolute;
+  top: 40%;
+  left: 10%;
+  color: white;
+  font-size: 36px;
+  font-weight:bold ;
+  font-family: Microsoft JhengHei;
+}
+
+#explainTxt{
+  position: absolute;
+  top: 35%;
+  left: 25%;
+  padding-right: 5%;
+  color: white;
+  font-size: 48px;
+  font-weight:bold ;
+  font-family: Microsoft JhengHei;
+}
+
+
+
+#capture{
+  position: absolute;
+  width: 125px;
+  height: 125px;
+  top:80%;
+  left:45%;
+  background-color: rgb(150, 212, 231);
+  font-family: Microsoft JhengHei;
+  border-radius: 50%;
+}
+
+
+.ansshow{
+  position: absolute;
+  top: 25%;
+  left: 30%;
+  width: 50%;
+  height: 45%;
+  background-color:  #92337eba;
+  border-color: rgb(241, 134, 114);
+  border: outset;
+  border-radius: 10%;
+  visibility: hidden;
+}
+
+#vocChk{
+  position: relative;
+  top: 5%;
+  left: 5%;
+  padding: 10px;
+  visibility: hidden;
+
+}
+
+#close{
+  position: absolute;
+  width: auto;
+  height: auto;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+ 
+}
+
+#fruitchk{
+  position: relative;
+  top: 8%;
+  left: 5%;
+  padding: 10px;
+  visibility: hidden;
+ 
+}
+
+.collection{
+  position: absolute;
+  width: 30px;
+  height: 30px; 
+  margin-left: 5%; 
+  margin-top: 4%;
+  cursor: pointer;
+}
+
+
+#collectionShow{ /*此行指定放置廣告的div */
+  width:20%; /*此行設定div的寬度*/
+  height:30%; /*此行設定div的高度*/ 
+  box-shadow:5px 5px 10px black; /*此行設定div的外框陰影*/
+  border:2px yellow solid; /*此行設定div的外框線條*/
+  border-radius:20px; /*此行設定div的外框圓角*/
+  position:fixed; /*此行設定div為不隨捲動而移動的模式*/
+  background-color: white;
+  top: 30%;
+  left: 40%;
+  visibility: hidden;
+  
+  }
+
+
+  .black_overlay {
+    visibility: hidden;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    -moz-opacity: 0.8;
+    opacity: .80;
+    filter: alpha(opacity=80);
+  }
+
+  input[type="checkbox"] + label span {
+    display:inline-block;
+    width:19px;
+    height:19px;
+    background:url(check_radio_sheet.png) left top no-repeat;
+}
