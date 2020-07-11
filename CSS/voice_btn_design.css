@@ -104,7 +104,7 @@
 /* top card region */
 .QA_card_area {
     width: auto;
-    margin:0px 90px 60px 90px;
+    margin:0px 20% 60px 20%;
     padding-top: 80px;
     text-align:center;
 }

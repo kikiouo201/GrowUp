@@ -49,13 +49,14 @@ if (voiceBtn) {
                                         
                                             <div class="card-body" style="margin-top: 30px;">
                                             <img class="collect_LeftTop" onclick="collect(this)" id="`+ CardID_Collect + `" src="icons/bookmark.png"/>
-                                                <div style="float:left; display: block;">
-                                                    <p class="card-title card_Q">Q:</p>
+                                                <div style="float:left; display: block; text-align: left;">
+                                                    <p class="card-title card_Q">Ｑ：</p>
                                                     <p class="card-title card_Q" style="margin-left: 0px;">${text}</p>
                                                     <img class="speaker_Q" onclick="speaker(this)" id="`+ CardID_Q + `" src="icons/speaker.png" onclick=speakerTest(this)>
                                                 </div>
-                                                <div style="float:left; display: block;">
-                                                    <p class="card-text card_A" style="float: left;">A:</p>
+                                                <br><br>
+                                                <div style="float:left; display: block; text-align: left;">
+                                                    <p class="card-text card_A" style="float: left;">Ａ：</p>
                                                     <p class="card-text card_A" style="margin-left: 0px;">${text2}</p>
                                                     <img class="speaker_A" onclick="speaker(this)" id="`+ CardID_A + `" src="icons/speaker.png" />
                                                 </div>
