@@ -1,54 +1,55 @@
 .homefloat{
-    position:fixed;
-    width:60px;
-    height:60px;
-    bottom:10px;
-    right:8px;
-    background-color:rgb(211, 211, 211);
-    color:#FFF;
-    border-radius:999em;
-    text-align:center;
-    z-index:1000;
-    animation: lef-to-rig 2s ease-out;
-    margin-top:6px;
-    transition: All 0.4s ease-in-out;
-    -webkit-transition: All 0.4s ease-in-out;
-    -moz-transition: All 0.4s ease-in-out;
-    -o-transition: All 0.4s ease-in-out;
-  }
-  .homefloat:hover {
-    transform: rotate(360deg);
-    -webkit-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-  }
-  
-  .returnfloat{
-    position:fixed;
-    width:60px;
-    height: 60px;
-    bottom:10px;
-    right: 80px;
-    background-color:rgb(211, 211, 211);
-    color:#FFF;
-    border-radius:999em;
-    text-align:center;
-    z-index:1000;
-    animation: lef-to-rig 2s ease-out;
-    transition: All 0.4s ease-in-out;
-    -webkit-transition: All 0.4s ease-in-out;
-    -moz-transition: All 0.4s ease-in-out;
-    -o-transition: All 0.4s ease-in-out;
-  }
-  .returnfloat:hover {
-    transform: rotate(360deg);
-    -webkit-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-  }
-  .sosfloat{
+  position:fixed;
+  width:60px;
+  height:60px;
+  bottom:10px;
+  right:8px;
+  background-color:rgb(211, 211, 211);
+  color:#FFF;
+  border-radius:999em;
+  text-align:center;
+  z-index:1000;
+  animation: lef-to-rig 2s ease-out;
+  margin-top:6px;
+  transition: All 0.4s ease-in-out;
+  -webkit-transition: All 0.4s ease-in-out;
+  -moz-transition: All 0.4s ease-in-out;
+  -o-transition: All 0.4s ease-in-out;
+}
+.homefloat:hover {
+  transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+}
+
+.returnfloat{
+  position:fixed;
+  width:60px;
+  height: 60px;
+  bottom:10px;
+  right: 80px;
+  background-color:rgb(211, 211, 211);
+  color:#FFF;
+  border-radius:999em;
+  text-align:center;
+  z-index:1000;
+  animation: lef-to-rig 2s ease-out;
+  transition: All 0.4s ease-in-out;
+  -webkit-transition: All 0.4s ease-in-out;
+  -moz-transition: All 0.4s ease-in-out;
+  -o-transition: All 0.4s ease-in-out;
+}
+.returnfloat:hover {
+  transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+}
+
+.sosfloat{
     position:fixed;
     width:60px;
     height:60px;
@@ -73,3 +74,95 @@
     -o-transform: rotate(360deg);
     -ms-transform: rotate(360deg);
   }
+
+  .fab {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+ 
+  .return-float{
+    margin-top:14px;
+  }
+  .my-float{
+    text-align: center;
+    font-size:24px;
+    margin-top:10px;
+  }
+  
+  .fabs {
+    position: fixed;
+    bottom:10px;
+    left:80px;
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .action {
+    background:rgb(211, 211, 211);
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    transition: All 0.4s ease-in-out;
+    -webkit-transition: All 0.4s ease-in-out;
+    -moz-transition: All 0.4s ease-in-out;
+    -o-transition: All 0.4s ease-in-out;
+  }
+  
+  .action i {
+    position: absolute;
+    left: 48%;
+    top: 52%;
+    transform: translate(-50%, -50%);
+    font-size: 25px;
+    cursor: pointer;
+  }
+  
+  .action:hover {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+  }
+  
+  .btn {
+    position: absolute;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    background: rgb(211, 211, 211);
+  }
+  
+  .btn i {
+    position: absolute;
+    font-size: 18px;
+    color: white;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .btns {
+    position: absolute;
+    bottom: -0.5px;
+    margin-bottom: 1px;
+    height: 60px;
+    width: 60px;
+    transition: 0.3s ease-in-out;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+    
+  }
+  .btns.open {
+    bottom: 62px;
+  }
+ 

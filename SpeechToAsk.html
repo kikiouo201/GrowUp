@@ -16,6 +16,7 @@
     <link href="CSS/voice_btn_design.css" type="text/css" rel="stylesheet">
     <link href="CSS/dialog-region.css" type="text/css" rel="stylesheet">
     <link href="CSS/collect.css" type="text/css" rel="stylesheet">
+    <link href="CSS/link.css" type="text/css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
@@ -31,19 +32,21 @@
 
         <div class="QA_card_area" id="QA_card">
             <div class="card text-white  mb-3" style="background-color: #92337eba;">
-                <!-- <div class="card-header" id="QA_num_">#${QAnum}</div> -->
+                
                 <div class="card-body" style="margin-top: 30px;">
                     <img class="collect_rightTop" onclick="collect()" id="heart_collect" src="icons/bookmark.png"/>
-                        <div style="float:left; display: block;">
-                            <p class="card-title card_Q">Q:</p>
+                        <div style="float:left; display: block; text-align: left;">
+                            <p class="card-title card_Q">Ｑ：</p>
                             <p class="card-title card_Q" style="margin-left: 0px;">蘋果是什麼</p>
                             <img class="speaker_Q" id="speaker_Q_" src="icons/speaker.png">
                         </div>
-                        <div style="float:left; display: block;">
-                            <p class="card-text card_A" style="float: left;">A:</p>
+                        <br><br>
+                        <div style="float:left; display: block; text-align: left;">
+                            <p class="card-text card_A" style="float: left;">Ａ：</p>
                             <p class="card-text card_A" style="margin-left: 0px;">一種可食用果實，有大量的維他命C，俗語說：「一天一蘋果，醫生遠離我」。</p>
                             <img class="speaker_A" id="speaker_A" src="icons/speaker.png" />
                         </div>
+                        
                     <script>
                         
                         function collect() {
@@ -56,26 +59,19 @@
                             //         $("#heart_collect").attr("src", "icons/heart.png");      //要更換的圖片位置
                             //     });
                             // });
-
-                            $(document).ready(function () {
-                                $('.card-header').each(function(i) { 
-                                    $(".collect_rightTop").click(function () {                                 //click事件
-                                        $("#heart_collect").attr("src", "icons/heart.png");      //要更換的圖片位置
-                                        $(this).attr('id', 'QA_num_'+(i+1)); 
-                                    });
-                                });
-                            });
                         }
-                        // const heart_collect = document.getElementById('heart_collect')
-                        // if (heart_collect.title == "加入收藏") {
-                        //     heart_collect.src = "icons/heart.png"
-                        //     heart_collect.title = "取消收藏"
-                        // } else {
-                        //     heart_collect.src = "icons/heart_empty.png"
-                        //     heart_collect.title = "加入收藏"
-                        // }
                     </script>
                 </div>
+                <div class="card-header contentCss" id="QA_num_" style="background-color: #f8f9fa24;">
+                    <p class="contentlink">相關繪本連結：</p>
+                    <p class="book_css">蘋果甜蜜蜜</p>
+                    <img src="https://children.moc.gov.tw/resource/animate_image/6892.jpg" style="margin-left: 20px; display: inline;" width="180" height="153" alt="蘋果甜蜜蜜">
+                    <p style="display: inline; margin-left: 20px; margin-top: 40px; position: absolute; margin-right: 40px;">嫁接的蜜蘋果要先習慣這塊土地，接受泥土的養分之後，才能慢慢慢慢的發芽開花。在這塊土地上接受多元文化洗禮、共同生活的人，不也像蜜蘋果一樣嗎？願藉此，獻上我們最深的祝福！</p>
+                </div>
+                <div class="card-header" id="QA_num_">
+                    <p class="contentlink">相關連結解釋：</p>
+                </div>
+
             </div>
 
 
@@ -84,12 +80,12 @@
                 <div class="card-body" style="margin-top: 30px;">
                     <img class="collect_rightTop" onclick="collect()" id="Collection" src="icons/bookmark.png"
                         title="" />
-                    <div>
-                        <h5 class="card-title card_Q" style="float: left;text-align:left ; display: inline;">Q:草莓是什麼</h5>
+                    <div style="float:left; display: block; text-align: left;">
+                        <h5 class="card-title card_Q" style="text-align:left ; display: inline;">Q:草莓是什麼</h5>
                         <img class="speaker_Q" onclick="speakerTest(this)" id="speaker_Q_" src="icons/speaker.png" />
                     </div>
-                    <div>
-                        <p class="card-text card_A" style="float:left ; display: inline;">
+                    <div style="float:left; display: block; text-align: left;">
+                        <p class="card-text card_A" style="text-align:left; display: inline;">
                             A:草莓是多年生草本植物，果實略呈心形，鮮紅多汁，質地柔軟，氣味芳香。</p>
                         <!-- <img class="speaker_A" id="speaker_A" src="icons/speaker.png" /> -->
                     </div>
@@ -101,12 +97,12 @@
                 <div class="card-body" style="margin-top: 30px;">
                     <img class="collect_rightTop" onclick="changecss()" id="heart_collect" src="icons/bookmark.png"
                         title="" />
-                    <div>
-                        <h5 class="card-title card_Q" style="float: left;text-align:left ; display: inline;">Q:莓是什麼</h5>
+                    <div style="float:left; display: block; text-align: left;">
+                        <h5 class="card-title card_Q" style="text-align:left ; display: inline;">Q:莓是什麼</h5>
                         <img class="speaker_Q" onclick="speakerTest(this)" id="speaker_Q_" src="icons/speaker.png" />
                     </div>
-                    <div>
-                        <p class="card-text card_A" style="float:left ; display: inline;">
+                    <div style="float:left; display: block; text-align: left;">
+                        <p class="card-text card_A" style="text-align:left ; display: inline;">
                             A:草莓是多年生草本植物，果實略呈心形，鮮紅多汁，質地柔軟，氣味芳香。</p>
                         <!-- <img class="speaker_A" id="speaker_A" src="icons/speaker.png" /> -->
                     </div>

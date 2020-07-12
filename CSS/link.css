@@ -1,0 +1,18 @@
+.contentlink {
+    text-align: left;
+}
+
+.book_css {
+    color: #AD552F;
+    font-weight: bold;
+    text-shadow: 2px 2px #EDA95F;
+    /* margin: -10px 0 0 25px; */
+    font-size: 2.5em;
+}
+
+.contentCss {
+    text-align: left;
+    
+    border-top :1px solid rgba(0, 0, 0, 0.19);;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.19);
+}
