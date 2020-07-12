@@ -48,7 +48,7 @@ if (voiceBtn) {
         const createQA = (text, text2) => `<div class="card text-white mb-3" style="background-color: #92337eba;">
                                         
                                             <div class="card-body" style="margin-top: 30px;">
-                                            <img class="collect_LeftTop" onclick="collect(this)" id="`+ CardID_Collect + `" src="icons/bookmark.png"/>
+                                            <img class="collect_LeftTop" onclick="changecss()" id="`+ CardID_Collect + `" src="icons/bookmark.png"/>
                                                 <div style="float:left; display: block; text-align: left;">
                                                     <p class="card-title card_Q">Ｑ：</p>
                                                     <p class="card-title card_Q" style="margin-left: 0px;">${text}</p>
