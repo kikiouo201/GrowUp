@@ -9,6 +9,8 @@
     <link href="CSS/STT.css" type="text/css" rel="stylesheet">
     <link href="CSS/voice_btn_design.css" type="text/css" rel="stylesheet">
     <link href="CSS/dialog-region.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/icon.css">
+    <link rel="stylesheet" href="CSS/interface.css">
     <script src="https://apis.google.com/js/client.js"></script>
     <script type="text/javascript" src="jquery.js"></script>
    
@@ -18,11 +20,29 @@
     
       
       <div class="head">
-        <div class="arrorw">
-          <a href="test1.html"><input type="image" src="./photo/multimedia-option.png"></a>
-        </div>  
-        <a href="test1.html"><img src="./icons/title.png" style="width: 350px; height: 40px;" ></a>
-      </div>
+        <a>你拍我答</a>
+        <body onload="ShowTime()">
+          <div id="today"></div>
+          <br>
+          <div id="showtime"></div>
+          </body>
+          <script language="JavaScript">
+      
+            function ShowTime(){
+          
+              var fullDate = new Date();
+          var yyyy = fullDate.getFullYear();
+          var MM = (fullDate.getMonth() + 1) >= 10 ? (fullDate.getMonth() + 1) : ("0" + (fullDate.getMonth() + 1));
+          var dd = fullDate.getDate() < 10 ? ("0"+fullDate.getDate()) : fullDate.getDate();
+          document.getElementById('today').innerHTML = yyyy + "/" + MM + "/" + dd;
+          
+            　var NowDate=new Date();
+            　var h=NowDate.getHours();
+            　var m=NowDate.getMinutes();
+            　document.getElementById('showtime').innerHTML = h+':'+m;
+            　setTimeout('ShowTime()',1000);
+            }
+            </script>
 
       <div >
         <img id="AnsImg" src="./still-image.jpg" style="width: 300px; height: 300px; ">
@@ -61,7 +81,58 @@
         <input id="vocChk"  type="checkbox" value="預設單字本"><label style="padding: 20px;">預設單字本</label><br>
         <input id="fruitchk" type="checkbox" value="水果本"><label style="padding: 20px;">水果本</label>
       </div>
-      
+      <div>
+        <a href="" class="sosfloat" id="menu-share">
+          <i class="fab fa-share my-float"><img src="photo/help.png" width="70%"></i>
+          </a>
+      </div>
+        <div class="fabs" onclick="toggleBtn()">
+          <div class="action">
+            <i class="fas" id="add"><img src="photo/settings.png" width="110%"></i>
+            <i class="fas" id="remove" style="display: none"><img src="photo/settings.png" width="110%"></i>
+          </div>
+    
+          <div class="btns">
+            <a href="personalprofile.html" class="btn"><i class="fab "><img src="photo/user.png" title="個人簡介" width="95%"></i></a>
+            <a href="history.html" class="btn"><i class="fab "><img src="photo/record.png" title="歷史紀錄" width="95%"></i></a>
+            <a href="#" class="btn"><i class="fab "><img src="photo/analysis.png" title="學習歷程" width="95%"></i></a>
+          </div>
+      <div>
+        <a href="test1.html" class="returnfloat" id="menu-share">
+          <i class="fab fa-share return-float"><img src="photo/return.png" ></i>
+          </a>
+      </div>
+      <div>
+        <a href="test1.html" class="homefloat" id="menu-share">
+          <i class="fab fa-share my-float"><img src="photo/gobackhome.png" width="70%"></i>
+          </a>
+      </div>
+      <script>
+        function toggleBtn() {
+       const Btns = document.querySelector(".btns");
+       const add = document.getElementById("add");
+       const remove = document.getElementById("remove");
+       const btn = document.querySelector(".btns").querySelectorAll("a");
+       Btns.classList.toggle("open");
+       if (Btns.classList.contains("open")) {
+         remove.style.display = "block";
+         add.style.display = "none";
+         btn.forEach((e, i) => {
+           setTimeout(() => {
+             bottom = 65 * i;
+             e.style.bottom = bottom + "px";
+             console.log(e);
+           }, 100 * i);
+         });
+       } else {
+         add.style.display = "block";
+         remove.style.display = "none";
+         btn.forEach((e, i) => {
+           e.style.bottom = "0px";
+         });
+       }
+     }
+     </script>
       <script>
         function changecss(){
           var ShowVisibility = document.querySelector('.ansshow');

@@ -4,16 +4,40 @@
     <meta charset="UTF-8">
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
     <title>grow up children</title>
-    <link href="./collect.css" type="text/css" rel="stylesheet">
+    <link href="./CSS/collect.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="./CSS/icon.css">
+    <link rel="stylesheet" href="./CSS/interface.css">
     <script src="https://code.jquery.com/jquery-latest.js"></script>
   
   </head>
 
- 
-  <body class="style" background="photo/background.png" > 
+  <body class="style" background="photo/background.png" onload="ShowTime()" > 
+
     <div class="head">
-      <a href="test1.html">測驗1</a>
+      <a>測驗1</a>
+      <div id="today"></div>
+          <br>
+      <div id="showtime"></div>
     </div>
+    
+        <script language="JavaScript">
+    
+          function ShowTime(){
+        
+            var fullDate = new Date();
+        var yyyy = fullDate.getFullYear();
+        var MM = (fullDate.getMonth() + 1) >= 10 ? (fullDate.getMonth() + 1) : ("0" + (fullDate.getMonth() + 1));
+        var dd = fullDate.getDate() < 10 ? ("0"+fullDate.getDate()) : fullDate.getDate();
+        document.getElementById('today').innerHTML = yyyy + "/" + MM + "/" + dd;
+        
+          　var NowDate=new Date();
+          　var h=NowDate.getHours();
+          　var m=NowDate.getMinutes();
+          　document.getElementById('showtime').innerHTML = h+':'+m;
+          　setTimeout('ShowTime()',1000);
+          }
+          </script>
+
     <br><br>
     <div>
         <button id="startTest" class="startTest">開始測驗</button>
@@ -22,16 +46,31 @@
         <button id="option2" class="option2" value=""></button>
         <button id="option3" class="option3" value=""></button>
         <button id="option4" class="option4" value=""></button>
-    </div>
+    </div> 
     <div>
       <button id="endTest" class="endTest">提交</button>
-      <button id="nextQ" class="nextQ">下一題</button>
       <a href="test1.html"><button class="button14" onclick="myFunction()">離開</button>
         <div>
           <a href="" class="sosfloat" id="menu-share">
             <i class="fab fa-share my-float"><img src="photo/help.png" width="70%"></i>
             </a>
         </div>
+        <div>
+          <a href="" class="sosfloat" id="menu-share">
+            <i class="fab fa-share my-float"><img src="photo/help.png" width="70%"></i>
+            </a>
+        </div>
+        <div>
+          <a href="test1.html" class="returnfloat" id="menu-share">
+            <i class="fab fa-share return-float"><img src="photo/return.png" ></i>
+            </a>
+        </div>
+        <div>
+          <a href="test1.html" class="homefloat" id="menu-share">
+            <i class="fab fa-share my-float"><img src="photo/gobackhome.png" width="70%"></i>
+            </a>
+        </div>
+       
         <script>
           function myFunction() {
             confirm("確定離開嗎?");

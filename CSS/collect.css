@@ -1,58 +1,416 @@
-.black_overlay {
-    visibility: hidden;
+.style{
+  background-repeat:no-repeat;
+  background-size:100%; 
+  background-attachment:fixed;
+  margin-top: auto;
+}
+.head{
+  width: auto;
+  height: 40px;
+  background-color: #ffb906cf;
+  text-align: center;
+  opacity: .7;
+}
+.arrow{
+  width: 50px;
+  height: 10px;
+}
+#collection{
+  position:fixed;
+  top:10%;
+  width: 5%;
+  padding-left: 4%;
+}
+.button7{
     position: absolute;
-    top: 0%;
-    left: 0%;
-    width: 100%;
-    height: 100%;
-    background-color: black;
-    -moz-opacity: 0.8;
-    opacity: .80;
-    filter: alpha(opacity=80);
-    z-index: 101;    /*100是看得到語音*/
+    margin-top:5%;
+    margin-left: 2%;
+    border-radius: 30px;
+    width:45%;
+    height:73%;
   }
-
-
-
-#showCollect{ /*此行指定放置廣告的div */
-    width:50%; /*此行設定div的寬度*/
-    height:30%; /*此行設定div的高度*/ 
-    box-shadow:5px 5px 10px black; /*此行設定div的外框陰影*/
-    border:5px #ffdf52d2 solid; /*此行設定div的外框線條*/
-    border-radius:20px; /*此行設定div的外框圓角*/
-    position:fixed; /*此行設定div為不隨捲動而移動的模式*/
-    background-color: white;
-    top: 30%;
-    left: 25%;
-    right: 25%;
-    padding: 15px;
-    visibility: hidden;
-    z-index: 101;   
+  .button7:hover{
+    background-color:white ;
+    opacity: .7;
+    display:inline-block;
+  }
+  .button8{
+    position: absolute;
+    margin-top: 5%;
+    margin-left: 52%;
+    border-radius: 30px;
+    width: 45%;
+    height: 73%;
+  }
+  .button8:hover{
+    background-color:white ;
+    opacity: .7;
+    display:inline-block;
+  }
+.picture{
+  width: 3px;
+  height: 3px;
+  text-align: center;
+}
+.vocatable{
+  width:500px;
+  border-color:	#CD853F;
+  box-align:center;
+}
+.block{
+  position: absolute;
+  margin-top:4%;
+  margin-left: 2%;
+  border-radius: 35px;
+  width:70%;
+  height:140px;
+}
+.choose{
+position: absolute;
+margin-top: auto;
+width: 10px;
 }
 
-#close{
-    position: absolute;
-    width: auto;
-    height: auto;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
+
+.startTest{
+  position: absolute;
+  top: 40%;
+  left: 35%;
+  width: 30%;
+  height: 15%;
+  visibility: visible;
 }
 
-#yoKnowledgeChk{
-    position: relative;
-    top: 5%;
-    left: 5%;
-    padding: 10px;
-    visibility: hidden;
-    padding-left: 10px;
-  }
+.option1
+{
+position: absolute;
+right: 28%;
+width: 25%;
+height: 35%;
+border-radius: 20px;
+-webkit-border-radius: 20px;
+-moz-border-radius: 20px;
+background-color: white;
+visibility: hidden;
+font-size: 48px;
+}
 
-#fruitKnowledgeChk{
-    position: relative;
-    top: 8%;
-    left: 5%;
-    padding: 10px;
-    visibility: hidden;
-    padding-left: 10px;
-  }
+
+
+.option2
+{
+position: absolute;
+right:2%;
+width: 25%;
+height: 35%;
+border-radius: 20px;
+-webkit-border-radius: 20px;
+-moz-border-radius: 20px;
+background-color: white;
+size: 25%;
+font-size: 48px;
+visibility: hidden
+}
+
+
+.option3
+{
+position: absolute;
+top: 49%;
+right:28%;
+width: 25%;
+height: 35%;
+border-radius: 20px;
+-webkit-border-radius: 20px;
+-moz-border-radius: 20px;
+background-color: white;
+size: 25%;
+font-size: 48px;
+visibility: hidden
+}
+
+
+.option4
+{
+position: absolute;
+top: 49%;
+right:2%;
+width: 25%;
+height: 35%;
+border-radius: 20px;
+-webkit-border-radius: 20px;
+-moz-border-radius: 20px;
+background-color: white;
+size: 25%;
+font-size: 48px;
+visibility: hidden
+}
+
+
+.endTest
+{
+  position: absolute;
+  bottom: 9%;
+  right:2%;
+  width: 10%;
+  height: 5%;
+  border-radius: 20px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 20px;
+  size: 25%;
+   visibility: hidden;
+}
+.button14
+{
+position: absolute;
+bottom: 9%;
+right:15%;
+width: 10%;
+height: 5%;
+border-radius: 20px;
+-webkit-border-radius: 10px;
+-moz-border-radius: 20px;
+size: 25%;
+}
+
+
+      
+
+
+#picture{
+  position: absolute;
+  top: 25%;
+  left: 30%;
+}
+
+#word{
+  position: absolute;
+  font-size: 40px;
+  top: 1%;
+  left: 52%;
+}
+
+#voice{
+  position: absolute;
+  top: 65%;
+  left: 55%;
+}
+
+#voice2{
+  position: absolute;
+  top: 75%;
+  left: 18%;
+}
+
+#ansvoice{
+  position: fixed;
+  top:50%;
+  left: 4%;
+}
+
+#vocavoice{
+  position: absolute;
+  top: 40%;
+  left: 55%;
+}
+
+#heart{
+  position: absolute;
+  top: 5%;
+  left: 1%;
+}
+
+#backword{
+  position: absolute;
+  left: 35%;
+  text-align: center;
+  font-size: 30px;
+
+}
+
+#time{
+  position: absolute;
+  top: 78%;
+  left: 1%;
+  text-align: center;
+  font-size: 12px;
+}
+
+
+#answord{
+  position: absolute;
+  font-size: 40px;
+  top: 13%;
+  left: 25%;
+}
+
+#ansbackword{
+  position: absolute;
+  left: 20%;
+  text-align: center;
+  font-size: 30px;
+  top:25%;
+}
+
+#select1{
+  position: absolute;
+  left: 20%;
+  text-align: center;
+  font-size: 30px;
+  top:50%;
+}
+
+#select2{
+  position: absolute;
+  left: 40%;
+  text-align: center;
+  font-size: 30px;
+  top:50%;
+}
+
+.start{
+  position: absolute;
+  left: 60%;
+  text-align: center;
+  top:50%;
+}
+
+body{
+	font-family:Verdana, Geneva, sans-serif;
+	background-color:#CCC;
+	font-size:12px;
+}
+
+.label-container{
+	position:fixed;
+	bottom:48px;
+	right:105px;
+	display:table;
+	visibility: hidden;
+}
+
+.label-text{
+	color:#FFF;
+	background:rgba(51,51,51,0.5);
+	display:table-cell;
+	vertical-align:middle;
+	padding:10px;
+	border-radius:3px;
+}
+
+.label-arrow{
+	display:table-cell;
+	vertical-align:middle;
+	color:#333;
+	opacity:0.5;
+}
+
+.float{
+  position:fixed;
+  width:40px;
+  height:40px;
+  bottom:10px;
+  left:50px;
+  background-color:rgb(155, 154, 154);
+  color:#FFF;
+  border-radius:50px;
+  text-align:center;
+  z-index:1000;
+  animation: lef-to-rig 2s ease-out;
+}
+
+.sosfloat{
+  position:fixed;
+  width:40px;
+  height:40px;
+  bottom:10px;
+  left:8px;
+  background-color:rgb(155, 154, 154);
+  color:#FFF;
+  border-radius:50px;
+  text-align:center;
+  z-index:1000;
+  animation: lef-to-rig 2s ease-out;
+  margin-top:6px;
+}
+
+ul{
+  position:fixed;
+  left:10px;
+  padding-bottom:20px;
+  bottom:10px;
+  z-index:100;
+}
+
+ul li{
+  list-style:none;
+  margin-bottom:10px;
+}
+
+ul li a{
+  background-color:rgb(155, 154, 154);
+  color:black;
+  border-radius:50px;
+  text-align: center;
+  width:40px;
+  height:40px;
+  display:block;
+  margin-top:4px;
+}
+
+ul:hover{
+  visibility:visible!important;
+  opacity:1!important;
+}
+
+.fab {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.my-float{
+  text-align: center;
+  font-size:24px;
+  margin-top:8px;
+}
+
+a#menu-share + ul{
+  visibility: hidden;
+}
+
+a#menu-share:hover + ul{
+  visibility: visible;
+  animation: scale-in 0.5s;
+}
+
+a#menu-share i{
+  animation: rotate-in 0.5s;
+}
+
+a#menu-share:hover > i{
+  animation: rotate-out 0.5s;
+}
+
+@keyframes lef-to-rig {
+    0%   {left:-20px}
+    50%  {left:20px}
+}
+
+@keyframes scale-in {
+    from {transform: scale(0);opacity: 0;}
+    to {transform: scale(1);opacity: 1;}
+}
+
+@keyframes rotate-in {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
+
+@keyframes rotate-out {
+    from {transform: rotate(360deg);}
+    to {transform: rotate(0deg);}
+}
