@@ -8,7 +8,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^8.2.4"
+    "electron": "^8.2.4",
+    "prettier": "2.0.5"
   },
   "dependencies": {
     "@google-cloud/translate": "^6.0.1",
