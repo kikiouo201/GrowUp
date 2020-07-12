@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-
+    <link rel="stylesheet" href="CSS/icon.css">
+    <link rel="stylesheet" href="CSS/interface.css">
     <link href="./collect.css" type="text/css" rel="stylesheet">
     <title>grow up children</title>
     
@@ -13,14 +14,36 @@
         <div class="arrow">
           <a href="test1.html"><img type="image" src="photo/return.png"></a>
           </div>
-        <a href="test1.html">歷史紀錄</a>
+        <a>歷史紀錄</a>
+        <body onload="ShowTime()">
+          <div id="today"></div>
+          <br>
+          <div id="showtime"></div>
+          </body>
       </div>
+      <script language="JavaScript">
+      
+        function ShowTime(){
+      
+          var fullDate = new Date();
+      var yyyy = fullDate.getFullYear();
+      var MM = (fullDate.getMonth() + 1) >= 10 ? (fullDate.getMonth() + 1) : ("0" + (fullDate.getMonth() + 1));
+      var dd = fullDate.getDate() < 10 ? ("0"+fullDate.getDate()) : fullDate.getDate();
+      document.getElementById('today').innerHTML = yyyy + "/" + MM + "/" + dd;
+      
+        　var NowDate=new Date();
+        　var h=NowDate.getHours();
+        　var m=NowDate.getMinutes();
+        　document.getElementById('showtime').innerHTML = h+':'+m;
+        　setTimeout('ShowTime()',1000);
+        }
+        </script>
       <br><br> 
       
       <div class="scene scene--card" >
         <div>
           <img src="photo/heart.png" id="collection" onclick="collection()">
-          <img src="photo/sound.png" width="5%" onclick="" id="ansvoice">
+          <img src="icons/speaker.png" width="5%" onclick="" id="ansvoice">
           <p id="time" style="height: 50px;">2020/05/16<br>20:00</p>
         </div>
         <div class="card">
@@ -37,7 +60,7 @@
       <div class="scene scene--card" >
         <div>
           <img src="photo/heart.png" id="collection" onclick="collection()">
-          <img src="photo/sound.png" width="5%" onclick="" id="ansvoice">
+          <img src="icons/speaker.png" width="5%" onclick="" id="ansvoice">
           <p id="time" style="height: 50px;">2020/05/16<br>19:00</p>
         </div>
         <div class="card">
@@ -55,7 +78,7 @@
       <div class="scene scene--card" >
         <div>
           <img src="photo/heart.png" id="collection" onclick="collection()">
-          <img src="photo/sound.png" width="5%" onclick="" id="ansvoice">
+          <img src="icons/speaker.png" width="5%" onclick="" id="ansvoice">
           <p id="time" style="height: 50px;">2020/05/16<br>16:00</p>
         </div>
         <div class="card">
@@ -69,26 +92,58 @@
           </div>
         </div>
       </div>
-    <a href="" class="sosfloat" id="menu-share">
-      <i class="fab fa-share my-float"><img src="photo/help.png" width="70%"></i>
-      </a>
-  </div>
-  <div>
-    <a class="float" id="menu-share">
-      <i class="fab fa-share my-float"><img src="photo/settings.png" width="70%"></i>
-      </a>
-      <ul>
-      <li><a href="#">
-      <i class="fab-buttons  fab-buttons-right my-float"><img src="photo/analysis.png" title="學習歷程" width="55%"></i>
-      </a></li>
-      <li><a href="history.html">
-      <i class="fab-buttons  fab-buttons-right my-float"><img src="photo/record.png" title="歷史紀錄" width="55%"></i>
-      </a></li>
-      <li><a href="#">
-      <i class="fab-buttons  fab-buttons-right my-float"><img src="photo/question.png" title="個人簡介" width="55%"></i>
-      </a></li>
-      </ul>
-  </div>
+      <div>
+        <a href="" class="sosfloat" id="menu-share">
+          <i class="fab fa-share my-float"><img src="photo/help.png" width="70%"></i>
+          </a>
+      </div>
+        <div class="fabs" onclick="toggleBtn()">
+          <div class="action">
+            <i class="fas" id="add"><img src="photo/settings.png" width="110%"></i>
+            <i class="fas" id="remove" style="display: none"><img src="photo/settings.png" width="110%"></i>
+          </div>
+    
+          <div class="btns">
+            <a href="personalprofile.html" class="btn"><i class="fab "><img src="photo/user.png" title="個人簡介" width="95%"></i></a>
+            <a href="history.html" class="btn"><i class="fab "><img src="photo/record.png" title="歷史紀錄" width="95%"></i></a>
+            <a href="#" class="btn"><i class="fab "><img src="photo/analysis.png" title="學習歷程" width="95%"></i></a>
+          </div>
+      <div>
+        <a href="" class="returnfloat" id="menu-share">
+          <i class="fab fa-share return-float"><img src="photo/return.png" ></i>
+          </a>
+      </div>
+      <div>
+        <a href="test1.html" class="homefloat" id="menu-share">
+          <i class="fab fa-share my-float"><img src="photo/gobackhome.png" width="70%"></i>
+          </a>
+      </div>
+      <script>
+        function toggleBtn() {
+       const Btns = document.querySelector(".btns");
+       const add = document.getElementById("add");
+       const remove = document.getElementById("remove");
+       const btn = document.querySelector(".btns").querySelectorAll("a");
+       Btns.classList.toggle("open");
+       if (Btns.classList.contains("open")) {
+         remove.style.display = "block";
+         add.style.display = "none";
+         btn.forEach((e, i) => {
+           setTimeout(() => {
+             bottom = 65 * i;
+             e.style.bottom = bottom + "px";
+             console.log(e);
+           }, 100 * i);
+         });
+       } else {
+         add.style.display = "block";
+         remove.style.display = "none";
+         btn.forEach((e, i) => {
+           e.style.bottom = "0px";
+         });
+       }
+     }
+     </script>
   <script>
     function collection(){
       var str = document.getElementById('collection').src;
