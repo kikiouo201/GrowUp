@@ -56,13 +56,32 @@ if (voiceBtn) {
                                                 </div>
                                                 <br><br>
                                                 <div style="float:left; display: block; text-align: left;">
-                                                    <p class="card-text card_A" style="float: left;">Ａ：</p>
-                                                    <p class="card-text card_A" style="margin-left: 0px;">${text2}</p>
+                                                    <p class="card-text card_A" style="float: left; ">Ａ：</p>
+                                                    <p class="card-text card_A" style="margin-left: 0px; margin-bottom: 60px;">一種可食用果實，有大量的維他命C，俗語說：「一天一蘋果，醫生遠離我」。</p>
                                                     <img class="speaker_A" onclick="speaker(this)" id="`+ CardID_A + `" src="icons/speaker.png" />
                                                 </div>
                                             </div>
+                                            <div class="card-header contentCss" id="QA_num_" style="background-color: #f8f9fa24;">
+                                                <p class="contentlink">相關繪本連結：</p>
+                                                <div>
+                                                    <p class="book_css">環遊世界做蘋果派</p>
+                                                    <img src="https://children.moc.gov.tw/resource/animate_image/6850.jpg" style="margin-left: 20px; display: inline;" width="180" height="153" alt="蘋果甜蜜蜜">
+                                                    <p style="display: inline; margin-left: 20px; margin-top: 40px; position: absolute; margin-right: 40px;">要怎樣認識「國家」呢？每一個國家總有不同的、具代表性的文物、景物、建築或美食，在環遊世界一周後，可以帶回的東西，會是不同的明信片、紀念品，還有好吃特產呢</p>
+                                                </div>
+                                                <br>
+                                                <div>
+                                                    <p class="book_css">蘋果甜蜜蜜</p>
+                                                    <img src="https://children.moc.gov.tw/resource/animate_image/6892.jpg" style="margin-left: 20px; display: inline;" width="180" height="153" alt="蘋果甜蜜蜜">
+                                                    <p style="display: inline; margin-left: 20px; margin-top: 40px; position: absolute; margin-right: 40px;">嫁接的蜜蘋果要先習慣這塊土地，接受泥土的養分之後，才能慢慢慢慢的發芽開花。在這塊土地上接受多元文化洗禮、共同生活的人，不也像蜜蘋果一樣嗎？願藉此，獻上我們最深的祝福！</p>
+                                                </div>
+                                            </div>
+                                            <div class="card-header" id="QA_num_">
+                                                <a href="https://zh.wikipedia.org/wiki/%E8%8B%B9%E6%9E%9C" class="contentlink">相關連結解釋：</p>
+                                                <p>${text2}</p>
+                                            </div>
 
                                         </div>`;
+                                        
 
 
 
@@ -89,22 +108,22 @@ if (voiceBtn) {
         console.log("Q:" + createQA)
         ipcRenderer.once('voice-require-to-py-reply-result', (event, data) => {
 
-            if (data.a.toString().trim() == 'TurnToOpenCamera') {     //如果偵測到「問這是什麼」類型的問題
-                SystemVal.innerHTML = '切換至「你拍我答」'
-                setTimeout(document.location.href = "result.html", 5000);
-                // document.location.href="result.html";   //直接跳轉到camera的html
-                console.log("camera true")
-            }
-            else if (data.a.toString().trim() == 'OpenPickingUpIsALittleRed') {        //玩翻牌
-                SystemVal.innerHTML = '開啟小遊戲至「翻牌遊戲」'
-                setTimeout(document.location.href = "./view/pickingUpIsALittleRed.html", 5000);
-                console.log("picking true")
-            }
-            else if (data.a.toString().trim() == 'OpenGophers') {      //玩打地鼠
-                SystemVal.innerHTML = '開啟小遊戲至「打地鼠遊戲」'
-                setTimeout(document.location.href = "./view/gophers.html", 5000);
-                console.log("gophers true")
-            }
+            // if (data.a.toString().trim() == 'TurnToOpenCamera') {     //如果偵測到「問這是什麼」類型的問題
+            //     SystemVal.innerHTML = '切換至「你拍我答」'
+            //     setTimeout(document.location.href = "result.html", 5000);
+            //     // document.location.href="result.html";   //直接跳轉到camera的html
+            //     console.log("camera true")
+            // }
+            // else if (data.a.toString().trim() == 'OpenPickingUpIsALittleRed') {        //玩翻牌
+            //     SystemVal.innerHTML = '開啟小遊戲至「翻牌遊戲」'
+            //     setTimeout(document.location.href = "./view/pickingUpIsALittleRed.html", 5000);
+            //     console.log("picking true")
+            // }
+            // else if (data.a.toString().trim() == 'OpenGophers') {      //玩打地鼠
+            //     SystemVal.innerHTML = '開啟小遊戲至「打地鼠遊戲」'
+            //     setTimeout(document.location.href = "./view/gophers.html", 5000);
+            //     console.log("gophers true")
+            // }
             // messages.innerHTML = messages.innerHTML + createQ(data.q) + createA(data.a);
             QA_card.innerHTML = QA_card.innerHTML + createQA(data.q, data.a);
             // console.log("dataA="+data.a.toString())

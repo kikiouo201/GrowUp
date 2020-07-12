@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const es = require('event-stream')
-const { spawn } = require("child_process")
+const { spawn, spawnSync } = require("child_process")
 
 // const api = require('./model/api'); api
 // const iconv = require('iconv-lite')
@@ -134,19 +134,25 @@ function startSpeak(
   
   //stdout 輸出 stdin 輸入
   process.stdout.on('data', (data) => {
+    // console.log("python data => "+data)
     const result = data.toString('utf8')
-
+    console.log("python result => "+result)
     if (result.includes('Speak Now!')) {
-      callbackWhenCanSpeak()
+      setTimeout(function() {callbackWhenCanSpeak()}, 2000)
+      // callbackWhenCanSpeak()
+      console.log("python result 3 => "+result)
     }
 
     if(result.includes('Google Speech Recognition thinks you said:')){
-      callbackWhenAnaysisVoice()
+      
+      setTimeout(function() {callbackWhenAnaysisVoice()}, 3000)
+      // callbackWhenAnaysisVoice()
+      console.log("python result 4 => "+result)
     }
 
     if (result.includes('data[Q]')) {
       const [q, a] = result.split('\n').map((el) => el.split('=')[1])
-
+      console.log("python result 2 => "+result)
       // if(a=='TurnToOpenCamera'){
       //   callbackWhenAskWhatIsThat()
       // }
@@ -155,7 +161,8 @@ function startSpeak(
     // });
       process.kill()
 
-      callbackWhenSuccess({ q, a })
+      setTimeout(function() {callbackWhenSuccess({ q, a })}, 4000)
+      // callbackWhenSuccess({ q, a })
     }
   })
 }
