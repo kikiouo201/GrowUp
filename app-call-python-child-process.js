@@ -131,6 +131,8 @@ function startSpeak(
   callbackWhenSuccess
 ) {
   const process = spawn('python', ["-u", "./dialogFlow-perfect.py"]);
+
+  let q = null
   
   //stdout 輸出 stdin 輸入
   process.stdout.on('data', (data) => {
@@ -151,18 +153,25 @@ function startSpeak(
     }
 
     if (result.includes('data[Q]')) {
-      const [q, a] = result.split('\n').map((el) => el.split('=')[1])
-      console.log("python result 2 => "+result)
+      q = result.split('=')[1]
+      // const [q, a] = result.split('\n').map((el) => el.split('=')[1])
+      // console.log("python result 2 => "+result)
       // if(a=='TurnToOpenCamera'){
       //   callbackWhenAskWhatIsThat()
       // }
     //   api.Question.addQa(1, q, a, "", "知識", (event) => {
     //     console.log("callback=" + JSON.stringify(event));
     // });
-      process.kill()
+      // process.kill()
 
-      setTimeout(function() {callbackWhenSuccess({ q, a })}, 4000)
+      // setTimeout(function() {callbackWhenSuccess({ q, a })}, 4000)
       // callbackWhenSuccess({ q, a })
+    }
+
+    if (result.includes('data[A]')) {
+      const a = result.split('=')[1]
+      callbackWhenSuccess({ q, a })
+      process.kill()
     }
   })
 }
