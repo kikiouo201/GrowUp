@@ -1,4 +1,5 @@
 import dialogflow
+import dialogflow_v2
 # import json
 from google.api_core.exceptions import InvalidArgument
 from google.oauth2 import service_account
@@ -6,6 +7,12 @@ import speech_recognition as sr
 import sys
 import json
 import time
+import urllib.request as req
+import urllib
+#change to zh-TW
+from opencc import OpenCC
+cc = OpenCC('s2tw')
+# print(cc.convert(search.p.text))
 
 # sys.setdefaultencoding('utf8')    #python3已經設定UTF-8無須再設定
 
@@ -89,7 +96,50 @@ with sr.Microphone() as source:
 sys.stdout.reconfigure(encoding='utf-8')
 print("data[Q]="+result['Question'])
 sys.stdout.reconfigure(encoding='utf-8')
-print("data[A]="+result['Answer'])
+# print("data[A]="+result['Answer'])
+
+#######################################
+
+
+
+codde=urllib.parse.quote(result['Answer'])
+# print(codde)
+
+#spider
+# import urllib.request as req
+# import urllib
+url="https://zh.wikipedia.org/wiki/"+codde
+#建立request物件
+request=req.Request(url, headers={
+    "User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36"
+    
+})
+
+# keyword=req.Request(url, data={
+#     "keyword":"蘋果"
+# })
+
+#讓request物件去打開url
+with req.urlopen(request) as response :
+    data=response.read().decode("utf-8")
+# response = urllib.request.urlopen()
+# print(data)
+
+import bs4
+soup=bs4.BeautifulSoup(data, "html.parser")
+# print(soup.title)   #<title>首頁 - 文化部-兒童文化館</title>
+search=soup.find("div", class_="mw-parser-output") #找查詢ㄉdiv
+# result = search.p.get('value')
+# print(search.p.text) #這是簡中
+
+#turn zh-TW
+# print(cc.convert(search.p.text))
+turnCC = cc.convert(search.p.text)
+result['Answer'] = turnCC.strip()
+# print(result)
+print("data[A]="+str(result['Answer'])) #爬wiki的Answer
+# print(result['Answer'])
+
 
 # JSON_A = json.dumps(result, ensure_ascii=False)
 # data = json.loads(JSON_A)
