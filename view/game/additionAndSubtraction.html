@@ -8,8 +8,8 @@
   <link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
   
   <link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
+  <link rel="stylesheet" href="../../CSS/icon.css">
   
-  <link rel="stylesheet" href="../CSS/icon.css">
     <title>CodePen - Drag and Drop in Multiple Container</title>
     
     
@@ -33,7 +33,7 @@
   
   
   .forest{
-    background: url('../image/countingNumbers/true-2.jpeg') no-repeat;
+    background: url('../../image/countingNumbers/true-2.jpeg') no-repeat;
     background-size:cover;
     text-align: center;
   
@@ -55,7 +55,7 @@
     justify-content:center;
   }
   #drag-drop-basic #source-container {
-    height: 200px;
+    height: 400px;
     width: 92%;
     padding: 40px;
     border: 2px solid #CCC;
@@ -64,59 +64,103 @@
     flex-direction: row;
     justify-content:center;
   }
-  #drag-drop-basic .target-container {
-    height: 400px;
-    width: 20%; 
-    margin: 10px;
-    border: 2px solid #CCC;
-    font-size:xx-large;
+  #drag-drop-basic #target-container {
+    height: 100px;
+    width: 15%; 
+    border-bottom: 2px solid #CCC;
     display: flex;
-    justify-content: center;
-    align-items:center;
+    flex-direction: row;
+    flex-wrap:  wrap;
   }
-
+  #drag-drop-basic #target2-container {
+    height: 100px;
+    width: 15%; 
+    margin-left: 20px;
+    border-bottom: 2px solid #CCC;
+    display: flex;
+    flex-direction: row;
+    flex-wrap:  wrap; 
+  }
+  #drag-drop-basic #drag-source0 {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: steelblue;
+    background:url('../../image/numbers/0.png') no-repeat;
+    background-size: contain;
+  }
   #drag-drop-basic #drag-source1 {
     width: 100px;
     height: 100px;
     border-radius: 50%;
     background-color: steelblue;
-    background:url('../image/words/apple.jpg') no-repeat;
-    background-size:cover;
+    background:url('../../image/numbers/1.png') no-repeat;
+    background-size: contain;
   }
   #drag-drop-basic #drag-source2 {
     width: 100px;
     height: 100px;
     border-radius: 50%;
     background-color: steelblue;
-    background:url('../image/words/peach.jpg') no-repeat;
-    background-size:cover;
+    background:url('../../image/numbers/2.png') no-repeat;
+    background-size: contain;
   }
   #drag-drop-basic #drag-source3 {
     width: 100px;
     height: 100px;
     border-radius: 50%;
     background-color: steelblue;
-    background:url('../image/words/pineapple.jpeg') no-repeat;
-    background-size:cover;
+    background:url('../../image/numbers/3.png') no-repeat;
+    background-size: contain;
   }
   #drag-drop-basic #drag-source4 {
     width: 100px;
     height: 100px;
     border-radius: 50%;
     background-color: steelblue;
-    background:url('../image/words/strawberry.jpg') no-repeat;
-    background-size:cover;
+    background:url('../../image/numbers/4.png') no-repeat;
+    background-size: contain;
   }
   #drag-drop-basic #drag-source5 {
     width: 100px;
     height: 100px;
     border-radius: 50%;
     background-color: steelblue;
-    background:url('../image/words/waterpear.jpeg') no-repeat;
-    background-size:cover;
+    background:url('../../image/numbers/5.png') no-repeat;
+    background-size: contain;
   }
- 
-
+  #drag-drop-basic #drag-source6 {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: steelblue;
+    background:url('../../image/numbers/6.png') no-repeat;
+    background-size: contain;
+  }
+  #drag-drop-basic #drag-source7 {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: steelblue;
+    background:url('../../image/numbers/7.png') no-repeat;
+    background-size: contain;
+  }
+  #drag-drop-basic #drag-source8 {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: steelblue;
+    background:url('../../image/numbers/8.png') no-repeat;
+    background-size: contain;
+  }
+  #drag-drop-basic #drag-source9 {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: steelblue;
+    background:url('../../image/numbers/9.png') no-repeat;
+    background-size: contain;
+  }
 
   
   </style>
@@ -139,8 +183,8 @@
   <body translate="no" class="forest">
     <div>
       <div >
-        <h1>對應文字，放進對的圖片</h1>
-        <div id='num' ></div>
+        <h1>請幫助居民解決問題</h1>
+        <div id='num' >目前是0</div>
       </div>
     
     </div>
@@ -148,38 +192,42 @@
   <div id="drag-drop-basic" >
    
     <div class="counting">
-        <div id="target1-container" class="target-container" data-role="drag-drop-container">水蜜桃</div>   
-        <div id="target2-container" class="target-container" data-role="drag-drop-container">蘋果</div>
-        <div id="target3-container" class="target-container" data-role="drag-drop-container">水梨</div>   
-        <div id="target4-container" class="target-container" data-role="drag-drop-container">草莓</div>
-
+        <div id="target-container" data-role="drag-drop-container"></div>
+        <img src="../../image/numbers/plus.png" class="number" />
+        <div id="target2-container" data-role="drag-drop-container"></div>
+        <img src="../../image/numbers/equal.png" class="number" />
+        <img src="../../image/numbers/5.png" class="number" />
     </div>
    
 
     <div id="source-container" data-role="drag-drop-container">
-       
+        <div id="drag-source0" draggable="true"></div>
         <div id="drag-source1" draggable="true"></div>
         <div id="drag-source2" draggable="true"></div>
         <div id="drag-source3" draggable="true"></div>
         <div id="drag-source4" draggable="true"></div>
         <div id="drag-source5" draggable="true"></div>
+        <div id="drag-source6" draggable="true"></div>
+        <div id="drag-source7" draggable="true"></div>
+        <div id="drag-source8" draggable="true"></div>
+        <div id="drag-source9" draggable="true"></div>
       </div>
   </div>
   
   <button onclick="end()">完成</button>
   <div>
-    <a href="../exam_phonetic copy.html" class="sosfloat" id="menu-share">
-      <i class="fab fa-share my-float"><img src="../photo/help.png" width="70%"></i>
+    <a href="../../exam_phonetic copy.html" class="sosfloat" id="menu-share">
+      <i class="fab fa-share my-float"><img src="../../photo/help.png" width="70%"></i>
       </a>
   </div>
   <div>
-    <a href="./zhuyinLevel.html" class="returnfloat" id="menu-share">
-      <i class="fab fa-share return-float"><img src="../photo/return.png" ></i>
+    <a href="../level/digitalLevel.html" class="returnfloat" id="menu-share">
+      <i class="fab fa-share return-float"><img src="../../photo/return.png" ></i>
       </a>
   </div>
   <div>
-    <a href="../test1.html" class="homefloat" id="menu-share">
-      <i class="fab fa-share my-float"><img src="../photo/gobackhome.png" width="70%"></i>
+    <a href="../../test1.html" class="homefloat" id="menu-share">
+      <i class="fab fa-share my-float"><img src="../../photo/gobackhome.png" width="70%"></i>
       </a>
   </div>
       <script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
@@ -193,8 +241,6 @@
   
   let sourceContainerId = '';
   let number=0;
-  let ans=[0,2,1,5,4];
-  let reply=[0,0,0,0,0];
   // Allow multiple draggable items
   let dragSources = document.querySelectorAll('[draggable="true"]');
   dragSources.forEach(dragSource => {
@@ -218,39 +264,37 @@
   function dragStart(e) {
     e.dataTransfer.setData('text/plain', e.target.id);
     sourceContainerId = this.parentElement.id;
-
+    console.log('sourceContainerId', sourceContainerId);
+    
+    
+   
   }
   
   function dropped(e) {
     // execute function only when target container is different from source container
-    
     if (this.id !== sourceContainerId) {
       cancelDefault(e);
       let id = e.dataTransfer.getData('text/plain');
       let num = parseInt(id.substring(11,12));
-      let chooseNum =parseInt(e.path[0].id.substring(6,7));
       if(sourceContainerId == "source-container"){
-       reply[chooseNum]=num;
-       console.log('reply',reply);
-      }
-   
+       
+       number+=num;
+      
+    }else{
+        number-=num;
+    }
+      
     document.querySelector('#num').innerHTML="目前是"+number;
        
       e.target.appendChild(document.querySelector('#' + id));
     }
-
+    
+    console.log('sourceContainerId', sourceContainerId);
+  
   }
   
   function end(){
-      let correctNum=0;
-      console.log('reply',reply);
-    for(let i=0;i <ans.length;i++){
-            if(ans[i] == reply[i]){
-                correctNum++;
-
-            }
-    }
-    if(correctNum==5){
+    if(number==5){
         alert("答對喔!");
     }
     else{

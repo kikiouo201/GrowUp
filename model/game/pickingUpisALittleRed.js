@@ -38,7 +38,7 @@ function startGame(){
   for(i=0;i<fronts.length;i++){
     fronts[i].setAttribute("data-type",gameData[i]); //設定資料內容
     
-    fronts[i].style="background:url('../image/pickingUpisALittleRed/"+gameData[i]+".png') no-repeat;background-size: contain; ";
+    fronts[i].style="background:url('../../image/pickingUpisALittleRed/"+gameData[i]+".png') no-repeat;background-size: contain; ";
   }
 //https://portfolio.mackliu.com/game-01/img/1.png
 //https://portfolio.mackliu.com/game-01/img/back.png
