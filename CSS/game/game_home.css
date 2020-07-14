@@ -1,0 +1,51 @@
+.game_map{
+    position: absolute;
+    margin-top: 1%;
+    left: 2%;
+    background-color: #FFD2D2;
+    border-radius: 30px;
+    width: 45%;
+    height: 40%;
+    font-size: 24px;
+}
+.person_profile{
+    position: absolute;
+    top: 1%;
+    right: 2%;
+    background-color:#FFD2D2	;
+    border-radius: 30px;
+    width:25%;
+    height:40%;
+    font-size: 24px;
+}
+
+.limit{
+    position: absolute;
+    top: 52%;
+    left: 2%;
+    background-color:#FFD2D2	;
+    border-radius: 30px;
+    width:25%;
+    height:45%;
+    font-size: 24px;
+}
+.daily{
+    position: absolute;
+    top: 52%;
+    left: 27%;
+     background-color:#FFD2D2	;
+    border-radius: 30px;
+    width:25%;
+    height:45%;
+    font-size: 24px;
+}
+
+.success{
+    margin-top: 1%;
+    right: 2%;
+    background-color: #FFD2D2;
+    border-radius: 30px;
+    width: 45%;
+    height: 40%;
+    font-size: 24px;
+}
