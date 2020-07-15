@@ -16,7 +16,7 @@ import speech_recognition as sr
 #設定dialogflow初始化
 DIALOGFLOW_PROJECT_ID = 'rasberry-20200203-hw-t1-smjjay' 
 DIALOGFLOW_LANGUAGE_CODE = 'Chinese (Traditional) — zh-TW'
-GOOGLE_APPLICATION_CREDENTIALS = service_account.Credentials.from_service_account_file('rasberry-20200203-hw-t1-smjjay-52e40a174465.json')
+GOOGLE_APPLICATION_CREDENTIALS = service_account.Credentials.from_service_account_file('rasberry-20200203-hw-t1-smjjay-7d8b5bc0c204.json')
 SESSION_ID = '52e40a174465ba81525a4281d34287cda6ef504a' #金鑰
 
 #create a session client

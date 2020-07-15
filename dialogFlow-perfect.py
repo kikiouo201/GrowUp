@@ -9,6 +9,10 @@ import json
 import time
 import urllib.request as req
 import urllib
+import os
+if os.name == 'nt':
+    sys.stdout.reconfigure(encoding='utf-8')
+
 #change to zh-TW
 from opencc import OpenCC
 cc = OpenCC('s2tw')
@@ -93,9 +97,9 @@ with sr.Microphone() as source:
 # sys.stdout.flush()
 # print(result)   #{'Question': '', 'Answer': ''}
 # print(result.Question)
-sys.stdout.reconfigure(encoding='utf-8')
+# sys.stdout.reconfigure(encoding='utf-8')
 print("data[Q]="+result['Question'])
-sys.stdout.reconfigure(encoding='utf-8')
+# sys.stdout.reconfigure(encoding='utf-8')
 # print("data[A]="+result['Answer'])
 
 #######################################

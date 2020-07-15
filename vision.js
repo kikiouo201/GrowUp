@@ -19,7 +19,7 @@ async function start(){
     const target = "zh-TW"
     let [translations] = await translate.translate(text, target);
     translations = Array.isArray(translations) ? translations : [translations];
-    console.log('Translations:'+translations);
+    // console.log('Translations:'+translations);
     return translations
     
 }
