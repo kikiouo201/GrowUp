@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../CSS/interface.css">
+    <link rel="stylesheet" href="../../CSS/icon.css">
+    <style>
+        body{
+            display: flex;
+            width: 100%;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+        .map{
+            text-align: center;
+        }
+        .terrain{
+            width: 700px;
+            height: 100%;
+          position: relative;
+          z-index: 1;
+        }
+        .level1{
+            width: 110px;
+            position: relative;
+            z-index: 10;
+            top: -140px;
+            left: -428px;
+        }
+    </style>
+</head>
+<body class="style" background="../../image/map/kraftPaper2.jpg">
+    <div class="map"> 
+        <img class="terrain" src="../../image/map/Nantou.png" />
+        <img class="level1" src="../../image/icon/herbal-tea.png" onclick="javascript:location.href='../../view/game/b.html'" />
+    </div>
+    <div>
+        <a href="../../exam_phonetic copy.html" class="sosfloat" id="menu-share">
+          <i class="fab fa-share my-float"><img src="../../photo/help.png" width="70%"></i>
+          </a>
+      </div>
+    <div>
+        <a href="../../game_collect.html" class="returnfloat" id="menu-share">
+          <i class="fab fa-share return-float"><img src="../../photo/return.png" ></i>
+          </a>
+      </div>
+      <div>
+        <a href="../../test1.html" class="homefloat" id="menu-share">
+          <i class="fab fa-share my-float"><img src="../../photo/gobackhome.png" width="70%"></i>
+          </a>
+      </div>
+</body>
+</html>
