@@ -58,19 +58,15 @@ function startQ() {
 }
 
 function End() {
-
-  option1.style.visibility = "hidden";
-  option2.style.visibility = "hidden";
-  option3.style.visibility = "hidden";
-  option4.style.visibility = "hidden";
-  AnsImg.style.visibility = "hidden";
   start.style.visibility = "visible";
+  end.style.visibility = "hidden";
 
   alert("總答對題數: " + currectAns + "/" + total);
   count = 0;
   num = 0;
   currectAns = 0;
 }
+
 function Option(btn) {
 
   console.log("total=>" + total);
@@ -78,9 +74,15 @@ function Option(btn) {
   if (btn.value == question[num - 1]["answer"])
     currectAns++
 
-  if ((num + 1) > total)
-    End();
-  else {
+  if ((num + 1) > total){
+    option1.style.visibility = "hidden";
+    option2.style.visibility = "hidden";
+    option3.style.visibility = "hidden";
+    option4.style.visibility = "hidden";
+    AnsImg.style.visibility = "hidden";
+    end.style.visibility = "visible";
+    
+  }else {
     option1.innerHTML = question[num]["options0"];
     option1.value = question[num]["options0"];
     option2.innerHTML = question[num]["options1"];

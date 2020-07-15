@@ -21,6 +21,9 @@
 //> ipc for renderer process
 let ipcRenderer = require('electron').ipcRenderer;
 
+
+
+
 //> voice button
 let voiceBtn = document.querySelector('#voice')
 if(voiceBtn){
@@ -42,6 +45,16 @@ identifyBtn.addEventListener('click',()=>{
     })
 }
 
+let fruitcheck = document.querySelector("#fruitchk")
+// var resultdata = ["西瓜","果肉通常為紅色或黃色，水分多，味甜。"];
+
+if(fruitcheck){
+    fruitcheck.addEventListener('change',()=>{
+        ipcRenderer.send('fruitcheck-change');
+         console.log("change");
+    });
+}
+
 
 ipcRenderer.on('reply-mainjsfunction',(event,data)=>{
     console.log("yo="+data);
@@ -50,7 +63,7 @@ ipcRenderer.on('reply-mainjsfunction',(event,data)=>{
     document.getElementById('Ans').innerHTML="答案:";
     document.getElementById('AnsTxt').innerHTML=" "+data;
     document.getElementById('explain').innerHTML="敘述:";
-    document.getElementById('explainTxt').innerHTML=" "+"西瓜是個消暑聖品，晚上別喝太多會尿床喔!!";
+    document.getElementById('explainTxt').innerHTML=" "+"果肉通常為紅色或黃色，水分多，味甜。";
     document.getElementById('leadTxt').innerHTML="辨識成功!!";
 })
 
@@ -59,6 +72,12 @@ ipcRenderer.on('reply-mainjsfunction-captrue',(event,data)=>{
     console.log("hihi");
     document.getElementById("AnsImg").src="./still-image.jpg"
 })
+
+
+
+
+
+
 
 // const ipc = require('electron').ipcRenderer
 

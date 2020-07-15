@@ -24,7 +24,7 @@ const api = require('./node/model/api');
     // 创建浏览器窗口。
     win = new BrowserWindow({
       icon: path.join(__dirname, 'icons/raspberry_icon.png'),
-      fullscreen: true,
+      fullscreen: false,
       webSecurity: false,
         webPreferences:{
             nodeIntegration: true, //如果出bug改回true看看
@@ -153,7 +153,6 @@ const api = require('./node/model/api');
 
 
 
-
   ipcMain.on('vision',async (event, args)=>{
     let array=await callVis.start();
    console.log("call vision"+" "+array);
@@ -197,65 +196,15 @@ ipcMain.on('getApi-addQuiz',async (event, args)=>{
 })
 
 
-ipcMain.on('getApi-option1',async (event, args)=>{
-  api.Question.addQuiz(5, (req) => {
-    // console.log("addQuiz=" + JSON.stringify(event));
-     const data = JSON.parse(JSON.stringify(req));
-     const contents = data.content;        
-    //  contents.forEach(content => {
-    //    content.choose = content.options2;
-    //  });
-    let text=JSON.stringify(contents);
-     console.log("contents=" + text);
-     event.sender.send('replyApi-option1',text);
- });
 
+ipcMain.on('fruitcheck-change', (event,args)=>{
+console.log("rara")
+ 
+  //   api.Question.addQa(1, data[0], data[1], "./still-image.jpg", "單詞", (event) => {
+  //   console.log("callback=" + JSON.stringify(event));
+  // });
+  event.sender.send('replycollection')
 })
 
 
-ipcMain.on('getApi-option2',async (event, args)=>{
-  api.Question.addQuiz(5, (req) => {
-    // console.log("addQuiz=" + JSON.stringify(event));
-     const data = JSON.parse(JSON.stringify(req));
-     const contents = data.content;        
-    //  contents.forEach(content => {
-    //    content.choose = content.options2;
-    //  });
-    let text=JSON.stringify(contents);
-     console.log("contents=" + text);
-     event.sender.send('replyApi-option2',text);
- });
 
-})
-
-
-ipcMain.on('getApi-option3',async (event, args)=>{
-  api.Question.addQuiz(5, (req) => {
-    // console.log("addQuiz=" + JSON.stringify(event));
-     const data = JSON.parse(JSON.stringify(req));
-     const contents = data.content;        
-    //  contents.forEach(content => {
-    //    content.choose = content.options2;
-    //  });
-    let text=JSON.stringify(contents);
-     console.log("contents=" + text);
-     event.sender.send('replyApi-option3',text);
- });
-
-})
-
-
-ipcMain.on('getApi-option4',async (event, args)=>{
-  api.Question.addQuiz(5, (req) => {
-    // console.log("addQuiz=" + JSON.stringify(event));
-     const data = JSON.parse(JSON.stringify(req));
-     const contents = data.content;        
-    //  contents.forEach(content => {
-    //    content.choose = content.options2;
-    //  });
-    let text=JSON.stringify(contents);
-     console.log("contents=" + text);
-     event.sender.send('replyApi-option4',text);
- });
-
-})

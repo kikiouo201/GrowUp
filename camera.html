@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="CSS/icon.css">
     <link rel="stylesheet" href="CSS/interface.css">
     <script src="https://apis.google.com/js/client.js"></script>
-    <script type="text/javascript" src="jquery.js"></script>
+    
    
   </head>
   <body background="photo/background.png">
@@ -20,7 +20,7 @@
     
       
       <div class="head">
-        <a>你拍我答</a>
+        <a href="./test1.html">你拍我答</a>
         <body onload="ShowTime()">
           <div id="today"></div>
           <br>
@@ -50,13 +50,12 @@
       </div>
 
       <div class="ansshow">
-            <div>
-              <input type="image" id="collection" class="collection" src="./icons/bookmark.png" onclick="centerHandler()" >
+          
+        <input type="image" id="collection" class="collection" src="./icons/bookmark.png" onclick="centerHandler()" >
 
-              <p id="Ans" class="Ans"><p id="AnsTxt" class="AnsTxt"></p></p>
-              <p id="explain"><p id="explainTxt"></p></p>
-            </div>
-            
+        <p id="Ans" class="Ans"></p><p id="AnsTxt" class="AnsTxt"></p>
+        <p id="explain"></p><p id="explainTxt"></p>
+     
       </div>
       </div>
       <div class="main_area">
@@ -79,8 +78,8 @@
         
         <div style="padding: 10px; border-bottom: black;" >儲存至。。。</div>
         <input type="image" id="close" src="./icons/close.png" style="width: 20px; height: 20px;" onclick="closecollection()">
-        <input id="vocChk"  type="checkbox" value="預設單字本"><label style="padding: 20px;">預設單詞本</label><br>
-        <input id="fruitchk" type="checkbox" value="水果本"><label style="padding: 20px;">水果單詞本</label>
+        <input id="vocChk"  type="checkbox" value="預設單字本" ><label style="padding: 20px;">預設單詞本</label><br>
+        <input id="fruitchk" type="checkbox" value="水果本" ><label style="padding: 20px;">水果單詞本</label>
       </div>
       <div>
         <a href="" class="sosfloat" id="menu-share">
@@ -168,6 +167,9 @@
           black_overlay.style.visibility = "hidden";
 
         }
+       
+
+    
         </script>
 
         
