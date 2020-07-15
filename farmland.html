@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link  rel="stylesheet" type="text/css" href="./CSS/farmland.css">
+    <link rel="stylesheet" href="CSS/icon.css">
+    <link rel="stylesheet" href="CSS/interface.css">
+    <title>Document</title>
+</head>
+<body background="photo/background.png" onload="ShowTime()">
+    
+    <div class="head">
+        <a>等待help的村民</a>
+        <div id="today" ></div><br>
+        <div id="showtime"></div>
+    </div>
+      <div id="iconshow">
+          <img id="icon1" style="width: 15%;height: 100%;" src="./image/words/apple.png"><p id="icon1" >1</p>
+          <img id="icon2" style="width: 15%;height: 100%; padding-left: 3%;"  src="./image/words/peach.png"><p id="icon2" >2</p>
+          <img id="icon3" style="width: 15%;height: 100%; padding-left: 3%;" src="./image/words/watermelon.png"><p id="icon3" >3</p>
+          <img id="icon4" style="width: 15%;height: 100%; padding-left: 3%;"  src="./image/words/strawberry.png"><p id="icon4" >4</p>
+          <img id="childimg" src="./image/character/baba.jpg">
+      </div>
+      <div style="width: auto; height: auto;">
+          <img id="boyfarmer" src="./image/character/farmer.png"><br>
+          <img id="chicken" src="./image/character/limit_chicken.png">
+          <img id="farmland" src="./image/character/farmland.png">
+
+          <img id="img1" src="./image/words/apple.png">
+          <img id="img2" src="./image/words/peach.png">
+          <img id="img3" src="./image/words/watermelon.png">
+          <img id="img4" src="./image/words/strawberry.png">
+      </div>
+    
+      
+          
+      <script language="JavaScript">
+      
+        function ShowTime(){
+      
+          var fullDate = new Date();
+      var yyyy = fullDate.getFullYear();
+      var MM = (fullDate.getMonth() + 1) >= 10 ? (fullDate.getMonth() + 1) : ("0" + (fullDate.getMonth() + 1));
+      var dd = fullDate.getDate() < 10 ? ("0"+fullDate.getDate()) : fullDate.getDate();
+      document.getElementById('today').innerHTML = yyyy + "/" + MM + "/" + dd;
+      
+        　var NowDate=new Date();
+        　var h=NowDate.getHours();
+        　var m=NowDate.getMinutes();
+        　document.getElementById('showtime').innerHTML = h+':'+m;
+        　setTimeout('ShowTime()',1000);
+        }
+        </script>
+</body>
+</html>
