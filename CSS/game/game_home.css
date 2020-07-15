@@ -1,51 +1,46 @@
 .game_map{
     position: absolute;
-    margin-top: 1%;
-    left: 2%;
-    background-color: #FFD2D2;
-    border-radius: 30px;
-    width: 45%;
-    height: 40%;
-    font-size: 24px;
+    top: 11%;
+    left: 15%;
+   
 }
-.person_profile{
+.personal_profile{
     position: absolute;
-    top: 1%;
-    right: 2%;
-    background-color:#FFD2D2	;
-    border-radius: 30px;
-    width:25%;
-    height:40%;
-    font-size: 24px;
+    top: 9%;
+    right: 5%;
 }
 
 .limit{
     position: absolute;
     top: 52%;
-    left: 2%;
-    background-color:#FFD2D2	;
-    border-radius: 30px;
-    width:25%;
-    height:45%;
-    font-size: 24px;
+    left: 8%;
 }
 .daily{
     position: absolute;
     top: 52%;
     left: 27%;
-     background-color:#FFD2D2	;
-    border-radius: 30px;
-    width:25%;
-    height:45%;
-    font-size: 24px;
 }
 
 .success{
-    margin-top: 1%;
-    right: 2%;
-    background-color: #FFD2D2;
-    border-radius: 30px;
-    width: 45%;
-    height: 40%;
-    font-size: 24px;
+    position: absolute;
+    top: 53%;
+    right: 33%;
+}
+
+.farm{
+    position: absolute;
+    top: 53%;
+    right: 11%;
+}
+
+.question{
+    position: absolute;
+    top: 77%;
+    right: 33%; 
+}
+
+.magic{
+    position: absolute;
+    top: 77%;
+    right: 11%;
 }
