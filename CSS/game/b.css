@@ -1,35 +1,42 @@
 *{
-    width: 100%;
-    text-align: center;
-
+    display:flex;
+    justify-content: center;
+    align-items: center;
 }
 body{
     width: 100%;
     
     display:flex;
     justify-content: center;
-    
+    align-items: center;
 }
 .anvas {
-    
-    width: 120px;
-    height: 490px;
+    /* border: 1px black solid; */
+    width: 9%;
+    height: 65%;
 
 }
 .write{
-    position: relative;
-    left: -835px;
+    position: absolute;
+    left: 430px;
     top: 180px;
     z-index: 10;
 }
 .write2{
-    position: relative;
-    left: -785px;
+    position: absolute;
+    left: 260px;
     top: 180px;
     z-index: 10;
 }
 .zhuyin{
-    width: 900px;
+    width: 100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;   
+}
+.zhuyin img{
+    width: 70%;
     position: relative;   
     z-index:1;
 }
