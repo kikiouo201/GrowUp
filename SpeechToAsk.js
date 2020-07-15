@@ -45,7 +45,7 @@ if (voiceBtn) {
         var CardID_A = 'speaker_A_' + countCardNum
         console.log("A= " + 'speaker_A_' + countCardNum)
 
-        const createQA = (text, text2) => `<div class="card text-white mb-3" style="background-color: #92337eba;">
+        const createQA = (text, text2, text3, text4) => `<div class="card text-white mb-3" style="background-color: #92337eba;">
                                         
                                             <div class="card-body" style="margin-top: 30px;">
                                             <img class="collect_LeftTop" onclick="collect(this)" id="`+ CardID_Collect + `" src="icons/bookmark.png"/>
@@ -54,10 +54,15 @@ if (voiceBtn) {
                                                     <p class="card-title card_Q" style="margin-left: 0px;">${text}</p>
                                                     <img class="speaker_Q" onclick="speaker(this)" id="`+ CardID_Q + `" src="icons/speaker.png" onclick=speakerTest(this)>
                                                 </div>
-                                                <br><br>
+                                                <br><br><br><br>
+                                                <div>
+                                                    <img src="https:${text2}">
+                                                    <p style="font-size: 24px;">${text4}</p>
+                                                </div>
+                                                <br>
                                                 <div style="float:left; display: block; text-align: left;">
                                                     <p class="card-text card_A" style="float: left;">Ａ：</p>
-                                                    <p class="card-text card_A" style="margin-left: 0px;">${text2}</p>
+                                                    <p class="card-text card_A" style="margin-left: 0px;">${text3}</p>
                                                     <img class="speaker_A" onclick="speaker(this)" id="`+ CardID_A + `" src="icons/speaker.png" />
                                                 </div>
                                             </div>
@@ -88,6 +93,8 @@ if (voiceBtn) {
         const QA_card = document.querySelector('#QA_card');
         console.log("Q:" + createQA)
         ipcRenderer.once('voice-require-to-py-reply-result', (event, data) => {
+            console.log("url =>"+data.url)
+            console.log("QName =>"+data.QName)
             // debugger
             if (data.a.toString().trim() == 'TurnToOpenCamera') {     //如果偵測到「問這是什麼」類型的問題
                 SystemVal.innerHTML = '切換至「你拍我答」'
@@ -106,7 +113,7 @@ if (voiceBtn) {
                 console.log("gophers true")
             }
             // messages.innerHTML = messages.innerHTML + createQ(data.q) + createA(data.a);
-            QA_card.innerHTML = QA_card.innerHTML + createQA(data.q, data.a);
+            QA_card.innerHTML = QA_card.innerHTML + createQA(data.q, data.url, data.a, data.QName);
             // console.log("dataA="+data.a.toString())
             // console.log("test=A? =>"+document.getElementById('Answer01').textContent);
 
