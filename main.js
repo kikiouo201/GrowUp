@@ -112,6 +112,7 @@ const api = require('./node/model/api');
         
         // console.log("Q="+result.q)
         console.log("A="+result.a)
+        console.log("QN="+result.QName)
         var x = result.a.toString().trim()
         console.log(typeof x + typeof result.a.toString())
         console.log("Testing Log => "+result.a.toString()+"\r\nTest2=>" + x)

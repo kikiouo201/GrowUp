@@ -140,15 +140,15 @@ function startSpeak(
     const result = data.toString('utf8')
     console.log("python result => "+result)
     if (result.includes('Speak Now!')) {
-      setTimeout(function() {callbackWhenCanSpeak()}, 2000)
-      // callbackWhenCanSpeak()
+      // setTimeout(function() {callbackWhenCanSpeak()}, 2000)
+      callbackWhenCanSpeak()
       console.log("python result 3 => "+result)
     }
 
     if(result.includes('Google Speech Recognition thinks you said:')){
       
-      setTimeout(function() {callbackWhenAnaysisVoice()}, 3000)
-      // callbackWhenAnaysisVoice()
+      // setTimeout(function() {callbackWhenAnaysisVoice()}, 3000)
+      callbackWhenAnaysisVoice()
       console.log("python result 4 => "+result)
     }
 
@@ -169,8 +169,20 @@ function startSpeak(
     }
 
     if (result.includes('data[A]')) {
-      const a = result.split('=')[1]
-      callbackWhenSuccess({ q, a })
+      a = result.split('=')[1]
+      // callbackWhenSuccess({ q, a })
+      // process.kill()
+    }
+
+    if (result.includes('data[QName]')) {
+      QName = result.split('=')[1]
+      // callbackWhenSuccess({ q, a })
+      // process.kill()
+    }
+
+    if(result.includes('data[url]')){
+      const url = result.split('=')[1]
+      callbackWhenSuccess({ q, a, QName, url})
       process.kill()
     }
   })

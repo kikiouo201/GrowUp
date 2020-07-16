@@ -88,7 +88,9 @@ with sr.Microphone() as source:
 
     result = {
     'Question': speech_to_text,
-    'Answer': response.query_result.fulfillment_text
+    'Answer': response.query_result.fulfillment_text,
+    'Q_name': "",
+    'Answer_pic':""
     }
 
     # sys.stdout.reconfigure(encoding='utf-8')
@@ -133,6 +135,7 @@ import bs4
 soup=bs4.BeautifulSoup(data, "html.parser")
 # print(soup.title)   #<title>首頁 - 文化部-兒童文化館</title>
 search=soup.find("div", class_="mw-parser-output") #找查詢ㄉdiv
+# findPic = pic.
 # result = search.p.get('value')
 # print(search.p.text) #這是簡中
 
@@ -143,6 +146,26 @@ result['Answer'] = turnCC.strip()
 # print(result)
 print("data[A]="+str(result['Answer'])) #爬wiki的Answer
 # print(result['Answer'])
+
+#圖片名
+Q_name = search.tr.text
+# print("Q_name="+Q_name)
+Q_name_CC = cc.convert(Q_name)
+result['Q_name'] = Q_name_CC.strip()
+print("data[QName]="+result['Q_name'])
+
+
+try:
+    #爬圖片
+    pic=soup.find("a",class_='image')
+    img = pic.find_all('img')[0].get('src')
+    # print(img)
+    result['Answer_pic'] = img.strip()
+    print('data[url]='+result['Answer_pic'])
+except:
+    print("Something went wrong, maybe this wiki Not found the img")
+
+
 
 
 # JSON_A = json.dumps(result, ensure_ascii=False)
