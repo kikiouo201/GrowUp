@@ -19,7 +19,7 @@
 // 'use strict';
 
 //> ipc for renderer process
-let ipcRenderer = require('electron').ipcRenderer;
+let {ipcRenderer }= require('electron');
 
 
 
@@ -46,11 +46,12 @@ identifyBtn.addEventListener('click',()=>{
 }
 
 let fruitcheck = document.querySelector("#fruitchk")
-// var resultdata = ["西瓜","果肉通常為紅色或黃色，水分多，味甜。"];
+var resultdata = {"Ansresult":"","explain":"果肉通常為紅色或黃色，水分多，味甜。"}
+resultdata["Ansresult"]="西瓜"
 
 if(fruitcheck){
     fruitcheck.addEventListener('change',()=>{
-        ipcRenderer.send('fruitcheck-change');
+        ipcRenderer.send('fruitcheck-call',resultdata);
          console.log("change");
     });
 }

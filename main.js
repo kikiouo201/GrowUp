@@ -155,7 +155,7 @@ const api = require('./node/model/api');
 
   ipcMain.on('vision',async (event, args)=>{
     let array=await callVis.start();
-   console.log("call vision"+" "+array);
+  
    
    //array.forEach(label => console.log("vis="+label.description));
    event.sender.send('reply-mainjsfunction',array)
@@ -197,13 +197,13 @@ ipcMain.on('getApi-addQuiz',async (event, args)=>{
 
 
 
-ipcMain.on('fruitcheck-change', (event,args)=>{
-console.log("rara")
+ipcMain.on('fruitcheck-call', (event,data)=>{
+console.log("result");
  
-  //   api.Question.addQa(1, data[0], data[1], "./still-image.jpg", "單詞", (event) => {
-  //   console.log("callback=" + JSON.stringify(event));
+    // api.Question.addQa(1, "", "西瓜", "./still-image.jpg", "單詞", (event) => {
+    // console.log("callback=" + JSON.stringify(event));
   // });
-  event.sender.send('replycollection')
+ 
 })
 
 
