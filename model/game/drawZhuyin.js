@@ -3,7 +3,7 @@
         let x = 0;
         let y = 0;
 
-        const myPics = document.querySelectorAll('.anvas');
+        const myPics = document.querySelectorAll('.draw');
         console.log('pics'+myPics.length);
         myPics.forEach((pics)=>{
             console.log('pics');

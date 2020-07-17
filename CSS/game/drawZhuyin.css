@@ -11,32 +11,40 @@ body{
     align-items: center;
 }
 .anvas {
-    /* border: 1px black solid; */
-    width: 9%;
-    height: 65%;
-
+    border: 1px black solid;
+    /* width: 9%;
+    height: 65%; */
+    width: 120px;
+    height: 490px;
+    display:flex;
+    flex-direction: column;
+}
+.draw{
+    border: 1px blue solid;
+    width: 120px;
+    height: 122.5px;
 }
 .write{
     position: absolute;
-    left: 430px;
-    top: 180px;
+    left: 26.3%;
+    top: 23.5%;
     z-index: 10;
 }
 .write2{
     position: absolute;
-    left: 260px;
-    top: 180px;
+    left: 7.3%;
+    top: 23.5%;
     z-index: 10;
 }
 .zhuyin{
-    width: 100%;
+    
     display:flex;
     justify-content: center;
     align-items: center;
     position: relative;   
 }
 .zhuyin img{
-    width: 70%;
+    width: 900px;
     position: relative;   
     z-index:1;
 }
