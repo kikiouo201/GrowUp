@@ -35,8 +35,16 @@
         });
         });
         
+        function onload() {
 
-      
+            let id = (new URLSearchParams(location.search)).get("id");
+            console.log(`id=${id}`)
+            if(id!=null){
+                let zhuyin = document.querySelector(".zhuyin img");
+                zhuyin.src = `../../image/zhuyin/${id}.png`;
+            }
+          }
+    
 
         function drawLine(context, x1, y1, x2, y2) {
             context.beginPath();

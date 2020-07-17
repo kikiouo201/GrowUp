@@ -1,8 +1,4 @@
-*{
-    display:flex;
-    justify-content: center;
-    align-items: center;
-}
+
 body{
     width: 100%;
     
@@ -22,18 +18,18 @@ body{
 .draw{
     border: 1px blue solid;
     width: 120px;
-    height: 122.5px;
+    height: 122px;
 }
 .write{
     position: absolute;
     left: 26.3%;
-    top: 23.5%;
+    top: 18%;
     z-index: 10;
 }
 .write2{
     position: absolute;
     left: 7.3%;
-    top: 23.5%;
+    top: 18%;
     z-index: 10;
 }
 .zhuyin{
