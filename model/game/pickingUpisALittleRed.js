@@ -70,7 +70,7 @@ function initial(){
   frames=[0,0];    
   ani.length=0;    
   shows.length=0;
-  cardData=[1,2,3,4,5,6,7,8,9,10,11,12,13];  
+  cardData=[1,2,3,4,5,6,7,8];  
   gameData.length=0;
   counterWidth=100; 
   timer=60000;
