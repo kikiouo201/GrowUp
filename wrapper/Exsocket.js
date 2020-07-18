@@ -94,8 +94,8 @@ Exsocket.createRouter = () => {
         json,
          
       );
-      console.log("sendQueues=");
-      console.log(sendQueues);
+      // console.log("sendQueues=");
+      // console.log(sendQueues);
     },
     workQueues,
     sendQueues,

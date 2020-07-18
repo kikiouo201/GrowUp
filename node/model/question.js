@@ -80,7 +80,7 @@ function question(app){
              if(question_img.match('.jpg') || question_img.match('.png')){
                 question_url = base64_encode(question_img);
                 //question_url = question_url.toString();
-                console.log('url='+question_url);
+               // console.log('url='+question_url);
              }
             const jsonObject = {
                 child_id: child_id,
