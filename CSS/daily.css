@@ -1,0 +1,89 @@
+body{
+  background-repeat:no-repeat;
+  background-size:100%; 
+  background-attachment:fixed;
+  margin-top: auto;
+}
+
+
+.head{
+  width: auto;
+  height: auto;
+  text-align:center;
+  background-color: #ffd306;
+}
+
+
+.arrorw{
+  width: 50px;
+  height: 10px;
+}
+
+
+.mwt_border{
+  display: inline-block;
+  width:250px;
+  height:250px;
+  text-align:center;
+  background:#fff;
+  position:relative;
+  left: 80px;
+  border: solid 0px #333;
+  border-radius:10px ;
+  margin:30px;
+  margin-right: 150px;
+  padding:30px;
+}
+
+.mwt_border .arrow_t_int{
+  width:0px;
+  height:0px;
+  border-width:15px;
+  border-style:solid;
+  border-color:transparent transparent #333 transparent ;
+  position:absolute;
+  top:-29px;
+  left:140px;
+}
+
+.mwt_border .arrow_t_out{
+  width:0px;
+  height:0px;
+  border-width:15px;
+  border-style:solid;
+  border-color:transparent transparent #fff transparent ;
+  position:absolute;
+  top:-29px;
+  left:140px;
+}
+
+
+.listcss{
+  font-size: 16pt;
+  list-style-type: disc;
+  font-weight: bold;
+  font-family: Microsoft JhengHei;
+}
+
+.chlidImg{
+  width: 10%;
+  height:140px;
+  border-radius: 50%;
+}
+
+.demo_line_02{  
+  height: 1px;  
+  border-top: 3px solid rgb(19, 18, 18);
+  margin-top: 2%;
+  margin-bottom: 2%;
+}  
+.demo_line_02 span{  
+  position: relative; 
+  font-size: 20pt; 
+  top: -14px;
+  padding: 10px;
+  background-color: rgb(111, 199, 250);
+  border: black 0px solid;
+  border-radius: 10px;
+  font-family: Microsoft JhengHei;  
+}

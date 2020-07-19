@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="CSS/icon.css">
+  <link rel="stylesheet" href="CSS/interface.css">
+  <link rel="stylesheet" href="CSS/daily.css">
+  <title>日常進度</title>
+</head>
+<body background="photo/background.png" onload="ShowTime()">
+  <div class="head">
+    <a href="./test1.html" style="text-decoration: unset; color:black">日常進度</a>
+       
+    <div id="today"></div>
+    <br>
+    <div id="showtime"></div>
+        
+  </div>
+  <div style="text-align: center; height: auto; padding-top: 10px;"><img class="chlidImg" src="image/character/baba.jpg"></div>
+    <div class="demo_line_02">
+      <span style="left: 15%;">昨日</span>
+      <span style="left: 42%;">今日</span>
+      <span style="left: 70%;">明日</span>
+    </div>
+  
+        <div class="mwt_border">
+        <span class="arrow_t_int"></span>
+        <span class="arrow_t_out"></span>
+        <label class="listcss"><input type="checkbox" style="width: 6%; height:6%">你拍我答完成三次</label><br><br>
+        <label class="listcss"><input type="checkbox" style="width: 6%; height:6%">你問我答完成三次</label>
+    </div> 
+      <div class="mwt_border">
+        <span class="arrow_t_int"></span>
+        <span class="arrow_t_out"></span>
+        <label class="listcss"><input type="checkbox" style="width: 6%; height:6%">你拍我答完成三次</label><br><br>
+        <label class="listcss"><input type="checkbox" style="width: 6%; height:6%">你問我答完成三次</label>
+      </div>
+
+
+      <div class="mwt_border">
+        <span class="arrow_t_int"></span>
+        <span class="arrow_t_out"></span>
+        <label class="listcss"><input type="checkbox" style="width: 6%; height:6%">你拍我答完成三次</label><br><br>
+        <label class="listcss"><input type="checkbox" style="width: 6%; height:6%">你問我答完成三次</label>
+      </div>   
+  <script language="JavaScript">
+      
+            function ShowTime(){
+          
+              var fullDate = new Date();
+          var yyyy = fullDate.getFullYear();
+          var MM = (fullDate.getMonth() + 1) >= 10 ? (fullDate.getMonth() + 1) : ("0" + (fullDate.getMonth() + 1));
+          var dd = fullDate.getDate() < 10 ? ("0"+fullDate.getDate()) : fullDate.getDate();
+          document.getElementById('today').innerHTML = yyyy + "/" + MM + "/" + dd;
+          
+            　var NowDate=new Date();
+            　var h=NowDate.getHours();
+            　var m=NowDate.getMinutes();
+            　document.getElementById('showtime').innerHTML = h+':'+m;
+            　setTimeout('ShowTime()',1000);
+            }
+  </script>
+</body>
+</html>

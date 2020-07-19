@@ -3,11 +3,13 @@ const {app, BrowserWindow, ipcMain} = require('electron')
 const path = require('path');
 const url = require('url');
 const appCallPython = require('./app-call-python-child-process')  
-const callVis = require('./vision')   
+const callVis = require('./vision')
+const crawler = require('./get_dictionary')
 const { StillCamera } = require("pi-camera-connect");
 const fs = require('fs');
 const equals = require('equals');
 const { type } = require('process');
+const utf8 = require('utf8');
 const api = require('./node/model/api');
 // const api = require('./model/api');  //伺服器測試暫關
 
@@ -156,15 +158,19 @@ const api = require('./node/model/api');
 
   ipcMain.on('vision',async (event, args)=>{
     let array=await callVis.start();
-  
    
    //array.forEach(label => console.log("vis="+label.description));
    event.sender.send('reply-mainjsfunction',array)
   })
 
   
-
+  ipcMain.on('crawler',(event, args)=>{
+    let data = args[0]
+    let webcrawler = crawler.webcrawler(data)
+   event.sender.send('reply-webcrawlerfunction',webcrawler)
+  })
  
+
   ipcMain.on('captrue',async(event, args)=>{
     const stillCamera = new StillCamera();
   
@@ -198,12 +204,16 @@ ipcMain.on('getApi-addQuiz',async (event, args)=>{
 
 
 
+
+
+
+
 ipcMain.on('fruitcheck-call', (event,data)=>{
 console.log("result");
  
-    // api.Question.addQa(1, "", "西瓜", "./still-image.jpg", "單詞", (event) => {
-    // console.log("callback=" + JSON.stringify(event));
-  // });
+    api.Question.addQa(1, "", "西瓜", "./still-image.jpg", "單詞", (event) => {
+    console.log("callback=" + JSON.stringify(event));
+  });
  
 })
 
