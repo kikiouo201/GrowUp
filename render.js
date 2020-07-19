@@ -39,6 +39,7 @@ if(identifyBtn){
 identifyBtn.addEventListener('click',()=>{   
     ipcRenderer.send('captrue');
     ipcRenderer.send('vision');
+    ipcRenderer.send('crawler');
     document.getElementById('leadTxt').innerHTML="辨識中。。。";
     console.log('ready');
 
@@ -68,7 +69,12 @@ ipcRenderer.on('reply-mainjsfunction',(event,data)=>{
 
 
 ipcRenderer.on('reply-webcrawlerfunction',(event,data) =>{
-    document.getElementById('explainTxt').innerHTML=data;
+    if(data==undefined){
+        document.getElementById('explainTxt').innerHTML="";
+    }else{
+        document.getElementById('explainTxt').innerHTML=data;
+    }
+    
 })
 
 ipcRenderer.on('reply-mainjsfunction-captrue',(event,data)=>{

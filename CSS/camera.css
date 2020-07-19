@@ -78,20 +78,29 @@ img#AnsImg{
   left: 5%;
 }
 
-.resultbackground{
-  width: auto;
-  height: auto;
-  background-image: url("./photo/background.png");
+
+.ansshow{
+  position: absolute;
+  top: 15%;
+  left: 30%;
+  width: 60%;
+  height: 70%;
+  background-color:  #92337eba;
+  border-color: rgb(241, 134, 114);
+  border: outset;
+  border-radius: 10%;
+  visibility: hidden;
 }
 
 .AnsTxt{
   position: absolute;
-  top: 15%;
+  top: 25%;
   left: 25%;
   color: white;
   font-size: 30pt;
   font-weight:bold ;
   font-family: Microsoft JhengHei;
+  margin: 0;
 }
 .Ans{
   position: absolute;
@@ -139,18 +148,6 @@ img#AnsImg{
 }
 
 
-.ansshow{
-  position: absolute;
-  top: 25%;
-  left: 30%;
-  width: auto;
-  height: auto;
-  background-color:  #92337eba;
-  border-color: rgb(241, 134, 114);
-  border: outset;
-  border-radius: 10%;
-  visibility: hidden;
-}
 
 #vocChk{
   position: relative;

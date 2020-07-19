@@ -165,7 +165,7 @@ const api = require('./node/model/api');
 
   
   ipcMain.on('crawler',(event, args)=>{
-    let data = args[0]
+    let data = args
     let webcrawler = crawler.webcrawler(data)
    event.sender.send('reply-webcrawlerfunction',webcrawler)
   })
