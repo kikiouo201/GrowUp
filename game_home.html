@@ -1,73 +1,81 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-    
-    <title>grow up children</title>
-    <link href="CSS/game/game_home.css" type="text/css" rel="stylesheet">
-    <link rel="stylesheet" href="CSS/icon.css">
-    <link rel="stylesheet" href="CSS/interface.css">
-  </head>
-  <body class="style" background="photo/background.png" > 
-    <div class="head">
-      <a href="test1.html"><img src="./icons/title.png" style="width: 350px; height: 40px;"></a>
-      
-      <body onload="ShowTime()">
-        <div id="today"></div>
-        <br>
-        <div id="showtime"></div>
-        </body>
+
+<head>
+  <meta charset="UTF-8">
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+
+  <title>grow up children</title>
+  <link href="CSS/game/game_home.css" type="text/css" rel="stylesheet">
+  <link rel="stylesheet" href="CSS/icon.css">
+  <link rel="stylesheet" href="CSS/interface.css">
+</head>
+
+<body class="style" background="photo/background.png">
+  <div class="head">
+    <a href="test1.html"><img src="./icons/title.png" style="width: 350px; height: 40px;"></a>
+
+    <body onload="ShowTime()">
+      <div id="today"></div>
+      <br>
+      <div id="showtime"></div>
+    </body>
+  </div>
+
+  <script language="JavaScript">
+
+    function ShowTime() {
+
+      var fullDate = new Date();
+      var yyyy = fullDate.getFullYear();
+      var MM = (fullDate.getMonth() + 1) >= 10 ? (fullDate.getMonth() + 1) : ("0" + (fullDate.getMonth() + 1));
+      var dd = fullDate.getDate() < 10 ? ("0" + fullDate.getDate()) : fullDate.getDate();
+      document.getElementById('today').innerHTML = yyyy + "/" + MM + "/" + dd;
+
+      var NowDate = new Date();
+      var h = NowDate.getHours();
+      var m = NowDate.getMinutes();
+      document.getElementById('showtime').innerHTML = h + ':' + m;
+      setTimeout('ShowTime()', 1000);
+    }
+  </script>
+  <div style="width:100%; height:100%;">
+    <br>
+    <div class="game_map_div">
+      <a href=""><img  src="image/map/Nantou.png" style="width:40%; padding: 8px; margin: 5px 38px;"></a>
     </div>
-   
-    <script language="JavaScript">
 
-      function ShowTime(){
+    <a href="personalprofile.html"><img class="personal_profile" src="image/character/profie.png"
+        width="40%" height="35%"></a>
 
-        var fullDate = new Date();
-  var yyyy = fullDate.getFullYear();
-  var MM = (fullDate.getMonth() + 1) >= 10 ? (fullDate.getMonth() + 1) : ("0" + (fullDate.getMonth() + 1));
-  var dd = fullDate.getDate() < 10 ? ("0"+fullDate.getDate()) : fullDate.getDate();
-  document.getElementById('today').innerHTML = yyyy + "/" + MM + "/" + dd;
- 
-      　var NowDate=new Date();
-      　var h=NowDate.getHours();
-      　var m=NowDate.getMinutes();
-      　document.getElementById('showtime').innerHTML = h+':'+m;
-      　setTimeout('ShowTime()',1000);
+    <a href="exam_phonetic.html"><img class="limit" src="image/character/limit_task.png" width="25%"></a>
+
+    <a href=""><img onclick="myFunction()" class="daily" src="image/character/daily_task.png"
+        width="25%"></a>
+
+    <a href=""><img class="success" src="image/character/success.png" width="10%"></a>
+
+    <a href=""><img class="farm" src="image/character/farm.png" width="10%"></a>
+
+    <a href=""><img class="question" src="image/character/faqbook.png" width="10%"></a>
+
+    <a href=""><img class="magic" src="image/character/magicbook.png" width="10%"></a>
+  </div>
+  <script>
+    function myFunction() {
+      if (confirm("要來挑戰限時任務了嗎?")) {
+        location.href = '';
+      } else {
+        location.href = 'test1.html';
       }
-      </script>
-      <div >
-         <br> <a href=""><input type="image" class="game_map"src="image/character/Nantou.png"width="20%"></a>
+    }
+  </script>
 
-          <a href="personalprofile.html"><input type="image" class="personal_profile" src="image/character/profie.png" width="40%" height="35%"></a>
+  <div>
+    <a href="" class="sosfloat" id="menu-share">
+      <i class="fab fa-share my-float"><img src="photo/help.png" width="70%"></i>
+    </a>
+  </div>
+</body>
 
-          <a href="exam_phonetic.html"><input type="image" class="limit" src="image/character/limit_chicken.png" width="13%"></a>
-
-          <a href=""><input type="image" onclick="myFunction()" class="daily" src="image/character/daily_bear.png" width="15%"></a>
-
-          <a href=""><input type="image"  class="success" src="image/character/success.png"width="10%"></a>
-          
-          <a href=""><input type="image"  class="farm" src="image/character/farm.png" width="10%"></a>
-
-          <a href=""><input type="image"  class="question" src="image/character/faqbook.png" width="10%"></a>
-
-          <a href=""><input type="image"  class="magic" src="image/character/magicbook.png" width="10%"></a>
-    </div>
-    <script>
-      function myFunction() {
-        if (confirm("要來挑戰限時任務了嗎?")) {
-          location.href='';
-        } else {
-          location.href='test1.html'; 
-        }
-      }
-      </script>
-    
-    <div>
-      <a href="" class="sosfloat" id="menu-share">
-        <i class="fab fa-share my-float"><img src="photo/help.png" width="70%"></i>
-        </a>
-    </div>
-  </body>
 </html>

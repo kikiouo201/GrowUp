@@ -1,6 +1,22 @@
+.game_map_div {
+    width: 50%;
+    height: auto;
+    border-width: 8px;
+    /* border-style: dashed; */
+    /* border-color: #649c03; */
+    background-image: url(../..//image/map/kraftPaper4.png);
+    /* background-color: #40a7e2; */
+    background-size: cover;
+    border-radius: 5%;
+    margin-left: 20px;
+    /* margin-right: 20px;
+    margin-top: 20px; */
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+}
 .game_map{
     position: absolute;
-    top: 11%;
     left: 15%;
    
 }
@@ -12,13 +28,13 @@
 
 .limit{
     position: absolute;
-    top: 52%;
-    left: 8%;
+    top: 50%;
+    left: 2%;
 }
 .daily{
     position: absolute;
-    top: 52%;
-    left: 27%;
+    top: 55%;
+    left: 26%;
 }
 
 .success{
