@@ -14,8 +14,21 @@ async function start(){
 
   // Performs label detection on the image file
     const [result] =await client.labelDetection('still-image.jpg');
-    const labels = result.labelAnnotations;
-    const text = labels[0].description;
+    var labels = result.labelAnnotations;
+    let text = ""; 
+    
+    for(var i=0;i<labels.length;i++){
+        if(labels[i].description.toString() == "Watermelon"){
+            text = labels[i].description;
+        }
+        if(labels[i].description.toString() == "Pineapple"){
+            text = labels[i].description;
+        }
+        if(labels[i].description.toString() == "Strawberry"){
+            text = labels[i].description;
+        }
+    }
+    
     const target = "zh-TW"
     let [translations] = await translate.translate(text, target);
     translations = Array.isArray(translations) ? translations : [translations];

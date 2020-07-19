@@ -58,16 +58,18 @@ if(fruitcheck){
 
 
 ipcRenderer.on('reply-mainjsfunction',(event,data)=>{
-    console.log("yo="+data);
-    
+    ipcRenderer.send('crawler',data)
     // data.forEach(label => all+="\nyo="+label);
     document.getElementById('Ans').innerHTML="答案:";
     document.getElementById('AnsTxt').innerHTML=" "+data;
     document.getElementById('explain').innerHTML="敘述:";
-    document.getElementById('explainTxt').innerHTML=" "+"果肉通常為紅色或黃色，水分多，味甜。";
     document.getElementById('leadTxt').innerHTML="辨識成功!!";
 })
 
+
+ipcRenderer.on('reply-webcrawlerfunction',(event,data) =>{
+    document.getElementById('explainTxt').innerHTML=data;
+})
 
 ipcRenderer.on('reply-mainjsfunction-captrue',(event,data)=>{
     console.log("hihi");
