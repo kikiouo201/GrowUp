@@ -11,6 +11,15 @@ body {
     background-image: url("../../image/background/Velvet-Sun-100-Vertices.jpeg");
   }
 
+.home_header {
+    width: auto;
+    height: auto;
+    background-color:#ffb906cf;
+    text-align: center;
+    opacity: .7;
+    font-size: 32px;
+  }
+
 .game_map_div {
     width: 50%;
     height: auto;
