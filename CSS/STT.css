@@ -1,3 +1,7 @@
+html {
+  height: 100%;
+}
+
 body{
   background-color: blanchedalmond;
   width:100%;
@@ -5,7 +9,10 @@ body{
   margin:0;
   padding:0;
   background-size:cover;
-  background-image: url("../icons/background1.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-image: url("../icons/Sel-100-Vertices.jpeg");
 }
 a:-webkit-any-link {
   color: black;
