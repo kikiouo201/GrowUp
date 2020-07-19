@@ -100,37 +100,37 @@ body {
 
 }
 
-.limit{
+.limit_task{
     position: absolute;
-    top: 50%;
-    left: 2%;
+    bottom: 2%;
+    left: 5%;
 }
-.daily{
+.daily_task{
     position: absolute;
-    top: 55%;
-    left: 26%;
+    bottom: 2%;
+    left: 29%;
 }
 
-.success{
+.trophy{
     position: absolute;
-    top: 53%;
-    right: 33%;
+    bottom: 30%;
+    right: 26%;
 }
 
 .farm{
     position: absolute;
-    top: 53%;
-    right: 11%;
+    bottom: 30%;
+    right: 8%;
 }
 
-.question{
+.treature_voice_camera{
     position: absolute;
-    top: 77%;
-    right: 33%; 
+    bottom: 3%;
+    right: 26%; 
 }
 
 .magic{
     position: absolute;
-    top: 77%;
-    right: 11%;
+    bottom: 3%;
+    right: 8%;
 }
