@@ -21,6 +21,7 @@
       <div id="showtime"></div>
     </body>
   </div>
+  <!-- <div id="demo" data-long-press-delay="500">Press and hold me for .5s</div> -->
 
   <script language="JavaScript">
 
@@ -75,14 +76,18 @@
       </button>
     </a>
 
-
-    <button class="button5" onclick="">
-      <img src="photo/dailytest.png" width="40%"><br>
-      每日任務</button>
+    <a href="daily.html">
+      <button class="button5" onclick="">
+        <img src="photo/dailytest.png" width="40%"><br>
+        每日任務
+      </button>
+    </a>
 
     <button class="button6" onclick="">
       <a href="game_collect.html"><img src="photo/level.png" width="40%"></a><br>
-      成長關卡</button>
+      成長關卡
+    </button>
+    
   </div>
   <script>
     function myFunction() {
@@ -111,7 +116,13 @@
       <a href="history.html" class="btn"><i class="fab "><img src="photo/record.png" title="歷史紀錄" width="95%"></i></a>
       <a href="score.html" class="btn"><i class="fab "><img src="photo/analysis.png" title="學習歷程" width="95%"></i></a>
     </div>
+    
+    <script src="./dist/long-press-event.min.js"></script>
     <script>
+      document.addEventListener('long-press', function(e) {
+        // do something
+      });
+
       function toggleBtn() {
         const Btns = document.querySelector(".btns");
         const add = document.getElementById("add");
@@ -138,7 +149,7 @@
       }
     </script>
     <script src="HomePage.js"></script>
-    <!-- <script src="dist/long-press.min.js"></script> -->
+    
 </body>
 
 </html>
