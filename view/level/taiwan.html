@@ -8,21 +8,41 @@
 
     <link rel="stylesheet" href="../../CSS/icon.css">
     <style>
+      
         body{
             display: flex;
             justify-content: center;
             align-items: center;
-            background: url("../../image/background/sea.png");
-            background-size: contain;
+            background: url("../../image/background/sea1.png");
+            background-size:cover;
+            position: relative;
         }
-        .map {
+        .map{
+            position: relative;
             height: 1000px;
         }
+        .mapTaiwan {
+            height: 1000px;
+        }
+        .nantou{
+            position: absolute;
+            top:300px;
+            left: 140px;
+            width: 230px;
+            
+            
+            z-index: 1;
+        }
+
     </style>
 </head>
 
 <body>
-    <img class="map" src="../../image/map/Taiwan_map.png" />
+    <div class="map">
+        <img class="mapTaiwan" src="../../image/map/Taiwan_map.png" />
+        <img class="nantou" src="../../image/map/nantou1.png" onclick="location.href='../../view/level/nantou.html'"/>
+    </div>
+   
     <div>
         <a href="../../exam_phonetic copy.html" class="sosfloat" id="menu-share">
             <i class="fab fa-share my-float"><img src="../../photo/help.png" width="70%"></i>
