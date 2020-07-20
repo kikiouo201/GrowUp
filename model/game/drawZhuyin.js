@@ -3,6 +3,7 @@ let isDrawing = false;
 let x = 0;
 let y = 0;
 let points = [];
+let level=['b','p','m','f'];
 
 
 const myPics = document.querySelectorAll('.draw');
@@ -55,18 +56,39 @@ score.addEventListener('click', () => {
             }
         });
     });
+   
+    const status=document.querySelector('.status');
+    const list=document.querySelector('.list');
     if (totalPoint < 10) {
-        alert('再加油');
+        status.innerHTML="失敗";
+        list.innerHTML="再加油";
     } else if (totalPoint < 20) {
-        alert('很棒在努力喔！');
+        status.innerHTML="失敗";
+        list.innerHTML="很棒在努力喔！";
     } else if (totalPoint < 25) {
-        alert('太棒了！你做得真好！');
+        status.innerHTML="成功";
+        list.innerHTML="太棒了！你做得真好！";
     } else if (totalPoint < 30) {
-        alert('太厲害了！你是小天才！');
+        status.innerHTML="成功";
+        list.innerHTML="太厲害了！你是小天才！";    
     }
     console.log('totalPoint= ' + totalPoint);
 
+    const black_overlay=document.querySelector('.black_overlay');
+    black_overlay.style.visibility = "visible";
+    
+
 });
+
+let nextLevel ='b';
+function goNextLevel(){
+    if(nextLevel.match('no')!=null){
+        window.location.href="../../view/game/drawzhuyin.html?id="+nextLevel;
+    }
+    else{
+        alert('要通關才可以到下一關喔！');
+    }
+}
 
 function onload() {
 
@@ -75,6 +97,14 @@ function onload() {
     if (id != null) {
         let zhuyin = document.querySelector(".zhuyin img");
         zhuyin.src = `../../image/zhuyin/${id}.png`;
+        if((level.indexOf(id)!=-1)){
+            nextLevel=level[(level.indexOf(id)+1)];
+           
+        }else{
+            nextLevel="no";
+        }
+        console.log('(level.indexOf(id)='+(level.indexOf(id)));
+        
     }
 
 
@@ -119,3 +149,4 @@ function scoreJudgment(id ,x, y, points, num) {
   
     console.log(`point=${points}`);
 }
+
