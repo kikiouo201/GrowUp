@@ -4,13 +4,18 @@ const path = require('path');
 const url = require('url');
 const appCallPython = require('./app-call-python-child-process')  
 const callVis = require('./vision')
-const crawler = require('./get_dictionary')
+const callCrawler = require('./get_dictionary')
 const { StillCamera } = require("pi-camera-connect");
 const fs = require('fs');
 const equals = require('equals');
 const { type } = require('process');
 const utf8 = require('utf8');
 const api = require('./node/model/api');
+
+const request = require('request')
+const cheerio = require('cheerio')
+const encoding = require('encoding');
+const iconv = require('iconv-lite');
 // const api = require('./model/api');  //伺服器測試暫關
 
 // let {PythonShell} = require('python-shell')
@@ -164,10 +169,24 @@ const api = require('./node/model/api');
   })
 
   
-  ipcMain.on('crawler',(event, args)=>{
-    let data = args
-    let webcrawler = crawler.webcrawler(data)
-   event.sender.send('reply-webcrawlerfunction',webcrawler)
+  ipcMain.on('crawler',async(event, args)=>{
+  // let webcrawler = await callCrawler.webcrawler();
+  //  console.log(`webcrawler=${webcrawler}`);
+
+  request('https://www.moedict.tw/%E8%A5%BF%E7%93%9C#gsc.tab=0', (err, res, body) => {
+ 
+    if(!err && res.statusCode == 200){
+       const $ = cheerio.load(body);
+       let def = $('.def')
+       output = def.find('a').text() 
+    }
+    //console.log(output);
+       event.sender.send('reply-webcrawlerfunction',output);
+      console.log(output);
+
+  })
+  //  event.sender.send('reply-webcrawlerfunction',webcrawler);
+  
   })
  
 

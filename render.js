@@ -39,7 +39,6 @@ if(identifyBtn){
 identifyBtn.addEventListener('click',()=>{   
     ipcRenderer.send('captrue');
     ipcRenderer.send('vision');
-    ipcRenderer.send('crawler');
     document.getElementById('leadTxt').innerHTML="辨識中。。。";
     console.log('ready');
 

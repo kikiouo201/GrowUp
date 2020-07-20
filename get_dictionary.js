@@ -1,25 +1,34 @@
 const request = require('request')
 const cheerio = require('cheerio')
+const encoding = require('encoding');
+const iconv = require('iconv-lite');
 
 
 
 
 
 
-function webcrawler(data) {
-  const url = 'https://www.moedict.tw/'+data+'#gsc.tab=0'
+async function webcrawler() {
+  const url = 'https://www.moedict.tw/%E8%A5%BF%E7%93%9C#gsc.tab=0'
+  let output;
   console.log(url)
-  request(url, (err, res, body) => {
+  const yo=await request(url, (err, res, body) => {
+    return new Promise((resolve,reject)=>{
     if(!err && res.statusCode == 200){
        const $ = cheerio.load(body);
-       const def = $('.def');
-       const output = def.find('a').text();
-       console.log(output)
+       let def = $('.def')
+       output = def.find('a').text() 
     }
+    //console.log(output);
+      resolve(output);
+      console.log(output);
+    });
   })
+ console.log(yo);
+  
 }
-webcrawler()
 
 module.exports ={
   webcrawler
 }
+
