@@ -49,16 +49,16 @@ score.addEventListener('click', () => {
     points.forEach((grid) => {
         // console.log('grid= ' + grid);
         grid.forEach((point) => {
-            // console.log('point= ' + point);
+            console.log('point= ' + point);
             if (point == 1) {
                 totalPoint++;
             }
         });
     });
-   
+
     const status=document.querySelector('.status');
     const statustext=document.querySelector('.statusText');
-    if (totalPoint = 0) {
+    if (totalPoint == 0) {
         status.innerHTML="失敗";
         statustext.innerHTML="0分";
         nextLevel='no';
