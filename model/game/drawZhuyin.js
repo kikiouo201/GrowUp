@@ -10,7 +10,6 @@ const myPics = document.querySelectorAll('.draw');
 console.log('pics' + myPics.length);
 myPics.forEach((pics, num) => {
     let id = (new URLSearchParams(location.search)).get("id");
-    console.log('id='+id);
     const context = pics.getContext('2d');
     points.push([0, 0, 0, 0, 0]);
     // event.offsetX, event.offsetY gives the (x,y) offset from the edge of the canvas.
@@ -48,9 +47,9 @@ score.addEventListener('click', () => {
     console.log('score onclick');
     let totalPoint = 0;
     points.forEach((grid) => {
-        console.log('grid= ' + grid);
+        // console.log('grid= ' + grid);
         grid.forEach((point) => {
-            console.log('point= ' + point);
+            // console.log('point= ' + point);
             if (point == 1) {
                 totalPoint++;
             }
@@ -80,9 +79,11 @@ score.addEventListener('click', () => {
 
 });
 
-let nextLevel ='b';
+let nextLevel ='no';
 function goNextLevel(){
-    if(nextLevel.match('no')!=null){
+    console.log("nextLevel"+nextLevel);
+    if(nextLevel!='no'){
+        console.log("nextLevel"+nextLevel);
         window.location.href="../../view/game/drawzhuyin.html?id="+nextLevel;
     }
     else{
@@ -93,17 +94,17 @@ function goNextLevel(){
 function onload() {
 
     let id = (new URLSearchParams(location.search)).get("id");
-    console.log(`id=${id}`)
+    // console.log(`id=${id}`)
     if (id != null) {
         let zhuyin = document.querySelector(".zhuyin img");
         zhuyin.src = `../../image/zhuyin/${id}.png`;
-        if((level.indexOf(id)!=-1)){
+        if((level.indexOf(id)!=-1)&&(level.indexOf(id)+1)<level.length){
             nextLevel=level[(level.indexOf(id)+1)];
-           
         }else{
-            nextLevel="no";
+            nextLevel='no';
         }
-        console.log('(level.indexOf(id)='+(level.indexOf(id)));
+    //     console.log("nextLevel"+nextLevel);
+    //    console.log('level.indexOf(id)='+level.indexOf(id));
         
     }
 
