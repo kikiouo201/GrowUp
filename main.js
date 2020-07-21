@@ -171,9 +171,13 @@ const iconv = require('iconv-lite');
   
   ipcMain.on('crawler',async(event, args)=>{
   // let webcrawler = await callCrawler.webcrawler();
-  //  console.log(`webcrawler=${webcrawler}`);
+  //  console.log(`webcrawler=${webcrawler}`)
+  const data= encodeURI(args)
 
-  request('https://www.moedict.tw/%E8%A5%BF%E7%93%9C#gsc.tab=0', (err, res, body) => {
+  const url ='https://www.moedict.tw/'+data+'#gsc.tab=0'
+
+  console.log(url)
+  request(url, (err, res, body) => {
  
     if(!err && res.statusCode == 200){
        const $ = cheerio.load(body);
