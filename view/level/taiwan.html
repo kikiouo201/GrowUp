@@ -29,17 +29,27 @@
             top:300px;
             left: 140px;
             width: 230px;
-            
-            
             z-index: 10;
+        }
+        .north{
+            position: absolute;
+            top:0px;
+            left: 205px;
+            width: 334px;
+            z-index: 1;
+        }
+        .sorth{
+            position: absolute;
+            bottom: -2px;
+            left: -2px;
+            width: 300px;
+            z-index: 1;
         }
         .east{
             position: absolute;
-            top:271px;
-            left: 218px;
-            width: 270px;
-            
-            
+            top:273px;
+            left: 110px;
+            height: 680px;
             z-index: 1;
         }
         .west{
@@ -47,8 +57,6 @@
             top:174px;
             left: 11px;
             width: 370px;
-            
-            
             z-index: 1;
         }
     </style>
@@ -58,8 +66,10 @@
     <div class="map">
         <img class="mapTaiwan" src="../../image/map/Taiwan_big.png" />
         <img class="nantou" src="../../image/map/nantou1.png" onclick="location.href='../../view/level/nantou.html'"/>
-        <img class="east" src="../../image/map/EastRegion.png" onclick="location.href='../../view/level/eastRegion.html'"/>
-        <img class="west" src="../../image/map/WestRegion.png" onclick="location.href='../../view/level/westRegion.html'"/>
+        <img class="north" src="../../image/map/NorthRegion_close.png" onclick="alert('尚未開發')"/>
+        <img class="sorth" src="../../image/map/SorthRegion_close.png" onclick="alert('尚未開發')"/>
+        <img class="east" src="../../image/map/EastRegion_text.png" onclick="location.href='../../view/level/eastRegion.html'"/>
+        <img class="west" src="../../image/map/WestRegion_text.png" onclick="location.href='../../view/level/westRegion.html'"/>
     </div>
    
     <div>
