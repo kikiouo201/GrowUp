@@ -31,9 +31,26 @@
             width: 230px;
             
             
+            z-index: 10;
+        }
+        .east{
+            position: absolute;
+            top:271px;
+            left: 218px;
+            width: 270px;
+            
+            
             z-index: 1;
         }
-
+        .west{
+            position: absolute;
+            top:174px;
+            left: 11px;
+            width: 370px;
+            
+            
+            z-index: 1;
+        }
     </style>
 </head>
 
@@ -41,10 +58,12 @@
     <div class="map">
         <img class="mapTaiwan" src="../../image/map/Taiwan_big.png" />
         <img class="nantou" src="../../image/map/nantou1.png" onclick="location.href='../../view/level/nantou.html'"/>
+        <img class="east" src="../../image/map/EastRegion.png" onclick="location.href='../../view/level/eastRegion.html'"/>
+        <img class="west" src="../../image/map/WestRegion.png" onclick="location.href='../../view/level/westRegion.html'"/>
     </div>
    
     <div>
-        <a href="../../exam_phonetic copy.html" class="sosfloat" id="menu-share">
+        <a href="../../test1.html" class="sosfloat" id="menu-share">
             <i class="fab fa-share my-float"><img src="../../photo/help.png" width="70%"></i>
         </a>
     </div>
