@@ -1,131 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="CSS/icon.css">
-    <link rel="stylesheet" href="CSS/interface.css">
-    <link href="./tool.css" type="text/css" rel="stylesheet">
-    <title>grow up children</title>
-    
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="CSS/icon.css">
+  <link rel="stylesheet" href="CSS/interface.css">
+  <link rel="stylesheet" href="CSS/every_four_button.css">
+  <link href="./tool.css" type="text/css" rel="stylesheet">
+  <title>grow up children</title>
+
 </head>
 
 <body class="style" background="photo/background.png">
-    <div class="head">
-        <a>個人簡介</a>
-        <body onload="ShowTime()">
-          <div id="today"></div>
-          <br>
-          <div id="showtime"></div>
-          </body>
-      </div>
-      <script language="JavaScript">
-      
-        function ShowTime(){
-      
-          var fullDate = new Date();
+  <div class="head">
+    <a>個人簡介</a>
+
+    <body onload="ShowTime()">
+      <div id="today"></div>
+      <br>
+      <div id="showtime"></div>
+    </body>
+  </div>
+  <script language="JavaScript">
+
+    function ShowTime() {
+
+      var fullDate = new Date();
       var yyyy = fullDate.getFullYear();
       var MM = (fullDate.getMonth() + 1) >= 10 ? (fullDate.getMonth() + 1) : ("0" + (fullDate.getMonth() + 1));
-      var dd = fullDate.getDate() < 10 ? ("0"+fullDate.getDate()) : fullDate.getDate();
+      var dd = fullDate.getDate() < 10 ? ("0" + fullDate.getDate()) : fullDate.getDate();
       document.getElementById('today').innerHTML = yyyy + "/" + MM + "/" + dd;
-      
-        　var NowDate=new Date();
-        　var h=NowDate.getHours();
-        　var m=NowDate.getMinutes();
-        　document.getElementById('showtime').innerHTML = h+':'+m;
-        　setTimeout('ShowTime()',1000);
+
+      var NowDate = new Date();
+      var h = NowDate.getHours();
+      var m = NowDate.getMinutes();
+      document.getElementById('showtime').innerHTML = h + ':' + m;
+      setTimeout('ShowTime()', 1000);
+    }
+  </script>
+  <br><br>
+  <script>
+
+    function readURL(input) {
+
+      if (input.files && input.files[0]) {
+
+        var imageTagID = input.getAttribute("targetID");
+
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+
+          var img = document.getElementById(imageTagID);
+
+          img.setAttribute("src", e.target.result)
+
         }
-        </script>
-      <br><br> 
-      <script>
 
-            function readURL(input){
+        reader.readAsDataURL(input.files[0]);
 
-            if(input.files && input.files[0]){
+      }
 
-            var imageTagID = input.getAttribute("targetID");
+    }
 
-            var reader = new FileReader();
+  </script>
+  <div>
+    <form action="/somewhere/to/upload" enctype="multipart/form-data">
+      <img class="image" id="preview_progressbarTW_img" src="photo/boy.png" width="15%" height="25%" />
+      <br>
 
-            reader.onload = function (e) {
+      <input class="uploadimage" type="file" onchange="readURL(this)" targetID="preview_progressbarTW_img"
+        accept="image/gif, image/jpeg, image/png" />
+    </form>
+  </div>
 
-                var img = document.getElementById(imageTagID);
+  <div>
+    <img id="userimg" src="photo/user.png">
+    <p style="position:absolute;right: 23%; top: 23%;"><b>小貝貝</b></p>
+    <img id="birthimg" src="photo/birthday.png">
+    <p style="position:absolute;right: 23%; top: 43%;"><b>10/19</b></p>
+    <img id="likeimg" src="photo/userheart.png">
+    <p style="position:absolute;right: 23%; top: 63%;"><b>裝可愛</b></p>
+  </div>
 
-                img.setAttribute("src", e.target.result)
+  <div>
+    <a href="test1.html" class="sosfloat" id="menu-share">
+      <i class="fab fa-share my-float"><img src="photo/help.png" width="70%"></i>
+    </a>
+  </div>
 
-            }
+  <div class="fabs" onclick="toggleBtn()">
+    <div class="action">
+      <i class="fas" id="add"><img src="photo/settings.png" width="110%"></i>
+      <i class="fas" id="remove" style="display: none"><img src="photo/settings.png" width="110%"></i>
+    </div>
 
-            reader.readAsDataURL(input.files[0]);
-
-            }
-
-            }
-                    
-        </script>
-      <div>
-        <form  action="/somewhere/to/upload" enctype="multipart/form-data">
-            <img class="image" id="preview_progressbarTW_img" src="photo/boy.png" width="15%" height="25%"/>
-            <br>
-
-            <input class="uploadimage" type="file" onchange="readURL(this)" targetID="preview_progressbarTW_img" accept="image/gif, image/jpeg, image/png"/>
-         </form>
-      </div>
-      <div>
-          <img id="userimg" src="photo/user.png"><p style="position:absolute;right: 23%; top: 23%;"><b>小貝貝</b></p>
-          <img id="birthimg" src="photo/birthday.png"><p style="position:absolute;right: 23%; top: 43%;"><b>10/19</b></p>
-          <img id="likeimg" src="photo/userheart.png"><p style="position:absolute;right: 23%; top: 63%;"><b>裝可愛</b></p>
-      </div>
-      <div>
-        <a href="test1.html" class="sosfloat" id="menu-share">
-          <i class="fab fa-share my-float"><img src="photo/help.png" width="70%"></i>
-          </a>
-      </div>
-        <div class="fabs" onclick="toggleBtn()">
-          <div class="action">
-            <i class="fas" id="add"><img src="photo/settings.png" width="110%"></i>
-            <i class="fas" id="remove" style="display: none"><img src="photo/settings.png" width="110%"></i>
-          </div>
-    
-          <div class="btns">
-            <a href="personalprofile.html" class="btn"><i class="fab "><img src="photo/user.png" title="個人簡介" width="95%"></i></a>
-            <a href="history.html" class="btn"><i class="fab "><img src="photo/record.png" title="歷史紀錄" width="95%"></i></a>
-            <a href="#" class="btn"><i class="fab "><img src="photo/analysis.png" title="學習歷程" width="95%"></i></a>
-          </div>
-      <div>
-        <a href="" class="returnfloat" id="menu-share">
-          <i class="fab fa-share return-float"><img src="photo/return.png" ></i>
-          </a>
-      </div>
-      <div>
-        <a href="game_home.html" class="homefloat" id="menu-share">
-          <i class="fab fa-share my-float"><img src="photo/gobackhome.png" width="70%"></i>
-          </a>
-      </div>
-      <script>
-        function toggleBtn() {
-       const Btns = document.querySelector(".btns");
-       const add = document.getElementById("add");
-       const remove = document.getElementById("remove");
-       const btn = document.querySelector(".btns").querySelectorAll("a");
-       Btns.classList.toggle("open");
-       if (Btns.classList.contains("open")) {
-         remove.style.display = "block";
-         add.style.display = "none";
-         btn.forEach((e, i) => {
-           setTimeout(() => {
-             bottom = 65 * i;
-             e.style.bottom = bottom + "px";
-             console.log(e);
-           }, 100 * i);
-         });
-       } else {
-         add.style.display = "block";
-         remove.style.display = "none";
-         btn.forEach((e, i) => {
-           e.style.bottom = "0px";
-         });
-       }
-     }
-     </script>
+    <div class="btns">
+      <a href="personalprofile.html" class="btn"><i class="fab "><img src="photo/user.png" title="個人簡介"
+            width="95%"></i></a>
+      <a href="history.html" class="btn"><i class="fab "><img src="photo/record.png" title="歷史紀錄" width="95%"></i></a>
+      <a href="#" class="btn"><i class="fab "><img src="photo/analysis.png" title="學習歷程" width="95%"></i></a>
+    </div>
+  </div>
   
+    <div class="return_mark">
+      <a href="" class="returnfloat" id="menu-share">
+        <i class="fab fa-share return-float"><img src="photo/return.png"></i>
+      </a>
+    </div>
+
+    <div class="home_mark">
+      <a href="game_home.html" class="homefloat" id="menu-share">
+        <i class="fab fa-share my-float"><img src="photo/gobackhome.png" width="70%"></i>
+      </a>
+    </div>
+
+    <script>
+      function toggleBtn() {
+        const Btns = document.querySelector(".btns");
+        const add = document.getElementById("add");
+        const remove = document.getElementById("remove");
+        const btn = document.querySelector(".btns").querySelectorAll("a");
+        Btns.classList.toggle("open");
+        if (Btns.classList.contains("open")) {
+          remove.style.display = "block";
+          add.style.display = "none";
+          btn.forEach((e, i) => {
+            setTimeout(() => {
+              bottom = 65 * i;
+              e.style.bottom = bottom + "px";
+              console.log(e);
+            }, 100 * i);
+          });
+        } else {
+          add.style.display = "block";
+          remove.style.display = "none";
+          btn.forEach((e, i) => {
+            e.style.bottom = "0px";
+          });
+        }
+      }
+    </script>
+
 </body>
+
 </html>
