@@ -88,10 +88,13 @@ body{
 }
 
 .taiwan{
-width: 100px;
-height: 100px;
+width: 150px;
+height: 150px;
 position: absolute;
-top: 20px;
-left: 20px;
-border: 1px solid black;
+top: 0px;
+left: 0px;
+border-bottom: 5px solid black;
+border-right: 5px solid black;
+border-radius:0px 0px 40px 0px ;
+background-color: white;
 }
