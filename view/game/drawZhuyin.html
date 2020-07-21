@@ -12,14 +12,21 @@
 </head>
 
 <body class="style" background="../../photo/background.png" onload="onload()">
-  <div class="black_overlay"> 
+  <div class="black_overlay">
     <div class="result">
-        <div class="list status">成功</div>
-        <div class="list"></div>
-        <div class="list">道具</div>
-        <div class="list" onclick="goNextLevel()">下一關</div>
+      <div class="close">X</div>
+      <div class="status">成功</div>
+      <div class="statusText"></div>
+      <div class="props">
+        <div>道具</div>
+        <div>小卡</div>
+        <div>經驗值</div>
+
+      </div>
+      <div class="challengeAgain" onclick="challengeAgain()">再次挑戰</div>
+      <div class="nextLevel" onclick="goNextLevel()">下一關</div>
     </div>
-</div>
+  </div>
   <div class="zhuyin">
     <img src="../../image/zhuyin/b.png" />
     <div class="anvas write">

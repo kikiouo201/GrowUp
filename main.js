@@ -40,7 +40,7 @@ const iconv = require('iconv-lite');
     })
 
     // 然后加载应用的 index.html。
-    win.loadFile('test1.html')
+    win.loadFile('game_home.html')
 
     //到app資料夾執行index.html
     // win.loadURL(url.format({
