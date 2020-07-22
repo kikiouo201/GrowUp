@@ -1,4 +1,6 @@
-html {
+  .element::-webkit-scrollbar {display:none}
+
+  html {
     height: 100%;
   }
   
@@ -23,14 +25,50 @@ html {
   }
 
   .main_area{
-    top: 0px;
+    top: 0;
+    left: 0;
     position: absolute;
     width: 100%;
+    height: 85%;
     margin:60px auto;
     margin-bottom: 20px;
-    text-align:center;
-    z-index: 100;
     box-sizing:border-box;
+    background-image: url(../image/character/bg.png);
+    background-size: 50% 620px;
+    /* background-repeat: no-repeat; */
+  }
+
+  .left_main_area{
+    top: 0;
+    left: 0;
+    position: absolute;
+    /* width: 100%;
+    height: 85%; */
+    margin:20px 180px;
+    margin-bottom: 20px;
+    box-sizing:border-box;
+    font-size: 28px;
+    font-weight: bolder;
+    /* background-image: url(../image/character/bg.png); */
+    /* background-size: 50% 620px; */
+    /* background-repeat: no-repeat; */
+  
+  }
+
+  .right_main_area{
+    top: 0;
+    right: 0;
+    position: absolute;
+    /* width: 100%;
+    height: 85%; */
+    margin:20px 180px;
+    margin-bottom: 20px;
+    box-sizing:border-box;
+    font-size: 28px;
+    font-weight: bolder;
+    /* background-image: url(../image/character/bg.png); */
+    /* background-size: 50% 620px; */
+    /* background-repeat: no-repeat; */
   }
 
   .home_page{
@@ -54,4 +92,14 @@ html {
   .home_title{
   padding-right: 38px;  /*強迫症配合左邊返回按鈕，代研究還可以怎麼改，問kiki*/
   font-size: 36px;
+}
+
+.collectCard {
+  margin-top: 118px;
+  width: 36%;
+  height: 63%;
+  position: absolute;
+  left: 7%;
+  top: 0;
+  overflow: hidden;
 }
