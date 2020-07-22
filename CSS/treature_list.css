@@ -94,12 +94,22 @@
   font-size: 36px;
 }
 
-.collectCard {
+.collect_icon {
   margin-top: 118px;
   width: 36%;
   height: 63%;
   position: absolute;
   left: 7%;
+  top: 0;
+  overflow: hidden;
+}
+
+.collect_magicCard {
+  margin-top: 118px;
+  width: 36%;
+  height: 63%;
+  position: absolute;
+  right: 5%;
   top: 0;
   overflow: hidden;
 }
