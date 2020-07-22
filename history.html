@@ -4,23 +4,20 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="CSS/icon.css">
     <link rel="stylesheet" href="CSS/interface.css">
-    <link href="./collect.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="collect.css">
     <title>grow up children</title>
     
 </head>
 
-<body class="style" background="photo/background.png">
-    <div class="head">
-        <div class="arrow">
-          <a href="game_home.html"><img type="image" src="photo/return.png"></a>
-          </div>
-        <a>歷史紀錄</a>
-        <body onload="ShowTime()">
-          <div id="today"></div>
-          <br>
-          <div id="showtime"></div>
-          </body>
-      </div>
+<body  class="style" background="image/background/t_back.png" onload="ShowTime()">
+  <div class="head">
+    <a href="./game_home.html" style="text-decoration: unset; color:black">歷史紀錄</a>
+       
+    <div id="today"></div>
+    <br>
+    <div id="showtime"></div>
+        
+  </div>
       <script language="JavaScript">
       
         function ShowTime(){
@@ -38,78 +35,70 @@
         　setTimeout('ShowTime()',1000);
         }
         </script>
-      <br><br> 
+      <select name="magicbook" onchange="javascript:location.href=this.value;" id="selectbook">
+        <option>選擇寶典</option>
+        <option value="history.html">歷史紀錄</option></a>
+        <option value="collect.html">收藏本</option></a>
+        <option value="">兒歌</option></a>
+        <option value="">繪本</option></a>
+        </select> 
+        <div class="scene scene--card" >
+          <div>
+            <img src="photo/heart.png" id="collection" onclick="collection()">
+            <img src="icons/speaker.png" width="5%" onclick="" id="ansvoice">
+            <p id="time" style="height: 50px;">2020/05/16<br>20:00</p>
+          </div>
+          <div class="card">
+            <div class="card__face card__face--front">
+               <p id="answord" style="height: 50px;">Q:鸚鵡是甚麼?</p>
+          </div>
+            <div class="card__face card__face--back">
+              <h2 id="ansbackword">A:鸚鵡是產於熱帶的一種鳥</h2>
+            </div>
+          </div>
+        </div>
+          <div class="scene scene--card" >
+            <div>
+              <img src="photo/heart.png" id="collection" onclick="collection()">
+              <img src="icons/speaker.png" width="5%" onclick="" id="ansvoice">
+              <p id="time" style="height: 50px;">2020/05/16<br>20:00</p>
+            </div>
+            <div class="card">
+              <div class="card__face card__face--front">
+                 <p id="answord" style="height: 50px;">Q:鸚鵡是甚麼?</p>
+              
+            </div>
+              <div class="card__face card__face--back">
+                <h2 id="ansbackword">A:鸚鵡是產於熱帶的一種鳥</h2>
+              </div>
+            </div>
+          </div>
+          <div class="scene scene--card" >
+            <div>
+              <img src="photo/heart.png" id="collection" onclick="collection()">
+              <img src="icons/speaker.png" width="5%" onclick="" id="ansvoice">
+              <p id="time" style="height: 50px;">2020/05/16<br>16:00</p>
+            </div>
+            <div class="card">
+              <div class="card__face card__face--front">
+               
+                <img src="photo/apple.jpg" width="15%" style="border-radius: 20%;" id="picture">
+            </div>
+              <div class="card__face card__face--back">
+                <h2 id="ansbackword">A:這是蘋果</h2>
+                <h3 id="ansbackword">This is an apple.</h3>
+              </div>
+            </div>
+          </div>
       
-      <div class="scene scene--card" >
-        <div>
-          <img src="photo/heart.png" id="collection" onclick="collection()">
-          <img src="icons/speaker.png" width="5%" onclick="" id="ansvoice">
-          <p id="time" style="height: 50px;">2020/05/16<br>20:00</p>
-        </div>
-        <div class="card">
-          <div class="card__face card__face--front">
-             <p id="answord" style="height: 50px;">Q:鸚鵡是甚麼?</p>
-          
-        </div>
-          <div class="card__face card__face--back">
-            <h2 id="ansbackword">A:鸚鵡是產於熱帶的一種鳥</h2>
-          </div>
-        </div>
-      </div>
 
-      <div class="scene scene--card" >
-        <div>
-          <img src="photo/heart.png" id="collection" onclick="collection()">
-          <img src="icons/speaker.png" width="5%" onclick="" id="ansvoice">
-          <p id="time" style="height: 50px;">2020/05/16<br>19:00</p>
-        </div>
-        <div class="card">
-          <div class="card__face card__face--front">
-           
-            <img src="photo/parrow.jpg" width="15%" style="border-radius: 20%;" id="picture">
-        </div>
-          <div class="card__face card__face--back">
-            <h2 id="ansbackword">A:這是鸚鵡</h2>
-            <h3 id="ansbackword">This is a parrow.</h3>
-          </div>
-        </div>
-      </div>
-
-      <div class="scene scene--card" >
-        <div>
-          <img src="photo/heart.png" id="collection" onclick="collection()">
-          <img src="icons/speaker.png" width="5%" onclick="" id="ansvoice">
-          <p id="time" style="height: 50px;">2020/05/16<br>16:00</p>
-        </div>
-        <div class="card">
-          <div class="card__face card__face--front">
-           
-            <img src="photo/apple.jpg" width="15%" style="border-radius: 20%;" id="picture">
-        </div>
-          <div class="card__face card__face--back">
-            <h2 id="ansbackword">A:這是蘋果</h2>
-            <h3 id="ansbackword">This is an apple.</h3>
-          </div>
-        </div>
-      </div>
       <div>
         <a href="test1.html" class="sosfloat" id="menu-share">
           <i class="fab fa-share my-float"><img src="photo/help.png" width="70%"></i>
           </a>
       </div>
-        <div class="fabs" onclick="toggleBtn()">
-          <div class="action">
-            <i class="fas" id="add"><img src="photo/settings.png" width="110%"></i>
-            <i class="fas" id="remove" style="display: none"><img src="photo/settings.png" width="110%"></i>
-          </div>
-    
-          <div class="btns">
-            <a href="personalprofile.html" class="btn"><i class="fab "><img src="photo/user.png" title="個人簡介" width="95%"></i></a>
-            <a href="history.html" class="btn"><i class="fab "><img src="photo/record.png" title="歷史紀錄" width="95%"></i></a>
-            <a href="#" class="btn"><i class="fab "><img src="photo/analysis.png" title="學習歷程" width="95%"></i></a>
-          </div>
       <div>
-        <a href="" class="returnfloat" id="menu-share">
+        <a href="game_home.html" class="returnfloat" id="menu-share">
           <i class="fab fa-share return-float"><img src="photo/return.png" ></i>
           </a>
       </div>
@@ -118,32 +107,7 @@
           <i class="fab fa-share my-float"><img src="photo/gobackhome.png" width="70%"></i>
           </a>
       </div>
-      <script>
-        function toggleBtn() {
-       const Btns = document.querySelector(".btns");
-       const add = document.getElementById("add");
-       const remove = document.getElementById("remove");
-       const btn = document.querySelector(".btns").querySelectorAll("a");
-       Btns.classList.toggle("open");
-       if (Btns.classList.contains("open")) {
-         remove.style.display = "block";
-         add.style.display = "none";
-         btn.forEach((e, i) => {
-           setTimeout(() => {
-             bottom = 65 * i;
-             e.style.bottom = bottom + "px";
-             console.log(e);
-           }, 100 * i);
-         });
-       } else {
-         add.style.display = "block";
-         remove.style.display = "none";
-         btn.forEach((e, i) => {
-           e.style.bottom = "0px";
-         });
-       }
-     }
-     </script>
+    
   <script>
     function collection(){
       var str = document.getElementById('collection').src;

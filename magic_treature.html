@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GrowUp學習趣</title>
+    <link href="./CSS/collect.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/icon.css">
+    <link rel="stylesheet" href="CSS/interface.css">
+    <link rel="stylesheet" href="CSS/every_four_button.css">
+</head>
+
+<body  class="style" background="image/background/t_back.png" onload="ShowTime()">
+    <div class="head">
+      <a href="./game_home.html" style="text-decoration: unset; color:black">魔法寶典</a>
+         
+      <div id="today"></div>
+      <br>
+      <div id="showtime"></div>
+          
+    </div>
+
+    <script language="JavaScript">
+
+        function ShowTime() {
+
+            var fullDate = new Date();
+            var yyyy = fullDate.getFullYear();
+            var MM = (fullDate.getMonth() + 1) >= 10 ? (fullDate.getMonth() + 1) : ("0" + (fullDate.getMonth() + 1));
+            var dd = fullDate.getDate() < 10 ? ("0" + fullDate.getDate()) : fullDate.getDate();
+            document.getElementById('today').innerHTML = yyyy + "/" + MM + "/" + dd;
+
+            var NowDate = new Date();
+            var h = NowDate.getHours();
+            var m = NowDate.getMinutes();
+            document.getElementById('showtime').innerHTML = h + ':' + m;
+            setTimeout('ShowTime()', 1000);
+        }
+    </script>
+     
+      <select name="magicbook" onchange="javascript:location.href=this.value;" id="selectbook">
+        <option>選擇寶典</option>
+        <option value="history.html">歷史紀錄</option></a>
+        <option value="collect.html">收藏本</option></a>
+        <option value="">兒歌</option></a>
+        <option value="">繪本</option></a>
+        </select> 
+
+
+    <div class="sos_mark">
+        <a href="test1.html" class="sosfloat" id="menu-share">
+            <i class="fab fa-share my-float"><img src="photo/help.png" width="70%"></i>
+        </a>
+    </div>
+
+    <div class="return_mark">
+        <a href="game_home.html" class="returnfloat" id="menu-share">
+            <i class="fab fa-share return-float"><img src="photo/return.png"></i>
+        </a>
+    </div>
+
+    <div class="home_mark">
+        <a href="game_home.html" class="homefloat" id="menu-share">
+            <i class="fab fa-share my-float"><img src="photo/gobackhome.png" width="70%"></i>
+        </a>
+    </div>
+    <!-- You can also require other files to run in this process -->
+
+    
+</body>
+
+</html>
