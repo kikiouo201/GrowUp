@@ -136,3 +136,15 @@ body {
     bottom: 3%;
     right: 8%;
 }
+
+.nowInWhere {
+    width: 15%; 
+    padding: 8px; 
+    margin: 5px 8px;
+    position: absolute; 
+    left: 40px; 
+    top: 40px; 
+    background-image: url(../../image/background/sea1.png);
+    background-size: 300px 100px;
+    border-radius: 20px;
+}
