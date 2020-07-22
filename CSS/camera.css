@@ -92,17 +92,18 @@ img#AnsImg{
   top: 25%;
   left: 30%;
   width: 60%;
-  height:auto;
+  height:70%;
   background-color:  #92337eba;
   border-color: rgb(241, 134, 114);
   border: outset;
   border-radius: 10%;
   visibility: hidden;
+  padding: 10px;
 }
 
 .AnsTxt{
   position: absolute;
-  top: 25%;
+  top: 16%;
   left: 25%;
   color: white;
   font-size: 30pt;
@@ -131,9 +132,8 @@ img#AnsImg{
 }
 
 #explainTxt{
-  margin: 0;
   position: absolute;
-  top: 45%;
+  top: 32%;
   left: 25%;
   color: white;
   font-size: 30pt;
