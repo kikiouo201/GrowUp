@@ -11,8 +11,8 @@ body{
     position: relative;
 }
 .terrain{
-    width: 700px;
-    height: 100%;
+
+    height: 800px;
   position: relative;
   z-index: 1;
 }

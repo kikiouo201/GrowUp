@@ -1,0 +1,57 @@
+html {
+    height: 100%;
+  }
+  
+  body {
+    /* background-color: blanchedalmond; */
+    width:100%;
+    height:100%;
+    margin:0;
+    padding:0;
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-image: url("../image/map/kraftPaper2.png");
+  }
+
+  a:-webkit-any-link {
+    color: black;
+    outline: none;
+    vertical-align: middle;
+    text-decoration:none;
+  }
+
+  .main_area{
+    top: 0px;
+    position: absolute;
+    width: 100%;
+    margin:60px auto;
+    margin-bottom: 20px;
+    text-align:center;
+    z-index: 100;
+    box-sizing:border-box;
+  }
+
+  .home_page{
+    top: 0px;
+    width: 100%;
+    height: 8.7%;
+    font-size: 18px;
+    font-weight: bolder;
+    background-color: #ffb906cf;
+    /* background-image: url("../image/character/List_title.png"); */
+    background-size:cover;
+    background-position: center;
+    text-align: center;
+    margin:0px auto;  /* 置中*/
+    padding-top: 8px;
+    line-height:40px;   /*配合高度px 垂直置中*/
+    position: fixed;
+    z-index: 98;
+  }
+
+  .home_title{
+  padding-right: 38px;  /*強迫症配合左邊返回按鈕，代研究還可以怎麼改，問kiki*/
+  font-size: 36px;
+}

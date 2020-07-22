@@ -1,0 +1,57 @@
+.sos_mark {
+    z-index: 101;
+}
+
+.setting_mark {
+    z-index: 101;
+    border-radius: 999em;
+    background: rgb(211, 211, 211);
+
+}
+
+/* setting error clear */
+.setting_btn {
+    position: absolute;
+    height: 60px;
+    width: 60px;
+    border-radius: 999em;
+    background: rgb(211, 211, 211);
+  }
+  
+  .setting_btn i {
+    position: absolute;
+    font-size: 18px;
+    color: white;
+    left: 50%;
+    top: 50%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .setting_btns {
+    position: absolute;
+    bottom: -0.5px;
+    margin-bottom: 1px;
+    height: 60px;
+    width: 60px;
+    transition: 0.3s ease-in-out;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+    
+  }
+  .setting_btns.open {
+    bottom: 62px;
+  }
+ /* use button will explosion..... */
+
+
+.return_mark {
+    z-index: 101;
+
+}
+
+.home_mark {
+    z-index: 101;
+
+}

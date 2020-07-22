@@ -1,0 +1,28 @@
+  .magic_word {
+    position: absolute;
+    bottom:5%;
+    left: 2%;
+    border-radius: 30px;
+    width:45%;
+    height:73%;
+  }
+  .magic_word:hover {
+    background-color:white ;
+    opacity: .7;
+    display:inline-block;
+  }
+
+  .metal-detector {
+    position: absolute;
+    bottom: 5%;
+    left: 52%;
+    border-radius: 30px;
+    width: 45%;
+    height: 73%;
+  }
+  .metal-detector:hover{
+    background-color:white ;
+    opacity: .7;
+    display:inline-block;
+  }
+
