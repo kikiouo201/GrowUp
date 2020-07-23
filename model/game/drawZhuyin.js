@@ -3,7 +3,7 @@ let isDrawing = false;
 let x = 0;
 let y = 0;
 let points = [];
-let level=['b','p','m','f'];
+let level=['b','p','m','f',''];
 let nextLevel ='no';
 
 const myPics = document.querySelectorAll('.draw');
@@ -111,11 +111,11 @@ function onload() {
     if (id != null) {
         let zhuyin = document.querySelector(".zhuyin img");
         zhuyin.src = `../../image/zhuyin/${id}.png`;
-        if((level.indexOf(id)!=-1)&&(level.indexOf(id)+1)<level.length){
-            nextLevel=level[(level.indexOf(id)+1)];
-        }else{
-            nextLevel='no';
-        }
+        // if((level.indexOf(id)!=-1)&&(level.indexOf(id)+1)<level.length){
+        //     nextLevel=level[(level.indexOf(id)+1)];
+        // }else{
+        //     nextLevel='no';
+        // }
     //     console.log("nextLevel"+nextLevel);
     //    console.log('level.indexOf(id)='+level.indexOf(id));
         
