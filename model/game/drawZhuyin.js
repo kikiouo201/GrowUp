@@ -65,11 +65,11 @@ score.addEventListener('click', () => {
     } else if (totalPoint < 10) {
         status.innerHTML="失敗";
         statustext.innerHTML="30分！再加油";
-        nextLevel='no';
+       // nextLevel='no';
     } else if (totalPoint < 20) {
         status.innerHTML="失敗";
         statustext.innerHTML="50分！很棒再努力喔！";
-        nextLevel='no';
+       // nextLevel='no';
     } else if (totalPoint < 25) {
         status.innerHTML="成功";
         statustext.innerHTML="70分！太棒了！你做得真好！";
@@ -94,25 +94,20 @@ close.addEventListener('click',() => {
 
 function challengeAgain(){
     let id = (new URLSearchParams(location.search)).get("id");
-    nextLevel=id;
-    goNextLevel();
+    window.location.href="../../view/game/drawzhuyin.html?id="+id;
 }
 
 function goNextLevel(){
-    console.log("nextLevel"+nextLevel);
-    if(nextLevel!='no'){
-        console.log("nextLevel"+nextLevel);
-        window.location.href="../../view/game/drawzhuyin.html?id="+nextLevel;
-    }
-    else{
-        alert('要通關才可以到下一關喔！');
-    }
+    let counties = (new URLSearchParams(location.search)).get("counties");
+    console.log('counties='+counties);
+    window.location.href="../../view/level/"+counties+".html";
 }
 
 function onload() {
 
     let id = (new URLSearchParams(location.search)).get("id");
-    // console.log(`id=${id}`)
+
+     console.log(`id=${id}`)
     if (id != null) {
         let zhuyin = document.querySelector(".zhuyin img");
         zhuyin.src = `../../image/zhuyin/${id}.png`;
