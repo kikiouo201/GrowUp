@@ -26,33 +26,29 @@
         td {
            padding: 10px;
         }
-
+        .hualien{
+            position: absolute;
+            top: -2px;
+            right: -2px;
+            width: 315px;
+            z-index: 1;
+        }
+        .taitung{
+            position: absolute;
+            bottom: 5px;
+            left: 0px;
+            width: 300px;
+            z-index: 1;
+        }
     </style>
 </head>
 
 <body class="style" background="../../image/map/kraftPaper5.png">
-    <table class="features">
-        <tr>
-            <td colspan="2" style="font-size: 40px;text-align: center;">東部</td>
-        </tr>
-        <tr>
-            <td >特色</td>
-            <td >資訊介紹</td>
-        </tr>
-        <tr>
-            <td><img src="../../image/map/Nantou.png" onclick="featuresText('南投')"/>花蓮</td>
-            <td id="information" rowspan="3" valign="top" style="font-size:x-large;" >
-                &emsp;&emsp;南投地名由來，源自平埔族洪雅族支族阿立昆族（Arikun）族語「Ramtau」，即以臺語音譯為「南投」。《諸羅縣志》:「虎尾之北有大武郡山，東為南投山，內社二，溪南為南投，溪北為北投」，故得名「南投」。而北投指今草屯鎮（古北投堡）。
-            </td>
-        </tr>
-        <tr>
-            <td><img src="../../image/icon/herbal-tea.png" onclick="featuresText('高山茶')"/>台東</td>
-        </tr>
 
-
-    </table>
     <div class="map">
         <img class="terrain" src="../../image/map/EastRegion.png" />
+        <img class="taitung" src="../../image/map/Taitung.png" />
+        <img class="hualien" src="../../image/map/Hualien.png" />
  
     </div>
     <img class="taiwan" src="../../image/character/NowInNantou.png" onclick="location.href='../../view/level/taiwan.html'" />
