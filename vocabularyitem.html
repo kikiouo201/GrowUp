@@ -8,14 +8,14 @@
   <link rel="stylesheet" href="CSS/icon.css">
     <link rel="stylesheet" href="CSS/interface.css">
 </head>
-<body class="style" background="photo/background.png">
+<body  class="style" background="image/background/t_back.png" onload="ShowTime()">
   <div class="head">
-    <a>單字細項</a>
-    <body onload="ShowTime()">
-      <div id="today"></div>
-      <br>
-      <div id="showtime"></div>
-      </body>
+    <a href="./game_home.html" style="text-decoration: unset; color:black">單字細項</a>
+       
+    <div id="today"></div>
+    <br>
+    <div id="showtime"></div>
+        
   </div>
  
   <script language="JavaScript">
@@ -36,11 +36,11 @@ document.getElementById('today').innerHTML = yyyy + "/" + MM + "/" + dd;
     }
     </script>
     <div >
-        <button class="button7" onclick=""  >
+        <button class="btn_vocabulary" onclick=""  >
             <a href="vocabulary.html"><img src="photo/bird.png" width="30%"></a><br>
            鳥類</button>
     
-        <button class="button8" onclick=""  >
+        <button class="btn_knowledge" onclick=""  >
             <a href="fruits.html"><img src="photo/fruits.png" width="30%"></a><br>
            水果類 </button>
   </div>

@@ -61,7 +61,7 @@ score.addEventListener('click', () => {
     if (totalPoint == 0) {
         status.innerHTML="失敗";
         statustext.innerHTML="0分";
-        nextLevel='no';
+      //  nextLevel='no';
     } else if (totalPoint < 10) {
         status.innerHTML="失敗";
         statustext.innerHTML="30分！再加油";

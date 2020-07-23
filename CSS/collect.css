@@ -21,28 +21,28 @@
   width: 5%;
   padding-left: 4%;
 }
-.button7{
-    position: absolute;
-    margin-top:5%;
-    margin-left: 2%;
-    border-radius: 30px;
-    width:45%;
-    height:73%;
+.btn_vocabulary{
+  position: absolute;
+  margin-top: 9%;
+  margin-left: 20%;
+  border-radius: 30px;
+  width: 28%;
+  height: 70%;
   }
-  .button7:hover{
+  .btn_vocabulary:hover{
     background-color:white ;
     opacity: .7;
     display:inline-block;
   }
-  .button8{
+  .btn_knowledge{
     position: absolute;
-    margin-top: 5%;
-    margin-left: 52%;
+    margin-top: 9%;
+    margin-left: 50%;
     border-radius: 30px;
-    width: 45%;
-    height: 73%;
+    width: 28%;
+    height: 70%;
   }
-  .button8:hover{
+  .btn_knowledge:hover{
     background-color:white ;
     opacity: .7;
     display:inline-block;
@@ -252,21 +252,14 @@ size: 25%;
   top:25%;
 }
 
-#select1{
+#selectbook{
   position: absolute;
-  left: 20%;
+  left: 22%;
   text-align: center;
   font-size: 30px;
-  top:50%;
+  margin-top:6%;
 }
 
-#select2{
-  position: absolute;
-  left: 40%;
-  text-align: center;
-  font-size: 30px;
-  top:50%;
-}
 
 .start{
   position: absolute;
@@ -305,112 +298,53 @@ body{
 	opacity:0.5;
 }
 
-.float{
-  position:fixed;
-  width:40px;
-  height:40px;
-  bottom:10px;
-  left:50px;
-  background-color:rgb(155, 154, 154);
-  color:#FFF;
-  border-radius:50px;
-  text-align:center;
-  z-index:1000;
-  animation: lef-to-rig 2s ease-out;
+.scene {
+  background-color: transparent;
+  width: 78%;
+  height:200px;
+  margin: 40px 0;
+  perspective: 600px;
+  position: relative;
+  left: 10%;
+  margin-top: 10%;
+  
 }
 
-.sosfloat{
-  position:fixed;
-  width:40px;
-  height:40px;
-  bottom:10px;
-  left:8px;
-  background-color:rgb(155, 154, 154);
-  color:#FFF;
-  border-radius:50px;
-  text-align:center;
-  z-index:1000;
-  animation: lef-to-rig 2s ease-out;
-  margin-top:6px;
+.card {
+  position: absolute;
+  width: 90%;
+  height: 100%;
+  right: 0%;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  border-radius: 20%;
 }
 
-ul{
-  position:fixed;
-  left:10px;
-  padding-bottom:20px;
-  bottom:10px;
-  z-index:100;
+.card.is-flipped {
+  transform: rotateY(180deg);
 }
 
-ul li{
-  list-style:none;
-  margin-bottom:10px;
+.card__face {
+  width: 75%;
+  height: 100%;
+  left: 5%;
+  color: white;
+  font-weight: bold;
+  font-size: 30px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
-ul li a{
-  background-color:rgb(155, 154, 154);
-  color:black;
-  border-radius:50px;
-  text-align: center;
-  width:40px;
-  height:40px;
-  display:block;
-  margin-top:4px;
+.card__face--front {
+background:	#8080C0;
+position: absolute;
+
 }
 
-ul:hover{
-  visibility:visible!important;
-  opacity:1!important;
+.card__face--back {
+background: 	#8080C0;
+transform: rotateY(180deg);
+text-align: center;
 }
 
-.fab {
-  display: inline-block;
-  font: normal normal normal 14px/1 FontAwesome;
-  font-size: inherit;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.my-float{
-  text-align: center;
-  font-size:24px;
-  margin-top:8px;
-}
-
-a#menu-share + ul{
-  visibility: hidden;
-}
-
-a#menu-share:hover + ul{
-  visibility: visible;
-  animation: scale-in 0.5s;
-}
-
-a#menu-share i{
-  animation: rotate-in 0.5s;
-}
-
-a#menu-share:hover > i{
-  animation: rotate-out 0.5s;
-}
-
-@keyframes lef-to-rig {
-    0%   {left:-20px}
-    50%  {left:20px}
-}
-
-@keyframes scale-in {
-    from {transform: scale(0);opacity: 0;}
-    to {transform: scale(1);opacity: 1;}
-}
-
-@keyframes rotate-in {
-    from {transform: rotate(0deg);}
-    to {transform: rotate(360deg);}
-}
-
-@keyframes rotate-out {
-    from {transform: rotate(360deg);}
-    to {transform: rotate(0deg);}
-}
