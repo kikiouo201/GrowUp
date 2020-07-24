@@ -110,7 +110,7 @@ function onload() {
      console.log(`id=${id}`)
     if (id != null) {
         let zhuyin = document.querySelector(".zhuyin img");
-        zhuyin.src = `../../image/zhuyin/${id}.png`;
+        zhuyin.src = `../../image/drawZhuyin/${id}.png`;
         // if((level.indexOf(id)!=-1)&&(level.indexOf(id)+1)<level.length){
         //     nextLevel=level[(level.indexOf(id)+1)];
         // }else{
