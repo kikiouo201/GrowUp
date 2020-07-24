@@ -6,30 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GrowUp學習趣</title>
     <link rel="stylesheet" href="../../CSS/map/chiayi.css">
+    <link rel="stylesheet" href="../../CSS/map/counties.css">
     <link rel="stylesheet" href="../../CSS/interface.css">
     <link rel="stylesheet" href="../../CSS/icon.css">
-    <style>
-        .features {
-            background-color: aliceblue;
-            width: 500px;
-        }
-
-        .features img {
-            width: 100px;
-            filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3));
-        }
-
-        table,
-        th,
-        td {
-            border: 1px solid black;
-            border-collapse: collapse;
-        }
-
-        td {
-            padding: 10px;
-        }
-    </style>
 </head>
 
 <body class="style" background="../../image/map/kraftPaper5.png">
@@ -48,10 +27,10 @@
             </td>
         </tr>
         <tr>
-            <td><img src="../../image/icon/lake.png" onclick="featuresText('七星潭')" />七星潭</td>
+            <td><img src="../../image/icon/lake.png" onclick="featuresText('高跟鞋教堂')" />高跟鞋教堂</td>
         </tr>
         <tr>
-            <td><img src="../../image/icon/lake.png" onclick="featuresText('太魯閣國家公園')" />太魯閣國家公園</td>
+            <td><img src="../../image/icon/lake.png" onclick="featuresText('阿里山國家森林遊樂區')" />阿里山國家森林遊樂區</td>
         </tr>
 
     </table>
@@ -106,19 +85,21 @@
             switch (category) {
                 case "嘉義":
                     information.innerHTML = "&emsp;&emsp;嘉義縣倚山面海，是臺灣所有縣市中，唯一擁有三大國家風景區的縣份：阿里山國家風景區管理處、雲嘉南濱海國家風景區管理處及西拉雅國家風景區管理處，坐擁山色、平原、海景等不同的壯麗與遼闊。";
+                    mouseDownText(category+information.innerHTML);
                     break;
-                case "七星潭":
-                    information.innerHTML = `&emsp;&emsp;位在花蓮市區東北方，位於花蓮市新城鄉的北埔村，可取道美崙工業區，由花蓮師院（現為「國立東華大學美崙校區」）前指標前行即可到達。此地海灘呈一優美的弧形海灣，海水潔淨湛藍，黑石晶瑩剔透，在此可遠眺青山蒼鬱，公路綿延。
-                        七星潭富有詩意的名稱，據說是位於花蓮師範學院和花蓮機場一帶，早年有零星湖泊散佈，後來因建設需要而填實。現在一般稱七星潭，是指美崙工業區和花蓮機場以北的地區，有斷層形成的海峽與優美的弧形海灣，具有豐富的自然人文景觀。在七星潭，可以遠眺清水斷崖，夜間還可以欣賞新城和崇德地區的燈火，區內更有許多景點，提供休憩和知性之旅。
-                        七星潭風景區以自行車道為動脈，從花蓮市南濱公園、經花蓮港、四八高地到七星潭風景區，長達21公里的旅程有不同的風光。花蓮縣政府更興建了石雕園區、賞星廣場、觀日樓、兒童遊樂場等休憩設施，在漁場附近還有海生態的解說牌，也利用防風林區闢建海濱植物園區，動植物生態非常豐富，來一趟知性之旅絕對不虛此行。`;
+                case "高跟鞋教堂":
+                    information.innerHTML = `&emsp;&emsp;高跟鞋教堂高度約17m，寬度約11m，主結構由1,269根鋼架組成，外表共約320餘片玻璃，造型相當亮麗美觀，其設計與裝設不僅是全臺第一，更是全世界唯一。高跟鞋教堂幸福意象工程施工相當不易，320餘片玻璃大小、安裝角度皆不同，必須克服高跟鞋的形狀及彎曲幅度，故鋼架及玻璃組裝精度要求極高。玻璃高跟鞋象徵「每個小女孩都曾夢想有雙漂亮的高跟鞋，伴著自己走出美麗優雅的人生。」`;
+                    mouseDownText(category+information.innerHTML);
                     break;
-                case "太魯閣國家公園":
-                    information.innerHTML = "&emsp;&emsp;太魯閣國家公園以雄偉壯麗、幾近垂直的大理岩峽谷景觀聞名。沿著立霧溪的峽谷風景線而行，觸目所及皆是壁立千仞的峭壁、斷崖、峽谷、連綿曲折的山洞隧道、大理岩層和溪流等風光。";
+                case "阿里山國家森林遊樂區":
+                    information.innerHTML = "&emsp;&emsp;相傳於250年以前，有一位名為阿巴里的鄒族酋長曾隻身來此打獵，滿載而歸後，常帶族人來此，族人為感念他，便以其名為此命名。其實阿里山共由十八座高山組成，屬於玉山山脈的支脈，隔同富溪與玉山主峰相望，現在新中橫公路已將阿里山與玉山風景區串連起來。阿里山森林遊樂區海拔高度2,216公尺，四周高山環列，氣候涼爽，以日出、雲海、晚霞、森林、登山森林鐵路並列為阿里山五奇，聞名國際。而鄒族原住民人文資源更增其觀光魅力。";
+                    mouseDownText(category+information.innerHTML);
                     break;
 
             }
         }
     </script>
+     <script src="../../model/util/voiceOut.js"></script>
 </body>
 
 </html>

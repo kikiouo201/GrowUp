@@ -6,28 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GrowUp學習趣</title>
     <link rel="stylesheet" href="../../CSS/map/nantou.css">
+    <link rel="stylesheet" href="../../CSS/map/counties.css">
     <link rel="stylesheet" href="../../CSS/interface.css">
     <link rel="stylesheet" href="../../CSS/icon.css">
-    <style>
-        .features {
-            background-color: aliceblue;
-            width: 500px;
-        }
 
-        .features img {
-            width: 100px;
-            filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3));
-        }
-
-        table,th,td {
-            border: 1px solid black;
-            border-collapse: collapse;
-        }
-        td {
-           padding: 10px;
-        }
-
-    </style>
 </head>
 
 <body class="style" background="../../image/map/kraftPaper5.png">
@@ -104,15 +86,15 @@
     switch (category) {
         case "南投":
             information.innerHTML = "&emsp;&emsp;南投地名由來，源自平埔族洪雅族支族阿立昆族（Arikun）族語「Ramtau」，即以臺語音譯為「南投」。《諸羅縣志》:「虎尾之北有大武郡山，東為南投山，內社二，溪南為南投，溪北為北投」，故得名「南投」。而北投指今草屯鎮（古北投堡）。";
-            mouseDownText('南投'+information.innerHTML);
+            mouseDownText(category+information.innerHTML);
             break;
         case "高山茶":
             information.innerHTML = "&emsp;&emsp;高山茶 (英文high mountain tea)是指在海拔1000公尺以上茶園，所摘取製作的茶葉。高山茶由於生長高度高、採收慢，因此茶葉苦澀度較低。從1980年代興起，20多年來風靡台灣，甚至成為台灣最具知名度茶品，可見其品質優良。";
-            mouseDownText('高山茶'+information.innerHTML);
+            mouseDownText(category+information.innerHTML);
             break;
         case "日月潭":
             information.innerHTML="&emsp;&emsp;日月潭位於臺灣南投縣魚池鄉，是一座美麗的高山湖泊。潭面以拉魯島為界，東側形如「日」，西側形如「月」，故名日月潭。其周圍山重水複，林木蒼鬱，潭面廣闊水平如鏡，映照群山變化萬千。";
-            mouseDownText('日月潭'+information.innerHTML);
+            mouseDownText(category+information.innerHTML);
             break;
 
     }

@@ -6,28 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GrowUp學習趣</title>
     <link rel="stylesheet" href="../../CSS/map/nantou.css">
+    <link rel="stylesheet" href="../../CSS/map/counties.css">
     <link rel="stylesheet" href="../../CSS/interface.css">
     <link rel="stylesheet" href="../../CSS/icon.css">
-    <style>
-        .features {
-            background-color: aliceblue;
-            width: 500px;
-        }
 
-        .features img {
-            width: 100px;
-            filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3));
-        }
-
-        table,th,td {
-            border: 1px solid black;
-            border-collapse: collapse;
-        }
-        td {
-           padding: 10px;
-        }
-
-    </style>
 </head>
 
 <body class="style" background="../../image/map/kraftPaper5.png">
@@ -104,18 +86,22 @@
     switch (category) {
         case "臺東":
             information.innerHTML = "&emsp;&emsp;臺東擁有豐富的生態資源，無論是海岸、高山、森林、溪谷，都保持著自然完整的風貌，並孕育了多樣的動植物種類，處處都是天然美景。臺東各鄉鎮的物產豐饒，遠近馳名的縱谷好米、金針花、洛神花、臺東釋迦；漁產亦十分興盛，旗魚、柴魚片都是極富盛名的當地特產品。";
+            mouseDownText(category+information.innerHTML);
             break;
         case "三仙台":
             information.innerHTML = "&emsp;&emsp;三仙台位於成功東北方約3公里處（11號省道111K處），是由突出的海岬與離岸小島所構成的。因島上有三塊巨石，民間穿鑿附會傳說八仙過海時呂洞賓、何仙姑、李鐵拐曾登臨此處而聲名大噪。三仙台地質屬都巒山火山集塊岩，原來是一處岬角，因海水侵蝕逐漸斷了岬角頸部，而成了離岸島。附近海域魚類豐富，是漁場亦是有名的磯釣場所，也是各級潛水的好地方。";
+            mouseDownText(category+information.innerHTML);
             break;
         
             case "日月潭":
                 information.innerHTML="&emsp;&emsp;日月潭位於臺灣南投縣魚池鄉，是一座美麗的高山湖泊。潭面以拉魯島為界，東側形如「日」，西側形如「月」，故名日月潭。其周圍山重水複，林木蒼鬱，潭面廣闊水平如鏡，映照群山變化萬千。";
+                mouseDownText(category+information.innerHTML);
                 break;
 
     }
 }
     </script>
+     <script src="../../model/util/voiceOut.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,32 @@
+.features {
+    background-color: aliceblue;
+    width: 500px;
+}
+
+.features img {
+    width: 100px;
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3));
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+td {
+    padding: 10px;
+}
+
+.taiwan{
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border-bottom: 5px solid black;
+    border-right: 5px solid black;
+    border-radius:0px 0px 40px 0px ;
+    background: url('../../image/background/sea1.png');
+}
