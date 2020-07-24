@@ -9,6 +9,7 @@ body {
     background-attachment: fixed;
     background-position: center;
     background-image: url("../../image/background/Polygon_pink01.jpeg");
+    font-family: "文鼎標楷注音";
   }
 
 .home_header {
@@ -22,7 +23,7 @@ body {
 
 .game_map_div {
     width: 50%;
-    height: auto;
+    height: 85%;
     border-width: 8px;
     position: absolute;
     top: 9%;
@@ -56,7 +57,8 @@ body {
     border-style: dashed;
     background-color: #ffd06c;
     border-width :5px;
-    padding-top: 35px;
+    font-weight: bold;
+    padding-top: 15px;
 }
 
 .good-regard {
@@ -71,7 +73,7 @@ body {
     background-color: #ffd06c;
     border-width: 2px;
     display: inline-block;
-    margin-left: 27%;
+    margin-left: 35%;
 }
 
 .good-regard-value {
@@ -122,7 +124,7 @@ body {
 .farm{
     position: absolute;
     bottom: 30%;
-    right: 8%;
+    right: 5%;
 }
 
 .treature_voice_camera{
@@ -131,19 +133,19 @@ body {
     right: 26%; 
 }
 
-.magic{
+.magic_treature{
     position: absolute;
     bottom: 3%;
-    right: 8%;
+    right: 5%;
 }
 
 .nowInWhere {
-    width: 15%; 
+    width: 20%; 
     padding: 8px; 
     margin: 5px 8px;
     position: absolute; 
     left: 40px; 
-    top: 40px; 
+    top: 200px; 
     background-image: url(../../image/background/sea1.png);
     background-size: 300px 100px;
     border-radius: 20px;
