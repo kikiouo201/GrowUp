@@ -5,18 +5,23 @@
 
 .features img {
     width: 100px;
-    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3));
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+    
+}
+table{
+    box-shadow:3px 3px 12px gray;
 }
 
 table,
-th,
 td {
-    border: 1px solid black;
+   
     border-collapse: collapse;
+    opacity: 0.9;
 }
 
 td {
     padding: 10px;
+    border: 4px dashed black;
 }
 
 .taiwan{
