@@ -1,19 +1,20 @@
   .magic_word {
     position: absolute;
-    bottom:5%;
+    bottom: 5%;
     left: 2%;
     border-radius: 30px;
-    width:45%;
-    height:73%;
+    width: 45%;
+    height: 73%;
     font-size: 28px;
     cursor: pointer;
     border-width: 10px;
     font-weight: bolder;
   }
+
   .magic_word:hover {
-    background-color:white ;
+    background-color: white;
     opacity: .7;
-    display:inline-block;
+    display: inline-block;
   }
 
   .metal-detector {
@@ -28,9 +29,9 @@
     border-width: 10px;
     font-weight: bolder;
   }
-  .metal-detector:hover{
-    background-color:white ;
-    opacity: .7;
-    display:inline-block;
-  }
 
+  .metal-detector:hover {
+    background-color: white;
+    opacity: .7;
+    display: inline-block;
+  }
