@@ -1,0 +1,39 @@
+body {
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-attachment: fixed;
+  margin-top: auto;
+}
+
+.home_page {
+  top: 0px;
+  width: 100%;
+  height: 8.7%;
+  font-size: 18px;
+  font-weight: bolder;
+  background-color: #ffb906cf;
+  text-align: center;
+  margin: 0px auto;
+  /* 置中*/
+  padding-top: 8px;
+  line-height: 40px;
+  /*配合高度px 垂直置中*/
+  position: fixed;
+  z-index: 98;
+}
+
+#show_page::-webkit-scrollbar {
+  display: none;
+}
+
+#show_page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: calc(100% - 62px);
+  overflow-y: scroll;
+  padding: 20px;
+  box-sizing: border-box;
+}
