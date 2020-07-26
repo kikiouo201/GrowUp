@@ -9,7 +9,7 @@ body {
     background-attachment: fixed;
     background-position: center;
     background-image: url("../../image/background/Polygon_pink01.jpeg");
-    font-family: "文鼎標楷注音";
+    /* font-family: "文鼎標楷注音"; */
   }
 
 .home_header {
@@ -33,7 +33,7 @@ body {
     /* background-color: #40a7e2; */
     background-size: cover;
     border-radius: 5%;
-    margin-left: 20px;
+    /* margin-left: 20px; */
     /* margin-right: 20px;
     margin-top: 20px; */
     padding-top: 5px;
@@ -47,11 +47,11 @@ body {
 }
 
 .child_profile_detail {
-    width: 35%;
+    width: 44%; /*35%*/
     height: 160px;
     position: absolute;
-    top: 15%;
-    right: 7%;
+    top: 12%; /*15%*/
+    right: 3%;  /*7%%*/
     border-radius: 40px;
     border-color: darkred;
     border-style: dashed;
@@ -64,7 +64,7 @@ body {
 .good-regard {
     width: 36%;
     position: absolute;
-    /* bottom: 11.5%; */
+    bottom: 7.5%;
     margin-top: 14px;
     height: 30px;
     border-radius: 40px;
@@ -73,7 +73,7 @@ body {
     background-color: #ffd06c;
     border-width: 2px;
     display: inline-block;
-    margin-left: 35%;
+    margin-left: 30%;
 }
 
 .good-regard-value {
@@ -95,7 +95,7 @@ body {
     height: auto;
     position: absolute;
     top: 10%;
-    right: 3%;
+    right: 1%;
     border-radius: 100px;
     border:5px darkred dashed;
     background-color: #ffd06c;
@@ -145,8 +145,18 @@ body {
     margin: 5px 8px;
     position: absolute; 
     left: 40px; 
-    top: 200px; 
+    bottom: 20px;
+    /* top: 200px;  */
     background-image: url(../../image/background/sea1.png);
     background-size: 300px 100px;
     border-radius: 20px;
+}
+
+/* img */
+.map_namtou {
+    width:60%; 
+    padding: 20px; 
+    /* margin: 90px 200px; */
+    margin-left: 20px;
+    margin-top: 90px;
 }
