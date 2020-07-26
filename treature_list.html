@@ -51,8 +51,8 @@
             <!-- <img src="./image/character/bg.png" style="position: absolute; top: 0; left: 0; width: 50%; height: 625px;"> -->
             <!-- <textarea name="magicCard" cols="20" rows="3" style="background-color: #ffffff00; border-color: #ffffff00;">我我我</textarea> -->
         </div>
-        <iframe src="./alreadyCollect_icon.html" frameborder="0" class="collect_icon"></iframe>
-        <div class="left_button" onclick=""></div>
+        <iframe id="iconIfram" src="./alreadyCollect_icon.html" frameborder="0" class="collect_icon"></iframe>
+        <div class="left_button" onclick="leftIframChage()"></div>
         <div class="right_main_area">
             <p>目前收集到的魔法小卡</p>
             <!-- <img src="./image/character/bg.png" style="position: absolute; top: 0; right: 0; width: 50%; height: 625px;"> -->
@@ -129,6 +129,16 @@
                     e.style.bottom = "0px";
                 });
             }
+        }
+    </script>
+    <script>
+        function leftIframChage(){
+            const iconIfram = document.getElementById("iconIfram").src
+            console.log("ifram="+iconIfram)
+            if(iconIfram == "file:///C:/Users/mcuim/Desktop/Raspberry/2020_07_06/GrowUp/seeAllCollect_icon.html")
+                document.getElementById("iconIfram").src = "./alreadyCollect_icon.html";
+            else
+                document.getElementById("iconIfram").src = "./seeAllCollect_icon.html";
         }
     </script>
 </body>
