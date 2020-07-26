@@ -18,11 +18,20 @@ table {
 }
 
 table tr td p {
+    font-weight: bold;
     margin: 4px;
+    font-size: 16px;
 }
 
-table tr th{
-    font-size: 18px;
+table tr th {
+    font-size: 20px;
+}
+h2{
+    margin-left: 32%;
+}
+a{
+    text-decoration:none;
+    color: black;
 }
 .header_div {
     top: 0px;
@@ -39,10 +48,13 @@ table tr th{
     /*配合高度px 垂直置中*/
     position: fixed;
     z-index: 98;
+    opacity:80%;
+    border-bottom: 0px;
+
 }
 
 .Liftcontent_div {
-    background-color: rgba(241, 148, 148, 0.945);
+    background-color: #ff886bf8;
     width: 25%;
     height: 90%;
     top: 9.5%;
@@ -62,7 +74,7 @@ table tr th{
 }
 
 .gameType_title {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
 }
 
@@ -90,4 +102,39 @@ table tr th{
     /* border-width: 2px; */
     display: inline-block;
     /* margin-left: 12px; */
+}
+
+.cardTable {
+    background-image: url("../image/background/Polygon_blue01.jpeg");
+    border-bottom: 0px;
+    height: 100%;
+}
+
+.card {
+    height: 80%;
+    width: 90%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    margin-left: 5%;
+    margin-top: 5%;
+    background-color: #fae363f8;
+    border-radius:12px;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container {
+    height:max-content; 
+    width:auto; 
+    padding-top: 5%;
+    margin-left: 35%;
+}
+
+.card_img{
+    height:120px;
+    width:120px; 
+    margin-left: 35%;
+    margin-top: 10%;
 }
