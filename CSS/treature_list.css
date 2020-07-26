@@ -1,4 +1,4 @@
-  .element::-webkit-scrollbar {display:none}
+::-webkit-scrollbar {display:none}
 
   html {
     height: 100%;
@@ -101,7 +101,9 @@
   position: absolute;
   left: 7%;
   top: 0;
-  overflow: hidden;
+  /* overflow: hidden; */
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .collect_magicCard {
@@ -111,7 +113,9 @@
   position: absolute;
   right: 5%;
   top: 0;
-  overflow: hidden;
+  /* overflow: hidden; */
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 .left_button {
   width: 80px;
