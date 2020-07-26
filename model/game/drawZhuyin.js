@@ -111,9 +111,16 @@ function onload() {
     if (id != null) {
         let zhuyin = document.querySelector(".zhuyin img");
         zhuyin.src = `../../image/drawZhuyin/${id}.png`;
+        
         const counties = (new URLSearchParams(location.search)).get("counties");
         const returnfloat = document.querySelector('.returnfloat');
-        returnfloat.href=`../../view/level/${counties}.html`;
+
+        if(counties!=null){
+            returnfloat.href=`../../view/level/${counties}.html`;
+        }else{
+            returnfloat.href=`../../treature_list.html`;
+        }
+        
         // if((level.indexOf(id)!=-1)&&(level.indexOf(id)+1)<level.length){
         //     nextLevel=level[(level.indexOf(id)+1)];
         // }else{
