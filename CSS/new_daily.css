@@ -9,6 +9,7 @@ body {
     background-attachment: fixed;
     background-position: center;
     background-image: url("../image/background/Polygon_blue01.jpeg");
+    
 }
 
 table {
@@ -18,12 +19,28 @@ table {
 }
 
 table tr td p {
+    font-weight: bold;
     margin: 4px;
+    font-size: 16px;
 }
 
-table tr th{
-    font-size: 18px;
+table tr th {
+    font-size: 20px;
 }
+
+h2 {
+    margin-left: 31%;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+::-webkit-scrollbar {
+    /*隱藏滾輪*/
+    display: none;
+    }
+
 .header_div {
     top: 0px;
     width: 100%;
@@ -39,30 +56,34 @@ table tr th{
     /*配合高度px 垂直置中*/
     position: fixed;
     z-index: 98;
+    opacity: 80%;
+    border-bottom: 0px;
+
 }
 
 .Liftcontent_div {
-    background-color: rgba(241, 148, 148, 0.945);
-    width: 25%;
+    background-color: #ff886bf8;
+    width: 30%;
     height: 90%;
-    top: 9.5%;
+    top: 9.7%;
     left: 0px;
     overflow: hidden;
     position: absolute;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
-
 .Rightcontent_div {
     background-color: rgb(235, 231, 231);
-    width: 75%;
+    width: 70%;
     height: 90%;
-    top: 9.5%;
+    top: 9.7%;
     right: 0px;
     overflow: hidden;
     position: absolute;
 }
 
 .gameType_title {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
 }
 
@@ -90,4 +111,81 @@ table tr th{
     /* border-width: 2px; */
     display: inline-block;
     /* margin-left: 12px; */
+}
+
+.cardTable {
+    background-image: url("../image/background/Polygon_blue01.jpeg");
+    border-bottom: 0px;
+    height: 100%;
+}
+
+.card {
+    height: 80%;
+    width: 90%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    margin-left: 5%;
+    margin-top: 5%;
+    background-color: #fae363f8;
+    border-radius: 12px;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container {
+    height: max-content;
+    width: auto;
+    padding-top: 5%;
+    margin-left: 35%;
+}
+
+.card_img {
+    height: 120px;
+    width: 120px;
+    margin-left: 33.5%;
+    margin-top: 10%;
+}
+
+
+
+.calendar{
+	width:100%;
+    height:45%;
+    font-family:arial;
+    background:rgb(210, 218, 255);
+    text-align:center;
+	box-shadow:0px 1px 1px rgba(0,0,0,0.1);
+}
+.calendar-body-list ul{
+	width:100%;
+    font-weight:bold;
+    padding:0;
+    padding-left: 3.6%;
+	font-size:14px;
+}
+.calendar-body-list ul li{
+	width:13.2%;
+    height:20px;
+	/* line-height:36px; */
+	list-style-type:none;
+	display:block;
+	box-sizing:border-box;
+	float:left;
+	/* text-align:center; */
+}
+
+.lightgrey{
+	color:#a8a8a8; /*浅灰色*/
+}
+.darkgrey{
+	color:#565656; /*深灰色*/
+}
+.green{
+	color:#6ac13c; /*绿色*/
+}
+.greenbox{
+	border:1px solid #6ac13c;
+	background:#e9f8df; /*浅绿色背景*/
 }

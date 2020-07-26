@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GrowUp學習趣</title>
+    <link rel="stylesheet" href="../../CSS/map/westRegion.css">
+    <link rel="stylesheet" href="../../CSS/interface.css">
+    <link rel="stylesheet" href="../../CSS/icon.css">
+    <style>
+        .chiayi{
+            position: absolute;
+            top:0px;
+            left: 10px;
+            width: 376px;
+            z-index: 10;
+        }
+
+        .tainan{
+            position: absolute;
+            top:110px;
+            left: 0px;
+            width: 265px;
+            z-index: 10;
+        }
+        .kaohsiung{
+            position: absolute;
+            top:66px;
+            left: 59px;
+            width: 400px;
+            z-index: 10;
+        }
+        .pingtung{
+            position: absolute;
+            bottom: 10px;
+            left: 177px;
+            width: 270px;
+            z-index: 10;
+        }
+    </style>
+</head>
+
+<body class="style" background="../../image/map/kraftPaper5.png">
+
+    <div class="map">
+        <img class="terrain" src="../../image/map/SorthRegion.png" />
+        <img class="chiayi" src="../../image/map/Chiayi1.png" onclick="location.href='../../view/level/chiayi.html'"/>
+        <img class="tainan" src="../../image/map/Tainan_origin.png" onclick="location.href='../../view/level/chiayi.html'"/>
+        <img class="kaohsiung" src="../../image/map/Kaohsiung_origin.png" onclick="location.href='../../view/level/chiayi.html'"/>
+        <img class="pingtung" src="../../image/map/Pingtung_origin.png" onclick="location.href='../../view/level/chiayi.html'"/>
+    </div>
+    <img class="taiwan" src="../../image/character/NowInNantou.png" onclick="location.href='../../view/level/taiwan.html'" />
+    <div>
+        <a href="../../test1.html" class="sosfloat" id="menu-share">
+            <i class="fab fa-share my-float"><img src="../../photo/help.png" width="70%"></i>
+        </a>
+    </div>
+    <div>
+        <a href="../../view/level/taiwan.html" class="returnfloat" id="menu-share">
+            <i class="fab fa-share return-float"><img src="../../photo/return.png"></i>
+        </a>
+    </div>
+    <div>
+        <a href="../../game_home.html" class="homefloat" id="menu-share">
+            <i class="fab fa-share my-float"><img src="../../photo/gobackhome.png" width="70%"></i>
+        </a>
+    </div>
+    <script>
+        function featuresText(category) {
+    const information = document.querySelector('#information')
+    switch (category) {
+        case "南投":
+            information.innerHTML = "&emsp;&emsp;南投地名由來，源自平埔族洪雅族支族阿立昆族（Arikun）族語「Ramtau」，即以臺語音譯為「南投」。《諸羅縣志》:「虎尾之北有大武郡山，東為南投山，內社二，溪南為南投，溪北為北投」，故得名「南投」。而北投指今草屯鎮（古北投堡）。";
+            break;
+        case "高山茶":
+            information.innerHTML = "&emsp;&emsp;高山茶 (英文high mountain tea)是指在海拔1000公尺以上茶園，所摘取製作的茶葉。高山茶由於生長高度高、採收慢，因此茶葉苦澀度較低。從1980年代興起，20多年來風靡台灣，甚至成為台灣最具知名度茶品，可見其品質優良。";
+            break;
+            case "日月潭":
+                information.innerHTML="&emsp;&emsp;日月潭位於臺灣南投縣魚池鄉，是一座美麗的高山湖泊。潭面以拉魯島為界，東側形如「日」，西側形如「月」，故名日月潭。其周圍山重水複，林木蒼鬱，潭面廣闊水平如鏡，映照群山變化萬千。";
+                break;
+
+    }
+}
+    </script>
+</body>
+
+</html>
