@@ -6,17 +6,46 @@
   <link rel="stylesheet" href="../CSS/icon.css">
   <link rel="stylesheet" href="../CSS/interface.css">
   <link rel="stylesheet" href="../CSS/every_four_button.css">
-  <link rel="stylesheet" href="./css/picturebook.css">
+  <link rel="stylesheet" href="./css/childsong.css">
   <title>Document</title>
 </head>
-<body background="../image/background/desk.png" onload="ShowTime()">
+<body background="../image/background/farmland.jpg" onload="ShowTime()">
    <div class="home_page">
       <a href="../game_home.html">魔法寶典</a>
 
       <div id="today"></div>
       <br>
       <div id="showtime"></div>
-
     </div>
+
+    <div id="show_page">
+      <div id="videolist">
+        <div id="video1">
+          <h1 align="center">兩隻老虎</h1>
+          <video width="400" height="320" controls>
+            <source src="videofile/two_tiger.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+
+    <script language="JavaScript">
+
+    function ShowTime() {
+
+      var fullDate = new Date();
+      var yyyy = fullDate.getFullYear();
+      var MM = (fullDate.getMonth() + 1) >= 10 ? (fullDate.getMonth() + 1) : ("0" + (fullDate.getMonth() + 1));
+      var dd = fullDate.getDate() < 10 ? ("0" + fullDate.getDate()) : fullDate.getDate();
+      document.getElementById('today').innerHTML = yyyy + "/" + MM + "/" + dd;
+
+      var NowDate = new Date();
+      var h = NowDate.getHours();
+      var m = NowDate.getMinutes();
+      document.getElementById('showtime').innerHTML = h + ':' + m;
+      setTimeout('ShowTime()', 1000);
+    }
+  </script>
+
 </body>
 </html>

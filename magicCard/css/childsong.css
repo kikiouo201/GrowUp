@@ -37,3 +37,17 @@ body {
   padding: 20px;
   box-sizing: border-box;
 }
+
+#videolist{
+  width: 100%;
+  height: auto;
+  padding: 5%;
+  display: block;
+  box-sizing: border-box;
+}
+
+#video1{
+  position: relative;
+  text-align: center;
+  box-sizing: border-box;
+}
