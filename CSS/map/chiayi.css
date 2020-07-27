@@ -22,7 +22,7 @@ body{
     width: 75px;
     position: absolute;
     z-index: 10;
-    top: 183px;
+    top: 203px;
     left: 557px;
 }
 .level{
@@ -57,15 +57,15 @@ body{
     position: absolute;
     z-index: 10;
     top: 214px;
-    left: 283px;
+    left: 300px;
 }
 
 .level5{
     width: 100px;
     position: absolute;
     z-index: 10;
-    top: 145px;
-    left: 120px;
+    top: 148px;
+    left: 138px;
 }
 
 .level6{
