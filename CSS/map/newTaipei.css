@@ -1,0 +1,165 @@
+
+body{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.map{
+    text-align: center;
+    position: relative;
+    height: 700px;
+}
+.terrain{
+    width: 700px;
+  position: relative;
+  top: 70px;
+  z-index: 1;
+}
+
+.level1{
+    width: 75px;
+    position: absolute;
+    z-index: 10;
+    top: 143px;
+    left: 277px;
+}
+.level{
+    width: 70px;
+
+}
+.level_text{
+    width: 108px;
+    position: absolute;
+    z-index: 10;
+    top: 34px;
+    left: 32%;
+}
+.level2{
+    width: 100px;
+    position: absolute;
+    z-index: 10;
+    top: 93px;
+    left: 149px;
+}
+.level2_text{
+    width: 30px;
+    position: absolute;
+    z-index: 10;
+    top: 0px;
+    left: 251px;
+}
+.level3{
+    width: 100px;
+    position: absolute;
+    z-index: 10;
+    top: 210px;
+    left: 19px;
+}
+.level3_text{
+    width: 25px;
+    position: absolute;
+    z-index: 10;
+    top: 467px;
+    left: 110px;
+}
+.level4{
+    width: 100px;
+    position: absolute;
+    z-index: 10;
+    top: 352px;
+    left: 167px;
+}
+.level4_text{
+    width: 27px;
+    position: absolute;
+    z-index: 10;
+    top: 277px;
+    left: 98px;
+}
+.level5{
+    width: 100px;
+    position: absolute;
+    z-index: 10;
+    top: 446px;
+    left: 70px;
+}
+.level5_text{
+    width: 25px;
+    position: absolute;
+    z-index: 10;
+    top: 205px;
+    left: 270px;
+}
+.level6{
+    width: 100px;
+    position: absolute;
+    z-index: 10;
+    top: 540px;
+    left: 228px;
+}
+.level6_text{
+    width: 25px;
+    position: absolute;
+    z-index: 10;
+    top: 113px;
+    left: 432px;
+}
+.level7{
+    width: 100px;
+    position: absolute;
+    z-index: 10;
+    top: 396px;
+    left: 308px;
+}
+.level7_text{
+    width: 50px;
+    position: absolute;
+    z-index: 10;
+    top: 177px;
+    left: 554px;
+}
+.level8{
+    width: 100px;
+    position: absolute;
+    z-index: 10;
+    top: 284px;
+    left: 338px;
+}
+.level8_text{
+    width: 50px;
+    position: absolute;
+    z-index: 10;
+    top: 330px;
+    left: 488px;
+}
+.level9{
+    width: 100px;
+    position: absolute;
+    z-index: 10;
+    top: 370px;
+    left: 451px;
+}
+.level9_text{
+    width: 50px;
+    position: absolute;
+    z-index: 10;
+    top: 496px;
+    left: 447px;
+}
+.level10{
+    width: 100px;
+    position: absolute;
+    z-index: 10;
+    top: 280px;
+    left: 588px;
+}
+.level10_text{
+    width: 50px;
+    position: absolute;
+    z-index: 10;
+    top: 280px;
+    left: 588px;
+}
+
