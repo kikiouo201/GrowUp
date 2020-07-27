@@ -105,7 +105,7 @@ body {
 .limit_task{
     position: absolute;
     bottom: 2%;
-    left: 5%;
+    left: 34%;
 }
 .daily_task{
     position: absolute;
@@ -158,5 +158,5 @@ body {
     padding: 20px; 
     /* margin: 90px 200px; */
     margin-left: 20px;
-    margin-top: 90px;
+    margin-top: 50px;
 }
