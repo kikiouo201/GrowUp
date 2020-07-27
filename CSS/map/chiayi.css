@@ -43,13 +43,7 @@ body{
     top: 260px;
     left: 438px;
 }
-.level2_text{
-    width: 30px;
-    position: absolute;
-    z-index: 10;
-    top: 150px;
-    left: 251px;
-}
+
 .level3{
     width: 100px;
     position: absolute;
@@ -57,13 +51,7 @@ body{
     top: 120px;
     left: 406px;
 }
-.level3_text{
-    width: 25px;
-    position: absolute;
-    z-index: 10;
-    top: 467px;
-    left: 110px;
-}
+
 .level4{
     width: 100px;
     position: absolute;
@@ -71,13 +59,7 @@ body{
     top: 214px;
     left: 283px;
 }
-.level4_text{
-    width: 27px;
-    position: absolute;
-    z-index: 10;
-    top: 277px;
-    left: 98px;
-}
+
 .level5{
     width: 100px;
     position: absolute;
@@ -85,13 +67,7 @@ body{
     top: 145px;
     left: 120px;
 }
-.level5_text{
-    width: 25px;
-    position: absolute;
-    z-index: 10;
-    top: 205px;
-    left: 270px;
-}
+
 .level6{
     width: 100px;
     position: absolute;
@@ -99,13 +75,7 @@ body{
     top: 234px;
     left: 10px;
 }
-.level6_text{
-    width: 25px;
-    position: absolute;
-    z-index: 10;
-    top: 113px;
-    left: 432px;
-}
+
 .level7{
     width: 100px;
     position: absolute;
@@ -113,13 +83,7 @@ body{
     top: 137px;
     left: 534px;
 }
-.level7_text{
-    width: 50px;
-    position: absolute;
-    z-index: 10;
-    top: 177px;
-    left: 554px;
-}
+
 .level8{
     width: 100px;
     position: absolute;
@@ -127,13 +91,7 @@ body{
     top: 290px;
     left: 468px;
 }
-.level8_text{
-    width: 50px;
-    position: absolute;
-    z-index: 10;
-    top: 330px;
-    left: 488px;
-}
+
 .level9{
     width: 100px;
     position: absolute;
@@ -141,13 +99,7 @@ body{
     top: 456px;
     left: 427px;
 }
-.level9_text{
-    width: 50px;
-    position: absolute;
-    z-index: 10;
-    top: 496px;
-    left: 447px;
-}
+
 .level10{
     width: 100px;
     position: absolute;
@@ -155,11 +107,5 @@ body{
     top: 300px;
     left: 328px;
 }
-.level10_text{
-    width: 50px;
-    position: absolute;
-    z-index: 10;
-    top: 340px;
-    left: 348px;
-}
+
 
