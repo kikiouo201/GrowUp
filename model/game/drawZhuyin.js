@@ -99,11 +99,11 @@ function challengeAgain(){
 
 function goNextLevel(){
     let counties = (new URLSearchParams(location.search)).get("counties");
-    
+    //console.log('counties='+counties);
     if(counties!=null){
-        returnfloat.href=`../../view/level/${counties}.html`;
+        window.location.href=`../../view/level/${counties}.html`;
     }else{
-        returnfloat.href=`../../treature_list.html`;
+        window.location.href=`../../treature_list.html`;
     }
 }
 
