@@ -47,45 +47,45 @@
 
     <style>
         .Taipei {
-            width: 28px;
+            width: 36px;
             position: absolute;
-            top: 11px;
-            left: 135px;
+            top: 17px;
+            left: 272px;
         }
 
         .NewTaipei {
-            width: 33%;
+            width: 130px;
             position: absolute;
             top: 0px;
-            left: 36%;
+            left: 240px;
         }
 
         .Keelung {
-            width: 9%;
+            width: 37px;
             position: absolute;
-            top: 18px;
+            top: 19px;
             right: 140px;
         }
 
         .Taoyuan {
-            width: 22%;
+            width: 91px;
             position: absolute;
-            top: 28px;
-            left: 71px;
+            top: 34px;
+            left: 185px;
         }
 
         .Hsinchu {
-            width: 25%;
+            width: 101px;
             position: absolute;
-            top: 56px;
-            left: 55px;
+            top: 71px;
+            left: 165px;
         }
 
         .Miaoli {
-            width: 30%;
+            width: 116px;
             position: absolute;
-            top: 84px;
-            left: 20px;
+            top: 109px;
+            left: 124px;
         }
 
         .Taichung {
@@ -123,7 +123,7 @@
                     <img src="./image/collectIconFeature/Yunlin.png" style="width: 50%;">
                     <img src="./image/collectIconFeature/Nantou.png" style="width: 50%;">
                 </div>
-    </a>
+            </a>
         </div>
         <div class="left_button" onclick="leftIframChage()"></div>
 
@@ -280,19 +280,19 @@
         let click = 0
         function leftIframChage() {
             const iconIfram = document.getElementById("iconIfram").src
-            
+
             console.log("ifram=" + iconIfram)
             click++;
-            if (click%2!=0){
+            if (click % 2 != 0) {
                 document.getElementById("iconIfram").style.visibility = "hidden";
                 document.getElementById("collect_icon").style.visibility = "";
             }
-                
-            else{
+
+            else {
                 document.getElementById("iconIfram").style.visibility = "";
                 document.getElementById("collect_icon").style.visibility = "hidden";
             }
-                
+
 
 
             // if (iconIfram == "file:///C:/Users/mcuim/Desktop/Raspberry/2020_07_06/GrowUp/alreadyCollect_icon.html")
