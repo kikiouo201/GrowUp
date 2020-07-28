@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: url("../../image/countingNumbers/true-2.jpeg") no-repeat;
+            background-size: cover;
+            text-align: center;
+            margin: 0px;
+        }
+
+        .forest {
+            position: relative;
+            height: 900px;
+        }
+
+        .grass {
+            height: 500px;
+            position: absolute;
+            bottom: 0px;
+            right: 0px;
+            z-index: 20;
+            filter: drop-shadow(-2px -2px 5px rgba(0, 0, 0, 0.3));
+        }
+
+        .grass2 {
+            height: 400px;
+            position: absolute;
+            bottom: 0px;
+            left: 500px;
+            z-index: 50;
+            filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+
+        }
+
+        .grass3 {
+            height: 300px;
+            position: absolute;
+            bottom: 0px;
+            left: 100px;
+            z-index: 40;
+            filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3));
+
+        }
+
+        .grass4 {
+            height: 500px;
+            position: absolute;
+            bottom: 0px;
+            left: -150px;
+            z-index: 30;
+            filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+
+        }
+
+        .target {
+            height: 100px;
+            position: absolute;
+            bottom: 250px;
+            left: 40px;
+            z-index: 31;
+            filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+        }
+
+        .target2 {
+            height: 150px;
+            position: absolute;
+            bottom: 300px;
+            left: 350px;
+            z-index: 31;
+            filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+        }
+
+        .target3 {
+            height: 100px;
+            position: absolute;
+            bottom: 20px;
+            left: 40px;
+            z-index: 31;
+            filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+        }
+
+        .target4 {
+            height: 150px;
+            position: absolute;
+            bottom: 300px;
+            right: 350px;
+            z-index: 21;
+            filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+        }
+
+        .target5 {
+            height: 100px;
+            position: absolute;
+            bottom: 20px;
+            right: 40px;
+            z-index: 21;
+            filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+        }
+
+        .getTarget {
+            height: 150px;
+            transform: scale(4);
+            transition: all 1s ease-out;
+            position: absolute;
+            bottom: 50%;
+            left: 45%;
+            right: 40%;
+            z-index: 110;
+        }
+
+        .black_overlay {
+            visibility: hidden;
+            position: absolute;
+            z-index: 100;
+            top: 0%;
+            left: 0%;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            -moz-opacity: 0.8;
+            opacity: .80;
+            filter: alpha(opacity=80);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        .next {
+            position: absolute;
+            bottom: 18%;
+            left: 40%;
+            right: 40%;
+            padding: 10px;
+            background-color: burlywood;
+            text-align: center;
+            border-radius: 10px;
+            z-index: 120;
+        }
+
+        .score {
+            position: absolute;
+            top: 10%;
+            right: 10%;
+            padding: 10px;
+            font-size: xx-large;
+            background-color: antiquewhite;
+            border-radius: 30%;
+            border: 5px solid sandybrown;
+        }
+
+        .result {
+            visibility: hidden;
+            width: 300px;
+            height: 300px;
+            position: relative;
+            z-index: 25;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: aliceblue;
+        }
+
+        .challengeAgain {
+            position: absolute;
+            left: 20px;
+            bottom: 20px;
+            padding: 10px;
+            background-color: burlywood;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .nextLevel {
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+            padding: 10px;
+            background-color: burlywood;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .status {
+            text-align: center;
+            width: 200px;
+            height: 50px;
+            font-size: 40px;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: xx-large;
+
+        }
+
+        .props {
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+
+        }
+
+        .props div {
+
+            background-color: darkcyan;
+            text-align: center;
+            border-radius: 10px;
+            margin: 10px;
+        }
+    </style>
+    <script>
+        let nowScore = 0;
+        function toBig(id) {
+            const target = document.querySelector('.target' + id);
+            target.className = 'getTarget';
+            nowScore++;
+            setTimeout(toBackgroundBlack, 1000);
+        }
+        function toBackgroundBlack() {
+            const black_overlay = document.querySelector('.black_overlay');
+            black_overlay.style.visibility = "visible";
+        }
+        function next() {
+            const targets = document.querySelectorAll('.getTarget');
+            targets.forEach((target) => {
+                target.style.visibility = "hidden";
+            });
+
+
+            setTimeout('document.querySelector(".score").innerHTML=' + nowScore + '+"分"', 1000);
+            if (targets.length == 5) {
+                setTimeout(end, 1000);
+            } else {
+                setTimeout('document.querySelector(".black_overlay").style.visibility = "hidden";', 1000);
+            }
+        }
+        function end(){
+            const next = document.querySelector('.next');
+                const result = document.querySelector('.result');
+                next.style.visibility = 'hidden';
+                result.style.visibility = 'visible';
+        }
+        const close = document.querySelector('.close');
+        close.addEventListener('click', () => {
+            const black_overlay = document.querySelector('.black_overlay');
+            black_overlay.style.visibility = "hidden";
+        });
+
+
+        function challengeAgain() {
+           
+            window.location.href = "../../view/game/findBallast.html";
+        }
+
+        function goNextLevel() {
+                window.location.href = `../../view/level/eastRegion.html`;           
+        }
+
+    </script>
+</head>
+
+<body>
+    <div class="black_overlay">
+
+        <div class="next" onclick="next()">確認</div>
+        <div class="result">
+            <div class="close">X</div>
+            <div class="status">成功</div>
+            <div class="statusText"></div>
+            <div class="props">
+                <div>道具</div>
+                <div>小卡</div>
+                <div>經驗值</div>
+
+            </div>
+            <div class="challengeAgain" onclick="challengeAgain()">再次挑戰</div>
+            <div class="nextLevel" onclick="goNextLevel()">確認</div>
+        </div>
+    </div>
+    <div class="forest">
+        <div class="score">0分</div>
+        <img src="../../image/findBallast/grass.png" class="grass" />
+        <img src="../../image/findBallast/grass2.png" class="grass2" />
+        <img src="../../image/findBallast/grass2.png" class="grass3" />
+        <img src="../../image/findBallast/grass2.png" class="grass4" />
+        <img src="../../image/words/apple.png" class="target" onclick="toBig('')">
+        <img src="../../image/words/apple.png" class="target2" onclick="toBig('2')">
+        <img src="../../image/words/peach.png" class="target3" onclick="toBig('3')">
+        <img src="../../image/words/strawberry.png" class="target4" onclick="toBig('4')">
+        <img src="../../image/words/waterpear1.png" class="target5" onclick="toBig('5')">
+    </div>
+
+</body>
+
+</html>
