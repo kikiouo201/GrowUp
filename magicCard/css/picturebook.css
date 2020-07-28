@@ -35,22 +35,23 @@ body {
   height: calc(100% - 62px);
   overflow-y: scroll;
   padding: 20px;
-  box-sizing: border-box;
+  text-align: center;
 }
 
 
 #booklist{
-  width: 100%;
+  width: auto;
   height: auto;
   padding: 5%;
-  display: inline-block;
+  display: block;
   color: white;
   font-family: Microsoft JhengHei;
+  box-sizing: border-box;
 }
 
 #book1{
-  width: 15%;
-  display: inline-block;
+  width: 20%;
+  display: inline-table;
   color: rgb(19, 1, 1);
   font-weight: bold;
   padding: 10px;
@@ -58,9 +59,10 @@ body {
   font-family: Microsoft JhengHei;
   border-radius: 10px;
   background-color: white;
-  box-sizing: border-box;
+  margin: 10px;
 }
 
 #summary{
   text-align: left;
+  display: flex;
 }
