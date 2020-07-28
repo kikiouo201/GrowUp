@@ -99,15 +99,19 @@ function challengeAgain(){
 
 function goNextLevel(){
     let counties = (new URLSearchParams(location.search)).get("counties");
-    console.log('counties='+counties);
-    window.location.href="../../view/level/"+counties+".html";
+    //console.log('counties='+counties);
+    if(counties!=null){
+        window.location.href=`../../view/level/${counties}.html`;
+    }else{
+        window.location.href=`../../treature_list.html`;
+    }
 }
 
 function onload() {
 
     let id = (new URLSearchParams(location.search)).get("id");
 
-     console.log(`id=${id}`)
+     console.log(`id=${id}`);
     if (id != null) {
         let zhuyin = document.querySelector(".zhuyin img");
         zhuyin.src = `../../image/drawZhuyin/${id}.png`;

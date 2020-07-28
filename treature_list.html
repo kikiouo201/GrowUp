@@ -45,6 +45,126 @@
         }
     </script>
 
+    <style>
+        .Taipei {
+            width: 36px;
+            position: absolute;
+            top: 17px;
+            left: 272px;
+        }
+
+        .NewTaipei {
+            width: 130px;
+            position: absolute;
+            top: 0px;
+            left: 240px;
+        }
+
+        .Keelung {
+            width: 37px;
+            position: absolute;
+            top: 19px;
+            right: 140px;
+        }
+
+        .Taoyuan {
+            width: 91px;
+            position: absolute;
+            top: 34px;
+            left: 185px;
+        }
+
+        .Hsinchu {
+            width: 101px;
+            position: absolute;
+            top: 71px;
+            left: 165px;
+        }
+
+        .Miaoli {
+            width: 116px;
+            position: absolute;
+            top: 109px;
+            left: 124px;
+        }
+
+        .Taichung {
+            width: 172px;
+            position: absolute;
+            top: 155px;
+            left: 103px;
+        }
+
+        .Changhua {
+            width: 79px;
+            position: absolute;
+            top: 205px;
+            left: 67px;
+        }
+
+        .Yunlin {
+            width: 115px;
+            position: absolute;
+            top: 269px;
+            left: 47px;
+        }
+
+        .Nantou {
+            width: 134px;
+            position: absolute;
+            top: 190px;
+            left: 126px;
+        }
+
+        .Yilan {
+            width: 106px;
+            position: absolute;
+            top: 58px;
+            left: 251px;
+        }
+
+        .Hualien {
+            width: 131px;
+            position: absolute;
+            top: 167px;
+            left: 206px;
+        }
+
+        .Taitung {
+            width: 129px;
+            position: absolute;
+            top: 317px;
+            left: 172px;
+        }
+
+        .Chiayi {
+            width: 146px;
+            position: absolute;
+            top: 300px;
+            left: 46px;
+        }
+
+        .Tainan {
+            width: 102px;
+            position: absolute;
+            top: 342px;
+            left: 43px;
+        }
+
+        .Kaohsiung {
+            width: 158px;
+            position: absolute;
+            top: 324px;
+            left: 62px;
+        }
+
+        .Pingtung {
+            width: 105px;
+            position: absolute;
+            top: 430px;
+            left: 108px;
+        }
+    </style>
     <div class="main_area">
         <div class="left_main_area">
             <p>目前收集到的徽章</p>
@@ -52,15 +172,110 @@
             <!-- <textarea name="magicCard" cols="20" rows="3" style="background-color: #ffffff00; border-color: #ffffff00;">我我我</textarea> -->
         </div>
         <iframe id="iconIfram" src="./alreadyCollect_icon.html" frameborder="0" class="collect_icon"></iframe>
+        <div id="collect_icon" class="collect_icon" style="visibility: hidden;">
+            <a href="./view/level/chiayi.html">
+                <div>
+                    <a href="./view/level/newTaipei.html"><img class="NewTaipei" src="./image/map/NewTaipei_dark.png"></a>
+                    <a href="./view/level/taipei.html"><img class="Taipei" src="./image/map/Taipei_dark.png"></a>
+                    <a href="./view/level/Keelung.html"><img class="Keelung" src="./image/map/Keelung_dark.png"></a>
+                    <a href="./view/level/Taoyuan.html"><img class="Taoyuan" src="./image/map/Taoyuan_dark.png"></a>
+                    <a href="./view/level/Hsinchu.html"><img class="Hsinchu" src="./image/map/Hsinchu_dark.png"></a>
+                    <a href="./view/level/Miaoli.html"><img class="Miaoli" src="./image/collectIconFeature/Miaoli.png"></a>
+                    <a href="./view/level/Taichung.html"><img class="Taichung" src="./image/collectIconFeature/Taichung.png"></a>
+                    <a href="./view/level/Changhua.html"><img class="Changhua" src="./image/collectIconFeature/Changhua.png"></a>
+                    <a href="./view/level/Kaohsiung.html"><img class="Kaohsiung" src="./image/map/Kaohsiung_dark.png"></a>
+                    <a href="./view/level/chiayi.html"><img class="Chiayi" src="./image/collectIconFeature/Chiayi.png"></a>
+                    <a href="./view/level/Yunlin.html"><img class="Yunlin" src="./image/collectIconFeature/Yunlin.png"></a>
+                    <a href="./view/level/Nantou.html"><img class="Nantou" src="./image/collectIconFeature/Nantou.png"></a>
+                    <a href="./view/level/Yilan.html"><img class="Yilan" src="./image/map/Yilan_dark.png"></a>
+                    <a href="./view/level/Taitung.html"><img class="Taitung" src="./image/map/Taitung_dark.png"></a>
+                    <a href="./view/level/Hualien.html"><img class="Hualien" src="./image/map/Hualien_dark.png"></a>
+                    <a href="./view/level/Tainan.html"><img class="Tainan" src="./image/map/Tainan_dark.png"></a>
+                    <a href="./view/level/Pingtung.html"><img class="Pingtung" src="./image/map/Pingtung_dark.png"></a>
+                </div>
+            </a>
+        </div>
         <div class="left_button" onclick="leftIframChage()"></div>
+
+
         <div class="right_main_area">
             <p>目前收集到的魔法小卡</p>
             <!-- <img src="./image/character/bg.png" style="position: absolute; top: 0; right: 0; width: 50%; height: 625px;"> -->
+
         </div>
-        <iframe src="./alreayCollect_magicCard.html" frameborder="0" class="collect_magicCard"></iframe>
+        <div class="collect_magicCard">
+            <a href="./view/game/drawZhuyin.html?id=b"><img src="./image/magicCard/chineseAlphabet/b.png"
+                    style="width :30%;"></a>
+            <a href="./view/game/drawZhuyin.html?id=p"><img onclick="clickP()"
+                    src="./image/magicCard/chineseAlphabet/p.png" style="width :30%;"></a>
+            <a href="./view/game/drawZhuyin.html?id=m"><img src="./image/magicCard/chineseAlphabet/m.png"
+                    style="width :30%;"></a>
+            <a href="./view/game/drawZhuyin.html?id=f"><img src="./image/magicCard/chineseAlphabet/f.png"
+                    style="width :30%;"></a>
+            <a href="./view/game/drawZhuyin.html?id=d"><img src="./image/magicCard/chineseAlphabet/d.png"
+                    style="width :30%;"></a>
+            <a href="./view/game/drawZhuyin.html?id=t"><img src="./image/magicCard/chineseAlphabet/t.png"
+                    style="width :30%;"></a>
+            <a href="./view/game/drawZhuyin.html?id=n"><img src="./image/magicCard/chineseAlphabet/n.png"
+                    style="width :30%;"></a>
+            <a href="./view/game/drawZhuyin.html?id=l"><img src="./image/magicCard/chineseAlphabet/l.png"
+                    style="width :30%;"></a>
+            <a href="./view/game/drawZhuyin.html?id=g"><img src="./image/magicCard/chineseAlphabet/g_lock.png"
+                    style="width :30%;"></a>
+            <a href="./view/game/drawZhuyin.html?id=k"><img src="./image/magicCard/chineseAlphabet/k_lock.png"
+                    style="width :30%;"></a>
+
+            <a href="./view/game/drawZhuyin.html?id=h"><img src="./image/magicCard/chineseAlphabet/h_lock.png"
+                    style="width :30%;"></a>
+            <a href="./view/game/drawZhuyin.html?id=ji"><img src="./image/magicCard/chineseAlphabet/ji_lock.png"
+                    style="width :30%;"></a>
+            <a href="./view/game/drawZhuyin.html?id=chi"><img src="./image/magicCard/chineseAlphabet/chi_lock.png"
+                    style="width :30%;"></a>
+            <a href="./view/game/drawZhuyin.html?id=si"><img src="./image/magicCard/chineseAlphabet/si_lock.png"
+                    style="width :30%;"></a>
+
+
+            <br><br><br>
+            <a href="./view/game/drawZhuyin.html?id=A"><img src="./image/magicCard/ABC/A.png" style="width :30%;"></a>
+            <a href="./view/game/drawZhuyin.html?id=B"><img src="./image/magicCard/ABC/B.png" style="width :30%;"></a>
+            <a href="./view/game/drawZhuyin.html?id=C"><img src="./image/magicCard/ABC/C.png" style="width :30%;"></a>
+            <a href="./view/game/drawZhuyin.html?id=C"><img src="./image/magicCard/ABC/D.png" style="width :30%;"></a>
+            <a href="./view/game/drawZhuyin.html?id=C"><img src="./image/magicCard/ABC/E_lock.png"
+                    style="width :30%;"></a>
+            <a href="./view/game/drawZhuyin.html?id=C"><img src="./image/magicCard/ABC/F_lock.png"
+                    style="width :30%;"></a>
+            <a href="./view/game/drawZhuyin.html?id=C"><img src="./image/magicCard/ABC/G_lock.png"
+                    style="width :30%;"></a>
+            <a href="./view/game/drawZhuyin.html?id=C"><img src="./image/magicCard/ABC/H_lock.png"
+                    style="width :30%;"></a>
+            <a href="./view/game/drawZhuyin.html?id=C"><img src="./image/magicCard/ABC/I_lock.png"
+                    style="width :30%;"></a>
+            <a href="./view/game/drawZhuyin.html?id=C"><img src="./image/magicCard/ABC/J_lock.png"
+                    style="width :30%;"></a>
+            <a href="./view/game/drawZhuyin.html?id=C"><img src="./image/magicCard/ABC/K_lock.png"
+                    style="width :30%;"></a>
+
+            <br><br><br>
+            <a href="./view/game/drawzhuyin.html?id=1"><img src="./image/magicCard/012/1.png" style="width :30%;"></a>
+            <a href="./view/game/drawzhuyin.html?id=2"><img src="./image/magicCard/012/2.png" style="width :30%;"></a>
+            <a href="./view/game/drawzhuyin.html?id=3"><img src="./image/magicCard/012/3.png" style="width :30%;"></a>
+            <a href="./view/game/drawzhuyin.html?id=4"><img src="./image/magicCard/012/4.png" style="width :30%;"></a>
+            <a href="./view/game/drawzhuyin.html?id=5"><img src="./image/magicCard/012/5.png" style="width :30%;"></a>
+            <a href="./view/game/drawzhuyin.html?id=6"><img src="./image/magicCard/012/6_lock.png"
+                    style="width :30%;"></a>
+            <a href="./view/game/drawzhuyin.html?id=7"><img src="./image/magicCard/012/7_lock.png"
+                    style="width :30%;"></a>
+            <a href="./view/game/drawzhuyin.html?id=8"><img src="./image/magicCard/012/8_lock.png"
+                    style="width :30%;"></a>
+            <a href="./view/game/drawzhuyin.html?id=9"><img src="./image/magicCard/012/9_lock.png"
+                    style="width :30%;"></a>
+            <a href="./view/game/drawzhuyin.html?id=0"><img src="./image/magicCard/012/0_lock.png"
+                    style="width :30%;"></a>
+        </div>
+        <!-- <iframe src="./alreayCollect_magicCard.html" frameborder="0" class="collect_magicCard"></iframe> -->
 
     </div>
-    
+
     <!-- <div>
         <button class="magic_word" onclick="">
             <a href="./SpeechToAsk.html"><img src="./image/character/magic_word.png" width="50%"></a><br>
@@ -132,13 +347,28 @@
         }
     </script>
     <script>
-        function leftIframChage(){
+        let click = 0
+        function leftIframChage() {
             const iconIfram = document.getElementById("iconIfram").src
-            console.log("ifram="+iconIfram)
-            if(iconIfram == "file:///C:/Users/mcuim/Desktop/Raspberry/2020_07_06/GrowUp/seeAllCollect_icon.html")
-                document.getElementById("iconIfram").src = "./alreadyCollect_icon.html";
-            else
-                document.getElementById("iconIfram").src = "./seeAllCollect_icon.html";
+
+            console.log("ifram=" + iconIfram)
+            click++;
+            if (click % 2 != 0) {
+                document.getElementById("iconIfram").style.visibility = "hidden";
+                document.getElementById("collect_icon").style.visibility = "";
+            }
+
+            else {
+                document.getElementById("iconIfram").style.visibility = "";
+                document.getElementById("collect_icon").style.visibility = "hidden";
+            }
+
+
+
+            // if (iconIfram == "file:///C:/Users/mcuim/Desktop/Raspberry/2020_07_06/GrowUp/alreadyCollect_icon.html")
+            //     document.getElementById("iconIfram").src = "./seeAllCollect_icon.html";
+            // else
+            //     document.getElementById("iconIfram").src = "./seeAllCollect_icon.html";
         }
     </script>
 </body>
