@@ -13,6 +13,7 @@
     <!-- <link rel="stylesheet" href="CSS/magic_weapon.css"> -->
     <link rel="stylesheet" href="CSS/every_four_button.css">
     <link rel="stylesheet" href="CSS/treature_list.css">
+    <link rel="stylesheet" href="CSS/treatureList/collectIconMap.css">
 
 </head>
 
@@ -45,155 +46,96 @@
         }
     </script>
 
-    <style>
-        .Taipei {
-            width: 36px;
-            position: absolute;
-            top: 17px;
-            left: 272px;
-        }
-
-        .NewTaipei {
-            width: 130px;
-            position: absolute;
-            top: 0px;
-            left: 240px;
-        }
-
-        .Keelung {
-            width: 37px;
-            position: absolute;
-            top: 19px;
-            right: 140px;
-        }
-
-        .Taoyuan {
-            width: 91px;
-            position: absolute;
-            top: 34px;
-            left: 185px;
-        }
-
-        .Hsinchu {
-            width: 101px;
-            position: absolute;
-            top: 71px;
-            left: 165px;
-        }
-
-        .Miaoli {
-            width: 116px;
-            position: absolute;
-            top: 109px;
-            left: 124px;
-        }
-
-        .Taichung {
-            width: 172px;
-            position: absolute;
-            top: 155px;
-            left: 103px;
-        }
-
-        .Changhua {
-            width: 79px;
-            position: absolute;
-            top: 205px;
-            left: 67px;
-        }
-
-        .Yunlin {
-            width: 115px;
-            position: absolute;
-            top: 269px;
-            left: 47px;
-        }
-
-        .Nantou {
-            width: 134px;
-            position: absolute;
-            top: 190px;
-            left: 126px;
-        }
-
-        .Yilan {
-            width: 106px;
-            position: absolute;
-            top: 58px;
-            left: 251px;
-        }
-
-        .Hualien {
-            width: 131px;
-            position: absolute;
-            top: 167px;
-            left: 206px;
-        }
-
-        .Taitung {
-            width: 129px;
-            position: absolute;
-            top: 317px;
-            left: 172px;
-        }
-
-        .Chiayi {
-            width: 146px;
-            position: absolute;
-            top: 300px;
-            left: 46px;
-        }
-
-        .Tainan {
-            width: 102px;
-            position: absolute;
-            top: 342px;
-            left: 43px;
-        }
-
-        .Kaohsiung {
-            width: 158px;
-            position: absolute;
-            top: 324px;
-            left: 62px;
-        }
-
-        .Pingtung {
-            width: 105px;
-            position: absolute;
-            top: 430px;
-            left: 108px;
-        }
-    </style>
     <div class="main_area">
         <div class="left_main_area">
             <p>目前收集到的徽章</p>
             <!-- <img src="./image/character/bg.png" style="position: absolute; top: 0; left: 0; width: 50%; height: 625px;"> -->
             <!-- <textarea name="magicCard" cols="20" rows="3" style="background-color: #ffffff00; border-color: #ffffff00;">我我我</textarea> -->
         </div>
-        <iframe id="iconIfram" src="./alreadyCollect_icon.html" frameborder="0" class="collect_icon"></iframe>
-        <div id="collect_icon" class="collect_icon" style="visibility: hidden;">
-            <a href="./view/level/chiayi.html">
-                <div>
-                    <a href="./view/level/newTaipei.html"><img class="NewTaipei" src="./image/map/NewTaipei_dark.png"></a>
-                    <a href="./view/level/taipei.html"><img class="Taipei" src="./image/map/Taipei_dark.png"></a>
-                    <a href="./view/level/Keelung.html"><img class="Keelung" src="./image/map/Keelung_dark.png"></a>
-                    <a href="./view/level/Taoyuan.html"><img class="Taoyuan" src="./image/map/Taoyuan_dark.png"></a>
-                    <a href="./view/level/Hsinchu.html"><img class="Hsinchu" src="./image/map/Hsinchu_dark.png"></a>
-                    <a href="./view/level/Miaoli.html"><img class="Miaoli" src="./image/collectIconFeature/Miaoli.png"></a>
-                    <a href="./view/level/Taichung.html"><img class="Taichung" src="./image/collectIconFeature/Taichung.png"></a>
-                    <a href="./view/level/Changhua.html"><img class="Changhua" src="./image/collectIconFeature/Changhua.png"></a>
-                    <a href="./view/level/Kaohsiung.html"><img class="Kaohsiung" src="./image/map/Kaohsiung_dark.png"></a>
-                    <a href="./view/level/chiayi.html"><img class="Chiayi" src="./image/collectIconFeature/Chiayi.png"></a>
-                    <a href="./view/level/Yunlin.html"><img class="Yunlin" src="./image/collectIconFeature/Yunlin.png"></a>
-                    <a href="./view/level/Nantou.html"><img class="Nantou" src="./image/collectIconFeature/Nantou.png"></a>
-                    <a href="./view/level/Yilan.html"><img class="Yilan" src="./image/map/Yilan_dark.png"></a>
-                    <a href="./view/level/Taitung.html"><img class="Taitung" src="./image/map/Taitung_dark.png"></a>
-                    <a href="./view/level/Hualien.html"><img class="Hualien" src="./image/map/Hualien_dark.png"></a>
-                    <a href="./view/level/Tainan.html"><img class="Tainan" src="./image/map/Tainan_dark.png"></a>
-                    <a href="./view/level/Pingtung.html"><img class="Pingtung" src="./image/map/Pingtung_dark.png"></a>
-                </div>
-            </a>
+
+        <!-- All icon ifram -->
+        <iframe id="AllIconIfram" src="./alreadyCollect_icon.html" frameborder="0" class="collect_icon"
+            style="visibility: hidden;"></iframe>
+        <!-- All individual icon ifram -->
+        <iframe id="Keelung_feature" src="" frameborder="0" class="collect_icon" style="visibility: hidden;"></iframe>
+        <iframe id="NewTaipei_feature" src="" frameborder="0" class="collect_icon" style="visibility: hidden;"></iframe>
+        <iframe id="Taipei_feature" src="" frameborder="0" class="collect_icon" style="visibility: hidden;"></iframe>
+        <iframe id="Taoyuan_feature" src="" frameborder="0" class="collect_icon" style="visibility: hidden;"></iframe>
+        <iframe id="Hsinchu_feature" src="" frameborder="0" class="collect_icon" style="visibility: hidden;"></iframe>
+        <iframe id="Miaoli_feature" src="" frameborder="0" class="collect_icon" style="visibility: hidden;"></iframe>
+        <iframe id="Taichung_feature" src="" frameborder="0" class="collect_icon" style="visibility: hidden;"></iframe>
+        <iframe id="Changhua_feature" src="" frameborder="0" class="collect_icon" style="visibility: hidden;"></iframe>
+        <iframe id="Nantou_feature" src="" frameborder="0" class="collect_icon" style="visibility: hidden;"></iframe>
+        <iframe id="Yunlin _feature" src="" frameborder="0" class="collect_icon" style="visibility: hidden;"></iframe>
+        <iframe id="Chiayi_feature" src="" frameborder="0" class="collect_icon" style="visibility: hidden;"></iframe>
+        <iframe id="Tainan_feature" src="" frameborder="0" class="collect_icon" style="visibility: hidden;"></iframe>
+        <iframe id="Kaohsiung_feature" src="" frameborder="0" class="collect_icon" style="visibility: hidden;"></iframe>
+        <iframe id="Pingtung_feature" src="" frameborder="0" class="collect_icon" style="visibility: hidden;"></iframe>
+        <iframe id="Yilan_feature" src="" frameborder="0" class="collect_icon" style="visibility: hidden;"></iframe>
+        <iframe id="Hualien_feature" src="" frameborder="0" class="collect_icon" style="visibility: hidden;"></iframe>
+        <iframe id="Taitung_feature" src="" frameborder="0" class="collect_icon" style="visibility: hidden;"></iframe>
+
+        <div id="collect_icon" class="collect_icon">
+            <div id="MapIcon">
+                <img class="NewTaipei" src="./image/map/NewTaipei_dark.png">
+                <a href="./view/level/newTaipei.html"><img class="NewTaipei_icon"
+                        src="./image/icon/NewTaipei_icon_dark.png"></a>
+
+                <img class="Taipei" src="./image/map/Taipei_dark.png">
+                <a href="./view/level/taipei.html"><img class="Taipei_icon" src="./image/icon/Taipei_icon.png"></a>
+
+                <img class="Keelung" src="./image/map/Keelung_dark.png">
+                <a href="./view/level/Keelung.html"><img class="Keelung_icon" src="./image/icon/Keelung_icon.png"></a>
+
+                <img class="Taoyuan" src="./image/map/Taoyuan_dark.png">
+                <a href="./view/level/Taoyuan.html"><img class="Taoyuan_icon" src="./image/icon/Taoyuan_icon.png"></a>
+
+                <img class="Hsinchu" src="./image/map/Hsinchu_dark.png">
+                <a href="./view/level/Hsinchu.html"><img class="Hsinchu_icon" src="./image/icon/Hsinchu_icon.png"></a>
+
+                <img class="Miaoli" src="./image/map/Miaoli_origin.png">
+                <!-- <a href="./view/level/Miaoli.html"> -->
+                <img onclick="RegionIcon('苗栗草莓')" id="Miaoli_feature" class="Miaoli_icon"
+                    src="./image/icon/strawberry.png">
+                <!-- </a> -->
+
+                <img class="Taichung" src="./image/map/Taichung_origin.png">
+                <a href="./view/level/Taichung.html"><img class="Taichung_icon" src="./image/icon/suncake.png"></a>
+
+                <img class="Changhua" src="./image/map/Changhua_origin.png">
+                <a href="./view/level/Changhua.html"><img class="Changhua_icon" src="./image/icon/meat_ball.png"></a>
+
+                <img class="Kaohsiung" src="./image/map/Kaohsiung_dark.png">
+                <a href="./view/level/Kaohsiung.html"><img class="Kaohsiung_icon"
+                        src="./image/icon/Kaohsiung_icon.png"></a>
+
+                <img class="Chiayi" src="./image/map/Chiayi_origin.png">
+                <a href="./view/level/chiayi.html"><img class="Chiayi_icon" src="./image/icon/meat_rice.png"></a>
+
+                <img class="Yunlin" src="./image/map/Yunlin_origin.png">
+                <a href="./view/level/Yunlin.html"><img class="Yunlin_icon" src="./image/icon/soy_sauce.png"></a>
+
+                <img class="Nantou" src="./image/map/Nantou_origin.png">
+                <a href="./view/level/Nantou.html"><img class="Nantou_icon" src="./image/icon/herbal_tea.png"></a>
+
+                <img class="Yilan" src="./image/map/Yilan_dark.png">
+                <a href="./view/level/Yilan.html"><img class="Yilan_icon" src="./image/icon/Yilan_icon.png"></a>
+
+                <img class="Taitung" src="./image/map/Taitung_dark.png">
+                <a href="./view/level/Taitung.html"><img class="Taitung_icon"
+                        src="./image/icon/hot_air_balloon_dark.png"></a>
+
+                <img class="Hualien" src="./image/map/Hualien_dark.png">
+                <a href="./view/level/Hualien.html"><img class="Hualien_icon"
+                        src="./image/icon/watermelon_dark.png"></a>
+
+                <img class="Tainan" src="./image/map/Tainan_origin.png">
+                <a href="./view/level/Tainan.html"><img class="Tainan_icon" src="./image/icon/Tainan_icon.png"></a>
+
+                <img class="Pingtung" src="./image/map/Pingtung_dark.png">
+                <a href="./view/level/Pingtung.html"><img class="Pingtung_icon"
+                        src="./image/icon/Pingtung_icon.png"></a>
+            </div>
         </div>
         <div class="left_button" onclick="leftIframChage()"></div>
 
@@ -348,19 +290,50 @@
     </script>
     <script>
         let click = 0
+        const mapIcon = document.getElementById("MapIcon")
+        const colletIconFeature = document.getElementById("collect_icon")
+        
+        function RegionIcon(featureIcon) {
+
+            switch (featureIcon) {
+                case "苗栗草莓":
+                    // mapIcon.style.visibility = "hidden";
+                    mapIcon.style.display = "none";
+                    colletIconFeature.innerHTML = `<div id="feature" style="margin-top:80px">
+                        <img onclick="returnMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
+            <img src="./image/icon/strawberry.png" onclick="featuresText(this)" style="width: 110px; height: auto; margin-right: 10px; cursor: pointer;">
+            <a style="display: inline-block; position: absolute; font-size: 20px; font-weight: bold;">大湖草莓，台灣苗栗縣大湖鄉的特產，氣候溫和多雨，以草莓聞名全國，素有臺灣草莓王國雅號。</a>
+
+            <br><br>
+        </div>`
+
+            }
+        }
+
+        function returnMap() {
+            const featureDIV = document.getElementById("feature")
+            featureDIV.style.visibility = "hidden";
+            console.log(mapIcon.style.visibility)
+            if(mapIcon.style.display == "none"){
+                mapIcon.style.display = "block";
+                console.log(mapIcon)
+            }
+                
+        }
+
         function leftIframChage() {
-            const iconIfram = document.getElementById("iconIfram").src
+            const iconIfram = document.getElementById("AllIconIfram").src
 
             console.log("ifram=" + iconIfram)
             click++;
             if (click % 2 != 0) {
-                document.getElementById("iconIfram").style.visibility = "hidden";
-                document.getElementById("collect_icon").style.visibility = "";
+                document.getElementById("AllIconIfram").style.visibility = "";
+                document.getElementById("collect_icon").style.visibility = "hidden";
             }
 
             else {
-                document.getElementById("iconIfram").style.visibility = "";
-                document.getElementById("collect_icon").style.visibility = "hidden";
+                document.getElementById("AllIconIfram").style.visibility = "hidden";
+                document.getElementById("collect_icon").style.visibility = "";
             }
 
 
