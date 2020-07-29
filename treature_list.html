@@ -17,7 +17,7 @@
 
 </head>
 
-<body>
+<body id="stopVoice">
     <div class="home_page">
         <a class="home_title">寶物清單</a>
 
@@ -467,7 +467,30 @@
             // else
             //     document.getElementById("iconIfram").src = "./seeAllCollect_icon.html";
         }
+
+        function featuresText(feature) {
+            console.log("index = " + feature)
+            console.log("click =? " + feature.parentNode.children[2].childNodes[0].nodeValue)
+            const voiceText = feature.parentNode.children[2].childNodes[0].nodeValue
+            const FeatureValue = feature.parentNode.children[2].style.visibility
+            console.log("value = " + FeatureValue)
+
+
+            if (FeatureValue == "hidden")
+                console.log("value = " + FeatureValue)
+
+            else{
+                mouseDown(voiceText)
+                console.log("voiceText="+mouseDown(voiceText))
+            }
+
+            // if(FeatureValue != "hidden")
+            // console.log("value = " + FeatureValue)
+        }
+
     </script>
+    <script src="./collect_icon.js"></script>
+
 </body>
 
 </html>
