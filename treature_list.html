@@ -57,7 +57,7 @@
         <iframe id="AllIconIfram" src="./alreadyCollect_icon.html" frameborder="0" class="collect_icon"
             style="visibility: hidden;"></iframe>
         <!-- All individual icon ifram -->
-        <iframe id="Keelung_feature" src="" frameborder="0" class="collect_icon" style="visibility: hidden;"></iframe>
+        <!-- <iframe id="Keelung_feature" src="" frameborder="0" class="collect_icon" style="visibility: hidden;"></iframe>
         <iframe id="NewTaipei_feature" src="" frameborder="0" class="collect_icon" style="visibility: hidden;"></iframe>
         <iframe id="Taipei_feature" src="" frameborder="0" class="collect_icon" style="visibility: hidden;"></iframe>
         <iframe id="Taoyuan_feature" src="" frameborder="0" class="collect_icon" style="visibility: hidden;"></iframe>
@@ -73,9 +73,9 @@
         <iframe id="Pingtung_feature" src="" frameborder="0" class="collect_icon" style="visibility: hidden;"></iframe>
         <iframe id="Yilan_feature" src="" frameborder="0" class="collect_icon" style="visibility: hidden;"></iframe>
         <iframe id="Hualien_feature" src="" frameborder="0" class="collect_icon" style="visibility: hidden;"></iframe>
-        <iframe id="Taitung_feature" src="" frameborder="0" class="collect_icon" style="visibility: hidden;"></iframe>
+        <iframe id="Taitung_feature" src="" frameborder="0" class="collect_icon" style="visibility: hidden;"></iframe> -->
 
-        <div id="collect_icon" class="collect_icon">
+        <div id="collect_iconMap" class="collect_icon">
             <div id="MapIcon">
                 <img class="NewTaipei" src="./image/map/NewTaipei_dark.png">
                 <a href="./view/level/newTaipei.html"><img class="NewTaipei_icon"
@@ -91,7 +91,8 @@
                 <a href="./view/level/Taoyuan.html"><img class="Taoyuan_icon" src="./image/icon/Taoyuan_icon.png"></a>
 
                 <img class="Hsinchu" src="./image/map/Hsinchu_dark.png">
-                <a href="./view/level/Hsinchu.html"><img class="Hsinchu_icon" src="./image/icon/Hsinchu_icon.png"></a>
+                <a href="./view/level/Hsinchu.html">
+                    <img class="Hsinchu_icon" src="./image/icon/Hsinchu_icon.png"></a>
 
                 <img class="Miaoli" src="./image/map/Miaoli_origin.png">
                 <!-- <a href="./view/level/Miaoli.html"> -->
@@ -100,41 +101,70 @@
                 <!-- </a> -->
 
                 <img class="Taichung" src="./image/map/Taichung_origin.png">
-                <a href="./view/level/Taichung.html"><img class="Taichung_icon" src="./image/icon/suncake.png"></a>
+                <!-- <a href="./view/level/Taichung.html"> -->
+                <img onclick="RegionIcon('台中太陽餅')" id="Taichung_feature" class="Taichung_icon"
+                    src="./image/icon/suncake.png">
+                <!-- </a> -->
 
                 <img class="Changhua" src="./image/map/Changhua_origin.png">
-                <a href="./view/level/Changhua.html"><img class="Changhua_icon" src="./image/icon/meat_ball.png"></a>
+                <!-- <a href="./view/level/Changhua.html"> -->
+                <img onclick="RegionIcon('彰化肉圓')" id="Changhua_feature" class="Changhua_icon"
+                    src="./image/icon/meat_ball.png">
+                <!-- </a> -->
 
                 <img class="Kaohsiung" src="./image/map/Kaohsiung_dark.png">
                 <a href="./view/level/Kaohsiung.html"><img class="Kaohsiung_icon"
                         src="./image/icon/Kaohsiung_icon.png"></a>
 
                 <img class="Chiayi" src="./image/map/Chiayi_origin.png">
-                <a href="./view/level/chiayi.html"><img class="Chiayi_icon" src="./image/icon/meat_rice.png"></a>
+                <!-- <a href="./view/level/chiayi.html"> -->
+                <img onclick="RegionIcon('嘉義雞肉飯')" id="Chiayi_feature" class="Chiayi_icon"
+                    src="./image/icon/meat_rice.png">
+                <!-- </a> -->
 
                 <img class="Yunlin" src="./image/map/Yunlin_origin.png">
-                <a href="./view/level/Yunlin.html"><img class="Yunlin_icon" src="./image/icon/soy_sauce.png"></a>
+                <!-- <a href="./view/level/Yunlin.html"> -->
+                <img onclick="RegionIcon('雲林西螺醬油')" id="Yunlin_feature" class="Yunlin_icon"
+                    src="./image/icon/soy_sauce.png">
+                <!-- </a> -->
 
                 <img class="Nantou" src="./image/map/Nantou_origin.png">
-                <a href="./view/level/Nantou.html"><img class="Nantou_icon" src="./image/icon/herbal_tea.png"></a>
+                <!-- <a href="./view/level/Nantou.html"> -->
+                <img onclick="RegionIcon('南投凍頂烏龍茶')" id="Nantou_feature" class="Nantou_icon"
+                    src="./image/icon/herbal_tea.png">
+                <!-- </a> -->
 
                 <img class="Yilan" src="./image/map/Yilan_dark.png">
-                <a href="./view/level/Yilan.html"><img class="Yilan_icon" src="./image/icon/Yilan_icon.png"></a>
+                <!-- <a href="./view/level/Yilan.html"> -->
+                <img onclick="RegionIcon('宜蘭')" id="Yilan_feature" class="Yilan_icon" src="./image/icon/Yilan_icon.png">
+                <!-- </a> -->
 
                 <img class="Taitung" src="./image/map/Taitung_dark.png">
-                <a href="./view/level/Taitung.html"><img class="Taitung_icon"
-                        src="./image/icon/hot_air_balloon_dark.png"></a>
+                <!-- <a href="./view/level/Taitung.html"> -->
+                <img onclick="RegionIcon('台東熱氣球')" id="Taitung_feature" class="Taitung_icon"
+                    src="./image/icon/hot_air_balloon_dark.png">
+                <!-- </a> -->
 
                 <img class="Hualien" src="./image/map/Hualien_dark.png">
-                <a href="./view/level/Hualien.html"><img class="Hualien_icon"
-                        src="./image/icon/watermelon_dark.png"></a>
+                <!-- <a href="./view/level/Hualien.html"> -->
+                <img onclick="RegionIcon('花蓮西瓜')" id="Hualien_feature" class="Hualien_icon"
+                    src="./image/icon/watermelon_dark.png">
+                <!-- </a> -->
 
                 <img class="Tainan" src="./image/map/Tainan_origin.png">
-                <a href="./view/level/Tainan.html"><img class="Tainan_icon" src="./image/icon/Tainan_icon.png"></a>
+                <!-- <a href="./view/level/Tainan.html"> -->
+                <img onclick="RegionIcon('台南赤崁樓')" id="Tainan_feature" class="Tainan_icon"
+                    src="./image/icon/Tainan_icon.png">
+                <!-- </a> -->
 
                 <img class="Pingtung" src="./image/map/Pingtung_dark.png">
-                <a href="./view/level/Pingtung.html"><img class="Pingtung_icon"
-                        src="./image/icon/Pingtung_icon.png"></a>
+                <!-- <a href="./view/level/Pingtung.html"> -->
+                <img onclick="RegionIcon('屏東')" id="Pingtung_feature" class="Pingtung_icon"
+                    src="./image/icon/Pingtung_icon.png">
+                <!-- </a> -->
+            </div>
+            <div id="FeatureIcon" style="margin-top:80px">
+
             </div>
         </div>
         <div class="left_button" onclick="leftIframChage()"></div>
@@ -323,34 +353,95 @@
     </script>
     <script>
         let click = 0
-        const mapIcon = document.getElementById("MapIcon")
-        const colletIconFeature = document.getElementById("collect_icon")
+        const colletIconFeature = document.getElementById("collect_iconMap")
+        const mapIconDIV = document.getElementById("MapIcon")
+        const featureDIV = document.getElementById("FeatureIcon")
 
         function RegionIcon(featureIcon) {
 
             switch (featureIcon) {
                 case "苗栗草莓":
                     // mapIcon.style.visibility = "hidden";
-                    mapIcon.style.display = "none";
-                    colletIconFeature.innerHTML = `<div id="feature" style="margin-top:80px">
-                        <img onclick="returnMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
-            <img src="./image/icon/strawberry.png" onclick="featuresText(this)" style="width: 110px; height: auto; margin-right: 10px; cursor: pointer;">
-            <a style="display: inline-block; position: absolute; font-size: 20px; font-weight: bold;">大湖草莓，台灣苗栗縣大湖鄉的特產，氣候溫和多雨，以草莓聞名全國，素有臺灣草莓王國雅號。</a>
+                    mapIconDIV.style.display = "none";
+                    featureDIV.style.display = "block"
+                    featureDIV.innerHTML = `<img onclick="returnMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
+                    <img src="./image/icon/strawberry.png" onclick="featuresText(this)" style="width: 110px; height: auto; margin-right: 10px; cursor: pointer;">
+                    <a style="display: inline-block; position: absolute; font-size: 20px; font-weight: bold;">大湖草莓，台灣苗栗縣大湖鄉的特產，氣候溫和多雨，以草莓聞名全國，素有臺灣草莓王國雅號。</a>
+                    <br><br>`
+                    break;
 
-            <br><br>
-        </div>`
+                case "台中太陽餅":
+                    mapIconDIV.style.display = "none";
+                    featureDIV.style.display = "block"
+                    featureDIV.innerHTML = `<img onclick="returnMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
+                    <img src="./image/icon/suncake.png" onclick="featuresText(this)" style="width: 110px; height: auto; margin-right: 10px; cursor: pointer;">
+                    <a style="display: inline-block; position: absolute; font-size: 20px; font-weight: bold;">太陽餅，是一種甜餡薄餅，一般內餡是麥芽糖，源起於台中市神岡區社口一帶林家崑派的麥芽餅，是台灣台中市的點心，為中臺灣的名產之一。</a>
+                    <br><br>`
+                    break;
+
+
+                case "彰化肉圓":
+                    mapIconDIV.style.display = "none";
+                    featureDIV.style.display = "block"
+
+                    featureDIV.innerHTML = `<img onclick="returnMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
+                    <img src="./image/icon/meat_ball.png" onclick="featuresText(this)" style="width: 110px; height: auto;cursor: pointer;">
+                    <a style="display: inline-block; position: absolute; font-size: 20px; font-weight: bold;">肉圓，台灣特色小吃。最有名的發源地是：彰化（彰化、北斗、員林）</a>
+                    <br><br>`
+                    break;
+
+
+                case "雲林西螺醬油":
+                    mapIconDIV.style.display = "none";
+                    featureDIV.style.display = "block"
+
+                    featureDIV.innerHTML = `<img onclick="returnMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
+                    <img src="./image/icon/soy_sauce.png" onclick="featuresText(this)" style="width: 110px; height: auto; cursor: pointer;">
+                    <a style="display: inline-block; position: absolute; font-size: 20px; font-weight: bold;">西螺醬油，台灣雲林地區重要一級產業特產，因為水質、溫度和濕度的合宜，雲林西螺號稱臺灣的「醬油王國」。</a>
+                    <br><br>`
+                    break;
+
+
+                case "南投凍頂烏龍茶":
+                    mapIconDIV.style.display = "none";
+                    featureDIV.style.display = "block"
+
+                    featureDIV.innerHTML = `<img onclick="returnMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
+                    <img src="./image/icon/herbal_tea.png" onclick="featuresText(this)" style="width: 110px; height: auto; margin-right: 10px; cursor: pointer;">
+                    <a style="display: inline-block; position: absolute; font-size: 20px; font-weight: bold;">凍頂烏龍茶（舊稱水沙連之茶），生產自臺灣南投縣鹿谷鄉，主要以青心烏龍當作原料製作的烏龍茶，有「北包種、南凍頂」之說。</a>
+                    <br><br>`
+                    break;
+
+
+                case "嘉義雞肉飯":
+                    mapIconDIV.style.display = "none";
+                    featureDIV.style.display = "block"
+
+                    featureDIV.innerHTML = `<img onclick="returnMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
+                    <img src="./image/icon/meat_rice.png" onclick="featuresText(this)" style="width: 100px; height: auto; margin-right: 10px; cursor: pointer;">
+                    <a style="display: inline-block; position: absolute; font-size: 20px; font-weight: bold;">嘉義火雞肉飯，台灣嘉義地區知名小吃之一。</a>
+                    <br><br>`
+                    break;
+
+
+                case "台南赤崁樓":
+                    mapIconDIV.style.display = "none";
+                    featureDIV.style.display = "block"
+
+                    featureDIV.innerHTML = ``
+                    break;
+
+
+
 
             }
         }
 
         function returnMap() {
-            const featureDIV = document.getElementById("feature")
-            featureDIV.style.visibility = "hidden";
-            console.log(mapIcon.style.visibility)
-            if (mapIcon.style.display == "none") {
-                mapIcon.style.display = "block";
-                console.log(mapIcon)
-            }
+            // const featureDIV = document.getElementById("feature")
+            featureDIV.style.display = "none";
+            console.log(featureDIV.style.display)
+            mapIconDIV.style.display = "block";
 
         }
 
@@ -361,12 +452,12 @@
             click++;
             if (click % 2 != 0) {
                 document.getElementById("AllIconIfram").style.visibility = "";
-                document.getElementById("collect_icon").style.visibility = "hidden";
+                document.getElementById("collect_iconMap").style.visibility = "hidden";
             }
 
             else {
                 document.getElementById("AllIconIfram").style.visibility = "hidden";
-                document.getElementById("collect_icon").style.visibility = "";
+                document.getElementById("collect_iconMap").style.visibility = "";
             }
 
 
