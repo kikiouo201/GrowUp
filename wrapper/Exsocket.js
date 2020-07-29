@@ -1,12 +1,19 @@
 const WebSocket = require('ws');
-
+const ReconnectingWebSocket = require('reconnecting-websocket');
 
 
 
 function Exsocket() {
 
 //let ws = new WebSocket('ws://localhost:2000');
-let ws = new WebSocket('ws://growup.mcu.yokikiyo.space');
+//let ws = new WebSocket('ws://growup.mcu.yokikiyo.space');
+
+const options = {
+  WebSocket: WebSocket, // custom WebSocket constructor
+  connectionTimeout: 1000,
+  maxRetries: 10,
+};
+let ws = new ReconnectingWebSocket('ws://growup.mcu.yokikiyo.space', [], options);
 
 const workQueues= new Map();
 const sendQueues = new Map();
@@ -22,8 +29,7 @@ const app = {
         sendQueues.set(event, json);
       });
     
-      sendMes();
-   
+      sendMes(); 
     },
   };
 
@@ -44,10 +50,26 @@ ws.onmessage = event => {
     sendMes();
     
 }
-
+let rws;
 //關閉後執行的動作，指定一個 function 會在連結中斷後執行
 ws.onclose = () => {
-    console.log('close connection')
+    console.log('close connection');
+     rws = new ReconnectingWebSocket('ws://growup.mcu.yokikiyo.space', [], options);
+     rws.onopen= (req) => {
+
+      console.log('open connection rws');
+    
+      sendMes();
+    }
+    rws.onmessage = event => {
+      console.log('onmessage');
+  
+      const data = JSON.parse(event.data);
+      const workQueu = workQueues.get(data.event);
+      workQueu(data);
+      sendMes();
+      
+  }
 }
 
 
@@ -55,16 +77,31 @@ function sendMes(){
 
     console.log(`sendQueue.size = ${sendQueues.size}`);
 
-    if (sendQueues.size > 0) {
-       sendQueues.forEach((event, json)  => {
-            ws.send(JSON.stringify(json));
-            sendQueues.delete(json);
-
-       });
-     
+    try {
+      if (sendQueues.size > 0) {
+        sendQueues.forEach((event, json)  => {
+             ws.send(JSON.stringify(json));
+             sendQueues.delete(json);
+ 
+        });
+      
+     }
+    } catch (error) {
+      console.log(error);
+      console.log('here error');
+      if (sendQueues.size > 0) {
+        sendQueues.forEach((event, json)  => {
+             rws.send(JSON.stringify(json));
+             sendQueues.delete(json);
+    
+        });
+      
+     }
     }
     return '';
 }
+
+
 
 return app;
 
