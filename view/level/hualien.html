@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GrowUp學習趣</title>
-    <link rel="stylesheet" href="../../CSS/map/nantou.css">
+    <link rel="stylesheet" href="../../CSS/map/hualien.css">
     <link rel="stylesheet" href="../../CSS/map/counties.css">
     <link rel="stylesheet" href="../../CSS/interface.css">
     <link rel="stylesheet" href="../../CSS/icon.css">
@@ -36,45 +36,34 @@
 
     </table>
     <div class="map">
-        <img class="terrain" src="../../image/map/Hualien.png" />
-        <img class="level1" src="../../image/icon/herbal-tea.png"
-            onclick="location.href='../../view/game/drawzhuyin.html?id=b'" />
-        <img class="level1_text" src="../../image/chinese_alphabet/b.png"
-            onclick="location.href='../../view/game/drawzhuyin.html?id=b'" />
-        <img class="level2" src="../../image/icon/herbal-tea.png"
-            onclick="location.href='../../view/game/drawzhuyin.html?id=p'" />
-        <img class="level2_text" src="../../image/chinese_alphabet/p.png"
-            onclick="location.href='../../view/game/drawzhuyin.html?id=p'" />
-        <img class="level3" src="../../image/icon/herbal-tea.png"
-            onclick="location.href='../../view/game/drawzhuyin.html?id=m'" />
-        <img class="level3_text" src="../../image/chinese_alphabet/m.png"
-            onclick="location.href='../../view/game/drawzhuyin.html?id=m'" />
-        <img class="level4" src="../../image/icon/herbal-tea.png"
-            onclick="location.href='../../view/game/drawzhuyin.html?id=f'" />
-        <img class="level4_text" src="../../image/chinese_alphabet/f.png"
-            onclick="location.href='../../view/game/drawzhuyin.html?id=f'" />
-        <img class="level5" src="../../image/icon/herbal-tea_lock.png"
-            onclick="location.href='../../view/game/drawzhuyin.html?id=d'" />
-        <img class="level5_text" src="../../image/chinese_alphabet/d.png"
-            onclick="location.href='../../view/game/drawzhuyin.html?id=d'" />
-        <img class="level6" src="../../image/icon/herbal-tea_lock.png"
-            onclick="location.href='../../view/game/drawzhuyin.html?id=t'" />
-        <img class="level6_text" src="../../image/chinese_alphabet/t.png"
-            onclick="location.href='../../view/game/drawzhuyin.html?id=t'" />
-        <img class="level7" src="../../image/icon/herbal-tea_lock.png"
-            onclick="location.href='../../view/game/drawzhuyin.html?id=n'" />
-        <img class="level7_text" src="../../image/chinese_alphabet/n.png"
-            onclick="location.href='../../view/game/drawzhuyin.html?id=n'" />
-        <img class="level8" src="../../image/icon/herbal-tea_lock.png"
-            onclick="location.href='../../view/game/drawzhuyin.html?id=l'" />
-        <img class="level8_text" src="../../image/chinese_alphabet/l.png"
-            onclick="location.href='../../view/game/drawzhuyin.html?id=l'" />
-        <img class="level9" src="../../image/icon/herbal-tea_lock.png"
-            onclick="location.href='../../view/game/drawzhuyin.html?id=g'" />
-        <img class="level9_text" src="../../image/chinese_alphabet/g.png"
-            onclick="location.href='../../view/game/drawzhuyin.html?id=g'" />
-        <img class="level10" src="../../image/icon/devil_lock.png"
-            onclick="location.href='../../view/game/pickingUpIsALittleRed.html'" />
+        <img class="terrain" src="../../image/map/Hualien1.png" />
+        <div class="level1">
+            <img class="level" src="../../image/icon/watermelon.png"
+                onclick="location.href='../../view/game/findBallast.html';mouseDownText('找找看');" />
+           <div class="level_text"  onclick="location.href='../../view/game/findBallast.html';mouseDownText('找找看');">找找看</div>
+        </div>
+        <div class="level2"><img class="level" src="../../image/icon/watermelon.png"
+                onclick="location.href='../../view/game/drawzhuyin.html?id=2&counties=hualien';mouseDownText(2);" />
+            <img class="level_text" src="../../image/numbers/2.png"
+                onclick="location.href='../../view/game/drawzhuyin.html?id=2&counties=chiayi';mouseDownText(2);" />
+            </div>
+        <div class="level3">
+            <img class="level" src="../../image/icon/watermelon_dark.png"
+                onclick="location.href='../../view/game/drawzhuyin.html?id=3&counties=chiayi';mouseDownText(3);" />
+            <img class="level_text" src="../../image/numbers/3.png"
+                onclick="location.href='../../view/game/drawzhuyin.html?id=3&counties=chiayi';mouseDownText(3);" />
+        </div>
+        <div class="level4"> <img class="level" src="../../image/icon/watermelon_dark.png"
+                onclick="location.href='../../view/game/drawzhuyin.html?id=4&counties=chiayi';mouseDownText(4);" />
+            <img class="level_text" src="../../image/numbers/4.png"
+                onclick="location.href='../../view/game/drawzhuyin.html?id=4&counties=chiayi';mouseDownText(4);" />
+            </div>
+        <div class="level5"> 
+            <img class="level" src="../../image/icon/devil_lock.png"
+            onclick="alert('需要先完成縣市所有關卡！')" />
+            </div>
+
+       
 
     </div>
     <img class="taiwan" src="../../image/character/NowInNantou.png"
