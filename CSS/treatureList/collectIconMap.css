@@ -50,10 +50,10 @@
     left: 185px;
 }
 .Taoyuan_icon {
-    width: 91px;
+    width: 46px;
     position: absolute;
     top: 34px;
-    left: 185px;
+    left: 207px;
     cursor: pointer;
 
 }
@@ -65,10 +65,10 @@
     left: 165px;
 }
 .Hsinchu_icon {
-    width: 101px;
+    width: 52px;
     position: absolute;
-    top: 71px;
-    left: 165px;
+    top: 88px;
+    left: 190px;
     cursor: pointer;
 
 }
@@ -157,8 +157,8 @@
 .Yilan_icon {
     width: 59px;
     position: absolute;
-    top: 122px;
-    left: 304px;
+    top: 110px;
+    left: 287px;
     cursor: pointer;
 
 }
@@ -216,10 +216,10 @@
     
 }
 .Tainan_icon {
-    width: 102px;
+    width: 65px;
     position: absolute;
-    top: 342px;
-    left: 43px;
+    top: 365px;
+    left: 58px;
     cursor: pointer;
 
 }
@@ -231,11 +231,12 @@
     left: 62px;
 }
 .Kaohsiung_icon {
-    width: 158px;
+    width: 75px;
     position: absolute;
-    top: 324px;
-    left: 62px;
+    top: 387px;
+    left: 133px;
     cursor: pointer;
+    z-index: 100;
 
 }
 
@@ -246,10 +247,10 @@
     left: 108px;
 }
 .Pingtung_icon {
-    width: 105px;
+    width: 66px;
     position: absolute;
-    top: 430px;
-    left: 108px;
+    top: 458px;
+    left: 124px;
     cursor: pointer;
 
 }
