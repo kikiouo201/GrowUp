@@ -29,3 +29,6 @@ function mouseDown(index) {
         speechSynthesis.speak(SSU);
     }
 }
+
+const stopDOM =document.body;
+stopDOM.addEventListener('dblclick', toggle.bind(null, false));
