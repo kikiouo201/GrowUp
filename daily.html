@@ -12,14 +12,14 @@
 
 
 
-  <title>每日任務</title>
+  <title>乖寶寶任務</title>
 </head>
 
 <body background="photo/background.png" onload="ShowTime()">
 
   <div class="header_div">
 
-    <a href="./game_home.html" style="text-decoration: unset; color:black">每日任務</a>
+    <a href="./game_home.html" style="text-decoration: unset; color:black">乖寶寶任務</a>
 
     <div id="today">
     </div>
@@ -29,7 +29,7 @@
 
   </div>
 
-  <div class="Liftcontent_div">
+  <!-- <div class="Liftcontent_div">
     <div class="calendar">
       <div class="title">
         <h1  id="calendar-title">Month</h1>
@@ -194,57 +194,56 @@
 
     </table>
 
-  </div>
+  </div> -->
 
-  <div class="Rightcontent_div">
-
+  <div class="main_div">
+    <table class="goodBaby_table">
+      <tr>
+        <th>
+          乖寶寶值
+        </th>
+      </tr>
+      <tr>
+        <td class="goodBaby_regard">
+          <div class="goodBaby_regard_value"></div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p class="goodBaby_text" style="font-size: 13px;">距離下次升等還要：2點</p>
+        </td>
+      </tr>
+    </table>
     <table class="cardTable">
       <tr>
         <td>
-          <a href="././view/level/taiwan.html">
+          <a href="./SpeechToAsk.html">
             <div class="card">
               <div style="width: auto; height: 60%;">
-                <img class="card_img" src="./image/character/Taiwn_small.png "></img>
-
+                <img class="card_img" style="margin-left: 36%;" src="./image/character/new_magicBook.png "></img>
               </div>
-              <h2>過 3 個關卡</h2>
+              <h2>詢問 3 次問題</h2>
+              <div class="goodBaby_regard">
+                <div class="cardStatus"><p style="margin-left: 50%;">1/3</p></div>
+              </div>
             </div>
 
           </a>
         </td>
         <td>
           <a href="./camera.html">
+            <img style="position: absolute; height: auto;width: 13.5%;" src="./image/character/mission_success.png"></img>
             <div class="card">
-              <div style="width: auto; height: 60%;">
-                <img class="card_img" src="./image/character/metal-detector.png "></img>
-
+              <div style="width: 100%;  height: 60%;">
+                <img class="card_img" style="margin-left: 41%;" src="./image/character/metal-detector.png "></img>
               </div>
               <h2>掃描 3 樣物品</h2>
-            </div>
-          </a>
-        </td>
-      </tr>
-      <tr>
-
-        <td>
-          <a href="./SpeechToAsk.html">
-            <div class="card">
-              <div style="width: auto; height: 60%;">
-                <img class="card_img" src="./image/character/new_magicBook.png "></img>
+              <div class="goodBaby_regard">
+                <div class="cardStatus" style="width: 100%;"><p style="margin-left: 50%;">完成</p></div>
               </div>
-              <h2>詢問 3 次問題</h2>
-            </div>
 
+            </div>
           </a>
-        </td>
-        <td>
-          <div class="card">
-            <div style="width: auto; height: 60%;">
-              <img class="card_img" src="image/character/true.png "></img>
-
-            </div>
-            <h2>已完成此任務</h2>
-          </div>
         </td>
       </tr>
     </table>
@@ -326,81 +325,6 @@
         });
       }
     }
-
-    var month_olympic = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-    var month_normal = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-    var month_name = ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月",
-      "十一月", "十二月"
-    ];
-    var holder = document.getElementById("days");
-    var prev = document.getElementById("prev");
-    var next = document.getElementById("next");
-    var ctitle = document.getElementById("calendar-title");
-    var cyear = document.getElementById("calendar-year");
-
-    var my_date = new Date();
-    var my_year = my_date.getFullYear();
-    var my_month = my_date.getMonth();
-    var my_day = my_date.getDate();
-
-    //获取某年某月第一天是星期几
-    function dayStart(month, year) {
-      var tmpDate = new Date(year, month, 1);
-      return (tmpDate.getDay());
-    }
-    //计算某年是不是闰年，通过求年份除以4的余数即可
-    function daysMonth(month, year) {
-      var tmp = year % 4;
-      if (tmp == 0) {
-        return (month_olympic[month]);
-      } else {
-        return (month_normal[month]);
-      }
-    }
-
-    function refreshDate() {
-      var str = "";
-      var totalDay = daysMonth(my_month, my_year); //获取该月总天数
-      var firstDay = dayStart(my_month, my_year); //获取该月第一天是星期几
-      var myclass;
-      for (var i = 1; i < firstDay; i++) {
-        str += "<li></li>"; //为起始日之前的日期创建空白节点
-      }
-      for (var i = 1; i <= totalDay; i++) {
-        if ((i < my_day && my_year == my_date.getFullYear() && my_month == my_date.getMonth()) || my_year < my_date
-          .getFullYear() || (my_year == my_date.getFullYear() && my_month < my_date.getMonth())) {
-          myclass = " class='lightgrey'"; //当该日期在今天之前时，以浅灰色字体显示
-        } else if (i == my_day && my_year == my_date.getFullYear() && my_month == my_date.getMonth()) {
-          myclass = " class='green greenbox'"; //当天日期以绿色背景突出显示
-        } else {
-          myclass = " class='darkgrey'"; //当该日期在今天之后时，以深灰字体显示
-        }
-        str += "<li" + myclass + ">" + i + "</li>"; //创建日期节点
-      }
-      holder.innerHTML = str; //设置日期显示
-      ctitle.innerHTML = month_name[my_month]; //设置英文月份显示
-      cyear.innerHTML = my_year; //设置年份显示
-    }
-    refreshDate(); //执行该函数
-
-    prev.onclick = function(e){
-	e.preventDefault();
-	my_month--;
-	if(my_month<0){
-		my_year--;
-		my_month = 11;
-	}
-	refreshDate();
-}
-next.onclick = function(e){
-	e.preventDefault();
-	my_month++;
-	if(my_month>11){
-		my_year++;
-		my_month = 0;
-	}
-	refreshDate();
-}
   </script>
 </body>
 

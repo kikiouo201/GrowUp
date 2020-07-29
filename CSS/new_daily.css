@@ -29,7 +29,7 @@ table tr th {
 }
 
 h2 {
-    margin-left: 31%;
+    margin-left: 35%;
 }
 
 a {
@@ -82,6 +82,15 @@ a {
     position: absolute;
 }
 
+.main_div {
+    width: 100%;
+    height: 90%;
+    top: 9.7%;
+    right: 0px;
+    overflow: hidden;
+    position: absolute;
+}
+
 .gameType_title {
     font-size: 18px;
     font-weight: bold;
@@ -113,10 +122,19 @@ a {
     /* margin-left: 12px; */
 }
 
-.cardTable {
-    background-image: url("../image/background/Polygon_blue01.jpeg");
+
+
+.goodBaby_table{
+    width: 100%;
     border-bottom: 0px;
-    height: 100%;
+    height: 10%;
+    background-color: #a8a8a8;
+
+}
+.cardTable {
+    width: 100%;
+    border-bottom: 0px;
+    height: 80%;
 }
 
 .card {
@@ -130,6 +148,18 @@ a {
     border-radius: 12px;
 }
 
+.cardStatus {
+    width: 30%;
+    /* position: absolute; */
+    height: 100%;
+    border-radius: 40px 40px 40px 40px;
+    /* border-color: darkred; */
+    /* border-style: solid; */
+    background-color: #6c8eff;
+    /* border-width: 2px; */
+    display: inline-block;
+    /* margin-left: 12px; */
+}
 .card:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
@@ -142,9 +172,8 @@ a {
 }
 
 .card_img {
-    height: 120px;
-    width: 120px;
-    margin-left: 33.5%;
+    height: 25%;
+    width: 25%;
     margin-top: 10%;
 }
 
@@ -185,6 +214,16 @@ a {
 .green{
 	color:#6ac13c; /*绿色*/
 }
+
+.today{
+	color:#c1623c; 
+}
+.todaybox{
+    border:1px solid #c19e3c;
+	background:#f8eadf; /*浅绿色背景*/
+
+}
+
 .greenbox{
 	border:1px solid #6ac13c;
 	background:#e9f8df; /*浅绿色背景*/
