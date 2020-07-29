@@ -191,6 +191,11 @@ collection.addEventListener('click', (e) => {
         console.log("OK")
     })
 });
+
+const stopDOM =document.body;
+stopDOM.addEventListener('dblclick', toggle.bind(null, false));
+
+
 // function collect(select){
 //     dialog.showMessageBox({message: "Hey:))", title: '測試'}, () =>{
 

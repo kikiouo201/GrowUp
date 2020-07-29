@@ -7,6 +7,7 @@ function mouseDown(index) {
         // console.log("click =? " + index.children[0].alt)
         SSU.text = index;
         toggle();
+        console.log("SSU=?"+SSU.volume)
     }
   }
 
@@ -20,4 +21,13 @@ function mouseDown(index) {
         speechSynthesis.voice = "Google 國語（臺灣）";
         speechSynthesis.speak(SSU);
     }
+
+}
+
+const stop = document.getElementById("stopVoice")
+const stopDOM =document.body;
+stopDOM.addEventListener('dblclick', toggle.bind(null, false));
+if(toggle()!=null){
+  stop.addEventListener('dblclick', toggle.bind(null, false));
+
 }
