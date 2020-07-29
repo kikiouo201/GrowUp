@@ -1,0 +1,113 @@
+body {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.map {
+  text-align: center;
+  position: relative;
+  height: 700px;
+}
+
+.terrain {
+  width: 700px;
+  position: relative;
+  top: 70px;
+  z-index: 1;
+}
+
+.level1 {
+  width: 75px;
+  position: absolute;
+  z-index: 10;
+  top: 210px;
+  left: 580px;
+}
+
+.level {
+  width: 75px;
+
+}
+
+.level_text {
+  width: 28px;
+  position: absolute;
+  z-index: 10;
+  top: 34px;
+  left: 32%;
+}
+
+.level2 {
+  width: 100px;
+  position: absolute;
+  z-index: 10;
+  top: 104px;
+  left: 598px;
+}
+
+.level3 {
+  width: 100px;
+  position: absolute;
+  z-index: 10;
+  top: 145px;
+  left: 452px;
+}
+
+.level4 {
+  width: 100px;
+  position: absolute;
+  z-index: 10;
+  top: 210px;
+  left: 383px;
+}
+
+.level5 {
+  width: 100px;
+  position: absolute;
+  z-index: 10;
+  top: 166px;
+  left: 279px;
+}
+
+.level6 {
+  width: 100px;
+  position: absolute;
+  z-index: 10;
+  top: 190px;
+  left: 173px;
+}
+
+.level7 {
+  width: 100px;
+  position: absolute;
+  z-index: 10;
+  top: 137px;
+  left: 64px;
+}
+
+.level8 {
+  width: 100px;
+  position: absolute;
+  z-index: 10;
+  top: 245px;
+  left: 14px;
+}
+
+.level9 {
+  width: 100px;
+  position: absolute;
+  z-index: 10;
+  top: 255px;
+  left: 124px;
+}
+
+.level10 {
+  width: 100px;
+  position: absolute;
+  z-index: 10;
+  top: 330px;
+  left: 152px;
+}
