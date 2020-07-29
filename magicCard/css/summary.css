@@ -35,34 +35,20 @@ body {
   height: calc(100% - 62px);
   overflow-y: scroll;
   padding: 20px;
-  text-align: center;
-}
-
-
-#booklist{
-  width: auto;
-  height: auto;
-  padding: 5%;
-  display: block;
-  color: white;
-  font-family: 文鼎標楷注音;
   box-sizing: border-box;
 }
 
-#book1{
-  width: 20%;
-  display: inline-table;
-  color: rgb(19, 1, 1);
-  font-weight: bold;
-  padding: 10px;
-  text-align: center;
-  font-family: Microsoft JhengHei;
-  border-radius: 10px;
-  background-color: white;
-  margin: 10px;
+#summary{
+  padding: 5%;
+
 }
 
-#summary{
-  text-align: left;
-  display: flex;
+#summary_page{
+  padding: 2%;
+}
+
+#summaryshow{
+  padding: 2%;
+  font-weight: bold;
+  border-radius: 10px;
 }

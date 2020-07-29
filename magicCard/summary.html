@@ -3,116 +3,48 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../CSS/icon.css">
+   <link rel="stylesheet" href="../CSS/icon.css">
   <link rel="stylesheet" href="../CSS/interface.css">
   <link rel="stylesheet" href="../CSS/every_four_button.css">
-  <link rel="stylesheet" href="./css/picturebook.css">
+  <link rel="stylesheet" href="./css/summary.css">
   <title>Document</title>
 </head>
-<body background="../image/background/desk.png" onload="ShowTime()">
-    <div class="home_page">
+<body background="../image/background/farmland.jpg" onload="ShowTime()">
+   <div class="home_page">
       <a href="../game_home.html">繪本</a>
 
-    <div id="today"></div>
+      <div id="today"></div>
       <br>
-    <div id="showtime"></div>
-
+      <div id="showtime"></div>
     </div>
-  
-  <div id="show_page">
-    <div id="booklist">
 
-    <div id="book1">
+    <div id="show_page">
+      <div id="summary">
         <div style="border-bottom: 2px black dashed;">
-          <h2 align="left" id="bookname">環遊世界做蘋果派</h2>
+            <h1 align="center" style="font-family: Microsoft JhengHei;">環遊世界做蘋果派</h1>
         </div>
-        
-        <div style="padding: 5%;">
-          <a href="./summary.html">
-            <img style="width: 40%;" src="https://children.moc.gov.tw/resource/book_image/215552.jpg">
-          </a>
-           
+        <div style="padding: 2%; text-align: center;">
+          <video width="600" height="340" controls>
+            <source src="videofile/picturebook1.mp4" type="video/mp4">
+          </video>
         </div>
-       
-      </div>
 
-
-      <div id="book1">
         <div style="border-bottom: 2px black dashed;">
-          <h2 align="left" id="bookname">送你一顆蘋果</h2>
+          <h2 align="center" style="font-family: Microsoft JhengHei;">故事簡介</h2>
         </div>
-        
-        <div style="padding: 5%;">
-          <a href="">
-            <img style="width: 40%; " src="https://children.moc.gov.tw/resource/book_image/216245.jpg">
-          </a>
-           
-        </div>
+
+        <div id="summary_page">
+          <div id="summaryshow">
+            <span id="summaryTxt" style="font-size: 24pt; font-family: Microsoft JhengHei;">做蘋果派一點也不難，只要到市場買齊材料，混合一下，烤一烤，就可以上桌了。可是市場關門了，買不到材料的小女孩該怎麼辦？沒問題，回家打包行李，搭輪船、坐火車、乘飛機，周遊世界尋找烤派的材料吧。小女孩在義...</span>
+          </div>
+        </div>  
+          
+          
       </div>
-
-
-      <div id="book1">
-        <div style="border-bottom: 2px black dashed;">
-          <h2 align="left" id="bookname">致命的蘋果</h2>
-        </div>
-        
-        <div style="padding: 5%;">
-          <a href="">
-            <img style="width: 40%; " src="https://children.moc.gov.tw/resource/book_image/217133.jpg">
-          </a>
-           
-        </div>
-
-      </div>
-
-
-       <div id="book1">
-        <div style="border-bottom: 2px black dashed;">
-          <h2 align="left" id="bookname">蘋果的引力-牛頓</h2>
-        </div>
-        
-        <div style="padding: 5%;">
-          <a href="">
-            <img style="width: 40%; " src="https://children.moc.gov.tw/resource/book_image/217317.jpg">
-          </a>
-           
-        </div>
-
-      </div>
-
-
-      <div id="book1">
-        <div style="border-bottom: 2px black dashed;">
-          <h2 align="left" id="bookname">蘋果纖維</h2>
-        </div>
-        
-        <div style="padding: 5%;">
-          <a href="">
-            <img style="width: 40%; " src="https://children.moc.gov.tw/resource/book_image/217849.jpg">
-          </a>
-           
-        </div>
-
-      </div>
-
-      <div id="book1">
-        <div style="border-bottom: 2px black dashed;">
-          <h2 align="left" id="bookname">蘋果甜蜜蜜</h2>
-        </div>
-        
-        <div style="padding: 5%;">
-          <a href="">
-            <img style="width: 40%; " src="https://children.moc.gov.tw/resource/book_image/218424.jpg">
-          </a>
-           
-        </div>
-
-      </div>
-
+          
     </div>
-  </div>
 
-   <div>
+    <div>
       <a href="../game_home.html" class="sosfloat sos_mark" id="menu-share">
         <i class="fab fa-share my-float"><img src="../photo/help.png" width="70%"></i>
       </a>
@@ -136,7 +68,7 @@
     </div>
         
             <div class="return_mark">
-                <a href="./magicCrad.html" class="returnfloat" id="menu-share">
+                <a href="./picturebook.html" class="returnfloat" id="menu-share">
                     <i class="fab fa-share return-float"><img src="../photo/return.png"></i>
                 </a>
             </div>
@@ -146,8 +78,7 @@
                     <i class="fab fa-share my-float"><img src="../photo/gobackhome.png" width="70%"></i>
                 </a>
             </div>
-
-            <script language="JavaScript">
+    <script language="JavaScript">
 
     function ShowTime() {
 
