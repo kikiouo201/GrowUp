@@ -11,6 +11,8 @@
     top: 17px;
     left: 272px;
     cursor: pointer;
+    z-index: 100;
+
 }
 
 .NewTaipei {
@@ -25,6 +27,7 @@
     top: 54px;
     left: 265px;
     cursor: pointer;
+    z-index: 100;
 
 }
 
@@ -40,6 +43,7 @@
     top: 19px;
     right: 140px;
     cursor: pointer;
+    z-index: 100;
 
 }
 
@@ -55,6 +59,7 @@
     top: 34px;
     left: 207px;
     cursor: pointer;
+    z-index: 100;
 
 }
 
@@ -70,6 +75,7 @@
     top: 88px;
     left: 190px;
     cursor: pointer;
+    z-index: 100;
 
 }
 
@@ -85,6 +91,7 @@
     top: 123px;
     left: 153px;
     cursor: pointer;
+    z-index: 100;
 
 }
 
@@ -100,6 +107,7 @@
     top: 163px;
     left: 113px;
     cursor: pointer;
+    z-index: 100;
 
 }
 
@@ -130,6 +138,7 @@
     top: 265px;
     left: 61px;
     cursor: pointer;
+    z-index: 100;
 
 }
 
@@ -145,6 +154,7 @@
     top: 217px;
     left: 151px;
     cursor: pointer;
+    z-index: 100;
 
 }
 
@@ -160,6 +170,7 @@
     top: 110px;
     left: 287px;
     cursor: pointer;
+    z-index: 100;
 
 }
 
@@ -175,6 +186,7 @@
     top: 216px;
     left: 256px;
     cursor: pointer;
+    z-index: 100;
 
 }
 
@@ -221,6 +233,7 @@
     top: 365px;
     left: 58px;
     cursor: pointer;
+    z-index: 100;
 
 }
 
@@ -252,5 +265,6 @@
     top: 458px;
     left: 124px;
     cursor: pointer;
+    z-index: 100;
 
 }
