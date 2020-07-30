@@ -25,6 +25,9 @@
             </td>
         </tr>
         <tr>
+            <td><img src="../../image/icon/strawberry.png" onclick="featuresText('大湖草莓')" />大湖草莓</td>
+        </tr>
+        <tr>
             <td><img src="../../image/map_icon/Miaoli_Hakka_RoundHouse.png" onclick="featuresText('苗栗客家圓樓')" />苗栗客家圓樓</td>
         </tr>
         <tr>
@@ -115,16 +118,20 @@
         function featuresText(category) {
             const information = document.querySelector('#information')
             switch (category) {
-                case "嘉義":
+                case "苗栗":
                     information.innerHTML = "&emsp;&emsp;苗栗縣位於新竹及臺中之間，是臺灣西部最適合旅遊及渡假的旅遊勝地。不僅氣候宜人、鮮少天災；交通也是相當便利，每年都吸引超過650萬人次的國內、外旅客來苗觀光旅遊。";
                     mouseDownText(information.innerHTML);
                     break;
+                case "大湖草莓":
+                    information.innerHTML = "&emsp;&emsp;台灣苗栗縣大湖鄉的特產，氣候溫和多雨，以草莓聞名全國，素有臺灣草莓王國雅號。";
+                    mouseDownText(information.innerHTML);
+                    break;    
                 case "龍騰斷橋":
-                    information.innerHTML = `&emsp;&emsp;龍騰舊稱「魚藤坪」，相傳先民在開墾初時，鯉魚潭有鯉魚精危害地方，鄉民苦不堪言。為了克制鯉魚精作怪，遂在龍騰山區遍植魚藤，同時，又將東面的高山稱為關刀山，用意是藉關刀山斬魚藤，以毒殺鯉魚精，最後魚怪果然不再危害，居民從此安居樂業。至臺灣光復設村後，村民認為「魚藤」不雅而改名為龍騰。`;
+                    information.innerHTML = "&emsp;&emsp;舊稱「魚藤坪」。相傳先民在開墾初時，鯉魚潭有鯉魚精危害地方，鄉民苦不堪言。為了克制鯉魚精作怪，遂在龍騰山區遍植魚藤，又將東面的高山稱為關刀山，用意是藉關刀山斬魚藤，以毒殺鯉魚精，最後魚怪不再危害，居民從此安居樂業。";
                     mouseDownText(information.innerHTML);
                     break;
                 case "苗栗客家圓樓":
-                    information.innerHTML = "&emsp;&emsp;列入世界文化遺產的福建客家土樓群是世界獨一無二的大型民居，苗栗後龍高鐵特定區仿照大陸原鄉土樓形式興建客家圓樓，客家圓樓佔地1,385平方公尺、為地下一層、地上三層的結構，一樓為圓型展演劇場，二樓為展示空間，三樓設置DIY研習教室，地下一樓則為多媒體放映室。客家圓樓立於親水廊道上，設有環池步道，觀景弧形平台、入口迎賓廣場及親水棧道等遊憩設施。圓樓周邊設置夜間燈光，入夜後燈光點綴夜色，呈現不同於日間的浪漫風情。";
+                    information.innerHTML = "&emsp;&emsp;。土樓造型的「客家圓樓」，除彰顯苗栗在地客家文化特質外，更結合整治北勢溪成果─親水廊道的美麗景觀，為苗栗打造亮麗的門面，呈現在地精緻藝文特色。";
                     mouseDownText(information.innerHTML);
                     break;
 
