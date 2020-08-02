@@ -174,15 +174,15 @@ function startSpeak(
                 // process.kill()
         }
 
-        if (result.includes('data[QName]')) {
-            QName = result.split('=')[1]
-                // callbackWhenSuccess({ q, a })
-                // process.kill()
-        }
+        // if (result.includes('data[QName]')) {
+        //     QName = result.split('=')[1]
+        //         // callbackWhenSuccess({ q, a })
+        //         // process.kill()
+        // }
 
         if (result.includes('data[url]')) {
             const url = result.split('=')[1]
-            callbackWhenSuccess({ q, a, QName, url })
+            callbackWhenSuccess({ q, a, url })
             process.kill()
         }
     })
