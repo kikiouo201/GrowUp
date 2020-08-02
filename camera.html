@@ -8,11 +8,14 @@
   <link rel="stylesheet" type="text/css" href="./CSS/camera.css">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" type="twxt/css">
   <link href="CSS/STT.css" type="text/css" rel="stylesheet">
-  <link href="CSS/voice_btn_design.css" type="text/css" rel="stylesheet">
   <link href="CSS/dialog-region.css" type="text/css" rel="stylesheet">
+  <link href="CSS/collect_QA.css" type="text/css" rel="stylesheet">
+  <link href="CSS/link.css" type="text/css" rel="stylesheet">
   <link rel="stylesheet" href="CSS/icon.css">
   <link rel="stylesheet" href="CSS/interface.css">
   <link rel="stylesheet" href="CSS/every_four_button.css">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
   <script src="https://apis.google.com/js/client.js"></script>
 
@@ -53,37 +56,39 @@
     <img id="AnsImg" src="./still-image.jpg" style="width: 300px; height: 300px; ">
   </div>
   <div id="show_page">
-    <div class="ansshow">
-      <h1 align="center" style="color:black; font-family: Microsoft JhengHei;">辨識結果</h1>    
-      <div class="text_page">
-        <div id="Ans_page">
-          <p id="Ans" class="Ans">答案:  </p>
-          <p id="AnsTxt" class="AnsTxt">西瓜</p>
-        </div>
-        <br><br><br><br>
-        <div id="explain_page">
-          <p id="explain">敘述:  </p>
-          <p id="explainTxt">植物名葫蘆科西瓜屬一年生蔓草莖多分歧有卷鬚常攀緣他物生長葉粗硬形似羽狀複葉夏季開淡黃色花朵雌雄同株果實也稱為西瓜為大形漿果呈球形或橢圓形果皮有白綠色
-    的蛇斑果肉通常為紅色或黃色水分多味甜</p>
-        </div>
-        
-      
-      </div>
-      <h1 align="center" style="color:black; font-family: Microsoft JhengHei;">相關繪本</h1>    
-      <div id="image_page">
-        <img style="width: 5%; height: 10%;" src="http://static.findbook.tw/image/book/9789864400331/medium">
-        <div id="summary">
-          <p id="bookname" style="font-size: 10pt;">書名: 聽說小豬變地瓜了! </p>
-          <p id="author" style="font-size: 10pt;">作者: 宮西達也 (Miyanishi, Tatsuya), 1956-</p>
-          <p id="library" style="font-size: 10pt;">圖書位置:  臺北市立圖書館</p>
-        </div>
-       
-      </div>
-    </div>
-        
-  </div>
-  
+    <div class="QA_card_area" id="QA_card">
+            <div class="card text-white  mb-3" style="background-color: #92337eba;">
 
+                <div class="card-body" style="margin-top: 30px;">
+                    <div style="float:left; display: block; text-align: left;">
+                        <p id="Ans" class="card-text card_A" style="float: left;">答案：</p>
+                        <p id="AnsTxt" class="card-text card_A" style="margin-left: 0px;">西瓜</p>
+                        <img class="speaker_A" id="speaker_A" src="icons/speaker.png" />
+                    </div>
+
+                    <div style="float:left; display: block; text-align: left;">
+                        <p id="explain" class="card-text card_A" style="float: left;">敘述：</p>
+                        <p id="explainTxt" class="card-text card_A" style="margin-left: 0px;">植物名。葫蘆科西瓜屬，一年生蔓草。</p>
+                        <img class="speaker_A" id="speaker_A" src="icons/speaker.png" />
+                    </div>  
+                </div>
+                <div class="card-header contentCss" id="QA_num_" style="background-color: #f8f9fa24;">
+                    <p class="contentlink">相關繪本連結：</p>
+                    <p class="book_css">我是西瓜爸爸</p>
+                    <img src="https://children.moc.gov.tw/resource/book_image/216128.jpg"
+                        style="margin-left: 20px; display: inline;" width="180" height="153" alt="蘋果甜蜜蜜">
+                    <p
+                        style="display: inline; margin-left: 20px; margin-top: 40px; position: absolute; margin-right: 40px; font-size: 20pt;">
+                        我一口咬下一大片西瓜，連黑色的西瓜子也吞進肚子裡，我的肚子會不會長出一顆又一顆的小西瓜？那麼，我就是西瓜爸爸囉！</p>
+                </div>
+                <div class="card-header" id="QA_num_">
+                    <p class="contentlink">相關連結解釋：</p>
+                </div>
+
+            </div>
+    </div>
+  
+</div>
   <div class="main_area">
     <span class="mh0 system-show w3-btn w3-ripple"  >
       <h2 id="leadTxt"
@@ -164,7 +169,7 @@
     </script>
     <script>
       function changecss() {
-        var ShowVisibility = document.querySelector('.ansshow');
+        var ShowVisibility = document.querySelector('.QA_card_area');
         var ImgVisibility = document.querySelector('img#AnsImg');
 
         ShowVisibility.style.visibility = "visible";
