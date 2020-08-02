@@ -1,5 +1,4 @@
 const SSU = new SpeechSynthesisUtterance();
-
 function mouseDown(index) {
     if(index){
         // document.getElementById("SpeechToAskBtn").style.color = "red";
@@ -10,6 +9,15 @@ function mouseDown(index) {
     }
   }
 
+  function btnClickEven(index) {
+    if(index){
+        // document.getElementById("SpeechToAskBtn").style.color = "red";
+        console.log("index = "+index)
+        console.log("click =? " + index.children[0].alt)
+        SSU.text = index.children[0].alt;
+        toggle();
+    }
+  }
 //   function mouseUp(index) {
 //     document.getElementById("SpeechToAskBtn").style.color = "green";
 //   }

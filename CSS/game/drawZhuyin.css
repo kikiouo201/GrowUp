@@ -12,7 +12,7 @@ video{
   
   top: 45px;
   left: 40px;
-  z-index: 50;
+  z-index: 10;
   height: 360px;
 }
 .anvas {
@@ -33,13 +33,20 @@ video{
 }
 .draw{
     border: 1px blue solid;
-    width: 120px;
-    height: 122px;
+    width: 370px;
+    height: 370px;
 }
-.draw87{
+.draw78{
   border: 1px blue solid;
   width: 370px;
   height: 370px;
+}
+.draw87{
+  border: 1px blue solid;
+  /* position: absolute; */
+  width: 370px;
+  height: 370px;
+  /* z-index: 40; */
 }
 .write87{
   position: absolute;
@@ -47,10 +54,17 @@ video{
   top: 8%;
   z-index: 10;
 }
+.speaker{
+  position: absolute;
+  left: 5px;
+  bottom: 5px;
+  height: 40px;
+  z-index: 20;
+}
 .again{
   position: absolute;
-  right: 0%;
-  bottom: 0%;
+  right: -50px;
+  bottom: -40px;
   height: 50px;
   z-index: 10;
 }
@@ -74,7 +88,7 @@ video{
   position: absolute;
   top:115px; 
   left: 108px;
-  z-index: 110;
+  z-index: 10;
 }
 .moveFinger2{
   width: 50px;
@@ -85,7 +99,7 @@ video{
   position: absolute;
   top:105px; 
   left: 180px;
-  z-index: 110;
+  z-index: 10;
 }
 .moveFinger3{
   width: 50px;
@@ -96,7 +110,7 @@ video{
   position: absolute;
   top:97px; 
   left: 300px;
-  z-index: 110;
+  z-index: 10;
 }
 .moveFinger4{
   width: 50px;
@@ -107,7 +121,7 @@ video{
   position: absolute;
   top:110px; 
   left: 309px;
-  z-index: 110;
+  z-index: 10;
 }
 .moveFinger5{
   width: 50px;
@@ -118,7 +132,7 @@ video{
   position: absolute;
   top:215px; 
   left: 283px;
-  z-index: 110;
+  z-index: 10;
 }
 .moveFinger6{
   width: 50px;
@@ -129,7 +143,7 @@ video{
   position: absolute;
   top:240px; 
   left: 270px;
-  z-index: 110;
+  z-index: 10;
 }
 .moveFinger7{
   width: 50px;
@@ -140,7 +154,7 @@ video{
   position: absolute;
   top:270px; 
   left: 247px;
-  z-index: 110;
+  z-index: 10;
 }
 .moveFinger8{
   width: 50px;
@@ -151,7 +165,7 @@ video{
   position: absolute;
   top:290px; 
   left: 209px;
-  z-index: 110;
+  z-index: 10;
 }
 
 .moveFinger9{
@@ -163,7 +177,7 @@ video{
   position: absolute;
   top:290px; 
   left: 210px;
-  z-index: 110;
+  z-index: 10;
 }
 .moveFinger10{
   width: 50px;
@@ -174,7 +188,7 @@ video{
   position: absolute;
   top:255px; 
   left: 169px;
-  z-index: 110;
+  z-index: 10;
 }
 .write{
     position: absolute;
