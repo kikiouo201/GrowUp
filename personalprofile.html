@@ -29,7 +29,7 @@
   <div class="Liftcontent_div">
     <div class="calendar">
       <div class="title">
-        <h1 id="calendar-title">Month</h1>
+        <h1 style="margin: 1px 0 0 0;" id="calendar-title">Month</h1>
         <h2 id="calendar-year" style="margin: 0;">Year</h2>
         <a href="" id="prev">Prev Month</a>
         <a href="" id="next">Next Month</a>
@@ -52,6 +52,9 @@
         </div>
       </div>
     </div>
+   
+  </div>
+  <div class="Rightcontent_div" >
     <table class="goodBaby_table">
       <tr>
         <th>
@@ -193,6 +196,7 @@
 
   </div>
   <!-- <div>
+
     <form action="/somewhere/to/upload" enctype="multipart/form-data">
       <img class="image" id="preview_progressbarTW_img" src="photo/boy.png" width="15%" height="25%" />
       <br>
@@ -232,7 +236,7 @@
   </div>
 
   <div class="return_mark">
-    <a href="" class="returnfloat" id="menu-share">
+    <a onclick="history.back()" class="returnfloat" id="menu-share">
       <i class="fab fa-share return-float"><img src="photo/return.png"></i>
     </a>
   </div>
@@ -268,8 +272,7 @@
         });
       }
     }
-  </script>
-  <script>
+
     function ShowTime() {
 
       var fullDate = new Date();
