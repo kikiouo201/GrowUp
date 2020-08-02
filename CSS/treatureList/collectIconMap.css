@@ -6,10 +6,10 @@
 }
 
 .Taipei_icon {
-    width: 36px;
+    width: 64px;
     position: absolute;
-    top: 17px;
-    left: 272px;
+    top: -4px;
+    left: 256px;
     cursor: pointer;
     z-index: 100;
 }
@@ -166,10 +166,10 @@
 }
 
 .Yilan_icon {
-    width: 59px;
+    width: 74px;
     position: absolute;
-    top: 110px;
-    left: 287px;
+    top: 91px;
+    left: 270px;
     cursor: pointer;
     z-index: 100;
 }
