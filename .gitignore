@@ -105,3 +105,6 @@ dist
 
 # macOS
 .DS_Store
+
+# Video so big that can't push
+magicBook/videoflie/picturebook1.mp4
