@@ -7,6 +7,14 @@ body{
     justify-content: center;
     align-items: center;
 }
+video{
+  position: absolute;
+  
+  top: 45px;
+  left: 40px;
+  z-index: 10;
+  height: 360px;
+}
 .anvas {
     border: 1px black solid;
     /* width: 9%;
@@ -16,10 +24,171 @@ body{
     display:flex;
     flex-direction: column;
 }
+.anvas87 {
+  border: 1px black solid;
+  width: 370px;
+  height: 370px;
+  display:flex;
+  flex-direction: column;
+}
 .draw{
     border: 1px blue solid;
-    width: 120px;
-    height: 122px;
+    width: 370px;
+    height: 370px;
+}
+.draw78{
+  border: 1px blue solid;
+  width: 370px;
+  height: 370px;
+}
+.draw87{
+  border: 1px blue solid;
+  /* position: absolute; */
+  width: 370px;
+  height: 370px;
+  /* z-index: 40; */
+}
+.write87{
+  position: absolute;
+  left: 53.3%;
+  top: 8%;
+  z-index: 10;
+}
+.speaker{
+  position: absolute;
+  left: 5px;
+  bottom: 5px;
+  height: 40px;
+  z-index: 20;
+}
+.again{
+  position: absolute;
+  right: -50px;
+  bottom: -40px;
+  height: 50px;
+  z-index: 10;
+}
+.finger{
+  /* visibility: hidden; */
+  width: 50px;
+  height: 100px;
+  transform: rotate(300deg);
+  position: absolute;
+  top: 30px;
+  left: 160px;
+  z-index: 30;
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+}
+.moveFinger{
+  width: 50px;
+  height: 100px;
+  transform: scale(4);
+  transition: all 1s ease-out;
+  transform: rotate(300deg);
+  position: absolute;
+  top:115px; 
+  left: 108px;
+  z-index: 10;
+}
+.moveFinger2{
+  width: 50px;
+  height: 100px;
+  transform: scale(4);
+  transition: all 1.5s ease-out;
+  transform: rotate(300deg);
+  position: absolute;
+  top:105px; 
+  left: 180px;
+  z-index: 10;
+}
+.moveFinger3{
+  width: 50px;
+  height: 100px;
+  transform: scale(4);
+  transition: all 1.5s ease-out;
+  transform: rotate(300deg);
+  position: absolute;
+  top:97px; 
+  left: 300px;
+  z-index: 10;
+}
+.moveFinger4{
+  width: 50px;
+  height: 100px;
+  transform: scale(4);
+  transition: all 1.5s ease-out;
+  transform: rotate(300deg);
+  position: absolute;
+  top:110px; 
+  left: 309px;
+  z-index: 10;
+}
+.moveFinger5{
+  width: 50px;
+  height: 100px;
+  transform: scale(4);
+  transition: all 1.5s ease-out;
+  transform: rotate(300deg);
+  position: absolute;
+  top:215px; 
+  left: 283px;
+  z-index: 10;
+}
+.moveFinger6{
+  width: 50px;
+  height: 100px;
+  transform: scale(4);
+  transition: all 1.5s ease-out;
+  transform: rotate(300deg);
+  position: absolute;
+  top:240px; 
+  left: 270px;
+  z-index: 10;
+}
+.moveFinger7{
+  width: 50px;
+  height: 100px;
+  transform: scale(4);
+  transition: all 1.5s ease-out;
+  transform: rotate(300deg);
+  position: absolute;
+  top:270px; 
+  left: 247px;
+  z-index: 10;
+}
+.moveFinger8{
+  width: 50px;
+  height: 100px;
+  transform: scale(4);
+  transition: all 1.5s ease-out;
+  transform: rotate(300deg);
+  position: absolute;
+  top:290px; 
+  left: 209px;
+  z-index: 10;
+}
+
+.moveFinger9{
+  width: 50px;
+  height: 100px;
+  transform: scale(4);
+  transition: all 1.5s ease-out;
+  transform: rotate(300deg);
+  position: absolute;
+  top:290px; 
+  left: 210px;
+  z-index: 10;
+}
+.moveFinger10{
+  width: 50px;
+  height: 100px;
+  transform: scale(4);
+  transition: all 1.5s ease-out;
+  transform: rotate(300deg);
+  position: absolute;
+  top:255px; 
+  left: 169px;
+  z-index: 10;
 }
 .write{
     position: absolute;
@@ -34,13 +203,12 @@ body{
     z-index: 10;
 }
 .zhuyin{
-    
     display:flex;
     justify-content: center;
     align-items: center;
     position: relative;   
 }
-.zhuyin img{
+.word{
     width: 900px;
     position: relative;   
     z-index:1;

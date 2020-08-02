@@ -135,14 +135,34 @@ function onload() {
         
     }
 
-
+     moveFinger();
+ 
 }
 
+function moveFinger(){
+    // let finger=document.querySelector('.finger');
+    // finger.className = 'moveFinger';
+    // console.log(`finger=${finger.className}`);
+    setTimeout("document.querySelector('.finger').className = 'moveFinger';", 500);
+    setTimeout("document.querySelector('.moveFinger').className = 'moveFinger2';", 1500);
+    setTimeout("document.querySelector('.moveFinger2').className = 'moveFinger3';", 3500);
+    setTimeout("document.querySelector('.moveFinger3').className = 'moveFinger4';", 5500);
+    setTimeout("document.querySelector('.moveFinger4').className = 'moveFinger5';", 6000);
+    setTimeout("document.querySelector('.moveFinger5').className = 'moveFinger6';", 6300);
+    setTimeout("document.querySelector('.moveFinger6').className = 'moveFinger7';", 7000);
+    setTimeout("document.querySelector('.moveFinger7').className = 'moveFinger8';", 9300);
+    setTimeout("document.querySelector('.moveFinger8').className = 'moveFinger9';", 9800);
+    setTimeout("document.querySelector('.moveFinger9').className = 'moveFinger10';", 12000);
+    setTimeout("document.querySelector('.moveFinger10').className = 'finger';", 12800);
+
+
+   
+}
 
 function drawLine(context, x1, y1, x2, y2) {
     context.beginPath();
     context.strokeStyle = 'black';
-    context.lineWidth = 1;
+    context.lineWidth = 4;
     context.moveTo(x1, y1);
     context.lineTo(x2, y2);
     context.stroke();
