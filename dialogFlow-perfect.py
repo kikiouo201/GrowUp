@@ -10,6 +10,7 @@ import time
 import urllib.request as req
 import urllib
 import os
+
 if os.name == 'nt':
     sys.stdout.reconfigure(encoding='utf-8')
 
@@ -49,7 +50,7 @@ with sr.Microphone() as source:
     audio=r.listen(source)
     thinkYouSaid = "Google Speech Recognition thinks you said:"
     print(thinkYouSaid)
-    time.sleep(5)
+    time.sleep(2)
 
 
 # while 0:      #重複執行 1(或其他數字)==true(無限迴圈) / 0==false(直接不執行) 壞掉會一直問問題
@@ -152,7 +153,7 @@ Q_name = search.tr.text
 # print("Q_name="+Q_name)
 Q_name_CC = cc.convert(Q_name)
 result['Q_name'] = Q_name_CC.strip()
-print("data[QName]="+result['Q_name'])
+# print("data[QName]="+result['Q_name'])
 
 
 try:

@@ -27,7 +27,6 @@
     </div>
 
     <script language="JavaScript">
-
         function ShowTime() {
 
             var fullDate = new Date();
@@ -46,14 +45,14 @@
     </div>
     <div>
         <a href="./SpeechToAsk.html">
-            <button class="magic_word" onclick="">
+            <button class="magic_word" onclick="speakerDemo('魔咒')">
             <img src="./image/character/new_magicBook.png" width="50%">
             <br>
             魔咒</button>
         </a>
 
         <a href="./camera.html">
-            <button class="metal-detector" onclick="">
+            <button class="metal-detector" onclick="speakerDemo('探測儀')">
             <img src="./image/character/metal-detector.png" width="50%">
             <br>
             探測儀</button>
@@ -80,44 +79,46 @@
         </div>
     </div>
 
-        <div>
-            <a href="game_home.html" class="returnfloat" id="menu-share">
-                <i class="fab fa-share return-float"><img src="photo/return.png"></i>
-            </a>
-        </div>
-        <div>
-            <a href="game_home.html" class="homefloat" id="menu-share">
-                <i class="fab fa-share my-float"><img src="photo/gobackhome.png" width="70%"></i>
-            </a>
-        </div>
-        <!-- You can also require other files to run in this process -->
+    <div>
+        <a onclick="history.back()" class="returnfloat" id="menu-share">
+            <i class="fab fa-share return-float"><img src="photo/return.png"></i>
+        </a>
+    </div>
+    <div>
+        <a href="game_home.html" class="homefloat" id="menu-share">
+            <i class="fab fa-share my-float"><img src="photo/gobackhome.png" width="70%"></i>
+        </a>
+    </div>
+    <!-- You can also require other files to run in this process -->
 
-        <script>
-            function toggleBtn() {
-                const Btns = document.querySelector(".btns");
-                const add = document.getElementById("add");
-                const remove = document.getElementById("remove");
-                const btn = document.querySelector(".btns").querySelectorAll("a");
-                Btns.classList.toggle("open");
-                if (Btns.classList.contains("open")) {
-                    remove.style.display = "block";
-                    add.style.display = "none";
-                    btn.forEach((e, i) => {
-                        setTimeout(() => {
-                            bottom = 65 * i;
-                            e.style.bottom = bottom + "px";
-                            console.log(e);
-                        }, 100 * i);
-                    });
-                } else {
-                    add.style.display = "block";
-                    remove.style.display = "none";
-                    btn.forEach((e, i) => {
-                        e.style.bottom = "0px";
-                    });
-                }
+    <script>
+        function toggleBtn() {
+            const Btns = document.querySelector(".btns");
+            const add = document.getElementById("add");
+            const remove = document.getElementById("remove");
+            const btn = document.querySelector(".btns").querySelectorAll("a");
+            Btns.classList.toggle("open");
+            if (Btns.classList.contains("open")) {
+                remove.style.display = "block";
+                add.style.display = "none";
+                btn.forEach((e, i) => {
+                    setTimeout(() => {
+                        bottom = 65 * i;
+                        e.style.bottom = bottom + "px";
+                        console.log(e);
+                    }, 100 * i);
+                });
+            } else {
+                add.style.display = "block";
+                remove.style.display = "none";
+                btn.forEach((e, i) => {
+                    e.style.bottom = "0px";
+                });
             }
-        </script>
+        }
+    </script>
+    <script src="./SpeechToAsk.js"></script>
+
 </body>
 
 </html>

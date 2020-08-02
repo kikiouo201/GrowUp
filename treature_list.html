@@ -76,20 +76,29 @@
         <div id="collect_iconMap" class="collect_icon">
             <div id="MapIcon">
                 <img class="NewTaipei" src="./image/map/NewTaipei_dark.png">
-                <a href="./view/level/newTaipei.html"><img class="NewTaipei_icon" src="./image/icon/NewTaipei_icon_dark.png"></a>
+                <!-- <a href="./view/level/newTaipei.html"> -->
+                <img class="NewTaipei_icon" src="./image/icon/NewTaipei_icon_dark.png">
+                <!-- </a> -->
 
                 <img class="Taipei" src="./image/map/Taipei_dark.png">
-                <a href="./view/level/taipei.html"><img class="Taipei_icon" src="./image/icon/Taipei_icon.png"></a>
+                <!-- <a href="./view/level/taipei.html"> -->
+                <img onclick="RegionIcon('台北101')" class="Taipei_icon" src="./image/icon/taipei101_dark.png">
+                <!-- </a> -->
 
                 <img class="Keelung" src="./image/map/Keelung_dark.png">
-                <a href="./view/level/Keelung.html"><img class="Keelung_icon" src="./image/icon/Keelung_icon.png"></a>
+                <!-- <a href="./view/level/Keelung.html"> -->
+                <img onclick="RegionIcon('基隆游輪')" class="Keelung_icon" src="./image/icon/oceanliner_dark.png">
+                <!-- </a> -->
 
                 <img class="Taoyuan" src="./image/map/Taoyuan_dark.png">
-                <a href="./view/level/Taoyuan.html"><img class="Taoyuan_icon" src="./image/icon/Taoyuan_icon.png"></a>
+                <!-- <a href="./view/level/Taoyuan.html"> -->
+                <img onclick="RegionIcon('桃園豆干')" class="Taoyuan_icon" src="./image/icon/togan_dark.png">
+                <!-- </a> -->
 
                 <img class="Hsinchu" src="./image/map/Hsinchu_dark.png">
-                <a href="./view/level/Hsinchu.html">
-                    <img class="Hsinchu_icon" src="./image/icon/Hsinchu_icon.png"></a>
+                <!-- <a href="./view/level/Hsinchu.html"> -->
+                <img onclick="RegionIcon('新竹貢丸')" class="Hsinchu_icon" src="./image/icon/pork_ball_dark.png">
+                <!-- </a> -->
 
                 <img class="Miaoli" src="./image/map/Miaoli_origin.png">
                 <!-- <a href="./view/level/Miaoli.html"> -->
@@ -107,7 +116,9 @@
                 <!-- </a> -->
 
                 <img class="Kaohsiung" src="./image/map/Kaohsiung_dark.png">
-                <a href="./view/level/Kaohsiung.html"><img class="Kaohsiung_icon" src="./image/icon/Kaohsiung_icon.png"></a>
+                <!-- <a href="./view/level/Kaohsiung.html"> -->
+                <img class="Kaohsiung_icon" src="./image/icon/85building_dark.png">
+                <!-- </a> -->
 
                 <img class="Chiayi" src="./image/map/Chiayi_origin.png">
                 <!-- <a href="./view/level/chiayi.html"> -->
@@ -126,7 +137,7 @@
 
                 <img class="Yilan" src="./image/map/Yilan_dark.png">
                 <!-- <a href="./view/level/Yilan.html"> -->
-                <img onclick="RegionIcon('宜蘭')" id="Yilan_feature" class="Yilan_icon" src="./image/icon/Yilan_icon.png">
+                <img onclick="RegionIcon('宜蘭三星蔥')" id="Yilan_feature" class="Yilan_icon" src="./image/icon/Sanxing_green_onion_dark.png">
                 <!-- </a> -->
 
                 <img class="Taitung" src="./image/map/Taitung_dark.png">
@@ -141,12 +152,12 @@
 
                 <img class="Tainan" src="./image/map/Tainan_origin.png">
                 <!-- <a href="./view/level/Tainan.html"> -->
-                <img onclick="RegionIcon('台南赤崁樓')" id="Tainan_feature" class="Tainan_icon" src="./image/icon/Tainan_icon.png">
+                <img onclick="RegionIcon('台南赤崁樓')" id="Tainan_feature" class="Tainan_icon" src="./image/icon/temple.png">
                 <!-- </a> -->
 
                 <img class="Pingtung" src="./image/map/Pingtung_dark.png">
                 <!-- <a href="./view/level/Pingtung.html"> -->
-                <img onclick="RegionIcon('屏東')" id="Pingtung_feature" class="Pingtung_icon" src="./image/icon/Pingtung_icon.png">
+                <img onclick="RegionIcon('屏東')" id="Pingtung_feature" class="Pingtung_icon" src="./image/icon/black_tuna_dark.png">
                 <!-- </a> -->
             </div>
             <div id="FeatureIcon" style="margin-top:80px">
@@ -656,7 +667,7 @@
     </div>
 
     <div class="return_mark">
-        <a href="game_home.html" class="returnfloat" id="menu-share">
+        <a onclick="history.back()" class="returnfloat" id="menu-share">
             <i class="fab fa-share return-float"><img src="photo/return.png"></i>
         </a>
     </div>
