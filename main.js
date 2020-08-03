@@ -11,7 +11,8 @@ const equals = require('equals');
 const { type } = require('process');
 const utf8 = require('utf8');
 const api = require('./node/model/api');
-
+var jsonFile = require('jsonfile')
+var filename = "GrowUp\magicBook\json\book.json"
 const request = require('request')
 const cheerio = require('cheerio')
 const encoding = require('encoding');
@@ -159,9 +160,11 @@ const iconv = require('iconv-lite');
     app.quit();
   });
 
+  ipcMain.on('vision',(event,args)=>{
+    event.sender.send('reply-visionready')
+  })
 
-
-  ipcMain.on('vision',async (event, args)=>{
+  ipcMain.on('vision-start',async (event, args)=>{
     let array=await callVis.start();
    
    //array.forEach(label => console.log("vis="+label.description));
@@ -186,11 +189,15 @@ const iconv = require('iconv-lite');
     }
     //console.log(output);
        event.sender.send('reply-webcrawlerfunction',output);
-      console.log(output);
 
   })
   //  event.sender.send('reply-webcrawlerfunction',webcrawler);
   
+  })
+
+  ipcMain.on('call-picturebook',(event,data)=>{
+     let jsondata =JSON.parse(fs.readFileSync(filename))
+     console.log(jsondata)
   })
  
 
@@ -230,15 +237,6 @@ ipcMain.on('getApi-addQuiz',async (event, args)=>{
 
 
 
-
-ipcMain.on('fruitcheck-call', (event,data)=>{
-console.log("result");
- 
-    api.Question.addQa(1, "", "西瓜", "./still-image.jpg", "單詞", (event) => {
-    console.log("callback=" + JSON.stringify(event));
-  });
- 
-})
 
 
 
