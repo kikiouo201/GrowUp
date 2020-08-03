@@ -91,7 +91,7 @@ if (voiceBtn) {
         console.log("Q:" + createQA)
         ipcRenderer.once('voice-require-to-py-reply-result', (event, data) => {
             console.log("url =>" + data.url)
-            console.log("QName =>" + data.QName)
+                // console.log("QName =>" + data.QName)
                 // debugger
             if (data.a.toString().trim() == 'TurnToOpenCamera') { //如果偵測到「問這是什麼」類型的問題
                 SystemVal.innerHTML = '切換至「你拍我答」'
@@ -108,7 +108,7 @@ if (voiceBtn) {
                 console.log("gophers true")
             }
             // messages.innerHTML = messages.innerHTML + createQ(data.q) + createA(data.a);
-            QA_card.innerHTML = QA_card.innerHTML + createQA(data.q, data.url, data.a, data.QName);
+            QA_card.innerHTML = QA_card.innerHTML + createQA(data.q, data.url, data.a);
             // console.log("dataA="+data.a.toString())
             // console.log("test=A? =>"+document.getElementById('Answer01').textContent);
 

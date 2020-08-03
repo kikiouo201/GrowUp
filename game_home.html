@@ -2,115 +2,109 @@
 <html style="width: 100%; height: 100%;">
 
 <head>
-  <meta charset="UTF-8">
-  <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
 
-  <title>GrowUp學習趣</title>
-  <link href="CSS/game/game_home.css" type="text/css" rel="stylesheet">
-  <link rel="stylesheet" href="CSS/icon.css">
-  <link rel="stylesheet" href="CSS/interface.css">
+    <title>GrowUp學習趣</title>
+    <link href="CSS/game/game_home.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/icon.css">
+    <link rel="stylesheet" href="CSS/interface.css">
 </head>
 
 <body onload="ShowTime()">
-  <div class="home_header">
-    <a href="game_home.html" >
-      <img src="./icons/title.png" style="width: 350px; height: 40px;">
-    </a>
+    <div class="home_header">
+        <a href="game_home.html">
+            <img src="./icons/title.png" style="width: 350px; height: 40px;">
+        </a>
 
-    <div id="today"></div>
-    <br>
-    <div id="showtime"></div>
-  </div>
-
-  <div style="width: 100%; height:91%;">
-  
-    <br>
-
-    <div class="game_map_div">
-
-        <img src="./image/character/NowInNantou.png" onclick="document.location.href='./view/level/taiwan.html'" class="nowInWhere">
-
-        <div style="">
-          <img src="image/map/nantou1.png" onclick="document.location.href='view/level/nantou.html'" style="width: 65%;margin-top: 5%; margin-left: 18%;">
-        </div>
-
+        <div id="today"></div>
+        <br>
+        <div id="showtime"></div>
     </div>
 
-    <div style="font-family: 文鼎標楷注音;">
-      <div class="child_profile_detail">
-        <p style="margin-left: 20px; font-size: 28px; display: inline;">名字：小貝貝</p><br>
-        <p style="margin-left: 20px; font-size: 18px; display: inline;">生日：2016/12/08</p><br>
-        <p style="margin-left: 20px; font-size: 18px; display: inline;">等級Lv：4</p><br>
-        <p style="margin-left: 20px; font-size: 18px; display: inline; position: absolute; bottom: 0px;">乖寶寶值</p>
-        <div class="good-regard">
-          <div class="good-regard-value"></div>
+    <div style="width: 100%; height:91%;">
+
+        <br>
+
+        <div class="game_map_div">
+
+            <img src="./image/character/NowInNantou.png" onclick="document.location.href='./view/level/taiwan.html'" class="nowInWhere">
+
+            <div style="">
+                <img src="image/map/nantou1.png" onclick="document.location.href='view/level/nantou.html'" style="width: 65%;margin-top: 5%; margin-left: 18%;">
+            </div>
+
         </div>
 
-      </div>
-      <a href="./personalprofile.html">
-        <img class="personal_profile" src="image/character/ws.jpg">
-      </a>
-    </div>
+        <div style="font-family: 文鼎標楷注音;">
+            <div class="child_profile_detail">
+                <p style="margin-left: 20px; font-size: 28px; display: inline;">名字：小貝貝</p><br>
+                <p style="margin-left: 20px; font-size: 18px; display: inline;">生日：2016/12/08</p><br>
+                <p style="margin-left: 20px; font-size: 18px; display: inline;">等級Lv：4</p><br>
+                <p style="margin-left: 20px; font-size: 18px; display: inline; position: absolute; bottom: 0px;">乖寶寶值</p>
+                <div class="good-regard">
+                    <div class="good-regard-value"></div>
+                </div>
 
-    <!-- <div> -->
-    <a href="./exam_phonetic.html" onmousedown="mouseDown(this)">
-      <img class="limit_task" src="image/character/limit_task_zhuyin.png" style="width:20%;" onclick="myFunction()"
-        alt="限時任務">
-    </a>
-    <!--
+            </div>
+            <a href="./personalprofile.html">
+                <img class="personal_profile" src="image/character/ws.jpg">
+            </a>
+        </div>
+
+        <!-- <div> -->
+        <a href="./exam_phonetic.html" onmousedown="mouseDown(this)">
+            <img class="limit_task" src="image/character/limit_task_zhuyin.png" style="width:22%; z-index: 100;" onclick="myFunction()" alt="限時任務">
+        </a>
+        <!--
       <a href="./daily.html" onmousedown="mouseDown(this)">
         <img class="daily_task" src="image/character/daily_task.png" style="width: 22%;" alt="每日任務">
       </a>
       </div>
      -->
 
-    <a href="./treature_list.html" onmousedown="mouseDown(this)">
-      <img class="trophy" onclick="document.location.href='./treature_list.html'"
-        src="image/character/treature_list_zhuyin.png" width="220px" alt="寶物清單">
+        <a href="./treature_list.html" onmousedown="mouseDown(this)">
+            <img class="trophy" onclick="document.location.href='./treature_list.html'" src="image/character/treature_list_zhuyin.png" width="200px" alt="寶物清單">
 
-    </a>
-    <img src="./image/character/alert.png"
-      style="width: 62px; position: absolute; bottom: 19%; right: 37%; z-index: 100;">
+        </a>
+        <img src="./image/character/alert.png" style="width: 62px; position: absolute; bottom: 22%; right: 42%; z-index: 100;">
 
-    <a href="./magic_weapon_voiceAndCapture.html" onmousedown="mouseDown(this)">
-      <img class="farm" onclick="document.location.href='./magic_weapon_voiceAndCapture.html'"
-        src="image/character/magic_QA_zhuyin.png" width="220px" alt="問題法寶">
-    </a>
+        <a href="./magic_weapon_voiceAndCapture.html" onmousedown="mouseDown(this)">
+            <img class="farm" onclick="document.location.href='./magic_weapon_voiceAndCapture.html'" src="image/character/magic_QA_zhuyin.png" width="200px" alt="問題法寶">
+        </a>
 
 
 
 
-    <a href="./daily.html" onmousedown="mouseDown(this)">
-      <img class="treature_voice_camera" onclick="document.location.href='./daily.html'"
-        src="image/character/dailyTask_zhuyin_0.png" width="220px" alt="每日任務">
-    </a>
+        <a href="./daily.html" onmousedown="mouseDown(this)">
+            <img class="treature_voice_camera" onclick="document.location.href='./daily.html'" src="image/character/dailyTask_zhuyin_0.png" width="200px" alt="每日任務">
+        </a>
 
 
 
-    <!-- <img src="./image/character/alert.png" style="width: 62px;z-index: 100;"> -->
-    <a href="./magicBook/magicBook.html" onmousedown="mouseDown(this)">
-      <img class="magic_treature" onclick="document.location.href='./magicBook/magicBook.html'"
-        src="image/character/magicBook_zhuyin.png" width="220px" alt="魔法寶典">
-    </a>
+        <!-- <img src="./image/character/alert.png" style="width: 62px;z-index: 100;"> -->
+        <a href="./magicBook/magicBook.html" onmousedown="mouseDown(this)">
+            <img class="magic_treature" onclick="document.location.href='./magicBook/magicBook.html'" src="image/character/magicBook_zhuyin.png" width="200px" alt="魔法寶典">
+        </a>
 
 
-  </div>
+    </div>
 
-  <script>
-    function myFunction() {
-      if (confirm("要來挑戰限時任務了嗎?")) {
-        location.href = '';
-      } else {
-        location.href = 'game_home.html';
-      }
-    }
-  </script>
+    <script>
+        function myFunction() {
+            if (confirm("要來挑戰限時任務了嗎?")) {
+                location.href = '';
+            } else {
+                location.href = 'game_home.html';
+            }
+        }
+    </script>
 
-  <div>
-    <a href="test1.html" class="sosfloat" id="menu-share">
-      <i class="fab fa-share my-float"><img src="photo/help.png" width="70%"></i>
-    </a>
-  </div>
+    <div>
+        <a href="test1.html" class="sosfloat" id="menu-share">
+            <i class="fab fa-share my-float"><img src="photo/help.png" width="70%"></i>
+        </a>
+    </div>
 
 </body>
 <script src="game_home.js"></script>
@@ -119,20 +113,20 @@
 
 <!-- <link rel="stylesheet" media="all" href="http://cdnjs.cloudflare.com/ajax/libs/Han/3.2.7/han.min.css"> -->
 <script>
-  function ShowTime() {
+    function ShowTime() {
 
-    var fullDate = new Date();
-    var yyyy = fullDate.getFullYear();
-    var MM = (fullDate.getMonth() + 1) >= 10 ? (fullDate.getMonth() + 1) : ("0" + (fullDate.getMonth() + 1));
-    var dd = fullDate.getDate() < 10 ? ("0" + fullDate.getDate()) : fullDate.getDate();
-    document.getElementById('today').innerHTML = yyyy + "/" + MM + "/" + dd;
+        var fullDate = new Date();
+        var yyyy = fullDate.getFullYear();
+        var MM = (fullDate.getMonth() + 1) >= 10 ? (fullDate.getMonth() + 1) : ("0" + (fullDate.getMonth() + 1));
+        var dd = fullDate.getDate() < 10 ? ("0" + fullDate.getDate()) : fullDate.getDate();
+        document.getElementById('today').innerHTML = yyyy + "/" + MM + "/" + dd;
 
-    var NowDate = new Date();
-    var h = NowDate.getHours();
-    var m = NowDate.getMinutes();
-    document.getElementById('showtime').innerHTML = h + ':' + m;
-    setTimeout('ShowTime()', 1000);
-  }
+        var NowDate = new Date();
+        var h = NowDate.getHours();
+        var m = NowDate.getMinutes();
+        document.getElementById('showtime').innerHTML = h + ':' + m;
+        setTimeout('ShowTime()', 1000);
+    }
 </script>
 
 </html>

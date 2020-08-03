@@ -100,7 +100,7 @@ a:-webkit-any-link {
 
 .collect_icon {
     margin-top: 118px;
-    width: 480px;
+    width: 363px;
     height: 63%;
     position: absolute;
     left: 7%;
@@ -138,8 +138,8 @@ a:-webkit-any-link {
     z-index: 100;
     right: 0;
     position: absolute;
-    margin-top: 125px;
-    margin-right: 354px;
+    margin-top: 89px;
+    margin-right: 268px;
     cursor: pointer;
 }
 
@@ -149,8 +149,8 @@ a:-webkit-any-link {
     z-index: 100;
     right: 0;
     position: absolute;
-    margin-top: 125px;
-    margin-right: 194px;
+    margin-top: 89px;
+    margin-right: 144px;
     cursor: pointer;
 }
 
@@ -160,7 +160,7 @@ a:-webkit-any-link {
     z-index: 100;
     right: 0;
     position: absolute;
-    margin-top: 125px;
-    margin-right: 30px;
+    margin-top: 89px;
+    margin-right: 20px;
     cursor: pointer;
 }
