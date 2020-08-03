@@ -68,8 +68,9 @@ video{
   height: 50px;
   z-index: 10;
 }
+
 .finger{
-  /* visibility: hidden; */
+  visibility: visible;
   width: 50px;
   height: 100px;
   transform: rotate(300deg);

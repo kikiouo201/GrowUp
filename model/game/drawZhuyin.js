@@ -140,9 +140,10 @@ function onload() {
 }
 
 function moveFinger(){
-    // let finger=document.querySelector('.finger');
+    let finger=document.querySelector('.finger');
     // finger.className = 'moveFinger';
     // console.log(`finger=${finger.className}`);
+    finger.style.visibility="visible";
     setTimeout("document.querySelector('.finger').className = 'moveFinger';", 500);
     setTimeout("document.querySelector('.moveFinger').className = 'moveFinger2';", 1500);
     setTimeout("document.querySelector('.moveFinger2').className = 'moveFinger3';", 3500);
@@ -154,9 +155,8 @@ function moveFinger(){
     setTimeout("document.querySelector('.moveFinger8').className = 'moveFinger9';", 9800);
     setTimeout("document.querySelector('.moveFinger9').className = 'moveFinger10';", 12000);
     setTimeout("document.querySelector('.moveFinger10').className = 'finger';", 12800);
-
-
-   
+    setTimeout("document.querySelector('.finger').style.visibility='hidden';", 12800);
+    
 }
 
 function drawLine(context, x1, y1, x2, y2) {
