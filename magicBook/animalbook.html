@@ -7,16 +7,82 @@
   <link rel="stylesheet" href="../CSS/interface.css">
   <link rel="stylesheet" href="../CSS/every_four_button.css">
   <link rel="stylesheet" href="./css/picturebook.css">
+  <link rel="stylesheet" href="../CSS/game/animal_book.css">
   <title>Document</title>
 </head>
-<body background="../image/map/animal_map.png" onload="ShowTime()">
+<body  background="../image/map/kraftPaper5.png" onload="ShowTime()">
   <div class="home_page">
       <a href="../game_home.html">魔法寶典</a>
 
       <div id="today"></div>
       <br>
       <div id="showtime"></div>
-
   </div>
+  <script language="JavaScript">
+  
+    function ShowTime(){
+  
+      var fullDate = new Date();
+  var yyyy = fullDate.getFullYear();
+  var MM = (fullDate.getMonth() + 1) >= 10 ? (fullDate.getMonth() + 1) : ("0" + (fullDate.getMonth() + 1));
+  var dd = fullDate.getDate() < 10 ? ("0"+fullDate.getDate()) : fullDate.getDate();
+  document.getElementById('today').innerHTML = yyyy + "/" + MM + "/" + dd;
+  
+    　var NowDate=new Date();
+    　var h=NowDate.getHours();
+    　var m=NowDate.getMinutes();
+    　document.getElementById('showtime').innerHTML = h+':'+m;
+    　setTimeout('ShowTime()',1000);
+    }
+    </script>
+    <div>
+      <img class="mapsize" src="../image/map/animal_map.png" >
+  </div>
+  <div>
+    <img class="panda" src="../image/animal/panda.png" onclick="mouseDownText('貓熊');">
+  </div>
+  <div>
+    <img class="penguin" src="../image/animal/penguin.png" onclick="mouseDownText('企鵝');">
+  </div>
+  <div>
+    <img class="camel" src="../image/animal/camel.png" onclick="mouseDownText('駱駝');">
+  </div>
+  <div>
+    <img class="elephant" src="../image/animal/elephant.png" onclick="mouseDownText('大象');">
+  </div>
+  <div>
+    <img class="lion" src="../image/animal/lion.png" onclick="mouseDownText('獅子');">
+  </div>
+  <div>
+    <img class="leopard" src="../image/animal/leopard.png" onclick="mouseDownText('花豹');">
+  </div>
+  <div>
+    <img class="bear" src="../image/animal/taiwan_bear.png" onclick="mouseDownText('台灣黑熊');">
+  </div>
+  <div>
+    <img class="spoonbill" src="../image/animal/black_faced_spoonbill.png" onclick="mouseDownText('黑面琵鷺');">
+  </div>
+  <div>
+    <img class="parrot" src="../image/animal/parrot.png" onclick="mouseDownText('鸚鵡');">
+  </div>
+  <div>
+    <img class="gorilla" src="../image/animal/gorilla.png" onclick="mouseDownText('大猩猩');">
+  </div>
+  <div>
+    <a href="../../test1.html" class="sosfloat" id="menu-share">
+        <i class="fab fa-share my-float"><img src="../photo/help.png" width="70%"></i>
+    </a>
+</div>
+<div>
+    <a href="../magicBook/magicBook.html" class="returnfloat" id="menu-share">
+        <i class="fab fa-share return-float"><img src="../photo/return.png"></i>
+    </a>
+</div>
+<div>
+    <a href="../game_home.html" class="homefloat" id="menu-share">
+        <i class="fab fa-share my-float"><img src="../photo/gobackhome.png" width="70%"></i>
+    </a>
+</div>
+  <script src="../model/util/voiceOut.js"></script>
 </body>
 </html>
