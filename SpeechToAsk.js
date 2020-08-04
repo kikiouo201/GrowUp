@@ -224,12 +224,15 @@ function toggle(startOver = true) {
 // console.log(callpy);
 
 let collection = document.getElementById('Collection')
-collection.addEventListener('click', (e) => {
-    console.log(dialog)
-    dialog.showMessageBox({ message: "Hey:))", title: '測試' }, () => {
-        console.log("OK")
-    })
-});
+if (collection) {
+    collection.addEventListener('click', (e) => {
+        console.log(dialog)
+        dialog.showMessageBox({ message: "Hey:))", title: '測試' }, () => {
+            console.log("OK")
+        })
+    });
+}
+
 
 const stopDOM = document.body;
 stopDOM.addEventListener('dblclick', toggle.bind(null, false));
