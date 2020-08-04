@@ -1,122 +1,126 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="UTF-8">
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-    
+
     <title>grow up children</title>
     <link href="./test1.css" type="text/css" rel="stylesheet">
     <link rel="stylesheet" href="CSS/icon.css">
     <link rel="stylesheet" href="CSS/interface.css">
-  </head>
-  <body class="style" background="photo/background.png" > 
+</head>
+
+<body class="style" background="photo/background.png">
     <div class="head">
-      <a>遊戲選擇</a>
-      
-      <body onload="ShowTime()">
-        <div id="today"></div>
-        <br>
-        <div id="showtime"></div>
+        <a>遊戲選擇</a>
+
+        <body onload="ShowTime()">
+            <div id="today"></div>
+            <br>
+            <div id="showtime"></div>
         </body>
     </div>
-   
+
     <script language="JavaScript">
+        function ShowTime() {
 
-      function ShowTime(){
+            var fullDate = new Date();
+            var yyyy = fullDate.getFullYear();
+            var MM = (fullDate.getMonth() + 1) >= 10 ? (fullDate.getMonth() + 1) : ("0" + (fullDate.getMonth() + 1));
+            var dd = fullDate.getDate() < 10 ? ("0" + fullDate.getDate()) : fullDate.getDate();
+            document.getElementById('today').innerHTML = yyyy + "/" + MM + "/" + dd;
 
-        var fullDate = new Date();
-  var yyyy = fullDate.getFullYear();
-  var MM = (fullDate.getMonth() + 1) >= 10 ? (fullDate.getMonth() + 1) : ("0" + (fullDate.getMonth() + 1));
-  var dd = fullDate.getDate() < 10 ? ("0"+fullDate.getDate()) : fullDate.getDate();
-  document.getElementById('today').innerHTML = yyyy + "/" + MM + "/" + dd;
- 
-      　var NowDate=new Date();
-      　var h=NowDate.getHours();
-      　var m=NowDate.getMinutes();
-      　document.getElementById('showtime').innerHTML = h+':'+m;
-      　setTimeout('ShowTime()',1000);
-      }
-      </script>
-      
-      <div >
-        <button class="button1" onclick=""  >
-                    <a href="pronunciation.html"><img src="photo/phonetic.png"width="40%"></a><br>
-          ㄅㄆㄇ</button>
+            var NowDate = new Date();
+            var h = NowDate.getHours();
+            var m = NowDate.getMinutes();
+            document.getElementById('showtime').innerHTML = h + ':' + m;
+            setTimeout('ShowTime()', 1000);
+        }
+    </script>
 
-          <button class="button2" onclick=""  >
-            <a href="./view/level/zhuyinLevel.html"><img src="photo/phonetic.png" width="40%"></a><br>
-            注音遊戲</button>
+    <div>
+        <button class="button1" onclick="">
+      <a href="pronunciation.html"><img src="photo/phonetic.png" width="40%"></a><br>
+      ㄅㄆㄇ</button>
 
-        <button class="button3" onclick=""  >
-              <a href="./view/level/englishLevel.html"><img src="./image/icon/english.png" width="40%"></a><br>
-            英文遊戲</button>
-  
-        <button class="button4" onclick=""  >
-              <a href="./view/level/digitalLevel.html"><img src="./image/icon/number.png" width="40%"></a><br>
-            數字遊戲</button>
-    
-     
-          <button class="button5" onclick=""  >
-            <img src=""width="40%"><br>
-            </button>
+        <button class="button2" onclick="">
+      <a href="./view/level/zhuyinLevel.html"><img src="photo/phonetic.png" width="40%"></a><br>
+      注音遊戲</button>
+
+        <button class="button3" onclick="">
+      <a href="./view/level/englishLevel.html"><img src="./image/icon/english.png" width="40%"></a><br>
+      英文遊戲</button>
+
+        <button class="button4" onclick="">
+      <a href="./view/level/digitalLevel.html"><img src="./image/icon/number.png" width="40%"></a><br>
+      數字遊戲</button>
+
+
+        <button class="button5" onclick="">
+      <img src="" width="40%"><br>
+    </button>
 
         <button class="button6" onclick="">
-        <a href=""><img src=""width="40%"></a><br>
-       </button>
-    </div> 
-    <div>
-      <a href="test1.html" class="sosfloat" id="menu-share">
-        <i class="fab fa-share my-float"><img src="photo/help.png" width="70%"></i>
-        </a>
-    </div>
-      <div class="fabs" onclick="toggleBtn()">
-        <div class="action">
-          <i class="fas" id="add"><img src="photo/settings.png" width="110%"></i>
-          <i class="fas" id="remove" style="display: none"><img src="photo/settings.png" width="110%"></i>
-        </div>
-  
-        <div class="btns">
-          <a href="personalprofile.html" class="btn"><i class="fab "><img src="photo/user.png" title="個人簡介" width="95%"></i></a>
-          <a href="history.html" class="btn"><i class="fab "><img src="photo/record.png" title="歷史紀錄" width="95%"></i></a>
-          <a href="#" class="btn"><i class="fab "><img src="photo/analysis.png" title="學習歷程" width="95%"></i></a>
-        </div>
-    <div>
-      <a onclick="history.back()" class="returnfloat" id="menu-share">
-        <i class="fab fa-share return-float"><img src="photo/return.png" ></i>
-        </a>
+      <a href=""><img src="" width="40%"></a><br>
+    </button>
     </div>
     <div>
-      <a href="game_home.html" class="homefloat" id="menu-share">
-        <i class="fab fa-share my-float"><img src="photo/gobackhome.png" width="70%"></i>
+        <a href="test1.html" class="sosfloat" id="menu-share">
+            <i class="fab fa-share my-float"><img src="photo/help.png" width="70%"></i>
+        </a>
+    </div>
+    <!-- <div class="fabs" onclick="toggleBtn()">
+    <div class="action">
+      <i class="fas" id="add"><img src="photo/settings.png" width="110%"></i>
+      <i class="fas" id="remove" style="display: none"><img src="photo/settings.png" width="110%"></i>
+    </div>
+
+    <div class="btns">
+      <a href="personalprofile.html" class="btn"><i class="fab "><img src="photo/user.png" title="個人簡介"
+            width="95%"></i></a>
+      <a href="history.html" class="btn"><i class="fab "><img src="photo/record.png" title="歷史紀錄" width="95%"></i></a>
+      <a href="#" class="btn"><i class="fab "><img src="photo/analysis.png" title="學習歷程" width="95%"></i></a>
+    </div>
+  </div> -->
+    <div>
+        <a onclick="history.back()" class="returnfloat" id="menu-share">
+            <i class="fab fa-share return-float"><img src="photo/return.png"></i>
+        </a>
+    </div>
+    <div>
+        <a href="game_home.html" class="homefloat" id="menu-share">
+            <i class="fab fa-share my-float"><img src="photo/gobackhome.png" width="70%"></i>
         </a>
     </div>
     <!-- You can also require other files to run in this process -->
     <script src="./renderer.js"></script>
     <script>
-       function toggleBtn() {
-      const Btns = document.querySelector(".btns");
-      const add = document.getElementById("add");
-      const remove = document.getElementById("remove");
-      const btn = document.querySelector(".btns").querySelectorAll("a");
-      Btns.classList.toggle("open");
-      if (Btns.classList.contains("open")) {
-        remove.style.display = "block";
-        add.style.display = "none";
-        btn.forEach((e, i) => {
-          setTimeout(() => {
-            bottom = 65 * i;
-            e.style.bottom = bottom + "px";
-            console.log(e);
-          }, 100 * i);
-        });
-      } else {
-        add.style.display = "block";
-        remove.style.display = "none";
-        btn.forEach((e, i) => {
-          e.style.bottom = "0px";
-        });
-      }
-    }
+        function toggleBtn() {
+            const Btns = document.querySelector(".btns");
+            const add = document.getElementById("add");
+            const remove = document.getElementById("remove");
+            const btn = document.querySelector(".btns").querySelectorAll("a");
+            Btns.classList.toggle("open");
+            if (Btns.classList.contains("open")) {
+                remove.style.display = "block";
+                add.style.display = "none";
+                btn.forEach((e, i) => {
+                    setTimeout(() => {
+                        bottom = 65 * i;
+                        e.style.bottom = bottom + "px";
+                        console.log(e);
+                    }, 100 * i);
+                });
+            } else {
+                add.style.display = "block";
+                remove.style.display = "none";
+                btn.forEach((e, i) => {
+                    e.style.bottom = "0px";
+                });
+            }
+        }
     </script>
-  </body>
+</body>
+
 </html>
