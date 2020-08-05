@@ -33,10 +33,10 @@ body {
 }
 
 .level_text {
-  width: 28px;
+  width: 40px;
   position: absolute;
   z-index: 10;
-  top: 34px;
+  top: 20px;
   left: 32%;
 }
 
@@ -44,19 +44,11 @@ body {
   width: 100px;
   position: absolute;
   z-index: 10;
-  top: 504px;
-  left: 438px;
-}
-
-.level3 {
-  width: 100px;
-  position: absolute;
-  z-index: 10;
   top: 595px;
   left: 285px;
 }
 
-.level4 {
+.level3 {
   width: 100px;
   position: absolute;
   z-index: 10;
@@ -64,23 +56,15 @@ body {
   left: 20px;
 }
 
+.level4 {
+  width: 100px;
+  position: absolute;
+  z-index: 10;
+  top: 445px;
+  left: 263px;
+}
+
 .level5 {
-  width: 100px;
-  position: absolute;
-  z-index: 10;
-  top: 470px;
-  left: 140px;
-}
-
-.level6 {
-  width: 100px;
-  position: absolute;
-  z-index: 10;
-  top: 416px;
-  left: 340px;
-}
-
-.level7 {
   width: 100px;
   position: absolute;
   z-index: 10;
@@ -88,7 +72,7 @@ body {
   left: 344px;
 }
 
-.level8 {
+.level6 {
   width: 100px;
   position: absolute;
   z-index: 10;
@@ -96,7 +80,7 @@ body {
   left: 204px;
 }
 
-.level9 {
+.level7 {
   width: 100px;
   position: absolute;
   z-index: 10;
@@ -104,7 +88,7 @@ body {
   left: 284px;
 }
 
-.level10 {
+.level8 {
   width: 100px;
   position: absolute;
   z-index: 10;
