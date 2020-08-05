@@ -1,0 +1,74 @@
+.mapsize{
+    position: relative;
+    top:75px;
+    width: 1300px;
+    margin-left: 120px;
+}
+.panda{
+    position: absolute;
+    top: 160px;
+    left: 435px;
+    width: 150px;
+}
+
+.penguin{
+    position: absolute;
+    top: 410px;
+    left: 197px;
+    width: 135px;
+}
+
+.camel{
+    position: absolute;
+    top: 155px;
+    left: 821px;
+    width: 210px;
+}
+
+.elephant{
+    position: absolute;
+    top: 363px;
+    left: 647px;
+    width: 179px;
+}
+
+.lion{
+    position: absolute;
+    top: 571px;
+    left: 786px;
+    width: 163px;
+}
+
+.leopard{
+    position: absolute;
+    top: 505px;
+    left: 621px;
+    width: 170px;
+}
+
+.bear{
+    position: absolute;
+    top: 252px;
+    left: 1097px;
+    width: 112px;
+}
+
+.spoonbill{
+    position: absolute;
+    top: 408px;
+    left: 1209px;
+    width: 152px;
+}
+
+.parrot{
+    position: absolute;
+    top: 630px;
+    left: 947px;
+    width: 114px;
+}
+.gorilla{
+    position: absolute;
+    top: 536px;
+    left: 1112px;
+    width: 105px;
+}
