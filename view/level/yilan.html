@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GrowUp學習趣</title>
+    <link rel="stylesheet" href="../../CSS/map/yilan.css">
+    <link rel="stylesheet" href="../../CSS/map/counties.css">
+    <link rel="stylesheet" href="../../CSS/interface.css">
+    <link rel="stylesheet" href="../../CSS/icon.css">
+
+</head>
+
+<body class="style" background="../../image/map/kraftPaper5.png">
+    <table class="features">
+        <tr>
+            <td colspan="2" style="font-size: 40px;text-align: center;">宜蘭</td>
+        </tr>
+        <tr>
+            <td >特色</td>
+            <td >資訊介紹</td>
+        </tr>
+        <tr>
+            <td ><img src="../../image/map/Yilan_origin.png" onclick="featuresText('宜蘭')" />宜蘭</td>
+            <td id="information" rowspan="4" valign="top" style="font-size:x-large;" >
+                &emsp;&emsp;位處臺灣東北角的宜蘭縣，囿於三面背山、一面向海特殊地形，孕育獨特文化與人情味，呈現以三生共構的世外桃源，如今藉由亞洲第二長的公路隧道－「雪山隧道」，拉近與臺北不到50分鐘的時間，竭誠歡迎閣下打開心胸，細心品嚐自然環境的生態旅遊、養生的冷溫泉、豐沛的海洋遊憩資源，油綠的田園、悠閒漫活的生活，這就是水、綠、淨的宜蘭。
+            </td>
+        </tr>
+        <tr>
+            <td ><img src="../../image/map_icon/Yilan_bubble_tea_museum.png" onclick="featuresText('奇麗灣珍奶文化館')" />奇麗灣珍奶文化館</td>
+        </tr>
+        <tr>
+            <td ><img src="../../image/map_icon/Yilan_hot_spring.png" onclick="featuresText('礁溪溫泉')" />礁溪溫泉</td>
+        </tr>
+       
+
+    </table>
+    <div class="map">
+        <img id="county" class="terrain" src="../../image/map/Yilan1.png" />
+        <div class="level1">
+            <img class="level" src="../../image/icon/Sanxing_green_onion_dark.png"
+            onclick="location.href='../../view/game/drawzhuyin.html?id=a1&counties=Hsinchu';mouseDownText('w');" />
+        <img class="level_text"  src="../../image/english_alphabet/W.png"
+            onclick="location.href='../../view/game/drawzhuyin.html?id=a1&counties=Hsinchu';mouseDownText('w');" />
+        </div>
+       <div class="level2">
+        <img class="level" src="../../image/icon/Sanxing_green_onion_dark.png"
+        onclick="location.href='../../view/game/drawzhuyin.html?id=b1&counties=newTaipei';mouseDownText('x');" />
+        <img class="level_text" src="../../image/english_alphabet/X.png"
+        onclick="location.href='../../view/game/drawzhuyin.html?id=b1&counties=newTaipei';mouseDownText('x');" />
+       </div>
+        <div class="level3">
+            <img class="level" src="../../image/icon/Sanxing_green_onion_dark.png"
+            onclick="location.href='../../view/game/drawzhuyin.html?id=c1&counties=newTaipei';mouseDownText('y');" />
+            <img class="level_text" src="../../image/english_alphabet/Y.png"
+            onclick="location.href='../../view/game/drawzhuyin.html?id=c1&counties=newTaipei';mouseDownText('y');" />
+        </div>
+       <div class="level4">
+            <img class="level" src="../../image/icon/Sanxing_green_onion_dark.png" 
+            onclick="location.href='../../view/game/drawzhuyin.html?id=d1&counties=newTaipei';mouseDownText('z');" />
+            <img class="level_text" src="../../image/english_alphabet/Z.png" 
+            onclick="location.href='../../view/game/drawzhuyin.html?id=d1&counties=newTaipei';mouseDownText('z');" />
+       </div>
+  
+        <img class="level5" src="../../image/icon/devil_lock.png"  onclick="alert('需要先完成縣市所有關卡！')"/>
+        
+    </div>
+    <img class="taiwan" src="../../image/character/NowInNantou.png" onclick="location.href='../../view/level/taiwan.html'" />
+    <div>
+        <a href="../../test1.html" class="sosfloat" id="menu-share">
+            <i class="fab fa-share my-float"><img src="../../photo/help.png" width="70%"></i>
+        </a>
+    </div>
+    <div>
+        <a href="../../game_home.html" class="returnfloat" id="menu-share">
+            <i class="fab fa-share return-float"><img src="../../photo/return.png"></i>
+        </a>
+    </div>
+    <div>
+        <a href="../../game_home.html" class="homefloat" id="menu-share">
+            <i class="fab fa-share my-float"><img src="../../photo/gobackhome.png" width="70%"></i>
+        </a>
+    </div>
+    <script>
+        function featuresText(category) {
+    const information = document.querySelector('#information')
+    switch (category) {
+        case "宜蘭":
+            information.innerHTML = "&emsp;&emsp;位處臺灣東北角的宜蘭縣，囿於三面背山、一面向海特殊地形，孕育獨特文化與人情味，呈現以三生共構的世外桃源，如今藉由亞洲第二長的公路隧道－「雪山隧道」，拉近與臺北不到50分鐘的時間，竭誠歡迎閣下打開心胸，細心品嚐自然環境的生態旅遊、養生的冷溫泉、豐沛的海洋遊憩資源，油綠的田園、悠閒漫活的生活，這就是水、綠、淨的宜蘭。";
+            mouseDownText(information.innerHTML);
+            break;
+        case "奇麗灣珍奶文化館":
+            information.innerHTML = "&emsp;&emsp;奇麗灣珍奶文化館位於宜蘭縣蘇澳鎮，是全台首座珍珠奶茶工廠，除了介紹台灣珍奶文化外，首創「燈泡珍珠奶茶」一推出即蔚為一股風潮。";
+            mouseDownText(information.innerHTML);
+            break;
+        case "礁溪溫泉":
+            information.innerHTML="&emsp;&emsp;礁溪鄉以溫泉聞名，位於宜蘭縣東北角，四百多年前這兒住著噶瑪蘭人和泰雅族人，到了西元1796年，清嘉慶年間福建人吳沙帶領移民進入，並慢慢開墾此地，終於使礁溪逐漸成為宜蘭北部重鎮。";
+            mouseDownText(information.innerHTML);
+            break;
+
+    }
+}
+
+    </script>
+    <script src="../../model/util/voiceOut.js"></script>
+</body>
+
+</html>
