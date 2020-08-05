@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GrowUp學習趣</title>
+    <link rel="stylesheet" href="../../CSS/map/taoyuan.css">
+    <link rel="stylesheet" href="../../CSS/map/counties.css">
+    <link rel="stylesheet" href="../../CSS/interface.css">
+    <link rel="stylesheet" href="../../CSS/icon.css">
+
+</head>
+
+<body class="style" background="../../image/map/kraftPaper5.png">
+    <table class="features">
+        <tr>
+            <td colspan="2" style="font-size: 40px;text-align: center;">桃園</td>
+        </tr>
+        <tr>
+            <td >特色</td>
+            <td >資訊介紹</td>
+        </tr>
+        <tr>
+            <td ><img src="../../image/map/Taoyuan_origin.png" onclick="featuresText('桃園')" />桃園</td>
+            <td id="information" rowspan="4" valign="top" style="font-size:x-large;" >
+                &emsp;&emsp;桃園市擁有多元的文化，加上北橫豐富的山水景觀、兩蔣文化園區的獨特歷史文化及「草花王國的故鄉」、「千塘之鄉」等美名，成就桃園為觀光大市，也因這些屬於桃園特別的風華面貌，讓民眾在此相遇，留下了精彩回憶。
+            </td>
+        </tr>
+        <tr>
+            <td ><img src="../../image/map_icon/Taoyuan_aquarium.png" onclick="featuresText('Xpark海生館')" />Xpark海生館</td>
+        </tr>
+        <tr>
+            <td ><img src="../../image/map_icon/Taoyuan_national_airport.png" onclick="featuresText('桃園國際機場')" />桃園國際機場</td>
+        </tr>
+       
+
+    </table>
+    <div class="map">
+        <img id="county" class="terrain" src="../../image/map/Taoyuan1.png" />
+        <div class="level1">
+            <img class="level" src="../../image/icon/togan.png"
+            onclick="location.href='../../view/game/drawzhuyin.html?id=a1&counties=newTaipei';mouseDownText('o');" />
+        <img class="level_text"  src="../../image/english_alphabet/O.png"
+            onclick="location.href='../../view/game/drawzhuyin.html?id=a1&counties=newTaipei';mouseDownText('o');" />
+        </div>
+       <div class="level2">
+        <img class="level" src="../../image/icon/togan_dark.png"
+        onclick="location.href='../../view/game/drawzhuyin.html?id=b1&counties=newTaipei';mouseDownText('p');" />
+        <img class="level_text" src="../../image/english_alphabet/P.png"
+        onclick="location.href='../../view/game/drawzhuyin.html?id=b1&counties=newTaipei';mouseDownText('p');" />
+       </div>
+        <div class="level3">
+            <img class="level" src="../../image/icon/togan_dark.png"
+            onclick="location.href='../../view/game/drawzhuyin.html?id=c1&counties=newTaipei';mouseDownText('q');" />
+            <img class="level_text" src="../../image/english_alphabet/Q.png"
+            onclick="location.href='../../view/game/drawzhuyin.html?id=c1&counties=newTaipei';mouseDownText('q');" />
+        </div>
+       <div class="level4">
+        <img class="level" src="../../image/icon/togan_dark.png" onclick="location.href='../../view/game/drawzhuyin.html?id=d1&counties=newTaipei';mouseDownText('r');" />
+        <img class="level_text" src="../../image/english_alphabet/R.png" onclick="location.href='../../view/game/drawzhuyin.html?id=d1&counties=newTaipei';mouseDownText('r');" />
+       </div>
+  
+        <img class="level5" src="../../image/icon/devil_lock.png"  onclick="alert('需要先完成縣市所有關卡！')"/>
+        
+    </div>
+    <img class="taiwan" src="../../image/character/NowInNantou.png" onclick="location.href='../../view/level/taiwan.html'" />
+    <div>
+        <a href="../../test1.html" class="sosfloat" id="menu-share">
+            <i class="fab fa-share my-float"><img src="../../photo/help.png" width="70%"></i>
+        </a>
+    </div>
+    <div>
+        <a href="../../game_home.html" class="returnfloat" id="menu-share">
+            <i class="fab fa-share return-float"><img src="../../photo/return.png"></i>
+        </a>
+    </div>
+    <div>
+        <a href="../../game_home.html" class="homefloat" id="menu-share">
+            <i class="fab fa-share my-float"><img src="../../photo/gobackhome.png" width="70%"></i>
+        </a>
+    </div>
+    <script>
+        function featuresText(category) {
+    const information = document.querySelector('#information')
+    switch (category) {
+        case "新北":
+            information.innerHTML = "&emsp;&emsp;桃園市擁有多元的文化，加上北橫豐富的山水景觀、兩蔣文化園區的獨特歷史文化及「草花王國的故鄉」、「千塘之鄉」等美名，成就桃園為觀光大市，也因這些屬於桃園特別的風華面貌，讓民眾在此相遇，留下了精彩回憶。";
+            mouseDownText(information.innerHTML);
+            break;
+        case "Xpark海生館":
+            information.innerHTML = "&emsp;&emsp;「Xpark」水族館是由台灣與日本橫濱八景島人氣水族館樂園耗時5年規劃打造，為台灣首座新都會型的水生公園，並創造出360度的沈浸式空間，顛覆傳統水族館樣貌。";
+            mouseDownText(information.innerHTML);
+            break;
+        case "桃園國際機場":
+            information.innerHTML="&emsp;&emsp;臺灣桃園國際機場是臺灣最大的機場，1979年2月26日啟用時的名稱為中正國際機場，為當時亞洲最現代化的國際機場之一，於2006年10月改為現名。";
+            mouseDownText(information.innerHTML);
+            break;
+
+    }
+}
+
+    </script>
+    <script src="../../model/util/voiceOut.js"></script>
+</body>
+
+</html>
