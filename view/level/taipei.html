@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GrowUp學習趣</title>
+    <link rel="stylesheet" href="../../CSS/map/taipei.css">
+    <link rel="stylesheet" href="../../CSS/map/counties.css">
+    <link rel="stylesheet" href="../../CSS/interface.css">
+    <link rel="stylesheet" href="../../CSS/icon.css">
+
+</head>
+
+<body class="style" background="../../image/map/kraftPaper5.png">
+    <table class="features">
+        <tr>
+            <td colspan="2" style="font-size: 40px;text-align: center;">台北</td>
+        </tr>
+        <tr>
+            <td >特色</td>
+            <td >資訊介紹</td>
+        </tr>
+        <tr>
+            <td ><img src="../../image/map/NewTaipei_origin.png" onclick="featuresText('台北')" />台北</td>
+            <td id="information" rowspan="4" valign="top" style="font-size:x-large;" >
+                &emsp;&emsp;從世界最高樓（2004~2010）到國際級的中華藝術典藏，我們誠摯的邀請您來到這個充滿著對比的城市。現代與傳統相互包容外，再結合了無比活力與親切笑容，臺北定會成為您在亞洲最美好的回憶。
+            </td>
+        </tr>
+        <tr>
+            <td ><img src="../../image/map_icon/Taipei_Chiang_Kai_shek_Memorial_Hall.png" onclick="featuresText('國立中正紀念堂')" />國立中正紀念堂</td>
+        </tr>
+        <tr>
+            <td ><img src="../../image/map_icon/Taipei_National_Palace_Museum.png" onclick="featuresText('國立故宮博物院')" />國立故宮博物院</td>
+        </tr>
+       
+
+    </table>
+    <div class="map">
+        <img id="county" class="terrain" src="../../image/map/Taipei1.png" />
+        <div class="level1">
+            <img class="level" src="../../image/icon/taipei101.png"
+            onclick="location.href='../../view/game/drawzhuyin.html?id=a1&counties=newTaipei';mouseDownText('a');" />
+        <img class="level_text"  src="../../image/english_alphabet/A.png"
+            onclick="location.href='../../view/game/drawzhuyin.html?id=a1&counties=newTaipei';mouseDownText('a');" />
+        </div>
+       <div class="level2">
+        <img class="level" src="../../image/icon/taipei101.png"
+        onclick="location.href='../../view/game/drawzhuyin.html?id=b1&counties=newTaipei';mouseDownText('b');" />
+        <img class="level_text" src="../../image/english_alphabet/B.png"
+        onclick="location.href='../../view/game/drawzhuyin.html?id=b1&counties=newTaipei';mouseDownText('b');" />
+       </div>
+        <div class="level3">
+            <img class="level" src="../../image/icon/taipei101.png"
+            onclick="location.href='../../view/game/drawzhuyin.html?id=c1&counties=newTaipei';mouseDownText('c');" />
+            <img class="level_text" src="../../image/english_alphabet/C.png"
+            onclick="location.href='../../view/game/drawzhuyin.html?id=c1&counties=newTaipei';mouseDownText('c');" />
+        </div>
+       <div class="level4">
+        <img class="level" src="../../image/icon/taipei101_dark.png" onclick="location.href='../../view/game/drawzhuyin.html?id=d1&counties=newTaipei';mouseDownText('d');" />
+        <img class="level_text" src="../../image/english_alphabet/D.png" onclick="location.href='../../view/game/drawzhuyin.html?id=d1&counties=newTaipei';mouseDownText('d');" />
+       </div>
+      
+        <img class="level5" src="../../image/icon/devil_lock.png"  onclick="alert('需要先完成縣市所有關卡！')"/>
+        
+    </div>
+    <img class="taiwan" src="../../image/character/NowInNantou.png" onclick="location.href='../../view/level/taiwan.html'" />
+    <div>
+        <a href="../../test1.html" class="sosfloat" id="menu-share">
+            <i class="fab fa-share my-float"><img src="../../photo/help.png" width="70%"></i>
+        </a>
+    </div>
+    <div>
+        <a href="../../game_home.html" class="returnfloat" id="menu-share">
+            <i class="fab fa-share return-float"><img src="../../photo/return.png"></i>
+        </a>
+    </div>
+    <div>
+        <a href="../../game_home.html" class="homefloat" id="menu-share">
+            <i class="fab fa-share my-float"><img src="../../photo/gobackhome.png" width="70%"></i>
+        </a>
+    </div>
+    <script>
+        function featuresText(category) {
+    const information = document.querySelector('#information')
+    switch (category) {
+        case "台北":
+            information.innerHTML = "&emsp;&emsp;從世界最高樓（2004~2010）到國際級的中華藝術典藏，我們誠摯的邀請您來到這個充滿著對比的城市。現代與傳統相互包容外，再結合了無比活力與親切笑容，臺北定會成為您在亞洲最美好的回憶。";
+            mouseDownText(information.innerHTML);
+            break;
+        case "國立中正紀念堂":
+            information.innerHTML = "&emsp;&emsp;占地24.79公頃的中正紀念堂位於臺北市中心，是為追念先總統 蔣公而建造的紀念堂。由於占地廣闊、建築美麗，是民眾活動聚會及婚紗攝影的勝地，更成為國外旅客必訪之地。";
+            mouseDownText(information.innerHTML);
+            break;
+        case "國立故宮博物院":
+            information.innerHTML="&emsp;&emsp;故宮收藏的文物珍寶，是舉世聞名的文化資產，從帝王收藏到全民共有，傳承有序的國立故宮博物院典藏，其收藏品的年代幾乎囊括了整個中華文化五千餘年未曾中斷的歷史，在世界文明史上獨一無二。博物院內60多萬件收藏品中，大多數是昔日中國皇室的收集品，皇室的收藏則始自1000多年前的宋朝。";
+            mouseDownText(information.innerHTML);
+            break;
+
+    }
+}
+
+    </script>
+    <script src="../../model/util/voiceOut.js"></script>
+</body>
+
+</html>
