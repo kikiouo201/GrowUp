@@ -35,7 +35,7 @@ a:-webkit-any-link {
     margin: 60px auto;
     margin-bottom: 20px;
     box-sizing: border-box;
-    background-image: url(../image/character/bg.png);
+    background-image: url(../image/character/bg_no.png);
     background-size: 50% 620px;
     /* background-repeat: no-repeat; */
 }
@@ -123,13 +123,13 @@ a:-webkit-any-link {
 }
 
 .left_button {
-    width: 80px;
-    height: 80px;
+    width: 140px;
+    /* height: 120px; */
     position: absolute;
-    left: 21.5%;
-    bottom: 5px;
+    left: 18%;
+    bottom: -30px;
     cursor: pointer;
-    background-color: darkred;
+    /* background-color: darkred; */
 }
 
 .leftZhuyin {
