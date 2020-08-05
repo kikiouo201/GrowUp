@@ -43,7 +43,7 @@ if (voiceBtn) {
         var CardID_A = 'speaker_A_' + countCardNum
         console.log("A= " + 'speaker_A_' + countCardNum)
 
-        const createQA = (text, text2, text3) => `<div class="card text-white mb-3" style="background-color: #92337eba;">
+        const createQA = (text, text2, text3) => `<div id="pictureText" class="card text-white mb-3" style="background-color: #92337eba;">
                                         
                                             <div class="card-body" style="margin-top: 30px;">
                                                 <img class="collect_LeftTop" onclick="collect(this)" id="` + CardID_Collect + `" src="icons/bookmark.png"/>
@@ -65,20 +65,6 @@ if (voiceBtn) {
 
                                             </div>
 
-                                            <div class="card-header contentCss" id="QA_num_" style="background-color: #f8f9fa24; padding-bottom: 40px;">
-                                                <p class="contentlink">相關繪本連結：</p>
-                                                <p class="book_css">蘋果甜蜜蜜</p>
-                                                <img class="speaker_A" onclick="speakerBookName(this)" id="speaker_A" src="icons/speaker.png" style="margin-top: -55px" />
-
-                                                <img src="https://children.moc.gov.tw/resource/animate_image/6892.jpg" style="margin-left: 20px; display: inline;" width="180" height="153" alt="蘋果甜蜜蜜">
-                                                <p style="display: inline; margin-left: 20px; margin-top: 40px; position: absolute; margin-right: 40px;">
-                                                    嫁接的蜜蘋果要先習慣這塊土地，接受泥土的養分之後，才能慢慢慢慢的發芽開花。在這塊土地上接受多元文化洗禮、共同生活的人，不也像蜜蘋果一樣嗎？願藉此，獻上我們最深的祝福！</p>
-                                                <img class="speaker_A" onclick="speakerBook(this)" id="speaker_A" src="icons/speaker.png" style="margin-top: 131px; display: inline; bottom: 31px;" />
-
-                                            </div>
-                                            <div class="card-header" id="QA_num_">
-                                            
-                                            </div>
                                         </div>`;
 
 
@@ -106,8 +92,11 @@ if (voiceBtn) {
         console.log("Q:" + createQA)
         ipcRenderer.once('voice-require-to-py-reply-result', (event, data) => {
             console.log("url =>" + data.url)
+            console.log("q =>" + data.q)
                 // console.log("QName =>" + data.QName)
                 // debugger
+            QA_card.innerHTML = QA_card.innerHTML + createQA(data.q, data.url, data.a);
+
             if (data.a.toString().trim() == 'TurnToOpenCamera') { //如果偵測到「問這是什麼」類型的問題
                 SystemVal.innerHTML = '切換至「你拍我答」'
                 setTimeout(document.location.href = "result.html", 5000);
@@ -121,9 +110,50 @@ if (voiceBtn) {
                 SystemVal.innerHTML = '開啟小遊戲至「打地鼠遊戲」'
                 setTimeout(document.location.href = "./view/gophers.html", 5000);
                 console.log("gophers true")
+            } else if (data.q.toString().trim() == '蘋果是什麼') {
+                console.log()
+                let pictureBook = document.querySelector('#pictureText');
+
+                if (pictureBook) {
+                    pictureBook.innerHTML += `<div class="card-header contentCss" id="QA_num_" style="background-color: #f8f9fa24; padding-bottom: 40px;">
+                    <p class="contentlink">相關繪本連結：</p>
+                    <p class="book_css">蘋果甜蜜蜜</p>
+                    <img class="speaker_A" onclick="speakerBookName(this)" id="speaker_A" src="icons/speaker.png" style="margin-top: -55px" />
+    
+                    <img src="https://children.moc.gov.tw/resource/animate_image/6892.jpg" style="margin-left: 20px; display: inline;" width="180" height="153" alt="蘋果甜蜜蜜">
+                    <p style="display: inline; margin-left: 20px; margin-top: 40px; position: absolute; margin-right: 40px;">
+                        嫁接的蜜蘋果要先習慣這塊土地，接受泥土的養分之後，才能慢慢慢慢的發芽開花。在這塊土地上接受多元文化洗禮、共同生活的人，不也像蜜蘋果一樣嗎？願藉此，獻上我們最深的祝福！</p>
+                    <img class="speaker_A" onclick="speakerBook(this)" id="speaker_A" src="icons/speaker.png" style="margin-top: 131px; display: inline; bottom: 31px;" />
+    
+                </div>
+                <div class="card-header" id="QA_num_">
+                
+                </div>`
+
+                }
+            } else if (data.q.toString().trim() == '香蕉是什麼') {
+                console.log()
+                let pictureBook = document.querySelector('#pictureText');
+
+                if (pictureBook) {
+                    pictureBook.innerHTML += `<div class="card-header contentCss" id="QA_num_" style="background-color: #f8f9fa24; padding-bottom: 40px;">
+                    <p class="contentlink">相關繪本連結：</p>
+                    <p class="book_css">香蕉的秘密</p>
+                    <img class="speaker_A" onclick="speakerBookName(this)" id="speaker_A" src="icons/speaker.png" style="margin-top: -55px" />
+    
+                    <img src="https://children.moc.gov.tw/resource/animate_image/6924.jpg" style="margin-left: 20px; display: inline;" width="180" height="153" alt="蘋果甜蜜蜜">
+                    <p style="display: inline; margin-left: 20px; margin-top: -5px; position: absolute; margin-right: 40px;">
+                    從日本回到台灣的小表妹，第一次吃到不用沾蜂蜜就又香又甜的香蕉。但是過了幾天，香蕉皮上長出了黑點，是已經壞掉不能吃了嗎？這你就搞錯囉，香蕉皮上的黑點可是香蕉成熟的暗號呢！\r\n內容介紹香蕉的生長過程、香蕉的採收、產銷過程，為你完整解開香蕉的祕密。</p>
+                    <img class="speaker_A" onclick="speakerBook(this)" id="speaker_A" src="icons/speaker.png" style="margin-top: 131px; display: inline; bottom: 31px;" />
+    
+                </div>
+                <div class="card-header" id="QA_num_">
+                
+                </div>`
+
+                }
             }
             // messages.innerHTML = messages.innerHTML + createQ(data.q) + createA(data.a);
-            QA_card.innerHTML = QA_card.innerHTML + createQA(data.q, data.url, data.a);
             // console.log("dataA="+data.a.toString())
             // console.log("test=A? =>"+document.getElementById('Answer01').textContent);
 
