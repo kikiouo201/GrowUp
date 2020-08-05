@@ -1,118 +1,79 @@
-// var zerorpc = require("zerorpc");
-// var client = new zerorpc.Client();
-// client.connect("tcp://127.0.0.1:4242");
-
-// let name = document.querySelector('#name')
-// let result = document.querySelector('#result')
-// name.addEventListener('input', () => {
-//   client.invoke("hello", name.value, (error, res) => {
-//     if(error) {
-//       console.error(error)
-//     } else {
-//       result.textContent = res
-//     }
-//   })
-// })
-// name.dispatchEvent(new Event('input'))
-
-
-// 'use strict';
-
-//> ipc for renderer process
 let {ipcRenderer }= require('electron');
+// const createQA = (text, text2, text3, text4, text5) =>`<div class="card text-white  mb-3" style="background-color: #92337eba;">
 
+//     <div class="card-body" style="margin-top: 30px;">
+//         <div style="float:left; display: block; text-align: left;">
+//             <p id="Ans" class="card-text card_A" style="float: left;">答案：</p>
+//             <p id="AnsTxt" class="card-text card_A" style="margin-left: 0px;">${text}</p>
+//             <img class="speaker_A" id="speaker_A" src="icons/speaker.png" />
+//         </div>
 
+//         <div style="float:left; display: block; text-align: left;">
+//             <p id="explain" class="card-text card_A" style="float: left;">敘述：</p>
+//             <p id="explainTxt" class="card-text card_A" style="margin-left: 0px;">${text2}</p>
+//             <img class="speaker_A" id="speaker_A" src="icons/speaker.png" />
+//         </div>  
+//     </div>
+//     <div class="card-header contentCss" id="QA_num_" style="background-color: #f8f9fa24;">
+//         <p class="contentlink">相關繪本連結：</p>
+//         <p class="book_css">${text3}</p>
+//         <img src="${text4}"
+//             style="margin-left: 20px; display: inline;" width="180" height="153" alt="蘋果甜蜜蜜">
+//         <p
+//             style="display: inline; margin-left: 20px; margin-top: 40px; position: absolute; margin-right: 40px; font-size: 20pt;">
+//             ${text5}</p>
+//     </div>
+//     <div class="card-header" id="QA_num_">
+//         <p class="contentlink">相關連結解釋：</p>
+//     </div>
 
-
-//> voice button
-let voiceBtn = document.querySelector('#voice')
-if(voiceBtn){
-    voiceBtn.addEventListener('click', () => {
-        //> send a message to voice-require-to-py 傳送到 main.js
-        ipcRenderer.send('voice-require-to-py');
-    });
-}
-
+// </div>
+// `
 
 let identifyBtn = document.querySelector('#identify-js');
 if(identifyBtn){
 identifyBtn.addEventListener('click',()=>{   
     ipcRenderer.send('captrue');
     ipcRenderer.send('vision');
-    document.getElementById('leadTxt').innerHTML="辨識中。。。";
+    ipcRenderer.send('call-picturebook')
     console.log('ready');
+
+    ipcRenderer.on('reply-visionready',(event,data)=>{
+        document.getElementById('leadTxt').innerHTML="辨識中。。。";
+        ipcRenderer.send('vision-start');
+    })
+
+    ipcRenderer.on('reply-mainjsfunction',(event,data)=>{
+        ipcRenderer.send('crawler',data)
+        // data.forEach(label => all+="\nyo="+label);
+        document.getElementById('AnsTxt').innerHTML=" "+data
+    })
+
+    ipcRenderer.on('reply-webcrawlerfunction',(event,data) =>{
+        if(data==undefined){
+            document.getElementById('explainTxt').innerHTML="";
+        }else{
+            var ShowVisibility = document.querySelector('.QA_card_area');
+            var ImgVisibility = document.querySelector('img#AnsImg');
+            ShowVisibility.style.visibility = "visible";
+            ImgVisibility.style.visibility = "visible";
+            document.getElementById('leadTxt').innerHTML="辨識成功!!";
+            document.getElementById('explainTxt').innerHTML=data;
+        }
+        
+    })
+
+    ipcRenderer.on('reply-picturebookcrawler',(event,data)=>{
+
+    })
+
+
+    ipcRenderer.on('reply-mainjsfunction-captrue',(event,data)=>{
+        console.log("hihi");
+        document.getElementById("AnsImg").src="./still-image.jpg"
+    })
+    
 
     })
 }
 
-let fruitcheck = document.querySelector("#fruitchk")
-var resultdata = {"Ansresult":"","explain":"果肉通常為紅色或黃色，水分多，味甜。"}
-resultdata["Ansresult"]="西瓜"
-
-if(fruitcheck){
-    fruitcheck.addEventListener('change',()=>{
-        ipcRenderer.send('fruitcheck-call',resultdata);
-         console.log("change");
-    });
-}
-
-
-ipcRenderer.on('reply-mainjsfunction',(event,data)=>{
-    ipcRenderer.send('crawler',data)
-    // data.forEach(label => all+="\nyo="+label);
-    document.getElementById('Ans').innerHTML="答案:";
-    document.getElementById('AnsTxt').innerHTML=" "+data;
-    document.getElementById('explain').innerHTML="敘述:";
-    document.getElementById('leadTxt').innerHTML="辨識成功!!";
-})
-
-
-ipcRenderer.on('reply-webcrawlerfunction',(event,data) =>{
-    if(data==undefined){
-        document.getElementById('explainTxt').innerHTML="";
-    }else{
-        document.getElementById('explainTxt').innerHTML=data;
-    }
-    
-})
-
-ipcRenderer.on('reply-mainjsfunction-captrue',(event,data)=>{
-    console.log("hihi");
-    document.getElementById("AnsImg").src="./still-image.jpg"
-})
-
-
-
-
-
-
-
-// const ipc = require('electron').ipcRenderer
-
-// const asyncMsgBtn = document.getElementById('async-msg')
-
-// asyncMsgBtn.addEventListener('click', function () {
-//   ipc.send('asynchronous-message', 'ping')
-// })
-
-// ipc.on('asynchronous-reply', function (event, arg) {
-//   const message = `Asynchronous message reply: ${arg}`
-//   document.getElementById('async-reply').innerHTML = message
-// })
-
-// function sendToPython() {
-//   var { PythonShell } = require('python-shell');
-
-//   let options = {
-//     mode: 'text',
-//     args: [input.value]
-//   };
-
-//   PythonShell.run('./py/calc.py', options, function (err, results) {
-//     if (err) throw err;
-//     // results is an array consisting of messages collected during execution
-//     console.log('results: ', results);
-//     result.textContent = results[0];
-//   });
-
-// }
