@@ -58,20 +58,23 @@ score.addEventListener('click', () => {
 
     const status=document.querySelector('.status');
     const props=document.querySelector('.props');
+  
    if (totalPoint < 3) {
         status.innerHTML="再加油";
         props.style.visibility="hidden";
+       
        // nextLevel='no';
     } else  {
         status.innerHTML="你好棒";
         props.style.visibility="visible";
+        
     }
     console.log('totalPoint= ' + totalPoint);
 
     const black_overlay=document.querySelector('.black_overlay');
     black_overlay.style.visibility = "visible";
     
-
+    
 });
 
 const close = document.querySelector('.close');
