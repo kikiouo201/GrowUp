@@ -91,6 +91,12 @@ close.addEventListener('click',() => {
     black_overlay.style.visibility = "hidden";
 });
 
+function reset(){
+   // let reset=document.querySelector('.reset');
+   let canvas = document.querySelector('.draw');
+    let ctx = canvas.getContext('2d');
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+}
 
 function challengeAgain(){
     let id = (new URLSearchParams(location.search)).get("id");
