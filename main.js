@@ -175,7 +175,7 @@ ipcMain.on('crawler', async(event, args) => {
     // let webcrawler = await callCrawler.webcrawler();
     //  console.log(`webcrawler=${webcrawler}`)
     const data = encodeURI(args)
-
+    console.log(data)
     const url = 'https://www.moedict.tw/' + data + '#gsc.tab=0'
 
     console.log(url)
@@ -197,12 +197,13 @@ ipcMain.on('crawler', async(event, args) => {
 
 
 ipcMain.on('captrue', async(event, args) => {
+    console.log("call captrue");
     const stillCamera = new StillCamera();
 
     const image = await stillCamera.takeImage();
 
     fs.writeFileSync("still-image.jpg", image);
-    console.log("call captrue");
+   
     event.sender.send('reply-mainjsfunction-captrue')
 })
 

@@ -15,6 +15,7 @@ async function start(){
   // Performs label detection on the image file
     const [result] =await client.labelDetection('still-image.jpg');
     var labels = result.labelAnnotations;
+    console.log(labels)
     let text = ""; 
     
     for(var i=0;i<labels.length;i++){
@@ -31,13 +32,22 @@ async function start(){
         if(labels[i].description.toString() == "Banana"){
             text = labels[i].description;
         }
+
+        if(labels[i].description.toString() == "Laptop"){
+            text = labels[i].description;
+        }
+
+        else{
+            text = labels[0].description;
+        }
     }
     
     const target = "zh-TW"
     let [translations] = await translate.translate(text, target);
     translations = Array.isArray(translations) ? translations : [translations];
-    // console.log('Translations:'+translations);
+    console.log('Translations:'+translations);
     return translations
+
     
 }
 start().catch(console.error);

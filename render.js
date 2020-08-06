@@ -34,8 +34,6 @@ let identifyBtn = document.querySelector('#identify-js');
 if(identifyBtn){
 identifyBtn.addEventListener('click',()=>{   
     ipcRenderer.send('captrue');
-    ipcRenderer.send('vision');
-    ipcRenderer.send('call-picturebook')
     console.log('ready');
 
     ipcRenderer.on('reply-visionready',(event,data)=>{
@@ -45,6 +43,7 @@ identifyBtn.addEventListener('click',()=>{
 
     ipcRenderer.on('reply-mainjsfunction',(event,data)=>{
         ipcRenderer.send('crawler',data)
+        console.log(data)
         // data.forEach(label => all+="\nyo="+label);
         document.getElementById('AnsTxt').innerHTML=" "+data
     })
@@ -58,19 +57,17 @@ identifyBtn.addEventListener('click',()=>{
             ShowVisibility.style.visibility = "visible";
             ImgVisibility.style.visibility = "visible";
             document.getElementById('leadTxt').innerHTML="辨識成功!!";
+
             document.getElementById('explainTxt').innerHTML=data;
         }
         
-    })
-
-    ipcRenderer.on('reply-picturebookcrawler',(event,data)=>{
-
     })
 
 
     ipcRenderer.on('reply-mainjsfunction-captrue',(event,data)=>{
         console.log("hihi");
         document.getElementById("AnsImg").src="./still-image.jpg"
+        ipcRenderer.send('vision');
     })
     
 
