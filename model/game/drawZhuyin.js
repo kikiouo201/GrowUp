@@ -38,6 +38,29 @@ myPics.forEach((pics, num) => {
             isDrawing = false;
         }
     });
+    pics.addEventListener('touchend', e => {
+        x = e.offsetX;
+        y = e.offsetY;
+        isDrawing = true;
+    });
+
+    pics.addEventListener('touchmove', e => {
+        if (isDrawing === true) {
+            drawLine(context, x, y, e.offsetX, e.offsetY);
+            x = e.offsetX;
+            y = e.offsetY;
+           console.log('scoreJudgment');
+            scoreJudgment(id,x, y, points, num);
+        }
+    });
+    window.addEventListener('touchstart', e => {
+        if (isDrawing === true) {
+            drawLine(context, x, y, e.offsetX, e.offsetY);
+            x = 0;
+            y = 0;
+            isDrawing = false;
+        }
+    });
 });
 
 const score = document.querySelector('.score');
