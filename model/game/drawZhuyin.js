@@ -26,7 +26,7 @@ myPics.forEach((pics, num) => {
             drawLine(context, x, y, e.offsetX, e.offsetY);
             x = e.offsetX;
             y = e.offsetY;
-           
+           console.log('scoreJudgment');
             scoreJudgment(id,x, y, points, num);
         }
     });
@@ -57,25 +57,14 @@ score.addEventListener('click', () => {
     });
 
     const status=document.querySelector('.status');
-    const statustext=document.querySelector('.statusText');
-    if (totalPoint == 0) {
-        status.innerHTML="失敗";
-        statustext.innerHTML="0分";
-      //  nextLevel='no';
-    } else if (totalPoint < 10) {
-        status.innerHTML="失敗";
-        statustext.innerHTML="30分！再加油";
+    const props=document.querySelector('.props');
+   if (totalPoint < 3) {
+        status.innerHTML="再加油";
+        props.style.visibility="hidden";
        // nextLevel='no';
-    } else if (totalPoint < 20) {
-        status.innerHTML="失敗";
-        statustext.innerHTML="50分！很棒再努力喔！";
-       // nextLevel='no';
-    } else if (totalPoint < 25) {
-        status.innerHTML="成功";
-        statustext.innerHTML="70分！太棒了！你做得真好！";
-    } else if (totalPoint < 30) {
-        status.innerHTML="成功";
-        statustext.innerHTML="90分！太厲害了！你是小天才！";    
+    } else  {
+        status.innerHTML="你好棒";
+        props.style.visibility="visible";
     }
     console.log('totalPoint= ' + totalPoint);
 
@@ -176,11 +165,11 @@ function drawLine(context, x1, y1, x2, y2) {
 }
 
 let judgmentCriteria = {
-    b: [{ x: [43, 50], y: [19, 22] },
-     { x: [25, 40], y: [45, 48] },
-     { x: [84, 86], y: [37, 48] },
-     { x: [58, 65], y: [98, 105] },
-     { x: [45, 50], y: [93, 100] } ] ,
+    b: [{ x: [127, 158], y: [50, 76] },
+     { x: [69, 124], y: [120, 130] },
+     { x: [265, 300], y: [120, 145] },
+     { x: [175, 205], y: [280, 335] },
+     { x: [150, 160], y: [270, 295] } ] ,
      p: [{ x: [43, 50], y: [19, 22] },
      { x: [25, 40], y: [45, 48] },
      { x: [84, 86], y: [37, 48] },
@@ -191,11 +180,12 @@ let judgmentCriteria = {
 
 
 function scoreJudgment(id ,x, y, points, num) {
-
+    if(id==null) id='b';
     let criterias =judgmentCriteria[id];
         
         for(let i=0;i<criterias.length;i++){
             let criteria=criterias[i];
+            console.log(`x=${x},y=${y}`)
             if (criteria.y[0] < y && y < criteria.y[1] && criteria.x[0] < x && x < criteria.x[1]) {
                 points[num][i] = 1;
             }
