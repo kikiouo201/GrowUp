@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas {
+            border: 1px solid #000;
+        }
+
+        body {
+            background-color: #ebebeb;
+            cursor: crosshair;
+        }
+
+        #buttons {
+            position: absolute;
+            top: 5px;
+            left: 10px;
+        }
+
+        #reset {
+            margin-top: 10px;
+            margin-left: 5px;
+            float: left;
+        }
+        #save {
+            margin-top: 10px;
+            margin-left: 10px;
+            float: left;
+        }
+
+        .color {
+            width: 20px;
+            height: 20px;
+            float: left;
+            margin-top: 10px;
+            margin-left: 5px;
+            cursor: pointer;
+            border: 1px solid #000;
+            text-align: center;
+        }
+
+        #red {
+            background-color: red;
+        }
+
+        #blue {
+            background-color: blue;
+        }
+
+        #green {
+            background-color: green;
+        }
+
+        #purple {
+            background-color: purple;
+        }
+
+        #yellow {
+            background-color: yellow;
+        }
+
+        #orange {
+            background-color: orange;
+        }
+
+        #pink {
+            background-color: pink;
+        }
+
+        #black {
+            background-color: black;
+        }
+
+        #white {
+            background-color: white;
+        }
+
+        #ebebeb {
+            background-color: #ebebeb;
+            margin-right: 20px;
+        }
+    </style>
+    <script>
+        function download(){
+    document.getElementById("downloader").download = "image.png";
+    document.getElementById("downloader").href = document.getElementById("art").toDataURL("image/png").replace(/^data:image\/[^;]/, 'data:application/octet-stream');
+    let saveImg=document.querySelector('saveImg');
+    saveImg.innerHTML="<img src='"+d+"' alt='from canvas'/>";
+    }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <canvas width="800px" height="800px" id="art"></canvas>
+        <div id="buttons">
+            <input type="button" id="reset" value="Reset" />
+            <input type="button" id="save" value="save"/>
+            <div id='red' class="color"></div>
+            <div id='blue' class="color"></div>
+            <div id='green' class="color"></div>
+            <div id='purple' class="color"></div>
+            <div id='yellow' class="color"></div>
+            <div id='orange' class="color"></div>
+            <div id='pink' class="color"></div>
+            <div id='black' class="color"></div>
+            <div id='white' class="color"></div>
+            <div id='ebebeb' class="color"></div>
+            <div id="default" class="color">1</div>
+            <div id="three" class="color">3</div>
+            <div id="five" class="color">5</div>
+            <div id="ten" class="color">10</div>
+            <div id="fifteen" class="color">15</div>
+            <div id="twenty" class="color">20</div>
+        </div>
+    </div>
+    <div class="saveImg">
+        
+    </div>
+    <script src="../../model/game/painting.js"></script>
+</body>
+
+</html>
