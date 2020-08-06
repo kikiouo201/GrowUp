@@ -22,7 +22,7 @@
         </tr>
         <tr>
             <td><img src="../../image/map/Chiayi_origin.png" onclick="featuresText('嘉義')" />嘉義</td>
-            <td id="information" rowspan="3" valign="top" style="font-size:x-large;">
+            <td id="information" rowspan="4" valign="top" style="font-size:x-large;">
                 &emsp;&emsp;嘉義縣倚山面海，是臺灣所有縣市中，唯一擁有三大國家風景區的縣份：阿里山國家風景區管理處、雲嘉南濱海國家風景區管理處及西拉雅國家風景區管理處，坐擁山色、平原、海景等不同的壯麗與遼闊。
             </td>
         </tr>
@@ -31,6 +31,9 @@
         </tr>
         <tr>
             <td><img src="../../image/map_icon/Chiayi_train.png" onclick="featuresText('阿里山森林鐵路')" />阿里山森林鐵路</td>
+        </tr>
+        <tr>
+            <td><img src="../../image/map_icon/Chiayi_tropic_of_cancer.png" style="width: 45%;"onclick="featuresText('北回歸線')" /><br>北回歸線</td>
         </tr>
 
     </table>
@@ -48,23 +51,13 @@
             <img class="level_text" src="../../image/numbers/2.png"
                 onclick="location.href='../../view/game/drawzhuyin.html?id=2&counties=chiayi';mouseDownText(2);" />
             </div>
-        <div class="level3">
-            <img class="level" src="../../image/icon/meat_rice.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=3&counties=chiayi';mouseDownText(3);" />
+    
+        <div class="level3"> <img class="level" src="../../image/icon/meat_rice_dark.png"
+                onclick="location.href='../../view/game/drawzhuyin.html?id=5&counties=chiayi';mouseDownText(3);" />
             <img class="level_text" src="../../image/numbers/3.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=3&counties=chiayi';mouseDownText(3);" />
-        </div>
-        <div class="level4"> <img class="level" src="../../image/icon/meat_rice.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=4&counties=chiayi';mouseDownText(4);" />
-            <img class="level_text" src="../../image/numbers/4.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=4&counties=chiayi';mouseDownText(4);" />
+                onclick="location.href='../../view/game/drawzhuyin.html?id=5&counties=chiayi';mouseDownText(3);" />
             </div>
-        <div class="level5"> <img class="level" src="../../image/icon/meat_rice_dark.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=5&counties=chiayi';mouseDownText(5);" />
-            <img class="level_text" src="../../image/numbers/5.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=5&counties=chiayi';mouseDownText(5);" />
-            </div>
-        <div class="level6">
+        <div class="level4">
             <img class="level" src="../../image/icon/devil_lock.png"
                 onclick="alert('需要先完成縣市所有關卡！')" />
 
@@ -79,7 +72,7 @@
         </a>
     </div>
     <div>
-        <a href="../../game_home.html" class="returnfloat" id="menu-share">
+        <a href="../level/southRegion.html" class="returnfloat" id="menu-share">
             <i class="fab fa-share return-float"><img src="../../photo/return.png"></i>
         </a>
     </div>
@@ -104,7 +97,10 @@
                     information.innerHTML = "&emsp;&emsp;阿里山森林鐵路從嘉義火車站，歷經3.5小時車程，到達2216公尺的阿里山火車站，與印度大吉嶺至喜馬拉雅山鐵路、智利至阿根廷之安地斯山鐵路，稱世界上僅存的三條登山鐵路，昔日為轉運木材而興建的它，今以蛻變成阿里山森林旅遊列車，讓大家有機會體驗一下阿里山小火車的風情。";
                     mouseDownText(information.innerHTML);
                     break;
-
+                case "北回歸線":
+                    information.innerHTML = "&emsp;&emsp;嘉義北回歸線標誌是指位於台灣嘉義縣水上機場附近的一系列北回歸線標誌物。 首座標誌碑設立於1908年，是世界首座於回歸線上設置的標誌物；1995年於標誌碑旁興建科學教育設施「北回歸線太陽館」。";
+                    mouseDownText(information.innerHTML);
+                    break;
             }
         }
     </script>
