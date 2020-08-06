@@ -27,6 +27,10 @@ async function start(){
         if(labels[i].description.toString() == "Strawberry"){
             text = labels[i].description;
         }
+        
+        if(labels[i].description.toString() == "Banana"){
+            text = labels[i].description;
+        }
     }
     
     const target = "zh-TW"
