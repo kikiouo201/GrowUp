@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html style="width: 100%; height: 100%;" lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -8,29 +8,47 @@
     <link rel="stylesheet" href="../CSS/interface.css">
     <link rel="stylesheet" href="../CSS/every_four_button.css">
     <link rel="stylesheet" href="./css/magicBook.css">
-    <title>魔法小卡</title>
+    <title>魔法寶典</title>
 </head>
+<!-- onload="ShowTime()" -->
 
-<body background="../image/background/desk.png" onload="ShowTime()">
+<body background="../image/background/desk.png">
     <div class="home_page">
         <a href="../game_home.html">魔法寶典</a>
 
         <div id="today"></div>
         <br>
         <div id="showtime"></div>
-
     </div>
 
-    <div id="show_page">
+    <!-- <div id="show_page">
         <div id="book_btn">
             <a href="./picturebook.html"><img id="picturebook" src="../image/background/picturebook.png"></a>
             <a href="./animalbook.html"><img id="animalbook" src="../image/background/animalbook.png"></a>
             <a href="./childsong.html"><img id="songbook" src="../image/background/song.png"></a>
         </div>
+    </div> -->
+
+    <div id="book_btn">
+        <div onclick="document.location.href='./picturebook.html'">
+            <h1>繪本</h1>
+            <img src="../image/background/picturebook.png">
+            <footer style="width: 100%; height: auto;background-color: black;"></footer>
+        </div>
+        <div onclick="document.location.href='./animalbook.html'">
+            <h1>動物本</h1>
+            <img src="../image/background/animalbook.png">
+        </div>
+        <div onclick="document.location.href='./childsong.html'">
+            <h1>兒歌</h1>
+            <img src="../image/background/song.png">
+        </div>
+
     </div>
 
+
     <div>
-        <a href="../game_home.html" class="sosfloat sos_mark" id="menu-share">
+        <a href="../game_home.html" class="sosfloat sos_mark">
             <i class="fab fa-share my-float"><img src="../photo/help.png" width="70%"></i>
         </a>
     </div>
@@ -53,13 +71,13 @@
     </div> -->
 
     <div class="return_mark">
-        <a href="../game_home.html" class="returnfloat" id="menu-share">
+        <a href="../game_home.html" class="returnfloat">
             <i class="fab fa-share return-float"><img src="../photo/return.png"></i>
         </a>
     </div>
 
     <div class="home_mark">
-        <a href="../game_home.html" class="homefloat" id="menu-share">
+        <a href="../game_home.html" class="homefloat">
             <i class="fab fa-share my-float"><img src="../photo/gobackhome.png" width="70%"></i>
         </a>
     </div>
