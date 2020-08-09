@@ -11,7 +11,7 @@
     <style>
         .chiayi{
             position: absolute;
-            top:0px;
+            top:5px;
             left: 10px;
             width: 376px;
             z-index: 10;
@@ -46,9 +46,9 @@
     <div class="map">
         <img class="terrain" src="../../image/map/SouthRegion.png" />
         <img class="chiayi" src="../../image/map/Chiayi1.png" onclick="location.href='../../view/level/chiayi.html'"/>
-        <img class="tainan" src="../../image/map/Tainan_origin.png" onclick="location.href='../../view/level/chiayi.html'"/>
-        <img class="kaohsiung" src="../../image/map/Kaohsiung_origin.png" onclick="location.href='../../view/level/chiayi.html'"/>
-        <img class="pingtung" src="../../image/map/Pingtung_origin.png" onclick="location.href='../../view/level/chiayi.html'"/>
+        <img class="tainan" src="../../image/map/Tainan1.png" onclick="location.href='../../view/level/tainan.html'"/>
+        <img class="kaohsiung" src="../../image/map/Kaohsiung1.png" onclick="location.href='../../view/level/kaohsiung.html'"/>
+        <img class="pingtung" src="../../image/map/Pingtung1.png" onclick="location.href='../../view/level/pingtung.html'"/>
     </div>
     <img class="taiwan" src="../../image/character/NowInNantou.png" onclick="location.href='../../view/level/taiwan.html'" />
     <div>
@@ -57,7 +57,7 @@
         </a>
     </div>
     <div>
-        <a href="../../view/level/taiwan.html" class="returnfloat" id="menu-share">
+        <a onclick="history.back()"class="returnfloat" id="menu-share">
             <i class="fab fa-share return-float"><img src="../../photo/return.png"></i>
         </a>
     </div>
@@ -76,9 +76,9 @@
         case "高山茶":
             information.innerHTML = "&emsp;&emsp;高山茶 (英文high mountain tea)是指在海拔1000公尺以上茶園，所摘取製作的茶葉。高山茶由於生長高度高、採收慢，因此茶葉苦澀度較低。從1980年代興起，20多年來風靡台灣，甚至成為台灣最具知名度茶品，可見其品質優良。";
             break;
-            case "日月潭":
+        case "日月潭":
                 information.innerHTML="&emsp;&emsp;日月潭位於臺灣南投縣魚池鄉，是一座美麗的高山湖泊。潭面以拉魯島為界，東側形如「日」，西側形如「月」，故名日月潭。其周圍山重水複，林木蒼鬱，潭面廣闊水平如鏡，映照群山變化萬千。";
-                break;
+            break;
 
     }
 }

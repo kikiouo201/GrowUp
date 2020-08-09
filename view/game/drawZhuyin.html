@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zn">
 
 <head>
   <meta charset="UTF-8">
@@ -16,15 +16,13 @@
     <div class="result">
       <div class="close">X</div>
       <div class="status">成功</div>
-      <div class="statusText"></div>
       <div class="props">
-        <div>道具</div>
-        <div>小卡</div>
-        <div>經驗值</div>
+        <div class="smallCard">小卡</div>
+        <div>經驗值+10</div>
 
       </div>
       <div class="challengeAgain" onclick="challengeAgain()">再次挑戰</div>
-      <div class="nextLevel" onclick="goNextLevel()">確認</div>
+      <div class="nextLevel" onclick="history.back()">確認</div>
     </div>
   </div>
   <div style="font-size: 50px;">請照著下面描寫</div>
@@ -38,6 +36,7 @@
     <div class="anvas87 write87">
       <!-- <canvas class="draw78" width="370px" height="370px"></canvas> -->
       <img src="../../image/drawZhuyin/finger.png" class="finger"  />
+      <img src="../../image/drawZhuyin/eraser.png" class="reset" onclick="reset();"/>
       <img src="../../image/drawZhuyin/again.png" class="again" onclick="moveFinger();mouseDownText('ㄅ');"/>
     </div> 
     
@@ -65,7 +64,7 @@
     </a>
   </div>
   <div>
-    <a href="../../view/level/nantou.html" class="returnfloat" id="menu-share">
+    <a onclick="history.back()" class="returnfloat" id="menu-share">
       <i class="fab fa-share return-float"><img src="../../photo/return.png"></i>
     </a>
   </div>

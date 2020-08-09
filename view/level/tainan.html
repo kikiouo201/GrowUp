@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GrowUp學習趣</title>
+    <link rel="stylesheet" href="../../CSS/map/tainan.css">
+    <link rel="stylesheet" href="../../CSS/map/counties.css">
+    <link rel="stylesheet" href="../../CSS/interface.css">
+    <link rel="stylesheet" href="../../CSS/icon.css">
+</head>
+
+<body class="style" background="../../image/map/kraftPaper5.png">
+    <table class="features">
+        <tr>
+            <td colspan="2" style="font-size: 40px;text-align: center;">台南</td>
+        </tr>
+        <tr>
+            <td>特色</td>
+            <td>資訊介紹</td>
+        </tr>
+        <tr>
+            <td><img src="../../image/map/Tainan_origin.png" onclick="featuresText('台南')" />台南</td>
+            <td id="information" rowspan="4" valign="top" style="font-size:x-large;">
+                &emsp;&emsp;位於臺灣西南部，地勢平坦，在安平港東北方，是臺灣最早開發地區之一，文物鼎盛，素有古都之稱，亦為南部教育、文化中心。
+            </td>
+        </tr>
+        <tr>
+            <td><img src="../../image/map_icon/Tainan_Chimei_Museum.png" onclick="featuresText('奇美博物館')" />奇美博物館</td>
+        </tr>
+        <tr>
+            <td><img src="../../image/map_icon/Tainan_salt_mountion.png" onclick="featuresText('七股鹽山')" />七股鹽山</td>
+        </tr>
+        <tr>
+            <td><img src="../../image/map_icon/Tainan_Tseng_Wen_Reservoir.png" onclick="featuresText('曾文水庫')" /><br>曾文水庫</td>
+        </tr>
+
+    </table>
+    <div class="map">
+        <img class="terrain" src="../../image/map/Tainan1.png" />
+      
+        <div class="level1">
+            <img class="level_basic" src="../../image/icon/temple.png"
+                onclick="location.href='../../view/game/drawzhuyin.html?id=4&counties=tainan';mouseDownText(4);" />
+            <img class="level_text" src="../../image/numbers/4.png"
+                onclick="location.href='../../view/game/drawzhuyin.html?id=4&counties=tainan';mouseDownText(4);" />
+        </div>
+        <div class="level2"><img class="level_basic" src="../../image/icon/temple.png"
+                onclick="location.href='../../view/game/drawzhuyin.html?id=5&counties=tainan';mouseDownText(5);" />
+            <img class="level_text" src="../../image/numbers/5.png"
+                onclick="location.href='../../view/game/drawzhuyin.html?id=5&counties=tainan';mouseDownText(5);" />
+            </div>
+    
+        <div class="level3"> <img class="level_basic" src="../../image/icon/temple.png"
+                onclick="location.href='../../view/game/drawzhuyin.html?id=6&counties=tainan';mouseDownText(6);" />
+            <img class="level_text" src="../../image/numbers/6.png"
+                onclick="location.href='../../view/game/drawzhuyin.html?id=6&counties=tainan';mouseDownText(6);" />
+            </div>
+        <div class="level4">
+            <img class="level" src="../../image/icon/devil.png"
+                onclick="alert('需要先完成縣市所有關卡！')" />
+
+        </div>
+        、
+    </div>
+    <img class="taiwan" src="../../image/character/NowInNantou.png"
+        onclick="location.href='../../view/level/taiwan.html'" />
+    <div>
+        <a href="../../test1.html" class="sosfloat" id="menu-share">
+            <i class="fab fa-share my-float"><img src="../../photo/help.png" width="70%"></i>
+        </a>
+    </div>
+    <div>
+        <a onclick="history.back()" class="returnfloat" id="menu-share">
+            <i class="fab fa-share return-float"><img src="../../photo/return.png"></i>
+        </a>
+    </div>
+    <div>
+        <a href="../../game_home.html" class="homefloat" id="menu-share">
+            <i class="fab fa-share my-float"><img src="../../photo/gobackhome.png" width="70%"></i>
+        </a>
+    </div>
+    <script>
+        function featuresText(category) {
+            const information = document.querySelector('#information')
+            switch (category) {
+                case "台南":
+                    information.innerHTML = "&emsp;&emsp;台南位於臺灣西南部，地勢平坦，在安平港東北方，是臺灣最早開發地區之一，文物鼎盛，素有古都之稱，亦為南部教育、文化中心。";
+                    mouseDownText(information.innerHTML);
+                    break;
+                case "奇美博物館":
+                    information.innerHTML = `&emsp;&emsp;奇美博物館位於臺灣臺南市仁德區，為奇美實業創辦人許文龍創立，是臺灣館藏最豐富的私人博物館、美術館。以典藏西洋藝術品為主，展出藝術、樂器、兵器與自然史四大領域。`;
+                    mouseDownText(information.innerHTML);
+                    break;
+                case "七股鹽山":
+                    information.innerHTML = "&emsp;&emsp;七股鹽山是臺灣面積最大、最晚發展的七股鹽場遺蹟之一。鹽山海拔高度為20公尺，約相當於七層樓高，也如白雪耀眼，像長年堆雪的長白山，也稱作「南台的長白山」，來臺觀光的日本人則戲稱是「台灣的富士山」。";
+                    mouseDownText(information.innerHTML);
+                    break;
+                case "曾文水庫":
+                    information.innerHTML = "&emsp;&emsp;曾文水庫為台灣最大的水庫與湖泊，興建之目的主要為提供嘉南地區灌溉用水，另具發電、防洪和觀光的功能，是個多目標利用的水庫。";
+                    mouseDownText(information.innerHTML);
+                    break;
+            }
+        }
+    </script>
+    <script src="../../model/util/voiceOut.js"></script>
+</body>
+
+</html>

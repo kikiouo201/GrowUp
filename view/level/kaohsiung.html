@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GrowUp學習趣</title>
+    <link rel="stylesheet" href="../../CSS/map/kaohsiung.css">
+    <link rel="stylesheet" href="../../CSS/map/counties.css">
+    <link rel="stylesheet" href="../../CSS/interface.css">
+    <link rel="stylesheet" href="../../CSS/icon.css">
+</head>
+
+<body class="style" background="../../image/map/kraftPaper5.png">
+    <table class="features">
+        <tr>
+            <td colspan="2" style="font-size: 40px;text-align: center;">高雄</td>
+        </tr>
+        <tr>
+            <td>特色</td>
+            <td>資訊介紹</td>
+        </tr>
+        <tr>
+            <td><img src="../../image/map/Kaohsiung_origin.png" onclick="featuresText('高雄')" />高雄</td>
+            <td id="information" rowspan="3" valign="top" style="font-size:x-large;">
+                &emsp;&emsp;位於臺灣西南部。為「六都」之一，也是臺灣最大工業區。又因有優越的港口，近海漁業發達，亦為重要遠洋漁業基地之一。昔稱為「打狗」。
+            </td>
+        </tr>
+        <tr>
+            <td><img src="../../image/map_icon/Kaohsiung_E_DA_Theme_Park.png" onclick="featuresText('義大遊樂世界')" />義大遊樂世界</td>
+        </tr>
+        <tr>
+            <td><img src="../../image/map_icon/Kaohsiung_pu_lao_hot_spring.png" onclick="featuresText('不老溫泉')" />不老溫泉</td>
+        </tr>
+       
+    </table>
+    <div class="map">
+        <img class="terrain" src="../../image/map/Kaohsiung1.png" />
+      
+        <div class="level1">
+            <img class="level_basic" src="../../image/icon/85building.png"
+                onclick="location.href='../../view/game/drawzhuyin.html?id=7&counties=Kaohsiungi';mouseDownText(7);" />
+            <img class="level_text" src="../../image/numbers/7.png"
+                onclick="location.href='../../view/game/drawzhuyin.html?id=7&counties=Kaohsiung';mouseDownText(7);" />
+        </div>
+        <div class="level2"><img class="level_basic" src="../../image/icon/85building_dark.png"
+                onclick="location.href='../../view/game/drawzhuyin.html?id=8&counties=Kaohsiung';mouseDownText(8);" />
+            <img class="level_text" src="../../image/numbers/8.png"
+                onclick="location.href='../../view/game/drawzhuyin.html?id=8&counties=Kaohsiung';mouseDownText(8);" />
+            </div>
+    
+        <div class="level3"> <img class="level_basic" src="../../image/icon/85building_dark.png"
+                onclick="location.href='../../view/game/drawzhuyin.html?id=9&counties=Kaohsiung';mouseDownText(9);" />
+            <img class="level_text" src="../../image/numbers/9.png"
+                onclick="location.href='../../view/game/drawzhuyin.html?id=9&counties=Kaohsiung';mouseDownText(9);" />
+            </div>
+        <div class="level4">
+            <img class="level" src="../../image/icon/devil.png"
+                onclick="alert('需要先完成縣市所有關卡！')" />
+
+        </div>
+        、
+    </div>
+    <img class="taiwan" src="../../image/character/NowInNantou.png"
+        onclick="location.href='../../view/level/taiwan.html'" />
+    <div>
+        <a href="../../test1.html" class="sosfloat" id="menu-share">
+            <i class="fab fa-share my-float"><img src="../../photo/help.png" width="70%"></i>
+        </a>
+    </div>
+    <div>
+        <a onclick="history.back()" class="returnfloat" id="menu-share">
+            <i class="fab fa-share return-float"><img src="../../photo/return.png"></i>
+        </a>
+    </div>
+    <div>
+        <a href="../../game_home.html" class="homefloat" id="menu-share">
+            <i class="fab fa-share my-float"><img src="../../photo/gobackhome.png" width="70%"></i>
+        </a>
+    </div>
+    <script>
+        function featuresText(category) {
+            const information = document.querySelector('#information')
+            switch (category) {
+                case "高雄":
+                    information.innerHTML = "&emsp;&emsp;高雄位於臺灣西南部。為「六都」之一，也是臺灣最大工業區。又因有優越的港口，近海漁業發達，亦為重要遠洋漁業基地之一。昔稱為「打狗」。";
+                    mouseDownText(information.innerHTML);
+                    break;
+                case "義大遊樂世界":
+                    information.innerHTML = "&emsp;&emsp;義大遊樂世界是南臺灣規模最大的主題遊樂園區，園區內的主題樂園皆採希臘情境設計，希臘神殿、希臘主題商品、希臘餐廳，還有希臘歷史場景的遊樂館等，讓遊客享受如在異國的旅遊情趣。";
+                    mouseDownText(information.innerHTML);
+                    break;
+                case "不老溫泉":
+                    information.innerHTML = "&emsp;&emsp;早先在荖濃溪上有一條支流小溪，由於終年冒出 自地層內的熱水，村民皆扶老攜幼去沐浴，對皮膚病有神奇的功效，村民稱此為熱水溪。現在改名為不老溪。";
+                    mouseDownText(information.innerHTML);
+                    break;
+            }
+        }
+    </script>
+    <script src="../../model/util/voiceOut.js"></script>
+</body>
+
+</html>

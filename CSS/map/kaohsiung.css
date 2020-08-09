@@ -22,57 +22,48 @@ body{
     width: 75px;
     position: absolute;
     z-index: 10;
-    top: 136px;
-    left: 290px;
+    top: 70px;
+    left: 581px;
+}
+.level_basic{
+    width: 68px;
+
 }
 .level{
-    width: 70px;
+    width: 110px;
 
 }
 .level_text{
-    width: 78px;
+    width: 40px;
     position: absolute;
     z-index: 10;
-    top: 34px;
-    left: 32%;
+    top: 60px;
+    left: 25%;
 }
-
 .level2{
     width: 100px;
     position: absolute;
     z-index: 10;
-    top: 225px;
-    left: 46px;
+    top: 390px;
+    left: 466px;
 }
+
 .level3{
     width: 100px;
     position: absolute;
     z-index: 10;
-    top: 341px;
-    left: 164px;
+    top: 442px;
+    left: 213px;
 }
 
 .level4{
     width: 100px;
     position: absolute;
     z-index: 10;
-    top: 527px;
-    left: 228px;
+    top: 678px;
+    left: 135px;
 }
 
-.level5{
-    width: 100px;
-    position: absolute;
-    z-index: 10;
-    top: 302px;
-    left: 340px;
-}
 
-.level6{
-    width: 78px;
-    position: absolute;
-    z-index: 10;
-    top: 300px;
-    left: 588px;
-}
+
 

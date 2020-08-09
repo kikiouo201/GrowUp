@@ -15,20 +15,20 @@
 <body class="style" background="../../image/map/kraftPaper5.png">
     <table class="features">
         <tr>
-            <td colspan="2" style="font-size: 40px;text-align: center;">基隆</td>
+            <td colspan="2" style="font-size: 40px;text-align: center;">基隆市</td>
         </tr>
         <tr>
             <td >特色</td>
             <td >資訊介紹</td>
         </tr>
         <tr>
-            <td ><img src="../../image/map/Keelung_origin.png" onclick="featuresText('基隆')" />基隆</td>
+            <td ><img src="../../image/map/Keelung_origin.png" onclick="featuresText('基隆市')" />基隆市</td>
             <td id="information" rowspan="4" valign="top" style="font-size:x-large;" >
-                &emsp;&emsp;基隆位於臺灣北部，三面環山，僅北面一處有少量平原迎向大海，即為深水谷灣之基隆港。 港灣深入市區，水面寬闊，集商港、軍港、漁港於一身，為進入北臺灣門戶。
+                &emsp;&emsp;基隆市位於臺灣北部，三面環山，僅北面一處有少量平原迎向大海，即為深水谷灣之基隆港。 港灣深入市區，水面寬闊，集商港、軍港、漁港於一身，為進入北臺灣門戶。
             </td>
         </tr>
         <tr>
-            <td ><img src="../../image/map_icon/keelung_nightmarket.png" onclick="featuresText('基隆市廟口小吃')" />基隆市廟口小吃</td>
+            <td ><img src="../../image/map_icon/keelung_nightmarket.png" onclick="featuresText('基隆廟口')" />基隆廟口</td>
         </tr>
         <tr>
             <td ><img src="../../image/map_icon/keelung_Tapurun_Fort.png" onclick="featuresText('二沙灣砲臺(海門天險)')" />二沙灣砲臺(海門天險)</td>
@@ -40,34 +40,34 @@
         <img id="county" class="terrain" src="../../image/map/Keelung1.png" />
         <div class="level1">
             <img class="level" src="../../image/icon/oceanliner.png"
-            onclick="location.href='../../view/game/drawzhuyin.html?id=a1&counties=Hsinchu';mouseDownText('a');" />
+            onclick="location.href='../../view/game/drawzhuyin.html?id=a1&counties=Keelung';mouseDownText('a');" />
         <img class="level_text"  src="../../image/english_alphabet/A.png"
-            onclick="location.href='../../view/game/drawzhuyin.html?id=a1&counties=Hsinchu';mouseDownText('a');" />
+            onclick="location.href='../../view/game/drawzhuyin.html?id=a1&counties=Keelung';mouseDownText('a');" />
         </div>
        <div class="level2">
         <img class="level" src="../../image/icon/oceanliner.png"
-        onclick="location.href='../../view/game/drawzhuyin.html?id=b1&counties=newTaipei';mouseDownText('b');" />
+        onclick="location.href='../../view/game/drawzhuyin.html?id=b1&counties=Keelung';mouseDownText('b');" />
         <img class="level_text" src="../../image/english_alphabet/B.png"
-        onclick="location.href='../../view/game/drawzhuyin.html?id=b1&counties=newTaipei';mouseDownText('b');" />
+        onclick="location.href='../../view/game/drawzhuyin.html?id=b1&counties=Keelung';mouseDownText('b');" />
        </div>
         <div class="level3">
             <img class="level" src="../../image/icon/oceanliner.png"
-            onclick="location.href='../../view/game/drawzhuyin.html?id=c1&counties=newTaipei';mouseDownText('c');" />
+            onclick="location.href='../../view/game/drawzhuyin.html?id=c1&counties=Keelung';mouseDownText('c');" />
             <img class="level_text" src="../../image/english_alphabet/C.png"
-            onclick="location.href='../../view/game/drawzhuyin.html?id=c1&counties=newTaipei';mouseDownText('c');" />
+            onclick="location.href='../../view/game/drawzhuyin.html?id=c1&counties=Keelung';mouseDownText('c');" />
         </div>
        <div class="level4">
             <img class="level" src="../../image/icon/oceanliner.png" 
-            onclick="location.href='../../view/game/drawzhuyin.html?id=d1&counties=newTaipei';mouseDownText('d');" />
+            onclick="location.href='../../view/game/drawzhuyin.html?id=d1&counties=Keelung';mouseDownText('d');" />
             <img class="level_text" src="../../image/english_alphabet/D.png" 
-            onclick="location.href='../../view/game/drawzhuyin.html?id=d1&counties=newTaipei';mouseDownText('d');" />
+            onclick="location.href='../../view/game/drawzhuyin.html?id=d1&counties=Keelung';mouseDownText('d');" />
        </div>
   
        <div class="level5">
             <img class="level" src="../../image/icon/oceanliner.png" 
-            onclick="location.href='../../view/game/drawzhuyin.html?id=e1&counties=newTaipei';mouseDownText('e');" />
+            onclick="location.href='../../view/game/drawzhuyin.html?id=e1&counties=Keelung';mouseDownText('e');" />
             <img class="level_text" src="../../image/english_alphabet/E.png" 
-            onclick="location.href='../../view/game/drawzhuyin.html?id=e1&counties=newTaipei';mouseDownText('e');" />
+            onclick="location.href='../../view/game/drawzhuyin.html?id=e1&counties=Keelung';mouseDownText('e');" />
        </div>
         <img class="level6" src="../../image/icon/devil_lock.png"  onclick="alert('需要先完成縣市所有關卡！')"/>
         
@@ -79,7 +79,7 @@
         </a>
     </div>
     <div>
-        <a href="./northRegion.html" class="returnfloat" id="menu-share">
+        <a onclick="history.back()"class="returnfloat" id="menu-share">
             <i class="fab fa-share return-float"><img src="../../photo/return.png"></i>
         </a>
     </div>
@@ -92,16 +92,16 @@
         function featuresText(category) {
     const information = document.querySelector('#information')
     switch (category) {
-        case "基隆":
-            information.innerHTML = "&emsp;&emsp;基隆位於臺灣北部，三面環山，僅北面一處有少量平原迎向大海，即為深水谷灣之基隆港。 港灣深入市區，水面寬闊，集商港、軍港、漁港於一身，為進入北臺灣門戶。";
+        case "基隆市":
+            information.innerHTML = "&emsp;&emsp;基隆市位於臺灣北部，三面環山，僅北面一處有少量平原迎向大海，即為深水谷灣之基隆港。 港灣深入市區，水面寬闊，集商港、軍港、漁港於一身，為進入北臺灣門戶。";
             mouseDownText(information.innerHTML);
             break;
-        case "基隆市廟口小吃":
-            information.innerHTML = "&emsp;&emsp;位於基隆市仁三路旁的奠濟宮周圍，從愛二路至愛三路之間的仁三路，小吃種類眾多，短短3、400公尺，卻聚集了有近200個攤位，走在其間，嘴巴沒有一刻停閒，這時你會期望自己是個超級大胃王，能將這基隆廟口夜市的所有美食都能一一品嚐。";
+        case "基隆廟口":
+            information.innerHTML = "&emsp;&emsp;基隆廟口位於基隆市仁三路旁的奠濟宮周圍，從愛二路至愛三路之間的仁三路，小吃種類眾多，短短3、400公尺，卻聚集了有近200個攤位，走在其間，嘴巴沒有一刻停閒，這時你會期望自己是個超級大胃王，能將這基隆廟口夜市的所有美食都能一一品嚐。";
             mouseDownText(information.innerHTML);
             break;
         case "二沙灣砲臺(海門天險)":
-            information.innerHTML="&emsp;&emsp;於1840年中英鴉片戰爭時，為防止英軍入侵而建，1884年中法戰爭毀損後劉銘傳（臺灣首任巡撫）又重建，因位處於二沙灣一帶的山路上，因此有「二沙灣砲臺」的別稱。";
+            information.innerHTML="&emsp;&emsp;大武崙砲台於1840年中英鴉片戰爭時，為防止英軍入侵而建，1884年中法戰爭毀損後劉銘傳（臺灣首任巡撫）又重建，因位處於二沙灣一帶的山路上，因此有「二沙灣砲臺」的別稱。";
             mouseDownText(information.innerHTML);
             break;
 
