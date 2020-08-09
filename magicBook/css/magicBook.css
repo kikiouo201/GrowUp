@@ -64,10 +64,12 @@ body {
   perspective: 2000px;
 }
 
+.books:hover:active div{
+  transform: rotateY(-60deg);
+}
 .books:hover div{
   transform: rotateY(-60deg);
 }
-
 .bookCover{
   text-align: center;
   width: 100%;
