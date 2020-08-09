@@ -37,7 +37,7 @@ a:-webkit-any-link {
     /* margin-bottom: 20px; */
     box-sizing: border-box;
     background-image: url(../image/character/bg_no.png);
-    background-size: 50% 495px;
+    background-size: 50% 434px;
     /* background-repeat: no-repeat; */
 }
 
@@ -112,9 +112,9 @@ a:-webkit-any-link {
 }
 
 .collect_magicCard {
-    margin-top: 91px;
+    margin-top: 80px;
     width: 36%;
-    height: 63%;
+    height: 62%;
     position: absolute;
     right: 7%;
     top: 0;
