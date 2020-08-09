@@ -30,7 +30,7 @@ function createWindow() {
     // 创建浏览器窗口。
     win = new BrowserWindow({
         icon: path.join(__dirname, 'icons/raspberry_icon.png'),
-        fullscreen: false,
+        fullscreen: true,
         webSecurity: false,
         webPreferences: {
             nodeIntegration: true, //如果出bug改回true看看
@@ -51,7 +51,7 @@ function createWindow() {
 
 
     // start時直接跳出chrome檢查的開發者介面
-    win.webContents.openDevTools()
+    // win.webContents.openDevTools()
 
     // 当 window 被关闭，这个事件会被触发。
     win.on('closed', () => {
@@ -158,16 +158,16 @@ ipcMain.on('close-main-window', () => {
     app.quit();
 });
 
-  ipcMain.on('vision',(event,args)=>{
+ipcMain.on('vision', (event, args) => {
     event.sender.send('reply-visionready')
-  })
+})
 
-  ipcMain.on('vision-start',async (event, args)=>{
-    let array=await callVis.start();
-   
-   //array.forEach(label => console.log("vis="+label.description));
-   event.sender.send('reply-mainjsfunction',array)
-  })
+ipcMain.on('vision-start', async(event, args) => {
+    let array = await callVis.start();
+
+    //array.forEach(label => console.log("vis="+label.description));
+    event.sender.send('reply-mainjsfunction', array)
+})
 
 
 
@@ -203,7 +203,7 @@ ipcMain.on('captrue', async(event, args) => {
     const image = await stillCamera.takeImage();
 
     fs.writeFileSync("still-image.jpg", image);
-   
+
     event.sender.send('reply-mainjsfunction-captrue')
 })
 
