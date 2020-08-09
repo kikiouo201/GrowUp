@@ -15,20 +15,20 @@
 <body class="style" background="../../image/map/kraftPaper5.png">
     <table class="features">
         <tr>
-            <td colspan="2" style="font-size: 40px;text-align: center;">台北</td>
+            <td colspan="2" style="font-size: 40px;text-align: center;">臺北市</td>
         </tr>
         <tr>
             <td >特色</td>
             <td >資訊介紹</td>
         </tr>
         <tr>
-            <td ><img src="../../image/map/Taipei_origin.png" onclick="featuresText('台北')" />台北</td>
+            <td ><img src="../../image/map/Taipei_origin.png" onclick="featuresText('臺北市')" />臺北市</td>
             <td id="information" rowspan="4" valign="top" style="font-size:x-large;" >
-                &emsp;&emsp;從世界最高樓（2004~2010）到國際級的中華藝術典藏，我們誠摯的邀請您來到這個充滿著對比的城市。現代與傳統相互包容外，再結合了無比活力與親切笑容，臺北定會成為您在亞洲最美好的回憶。
+                &emsp;&emsp;臺北市位於臺北盆地中，四周均與新北市相接壤。也是臺灣區最大的都市和政治、經濟、交通、文化中心，也是中華民國中央政府所在地，交通四通八達，無論陸、空皆十分方便。
             </td>
         </tr>
         <tr>
-            <td ><img src="../../image/map_icon/Taipei_Chiang_Kai_shek_Memorial_Hall.png" onclick="featuresText('國立中正紀念堂')" />國立中正紀念堂</td>
+            <td ><img src="../../image/map_icon/Taipei_Chiang_Kai_shek_Memorial_Hall.png" onclick="featuresText('中正紀念堂')" />中正紀念堂</td>
         </tr>
         <tr>
             <td ><img src="../../image/map_icon/Taipei_National_Palace_Museum.png" onclick="featuresText('國立故宮博物院')" />國立故宮博物院</td>
@@ -40,25 +40,27 @@
         <img id="county" class="terrain" src="../../image/map/Taipei1.png" />
         <div class="level1">
             <img class="level" src="../../image/icon/taipei101.png"
-            onclick="location.href='../../view/game/drawzhuyin.html?id=a1&counties=newTaipei';mouseDownText('a');" />
-        <img class="level_text"  src="../../image/english_alphabet/A.png"
-            onclick="location.href='../../view/game/drawzhuyin.html?id=a1&counties=newTaipei';mouseDownText('a');" />
+            onclick="location.href='../../view/game/drawzhuyin.html?id=f1&counties=taipei';mouseDownText('f');" />
+        <img class="level_text"  src="../../image/english_alphabet/F.png"
+            onclick="location.href='../../view/game/drawzhuyin.html?id=f1&counties=taipei';mouseDownText('f');" />
         </div>
        <div class="level2">
         <img class="level" src="../../image/icon/taipei101.png"
-        onclick="location.href='../../view/game/drawzhuyin.html?id=b1&counties=newTaipei';mouseDownText('b');" />
-        <img class="level_text" src="../../image/english_alphabet/B.png"
-        onclick="location.href='../../view/game/drawzhuyin.html?id=b1&counties=newTaipei';mouseDownText('b');" />
+        onclick="location.href='../../view/game/drawzhuyin.html?id=g1&counties=taipei';mouseDownText('g');" />
+        <img class="level_text" src="../../image/english_alphabet/G.png"
+        onclick="location.href='../../view/game/drawzhuyin.html?id=g1&counties=taipei';mouseDownText('g');" />
        </div>
         <div class="level3">
             <img class="level" src="../../image/icon/taipei101.png"
-            onclick="location.href='../../view/game/drawzhuyin.html?id=c1&counties=newTaipei';mouseDownText('c');" />
-            <img class="level_text" src="../../image/english_alphabet/C.png"
-            onclick="location.href='../../view/game/drawzhuyin.html?id=c1&counties=newTaipei';mouseDownText('c');" />
+            onclick="location.href='../../view/game/drawzhuyin.html?id=h1&counties=taipei';mouseDownText('h');" />
+            <img class="level_text" src="../../image/english_alphabet/H.png"
+            onclick="location.href='../../view/game/drawzhuyin.html?id=h1&counties=taipei';mouseDownText('h');" />
         </div>
        <div class="level4">
-        <img class="level" src="../../image/icon/taipei101_dark.png" onclick="location.href='../../view/game/drawzhuyin.html?id=d1&counties=newTaipei';mouseDownText('d');" />
-        <img class="level_text" src="../../image/english_alphabet/D.png" onclick="location.href='../../view/game/drawzhuyin.html?id=d1&counties=newTaipei';mouseDownText('d');" />
+        <img class="level" src="../../image/icon/taipei101_dark.png" 
+        onclick="location.href='../../view/game/drawzhuyin.html?id=i1&counties=taipei';mouseDownText('i');" />
+        <img class="level_text" src="../../image/english_alphabet/D.png" 
+        onclick="location.href='../../view/game/drawzhuyin.html?id=i1&counties=taipei';mouseDownText('i');" />
        </div>
       
         <img class="level5" src="../../image/icon/devil_lock.png"  onclick="alert('需要先完成縣市所有關卡！')"/>
@@ -84,16 +86,16 @@
         function featuresText(category) {
     const information = document.querySelector('#information')
     switch (category) {
-        case "台北":
-            information.innerHTML = "&emsp;&emsp;從世界最高樓（2004~2010）到國際級的中華藝術典藏，我們誠摯的邀請您來到這個充滿著對比的城市。現代與傳統相互包容外，再結合了無比活力與親切笑容，臺北定會成為您在亞洲最美好的回憶。";
+        case "臺北市":
+            information.innerHTML = "&emsp;&emsp;臺北市位於臺北盆地中，四周均與新北市相接壤。也是臺灣區最大的都市和政治、經濟、交通、文化中心，也是中華民國中央政府所在地，交通四通八達，無論陸、空皆十分方便。";
             mouseDownText(information.innerHTML);
             break;
-        case "國立中正紀念堂":
-            information.innerHTML = "&emsp;&emsp;占地24.79公頃的中正紀念堂位於臺北市中心，是為追念先總統 蔣公而建造的紀念堂。由於占地廣闊、建築美麗，是民眾活動聚會及婚紗攝影的勝地，更成為國外旅客必訪之地。";
+        case "中正紀念堂":
+            information.innerHTML = "&emsp;&emsp;中正紀念堂是為紀念已故前中華民國總統蔣中正而興建的建築，也是眾多紀念蔣中正的建築中規模最大者，落成以來成為臺北市及臺灣在國際上最著名地標與觀光景點之一。";
             mouseDownText(information.innerHTML);
             break;
         case "國立故宮博物院":
-            information.innerHTML="&emsp;&emsp;故宮收藏的文物珍寶，是舉世聞名的文化資產，從帝王收藏到全民共有，傳承有序的國立故宮博物院典藏，其收藏品的年代幾乎囊括了整個中華文化五千餘年未曾中斷的歷史，在世界文明史上獨一無二。博物院內60多萬件收藏品中，大多數是昔日中國皇室的收集品，皇室的收藏則始自1000多年前的宋朝。";
+            information.innerHTML="&emsp;&emsp;國立故宮博物館為臺灣最具規模的博物館以及臺灣八景之一，也是古代中國藝術史與漢學研究機構。故宮收藏的文物珍寶，是舉世聞名的文化資產，從帝王收藏到全民共有，傳承有序的國立故宮博物院典藏，其收藏品的年代幾乎囊括了整個中華文化五千餘年未曾中斷的歷史，在世界文明史上獨一無二。";
             mouseDownText(information.innerHTML);
             break;
 
