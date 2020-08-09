@@ -10,6 +10,8 @@ const fs = require('fs');
 const equals = require('equals');
 const { type } = require('process');
 const utf8 = require('utf8');
+var explainJSON = require('./magicBook/json/explain.json')
+var bookJSON = require('./magicBook/json/book.json')
 const api = require('./node/model/api');
 const request = require('request')
 const cheerio = require('cheerio')
@@ -171,32 +173,39 @@ ipcMain.on('vision-start', async(event, args) => {
 
 
 
-ipcMain.on('crawler', async(event, args) => {
+ipcMain.on('crawler',(event, args) => {
     // let webcrawler = await callCrawler.webcrawler();
     //  console.log(`webcrawler=${webcrawler}`)
-    const data = encodeURI(args)
-    console.log(data)
-    const url = 'https://www.moedict.tw/' + data + '#gsc.tab=0'
+    // const data = encodeURI(args)
+    // console.log(data)
+    
+    console.log("crawler= "+explainJSON[0][args]);
 
-    console.log(url)
-    request(url, (err, res, body) => {
+    event.sender.send('reply-webcrawlerfunction', explainJSON[0][args]);
 
-            if (!err && res.statusCode == 200) {
-                const $ = cheerio.load(body);
-                let def = $('.def')
-                output = def.find('a').text()
-            }
-            //console.log(output);
-            event.sender.send('reply-webcrawlerfunction', output);
-            console.log(output);
 
-        })
+    // const url = 'https://www.moedict.tw/' + data + '#gsc.tab=0'
+
+    // console.log(url)
+    // request(url, (err, res, body) => {
+
+    //         if (!err && res.statusCode == 200) {
+    //             const $ = cheerio.load(body);
+    //             let def = $('.def')
+    //             output = def.find('a').text()
+    //         }
+    //         //console.log(output);
+    //         event.sender.send('reply-webcrawlerfunction', output);
+    //         console.log(output);
+
+    //     })
         //  event.sender.send('reply-webcrawlerfunction',webcrawler);
 
 })
 
 
 ipcMain.on('captrue', async(event, args) => {
+
     console.log("call captrue");
     const stillCamera = new StillCamera();
 

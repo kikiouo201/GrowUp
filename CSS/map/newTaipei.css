@@ -36,63 +36,39 @@ body{
     top: 34px;
     left: 32%;
 }
+
 .level2{
-    width: 100px;
-    position: absolute;
-    z-index: 10;
-    top: 100px;
-    left: 152px;
-}
-.level3{
     width: 100px;
     position: absolute;
     z-index: 10;
     top: 225px;
     left: 46px;
 }
-.level4{
+.level3{
     width: 100px;
     position: absolute;
     z-index: 10;
     top: 341px;
     left: 164px;
 }
-.level5{
-    width: 100px;
-    position: absolute;
-    z-index: 10;
-    top: 433px;
-    left: 69px;
-}
-.level6{
+
+.level4{
     width: 100px;
     position: absolute;
     z-index: 10;
     top: 527px;
     left: 228px;
 }
-.level7{
-    width: 100px;
-    position: absolute;
-    z-index: 10;
-    top: 443px;
-    left: 312px;
-}
-.level8{
+
+.level5{
     width: 100px;
     position: absolute;
     z-index: 10;
     top: 302px;
     left: 340px;
 }
-.level9{
-    width: 100px;
-    position: absolute;
-    z-index: 10;
-    top: 358px;
-    left: 451px;
-}
-.level10{
+
+.level6{
     width: 78px;
     position: absolute;
     z-index: 10;

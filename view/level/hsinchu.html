@@ -15,20 +15,20 @@
 <body class="style" background="../../image/map/kraftPaper5.png">
     <table class="features">
         <tr>
-            <td colspan="2" style="font-size: 40px;text-align: center;">新竹</td>
+            <td colspan="2" style="font-size: 40px;text-align: center;">新竹縣</td>
         </tr>
         <tr>
             <td >特色</td>
             <td >資訊介紹</td>
         </tr>
         <tr>
-            <td ><img src="../../image/map/Hsinchu_origin.png" onclick="featuresText('新竹')" />新竹</td>
+            <td ><img src="../../image/map/Hsinchu_origin.png" onclick="featuresText('新竹縣')" />新竹縣</td>
             <td id="information" rowspan="4" valign="top" style="font-size:x-large;" >
-                &emsp;&emsp;新竹縣地形多元、氣候溫和、農產豐盛，全縣客家族群約佔總人口數的84%，是典型的客家（Hakka）大縣，並以「好客竹縣」（Hakka Hsinchu）著稱。本縣從農業到科技的轉型、從傳統到現代的結合，還有隨著科技發展遷入的新移民，形成多元融合的族群結構與文化特色，『科技、文化、大學城』－新竹縣，是多數人來到新竹縣感受到的改變。
+                &emsp;&emsp;新竹縣地形多元、氣候溫和、農產豐盛，全縣客家族群約佔總人口數的84%，是典型的客家（Hakka）大縣，並以「好客竹縣」（Hakka Hsinchu）著稱。本縣從農業到科技的轉型、從傳統到現代的結合，還有隨著科技發展遷入的新移民，形成多元融合的族群結構與文化特色。
             </td>
         </tr>
         <tr>
-            <td ><img src="../../image/map_icon/Hsinchu_Leofoo_Village.png" onclick="featuresText('六福村')" />六福村</td>
+            <td ><img src="../../image/map_icon/Hsinchu_Leofoo_Village.png" onclick="featuresText('六福村主題遊樂園')" />六福村主題遊樂園</td>
         </tr>
         <tr>
             <td ><img src="../../image/map_icon/Hsinchu_zoo.png" onclick="featuresText('新竹市立動物園')" />新竹市立動物園</td>
@@ -40,27 +40,27 @@
         <img id="county" class="terrain" src="../../image/map/Hsinchu1.png" />
         <div class="level1">
             <img class="level" src="../../image/icon/pork_ball_dark.png"
-            onclick="location.href='../../view/game/drawzhuyin.html?id=a1&counties=Hsinchu';mouseDownText('s');" />
+            onclick="location.href='../../view/game/drawzhuyin.html?id=s1&counties=hsinchu';mouseDownText('s');" />
         <img class="level_text"  src="../../image/english_alphabet/S.png"
-            onclick="location.href='../../view/game/drawzhuyin.html?id=a1&counties=Hsinchu';mouseDownText('s');" />
+            onclick="location.href='../../view/game/drawzhuyin.html?id=s1&counties=hsinchu';mouseDownText('s');" />
         </div>
        <div class="level2">
         <img class="level" src="../../image/icon/pork_ball_dark.png"
-        onclick="location.href='../../view/game/drawzhuyin.html?id=b1&counties=newTaipei';mouseDownText('t');" />
+        onclick="location.href='../../view/game/drawzhuyin.html?id=t1&counties=newTaipei';mouseDownText('t');" />
         <img class="level_text" src="../../image/english_alphabet/T.png"
-        onclick="location.href='../../view/game/drawzhuyin.html?id=b1&counties=newTaipei';mouseDownText('t');" />
+        onclick="location.href='../../view/game/drawzhuyin.html?id=t1&counties=newTaipei';mouseDownText('t');" />
        </div>
         <div class="level3">
             <img class="level" src="../../image/icon/pork_ball_dark.png"
-            onclick="location.href='../../view/game/drawzhuyin.html?id=c1&counties=newTaipei';mouseDownText('u');" />
+            onclick="location.href='../../view/game/drawzhuyin.html?id=u1&counties=hsinchu';mouseDownText('u');" />
             <img class="level_text" src="../../image/english_alphabet/U.png"
-            onclick="location.href='../../view/game/drawzhuyin.html?id=c1&counties=newTaipei';mouseDownText('u');" />
+            onclick="location.href='../../view/game/drawzhuyin.html?id=u1&counties=hsinchu';mouseDownText('u');" />
         </div>
        <div class="level4">
             <img class="level" src="../../image/icon/pork_ball_dark.png" 
-            onclick="location.href='../../view/game/drawzhuyin.html?id=d1&counties=newTaipei';mouseDownText('v');" />
+            onclick="location.href='../../view/game/drawzhuyin.html?id=v1&counties=hsinchu';mouseDownText('v');" />
             <img class="level_text" src="../../image/english_alphabet/V.png" 
-            onclick="location.href='../../view/game/drawzhuyin.html?id=d1&counties=newTaipei';mouseDownText('v');" />
+            onclick="location.href='../../view/game/drawzhuyin.html?id=v1&counties=hsinchu';mouseDownText('v');" />
        </div>
   
         <img class="level5" src="../../image/icon/devil_lock.png"  onclick="alert('需要先完成縣市所有關卡！')"/>
@@ -73,7 +73,7 @@
         </a>
     </div>
     <div>
-        <a href="./northRegion.html" class="returnfloat" id="menu-share">
+        <a onclick="history.back()" class="returnfloat" id="menu-share">
             <i class="fab fa-share return-float"><img src="../../photo/return.png"></i>
         </a>
     </div>
@@ -86,16 +86,16 @@
         function featuresText(category) {
     const information = document.querySelector('#information')
     switch (category) {
-        case "新竹":
-            information.innerHTML = "&emsp;&emsp;新竹縣地形多元、氣候溫和、農產豐盛，全縣客家族群約佔總人口數的84%，是典型的客家（Hakka）大縣，並以「好客竹縣」（Hakka Hsinchu）著稱。本縣從農業到科技的轉型、從傳統到現代的結合，還有隨著科技發展遷入的新移民，形成多元融合的族群結構與文化特色，『科技、文化、大學城』－新竹縣，是多數人來到新竹縣感受到的改變。";
+        case "新竹縣":
+            information.innerHTML = "&emsp;&emsp;新竹縣地形多元、氣候溫和、農產豐盛，全縣客家族群約佔總人口數的84%，是典型的客家（Hakka）大縣，並以「好客竹縣」（Hakka Hsinchu）著稱。本縣從農業到科技的轉型、從傳統到現代的結合，還有隨著科技發展遷入的新移民，形成多元融合的族群結構與文化特色。";
             mouseDownText(information.innerHTML);
             break;
-        case "六福村":
-            information.innerHTML = "&emsp;&emsp;位於新竹縣關西鎮的六福村主題遊樂園，園內有四大主題村：魔幻神奇的「阿拉伯皇宮」、狂野飆悍的「美國大西部」、熱帶島嶼風情的「南太平洋」以及近距離觀察原始動物的「非洲部落」，喜好挑戰刺激及探訪動物生態的您絕對不能錯過，體驗真實與夢想交織的歡樂王國盡在六福村！";
+        case "六福村主題遊樂園":
+            information.innerHTML = "&emsp;&emsp;六福村位於新竹縣關西鎮，園內有四大主題村：魔幻神奇的「阿拉伯皇宮」、狂野飆悍的「美國大西部」、熱帶島嶼風情的「南太平洋」以及近距離觀察原始動物的「非洲部落」，喜好挑戰刺激、探訪動物生態以及體驗真實與夢想交織的你趕快去六福村體驗遊玩!";
             mouseDownText(information.innerHTML);
             break;
         case "新竹市立動物園":
-            information.innerHTML="&emsp;&emsp;新竹市立動物園是位於臺灣新竹市東區的一座公立動物園，於1936年創立，是目前臺灣原址現存最老的動物園，面積約2.7公頃，其舊大門、噴水池和黃魚鴞欄舍仍為最初興建時的樣貌，園內包含6個展示區。";
+            information.innerHTML="&emsp;&emsp;新竹市立動物園是目前臺灣原址現存最老的動物園，其動物園舊大門入口的洗石子門柱與售票口結合設計，且設有水泥塑大象及蹲獅裝飾。";
             mouseDownText(information.innerHTML);
             break;
 
