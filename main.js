@@ -117,8 +117,9 @@ ipcMain.on('voice-require-to-py', (event, arg) => {
 
             event.reply('voice-require-to-py-reply-result', result)
 
-            // console.log("Q="+result.q)
+            console.log("Q=" + result.q)
             console.log("A=" + result.a)
+            console.log("url=" + result.url)
                 // console.log("QN="+result.QName)
             var x = result.a.toString().trim()
             console.log(typeof x + typeof result.a.toString())
@@ -171,13 +172,13 @@ ipcMain.on('vision-start', async(event, args) => {
 
 
 
-ipcMain.on('crawler',(event, args) => {
+ipcMain.on('crawler', (event, args) => {
     // let webcrawler = await callCrawler.webcrawler();
     //  console.log(`webcrawler=${webcrawler}`)
     // const data = encodeURI(args)
     // console.log(data)
-    
-    console.log("crawler= "+explainJSON[0][args]);
+
+    console.log("crawler= " + explainJSON[0][args]);
 
     event.sender.send('reply-webcrawlerfunction', explainJSON[0][args]);
 
@@ -197,7 +198,7 @@ ipcMain.on('crawler',(event, args) => {
     //         console.log(output);
 
     //     })
-        //  event.sender.send('reply-webcrawlerfunction',webcrawler);
+    //  event.sender.send('reply-webcrawlerfunction',webcrawler);
 
 })
 
