@@ -132,7 +132,7 @@
 
         .next {
             position: absolute;
-            bottom: 18%;
+            bottom: 12%;
             left: 40%;
             right: 40%;
             padding: 10px;
@@ -268,6 +268,7 @@
 </head>
 
 <body>
+  
     <div class="black_overlay">
 
         <div class="next" onclick="next()">確認</div>
@@ -285,19 +286,20 @@
             <div class="nextLevel" onclick="goNextLevel()">確認</div>
         </div>
     </div>
+    <div style="font-size: 50px;">找找看水果在哪裡</div>
     <div class="forest">
         <div class="score">0分</div>
         <img src="../../image/findBallast/grass.png" class="grass" />
         <img src="../../image/findBallast/grass2.png" class="grass2" />
         <img src="../../image/findBallast/grass2.png" class="grass3" />
         <img src="../../image/findBallast/grass2.png" class="grass4" />
-        <img src="../../image/words/apple.png" class="target" onclick="toBig('')">
-        <img src="../../image/words/apple.png" class="target2" onclick="toBig('2')">
-        <img src="../../image/words/peach.png" class="target3" onclick="toBig('3')">
-        <img src="../../image/words/strawberry.png" class="target4" onclick="toBig('4')">
-        <img src="../../image/words/waterpear1.png" class="target5" onclick="toBig('5')">
+        <img src="../../image/words/apple.png" class="target" onclick="toBig('');mouseDownText('蘋果');">
+        <img src="../../image/words/apple.png" class="target2" onclick="toBig('2');mouseDownText('蘋果');">
+        <img src="../../image/words/peach.png" class="target3" onclick="toBig('3');mouseDownText('桃子');">
+        <img src="../../image/words/strawberry.png" class="target4" onclick="toBig('4');mouseDownText('草莓');">
+        <img src="../../image/words/waterpear1.png" class="target5" onclick="toBig('5');mouseDownText('水梨');">
     </div>
-
+    <script src="../../model/util/voiceOut.js"></script>
 </body>
 
 </html>
