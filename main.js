@@ -4,14 +4,12 @@ const path = require('path');
 const url = require('url');
 const appCallPython = require('./app-call-python-child-process')
 const callVis = require('./vision')
-const callCrawler = require('./get_dictionary')
 const { StillCamera } = require("pi-camera-connect");
 const fs = require('fs');
 const equals = require('equals');
 const { type } = require('process');
 const utf8 = require('utf8');
 var explainJSON = require('./magicBook/json/explain.json')
-var bookJSON = require('./magicBook/json/book.json')
 const api = require('./node/model/api');
 const request = require('request')
 const cheerio = require('cheerio')
@@ -237,17 +235,21 @@ ipcMain.on('getApi-addQuiz', async(event, args) => {
 
 })
 
+// ipcMain.on('callbookJSON-request',async (event,args)=>{
+//     console.log("callbookJSON-request")
+//     event.sender.send('bookJSON-response',bookJSON)
+// })
 
 
 
 
 
 
-ipcMain.on('fruitcheck-call', (event, data) => {
-    console.log("result");
+// ipcMain.on('fruitcheck-call', (event, data) => {
+//     console.log("result");
 
-    api.Question.addQa(1, "", "西瓜", "./still-image.jpg", "單詞", (event) => {
-        console.log("callback=" + JSON.stringify(event));
-    });
+//     api.Question.addQa(1, "", "西瓜", "./still-image.jpg", "單詞", (event) => {
+//         console.log("callback=" + JSON.stringify(event));
+//     });
 
-})
+// })
