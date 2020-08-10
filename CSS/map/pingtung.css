@@ -22,15 +22,15 @@ body{
     width: 75px;
     position: absolute;
     z-index: 10;
-    top: 70px;
-    left: 581px;
+    top: 75px;
+    left: 409px;
 }
 .level_basic{
-    width: 68px;
+    width: 175px;
 
 }
 .level{
-    width: 110px;
+    width: 155px;
 
 }
 .level_text{
@@ -38,30 +38,30 @@ body{
     position: absolute;
     z-index: 10;
     top: 60px;
-    left: 25%;
+    left: 110%;
 }
 .level2{
     width: 100px;
     position: absolute;
     z-index: 10;
-    top: 390px;
-    left: 466px;
+    top: 232px;
+    left: 175px;
 }
 
 .level3{
     width: 100px;
     position: absolute;
     z-index: 10;
-    top: 442px;
-    left: 213px;
+    top: 558px;
+    left: 220px;
 }
 
 .level4{
     width: 100px;
     position: absolute;
     z-index: 10;
-    top: 678px;
-    left: 135px;
+    top: 1035px;
+    left: 510px;
 }
 
 
