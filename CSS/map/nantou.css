@@ -11,8 +11,8 @@ body{
     position: relative;
 }
 .terrain{
-    width: 700px;
-    height: 100%;
+    width: 400px;
+    overflow: hidden;
   position: relative;
   z-index: 1;
   filter: drop-shadow(10px 10px 5px rgba(0, 0, 0, 0.3));
