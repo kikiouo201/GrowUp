@@ -83,6 +83,7 @@ with sr.Microphone() as source:
     except sr.RequestError as e:
         print("No response from Google Speech Recognition service: {0}".format(e))
     # sys.stdout.reconfigure(encoding='utf-8')
+    answer_keyWord = response.query_result.fulfillment_text
     print("chatbot>>", response.query_result.fulfillment_text)  #問題的答案
 
 
@@ -92,6 +93,22 @@ with sr.Microphone() as source:
     'Answer': response.query_result.fulfillment_text,
     'Q_name': "",
     'Answer_pic':""
+    }
+
+    dictionary_keyword = {
+        '蘋果' : '落業喬木。葉軟形，邊緣有細尖鋸齒。果實球形，味美，可食，也可製酒。',
+        '西瓜' : '植物名。葫蘆科西瓜屬，一年生蔓草。果肉通常為紅色或黃色，水分多，味甜。', 
+        '香蕉' :'植物名。芭蕉科芭蕉屬，多年生草本。莖短，葉長而寬，夏秋間自偽莖抽出大花軸，上部為雄花，下部為雌花，花色淡黃。果實為長形，稍彎，味香甜，亦稱為「香蕉」。',
+        '螢幕' :'用來顯影的映像管表面，為電視、示波器、電腦的顯示部分。', 
+        '椅子' :'供人坐臥的器具。', 
+        '水壺' :'裝水的器具。', 
+        '筆' :'寫字、畫圖的用具。',
+        '筆記本' :'是一種多用途的文具，可用作記事、寫作、繪畫、便條及掃描等用途，也是採訪記者的職業日用品。', 
+        '滑鼠' :'一種用於電腦繪圖的指示器。',
+        '人' :'具有高度智慧和靈性，且能製造並使用工具以進行勞動的高等動物。' , 
+        '筆電' :'一種方便攜帶的輕量小型電腦，通常重一至三公斤。',
+        '手錶' :'一種方便攜帶的輕量小型電腦，通常重一至三公斤。' ,
+        '眼鏡' :'用玻璃片或水晶片製成，戴在眼睛前，以矯正視力或遮阻強烈光線、風沙的器具。' 
     }
 
     # sys.stdout.reconfigure(encoding='utf-8')
@@ -145,6 +162,15 @@ search=soup.find("div", class_="mw-parser-output") #找查詢ㄉdiv
 turnCC = cc.convert(search.p.text)
 result['Answer'] = turnCC.strip()
 # print(result)
+
+for key in dictionary_keyword.keys():
+        # print('keyword -> '+key)  輸出key值
+        # print('answer_keyword -> '+answer_keyWord)    #check 關鍵字是什麼
+    if answer_keyWord == key :
+        print('Correct on dic -> '+answer_keyWord)
+        result['Answer'] = dictionary_keyword[key]
+        break
+
 print("data[A]="+str(result['Answer'])) #爬wiki的Answer
 # print(result['Answer'])
 
@@ -158,7 +184,7 @@ result['Q_name'] = Q_name_CC.strip()
 
 try:
     #爬圖片
-    pic=soup.find("a",class_='image')
+    pic=soup.find("table",class_='infobox')
     img = pic.find_all('img')[0].get('src')
     # print(img)
     result['Answer_pic'] = img.strip()

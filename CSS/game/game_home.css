@@ -80,7 +80,7 @@ body {
 }
 
 .good-regard-value {
-    width: 87%;
+    width: 67%;
     position: absolute;
     /* bottom: 18.5%; */
     height: 100%;
@@ -91,6 +91,13 @@ body {
     /* border-width: 2px; */
     display: inline-block;
     /* margin-left: 12px; */
+    padding-left: 20px;
+}
+
+.good-regard-text {
+    position: absolute;
+    right: 0;
+    margin-right: 10px;
 }
 
 .personal_profile {

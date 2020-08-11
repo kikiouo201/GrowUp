@@ -9,7 +9,6 @@ body {
     background-attachment: fixed;
     background-position: center;
     background-image: url("../image/background/Polygon_blue01.jpeg");
-    
 }
 
 table {
@@ -36,10 +35,11 @@ a {
     text-decoration: none;
     color: black;
 }
+
 ::-webkit-scrollbar {
     /*隱藏滾輪*/
     display: none;
-    }
+}
 
 .header_div {
     top: 0px;
@@ -58,7 +58,6 @@ a {
     z-index: 98;
     opacity: 80%;
     border-bottom: 0px;
-
 }
 
 .Liftcontent_div {
@@ -72,6 +71,7 @@ a {
     overflow-x: hidden;
     overflow-y: scroll;
 }
+
 .Rightcontent_div {
     background-color: rgb(235, 231, 231);
     width: 70%;
@@ -110,9 +110,9 @@ a {
 }
 
 .goodBaby_regard_value {
-    width: 87%;
-    /* position: absolute; */
-    height: 100%;
+    width: 67%;
+    position: absolute;
+    height: 4.5%;
     border-radius: 40px 0px 0px 40px;
     /* border-color: darkred; */
     /* border-style: solid; */
@@ -122,7 +122,14 @@ a {
     /* margin-left: 12px; */
 }
 
-.goodBaby_table{
+.goodBaby_regard_text {
+    position: absolute;
+    right: 0;
+    margin-right: 10px;
+    margin-top: 6.5px;
+}
+
+.goodBaby_table {
     width: 100%;
     border-bottom: 0px;
     height: 10%;
@@ -158,6 +165,7 @@ a {
     display: inline-block;
     /* margin-left: 12px; */
 }
+
 .card:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
@@ -175,55 +183,62 @@ a {
     margin-top: 10%;
 }
 
-
-
-.calendar{
-	width:100%;
-    height:45%;
+.calendar {
+    width: 100%;
+    height: 45%;
     top: 0;
-    font-family:arial;
-    background:rgb(210, 218, 255);
-    text-align:center;
-	box-shadow:0px 1px 1px rgba(0,0,0,0.1);
+    font-family: arial;
+    background: rgb(210, 218, 255);
+    text-align: center;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
 }
-.calendar-body-list ul{
-	width:100%;
-    font-weight:bold;
-    padding:0;
+
+.calendar-body-list ul {
+    width: 100%;
+    font-weight: bold;
+    padding: 0;
     padding-left: 3.6%;
-	font-size:14px;
-}
-.calendar-body-list ul li{
-	width:13.2%;
-    height:20px;
-	/* line-height:36px; */
-	list-style-type:none;
-	display:block;
-	box-sizing:border-box;
-	float:left;
-	/* text-align:center; */
+    font-size: 14px;
 }
 
-.lightgrey{
-	color:#a8a8a8; /*浅灰色*/
-}
-.darkgrey{
-	color:#565656; /*深灰色*/
-}
-.green{
-	color:#6ac13c; /*绿色*/
-}
-
-.today{
-	color:#c1623c; 
-}
-.todaybox{
-    border:1px solid #c19e3c;
-	background:#f8eadf; /*浅绿色背景*/
-
+.calendar-body-list ul li {
+    width: 13.2%;
+    height: 20px;
+    /* line-height:36px; */
+    list-style-type: none;
+    display: block;
+    box-sizing: border-box;
+    float: left;
+    /* text-align:center; */
 }
 
-.greenbox{
-	border:1px solid #6ac13c;
-	background:#e9f8df; /*浅绿色背景*/
+.lightgrey {
+    color: #a8a8a8;
+    /*浅灰色*/
+}
+
+.darkgrey {
+    color: #565656;
+    /*深灰色*/
+}
+
+.green {
+    color: #6ac13c;
+    /*绿色*/
+}
+
+.today {
+    color: #c1623c;
+}
+
+.todaybox {
+    border: 1px solid #c19e3c;
+    background: #f8eadf;
+    /*浅绿色背景*/
+}
+
+.greenbox {
+    border: 1px solid #6ac13c;
+    background: #e9f8df;
+    /*浅绿色背景*/
 }

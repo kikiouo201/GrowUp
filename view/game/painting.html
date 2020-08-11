@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zn-cn">
 
 <head>
     <meta charset="UTF-8">
@@ -13,6 +13,12 @@
         body {
             background-color: #ebebeb;
             cursor: crosshair;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+        .container{
+            position: relative;
         }
 
         #buttons {
@@ -95,11 +101,12 @@
 </head>
 
 <body>
+    <div style="font-size: 50px;">畫畫</div>
     <div class="container">
         <canvas width="800px" height="800px" id="art"></canvas>
         <div id="buttons">
-            <input type="button" id="reset" value="Reset" />
-            <input type="button" id="save" value="save"/>
+            <input type="button" id="reset" value="重新" />
+            <input type="button" id="save" value="儲存"/>
             <div id='red' class="color"></div>
             <div id='blue' class="color"></div>
             <div id='green' class="color"></div>
