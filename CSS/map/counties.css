@@ -1,6 +1,8 @@
 .features {
+    margin-top: 10px;
     background-color: aliceblue;
-    width: 500px;
+    width: 400px;
+    height: 400px;
 }
 
 .features img {
@@ -25,8 +27,8 @@ td {
 }
 
 .taiwan{
-    width: 150px;
-    height: 150px;
+    width: 90px;
+    height: 90px;
     position: absolute;
     top: 0px;
     left: 0px;
