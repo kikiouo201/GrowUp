@@ -15,16 +15,16 @@
 <body class="style" background="../../image/map/kraftPaper5.png">
     <table class="features">
         <tr>
-            <td colspan="2" style="font-size: 40px;text-align: center;">基隆市</td>
+            <td colspan="2" style="font-size: 40px;text-align: center;">基隆地區</td>
         </tr>
         <tr>
             <td >特色</td>
             <td >資訊介紹</td>
         </tr>
         <tr>
-            <td ><img src="../../image/map/Keelung_origin.png" onclick="featuresText('基隆市')" />基隆市</td>
+            <td ><img src="../../image/map/Keelung_origin.png" onclick="featuresText('基隆地區')" />基隆地區</td>
             <td id="information" rowspan="4" valign="top" style="font-size:x-large;" >
-                &emsp;&emsp;基隆市位於臺灣北部，三面環山，僅北面一處有少量平原迎向大海，即為深水谷灣之基隆港。 港灣深入市區，水面寬闊，集商港、軍港、漁港於一身，為進入北臺灣門戶。
+                &emsp;&emsp;基隆地區位於臺灣北部，三面環山，僅北面一處有少量平原迎向大海，即為深水谷灣之基隆港。 港灣深入市區，水面寬闊，集商港、軍港、漁港於一身，為進入北臺灣門戶。
             </td>
         </tr>
         <tr>
@@ -92,8 +92,8 @@
         function featuresText(category) {
     const information = document.querySelector('#information')
     switch (category) {
-        case "基隆市":
-            information.innerHTML = "&emsp;&emsp;基隆市位於臺灣北部，三面環山，僅北面一處有少量平原迎向大海，即為深水谷灣之基隆港。 港灣深入市區，水面寬闊，集商港、軍港、漁港於一身，為進入北臺灣門戶。";
+        case "基隆地區":
+            information.innerHTML = "&emsp;&emsp;基隆地區位於臺灣北部，三面環山，僅北面一處有少量平原迎向大海，即為深水谷灣之基隆港。 港灣深入市區，水面寬闊，集商港、軍港、漁港於一身，為進入北臺灣門戶。";
             mouseDownText(information.innerHTML);
             break;
         case "基隆廟口":

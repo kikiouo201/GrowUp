@@ -14,16 +14,16 @@
 <body class="style" background="../../image/map/kraftPaper5.png">
     <table class="features">
         <tr>
-            <td colspan="2" style="font-size: 40px;text-align: center;">台南</td>
+            <td colspan="2" style="font-size: 40px;text-align: center;">台南地區</td>
         </tr>
         <tr>
             <td>特色</td>
             <td>資訊介紹</td>
         </tr>
         <tr>
-            <td><img src="../../image/map/Tainan_origin.png" onclick="featuresText('台南')" />台南</td>
+            <td><img src="../../image/map/Tainan_origin.png" onclick="featuresText('台南地區')" />台南地區</td>
             <td id="information" rowspan="4" valign="top" style="font-size:x-large;">
-                &emsp;&emsp;位於臺灣西南部，地勢平坦，在安平港東北方，是臺灣最早開發地區之一，文物鼎盛，素有古都之稱，亦為南部教育、文化中心。
+                &emsp;&emsp;台南地區位於臺灣西南部，地勢平坦。安平港東北方，是臺灣最早開發地區之一，文物鼎盛，素有古都之稱，亦為南部教育、文化中心。
             </td>
         </tr>
         <tr>
@@ -85,12 +85,12 @@
         function featuresText(category) {
             const information = document.querySelector('#information')
             switch (category) {
-                case "台南":
-                    information.innerHTML = "&emsp;&emsp;台南位於臺灣西南部，地勢平坦，在安平港東北方，是臺灣最早開發地區之一，文物鼎盛，素有古都之稱，亦為南部教育、文化中心。";
+                case "台南地區":
+                    information.innerHTML = "&emsp;&emsp;台南地區位於臺灣西南部，地勢平坦。安平港東北方，是臺灣最早開發地區之一，文物鼎盛，素有古都之稱，亦為南部教育、文化中心。";
                     mouseDownText(information.innerHTML);
                     break;
                 case "奇美博物館":
-                    information.innerHTML = `&emsp;&emsp;奇美博物館位於臺灣臺南市仁德區，為奇美實業創辦人許文龍創立，是臺灣館藏最豐富的私人博物館、美術館。以典藏西洋藝術品為主，展出藝術、樂器、兵器與自然史四大領域。`;
+                    information.innerHTML = `&emsp;&emsp;奇美博物館位於臺南市仁德區，為奇美實業創辦人許文龍創立，是臺灣館藏最豐富的私人博物館、美術館。以典藏西洋藝術品為主，展出藝術、樂器、兵器與自然史四大領域。`;
                     mouseDownText(information.innerHTML);
                     break;
                 case "七股鹽山":

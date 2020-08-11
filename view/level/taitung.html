@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GrowUp學習趣</title>
-    <link rel="stylesheet" href="../../CSS/map/nantou.css">
+    <link rel="stylesheet" href="../../CSS/map/taitung.css">
     <link rel="stylesheet" href="../../CSS/map/counties.css">
     <link rel="stylesheet" href="../../CSS/interface.css">
     <link rel="stylesheet" href="../../CSS/icon.css">
@@ -15,55 +15,54 @@
 <body class="style" background="../../image/map/kraftPaper5.png">
     <table class="features">
         <tr>
-            <td colspan="2" style="font-size: 40px;text-align: center;">臺東</td>
+            <td colspan="2" style="font-size: 40px;text-align: center;">臺東地區</td>
         </tr>
         <tr>
             <td >特色</td>
             <td >資訊介紹</td>
         </tr>
         <tr>
-            <td><img src="../../image/map/Taitung.png" onclick="featuresText('臺東')"/>臺東</td>
-            <td id="information" rowspan="3" valign="top" style="font-size:x-large;" >
-                &emsp;&emsp;臺東擁有豐富的生態資源，無論是海岸、高山、森林、溪谷，都保持著自然完整的風貌，並孕育了多樣的動植物種類，處處都是天然美景。臺東各鄉鎮的物產豐饒，遠近馳名的縱谷好米、金針花、洛神花、臺東釋迦；漁產亦十分興盛，旗魚、柴魚片都是極富盛名的當地特產品。
+            <td><img src="../../image/map/Taitung.png" onclick="featuresText('臺東地區')"/>臺東地區</td>
+            <td id="information" rowspan="5" valign="top" style="font-size:x-large;" >
+                &emsp;&emsp;臺東地區擁有豐富的生態資源，無論是海岸、高山、森林、溪谷，都保持著自然完整的風貌，並孕育了多樣的動植物種類，處處都是天然美景。臺東各鄉鎮的物產豐饒，遠近馳名的縱谷好米、金針花、洛神花、臺東釋迦；漁產亦十分興盛，旗魚、柴魚片都是極富盛名的當地特產品。
             </td>
         </tr>
         <tr>
-            <td><img src="../../image/icon/herbal-tea.png" onclick="featuresText('三仙台')"/>三仙台</td>
+            <td><img src="../../image/icon/hot_air_balloon.png" onclick="featuresText('熱氣球')"/>熱氣球</td>
         </tr>
         <tr>
-            <td><img src="../../image/icon/lake.png" onclick="featuresText('日月潭')"/>日月潭</td>
+            <td><img src="../../image/map_icon/Taitung_Chulu_Ranch.png" onclick="featuresText('初鹿牧場')"/>初鹿牧場</td>
+        </tr>
+        <tr>
+            <td><img src="../../image/map_icon/Taitung_liyu_mountain_park.png" onclick="featuresText('鯉魚山公園')"/>鯉魚山公園</td>
+        </tr>
+        <tr>
+            <td><img src="../../image/map_icon/Taitung_tree.png" onclick="featuresText('金城武樹')"/>金城武樹</td>
         </tr>
 
     </table>
     <div class="map">
-        <img class="terrain" src="../../image/map/Taitung.png" />
-        <img class="level1" src="../../image/icon/herbal-tea.png"
-            onclick="location.href='../../view/game/drawzhuyin.html?id=b'" />
-        <img class="level1_text"  src="../../image/chinese_alphabet/b.png"
-            onclick="location.href='../../view/game/drawzhuyin.html?id=b'" />
-        <img class="level2" src="../../image/icon/herbal-tea.png"
-            onclick="location.href='../../view/game/drawzhuyin.html?id=p'" />
-            <img class="level2_text" src="../../image/chinese_alphabet/p.png"
-            onclick="location.href='../../view/game/drawzhuyin.html?id=p'" />
-        <img class="level3" src="../../image/icon/herbal-tea.png"
-            onclick="location.href='../../view/game/drawzhuyin.html?id=m'" />
-            <img class="level3_text" src="../../image/chinese_alphabet/m.png"
-            onclick="location.href='../../view/game/drawzhuyin.html?id=m'" />
-        <img class="level4" src="../../image/icon/herbal-tea.png" onclick="location.href='../../view/game/drawzhuyin.html?id=f'" />
-            <img class="level4_text" src="../../image/chinese_alphabet/f.png" onclick="location.href='../../view/game/drawzhuyin.html?id=f'" />
-        <img class="level5" src="../../image/icon/herbal-tea_lock.png"  onclick="location.href='../../view/game/drawzhuyin.html?id=d'" />
-            <img class="level5_text" src="../../image/chinese_alphabet/d.png"  onclick="location.href='../../view/game/drawzhuyin.html?id=d'" />
-        <img class="level6" src="../../image/icon/herbal-tea_lock.png" onclick="location.href='../../view/game/drawzhuyin.html?id=t'" />
-        <img class="level6_text" src="../../image/chinese_alphabet/t.png" onclick="location.href='../../view/game/drawzhuyin.html?id=t'" />
-        <img class="level7" src="../../image/icon/herbal-tea_lock.png" onclick="location.href='../../view/game/drawzhuyin.html?id=n'" />
-        <img class="level7_text" src="../../image/chinese_alphabet/n.png" onclick="location.href='../../view/game/drawzhuyin.html?id=n'" />
-        <img class="level8" src="../../image/icon/herbal-tea_lock.png" onclick="location.href='../../view/game/drawzhuyin.html?id=l'" />
-        <img class="level8_text" src="../../image/chinese_alphabet/l.png" onclick="location.href='../../view/game/drawzhuyin.html?id=l'" />
-        <img class="level9" src="../../image/icon/herbal-tea_lock.png" onclick="location.href='../../view/game/drawzhuyin.html?id=g'" />
-        <img class="level9_text" src="../../image/chinese_alphabet/g.png" onclick="location.href='../../view/game/drawzhuyin.html?id=g'" />
-        <img class="level10" src="../../image/icon/devil_lock.png" onclick="location.href='../../view/game/pickingUpIsALittleRed.html'" />
-        
+        <img id="county" class="terrain" src="../../image/map/Taitung1.png" />
+        <div class="level1">
+            <img class="level_basic" src="../../image/icon/hot_air_balloon_dark.png"
+            onclick="location.href='../../view/game/drawzhuyin.html?id=s1&counties=hsinchu';mouseDownText('');" />
+        <img class="level_text"  src="../../image/"
+            onclick="location.href='../../view/game/drawzhuyin.html?id=s1&counties=hsinchu';mouseDownText('');" />
+        </div>
+       <div class="level2">
+        <img class="level_basic" src="../../image/icon/hot_air_balloon_dark.png"
+        onclick="location.href='../../view/game/drawzhuyin.html?id=t1&counties=newTaipei';mouseDownText('');" />
+        <img class="level_text" src="../../image/"
+        onclick="location.href='../../view/game/drawzhuyin.html?id=t1&counties=newTaipei';mouseDownText('');" />
+       </div>
+
+       <div class="level3">
+        <img class="level" src="../../image/icon/devil_lock.png"
+            onclick="alert('需要先完成縣市所有關卡！')" />
+
     </div>
+
+
     <img class="taiwan" src="../../image/character/NowInNantou.png" onclick="location.href='../../view/level/taiwan.html'" />
     <div>
         <a href="../../test1.html" class="sosfloat" id="menu-share">
@@ -84,20 +83,27 @@
         function featuresText(category) {
     const information = document.querySelector('#information')
     switch (category) {
-        case "臺東":
+        case "臺東地區":
             information.innerHTML = "&emsp;&emsp;臺東擁有豐富的生態資源，無論是海岸、高山、森林、溪谷，都保持著自然完整的風貌，並孕育了多樣的動植物種類，處處都是天然美景。臺東各鄉鎮的物產豐饒，遠近馳名的縱谷好米、金針花、洛神花、臺東釋迦；漁產亦十分興盛，旗魚、柴魚片都是極富盛名的當地特產品。";
             mouseDownText(category+information.innerHTML);
             break;
-        case "三仙台":
-            information.innerHTML = "&emsp;&emsp;三仙台位於成功東北方約3公里處（11號省道111K處），是由突出的海岬與離岸小島所構成的。因島上有三塊巨石，民間穿鑿附會傳說八仙過海時呂洞賓、何仙姑、李鐵拐曾登臨此處而聲名大噪。三仙台地質屬都巒山火山集塊岩，原來是一處岬角，因海水侵蝕逐漸斷了岬角頸部，而成了離岸島。附近海域魚類豐富，是漁場亦是有名的磯釣場所，也是各級潛水的好地方。";
+        case "熱氣球":
+            information.innerHTML = "&emsp;&emsp;將氣球內的氣體用瓦斯加熱，使其較冷空氣輕，產生上升力量，使氣球往高空飄浮。";
             mouseDownText(category+information.innerHTML);
             break;
         
-            case "日月潭":
-                information.innerHTML="&emsp;&emsp;日月潭位於臺灣南投縣魚池鄉，是一座美麗的高山湖泊。潭面以拉魯島為界，東側形如「日」，西側形如「月」，故名日月潭。其周圍山重水複，林木蒼鬱，潭面廣闊水平如鏡，映照群山變化萬千。";
-                mouseDownText(category+information.innerHTML);
-                break;
-
+         case "初鹿牧場":
+            information.innerHTML="&emsp;&emsp;初鹿牧場位於台東縣卑南鄉境內一座乳牛牧場，也是全台唯一的坡地牧場。從事森林浴、滾草、餵食黑白相間的荷蘭種乳牛等觀光活動，以出產新鮮、香醇的初鹿鮮奶聞名。";
+            mouseDownText(category+information.innerHTML);
+            break;
+         case "鯉魚山公園":
+            information.innerHTML="&emsp;&emsp;鯉魚山位於臺東市西側，俗稱卑南山，因外形與鯉魚相似而得名，是臺東市區最明顯的地標和風景區之一，鯉魚山公園是一處適合平日休閒運動，放鬆心情的好去處。";
+            mouseDownText(category+information.innerHTML);
+            break;
+         case "金城武樹":
+            information.innerHTML="&emsp;&emsp;金城武樹是位於臺灣臺東縣池上鄉伯朗大道上的一棵茄苳樹，周圍為一望無際的稻田，該樹孤立其中，配上遠方的山景。";
+            mouseDownText(category+information.innerHTML);
+            break;
     }
 }
     </script>

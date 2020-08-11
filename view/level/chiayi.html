@@ -14,16 +14,16 @@
 <body class="style" background="../../image/map/kraftPaper5.png">
     <table class="features">
         <tr>
-            <td colspan="2" style="font-size: 40px;text-align: center;">嘉義</td>
+            <td colspan="2" style="font-size: 40px;text-align: center;">嘉義地區</td>
         </tr>
         <tr>
             <td>特色</td>
             <td>資訊介紹</td>
         </tr>
         <tr>
-            <td><img src="../../image/map/Chiayi_origin.png" onclick="featuresText('嘉義')" />嘉義</td>
+            <td><img src="../../image/map/Chiayi_origin.png" onclick="featuresText('嘉義地區')" />嘉義地區</td>
             <td id="information" rowspan="4" valign="top" style="font-size:x-large;">
-                &emsp;&emsp;嘉義縣倚山面海，是臺灣所有縣市中，唯一擁有三大國家風景區的縣份：阿里山國家風景區管理處、雲嘉南濱海國家風景區管理處及西拉雅國家風景區管理處，坐擁山色、平原、海景等不同的壯麗與遼闊。
+                &emsp;&emsp;嘉義地區倚山面海，是臺灣所有縣市中，唯一擁有三大國家風景區的縣份：阿里山國家風景區管理處、雲嘉南濱海國家風景區管理處及西拉雅國家風景區管理處，坐擁山色、平原、海景等不同的壯麗與遼闊。
             </td>
         </tr>
         <tr>
@@ -85,8 +85,8 @@
         function featuresText(category) {
             const information = document.querySelector('#information')
             switch (category) {
-                case "嘉義":
-                    information.innerHTML = "&emsp;&emsp;嘉義縣倚山面海，是臺灣所有縣市中，唯一擁有三大國家風景區的縣份：阿里山國家風景區管理處、雲嘉南濱海國家風景區管理處及西拉雅國家風景區管理處，坐擁山色、平原、海景等不同的壯麗與遼闊。";
+                case "嘉義地區":
+                    information.innerHTML = "&emsp;&emsp;嘉義地區倚山面海，是臺灣所有縣市中，唯一擁有三大國家風景區的縣份：阿里山國家風景區管理處、雲嘉南濱海國家風景區管理處及西拉雅國家風景區管理處，坐擁山色、平原、海景等不同的壯麗與遼闊。";
                     mouseDownText(information.innerHTML);
                     break;
                 case "高跟鞋教堂":

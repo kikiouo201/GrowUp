@@ -15,16 +15,16 @@
 <body class="style" background="../../image/map/kraftPaper5.png">
     <table class="features">
         <tr>
-            <td colspan="2" style="font-size: 40px;text-align: center;">臺北市</td>
+            <td colspan="2" style="font-size: 40px;text-align: center;">臺北地區</td>
         </tr>
         <tr>
             <td >特色</td>
             <td >資訊介紹</td>
         </tr>
         <tr>
-            <td ><img src="../../image/map/Taipei_origin.png" onclick="featuresText('臺北市')" />臺北市</td>
+            <td ><img src="../../image/map/Taipei_origin.png" onclick="featuresText('臺北地區')" />臺北地區</td>
             <td id="information" rowspan="4" valign="top" style="font-size:x-large;" >
-                &emsp;&emsp;臺北市位於臺北盆地中，四周均與新北市相接壤。也是臺灣區最大的都市和政治、經濟、交通、文化中心，也是中華民國中央政府所在地，交通四通八達，無論陸、空皆十分方便。
+                &emsp;&emsp;臺北地區位於臺北盆地中，四周均與新北市相接壤。也是臺灣區最大的都市和政治、經濟、交通、文化中心，也是中華民國中央政府所在地，交通四通八達，無論陸、空皆十分方便。
             </td>
         </tr>
         <tr>
@@ -86,8 +86,8 @@
         function featuresText(category) {
     const information = document.querySelector('#information')
     switch (category) {
-        case "臺北市":
-            information.innerHTML = "&emsp;&emsp;臺北市位於臺北盆地中，四周均與新北市相接壤。也是臺灣區最大的都市和政治、經濟、交通、文化中心，也是中華民國中央政府所在地，交通四通八達，無論陸、空皆十分方便。";
+        case "臺北地區":
+            information.innerHTML = "&emsp;&emsp;臺北地區位於臺北盆地中，四周均與新北市相接壤。也是臺灣區最大的都市和政治、經濟、交通、文化中心，也是中華民國中央政府所在地，交通四通八達，無論陸、空皆十分方便。";
             mouseDownText(information.innerHTML);
             break;
         case "中正紀念堂":

@@ -15,16 +15,16 @@
 <body class="style" background="../../image/map/kraftPaper5.png">
     <table class="features">
         <tr>
-            <td colspan="2" style="font-size: 40px;text-align: center;">新北市</td>
+            <td colspan="2" style="font-size: 40px;text-align: center;">新北地區</td>
         </tr>
         <tr>
             <td >特色</td>
             <td >資訊介紹</td>
         </tr>
         <tr>
-            <td ><img src="../../image/map/NewTaipei_origin.png" onclick="featuresText('新北市')" />新北市</td>
+            <td ><img src="../../image/map/NewTaipei_origin.png" onclick="featuresText('新北市')" />新北地區</td>
             <td id="information" rowspan="5" valign="top" style="font-size:x-large;" >
-                &emsp;&emsp;新北市是臺灣本島最北的城市，環繞整個臺北市，總面積達二千多平方公里，海岸線長達120餘公里，幅員遼闊，新北市的東北、北部、西北部均臨海，市內北海岸與東北角海岸擁有豐富的海景奇觀及海岸風光，每逢夏日，海上盡是弄潮張帆的人潮，整條綿延的山海線，銜接成臺北人最鍾愛的黃金旅遊路線。
+                &emsp;&emsp;新北地區是臺灣本島最北的城市，環繞整個臺北市，總面積達二千多平方公里，海岸線長達120餘公里，幅員遼闊，新北市的東北、北部、西北部均臨海，市內北海岸與東北角海岸擁有豐富的海景奇觀及海岸風光，每逢夏日，海上盡是弄潮張帆的人潮，整條綿延的山海線，銜接成臺北人最鍾愛的黃金旅遊路線。
             </td>
         </tr>
         <tr>
@@ -101,8 +101,8 @@
         function featuresText(category) {
     const information = document.querySelector('#information')
     switch (category) {
-        case "新北市":
-            information.innerHTML = "&emsp;&emsp;新北市是臺灣本島最北的城市，環繞整個臺北市，總面積達二千多平方公里，海岸線長達120餘公里，幅員遼闊，新北市的東北、北部、西北部均臨海，市內北海岸與東北角海岸擁有豐富的海景奇觀及海岸風光，每逢夏日，海上盡是弄潮張帆的人潮，整條綿延的山海線，銜接成臺北人最鍾愛的黃金旅遊路線。";
+        case "新北地區":
+            information.innerHTML = "&emsp;&emsp;新北地區是臺灣本島最北的城市，環繞整個臺北市，總面積達二千多平方公里，海岸線長達120餘公里，幅員遼闊，新北市的東北、北部、西北部均臨海，市內北海岸與東北角海岸擁有豐富的海景奇觀及海岸風光，每逢夏日，海上盡是弄潮張帆的人潮，整條綿延的山海線，銜接成臺北人最鍾愛的黃金旅遊路線。";
             mouseDownText(information.innerHTML);
             break;
         case "女王頭":

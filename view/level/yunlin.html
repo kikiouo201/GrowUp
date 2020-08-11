@@ -12,16 +12,16 @@
 <body class="style" background="../../image/map/kraftPaper5.png">
   <table class="features">
         <tr>
-            <td colspan="2" style="font-size: 40px;text-align: center;">雲林</td>
+            <td colspan="2" style="font-size: 40px;text-align: center;">雲林地區</td>
         </tr>
         <tr>
             <td>特色</td>
             <td>資訊介紹</td>
         </tr>
         <tr>
-            <td><img src="../../image/map/Yunlin_origin.png" onclick="featuresText('雲林')" />雲林</td>
+            <td><img src="../../image/map/Yunlin_origin.png" onclick="featuresText('雲林地區')" />雲林地區</td>
             <td id="information" rowspan="4" valign="top" style="font-size:x-large;">
-                &emsp;&emsp;雲林位在臺灣西方的中南部，在嘉南平原最北端。東邊是南投縣，西臨臺灣海峽，南邊隔著北港溪與嘉義縣為鄰，北邊沿著濁水溪和彰化縣接壤。雲林縣有二十個鄉鎮市，除斗六市、古坑鄉及林內鄉靠近山地，地勢較高外，其餘十七鄉鎮均屬平原地區。
+                &emsp;&emsp;雲林地區位在臺灣西方的中南部，在嘉南平原最北端。東邊是南投縣，西臨臺灣海峽，南邊隔著北港溪與嘉義縣為鄰，北邊沿著濁水溪和彰化縣接壤。雲林縣有二十個鄉鎮市，除斗六市、古坑鄉及林內鄉靠近山地，地勢較高外，其餘十七鄉鎮均屬平原地區。
             </td>
         </tr>
         <tr>
@@ -107,8 +107,8 @@
         function featuresText(category) {
             const information = document.querySelector('#information')
             switch (category) {
-                case "雲林":
-                    information.innerHTML = "&emsp;&emsp;雲林位在臺灣西方的中南部，在嘉南平原最北端。東邊是南投縣，西臨臺灣海峽，南邊隔著北港溪與嘉義縣為鄰，北邊沿著濁水溪和彰化縣接壤。雲林縣有二十個鄉鎮市，除斗六市、古坑鄉及林內鄉靠近山地，地勢較高外，其餘十七鄉鎮均屬平原地區。";
+                case "雲林地區":
+                    information.innerHTML = "&emsp;&emsp;雲林地區位在臺灣西方的中南部，在嘉南平原最北端。東邊是南投縣，西臨臺灣海峽，南邊隔著北港溪與嘉義縣為鄰，北邊沿著濁水溪和彰化縣接壤。雲林縣有二十個鄉鎮市，除斗六市、古坑鄉及林內鄉靠近山地，地勢較高外，其餘十七鄉鎮均屬平原地區。";
                     mouseDownText(information.innerHTML);
                     break;
                 case "劍湖山世界主題樂園":

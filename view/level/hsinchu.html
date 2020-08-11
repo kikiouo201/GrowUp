@@ -15,16 +15,16 @@
 <body class="style" background="../../image/map/kraftPaper5.png">
     <table class="features">
         <tr>
-            <td colspan="2" style="font-size: 40px;text-align: center;">新竹縣</td>
+            <td colspan="2" style="font-size: 40px;text-align: center;">新竹地區</td>
         </tr>
         <tr>
             <td >特色</td>
             <td >資訊介紹</td>
         </tr>
         <tr>
-            <td ><img src="../../image/map/Hsinchu_origin.png" onclick="featuresText('新竹縣')" />新竹縣</td>
+            <td ><img src="../../image/map/Hsinchu_origin.png" onclick="featuresText('新竹地區')" />新竹地區</td>
             <td id="information" rowspan="4" valign="top" style="font-size:x-large;" >
-                &emsp;&emsp;新竹縣地形多元、氣候溫和、農產豐盛，全縣客家族群約佔總人口數的84%，是典型的客家（Hakka）大縣，並以「好客竹縣」（Hakka Hsinchu）著稱。本縣從農業到科技的轉型、從傳統到現代的結合，還有隨著科技發展遷入的新移民，形成多元融合的族群結構與文化特色。
+                &emsp;&emsp;新竹地區地形多元、氣候溫和、農產豐盛，全縣客家族群約佔總人口數的84%，是典型的客家（Hakka）大縣，並以「好客竹縣」（Hakka Hsinchu）著稱。本縣從農業到科技的轉型、從傳統到現代的結合，還有隨著科技發展遷入的新移民，形成多元融合的族群結構與文化特色。
             </td>
         </tr>
         <tr>
@@ -86,8 +86,8 @@
         function featuresText(category) {
     const information = document.querySelector('#information')
     switch (category) {
-        case "新竹縣":
-            information.innerHTML = "&emsp;&emsp;新竹縣地形多元、氣候溫和、農產豐盛，全縣客家族群約佔總人口數的84%，是典型的客家（Hakka）大縣，並以「好客竹縣」（Hakka Hsinchu）著稱。本縣從農業到科技的轉型、從傳統到現代的結合，還有隨著科技發展遷入的新移民，形成多元融合的族群結構與文化特色。";
+        case "新竹地區":
+            information.innerHTML = "&emsp;&emsp;新竹地區地形多元、氣候溫和、農產豐盛，全縣客家族群約佔總人口數的84%，是典型的客家（Hakka）大縣，並以「好客竹縣」（Hakka Hsinchu）著稱。本縣從農業到科技的轉型、從傳統到現代的結合，還有隨著科技發展遷入的新移民，形成多元融合的族群結構與文化特色。";
             mouseDownText(information.innerHTML);
             break;
         case "六福村主題遊樂園":

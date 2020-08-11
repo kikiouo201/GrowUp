@@ -15,16 +15,16 @@
 <body class="style" background="../../image/map/kraftPaper5.png">
     <table class="features">
         <tr>
-            <td colspan="2" style="font-size: 40px;text-align: center;">桃園市</td>
+            <td colspan="2" style="font-size: 40px;text-align: center;">桃園地區</td>
         </tr>
         <tr>
             <td >特色</td>
             <td >資訊介紹</td>
         </tr>
         <tr>
-            <td ><img src="../../image/map/Taoyuan_origin.png" onclick="featuresText('桃園市')" />桃園市</td>
+            <td ><img src="../../image/map/Taoyuan_origin.png" onclick="featuresText('桃園地區')" />桃園地區</td>
             <td id="information" rowspan="4" valign="top" style="font-size:x-large;" >
-                &emsp;&emsp;桃園市擁有多元的文化，加上北橫豐富的山水景觀、兩蔣文化園區的獨特歷史文化及「草花王國的故鄉」、「千塘之鄉」等美名，成就桃園為觀光大市，也因這些屬於桃園特別的風華面貌，讓民眾在此相遇，留下了精彩回憶。
+                &emsp;&emsp;桃園地區擁有多元的文化，加上北橫豐富的山水景觀、兩蔣文化園區的獨特歷史文化及「草花王國的故鄉」、「千塘之鄉」等美名，成就桃園為觀光大市，也因這些屬於桃園特別的風華面貌，讓民眾在此相遇，留下了精彩回憶。
             </td>
         </tr>
         <tr>
@@ -86,8 +86,8 @@
         function featuresText(category) {
     const information = document.querySelector('#information')
     switch (category) {
-        case "新北":
-            information.innerHTML = "&emsp;&emsp;桃園市擁有多元的文化，加上北橫豐富的山水景觀、兩蔣文化園區的獨特歷史文化及「草花王國的故鄉」、「千塘之鄉」等美名，成就桃園為觀光大市，也因這些屬於桃園特別的風華面貌，讓民眾在此相遇，留下了精彩回憶。";
+        case "桃園地區":
+            information.innerHTML = "&emsp;&emsp;桃園地區擁有多元的文化，加上北橫豐富的山水景觀、兩蔣文化園區的獨特歷史文化及「草花王國的故鄉」、「千塘之鄉」等美名，成就桃園為觀光大市，也因這些屬於桃園特別的風華面貌，讓民眾在此相遇，留下了精彩回憶。";
             mouseDownText(information.innerHTML);
             break;
         case "X park海生館":
