@@ -14,54 +14,71 @@
     <link rel="stylesheet" href="CSS/every_four_button.css">
     <link rel="stylesheet" href="CSS/treature_list.css">
     <link rel="stylesheet" href="CSS/treatureList/collectIconMap.css">
+    <link rel="stylesheet" href="CSS/treatureList/Bigger_map_RegionIcon.css" </head>
 
-</head>
+    <body id="stopVoice">
+        <div class="home_page">
+            <a class="home_title">寶物清單</a>
 
-<body id="stopVoice">
-    <div class="home_page">
-        <a class="home_title">寶物清單</a>
-
-        <body onload="ShowTime()">
-            <div id="today"></div>
-            <br>
-            <div id="showtime"></div>
-        </body>
-    </div>
-
-    <script language="JavaScript">
-        function ShowTime() {
-
-            var fullDate = new Date();
-            var yyyy = fullDate.getFullYear();
-            var MM = (fullDate.getMonth() + 1) >= 10 ? (fullDate.getMonth() + 1) : ("0" + (fullDate.getMonth() + 1));
-            var dd = fullDate.getDate() < 10 ? ("0" + fullDate.getDate()) : fullDate.getDate();
-            document.getElementById('today').innerHTML = yyyy + "/" + MM + "/" + dd;
-
-            var NowDate = new Date();
-            var h = NowDate.getHours();
-            var m = NowDate.getMinutes();
-            document.getElementById('showtime').innerHTML = h + ':' + m;
-            setTimeout('ShowTime()', 1000);
-        }
-    </script>
-    <div class="black_overlay">
-        <div class="closeMap">X</div>
-        <img src="./image/map/Taiwan_map_o.png" style="margin: 0px 36%;width: 255px;z-index: 1003;position: absolute;top: 1px;/* background-color: black; */">
-        <img onclick="RegionIcon('新北鶯歌陶瓷')" class="NewTaipei_icon" src="./image/icon/NewTaipei_icon_dark.png">
-
-    </div>
-
-    <div class="main_area">
-        <div class="left_main_area">
-            <p>目前收集到的徽章</p>
-            <!-- <img src="./image/character/bg.png" style="position: absolute; top: 0; left: 0; width: 50%; height: 625px;"> -->
-            <!-- <textarea name="magicCard" cols="20" rows="3" style="background-color: #ffffff00; border-color: #ffffff00;">我我我</textarea> -->
+            <body onload="ShowTime()">
+                <div id="today"></div>
+                <br>
+                <div id="showtime"></div>
+            </body>
         </div>
 
-        <!-- All icon ifram -->
-        <iframe id="AllIconIfram" src="./alreadyCollect_icon.html" frameborder="0" class="collect_icon" style="visibility: hidden;"></iframe>
-        <!-- All individual icon ifram -->
-        <!-- <iframe id="Keelung_feature" src="" frameborder="0" class="collect_icon" style="visibility: hidden;"></iframe>
+        <script language="JavaScript">
+            function ShowTime() {
+
+                var fullDate = new Date();
+                var yyyy = fullDate.getFullYear();
+                var MM = (fullDate.getMonth() + 1) >= 10 ? (fullDate.getMonth() + 1) : ("0" + (fullDate.getMonth() + 1));
+                var dd = fullDate.getDate() < 10 ? ("0" + fullDate.getDate()) : fullDate.getDate();
+                document.getElementById('today').innerHTML = yyyy + "/" + MM + "/" + dd;
+
+                var NowDate = new Date();
+                var h = NowDate.getHours();
+                var m = NowDate.getMinutes();
+                document.getElementById('showtime').innerHTML = h + ':' + m;
+                setTimeout('ShowTime()', 1000);
+            }
+        </script>
+        <div class="black_overlay">
+            <div class="closeMap">X</div>
+            <img src="./image/map/Taiwan_map_o.png" style="margin: 0px 36%;width: 255px;z-index: 98;position: absolute;top: 1px;/* background-color: black; */">
+            <img onclick="RegionIcon('新北鶯歌陶瓷')" class="NewTaipei_icon_B" src="./image/icon/NewTaipei_icon_dark.png">
+            <img onclick="RegionIcon('台北101')" class="Taipei_icon_B" src="./image/icon/taipei101_dark.png">
+            <img onclick="RegionIcon('基隆游輪')" class="Keelung_icon_B" src="./image/icon/oceanliner_dark.png">
+            <img onclick="RegionIcon('桃園豆干')" class="Taoyuan_icon_B" src="./image/icon/togan_dark.png">
+            <img onclick="RegionIcon('新竹貢丸')" class="Hsinchu_icon_B" src="./image/icon/pork_ball_dark.png">
+            <img onclick="RegionIcon('苗栗草莓')" id="Miaoli_feature" class="Miaoli_icon_B" src="./image/icon/strawberry.png">
+            <img onclick="RegionIcon('台中太陽餅')" id="Taichung_feature" class="Taichung_icon_B" src="./image/icon/suncake.png">
+            <img onclick="RegionIcon('彰化肉圓')" id="Changhua_feature" class="Changhua_icon_B" src="./image/icon/meat_ball.png">
+            <img onclick="RegionIcon('高雄85大樓')" id="Kaohsiung_feature" class="Kaohsiung_icon_B" src="./image/icon/85building_dark.png">
+            <img onclick="RegionIcon('嘉義雞肉飯')" id="Chiayi_feature" class="Chiayi_icon_B" src="./image/icon/meat_rice.png">
+            <img onclick="RegionIcon('雲林西螺醬油')" id="Yunlin_feature" class="Yunlin_icon_B" src="./image/icon/soy_sauce.png">
+            <img onclick="RegionIcon('南投高山茶')" id="Nantou_feature" class="Nantou_icon_B" src="./image/icon/herbal_tea.png">
+            <img onclick="RegionIcon('宜蘭三星蔥')" id="Yilan_feature" class="Yilan_icon_B" src="./image/icon/Sanxing_green_onion_dark.png">
+            <img onclick="RegionIcon('台東熱氣球')" id="Taitung_feature" class="Taitung_icon_B" src="./image/icon/hot_air_balloon_dark.png">
+            <img onclick="RegionIcon('花蓮西瓜')" id="Hualien_feature" class="Hualien_icon_B" src="./image/icon/watermelon_dark.png">
+            <img onclick="RegionIcon('台南赤崁樓')" id="Tainan_feature" class="Tainan_icon_B" src="./image/icon/temple.png">
+            <img onclick="RegionIcon('屏東黑鮪魚')" id="Pingtung_feature" class="Pingtung_icon_B" src="./image/icon/black_tuna_dark.png">
+
+            <!-- 黑白地形 -->
+            <img class="Kaohsiung" src="./image/map/Kaohsiung_dark.png">
+        </div>
+
+        <div class="main_area">
+            <div class="left_main_area">
+                <p>目前收集到的徽章</p>
+                <!-- <img src="./image/character/bg.png" style="position: absolute; top: 0; left: 0; width: 50%; height: 625px;"> -->
+                <!-- <textarea name="magicCard" cols="20" rows="3" style="background-color: #ffffff00; border-color: #ffffff00;">我我我</textarea> -->
+            </div>
+
+            <!-- All icon ifram -->
+            <iframe id="AllIconIfram" src="./alreadyCollect_icon.html" frameborder="0" class="collect_icon" style="visibility: hidden;"></iframe>
+            <!-- All individual icon ifram -->
+            <!-- <iframe id="Keelung_feature" src="" frameborder="0" class="collect_icon" style="visibility: hidden;"></iframe>
         <iframe id="NewTaipei_feature" src="" frameborder="0" class="collect_icon" style="visibility: hidden;"></iframe>
         <iframe id="Taipei_feature" src="" frameborder="0" class="collect_icon" style="visibility: hidden;"></iframe>
         <iframe id="Taoyuan_feature" src="" frameborder="0" class="collect_icon" style="visibility: hidden;"></iframe>
@@ -79,569 +96,569 @@
         <iframe id="Hualien_feature" src="" frameborder="0" class="collect_icon" style="visibility: hidden;"></iframe>
         <iframe id="Taitung_feature" src="" frameborder="0" class="collect_icon" style="visibility: hidden;"></iframe> -->
 
-        <div id="collect_iconMap" class="collect_icon">
-            <div id="MapIcon" style="position: absolute; width: 100%;">
-                <img class="minMap" src="./image/map/Taiwan_map_o.png" style="margin: 0px 82px;width: 127px;z-index: 999;position: absolute;top: 1px;"> <img class="NewTaipei" src="./image/map/NewTaipei_dark.png">
-                <!-- <a href="./view/level/newTaipei.html"> -->
-                <img onclick="RegionIcon('新北鶯歌陶瓷')" class="NewTaipei_icon" src="./image/icon/NewTaipei_icon_dark.png">
-                <!-- </a> -->
+            <div id="collect_iconMap" class="collect_icon">
+                <div id="MapIcon" style="position: absolute; width: 100%;">
+                    <img class="minMap" src="./image/map/Taiwan_map_o.png" style="margin: 0px 82px;width: 127px;z-index: 999;position: absolute;top: 1px;"> <img class="NewTaipei" src="./image/map/NewTaipei_dark.png">
+                    <!-- <a href="./view/level/newTaipei.html"> -->
+                    <img onclick="RegionIcon('新北鶯歌陶瓷')" class="NewTaipei_icon" src="./image/icon/NewTaipei_icon_dark.png">
+                    <!-- </a> -->
 
-                <img class="Taipei" src="./image/map/Taipei_dark.png">
-                <!-- <a href="./view/level/taipei.html"> -->
-                <img onclick="RegionIcon('台北101')" class="Taipei_icon" src="./image/icon/taipei101_dark.png">
-                <!-- </a> -->
+                    <img class="Taipei" src="./image/map/Taipei_dark.png">
+                    <!-- <a href="./view/level/taipei.html"> -->
+                    <img onclick="RegionIcon('台北101')" class="Taipei_icon" src="./image/icon/taipei101_dark.png">
+                    <!-- </a> -->
 
-                <img class="Keelung" src="./image/map/Keelung_dark.png">
-                <!-- <a href="./view/level/Keelung.html"> -->
-                <img onclick="RegionIcon('基隆游輪')" class="Keelung_icon" src="./image/icon/oceanliner_dark.png">
-                <!-- </a> -->
+                    <img class="Keelung" src="./image/map/Keelung_dark.png">
+                    <!-- <a href="./view/level/Keelung.html"> -->
+                    <img onclick="RegionIcon('基隆游輪')" class="Keelung_icon" src="./image/icon/oceanliner_dark.png">
+                    <!-- </a> -->
 
-                <img class="Taoyuan" src="./image/map/Taoyuan_dark.png">
-                <!-- <a href="./view/level/Taoyuan.html"> -->
-                <img onclick="RegionIcon('桃園豆干')" class="Taoyuan_icon" src="./image/icon/togan_dark.png">
-                <!-- </a> -->
+                    <img class="Taoyuan" src="./image/map/Taoyuan_dark.png">
+                    <!-- <a href="./view/level/Taoyuan.html"> -->
+                    <img onclick="RegionIcon('桃園豆干')" class="Taoyuan_icon" src="./image/icon/togan_dark.png">
+                    <!-- </a> -->
 
-                <img class="Hsinchu" src="./image/map/Hsinchu_dark.png">
-                <!-- <a href="./view/level/Hsinchu.html"> -->
-                <img onclick="RegionIcon('新竹貢丸')" class="Hsinchu_icon" src="./image/icon/pork_ball_dark.png">
-                <!-- </a> -->
+                    <img class="Hsinchu" src="./image/map/Hsinchu_dark.png">
+                    <!-- <a href="./view/level/Hsinchu.html"> -->
+                    <img onclick="RegionIcon('新竹貢丸')" class="Hsinchu_icon" src="./image/icon/pork_ball_dark.png">
+                    <!-- </a> -->
 
-                <img class="Miaoli" src="./image/map/Miaoli_origin.png">
-                <!-- <a href="./view/level/Miaoli.html"> -->
-                <img onclick="RegionIcon('苗栗草莓')" id="Miaoli_feature" class="Miaoli_icon" src="./image/icon/strawberry.png">
-                <!-- </a> -->
+                    <img class="Miaoli" src="./image/map/Miaoli_origin.png">
+                    <!-- <a href="./view/level/Miaoli.html"> -->
+                    <img onclick="RegionIcon('苗栗草莓')" id="Miaoli_feature" class="Miaoli_icon" src="./image/icon/strawberry.png">
+                    <!-- </a> -->
 
-                <img class="Taichung" src="./image/map/Taichung_origin.png">
-                <!-- <a href="./view/level/Taichung.html"> -->
-                <img onclick="RegionIcon('台中太陽餅')" id="Taichung_feature" class="Taichung_icon" src="./image/icon/suncake.png">
-                <!-- </a> -->
+                    <img class="Taichung" src="./image/map/Taichung_origin.png">
+                    <!-- <a href="./view/level/Taichung.html"> -->
+                    <img onclick="RegionIcon('台中太陽餅')" id="Taichung_feature" class="Taichung_icon" src="./image/icon/suncake.png">
+                    <!-- </a> -->
 
-                <img class="Changhua" src="./image/map/Changhua_origin.png">
-                <!-- <a href="./view/level/Changhua.html"> -->
-                <img onclick="RegionIcon('彰化肉圓')" id="Changhua_feature" class="Changhua_icon" src="./image/icon/meat_ball.png">
-                <!-- </a> -->
+                    <img class="Changhua" src="./image/map/Changhua_origin.png">
+                    <!-- <a href="./view/level/Changhua.html"> -->
+                    <img onclick="RegionIcon('彰化肉圓')" id="Changhua_feature" class="Changhua_icon" src="./image/icon/meat_ball.png">
+                    <!-- </a> -->
 
-                <img class="Kaohsiung" src="./image/map/Kaohsiung_dark.png">
-                <!-- <a href="./view/level/Kaohsiung.html"> -->
-                <img onclick="RegionIcon('高雄85大樓')" id="Kaohsiung_feature" class="Kaohsiung_icon" src="./image/icon/85building_dark.png">
-                <!-- </a> -->
+                    <img class="Kaohsiung" src="./image/map/Kaohsiung_dark.png">
+                    <!-- <a href="./view/level/Kaohsiung.html"> -->
+                    <img onclick="RegionIcon('高雄85大樓')" id="Kaohsiung_feature" class="Kaohsiung_icon" src="./image/icon/85building_dark.png">
+                    <!-- </a> -->
 
-                <img class="Chiayi" src="./image/map/Chiayi_origin.png">
-                <!-- <a href="./view/level/chiayi.html"> -->
-                <img onclick="RegionIcon('嘉義雞肉飯')" id="Chiayi_feature" class="Chiayi_icon" src="./image/icon/meat_rice.png">
-                <!-- </a> -->
+                    <img class="Chiayi" src="./image/map/Chiayi_origin.png">
+                    <!-- <a href="./view/level/chiayi.html"> -->
+                    <img onclick="RegionIcon('嘉義雞肉飯')" id="Chiayi_feature" class="Chiayi_icon" src="./image/icon/meat_rice.png">
+                    <!-- </a> -->
 
-                <img class="Yunlin" src="./image/map/Yunlin_origin.png">
-                <!-- <a href="./view/level/Yunlin.html"> -->
-                <img onclick="RegionIcon('雲林西螺醬油')" id="Yunlin_feature" class="Yunlin_icon" src="./image/icon/soy_sauce.png">
-                <!-- </a> -->
+                    <img class="Yunlin" src="./image/map/Yunlin_origin.png">
+                    <!-- <a href="./view/level/Yunlin.html"> -->
+                    <img onclick="RegionIcon('雲林西螺醬油')" id="Yunlin_feature" class="Yunlin_icon" src="./image/icon/soy_sauce.png">
+                    <!-- </a> -->
 
-                <img class="Nantou" src="./image/map/Nantou_origin.png">
-                <!-- <a href="./view/level/nantou.html"> -->
-                <img onclick="RegionIcon('南投高山茶')" id="Nantou_feature" class="Nantou_icon" src="./image/icon/herbal_tea.png">
-                <!-- </a> -->
+                    <img class="Nantou" src="./image/map/Nantou_origin.png">
+                    <!-- <a href="./view/level/nantou.html"> -->
+                    <img onclick="RegionIcon('南投高山茶')" id="Nantou_feature" class="Nantou_icon" src="./image/icon/herbal_tea.png">
+                    <!-- </a> -->
 
-                <img class="Yilan" src="./image/map/Yilan_dark.png">
-                <!-- <a href="./view/level/Yilan.html"> -->
-                <img onclick="RegionIcon('宜蘭三星蔥')" id="Yilan_feature" class="Yilan_icon" src="./image/icon/Sanxing_green_onion_dark.png">
-                <!-- </a> -->
+                    <img class="Yilan" src="./image/map/Yilan_dark.png">
+                    <!-- <a href="./view/level/Yilan.html"> -->
+                    <img onclick="RegionIcon('宜蘭三星蔥')" id="Yilan_feature" class="Yilan_icon" src="./image/icon/Sanxing_green_onion_dark.png">
+                    <!-- </a> -->
 
-                <img class="Taitung" src="./image/map/Taitung_dark.png">
-                <!-- <a href="./view/level/Taitung.html"> -->
-                <img onclick="RegionIcon('台東熱氣球')" id="Taitung_feature" class="Taitung_icon" src="./image/icon/hot_air_balloon_dark.png">
-                <!-- </a> -->
+                    <img class="Taitung" src="./image/map/Taitung_dark.png">
+                    <!-- <a href="./view/level/Taitung.html"> -->
+                    <img onclick="RegionIcon('台東熱氣球')" id="Taitung_feature" class="Taitung_icon" src="./image/icon/hot_air_balloon_dark.png">
+                    <!-- </a> -->
 
-                <img class="Hualien" src="./image/map/Hualien_dark.png">
-                <!-- <a href="./view/level/Hualien.html"> -->
-                <img onclick="RegionIcon('花蓮西瓜')" id="Hualien_feature" class="Hualien_icon" src="./image/icon/watermelon_dark.png">
-                <!-- </a> -->
+                    <img class="Hualien" src="./image/map/Hualien_dark.png">
+                    <!-- <a href="./view/level/Hualien.html"> -->
+                    <img onclick="RegionIcon('花蓮西瓜')" id="Hualien_feature" class="Hualien_icon" src="./image/icon/watermelon_dark.png">
+                    <!-- </a> -->
 
-                <img class="Tainan" src="./image/map/Tainan_origin.png">
-                <!-- <a href="./view/level/Tainan.html"> -->
-                <img onclick="RegionIcon('台南赤崁樓')" id="Tainan_feature" class="Tainan_icon" src="./image/icon/temple.png">
-                <!-- </a> -->
+                    <img class="Tainan" src="./image/map/Tainan_origin.png">
+                    <!-- <a href="./view/level/Tainan.html"> -->
+                    <img onclick="RegionIcon('台南赤崁樓')" id="Tainan_feature" class="Tainan_icon" src="./image/icon/temple.png">
+                    <!-- </a> -->
 
-                <img class="Pingtung" src="./image/map/Pingtung_dark.png">
-                <!-- <a href="./view/level/Pingtung.html"> -->
-                <img onclick="RegionIcon('屏東黑鮪魚')" id="Pingtung_feature" class="Pingtung_icon" src="./image/icon/black_tuna_dark.png">
-                <!-- </a> -->
+                    <img class="Pingtung" src="./image/map/Pingtung_dark.png">
+                    <!-- <a href="./view/level/Pingtung.html"> -->
+                    <img onclick="RegionIcon('屏東黑鮪魚')" id="Pingtung_feature" class="Pingtung_icon" src="./image/icon/black_tuna_dark.png">
+                    <!-- </a> -->
+                </div>
+                <div id="FeatureIcon" style="margin-top:80px">
+
+                </div>
             </div>
-            <div id="FeatureIcon" style="margin-top:80px">
+            <img src="./image/character/btn.png" class="left_button" onclick="leftIframChage()">
+
+
+            <div class="right_main_area">
+                <p>目前收集到的魔法小卡</p>
+                <!-- <img src="./image/character/bg.png" style="position: absolute; top: 0; right: 0; width: 50%; height: 625px;"> -->
 
             </div>
-        </div>
-        <img src="./image/character/btn.png" class="left_button" onclick="leftIframChage()">
+            <div class="collect_magicCard">
+                <table>
+                    <tr>
+                        <td>
+                            <a href="./view/game/drawZhuyin.html?id=b"><img src="./image/magicCard/chineseAlphabet/b.png" style="width :100%;"></a>
+                            <div style="display: initial;">
+                                <img src="./icons/speaker.png" onclick="zhuyin('ㄅ');" class="leftZhuyin">
+                            </div>
+                        </td>
+                        <td>
+                            <a href="./view/game/drawZhuyin.html?id=p"><img src="./image/magicCard/chineseAlphabet/p.png" style="width :100%;"></a>
+                            <div style="display: initial;">
+                                <img src="./icons/speaker.png" onclick="zhuyin('ㄆ')" class="midZhuyin">
+                            </div>
+                        </td>
+                        <td>
+                            <a href="./view/game/drawZhuyin.html?id=m"><img src="./image/magicCard/chineseAlphabet/m.png" style="width :100%;"></a>
+                            <div style="display: initial;">
+                                <img src="./icons/speaker.png" onclick="zhuyin('ㄇ')" class="rightZhuyin">
+                            </div>
+                        </td>
+                    </tr>
 
+                    <tr>
+                        <td>
+                            <a href="./view/game/drawZhuyin.html?id=f"><img src="./image/magicCard/chineseAlphabet/f.png" style="width :100%;"></a>
+                            <div style="display: initial;">
+                                <img src="./icons/speaker.png" onclick="zhuyin('ㄈ');" class="leftZhuyin">
+                            </div>
+                        </td>
+                        <td>
+                            <a href="./view/game/drawZhuyin.html?id=d"><img onclick="clickP()" src="./image/magicCard/chineseAlphabet/d.png" style="width :100%;"></a>
+                            <div style="display: initial;">
+                                <img src="./icons/speaker.png" onclick="zhuyin('ㄉ')" class="midZhuyin">
+                            </div>
+                        </td>
+                        <td>
+                            <a href="./view/game/drawZhuyin.html?id=t"><img src="./image/magicCard/chineseAlphabet/t.png" style="width :100%;"></a>
+                            <div style="display: initial;">
+                                <img src="./icons/speaker.png" onclick="zhuyin('ㄊ')" class="rightZhuyin">
+                            </div>
+                        </td>
+                    </tr>
 
-        <div class="right_main_area">
-            <p>目前收集到的魔法小卡</p>
-            <!-- <img src="./image/character/bg.png" style="position: absolute; top: 0; right: 0; width: 50%; height: 625px;"> -->
+                    <tr>
+                        <td>
+                            <a href="./view/game/drawZhuyin.html?id=n"><img src="./image/magicCard/chineseAlphabet/n.png" style="width :100%;"></a>
+                            <div style="display: initial;">
+                                <img src="./icons/speaker.png" onclick="zhuyin('ㄋ')" class="leftZhuyin">
+                            </div>
+                        </td>
+                        <td>
+                            <a href="./view/game/drawZhuyin.html?id=l"><img src="./image/magicCard/chineseAlphabet/l.png" style="width :100%;"></a>
+                            <div style="display: initial;">
+                                <img src="./icons/speaker.png" onclick="zhuyin('ㄌ')" class="midZhuyin">
+                            </div>
+                        </td>
+                        <td>
+                            <a href="./view/game/drawZhuyin.html?id=g"><img src="./image/magicCard/chineseAlphabet/g_lock.png" style="width :100%;"></a>
+                            <div style="display: initial;">
+                                <img src="./icons/speaker.png" onclick="zhuyin('ㄍ')" class="rightZhuyin">
+                            </div>
+                        </td>
+                    </tr>
 
-        </div>
-        <div class="collect_magicCard">
-            <table>
-                <tr>
-                    <td>
-                        <a href="./view/game/drawZhuyin.html?id=b"><img src="./image/magicCard/chineseAlphabet/b.png" style="width :100%;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="zhuyin('ㄅ');" class="leftZhuyin">
-                        </div>
-                    </td>
-                    <td>
-                        <a href="./view/game/drawZhuyin.html?id=p"><img src="./image/magicCard/chineseAlphabet/p.png" style="width :100%;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="zhuyin('ㄆ')" class="midZhuyin">
-                        </div>
-                    </td>
-                    <td>
-                        <a href="./view/game/drawZhuyin.html?id=m"><img src="./image/magicCard/chineseAlphabet/m.png" style="width :100%;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="zhuyin('ㄇ')" class="rightZhuyin">
-                        </div>
-                    </td>
-                </tr>
+                    <tr>
+                        <td>
+                            <a href="./view/game/drawZhuyin.html?id=k"><img src="./image/magicCard/chineseAlphabet/k_lock.png" style="width :100%;"></a>
+                            <div style="display: initial;">
+                                <img src="./icons/speaker.png" onclick="zhuyin('ㄎ')" class="leftZhuyin">
+                            </div>
+                        </td>
+                        <td>
+                            <a href="./view/game/drawZhuyin.html?id=h"><img src="./image/magicCard/chineseAlphabet/h_lock.png" style="width :100%;"></a>
+                            <div style="display: initial;">
+                                <img src="./icons/speaker.png" onclick="zhuyin('ㄏ')" class="midZhuyin">
+                            </div>
+                        </td>
+                        <td>
+                            <a href="./view/game/drawZhuyin.html?id=ji"><img src="./image/magicCard/chineseAlphabet/ji_lock.png" style="width :100%;"></a>
+                            <div style="display: initial;">
+                                <img src="./icons/speaker.png" onclick="zhuyin('ㄐ')" class="rightZhuyin">
+                            </div>
+                        </td>
+                    </tr>
 
-                <tr>
-                    <td>
-                        <a href="./view/game/drawZhuyin.html?id=f"><img src="./image/magicCard/chineseAlphabet/f.png" style="width :100%;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="zhuyin('ㄈ');" class="leftZhuyin">
-                        </div>
-                    </td>
-                    <td>
-                        <a href="./view/game/drawZhuyin.html?id=d"><img onclick="clickP()" src="./image/magicCard/chineseAlphabet/d.png" style="width :100%;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="zhuyin('ㄉ')" class="midZhuyin">
-                        </div>
-                    </td>
-                    <td>
-                        <a href="./view/game/drawZhuyin.html?id=t"><img src="./image/magicCard/chineseAlphabet/t.png" style="width :100%;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="zhuyin('ㄊ')" class="rightZhuyin">
-                        </div>
-                    </td>
-                </tr>
+                    <tr>
+                        <td>
+                            <a href="./view/game/drawZhuyin.html?id=chi"><img src="./image/magicCard/chineseAlphabet/chi_lock.png" style="width :100%;"></a>
+                            <div style="display: initial;">
+                                <img src="./icons/speaker.png" onclick="zhuyin('ㄑ')" class="leftZhuyin">
+                            </div>
+                        </td>
+                        <td>
+                            <a href="./view/game/drawZhuyin.html?id=si"><img src="./image/magicCard/chineseAlphabet/si_lock.png" style="width :100%;"></a>
+                            <div style="display: initial;">
+                                <img src="./icons/speaker.png" onclick="zhuyin('ㄒ')" class="midZhuyin">
+                            </div>
+                        </td>
+                        <td>
+                            <a href="./view/game/drawZhuyin.html?id=z_tsu"><img src="./image/magicCard/chineseAlphabet/z_tsu_lock.png" style="width :100%;"></a>
+                            <div style="display: initial;">
+                                <img src="./icons/speaker.png" onclick="zhuyin('ㄓ')" class="rightZhuyin">
+                            </div>
+                        </td>
+                    </tr>
 
-                <tr>
-                    <td>
-                        <a href="./view/game/drawZhuyin.html?id=n"><img src="./image/magicCard/chineseAlphabet/n.png" style="width :100%;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="zhuyin('ㄋ')" class="leftZhuyin">
-                        </div>
-                    </td>
-                    <td>
-                        <a href="./view/game/drawZhuyin.html?id=l"><img src="./image/magicCard/chineseAlphabet/l.png" style="width :100%;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="zhuyin('ㄌ')" class="midZhuyin">
-                        </div>
-                    </td>
-                    <td>
-                        <a href="./view/game/drawZhuyin.html?id=g"><img src="./image/magicCard/chineseAlphabet/g_lock.png" style="width :100%;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="zhuyin('ㄍ')" class="rightZhuyin">
-                        </div>
-                    </td>
-                </tr>
+                    <tr>
+                        <td>
+                            <a href="./view/game/drawZhuyin.html?id=chu"><img src="./image/magicCard/chineseAlphabet/chu_lock.png" style="width :100%;"></a>
+                            <div style="display: initial;">
+                                <img src="./icons/speaker.png" onclick="zhuyin('ㄔ')" class="leftZhuyin">
+                            </div>
+                        </td>
+                        <td>
+                            <a href="./view/game/drawZhuyin.html?id=shu"><img src="./image/magicCard/chineseAlphabet/shu_lock.png" style="width :100%;"></a>
+                            <div style="display: initial;">
+                                <img src="./icons/speaker.png" onclick="zhuyin('ㄕ')" class="midZhuyin">
+                            </div>
+                        </td>
+                        <td>
+                            <a href="./view/game/drawZhuyin.html?id=r"><img src="./image/magicCard/chineseAlphabet/r_lock.png" style="width :100%;"></a>
+                            <div style="display: initial;">
+                                <img src="./icons/speaker.png" onclick="zhuyin('ㄖ')" class="rightZhuyin">
+                            </div>
+                        </td>
+                    </tr>
 
-                <tr>
-                    <td>
-                        <a href="./view/game/drawZhuyin.html?id=k"><img src="./image/magicCard/chineseAlphabet/k_lock.png" style="width :100%;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="zhuyin('ㄎ')" class="leftZhuyin">
-                        </div>
-                    </td>
-                    <td>
-                        <a href="./view/game/drawZhuyin.html?id=h"><img src="./image/magicCard/chineseAlphabet/h_lock.png" style="width :100%;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="zhuyin('ㄏ')" class="midZhuyin">
-                        </div>
-                    </td>
-                    <td>
-                        <a href="./view/game/drawZhuyin.html?id=ji"><img src="./image/magicCard/chineseAlphabet/ji_lock.png" style="width :100%;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="zhuyin('ㄐ')" class="rightZhuyin">
-                        </div>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <a href="./view/game/drawZhuyin.html?id=chi"><img src="./image/magicCard/chineseAlphabet/chi_lock.png" style="width :100%;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="zhuyin('ㄑ')" class="leftZhuyin">
-                        </div>
-                    </td>
-                    <td>
-                        <a href="./view/game/drawZhuyin.html?id=si"><img src="./image/magicCard/chineseAlphabet/si_lock.png" style="width :100%;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="zhuyin('ㄒ')" class="midZhuyin">
-                        </div>
-                    </td>
-                    <td>
-                        <a href="./view/game/drawZhuyin.html?id=z_tsu"><img src="./image/magicCard/chineseAlphabet/z_tsu_lock.png" style="width :100%;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="zhuyin('ㄓ')" class="rightZhuyin">
-                        </div>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <a href="./view/game/drawZhuyin.html?id=chu"><img src="./image/magicCard/chineseAlphabet/chu_lock.png" style="width :100%;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="zhuyin('ㄔ')" class="leftZhuyin">
-                        </div>
-                    </td>
-                    <td>
-                        <a href="./view/game/drawZhuyin.html?id=shu"><img src="./image/magicCard/chineseAlphabet/shu_lock.png" style="width :100%;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="zhuyin('ㄕ')" class="midZhuyin">
-                        </div>
-                    </td>
-                    <td>
-                        <a href="./view/game/drawZhuyin.html?id=r"><img src="./image/magicCard/chineseAlphabet/r_lock.png" style="width :100%;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="zhuyin('ㄖ')" class="rightZhuyin">
-                        </div>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <a href="./view/game/drawZhuyin.html?id=tsu"><img src="./image/magicCard/chineseAlphabet/tsu_lock.png" style="width :100%;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="zhuyin('ㄗ')" class="leftZhuyin">
-                        </div>
-                    </td>
-                    <td>
-                        <a href="./view/game/drawZhuyin.html?id=c"><img src="./image/magicCard/chineseAlphabet/c_lock.png" style="width :100%;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="zhuyin('ㄘ')" class="midZhuyin">
-                        </div>
-                    </td>
-                    <td>
-                        <a href="./view/game/drawZhuyin.html?id=s"><img src="./image/magicCard/chineseAlphabet/s_lock.png" style="width :100%;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="zhuyin('ㄙ')" class="rightZhuyin">
-                        </div>
-                    </td>
-                </tr>
+                    <tr>
+                        <td>
+                            <a href="./view/game/drawZhuyin.html?id=tsu"><img src="./image/magicCard/chineseAlphabet/tsu_lock.png" style="width :100%;"></a>
+                            <div style="display: initial;">
+                                <img src="./icons/speaker.png" onclick="zhuyin('ㄗ')" class="leftZhuyin">
+                            </div>
+                        </td>
+                        <td>
+                            <a href="./view/game/drawZhuyin.html?id=c"><img src="./image/magicCard/chineseAlphabet/c_lock.png" style="width :100%;"></a>
+                            <div style="display: initial;">
+                                <img src="./icons/speaker.png" onclick="zhuyin('ㄘ')" class="midZhuyin">
+                            </div>
+                        </td>
+                        <td>
+                            <a href="./view/game/drawZhuyin.html?id=s"><img src="./image/magicCard/chineseAlphabet/s_lock.png" style="width :100%;"></a>
+                            <div style="display: initial;">
+                                <img src="./icons/speaker.png" onclick="zhuyin('ㄙ')" class="rightZhuyin">
+                            </div>
+                        </td>
+                    </tr>
 
 
 
-                <tr>
-                    <td>
-                        <a href="./view/game/drawZhuyin.html?id=yi"><img src="./image/magicCard/chineseAlphabet/yi_lock.png" style="width :100%;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="zhuyin('ㄧ')" class="leftZhuyin">
-                        </div>
-                    </td>
-                    <td>
-                        <a href="./view/game/drawZhuyin.html?id=wu"><img src="./image/magicCard/chineseAlphabet/wu_lock.png" style="width :100%;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="zhuyin('ㄨ')" class="midZhuyin">
-                        </div>
-                    </td>
-                    <td>
-                        <a href="./view/game/drawZhuyin.html?id=yu"><img src="./image/magicCard/chineseAlphabet/yu_lock.png" style="width :100%;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="zhuyin('ㄩ')" class="rightZhuyin">
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="./view/game/drawZhuyin.html?id=a"><img src="./image/magicCard/chineseAlphabet/a_lock.png" style="width :100%;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="zhuyin('ㄚ')" class="leftZhuyin">
-                        </div>
-                    </td>
-                    <td>
-                        <a href="./view/game/drawZhuyin.html?id=o"><img src="./image/magicCard/chineseAlphabet/o_lock.png" style="width :100%;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="zhuyin('ㄛ')" class="midZhuyin">
-                        </div>
-                    </td>
-                    <td>
-                        <a href="./view/game/drawZhuyin.html?id=e"><img src="./image/magicCard/chineseAlphabet/e_lock.png" style="width :100%;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="zhuyin('ㄜ')" class="rightZhuyin">
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="./view/game/drawZhuyin.html?id=ae"><img src="./image/magicCard/chineseAlphabet/ae_lock.png" style="width :100%;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="zhuyin('ㄝ')" class="leftZhuyin">
-                        </div>
-                    </td>
-                    <td>
-                        <a href="./view/game/drawZhuyin.html?id=ai"><img src="./image/magicCard/chineseAlphabet/ai_lock.png" style="width :100%;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="zhuyin('ㄞ')" class="midZhuyin">
-                        </div>
-                    </td>
-                    <td>
-                        <a href="./view/game/drawZhuyin.html?id=ei"><img src="./image/magicCard/chineseAlphabet/ei_lock.png" style="width :100%;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="zhuyin('ㄟ')" class="rightZhuyin">
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="./view/game/drawZhuyin.html?id=au"><img src="./image/magicCard/chineseAlphabet/au_lock.png" style="width :100%;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="zhuyin('ㄠ')" class="leftZhuyin">
-                        </div>
-                    </td>
-                    <td>
-                        <a href="./view/game/drawZhuyin.html?id=ou"><img src="./image/magicCard/chineseAlphabet/ou_lock.png" style="width :100%;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="zhuyin('ㄡ')" class="midZhuyin">
-                        </div>
-                    </td>
-                    <td>
-                        <a href="./view/game/drawZhuyin.html?id=an"><img src="./image/magicCard/chineseAlphabet/an_lock.png" style="width :100%;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="zhuyin('ㄢ')" class="rightZhuyin">
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="./view/game/drawZhuyin.html?id=en"><img src="./image/magicCard/chineseAlphabet/en_lock.png" style="width :100%;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="zhuyin('ㄣ')" class="leftZhuyin">
-                        </div>
-                    </td>
-                    <td>
-                        <a href="./view/game/drawZhuyin.html?id=ang"><img src="./image/magicCard/chineseAlphabet/ang_lock.png" style="width :100%;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="zhuyin('ㄤ')" class="midZhuyin">
-                        </div>
-                    </td>
-                    <td>
-                        <a href="./view/game/drawZhuyin.html?id=eng"><img src="./image/magicCard/chineseAlphabet/eng_lock.png" style="width :100%;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="zhuyin('ㄥ')" class="rightZhuyin">
-                        </div>
-                    </td>
-                </tr>
+                    <tr>
+                        <td>
+                            <a href="./view/game/drawZhuyin.html?id=yi"><img src="./image/magicCard/chineseAlphabet/yi_lock.png" style="width :100%;"></a>
+                            <div style="display: initial;">
+                                <img src="./icons/speaker.png" onclick="zhuyin('ㄧ')" class="leftZhuyin">
+                            </div>
+                        </td>
+                        <td>
+                            <a href="./view/game/drawZhuyin.html?id=wu"><img src="./image/magicCard/chineseAlphabet/wu_lock.png" style="width :100%;"></a>
+                            <div style="display: initial;">
+                                <img src="./icons/speaker.png" onclick="zhuyin('ㄨ')" class="midZhuyin">
+                            </div>
+                        </td>
+                        <td>
+                            <a href="./view/game/drawZhuyin.html?id=yu"><img src="./image/magicCard/chineseAlphabet/yu_lock.png" style="width :100%;"></a>
+                            <div style="display: initial;">
+                                <img src="./icons/speaker.png" onclick="zhuyin('ㄩ')" class="rightZhuyin">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="./view/game/drawZhuyin.html?id=a"><img src="./image/magicCard/chineseAlphabet/a_lock.png" style="width :100%;"></a>
+                            <div style="display: initial;">
+                                <img src="./icons/speaker.png" onclick="zhuyin('ㄚ')" class="leftZhuyin">
+                            </div>
+                        </td>
+                        <td>
+                            <a href="./view/game/drawZhuyin.html?id=o"><img src="./image/magicCard/chineseAlphabet/o_lock.png" style="width :100%;"></a>
+                            <div style="display: initial;">
+                                <img src="./icons/speaker.png" onclick="zhuyin('ㄛ')" class="midZhuyin">
+                            </div>
+                        </td>
+                        <td>
+                            <a href="./view/game/drawZhuyin.html?id=e"><img src="./image/magicCard/chineseAlphabet/e_lock.png" style="width :100%;"></a>
+                            <div style="display: initial;">
+                                <img src="./icons/speaker.png" onclick="zhuyin('ㄜ')" class="rightZhuyin">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="./view/game/drawZhuyin.html?id=ae"><img src="./image/magicCard/chineseAlphabet/ae_lock.png" style="width :100%;"></a>
+                            <div style="display: initial;">
+                                <img src="./icons/speaker.png" onclick="zhuyin('ㄝ')" class="leftZhuyin">
+                            </div>
+                        </td>
+                        <td>
+                            <a href="./view/game/drawZhuyin.html?id=ai"><img src="./image/magicCard/chineseAlphabet/ai_lock.png" style="width :100%;"></a>
+                            <div style="display: initial;">
+                                <img src="./icons/speaker.png" onclick="zhuyin('ㄞ')" class="midZhuyin">
+                            </div>
+                        </td>
+                        <td>
+                            <a href="./view/game/drawZhuyin.html?id=ei"><img src="./image/magicCard/chineseAlphabet/ei_lock.png" style="width :100%;"></a>
+                            <div style="display: initial;">
+                                <img src="./icons/speaker.png" onclick="zhuyin('ㄟ')" class="rightZhuyin">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="./view/game/drawZhuyin.html?id=au"><img src="./image/magicCard/chineseAlphabet/au_lock.png" style="width :100%;"></a>
+                            <div style="display: initial;">
+                                <img src="./icons/speaker.png" onclick="zhuyin('ㄠ')" class="leftZhuyin">
+                            </div>
+                        </td>
+                        <td>
+                            <a href="./view/game/drawZhuyin.html?id=ou"><img src="./image/magicCard/chineseAlphabet/ou_lock.png" style="width :100%;"></a>
+                            <div style="display: initial;">
+                                <img src="./icons/speaker.png" onclick="zhuyin('ㄡ')" class="midZhuyin">
+                            </div>
+                        </td>
+                        <td>
+                            <a href="./view/game/drawZhuyin.html?id=an"><img src="./image/magicCard/chineseAlphabet/an_lock.png" style="width :100%;"></a>
+                            <div style="display: initial;">
+                                <img src="./icons/speaker.png" onclick="zhuyin('ㄢ')" class="rightZhuyin">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="./view/game/drawZhuyin.html?id=en"><img src="./image/magicCard/chineseAlphabet/en_lock.png" style="width :100%;"></a>
+                            <div style="display: initial;">
+                                <img src="./icons/speaker.png" onclick="zhuyin('ㄣ')" class="leftZhuyin">
+                            </div>
+                        </td>
+                        <td>
+                            <a href="./view/game/drawZhuyin.html?id=ang"><img src="./image/magicCard/chineseAlphabet/ang_lock.png" style="width :100%;"></a>
+                            <div style="display: initial;">
+                                <img src="./icons/speaker.png" onclick="zhuyin('ㄤ')" class="midZhuyin">
+                            </div>
+                        </td>
+                        <td>
+                            <a href="./view/game/drawZhuyin.html?id=eng"><img src="./image/magicCard/chineseAlphabet/eng_lock.png" style="width :100%;"></a>
+                            <div style="display: initial;">
+                                <img src="./icons/speaker.png" onclick="zhuyin('ㄥ')" class="rightZhuyin">
+                            </div>
+                        </td>
+                    </tr>
 
-                <tr>
-                    <td>
-                        <a href="./view/game/drawZhuyin.html?id=er"><img src="./image/magicCard/chineseAlphabet/er_lock.png" style="width :100%;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="zhuyin('ㄦ')" class="leftZhuyin">
-                        </div>
-                    </td>
-                </tr>
-            </table>
-            <!-- <a href="./view/game/drawZhuyin.html?id=b"><img src="./image/magicCard/chineseAlphabet/b.png" style="width :30%;">
+                    <tr>
+                        <td>
+                            <a href="./view/game/drawZhuyin.html?id=er"><img src="./image/magicCard/chineseAlphabet/er_lock.png" style="width :100%;"></a>
+                            <div style="display: initial;">
+                                <img src="./icons/speaker.png" onclick="zhuyin('ㄦ')" class="leftZhuyin">
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <!-- <a href="./view/game/drawZhuyin.html?id=b"><img src="./image/magicCard/chineseAlphabet/b.png" style="width :30%;">
                 <div style="display: initial;"></div>
             </a> -->
 
-            <!-- <a href="./view/game/drawZhuyin.html?id=p"><img onclick="clickP()" src="./image/magicCard/chineseAlphabet/p.png" style="width :30%;"></a> -->
-            <!-- <a href="./view/game/drawZhuyin.html?id=m"><img src="./image/magicCard/chineseAlphabet/m.png" style="width :30%;"></a> -->
-            <!-- <a href="./view/game/drawZhuyin.html?id=f"><img src="./image/magicCard/chineseAlphabet/f.png" style="width :30%;"></a> -->
-            <!-- <a href="./view/game/drawZhuyin.html?id=d"><img src="./image/magicCard/chineseAlphabet/d.png" style="width :30%;"></a> -->
-            <!-- <a href="./view/game/drawZhuyin.html?id=t"><img src="./image/magicCard/chineseAlphabet/t.png" style="width :30%;"></a> -->
-            <!-- <a href="./view/game/drawZhuyin.html?id=n"><img src="./image/magicCard/chineseAlphabet/n.png"
+                <!-- <a href="./view/game/drawZhuyin.html?id=p"><img onclick="clickP()" src="./image/magicCard/chineseAlphabet/p.png" style="width :30%;"></a> -->
+                <!-- <a href="./view/game/drawZhuyin.html?id=m"><img src="./image/magicCard/chineseAlphabet/m.png" style="width :30%;"></a> -->
+                <!-- <a href="./view/game/drawZhuyin.html?id=f"><img src="./image/magicCard/chineseAlphabet/f.png" style="width :30%;"></a> -->
+                <!-- <a href="./view/game/drawZhuyin.html?id=d"><img src="./image/magicCard/chineseAlphabet/d.png" style="width :30%;"></a> -->
+                <!-- <a href="./view/game/drawZhuyin.html?id=t"><img src="./image/magicCard/chineseAlphabet/t.png" style="width :30%;"></a> -->
+                <!-- <a href="./view/game/drawZhuyin.html?id=n"><img src="./image/magicCard/chineseAlphabet/n.png"
                     style="width :30%;"></a> -->
-            <!-- <a href="./view/game/drawZhuyin.html?id=l"><img src="./image/magicCard/chineseAlphabet/l.png"
+                <!-- <a href="./view/game/drawZhuyin.html?id=l"><img src="./image/magicCard/chineseAlphabet/l.png"
                     style="width :30%;"></a> -->
-            <!-- <a href="./view/game/drawZhuyin.html?id=g"><img src="./image/magicCard/chineseAlphabet/g_lock.png"
+                <!-- <a href="./view/game/drawZhuyin.html?id=g"><img src="./image/magicCard/chineseAlphabet/g_lock.png"
                     style="width :30%;"></a> -->
-            <!-- <a href="./view/game/drawZhuyin.html?id=k"><img src="./image/magicCard/chineseAlphabet/k_lock.png"
+                <!-- <a href="./view/game/drawZhuyin.html?id=k"><img src="./image/magicCard/chineseAlphabet/k_lock.png"
                     style="width :30%;"></a> -->
 
-            <!-- <a href="./view/game/drawZhuyin.html?id=h"><img src="./image/magicCard/chineseAlphabet/h_lock.png"
+                <!-- <a href="./view/game/drawZhuyin.html?id=h"><img src="./image/magicCard/chineseAlphabet/h_lock.png"
                     style="width :30%;"></a> -->
-            <!-- <a href="./view/game/drawZhuyin.html?id=ji"><img src="./image/magicCard/chineseAlphabet/ji_lock.png"
+                <!-- <a href="./view/game/drawZhuyin.html?id=ji"><img src="./image/magicCard/chineseAlphabet/ji_lock.png"
                     style="width :30%;"></a> -->
-            <!-- <a href="./view/game/drawZhuyin.html?id=chi"><img src="./image/magicCard/chineseAlphabet/chi_lock.png" style="width :30%;"></a> -->
-            <!-- <a href="./view/game/drawZhuyin.html?id=si"><img src="./image/magicCard/chineseAlphabet/si_lock.png" style="width :30%;"></a> -->
+                <!-- <a href="./view/game/drawZhuyin.html?id=chi"><img src="./image/magicCard/chineseAlphabet/chi_lock.png" style="width :30%;"></a> -->
+                <!-- <a href="./view/game/drawZhuyin.html?id=si"><img src="./image/magicCard/chineseAlphabet/si_lock.png" style="width :30%;"></a> -->
 
 
-            <br><br><br>
-            <table>
-                <tr>
-                    <td>
-                        <a href="./view/game/drawZhuyin.html?id=A1"><img src="./image/magicCard/mixABC/a1.png" style="width :100%;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="zhuyin('A');" class="leftZhuyin">
-                        </div>
-                    </td>
-                    <td>
-                        <a href="./view/game/drawZhuyin.html?id=B1"><img src="./image/magicCard/mixABC/b1.png" style="width :100%;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="zhuyin('B')" class="midZhuyin">
-                        </div>
-                    </td>
-                    <td>
-                        <a href="./view/game/drawZhuyin.html?id=C1"><img src="./image/magicCard/mixABC/c1.png" style="width :100%;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="zhuyin('C')" class="rightZhuyin">
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="./view/game/drawZhuyin.html?id=D1"><img src="./image/magicCard/mixABC/d1.png" style="width :100%;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="zhuyin('D')" class="leftZhuyin">
-                        </div>
-                    </td>
+                <br><br><br>
+                <table>
+                    <tr>
+                        <td>
+                            <a href="./view/game/drawZhuyin.html?id=A1"><img src="./image/magicCard/mixABC/a1.png" style="width :100%;"></a>
+                            <div style="display: initial;">
+                                <img src="./icons/speaker.png" onclick="zhuyin('A');" class="leftZhuyin">
+                            </div>
+                        </td>
+                        <td>
+                            <a href="./view/game/drawZhuyin.html?id=B1"><img src="./image/magicCard/mixABC/b1.png" style="width :100%;"></a>
+                            <div style="display: initial;">
+                                <img src="./icons/speaker.png" onclick="zhuyin('B')" class="midZhuyin">
+                            </div>
+                        </td>
+                        <td>
+                            <a href="./view/game/drawZhuyin.html?id=C1"><img src="./image/magicCard/mixABC/c1.png" style="width :100%;"></a>
+                            <div style="display: initial;">
+                                <img src="./icons/speaker.png" onclick="zhuyin('C')" class="rightZhuyin">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="./view/game/drawZhuyin.html?id=D1"><img src="./image/magicCard/mixABC/d1.png" style="width :100%;"></a>
+                            <div style="display: initial;">
+                                <img src="./icons/speaker.png" onclick="zhuyin('D')" class="leftZhuyin">
+                            </div>
+                        </td>
 
-                    <td>
-                        <a href="./view/game/drawZhuyin.html?id=E1"><img src="./image/magicCard/mixABC/e1.png" style="width :100%;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="zhuyin('E')" class="midZhuyin">
-                        </div>
-                    </td>
+                        <td>
+                            <a href="./view/game/drawZhuyin.html?id=E1"><img src="./image/magicCard/mixABC/e1.png" style="width :100%;"></a>
+                            <div style="display: initial;">
+                                <img src="./icons/speaker.png" onclick="zhuyin('E')" class="midZhuyin">
+                            </div>
+                        </td>
 
-                    <td>
-                        <a href="./view/game/drawZhuyin.html?id=F1"><img src="./image/magicCard/mixABC/f1.png" style="width :100%;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="zhuyin('F')" class="rightZhuyin">
-                        </div>
-                    </td>
-                </tr>
+                        <td>
+                            <a href="./view/game/drawZhuyin.html?id=F1"><img src="./image/magicCard/mixABC/f1.png" style="width :100%;"></a>
+                            <div style="display: initial;">
+                                <img src="./icons/speaker.png" onclick="zhuyin('F')" class="rightZhuyin">
+                            </div>
+                        </td>
+                    </tr>
 
-                <tr>
-                    <td>
-                        <a href="./view/game/drawZhuyin.html?id=er"><img src="./image/magicCard/chineseAlphabet/er_lock.png" style="width :100%;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="zhuyin('ㄦ')" class="leftZhuyin">
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="./view/game/drawZhuyin.html?id=er"><img src="./image/magicCard/chineseAlphabet/er_lock.png" style="width :100%;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="zhuyin('ㄦ')" class="leftZhuyin">
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="./view/game/drawZhuyin.html?id=er"><img src="./image/magicCard/chineseAlphabet/er_lock.png" style="width :100%;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="zhuyin('ㄦ')" class="leftZhuyin">
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="./view/game/drawZhuyin.html?id=er"><img src="./image/magicCard/chineseAlphabet/er_lock.png" style="width :100%;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="zhuyin('ㄦ')" class="leftZhuyin">
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="./view/game/drawZhuyin.html?id=er"><img src="./image/magicCard/chineseAlphabet/er_lock.png" style="width :100%;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="zhuyin('ㄦ')" class="leftZhuyin">
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="./view/game/drawZhuyin.html?id=er"><img src="./image/magicCard/chineseAlphabet/er_lock.png" style="width :100%;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="zhuyin('ㄦ')" class="leftZhuyin">
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="./view/game/drawZhuyin.html?id=er"><img src="./image/magicCard/chineseAlphabet/er_lock.png" style="width :100%;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="zhuyin('ㄦ')" class="leftZhuyin">
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="./view/game/drawZhuyin.html?id=er"><img src="./image/magicCard/chineseAlphabet/er_lock.png" style="width :100%;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="zhuyin('ㄦ')" class="leftZhuyin">
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="./view/game/drawZhuyin.html?id=er"><img src="./image/magicCard/chineseAlphabet/er_lock.png" style="width :100%;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="zhuyin('ㄦ')" class="leftZhuyin">
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="./view/game/drawZhuyin.html?id=er"><img src="./image/magicCard/chineseAlphabet/er_lock.png" style="width :100%;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="zhuyin('ㄦ')" class="leftZhuyin">
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="./view/game/drawZhuyin.html?id=er"><img src="./image/magicCard/chineseAlphabet/er_lock.png" style="width :100%;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="zhuyin('ㄦ')" class="leftZhuyin">
-                        </div>
-                    </td>
-                </tr>
-            </table>
-            <!-- <a href="./view/game/drawZhuyin.html?id=A1"><img src="./image/magicCard/mixABC/a1.png" style="width :30%;"></a>
+                    <tr>
+                        <td>
+                            <a href="./view/game/drawZhuyin.html?id=er"><img src="./image/magicCard/chineseAlphabet/er_lock.png" style="width :100%;"></a>
+                            <div style="display: initial;">
+                                <img src="./icons/speaker.png" onclick="zhuyin('ㄦ')" class="leftZhuyin">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="./view/game/drawZhuyin.html?id=er"><img src="./image/magicCard/chineseAlphabet/er_lock.png" style="width :100%;"></a>
+                            <div style="display: initial;">
+                                <img src="./icons/speaker.png" onclick="zhuyin('ㄦ')" class="leftZhuyin">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="./view/game/drawZhuyin.html?id=er"><img src="./image/magicCard/chineseAlphabet/er_lock.png" style="width :100%;"></a>
+                            <div style="display: initial;">
+                                <img src="./icons/speaker.png" onclick="zhuyin('ㄦ')" class="leftZhuyin">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="./view/game/drawZhuyin.html?id=er"><img src="./image/magicCard/chineseAlphabet/er_lock.png" style="width :100%;"></a>
+                            <div style="display: initial;">
+                                <img src="./icons/speaker.png" onclick="zhuyin('ㄦ')" class="leftZhuyin">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="./view/game/drawZhuyin.html?id=er"><img src="./image/magicCard/chineseAlphabet/er_lock.png" style="width :100%;"></a>
+                            <div style="display: initial;">
+                                <img src="./icons/speaker.png" onclick="zhuyin('ㄦ')" class="leftZhuyin">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="./view/game/drawZhuyin.html?id=er"><img src="./image/magicCard/chineseAlphabet/er_lock.png" style="width :100%;"></a>
+                            <div style="display: initial;">
+                                <img src="./icons/speaker.png" onclick="zhuyin('ㄦ')" class="leftZhuyin">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="./view/game/drawZhuyin.html?id=er"><img src="./image/magicCard/chineseAlphabet/er_lock.png" style="width :100%;"></a>
+                            <div style="display: initial;">
+                                <img src="./icons/speaker.png" onclick="zhuyin('ㄦ')" class="leftZhuyin">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="./view/game/drawZhuyin.html?id=er"><img src="./image/magicCard/chineseAlphabet/er_lock.png" style="width :100%;"></a>
+                            <div style="display: initial;">
+                                <img src="./icons/speaker.png" onclick="zhuyin('ㄦ')" class="leftZhuyin">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="./view/game/drawZhuyin.html?id=er"><img src="./image/magicCard/chineseAlphabet/er_lock.png" style="width :100%;"></a>
+                            <div style="display: initial;">
+                                <img src="./icons/speaker.png" onclick="zhuyin('ㄦ')" class="leftZhuyin">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="./view/game/drawZhuyin.html?id=er"><img src="./image/magicCard/chineseAlphabet/er_lock.png" style="width :100%;"></a>
+                            <div style="display: initial;">
+                                <img src="./icons/speaker.png" onclick="zhuyin('ㄦ')" class="leftZhuyin">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="./view/game/drawZhuyin.html?id=er"><img src="./image/magicCard/chineseAlphabet/er_lock.png" style="width :100%;"></a>
+                            <div style="display: initial;">
+                                <img src="./icons/speaker.png" onclick="zhuyin('ㄦ')" class="leftZhuyin">
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <!-- <a href="./view/game/drawZhuyin.html?id=A1"><img src="./image/magicCard/mixABC/a1.png" style="width :30%;"></a>
             <a href="./view/game/drawZhuyin.html?id=B1"><img src="./image/magicCard/mixABC/b1.png" style="width :30%;"></a>
             <a href="./view/game/drawZhuyin.html?id=C1"><img src="./image/magicCard/mixABC/c1.png" style="width :30%;"></a> -->
-            <a href="./view/game/drawZhuyin.html?id=D1"><img src="./image/magicCard/mixABC/d1.png" style="width :30%;"></a>
-            <a href="./view/game/drawZhuyin.html?id=E1"><img src="./image/magicCard/mixABC/e1.png" style="width :30%;"></a>
-            <!-- <a href="./view/game/drawZhuyin.html?id=F1"><img src="./image/magicCard/mixABC/f1.png" style="width :30%;"></a> -->
-            <a href="./view/game/drawZhuyin.html?id=G1"><img src="./image/magicCard/mixABC/g1.png" style="width :30%;"></a>
-            <a href="./view/game/drawZhuyin.html?id=H1"><img src="./image/magicCard/mixABC/h1.png" style="width :30%;"></a>
-            <a href="./view/game/drawZhuyin.html?id=I1"><img src="./image/magicCard/mixABC/i1.png" style="width :30%;"></a>
-            <a href="./view/game/drawZhuyin.html?id=J1"><img src="./image/magicCard/mixABC/j1_lock.png" style="width :30%;"></a>
-            <a href="./view/game/drawZhuyin.html?id=K1"><img src="./image/magicCard/mixABC/k1_lock.png" style="width :30%;"></a>
-            <a href="./view/game/drawZhuyin.html?id=L1"><img src="./image/magicCard/mixABC/l1_lock.png" style="width :30%;"></a>
-            <a href="./view/game/drawZhuyin.html?id=M1"><img src="./image/magicCard/mixABC/m1_lock.png" style="width :30%;"></a>
-            <a href="./view/game/drawZhuyin.html?id=N1"><img src="./image/magicCard/mixABC/n1_lock.png" style="width :30%;"></a>
-            <a href="./view/game/drawZhuyin.html?id=O1"><img src="./image/magicCard/mixABC/o1_lock.png" style="width :30%;"></a>
-            <a href="./view/game/drawZhuyin.html?id=P1"><img src="./image/magicCard/mixABC/p1_lock.png" style="width :30%;"></a>
-            <a href="./view/game/drawZhuyin.html?id=Q1"><img src="./image/magicCard/mixABC/q1_lock.png" style="width :30%;"></a>
-            <a href="./view/game/drawZhuyin.html?id=R1"><img src="./image/magicCard/mixABC/r1_lock.png" style="width :30%;"></a>
-            <a href="./view/game/drawZhuyin.html?id=S1"><img src="./image/magicCard/mixABC/s1_lock.png" style="width :30%;"></a>
-            <a href="./view/game/drawZhuyin.html?id=T1"><img src="./image/magicCard/mixABC/t1_lock.png" style="width :30%;"></a>
-            <a href="./view/game/drawZhuyin.html?id=U1"><img src="./image/magicCard/mixABC/u1_lock.png" style="width :30%;"></a>
-            <a href="./view/game/drawZhuyin.html?id=V1"><img src="./image/magicCard/mixABC/v1_lock.png" style="width :30%;"></a>
-            <a href="./view/game/drawZhuyin.html?id=W1"><img src="./image/magicCard/mixABC/w1_lock.png" style="width :30%;"></a>
-            <a href="./view/game/drawZhuyin.html?id=X1"><img src="./image/magicCard/mixABC/x1_lock.png" style="width :30%;"></a>
-            <a href="./view/game/drawZhuyin.html?id=Y1"><img src="./image/magicCard/mixABC/y1_lock.png" style="width :30%;"></a>
-            <a href="./view/game/drawZhuyin.html?id=Z1"><img src="./image/magicCard/mixABC/z1_lock.png" style="width :30%;"></a>
-            <br><br><br>
-            <a href="./view/game/drawzhuyin.html?id=1"><img src="./image/magicCard/012/1.png" style="width :30%;"></a>
-            <a href="./view/game/drawzhuyin.html?id=2"><img src="./image/magicCard/012/2.png" style="width :30%;"></a>
-            <a href="./view/game/drawzhuyin.html?id=3"><img src="./image/magicCard/012/3.png" style="width :30%;"></a>
-            <a href="./view/game/drawzhuyin.html?id=4"><img src="./image/magicCard/012/4.png" style="width :30%;"></a>
-            <a href="./view/game/drawzhuyin.html?id=5"><img src="./image/magicCard/012/5.png" style="width :30%;"></a>
-            <a href="./view/game/drawzhuyin.html?id=6"><img src="./image/magicCard/012/6_lock.png" style="width :30%;"></a>
-            <a href="./view/game/drawzhuyin.html?id=7"><img src="./image/magicCard/012/7_lock.png" style="width :30%;"></a>
-            <a href="./view/game/drawzhuyin.html?id=8"><img src="./image/magicCard/012/8_lock.png" style="width :30%;"></a>
-            <a href="./view/game/drawzhuyin.html?id=9"><img src="./image/magicCard/012/9_lock.png" style="width :30%;"></a>
-            <a href="./view/game/drawzhuyin.html?id=0"><img src="./image/magicCard/012/0_lock.png" style="width :30%;"></a>
+                <a href="./view/game/drawZhuyin.html?id=D1"><img src="./image/magicCard/mixABC/d1.png" style="width :30%;"></a>
+                <a href="./view/game/drawZhuyin.html?id=E1"><img src="./image/magicCard/mixABC/e1.png" style="width :30%;"></a>
+                <!-- <a href="./view/game/drawZhuyin.html?id=F1"><img src="./image/magicCard/mixABC/f1.png" style="width :30%;"></a> -->
+                <a href="./view/game/drawZhuyin.html?id=G1"><img src="./image/magicCard/mixABC/g1.png" style="width :30%;"></a>
+                <a href="./view/game/drawZhuyin.html?id=H1"><img src="./image/magicCard/mixABC/h1.png" style="width :30%;"></a>
+                <a href="./view/game/drawZhuyin.html?id=I1"><img src="./image/magicCard/mixABC/i1.png" style="width :30%;"></a>
+                <a href="./view/game/drawZhuyin.html?id=J1"><img src="./image/magicCard/mixABC/j1_lock.png" style="width :30%;"></a>
+                <a href="./view/game/drawZhuyin.html?id=K1"><img src="./image/magicCard/mixABC/k1_lock.png" style="width :30%;"></a>
+                <a href="./view/game/drawZhuyin.html?id=L1"><img src="./image/magicCard/mixABC/l1_lock.png" style="width :30%;"></a>
+                <a href="./view/game/drawZhuyin.html?id=M1"><img src="./image/magicCard/mixABC/m1_lock.png" style="width :30%;"></a>
+                <a href="./view/game/drawZhuyin.html?id=N1"><img src="./image/magicCard/mixABC/n1_lock.png" style="width :30%;"></a>
+                <a href="./view/game/drawZhuyin.html?id=O1"><img src="./image/magicCard/mixABC/o1_lock.png" style="width :30%;"></a>
+                <a href="./view/game/drawZhuyin.html?id=P1"><img src="./image/magicCard/mixABC/p1_lock.png" style="width :30%;"></a>
+                <a href="./view/game/drawZhuyin.html?id=Q1"><img src="./image/magicCard/mixABC/q1_lock.png" style="width :30%;"></a>
+                <a href="./view/game/drawZhuyin.html?id=R1"><img src="./image/magicCard/mixABC/r1_lock.png" style="width :30%;"></a>
+                <a href="./view/game/drawZhuyin.html?id=S1"><img src="./image/magicCard/mixABC/s1_lock.png" style="width :30%;"></a>
+                <a href="./view/game/drawZhuyin.html?id=T1"><img src="./image/magicCard/mixABC/t1_lock.png" style="width :30%;"></a>
+                <a href="./view/game/drawZhuyin.html?id=U1"><img src="./image/magicCard/mixABC/u1_lock.png" style="width :30%;"></a>
+                <a href="./view/game/drawZhuyin.html?id=V1"><img src="./image/magicCard/mixABC/v1_lock.png" style="width :30%;"></a>
+                <a href="./view/game/drawZhuyin.html?id=W1"><img src="./image/magicCard/mixABC/w1_lock.png" style="width :30%;"></a>
+                <a href="./view/game/drawZhuyin.html?id=X1"><img src="./image/magicCard/mixABC/x1_lock.png" style="width :30%;"></a>
+                <a href="./view/game/drawZhuyin.html?id=Y1"><img src="./image/magicCard/mixABC/y1_lock.png" style="width :30%;"></a>
+                <a href="./view/game/drawZhuyin.html?id=Z1"><img src="./image/magicCard/mixABC/z1_lock.png" style="width :30%;"></a>
+                <br><br><br>
+                <a href="./view/game/drawzhuyin.html?id=1"><img src="./image/magicCard/012/1.png" style="width :30%;"></a>
+                <a href="./view/game/drawzhuyin.html?id=2"><img src="./image/magicCard/012/2.png" style="width :30%;"></a>
+                <a href="./view/game/drawzhuyin.html?id=3"><img src="./image/magicCard/012/3.png" style="width :30%;"></a>
+                <a href="./view/game/drawzhuyin.html?id=4"><img src="./image/magicCard/012/4.png" style="width :30%;"></a>
+                <a href="./view/game/drawzhuyin.html?id=5"><img src="./image/magicCard/012/5.png" style="width :30%;"></a>
+                <a href="./view/game/drawzhuyin.html?id=6"><img src="./image/magicCard/012/6_lock.png" style="width :30%;"></a>
+                <a href="./view/game/drawzhuyin.html?id=7"><img src="./image/magicCard/012/7_lock.png" style="width :30%;"></a>
+                <a href="./view/game/drawzhuyin.html?id=8"><img src="./image/magicCard/012/8_lock.png" style="width :30%;"></a>
+                <a href="./view/game/drawzhuyin.html?id=9"><img src="./image/magicCard/012/9_lock.png" style="width :30%;"></a>
+                <a href="./view/game/drawzhuyin.html?id=0"><img src="./image/magicCard/012/0_lock.png" style="width :30%;"></a>
+            </div>
+            <!-- <iframe src="./alreayCollect_magicCard.html" frameborder="0" class="collect_magicCard"></iframe> -->
+
         </div>
-        <!-- <iframe src="./alreayCollect_magicCard.html" frameborder="0" class="collect_magicCard"></iframe> -->
 
-    </div>
-
-    <!-- <div>
+        <!-- <div>
         <button class="magic_word" onclick="">
             <a href="./SpeechToAsk.html"><img src="./image/character/magic_word.png" width="50%"></a><br>
             魔咒</button>
@@ -651,13 +668,13 @@
             探測儀</button>
     </div> -->
 
-    <div class="sos_mark">
-        <a href="./alreadyCollect_icon.html" class="sosfloat" id="menu-share">
-            <i class="fab fa-share my-float"><img src="photo/help.png" width="70%"></i>
-        </a>
-    </div>
+        <div class="sos_mark">
+            <a href="./alreadyCollect_icon.html" class="sosfloat" id="menu-share">
+                <i class="fab fa-share my-float"><img src="photo/help.png" width="70%"></i>
+            </a>
+        </div>
 
-    <!-- <div class="fabs setting_mark" onclick="toggleBtn()">
+        <!-- <div class="fabs setting_mark" onclick="toggleBtn()">
         <div class="action">
             <i class="fas" id="add"><img src="photo/settings.png" width="110%"></i>
             <i class="fas" id="remove" style="display: none"><img src="photo/settings.png" width="110%"></i>
@@ -672,474 +689,474 @@
         </div>
     </div> -->
 
-    <div class="return_mark">
-        <a onclick="history.back()" class="returnfloat" id="menu-share">
-            <i class="fab fa-share return-float"><img src="photo/return.png"></i>
-        </a>
-    </div>
+        <div class="return_mark">
+            <a onclick="history.back()" class="returnfloat" id="menu-share">
+                <i class="fab fa-share return-float"><img src="photo/return.png"></i>
+            </a>
+        </div>
 
-    <div class="home_mark">
-        <a href="game_home.html" class="homefloat" id="menu-share">
-            <i class="fab fa-share my-float"><img src="photo/gobackhome.png" width="70%"></i>
-        </a>
-    </div>
-    <!-- You can also require other files to run in this process -->
+        <div class="home_mark">
+            <a href="game_home.html" class="homefloat" id="menu-share">
+                <i class="fab fa-share my-float"><img src="photo/gobackhome.png" width="70%"></i>
+            </a>
+        </div>
+        <!-- You can also require other files to run in this process -->
 
-    <script>
-        function toggleBtn() {
-            const Btns = document.querySelector(".btns");
-            const add = document.getElementById("add");
-            const remove = document.getElementById("remove");
-            const btn = document.querySelector(".btns").querySelectorAll("a");
-            Btns.classList.toggle("open");
-            if (Btns.classList.contains("open")) {
-                remove.style.display = "block";
-                add.style.display = "none";
-                btn.forEach((e, i) => {
-                    setTimeout(() => {
-                        bottom = 65 * i;
-                        e.style.bottom = bottom + "px";
-                        console.log(e);
-                    }, 100 * i);
-                });
-            } else {
-                add.style.display = "block";
-                remove.style.display = "none";
-                btn.forEach((e, i) => {
-                    e.style.bottom = "0px";
-                });
+        <script>
+            function toggleBtn() {
+                const Btns = document.querySelector(".btns");
+                const add = document.getElementById("add");
+                const remove = document.getElementById("remove");
+                const btn = document.querySelector(".btns").querySelectorAll("a");
+                Btns.classList.toggle("open");
+                if (Btns.classList.contains("open")) {
+                    remove.style.display = "block";
+                    add.style.display = "none";
+                    btn.forEach((e, i) => {
+                        setTimeout(() => {
+                            bottom = 65 * i;
+                            e.style.bottom = bottom + "px";
+                            console.log(e);
+                        }, 100 * i);
+                    });
+                } else {
+                    add.style.display = "block";
+                    remove.style.display = "none";
+                    btn.forEach((e, i) => {
+                        e.style.bottom = "0px";
+                    });
+                }
             }
-        }
-    </script>
-    <script>
-        let click = 0
-        const colletIconFeature = document.getElementById("collect_iconMap")
-        const mapIconDIV = document.getElementById("MapIcon")
-        const featureDIV = document.getElementById("FeatureIcon")
+        </script>
+        <script>
+            let click = 0
+            const colletIconFeature = document.getElementById("collect_iconMap")
+            const mapIconDIV = document.getElementById("MapIcon")
+            const featureDIV = document.getElementById("FeatureIcon")
 
-        function RegionIcon(featureIcon) {
+            function RegionIcon(featureIcon) {
 
-            switch (featureIcon) {
-                case "基隆游輪":
-                    const Klung = document.querySelector('.Keelung')
-                    var picKL = Klung.src;
-                    console.log("picKL -> " + picKL)
-                    if (picKL.indexOf('Keelung_dark.png') === -1) { //找不到dark
-                        console.log("picKL 1 -> " + picKL)
-                        mapIconDIV.style.display = "none";
-                        featureDIV.style.display = "block"
-                        featureDIV.innerHTML = `<img onclick="returnMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
+                switch (featureIcon) {
+                    case "基隆游輪":
+                        const Klung = document.querySelector('.Keelung')
+                        var picKL = Klung.src;
+                        console.log("picKL -> " + picKL)
+                        if (picKL.indexOf('Keelung_dark.png') === -1) { //找不到dark
+                            console.log("picKL 1 -> " + picKL)
+                            mapIconDIV.style.display = "none";
+                            featureDIV.style.display = "block"
+                            featureDIV.innerHTML = `<img onclick="returnMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
                     <img src="./image/icon/oceanliner.png" onclick="featuresText(this)" style="width: 110px; height: auto; margin-right: 10px; cursor: pointer;">
                     <a style="display: inline-block; position: absolute; font-size: 20px; font-weight: bold;">遊輪，又稱郵輪，是一種用於娛樂航海的客輪，航程及沿途的目的地(並不包含岸上觀光)與船上的設施，都是提供旅遊及娛樂的一部份。在航空交通已普及的時代，運輸已不是郵輪的主要用途，雖然有的航線是單程的，但是遊輪通常會將乘客送回啟航的地點。兼具交通工具與住宿、餐廳的性質。</a>
                     <br><br>`
 
-                    } else {
-                        console.log("picKL 2 -> " + picKL)
-                        document.location.href = './view/level/keelung.html'
+                        } else {
+                            console.log("picKL 2 -> " + picKL)
+                            document.location.href = './view/level/keelung.html'
 
-                    }
-                    // if(newTp.src)
-                    break;
+                        }
+                        // if(newTp.src)
+                        break;
 
-                case "台北101":
-                    const TP101 = document.querySelector('.Taipei')
-                    var picTP = TP101.src;
-                    console.log("picTP -> " + picTP)
-                    if (picTP.indexOf('dark.png') === -1) { //找不到dark
-                        console.log("picTP 1 -> " + picTP)
-                        mapIconDIV.style.display = "none";
-                        featureDIV.style.display = "block"
-                        featureDIV.innerHTML = `<img onclick="returnMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
+                    case "台北101":
+                        const TP101 = document.querySelector('.Taipei')
+                        var picTP = TP101.src;
+                        console.log("picTP -> " + picTP)
+                        if (picTP.indexOf('dark.png') === -1) { //找不到dark
+                            console.log("picTP 1 -> " + picTP)
+                            mapIconDIV.style.display = "none";
+                            featureDIV.style.display = "block"
+                            featureDIV.innerHTML = `<img onclick="returnMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
                     <img src="./image/icon/taipei101.png" onclick="featuresText(this)" style="width: 110px; height: auto; margin-right: 10px; cursor: pointer;">
                     <a style="display: inline-block; position: absolute; font-size: 20px; font-weight: bold;">台北101，是位於臺灣臺北市信義區的摩天大樓，最初名稱為臺北國際金融中心。其為台灣第一高樓、以及唯一樓層超過100層的建築物，曾於2004年12月31日至2010年1月4日間擁有世界第一高樓的紀錄，目前為世界第十二高樓（截至2019年）、地震帶最高摩天大廈以及 世界最高的綠建築，完工以來即成為臺北重要地標之一。</a>
                     <br><br>`
-                    } else {
-                        console.log("picTP 2 -> " + picTP)
-                        document.location.href = './view/level/taipei.html'
-                    }
-                    // if(newTp.src)
-                    break;
+                        } else {
+                            console.log("picTP 2 -> " + picTP)
+                            document.location.href = './view/level/taipei.html'
+                        }
+                        // if(newTp.src)
+                        break;
 
-                case "新北鶯歌陶瓷":
-                    const newTp = document.querySelector('.NewTaipei')
-                    var picNTP = newTp.src;
-                    console.log("picNTP -> " + picNTP)
-                    if (picNTP.indexOf('dark.png') === -1) { //找不到dark
-                        console.log("picNTP 1 -> " + picNTP)
-                        mapIconDIV.style.display = "none";
-                        featureDIV.style.display = "block"
-                        featureDIV.innerHTML = `<img onclick="returnMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
+                    case "新北鶯歌陶瓷":
+                        const newTp = document.querySelector('.NewTaipei')
+                        var picNTP = newTp.src;
+                        console.log("picNTP -> " + picNTP)
+                        if (picNTP.indexOf('dark.png') === -1) { //找不到dark
+                            console.log("picNTP 1 -> " + picNTP)
+                            mapIconDIV.style.display = "none";
+                            featureDIV.style.display = "block"
+                            featureDIV.innerHTML = `<img onclick="returnMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
                     <img src="./image/icon/NewTaipei_icon.png" onclick="featuresText(this)" style="width: 110px; height: auto; margin-right: 10px; cursor: pointer;">
                     <a style="display: inline-block; position: absolute; font-size: 20px; font-weight: bold;">鶯歌陶瓷，鶯歌區最著名的特產即是陶瓷工藝。相傳清朝嘉慶年間吳岸、吳糖、吳曾等人來此，發現鄰近的尖山地區盛產黏土，遂於此設窯製陶。現多已轉向觀光化發展。</a>
                     <br><br>`
-                    } else {
-                        console.log("picNTP 2 -> " + picNTP)
-                        document.location.href = './view/level/newTaipei.html'
-                    }
-                    // if(newTp.src)
-                    break;
+                        } else {
+                            console.log("picNTP 2 -> " + picNTP)
+                            document.location.href = './view/level/newTaipei.html'
+                        }
+                        // if(newTp.src)
+                        break;
 
-                case "桃園豆干":
-                    const taoY = document.querySelector('.Taoyuan')
-                    var picTao = taoY.src;
-                    console.log("picTao -> " + picTao)
-                    if (picTao.indexOf('dark.png') === -1) { //找不到dark
-                        console.log("picTao 1 -> " + picTao)
-                        mapIconDIV.style.display = "none";
-                        featureDIV.style.display = "block"
-                        featureDIV.innerHTML = `<img onclick="returnMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
+                    case "桃園豆干":
+                        const taoY = document.querySelector('.Taoyuan')
+                        var picTao = taoY.src;
+                        console.log("picTao -> " + picTao)
+                        if (picTao.indexOf('dark.png') === -1) { //找不到dark
+                            console.log("picTao 1 -> " + picTao)
+                            mapIconDIV.style.display = "none";
+                            featureDIV.style.display = "block"
+                            featureDIV.innerHTML = `<img onclick="returnMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
                     <img src="./image/icon/togan.png" onclick="featuresText(this)" style="width: 110px; height: auto; margin-right: 10px; cursor: pointer;">
                     <a style="display: inline-block; position: absolute; font-size: 20px; font-weight: bold;">桃園大溪豆乾，</a>
                     <br><br>`
-                    } else {
-                        console.log("picTao 2 -> " + picTao)
-                        document.location.href = './view/level/taoyuan.html'
+                        } else {
+                            console.log("picTao 2 -> " + picTao)
+                            document.location.href = './view/level/taoyuan.html'
 
-                    }
-                    // if(newTp.src)
-                    break;
+                        }
+                        // if(newTp.src)
+                        break;
 
-                case "新竹貢丸":
-                    const HsinC = document.querySelector('.Hsinchu')
-                    var picHsinC = HsinC.src;
-                    console.log("picHsinC -> " + picHsinC)
-                    if (picHsinC.indexOf('dark.png') === -1) { //找不到dark
-                        console.log("picHsinC 1 -> " + picHsinC)
-                        mapIconDIV.style.display = "none";
-                        featureDIV.style.display = "block"
-                        featureDIV.innerHTML = `<img onclick="returnMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
+                    case "新竹貢丸":
+                        const HsinC = document.querySelector('.Hsinchu')
+                        var picHsinC = HsinC.src;
+                        console.log("picHsinC -> " + picHsinC)
+                        if (picHsinC.indexOf('dark.png') === -1) { //找不到dark
+                            console.log("picHsinC 1 -> " + picHsinC)
+                            mapIconDIV.style.display = "none";
+                            featureDIV.style.display = "block"
+                            featureDIV.innerHTML = `<img onclick="returnMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
                     <img src="./image/icon/pork_ball.png" onclick="featuresText(this)" style="width: 110px; height: auto; margin-right: 10px; cursor: pointer;">
                     <a style="display: inline-block; position: absolute; font-size: 20px; font-weight: bold;">新竹貢丸</a>
                     <br><br>`
-                    } else {
-                        console.log("picHsinC 2 -> " + picHsinC)
-                        document.location.href = './view/level/hsinchu.html'
-                    }
-                    // if(newTp.src)
-                    break;
+                        } else {
+                            console.log("picHsinC 2 -> " + picHsinC)
+                            document.location.href = './view/level/hsinchu.html'
+                        }
+                        // if(newTp.src)
+                        break;
 
-                case "苗栗草莓":
-                    const MiaoL = document.querySelector('.Miaoli')
-                    var picMiaoL = MiaoL.src;
-                    console.log("picMiaoL -> " + picMiaoL)
-                    if (picMiaoL.indexOf('strawberry_dark.png') === -1) { //找不到dark
-                        console.log("picMiaoL 1 -> " + picMiaoL)
-                            // mapIcon.style.visibility = "hidden";
-                        mapIconDIV.style.display = "none";
-                        featureDIV.style.display = "block"
-                        featureDIV.innerHTML = `<img onclick="returnMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
+                    case "苗栗草莓":
+                        const MiaoL = document.querySelector('.Miaoli')
+                        var picMiaoL = MiaoL.src;
+                        console.log("picMiaoL -> " + picMiaoL)
+                        if (picMiaoL.indexOf('strawberry_dark.png') === -1) { //找不到dark
+                            console.log("picMiaoL 1 -> " + picMiaoL)
+                                // mapIcon.style.visibility = "hidden";
+                            mapIconDIV.style.display = "none";
+                            featureDIV.style.display = "block"
+                            featureDIV.innerHTML = `<img onclick="returnMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
                     <img src="./image/icon/strawberry.png" onclick="featuresText(this)" style="width: 110px; height: auto; margin-right: 10px; cursor: pointer;">
                     <a style="display: inline-block; position: absolute; font-size: 20px; font-weight: bold;">大湖草莓，台灣苗栗縣大湖鄉的特產，氣候溫和多雨，以草莓聞名全國，素有臺灣草莓王國雅號。</a>
                     <br><br>`
-                    } else {
-                        console.log("picMiaoL 2 -> " + picMiaoL)
-                        document.location.href = './view/level/miaoli.html'
+                        } else {
+                            console.log("picMiaoL 2 -> " + picMiaoL)
+                            document.location.href = './view/level/miaoli.html'
 
-                    }
-                    break;
+                        }
+                        break;
 
-                case "台中太陽餅":
-                    const TaiC = document.querySelector('.Taichung')
-                    var picTaiC = TaiC.src;
-                    console.log("picTaiC -> " + picTaiC)
-                    if (picTaiC.indexOf('dark.png') === -1) { //找不到dark
-                        console.log("picTaiC 1 -> " + picTaiC)
-                        mapIconDIV.style.display = "none";
-                        featureDIV.style.display = "block"
-                        featureDIV.innerHTML = `<img onclick="returnMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
+                    case "台中太陽餅":
+                        const TaiC = document.querySelector('.Taichung')
+                        var picTaiC = TaiC.src;
+                        console.log("picTaiC -> " + picTaiC)
+                        if (picTaiC.indexOf('dark.png') === -1) { //找不到dark
+                            console.log("picTaiC 1 -> " + picTaiC)
+                            mapIconDIV.style.display = "none";
+                            featureDIV.style.display = "block"
+                            featureDIV.innerHTML = `<img onclick="returnMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
                     <img src="./image/icon/suncake.png" onclick="featuresText(this)" style="width: 110px; height: auto; margin-right: 10px; cursor: pointer;">
                     <a style="display: inline-block; position: absolute; font-size: 20px; font-weight: bold;">太陽餅，是一種甜餡薄餅，一般內餡是麥芽糖，源起於台中市神岡區社口一帶林家崑派的麥芽餅，是台灣台中市的點心，為中臺灣的名產之一。</a>
                     <br><br>`
-                    } else {
-                        console.log("picTaiC 2 -> " + picTaiC)
-                        document.location.href = './view/level/taichung.html'
+                        } else {
+                            console.log("picTaiC 2 -> " + picTaiC)
+                            document.location.href = './view/level/taichung.html'
 
-                    }
-                    break;
+                        }
+                        break;
 
 
-                case "彰化肉圓":
-                    const ChangH = document.querySelector('.Changhua')
-                    var picChangH = ChangH.src;
-                    console.log("picChangH -> " + picChangH)
-                    if (picChangH.indexOf('dark.png') === -1) { //找不到dark
-                        console.log("picChangH 1 -> " + picChangH)
-                        mapIconDIV.style.display = "none";
-                        featureDIV.style.display = "block"
+                    case "彰化肉圓":
+                        const ChangH = document.querySelector('.Changhua')
+                        var picChangH = ChangH.src;
+                        console.log("picChangH -> " + picChangH)
+                        if (picChangH.indexOf('dark.png') === -1) { //找不到dark
+                            console.log("picChangH 1 -> " + picChangH)
+                            mapIconDIV.style.display = "none";
+                            featureDIV.style.display = "block"
 
-                        featureDIV.innerHTML = `<img onclick="returnMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
+                            featureDIV.innerHTML = `<img onclick="returnMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
                     <img src="./image/icon/meat_ball.png" onclick="featuresText(this)" style="width: 110px; height: auto;cursor: pointer;">
                     <a style="display: inline-block; position: absolute; font-size: 20px; font-weight: bold;">肉圓，台灣特色小吃。最有名的發源地是：彰化（彰化、北斗、員林）</a>
                     <br><br>`
-                    } else {
-                        console.log("picChangH 2 -> " + picChangH)
-                        document.location.href = './view/level/changhua.html'
+                        } else {
+                            console.log("picChangH 2 -> " + picChangH)
+                            document.location.href = './view/level/changhua.html'
 
-                    }
-                    break;
+                        }
+                        break;
 
 
 
-                case "雲林西螺醬油":
-                    const YuLin = document.querySelector('.Yunlin')
-                    var picYuLin = YuLin.src;
-                    console.log("picYuLin -> " + picYuLin)
-                    if (picYuLin.indexOf('dark.png') === -1) { //找不到dark
-                        console.log("picYuLin 1 -> " + picYuLin)
-                        mapIconDIV.style.display = "none";
-                        featureDIV.style.display = "block"
+                    case "雲林西螺醬油":
+                        const YuLin = document.querySelector('.Yunlin')
+                        var picYuLin = YuLin.src;
+                        console.log("picYuLin -> " + picYuLin)
+                        if (picYuLin.indexOf('dark.png') === -1) { //找不到dark
+                            console.log("picYuLin 1 -> " + picYuLin)
+                            mapIconDIV.style.display = "none";
+                            featureDIV.style.display = "block"
 
-                        featureDIV.innerHTML = `<img onclick="returnMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
+                            featureDIV.innerHTML = `<img onclick="returnMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
                     <img src="./image/icon/soy_sauce.png" onclick="featuresText(this)" style="width: 110px; height: auto; cursor: pointer;">
                     <a style="display: inline-block; position: absolute; font-size: 20px; font-weight: bold;">西螺醬油，台灣雲林地區重要一級產業特產，因為水質、溫度和濕度的合宜，雲林西螺號稱臺灣的「醬油王國」。</a>
                     <br><br>`
-                    } else {
-                        console.log("picYuLin 2 -> " + picYuLin)
-                        document.location.href = './view/level/yunlin.html'
+                        } else {
+                            console.log("picYuLin 2 -> " + picYuLin)
+                            document.location.href = './view/level/yunlin.html'
 
-                    }
-                    break;
+                        }
+                        break;
 
 
-                case "南投高山茶":
-                    const NanT = document.querySelector('.Nantou')
-                    var picNanT = NanT.src;
-                    console.log("picNanT -> " + picNanT)
-                    if (picNanT.indexOf('dark.png') === -1) { //找不到dark
-                        console.log("picNanT 1 -> " + picNanT)
-                        mapIconDIV.style.display = "none";
-                        featureDIV.style.display = "block"
+                    case "南投高山茶":
+                        const NanT = document.querySelector('.Nantou')
+                        var picNanT = NanT.src;
+                        console.log("picNanT -> " + picNanT)
+                        if (picNanT.indexOf('dark.png') === -1) { //找不到dark
+                            console.log("picNanT 1 -> " + picNanT)
+                            mapIconDIV.style.display = "none";
+                            featureDIV.style.display = "block"
 
-                        featureDIV.innerHTML = `<img onclick="returnMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
+                            featureDIV.innerHTML = `<img onclick="returnMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
                     <img src="./image/icon/herbal_tea.png" onclick="featuresText(this)" style="width: 110px; height: auto; margin-right: 10px; cursor: pointer;">
                     <a style="display: inline-block; position: absolute; font-size: 20px; font-weight: bold;">凍頂烏龍茶（舊稱水沙連之茶），生產自臺灣南投縣鹿谷鄉，主要以青心烏龍當作原料製作的烏龍茶，有「北包種、南凍頂」之說。</a>
                     <br><br>`
-                    } else {
-                        console.log("picNanT 2 -> " + picNanT)
-                        document.location.href = './view/level/nantou.html'
+                        } else {
+                            console.log("picNanT 2 -> " + picNanT)
+                            document.location.href = './view/level/nantou.html'
 
-                    }
-                    break;
+                        }
+                        break;
 
 
-                case "嘉義雞肉飯":
-                    const ChiaY = document.querySelector('.Chiayi')
-                    var picChiaY = ChiaY.src;
-                    console.log("picChiaY -> " + picChiaY)
-                    if (picChiaY.indexOf('dark.png') === -1) { //找不到dark
-                        console.log("picChiaY 1 -> " + picChiaY)
-                        mapIconDIV.style.display = "none";
-                        featureDIV.style.display = "block"
-                        featureDIV.innerHTML = `<img onclick="returnMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
+                    case "嘉義雞肉飯":
+                        const ChiaY = document.querySelector('.Chiayi')
+                        var picChiaY = ChiaY.src;
+                        console.log("picChiaY -> " + picChiaY)
+                        if (picChiaY.indexOf('dark.png') === -1) { //找不到dark
+                            console.log("picChiaY 1 -> " + picChiaY)
+                            mapIconDIV.style.display = "none";
+                            featureDIV.style.display = "block"
+                            featureDIV.innerHTML = `<img onclick="returnMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
                     <img src="./image/icon/meat_rice.png" onclick="featuresText(this)" style="width: 100px; height: auto; margin-right: 10px; cursor: pointer;">
                     <a style="display: inline-block; position: absolute; font-size: 20px; font-weight: bold;">嘉義火雞肉飯，台灣嘉義地區知名小吃之一。</a>
                     <br><br>`
-                    } else {
-                        console.log("picChiaY 2 -> " + picChiaY)
-                        document.location.href = './view/level/chiayi.html'
+                        } else {
+                            console.log("picChiaY 2 -> " + picChiaY)
+                            document.location.href = './view/level/chiayi.html'
 
-                    }
-                    break;
+                        }
+                        break;
 
 
-                case "台南赤崁樓":
-                    const TaiN = document.querySelector('.Tainan')
-                    var picTaiN = TaiN.src;
-                    console.log("picTaiN -> " + picTaiN)
-                    if (picTaiN.indexOf('dark.png') === -1) { //找不到dark
-                        console.log("picTaiN 1 -> " + picTaiN)
-                        mapIconDIV.style.display = "none";
-                        featureDIV.style.display = "block"
-                        featureDIV.innerHTML = `<img onclick="returnMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
+                    case "台南赤崁樓":
+                        const TaiN = document.querySelector('.Tainan')
+                        var picTaiN = TaiN.src;
+                        console.log("picTaiN -> " + picTaiN)
+                        if (picTaiN.indexOf('dark.png') === -1) { //找不到dark
+                            console.log("picTaiN 1 -> " + picTaiN)
+                            mapIconDIV.style.display = "none";
+                            featureDIV.style.display = "block"
+                            featureDIV.innerHTML = `<img onclick="returnMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
                     <img src="./image/icon/temple.png" onclick="featuresText(this)" style="width: 100px; height: auto; margin-right: 10px; cursor: pointer;">
                     <a style="display: inline-block; position: absolute; font-size: 20px; font-weight: bold;">台南赤崁樓，</a>
                     <br><br>`
-                    } else {
-                        console.log("picTaiN 2 -> " + picTaiN)
-                        document.location.href = './view/level/tainan.html'
+                        } else {
+                            console.log("picTaiN 2 -> " + picTaiN)
+                            document.location.href = './view/level/tainan.html'
 
-                    }
-                    break;
+                        }
+                        break;
 
-                case "高雄85大樓":
-                    const KaoS = document.querySelector('.Kaohsiung')
-                    var picKaoS = KaoS.src;
-                    console.log("picKaoS -> " + picKaoS)
-                    if (picKaoS.indexOf('dark.png') === -1) { //找不到dark
-                        console.log("picKaoS 1 -> " + picKaoS)
-                        mapIconDIV.style.display = "none";
-                        featureDIV.style.display = "block"
-                        featureDIV.innerHTML = `<img onclick="returnMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
+                    case "高雄85大樓":
+                        const KaoS = document.querySelector('.Kaohsiung')
+                        var picKaoS = KaoS.src;
+                        console.log("picKaoS -> " + picKaoS)
+                        if (picKaoS.indexOf('dark.png') === -1) { //找不到dark
+                            console.log("picKaoS 1 -> " + picKaoS)
+                            mapIconDIV.style.display = "none";
+                            featureDIV.style.display = "block"
+                            featureDIV.innerHTML = `<img onclick="returnMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
                     <img src="./image/icon/85building.png" onclick="featuresText(this)" style="width: 100px; height: auto; margin-right: 10px; cursor: pointer;">
                     <a style="display: inline-block; position: absolute; font-size: 20px; font-weight: bold;">高雄85大樓，前稱東帝士85國際廣場、東帝士建台大樓、TC Tower，位於高雄市苓雅區，緊鄰著高雄港和新光碼頭，是85層樓高的摩天大樓，其增加天線為378公尺，為高雄第一高樓，亦為台灣第二高的摩天大樓。</a>
                     <br><br>`
-                    } else {
-                        console.log("picKaoS 2 -> " + picKaoS)
-                        document.location.href = './view/level/kaohsiung.html'
+                        } else {
+                            console.log("picKaoS 2 -> " + picKaoS)
+                            document.location.href = './view/level/kaohsiung.html'
 
-                    }
-                    break;
+                        }
+                        break;
 
-                case "屏東黑鮪魚":
-                    const PingT = document.querySelector('.Pingtung')
-                    var picPingT = PingT.src;
-                    console.log("picPingT -> " + picPingT)
-                    if (picPingT.indexOf('dark.png') === -1) { //找不到dark
-                        console.log("picPingT 1 -> " + picPingT)
-                        mapIconDIV.style.display = "none";
-                        featureDIV.style.display = "block"
-                        featureDIV.innerHTML = `<img onclick="returnMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
+                    case "屏東黑鮪魚":
+                        const PingT = document.querySelector('.Pingtung')
+                        var picPingT = PingT.src;
+                        console.log("picPingT -> " + picPingT)
+                        if (picPingT.indexOf('dark.png') === -1) { //找不到dark
+                            console.log("picPingT 1 -> " + picPingT)
+                            mapIconDIV.style.display = "none";
+                            featureDIV.style.display = "block"
+                            featureDIV.innerHTML = `<img onclick="returnMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
                     <img src="./image/icon/black_tuna.png" onclick="featuresText(this)" style="width: 100px; height: auto; margin-right: 10px; cursor: pointer;">
                     <a style="display: inline-block; position: absolute; font-size: 20px; font-weight: bold;">屏東黑鮪魚，屏東縣東港是台灣黑鮪魚主要捕獲地，因此也被稱為黑鮪魚的故鄉。全盛時期東港黑鮪魚捕獲量不僅是全台第一，還是全世界第一。一年可創造數十億元的商機。故有人貼切的形容黑鮪魚是東港人的黑金。</a>
                     <br><br>`
-                    } else {
-                        console.log("picPingT 2 -> " + picPingT)
-                        document.location.href = './view/level/pingtung.html'
+                        } else {
+                            console.log("picPingT 2 -> " + picPingT)
+                            document.location.href = './view/level/pingtung.html'
 
-                    }
-                    break;
+                        }
+                        break;
 
-                case "宜蘭三星蔥":
-                    const YiL = document.querySelector('.Yilan')
-                    var picYiL = YiL.src;
-                    console.log("picYiL -> " + picYiL)
-                    if (picYiL.indexOf('dark.png') === -1) { //找不到dark
-                        console.log("picYiL 1 -> " + picYiL)
-                        mapIconDIV.style.display = "none";
-                        featureDIV.style.display = "block"
-                        featureDIV.innerHTML = `<img onclick="returnMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
+                    case "宜蘭三星蔥":
+                        const YiL = document.querySelector('.Yilan')
+                        var picYiL = YiL.src;
+                        console.log("picYiL -> " + picYiL)
+                        if (picYiL.indexOf('dark.png') === -1) { //找不到dark
+                            console.log("picYiL 1 -> " + picYiL)
+                            mapIconDIV.style.display = "none";
+                            featureDIV.style.display = "block"
+                            featureDIV.innerHTML = `<img onclick="returnMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
                     <img src="./image/icon/Sanxing_green_onion.png" onclick="featuresText(this)" style="width: 100px; height: auto; margin-right: 10px; cursor: pointer;">
                     <a style="display: inline-block; position: absolute; font-size: 20px; font-weight: bold;">宜蘭三星蔥</a>
                     <br><br>`
-                    } else {
-                        console.log("picYiL 2 -> " + picYiL)
-                        document.location.href = './view/level/yilan.html'
+                        } else {
+                            console.log("picYiL 2 -> " + picYiL)
+                            document.location.href = './view/level/yilan.html'
 
-                    }
-                    break;
+                        }
+                        break;
 
-                case "花蓮西瓜":
-                    const HuaL = document.querySelector('.Hualien')
-                    var picHuaL = HuaL.src;
-                    console.log("picHuaL -> " + picHuaL)
-                    if (picHuaL.indexOf('dark.png') === -1) { //找不到dark
-                        console.log("picHuaL 1 -> " + picHuaL)
-                        mapIconDIV.style.display = "none";
-                        featureDIV.style.display = "block"
-                        featureDIV.innerHTML = `<img onclick="returnMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
+                    case "花蓮西瓜":
+                        const HuaL = document.querySelector('.Hualien')
+                        var picHuaL = HuaL.src;
+                        console.log("picHuaL -> " + picHuaL)
+                        if (picHuaL.indexOf('dark.png') === -1) { //找不到dark
+                            console.log("picHuaL 1 -> " + picHuaL)
+                            mapIconDIV.style.display = "none";
+                            featureDIV.style.display = "block"
+                            featureDIV.innerHTML = `<img onclick="returnMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
                     <img src="./image/icon/watermelon.png" onclick="featuresText(this)" style="width: 100px; height: auto; margin-right: 10px; cursor: pointer;">
                     <a style="display: inline-block; position: absolute; font-size: 20px; font-weight: bold;">花蓮大西瓜</a>
                     <br><br>`
-                    } else {
-                        console.log("picHuaL 2 -> " + picHuaL)
-                        document.location.href = './view/level/hualien.html'
+                        } else {
+                            console.log("picHuaL 2 -> " + picHuaL)
+                            document.location.href = './view/level/hualien.html'
 
-                    }
-                    break;
+                        }
+                        break;
 
-                case "台東熱氣球":
-                    const TaiT = document.querySelector('.Taitung')
-                    var picTaiT = TaiT.src;
-                    console.log("picTaiT -> " + picTaiT)
-                    if (picTaiT.indexOf('dark.png') === -1) { //找不到dark
-                        console.log("picTaiT 1 -> " + picTaiT)
-                        mapIconDIV.style.display = "none";
-                        featureDIV.style.display = "block"
-                        featureDIV.innerHTML = `<img onclick="returnMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
+                    case "台東熱氣球":
+                        const TaiT = document.querySelector('.Taitung')
+                        var picTaiT = TaiT.src;
+                        console.log("picTaiT -> " + picTaiT)
+                        if (picTaiT.indexOf('dark.png') === -1) { //找不到dark
+                            console.log("picTaiT 1 -> " + picTaiT)
+                            mapIconDIV.style.display = "none";
+                            featureDIV.style.display = "block"
+                            featureDIV.innerHTML = `<img onclick="returnMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
                     <img src="./image/icon/hot_air_balloon.png" onclick="featuresText(this)" style="width: 100px; height: auto; margin-right: 10px; cursor: pointer;">
                     <a style="display: inline-block; position: absolute; font-size: 20px; font-weight: bold;">台東熱氣球</a>
                     <br><br>`
-                    } else {
-                        console.log("picTaiT 2 -> " + picTaiT)
-                        document.location.href = './view/level/taitung.html'
+                        } else {
+                            console.log("picTaiT 2 -> " + picTaiT)
+                            document.location.href = './view/level/taitung.html'
 
-                    }
-                    break;
+                        }
+                        break;
 
 
-            }
-        }
-
-        function returnMap() {
-            // const featureDIV = document.getElementById("feature")
-            featureDIV.style.display = "none";
-            console.log(featureDIV.style.display)
-            mapIconDIV.style.display = "block";
-
-        }
-
-        function leftIframChage() {
-            const iconIfram = document.getElementById("AllIconIfram").src
-
-            console.log("ifram=" + iconIfram)
-            click++;
-            if (click % 2 != 0) {
-                document.getElementById("AllIconIfram").style.visibility = "";
-                document.getElementById("collect_iconMap").style.visibility = "hidden";
-            } else {
-                document.getElementById("AllIconIfram").style.visibility = "hidden";
-                document.getElementById("collect_iconMap").style.visibility = "";
+                }
             }
 
+            function returnMap() {
+                // const featureDIV = document.getElementById("feature")
+                featureDIV.style.display = "none";
+                console.log(featureDIV.style.display)
+                mapIconDIV.style.display = "block";
+
+            }
+
+            function leftIframChage() {
+                const iconIfram = document.getElementById("AllIconIfram").src
+
+                console.log("ifram=" + iconIfram)
+                click++;
+                if (click % 2 != 0) {
+                    document.getElementById("AllIconIfram").style.visibility = "";
+                    document.getElementById("collect_iconMap").style.visibility = "hidden";
+                } else {
+                    document.getElementById("AllIconIfram").style.visibility = "hidden";
+                    document.getElementById("collect_iconMap").style.visibility = "";
+                }
 
 
-            // if (iconIfram == "file:///C:/Users/mcuim/Desktop/Raspberry/2020_07_06/GrowUp/alreadyCollect_icon.html")
-            //     document.getElementById("iconIfram").src = "./seeAllCollect_icon.html";
-            // else
-            //     document.getElementById("iconIfram").src = "./seeAllCollect_icon.html";
-        }
 
-        function featuresText(feature) {
-            console.log("index = " + feature)
-            console.log("click =? " + feature.parentNode.children[2].childNodes[0].nodeValue)
-            const voiceText = feature.parentNode.children[2].childNodes[0].nodeValue
-            const FeatureValue = feature.parentNode.children[2].style.visibility
-            console.log("value = " + FeatureValue)
+                // if (iconIfram == "file:///C:/Users/mcuim/Desktop/Raspberry/2020_07_06/GrowUp/alreadyCollect_icon.html")
+                //     document.getElementById("iconIfram").src = "./seeAllCollect_icon.html";
+                // else
+                //     document.getElementById("iconIfram").src = "./seeAllCollect_icon.html";
+            }
 
-
-            if (FeatureValue == "hidden")
+            function featuresText(feature) {
+                console.log("index = " + feature)
+                console.log("click =? " + feature.parentNode.children[2].childNodes[0].nodeValue)
+                const voiceText = feature.parentNode.children[2].childNodes[0].nodeValue
+                const FeatureValue = feature.parentNode.children[2].style.visibility
                 console.log("value = " + FeatureValue)
 
-            else {
-                mouseDown(voiceText)
-                console.log("voiceText=" + mouseDown(voiceText))
+
+                if (FeatureValue == "hidden")
+                    console.log("value = " + FeatureValue)
+
+                else {
+                    mouseDown(voiceText)
+                    console.log("voiceText=" + mouseDown(voiceText))
+                }
+
+                // if(FeatureValue != "hidden")
+                // console.log("value = " + FeatureValue)
             }
 
-            // if(FeatureValue != "hidden")
-            // console.log("value = " + FeatureValue)
-        }
-
-        function zhuyin(zhuyinMark) {
-            console.log("index = " + zhuyinMark)
-                // console.log("click =? " + zhuyinMark.parentNode.children[2].childNodes[0].nodeValue)
-                // const voiceText = zhuyinMark.parentNode.children[2].childNodes[0].nodeValue
-                // const zhuyinValue = zhuyinMark.parentNode.children[2].style.visibility
-                // console.log("value = " + zhuyinValue)
+            function zhuyin(zhuyinMark) {
+                console.log("index = " + zhuyinMark)
+                    // console.log("click =? " + zhuyinMark.parentNode.children[2].childNodes[0].nodeValue)
+                    // const voiceText = zhuyinMark.parentNode.children[2].childNodes[0].nodeValue
+                    // const zhuyinValue = zhuyinMark.parentNode.children[2].style.visibility
+                    // console.log("value = " + zhuyinValue)
 
 
-            // if (FeatureValue == "hidden")
-            //     console.log("value = " + FeatureValue)
+                // if (FeatureValue == "hidden")
+                //     console.log("value = " + FeatureValue)
 
-            // else {
-            //     mouseDown(voiceText)
-            //     console.log("voiceText=" + mouseDown(voiceText))
-            // switch (zhuyinMark) {
-            //     case 'ㄅ':
-            console.log("zhuyin=" + zhuyinMark)
-            SSU.text = zhuyinMark;
-            toggle();
-            // }
+                // else {
+                //     mouseDown(voiceText)
+                //     console.log("voiceText=" + mouseDown(voiceText))
+                // switch (zhuyinMark) {
+                //     case 'ㄅ':
+                console.log("zhuyin=" + zhuyinMark)
+                SSU.text = zhuyinMark;
+                toggle();
+                // }
 
 
-        }
+            }
 
-        function enlargeMap() {
+            function enlargeMap() {
 
-        }
-    </script>
-    <script src="./collect_icon.js"></script>
-    <script src="./treature_list.js"></script>
+            }
+        </script>
+        <script src="./collect_icon.js"></script>
+        <script src="./treature_list.js"></script>
 
-</body>
+    </body>
 
 </html>
