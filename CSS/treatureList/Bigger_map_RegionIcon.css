@@ -1,0 +1,280 @@
+.Taipei_B {
+    width: 30px;
+    position: absolute;
+    top: 13.5px;
+    left: 210px;
+}
+
+.Taipei_icon_B {
+    width: 49px;
+    position: absolute;
+    top: 0px;
+    right: 301px;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.NewTaipei_B {
+    /* width: 130px; */
+    width: 103px;
+    position: absolute;
+    top: 1px;
+    /* left: 240px; */
+    right: 2px;
+}
+
+.NewTaipei_icon_B {
+    width: 33px;
+    position: absolute;
+    top: 45px;
+    right: 314px;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.Keelung_B {
+    width: 30px;
+    position: absolute;
+    top: 16px;
+    right: 25px;
+}
+
+.Keelung_icon_B {
+    width: 31px;
+    position: absolute;
+    top: 7px;
+    right: 281px;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.Taoyuan {
+    width: 69px;
+    position: absolute;
+    top: 28px;
+    left: 145px;
+}
+
+.Taoyuan_icon_B {
+    width: 46px;
+    position: absolute;
+    top: 22px;
+    left: 412px;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.Hsinchu_B {
+    width: 79px;
+    position: absolute;
+    top: 56px;
+    left: 128px;
+}
+
+.Hsinchu_icon_B {
+    width: 51px;
+    position: absolute;
+    top: 64px;
+    left: 393px;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.Miaoli_B {
+    width: 92px;
+    position: absolute;
+    top: 84px;
+    left: 95px;
+    /* left: 124px; */
+}
+
+.Miaoli_icon_B {
+    width: 48px;
+    position: absolute;
+    top: 88px;
+    left: 365px;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.Taichung_B {
+    width: 136px;
+    position: absolute;
+    top: 121px;
+    left: 79px;
+    /* left: 103px; */
+}
+
+.Taichung_icon_B {
+    width: 70px;
+    position: absolute;
+    top: 124px;
+    left: 333px;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.Changhua_B {
+    width: 65px;
+    position: absolute;
+    top: 160px;
+    left: 49px;
+    /* left: 67px; */
+}
+
+.Changhua_icon_B {
+    width: 64px;
+    position: absolute;
+    top: 169px;
+    left: 290px;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.Yunlin_B {
+    width: 91px;
+    position: absolute;
+    top: 213px;
+    left: 33px;
+    /* left: 47px; */
+}
+
+.Yunlin_icon_B {
+    width: 39px;
+    position: absolute;
+    top: 201px;
+    left: 315px;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.Nantou_B {
+    width: 107px;
+    position: absolute;
+    top: 150px;
+    left: 97px;
+}
+
+.Nantou_icon_B {
+    width: 73px;
+    position: absolute;
+    top: 166px;
+    right: 359px;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.Yilan_B {
+    width: 83px;
+    position: absolute;
+    top: 47px;
+    left: 195px;
+}
+
+.Yilan_icon_B {
+    width: 74px;
+    position: absolute;
+    top: 56px;
+    right: 263px;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.Hualien_B {
+    width: 103px;
+    position: absolute;
+    top: 132px;
+    left: 161px;
+}
+
+.Hualien_icon_B {
+    width: 62px;
+    position: absolute;
+    top: 163px;
+    right: 285px;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.Taitung_B {
+    width: 101px;
+    position: absolute;
+    top: 252px;
+    left: 135px;
+}
+
+.Taitung_icon_B {
+    width: 76px;
+    position: absolute;
+    top: 304px;
+    right: 329px;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.Chiayi_B {
+    width: 118px;
+    position: absolute;
+    top: 237px;
+    left: 32px;
+    /* left: 46px; */
+}
+
+.Chiayi_icon_B {
+    width: 51px;
+    position: absolute;
+    top: 239px;
+    left: 344px;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.Tainan_B {
+    width: 83px;
+    position: absolute;
+    top: 271px;
+    left: 29px;
+    /* left: 43px; */
+}
+
+.Tainan_icon_B {
+    width: 58px;
+    position: absolute;
+    top: 271px;
+    left: 295px;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.Kaohsiung_B {
+    width: 128px;
+    position: absolute;
+    top: 256px;
+    left: 46px;
+}
+
+.Kaohsiung_icon_B {
+    width: 30px;
+    position: absolute;
+    top: 273px;
+    left: 375px;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.Pingtung_B {
+    width: 84px;
+    position: absolute;
+    top: 341px;
+    left: 84px;
+    margin-bottom: 20px;
+}
+
+.Pingtung_icon_B {
+    width: 66px;
+    position: absolute;
+    bottom: 60px;
+    left: 340px;
+    cursor: pointer;
+    z-index: 100;
+}
