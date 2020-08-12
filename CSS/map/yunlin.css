@@ -13,22 +13,24 @@ body {
 }
 
 .terrain {
-  width: 700px;
+  width: 400px;
+  overflow: hidden;
   position: relative;
-  top: 70px;
   z-index: 1;
+  filter: drop-shadow(10px 10px 5px rgba(0, 0, 0, 0.3));
+  top:55px;
 }
 
 .level1 {
   width: 75px;
   position: absolute;
   z-index: 10;
-  top: 226px;
-  left: 625px;
+  top: 141px;
+  left: 341px;
 }
 
 .level {
-  width: 65px;
+  width: 37px;
 
 }
 
@@ -36,7 +38,7 @@ body {
   width: 40px;
   position: absolute;
   z-index: 10;
-  top: 34px;
+  top: 14px;
   left: 48%;
 }
 
@@ -44,54 +46,54 @@ body {
   width: 100px;
   position: absolute;
   z-index: 10;
-  top: 231px;
-  left: 453px;
+  top: 141px;
+  left: 238px;
 }
 
 .level3 {
   width: 100px;
   position: absolute;
   z-index: 10;
-  top: 88px;
-  left: 458px;
+  top: 64px;
+  left: 241px;
 }
 
 .level4 {
   width: 100px;
   position: absolute;
   z-index: 10;
-  top: 175px;
-  left: 276px;
+  top: 115px;
+  left: 137px;
 }
 
 .level5 {
   width: 100px;
   position: absolute;
   z-index: 10;
-  top: 113px;
-  left: 121px;
+  top: 79px;
+    left: 48px;
 }
 
 .level6 {
   width: 100px;
   position: absolute;
   z-index: 10;
-  top: 227px;
-  left: 168px;
+  top: 146px;
+  left: 75px;
 }
 
 .level7 {
   width: 100px;
   position: absolute;
   z-index: 10;
-  top: 205px;
-  left: 27px;
+  top: 132px;
+  left: -6px;
 }
 
 .level8 {
   width: 100px;
   position: absolute;
   z-index: 10;
-  top: 363px;
-  left: 9px;
+  top: 222px;
+  left: -17px;
 }

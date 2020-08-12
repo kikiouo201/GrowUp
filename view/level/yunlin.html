@@ -20,9 +20,12 @@
         </tr>
         <tr>
             <td><img src="../../image/map/Yunlin_origin.png" onclick="featuresText('雲林地區')" />雲林地區</td>
-            <td id="information" rowspan="4" valign="top" style="font-size:x-large;">
+            <td id="information" rowspan="5" valign="top" style="font-size:x-large;">
                 &emsp;&emsp;雲林地區位在臺灣西方的中南部，在嘉南平原最北端。東邊是南投縣，西臨臺灣海峽，南邊隔著北港溪與嘉義縣為鄰，北邊沿著濁水溪和彰化縣接壤。雲林縣有二十個鄉鎮市，除斗六市、古坑鄉及林內鄉靠近山地，地勢較高外，其餘十七鄉鎮均屬平原地區。
             </td>
+        </tr>
+        <tr>
+            <td><img src="../../image/icon/soy_sauce.png" onclick="featuresText('西螺醬油')" />西螺醬油</td>
         </tr>
         <tr>
             <td><img src="../../image/map_icon/Yunlin_amusement_park.png" onclick="featuresText('劍湖山世界主題樂園')" />劍湖山世界主題樂園</td>
@@ -37,43 +40,43 @@
   <div class="map">
         <img class="terrain" src="../../image/map/Yunlin1.png" />
         <div class="level1">
-            <img class="level" src="../../image/icon/soy_sauce_dark.png"
+            <img class="level" src="../../image/icon/soy_sauce.png"
                 onclick="location.href='../../view/game/drawzhuyin.html?id=n&counties=yunlin';mouseDownText(ㄋ);" />
             <img class="level_text" src="../../image/chinese_alphabet/n.png"
                 onclick="location.href='../../view/game/drawzhuyin.html?id=n&counties=yunlin';mouseDownText(ㄋ);" />
         </div>
-        <div class="level2"><img class="level" src="../../image/icon/soy_sauce_dark.png"
+        <div class="level2"><img class="level" src="../../image/icon/soy_sauce.png"
                 onclick="location.href='../../view/game/drawzhuyin.html?id=h&counties=yunlin';mouseDownText(ㄏ);" />
             <img class="level_text" src="../../image/chinese_alphabet/h.png"
                 onclick="location.href='../../view/game/drawzhuyin.html?id=h&counties=yunlin';mouseDownText(ㄏ);" />
             </div>
         <div class="level3">
-            <img class="level" src="../../image/icon/soy_sauce_dark.png"
+            <img class="level" src="../../image/icon/soy_sauce.png"
                 onclick="location.href='../../view/game/drawzhuyin.html?id=j&counties=yunlin';mouseDownText(ㄐ);" />
             <img class="level_text" src="../../image/chinese_alphabet/j.png"
                 onclick="location.href='../../view/game/drawzhuyin.html?id=j&counties=yunlin';mouseDownText(ㄐ);" />
         </div>
         
-        <div class="level4"> <img class="level" src="../../image/icon/soy_sauce_dark.png"
+        <div class="level4"> <img class="level" src="../../image/icon/soy_sauce.png"
                 onclick="location.href='../../view/game/drawzhuyin.html?id=q&counties=yunlin';mouseDownText(ㄑ);" />
             <img class="level_text" src="../../image/chinese_alphabet/q.png"
                 onclick="location.href='../../view/game/drawzhuyin.html?id=q&counties=yunlin';mouseDownText(ㄑ);" />
             </div>
 
-        <div class="level5"> <img class="level" src="../../image/icon/soy_sauce_dark.png"
+        <div class="level5"> <img class="level" src="../../image/icon/soy_sauce.png"
                 onclick="location.href='../../view/game/drawzhuyin.html?id=x&counties=yunlin';mouseDownText(ㄒ);" />
             <img class="level_text" src="../../image/chinese_alphabet/x.png"
                 onclick="location.href='../../view/game/drawzhuyin.html?id=x&counties=yunlin';mouseDownText(ㄒ);" />
             </div>
             
             
-        <div class="level6"> <img class="level" src="../../image/icon/soy_sauce_dark.png"
+        <div class="level6"> <img class="level" src="../../image/icon/soy_sauce.png"
                 onclick="location.href='../../view/game/drawzhuyin.html?id=zh&counties=yunlin';mouseDownText(ㄓ);" />
             <img class="level_text" src="../../image/chinese_alphabet/zh.png"
                 onclick="location.href='../../view/game/drawzhuyin.html?id=zh&counties=yunlin';mouseDownText(ㄓ);" />
             </div>
 
-        <div class="level7"> <img class="level" src="../../image/icon/soy_sauce_dark.png"
+        <div class="level7"> <img class="level" src="../../image/icon/soy_sauce.png"
                 onclick="location.href='../../view/game/drawzhuyin.html?id=ch&counties=yunlin';mouseDownText(ㄔ);" />
             <img class="level_text" src="../../image/chinese_alphabet/ch.png"
                 onclick="location.href='../../view/game/drawzhuyin.html?id=ch&counties=yunlin';mouseDownText(ㄔ);" />
@@ -109,6 +112,10 @@
             switch (category) {
                 case "雲林地區":
                     information.innerHTML = "&emsp;&emsp;雲林地區位在臺灣西方的中南部，在嘉南平原最北端。東邊是南投縣，西臨臺灣海峽，南邊隔著北港溪與嘉義縣為鄰，北邊沿著濁水溪和彰化縣接壤。雲林縣有二十個鄉鎮市，除斗六市、古坑鄉及林內鄉靠近山地，地勢較高外，其餘十七鄉鎮均屬平原地區。";
+                    mouseDownText(information.innerHTML);
+                    break;
+                case "西螺醬油":
+                    information.innerHTML = `&emsp;&emsp;西螺醬油，台灣雲林地區重要一級產業特產，因為水質、溫度和濕度的合宜，雲林西螺號稱臺灣的「醬油王國」。`;
                     mouseDownText(information.innerHTML);
                     break;
                 case "劍湖山世界主題樂園":

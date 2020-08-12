@@ -18,13 +18,14 @@ body {
   position: relative;
   z-index: 1;
   filter: drop-shadow(10px 10px 5px rgba(0, 0, 0, 0.3));
+  top:150px;
 }
 
 .level1 {
   width: 75px;
   position: absolute;
   z-index: 10;
-  top: 94px;
+  top: 244px;
   left: 231px;
 }
 
@@ -44,7 +45,7 @@ body {
   width: 100px;
   position: absolute;
   z-index: 10;
-  top: 184px;
+  top: 334px;
   left: 249px;
 }
 
@@ -52,7 +53,7 @@ body {
   width: 100px;
   position: absolute;
   z-index: 10;
-  top: 189px;
+  top: 339px;
   left: 153px;
 }
 
@@ -61,7 +62,7 @@ body {
   width: 100px;
   position: absolute;
   z-index: 10;
-  top: 44px;
+  top: 194px;
   left: 159px;
 }
 
@@ -69,7 +70,7 @@ body {
   width: 100px;
   position: absolute;
   z-index: 10;
-  top: 38px;
+  top: 188px;
   left: 88px;
 }
 
@@ -77,7 +78,7 @@ body {
   width: 100px;
   position: absolute;
   z-index: 10;
-  top: 112px;
+  top: 262px;
   left: 57px;
 }
 
@@ -85,7 +86,7 @@ body {
   width: 100px;
   position: absolute;
   z-index: 10;
-  top: 165px;
+  top: 315px;
   left: -8px;
 }
 
@@ -93,6 +94,6 @@ body {
   width: 100px;
   position: absolute;
   z-index: 10;
-  top: 194px;
+  top: 344px;
   left: 73px;
 }
