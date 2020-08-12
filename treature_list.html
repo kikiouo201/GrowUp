@@ -44,6 +44,12 @@
             setTimeout('ShowTime()', 1000);
         }
     </script>
+    <div class="black_overlay">
+        <div class="closeMap">X</div>
+        <img src="./image/map/Taiwan_map_o.png" style="margin: 0px 36%;width: 255px;z-index: 1003;position: absolute;top: 1px;/* background-color: black; */">
+        <img onclick="RegionIcon('新北鶯歌陶瓷')" class="NewTaipei_icon" src="./image/icon/NewTaipei_icon_dark.png">
+
+    </div>
 
     <div class="main_area">
         <div class="left_main_area">
@@ -74,8 +80,8 @@
         <iframe id="Taitung_feature" src="" frameborder="0" class="collect_icon" style="visibility: hidden;"></iframe> -->
 
         <div id="collect_iconMap" class="collect_icon">
-            <div id="MapIcon">
-                <img class="NewTaipei" src="./image/map/NewTaipei_dark.png">
+            <div id="MapIcon" style="position: absolute; width: 100%;">
+                <img class="minMap" src="./image/map/Taiwan_map_o.png" style="margin: 0px 82px;width: 127px;z-index: 999;position: absolute;top: 1px;"> <img class="NewTaipei" src="./image/map/NewTaipei_dark.png">
                 <!-- <a href="./view/level/newTaipei.html"> -->
                 <img onclick="RegionIcon('新北鶯歌陶瓷')" class="NewTaipei_icon" src="./image/icon/NewTaipei_icon_dark.png">
                 <!-- </a> -->
@@ -1126,8 +1132,13 @@
 
 
         }
+
+        function enlargeMap() {
+
+        }
     </script>
     <script src="./collect_icon.js"></script>
+    <script src="./treature_list.js"></script>
 
 </body>
 
