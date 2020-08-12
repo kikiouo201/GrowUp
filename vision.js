@@ -22,13 +22,11 @@ async function start(){
         if(labels[i].description.toString() == "Watermelon"){
             text = labels[i].description;
         }
-        if(labels[i].description.toString() == "Pineapple"){
-            text = labels[i].description;
-        }
-        if(labels[i].description.toString() == "Strawberry"){
-            text = labels[i].description;
-        }
         
+        if(labels[i].description.toString() == "Apple"){
+            text = labels[i].description;
+        }
+
         if(labels[i].description.toString() == "Banana"){
             text = labels[i].description;
         }
@@ -37,6 +35,9 @@ async function start(){
             text = labels[i].description;
         }
 
+        if(labels[i].description.toString() == "Pen"){
+            text = labels[i].description;
+        }
         else{
             text = labels[0].description;
         }
@@ -45,7 +46,6 @@ async function start(){
     const target = "zh-TW"
     let [translations] = await translate.translate(text, target);
     translations = Array.isArray(translations) ? translations : [translations];
-    console.log('Translations:'+translations);
     return translations
 
     

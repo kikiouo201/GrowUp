@@ -175,29 +175,33 @@ ipcMain.on('vision-start', async(event, args) => {
 ipcMain.on('crawler', (event, args) => {
     // let webcrawler = await callCrawler.webcrawler();
     //  console.log(`webcrawler=${webcrawler}`)
-    // const data = encodeURI(args)
-    // console.log(data)
+    
 
-    console.log("crawler= " + explainJSON[0][args]);
+    if(explainJSON[0][args]==undefined){
+        const data = encodeURI(args)
+        console.log(data)
+        const url = 'https://www.moedict.tw/' + data + '#gsc.tab=0'
+    
+        console.log(url)
+        request(url, (err, res, body) => {
+    
+                if (!err && res.statusCode == 200) {
+                    const $ = cheerio.load(body);
+                    let def = $('.def')
+                    output = def.find('a').text()
+                }
+                //console.log(output);
+                event.sender.send('reply-webcrawlerfunction', output);
+                console.log(output);
+    
+            })
+    }
+    else{
+        event.sender.send('reply-webcrawlerfunction', explainJSON[0][args]);
+    }
+    
 
-    event.sender.send('reply-webcrawlerfunction', explainJSON[0][args]);
-
-
-    // const url = 'https://www.moedict.tw/' + data + '#gsc.tab=0'
-
-    // console.log(url)
-    // request(url, (err, res, body) => {
-
-    //         if (!err && res.statusCode == 200) {
-    //             const $ = cheerio.load(body);
-    //             let def = $('.def')
-    //             output = def.find('a').text()
-    //         }
-    //         //console.log(output);
-    //         event.sender.send('reply-webcrawlerfunction', output);
-    //         console.log(output);
-
-    //     })
+    
     //  event.sender.send('reply-webcrawlerfunction',webcrawler);
 
 })

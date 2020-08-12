@@ -18,28 +18,21 @@ identifyBtn.addEventListener('click',()=>{
 
     ipcRenderer.on('reply-mainjsfunction',(event,data)=>{
         ipcRenderer.send('crawler',data)
-        console.log(data)
         // data.forEach(label => all+="\nyo="+label);
         document.getElementById('AnsTxt').innerHTML=" "+data
     })
 
     ipcRenderer.on('reply-webcrawlerfunction',(event,data) =>{
         if(data==undefined){
-            var ShowVisibility = document.querySelector('.QA_card_area');
-            var ImgVisibility = document.querySelector('img#AnsImg');
-            ShowVisibility.style.visibility = "visible";
-            ImgVisibility.style.visibility = "visible";
-            document.getElementById("AnsImg").src="./still-image.jpg"
-            document.getElementById('leadTxt').innerHTML="辨識成功!!";
+            document.getElementById('leadTxt').innerHTML="辨識失敗!!";
             document.getElementById('explainTxt').innerHTML="";
         }else{
             var ShowVisibility = document.querySelector('.QA_card_area');
             var ImgVisibility = document.querySelector('img#AnsImg');
             ShowVisibility.style.visibility = "visible";
             ImgVisibility.style.visibility = "visible";
-            document.getElementById("AnsImg").src="./still-image.jpg"
             document.getElementById('leadTxt').innerHTML="辨識成功!!";
-
+            document.getElementById('AnsImg').src="./still-image.jpg"
             document.getElementById('explainTxt').innerHTML=data;
         }
         

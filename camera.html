@@ -51,7 +51,7 @@
     </script>
 
     <div>
-        <img id="AnsImg" src="./still-image.jpg" style="width: 300px; height: 300px; ">
+        <img id="AnsImg" src="" style="width: 300px; height: 300px; ">
     </div>
     <div id="show_page">
         <div class="QA_card_area" id="QA_card">
@@ -60,22 +60,22 @@
                 <div class="card-body" style="margin-top: 30px;">
                     <div style="float:left; display: block; text-align: left;">
                         <p id="Ans" class="card-text card_A" style="float: left;">答案：</p>
-                        <p id="AnsTxt" class="card-text card_A" style="margin-left: 0px;">西瓜</p>
+                        <p id="AnsTxt" class="card-text card_A" style="margin-left: 0px;">蘋果</p>
                         <img class="speaker_A" onclick="speaker(this)" id="speaker_A" src="icons/speaker.png" />
                     </div>
 
                     <div style="float:left; display: block; text-align: left;">
                         <p id="explain" class="card-text card_A" style="float: left;">敘述：</p>
-                        <p id="explainTxt" class="card-text card_A" style="margin-left: 0px;">植物名。葫蘆科西瓜屬，一年生蔓草。</p>
+                        <p id="explainTxt" class="card-text card_A" style="margin-left: 0px;">落業喬木。葉軟形，邊緣有細尖鋸齒。果實球形，味美，可食，也可製酒。</p>
                         <img class="speaker_A" onclick="speaker(this)" id="speaker_A" src="icons/speaker.png" />
                     </div>
                 </div>
                 <div class="card-header contentCss" id="QA_num_" style="background-color: #f8f9fa24;">
                     <p class="contentlink">相關繪本連結：</p>
-                    <p class="book_css">我是西瓜爸爸</p>
-                    <img src="https://children.moc.gov.tw/resource/book_image/216128.jpg" style="margin-left: 20px; display: inline;" width="180" height="153" alt="蘋果甜蜜蜜">
+                    <p class="book_css">畢老師的蘋果</p>
+                    <img src="https://children.moc.gov.tw/resource/book_image/215293.jpg" style="margin-left: 20px; display: inline;" width="180" height="153" alt="蘋果甜蜜蜜">
                     <p style="display: inline; margin-left: 20px; position: absolute; margin-right: 40px; font-size: 18pt;">
-                        我一口咬下一大片西瓜，連黑色的西瓜子也吞進肚子裡，我的肚子會不會長出一顆又一顆的小西瓜？</p>
+                        赫普村是個小村莊，在赫普村裡畢老師向棒球隊的小選手們說恭喜，恭喜他們打了一場漂亮的棒球賽。</p>
                 </div>
                 <div class="card-header" id="QA_num_">
                     <p class="contentlink">相關連結解釋：</p>
@@ -92,8 +92,8 @@
         請先拍下你想知道的事物</h2>
       <!-- <img src="https://image.flaticon.com/icons/svg/2368/2368264.svg" style="height: 80%; width: 80px;"> -->
       <!-- <h5 style="font-family: Microsoft JhengHei; margin-top: 0px;">開始問問題!</h5> -->
-      <span  class="mh1 voice-btn w3-btn w3-ripple" style="width: auto; height: 50px; margin-top: 2px;"  onclick="changecss()">
-        <img src="./photo/camera.png"style="height: 80%; width: 50px; margin-top: 5px; cursor: pointer; ">
+      <span id="identify-js" class="mh1 voice-btn w3-btn w3-ripple" style="width: auto; height: 50px; margin-top: 2px;"  onclick="changecss()">
+        <img id="identify-js" src="./photo/camera.png"style="height: 80%; width: 50px; margin-top: 5px; cursor: pointer; ">
         <!-- <h5 style="font-family: Microsoft JhengHei; margin-top: 0px;">開始問問題!</h5> -->
       </span>
         </span>
@@ -185,13 +185,13 @@
 
     <script>
         function changecss(){
-            var ShowVisibility = document.querySelector('.QA_card_area');
-            var ImgVisibility = document.querySelector('img#AnsImg');
-            ShowVisibility.style.visibility = "visible";
-            ImgVisibility.style.visibility = "visible";
+            // var ShowVisibility = document.querySelector('.QA_card_area');
+            // var ImgVisibility = document.querySelector('img#AnsImg');
+            // ShowVisibility.style.visibility = "visible";
+            // ImgVisibility.style.visibility = "visible";
         }
     </script>
-    <script src="render.js"></script>
+    <script src="./render.js"></script>
 </body>
 
 </html>
