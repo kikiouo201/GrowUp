@@ -19,6 +19,27 @@
     cursor: pointer;
 }
 
+
+/* 疊在大圖上面iconDiv */
+
+.iconIntro {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #333333a1;
+    z-index: 20000;
+    visibility: hidden;
+}
+
+.iconDiv {
+    position: absolute;
+    width: 400px;
+    height: 300px;
+    background-color: #ffb906cc;
+    margin: 10% 27%;
+    border-radius: 20px;
+}
+
 .Taipei {
     width: 36px;
     position: absolute;
