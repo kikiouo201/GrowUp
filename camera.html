@@ -74,8 +74,8 @@
                     <p class="contentlink">相關繪本連結：</p>
                     <p class="book_css">我是西瓜爸爸</p>
                     <img src="https://children.moc.gov.tw/resource/book_image/216128.jpg" style="margin-left: 20px; display: inline;" width="180" height="153" alt="蘋果甜蜜蜜">
-                    <p style="display: inline; margin-left: 20px; margin-top: 40px; position: absolute; margin-right: 40px; font-size: 20pt;">
-                        我一口咬下一大片西瓜，連黑色的西瓜子也吞進肚子裡，我的肚子會不會長出一顆又一顆的小西瓜？那麼，我就是西瓜爸爸囉！</p>
+                    <p style="display: inline; margin-left: 20px; position: absolute; margin-right: 40px; font-size: 18pt;">
+                        我一口咬下一大片西瓜，連黑色的西瓜子也吞進肚子裡，我的肚子會不會長出一顆又一顆的小西瓜？</p>
                 </div>
                 <div class="card-header" id="QA_num_">
                     <p class="contentlink">相關連結解釋：</p>
@@ -92,8 +92,8 @@
         請先拍下你想知道的事物</h2>
       <!-- <img src="https://image.flaticon.com/icons/svg/2368/2368264.svg" style="height: 80%; width: 80px;"> -->
       <!-- <h5 style="font-family: Microsoft JhengHei; margin-top: 0px;">開始問問題!</h5> -->
-      <span id="identify-js" class="mh1 voice-btn w3-btn w3-ripple" style="width: auto; height: 50px; margin-top: 2px;"  onclick="changecss()">
-        <img  id="identify-js"src="./photo/camera.png"style="height: 80%; width: 50px; margin-top: 5px; cursor: pointer; ">
+      <span  class="mh1 voice-btn w3-btn w3-ripple" style="width: auto; height: 50px; margin-top: 2px;"  onclick="changecss()">
+        <img src="./photo/camera.png"style="height: 80%; width: 50px; margin-top: 5px; cursor: pointer; ">
         <!-- <h5 style="font-family: Microsoft JhengHei; margin-top: 0px;">開始問問題!</h5> -->
       </span>
         </span>
@@ -185,10 +185,10 @@
 
     <script>
         function changecss(){
-            // var ShowVisibility = document.querySelector('.QA_card_area');
-            // var ImgVisibility = document.querySelector('img#AnsImg');
-            // ShowVisibility.style.visibility = "visible";
-            // ImgVisibility.style.visibility = "visible";
+            var ShowVisibility = document.querySelector('.QA_card_area');
+            var ImgVisibility = document.querySelector('img#AnsImg');
+            ShowVisibility.style.visibility = "visible";
+            ImgVisibility.style.visibility = "visible";
         }
     </script>
     <script src="render.js"></script>

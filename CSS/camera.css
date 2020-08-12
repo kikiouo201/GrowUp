@@ -93,7 +93,7 @@ img#AnsImg {
 #show_page {
   position: absolute;
   top: 0;
-  left: 5%;
+  left: 20%;
   z-index: 1;
   width: 100%;
   height: calc(100% - 62px);
@@ -145,36 +145,8 @@ img#AnsImg {
 
 }
 
-.collection {
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  margin-left: 5%;
-  margin-top: 4%;
-  cursor: pointer;
-}
 
 
-#collectionShow {
-  /*此行指定放置廣告的div */
-  width: 20%;
-  /*此行設定div的寬度*/
-  height: 30%;
-  /*此行設定div的高度*/
-  box-shadow: 5px 5px 10px black;
-  /*此行設定div的外框陰影*/
-  border: 2px yellow solid;
-  /*此行設定div的外框線條*/
-  border-radius: 20px;
-  /*此行設定div的外框圓角*/
-  position: fixed;
-  /*此行設定div為不隨捲動而移動的模式*/
-  background-color: white;
-  top: 30%;
-  left: 40%;
-  visibility: hidden;
-
-}
 
 
 /* 語音按按鈕動畫 */
