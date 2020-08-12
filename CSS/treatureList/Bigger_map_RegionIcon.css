@@ -9,7 +9,7 @@
     width: 30px;
     position: absolute;
     top: 12.5px;
-    left: 468px;
+    left: 467px;
     z-index: 99;
 }
 
@@ -28,7 +28,7 @@
     position: absolute;
     top: 1px;
     /* left: 240px; */
-    right: 262px;
+    right: 258px;
     z-index: 99;
 }
 
@@ -45,7 +45,7 @@
     width: 30px;
     position: absolute;
     top: 16px;
-    right: 284px;
+    right: 281px;
     z-index: 99;
 }
 
@@ -62,7 +62,7 @@
     width: 70px;
     position: absolute;
     top: 27px;
-    left: 404px;
+    left: 400px;
     z-index: 99;
 }
 
@@ -79,7 +79,7 @@
     width: 80px;
     position: absolute;
     top: 55px;
-    left: 387px;
+    left: 384px;
     z-index: 99;
 }
 
@@ -177,10 +177,10 @@
 }
 
 .Yilan_B {
-    width: 83px;
+    width: 85px;
     position: absolute;
-    top: 47px;
-    left: 195px;
+    top: 45px;
+    left: 192px;
 }
 
 .Yilan_icon_B {
@@ -196,7 +196,7 @@
     width: 104px;
     position: absolute;
     top: 132px;
-    left: 160px;
+    left: 158px;
 }
 
 .Hualien_icon_B {
@@ -209,10 +209,10 @@
 }
 
 .Taitung_B {
-    width: 101px;
+    width: 100px;
     position: absolute;
-    top: 252px;
-    left: 135px;
+    top: 253px;
+    left: 133px;
 }
 
 .Taitung_icon_B {
@@ -262,7 +262,7 @@
     width: 123px;
     position: absolute;
     bottom: 78px;
-    left: 308px;
+    left: 306px;
     z-index: 99;
 }
 
@@ -278,8 +278,8 @@
 .Pingtung_B {
     width: 84px;
     position: absolute;
-    top: 341px;
-    left: 84px;
+    top: 340px;
+    left: 82px;
     margin-bottom: 20px;
 }
 
