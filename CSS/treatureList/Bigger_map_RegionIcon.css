@@ -1,8 +1,16 @@
+.East_region_B {
+    position: absolute;
+    left: 259px;
+    top: -2px;
+    z-index: 99;
+}
+
 .Taipei_B {
     width: 30px;
     position: absolute;
-    top: 13.5px;
-    left: 210px;
+    top: 12.5px;
+    left: 468px;
+    z-index: 99;
 }
 
 .Taipei_icon_B {
@@ -16,11 +24,12 @@
 
 .NewTaipei_B {
     /* width: 130px; */
-    width: 103px;
+    width: 101px;
     position: absolute;
     top: 1px;
     /* left: 240px; */
-    right: 2px;
+    right: 262px;
+    z-index: 99;
 }
 
 .NewTaipei_icon_B {
@@ -36,7 +45,8 @@
     width: 30px;
     position: absolute;
     top: 16px;
-    right: 25px;
+    right: 284px;
+    z-index: 99;
 }
 
 .Keelung_icon_B {
@@ -48,11 +58,12 @@
     z-index: 100;
 }
 
-.Taoyuan {
-    width: 69px;
+.Taoyuan_B {
+    width: 70px;
     position: absolute;
-    top: 28px;
-    left: 145px;
+    top: 27px;
+    left: 404px;
+    z-index: 99;
 }
 
 .Taoyuan_icon_B {
@@ -65,10 +76,11 @@
 }
 
 .Hsinchu_B {
-    width: 79px;
+    width: 80px;
     position: absolute;
-    top: 56px;
-    left: 128px;
+    top: 55px;
+    left: 387px;
+    z-index: 99;
 }
 
 .Hsinchu_icon_B {
@@ -181,10 +193,10 @@
 }
 
 .Hualien_B {
-    width: 103px;
+    width: 104px;
     position: absolute;
     top: 132px;
-    left: 161px;
+    left: 160px;
 }
 
 .Hualien_icon_B {
@@ -247,10 +259,11 @@
 }
 
 .Kaohsiung_B {
-    width: 128px;
+    width: 123px;
     position: absolute;
-    top: 256px;
-    left: 46px;
+    bottom: 78px;
+    left: 308px;
+    z-index: 99;
 }
 
 .Kaohsiung_icon_B {
