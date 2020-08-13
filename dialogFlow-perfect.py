@@ -92,7 +92,8 @@ with sr.Microphone() as source:
     'Question': speech_to_text,
     'Answer': response.query_result.fulfillment_text,
     'Q_name': "",
-    'Answer_pic':""
+    'Answer_pic':"",
+    'keyWord':response.query_result.fulfillment_text
     }
 
     dictionary_keyword = {
