@@ -1,239 +1,259 @@
-
-body{
+body {
     width: 100%;
-    
-    display:flex;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-video{
-  position: absolute;
-  
-  top: 45px;
-  left: 40px;
-  z-index: 10;
-  height: 360px;
+
+video {
+    position: absolute;
+    top: 45px;
+    left: 40px;
+    z-index: 10;
+    height: 240px;
 }
+
 .anvas {
     border: 1px black solid;
     /* width: 9%;
     height: 65%; */
     width: 120px;
     height: 490px;
-    display:flex;
+    display: flex;
     flex-direction: column;
 }
+
 .anvas87 {
-  border: 1px black solid;
-  width: 370px;
-  height: 370px;
-  display:flex;
-  flex-direction: column;
+    border: 1px black solid;
+    width: 268px;
+    height: 268px;
+    display: flex;
+    flex-direction: column;
 }
-.draw{
+
+.draw {
+    border: 1px blue solid;
+    width: 268px;
+    height: 268px;
+}
+
+.draw78 {
     border: 1px blue solid;
     width: 370px;
     height: 370px;
 }
-.draw78{
-  border: 1px blue solid;
-  width: 370px;
-  height: 370px;
-}
-.draw87{
-  border: 1px blue solid;
-  /* position: absolute; */
-  width: 370px;
-  height: 370px;
-  /* z-index: 40; */
-}
-.write87{
-  position: absolute;
-  left: 53.3%;
-  top: 8%;
-  z-index: 10;
-}
-.speaker{
-  position: absolute;
-  left: 5px;
-  bottom: 5px;
-  height: 40px;
-  z-index: 20;
-}
-.again{
-  position: absolute;
-  right: -45px;
-  bottom: -40px;
-  width: 40px;
-  height: 70px;
-  z-index: 10;
-  transform: rotate(-145deg);
-}
-.reset{
-  position: absolute;
-  right: -50px;
-  bottom: 35px;
-  height: 50px;
-  z-index: 10;
+
+.draw87 {
+    border: 1px blue solid;
+    /* position: absolute; */
+    width: 310px;
+    height: 310px;
+    /* z-index: 40; */
 }
 
-.finger{
-  visibility: visible;
-  width: 50px;
-  height: 100px;
-  transform: rotate(300deg);
-  position: absolute;
-  top: 30px;
-  left: 160px;
-  z-index: 30;
-  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
-}
-.moveFinger{
-  width: 50px;
-  height: 100px;
-  transform: scale(4);
-  transition: all 1s ease-out;
-  transform: rotate(300deg);
-  position: absolute;
-  top:115px; 
-  left: 108px;
-  z-index: 10;
-}
-.moveFinger2{
-  width: 50px;
-  height: 100px;
-  transform: scale(4);
-  transition: all 1.5s ease-out;
-  transform: rotate(300deg);
-  position: absolute;
-  top:105px; 
-  left: 180px;
-  z-index: 10;
-}
-.moveFinger3{
-  width: 50px;
-  height: 100px;
-  transform: scale(4);
-  transition: all 1.5s ease-out;
-  transform: rotate(300deg);
-  position: absolute;
-  top:97px; 
-  left: 300px;
-  z-index: 10;
-}
-.moveFinger4{
-  width: 50px;
-  height: 100px;
-  transform: scale(4);
-  transition: all 1.5s ease-out;
-  transform: rotate(300deg);
-  position: absolute;
-  top:110px; 
-  left: 309px;
-  z-index: 10;
-}
-.moveFinger5{
-  width: 50px;
-  height: 100px;
-  transform: scale(4);
-  transition: all 1.5s ease-out;
-  transform: rotate(300deg);
-  position: absolute;
-  top:215px; 
-  left: 283px;
-  z-index: 10;
-}
-.moveFinger6{
-  width: 50px;
-  height: 100px;
-  transform: scale(4);
-  transition: all 1.5s ease-out;
-  transform: rotate(300deg);
-  position: absolute;
-  top:240px; 
-  left: 270px;
-  z-index: 10;
-}
-.moveFinger7{
-  width: 50px;
-  height: 100px;
-  transform: scale(4);
-  transition: all 1.5s ease-out;
-  transform: rotate(300deg);
-  position: absolute;
-  top:270px; 
-  left: 247px;
-  z-index: 10;
-}
-.moveFinger8{
-  width: 50px;
-  height: 100px;
-  transform: scale(4);
-  transition: all 1.5s ease-out;
-  transform: rotate(300deg);
-  position: absolute;
-  top:290px; 
-  left: 209px;
-  z-index: 10;
+.write87 {
+    position: absolute;
+    left: 53.3%;
+    top: 8%;
+    z-index: 10;
 }
 
-.moveFinger9{
-  width: 50px;
-  height: 100px;
-  transform: scale(4);
-  transition: all 1.5s ease-out;
-  transform: rotate(300deg);
-  position: absolute;
-  top:290px; 
-  left: 210px;
-  z-index: 10;
+.speaker {
+    position: absolute;
+    left: 5px;
+    bottom: 5px;
+    height: 40px;
+    z-index: 20;
 }
-.moveFinger10{
-  width: 50px;
-  height: 100px;
-  transform: scale(4);
-  transition: all 1.5s ease-out;
-  transform: rotate(300deg);
-  position: absolute;
-  top:255px; 
-  left: 169px;
-  z-index: 10;
+
+.again {
+    position: absolute;
+    right: -50px;
+    bottom: -40px;
+    height: 50px;
+    z-index: 10;
 }
-.write{
+
+.reset {
+    position: absolute;
+    right: -50px;
+    bottom: 20px;
+    height: 50px;
+    z-index: 10;
+}
+
+.finger {
+    visibility: visible;
+    width: 50px;
+    height: 100px;
+    transform: rotate(300deg);
+    position: absolute;
+    top: 30px;
+    left: 160px;
+    z-index: 30;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+}
+
+.moveFinger {
+    width: 50px;
+    height: 100px;
+    transform: scale(4);
+    transition: all 1s ease-out;
+    transform: rotate(300deg);
+    position: absolute;
+    top: 115px;
+    left: 108px;
+    z-index: 10;
+}
+
+.moveFinger2 {
+    width: 50px;
+    height: 100px;
+    transform: scale(4);
+    transition: all 1.5s ease-out;
+    transform: rotate(300deg);
+    position: absolute;
+    top: 105px;
+    left: 180px;
+    z-index: 10;
+}
+
+.moveFinger3 {
+    width: 50px;
+    height: 100px;
+    transform: scale(4);
+    transition: all 1.5s ease-out;
+    transform: rotate(300deg);
+    position: absolute;
+    top: 97px;
+    left: 300px;
+    z-index: 10;
+}
+
+.moveFinger4 {
+    width: 50px;
+    height: 100px;
+    transform: scale(4);
+    transition: all 1.5s ease-out;
+    transform: rotate(300deg);
+    position: absolute;
+    top: 110px;
+    left: 309px;
+    z-index: 10;
+}
+
+.moveFinger5 {
+    width: 50px;
+    height: 100px;
+    transform: scale(4);
+    transition: all 1.5s ease-out;
+    transform: rotate(300deg);
+    position: absolute;
+    top: 215px;
+    left: 283px;
+    z-index: 10;
+}
+
+.moveFinger6 {
+    width: 50px;
+    height: 100px;
+    transform: scale(4);
+    transition: all 1.5s ease-out;
+    transform: rotate(300deg);
+    position: absolute;
+    top: 240px;
+    left: 270px;
+    z-index: 10;
+}
+
+.moveFinger7 {
+    width: 50px;
+    height: 100px;
+    transform: scale(4);
+    transition: all 1.5s ease-out;
+    transform: rotate(300deg);
+    position: absolute;
+    top: 270px;
+    left: 247px;
+    z-index: 10;
+}
+
+.moveFinger8 {
+    width: 50px;
+    height: 100px;
+    transform: scale(4);
+    transition: all 1.5s ease-out;
+    transform: rotate(300deg);
+    position: absolute;
+    top: 290px;
+    left: 209px;
+    z-index: 10;
+}
+
+.moveFinger9 {
+    width: 50px;
+    height: 100px;
+    transform: scale(4);
+    transition: all 1.5s ease-out;
+    transform: rotate(300deg);
+    position: absolute;
+    top: 290px;
+    left: 210px;
+    z-index: 10;
+}
+
+.moveFinger10 {
+    width: 50px;
+    height: 100px;
+    transform: scale(4);
+    transition: all 1.5s ease-out;
+    transform: rotate(300deg);
+    position: absolute;
+    top: 255px;
+    left: 169px;
+    z-index: 10;
+}
+
+.write {
     position: absolute;
     left: 26.3%;
     top: 18%;
     z-index: 10;
 }
-.write2{
+
+.write2 {
     position: absolute;
     left: 7.3%;
     top: 18%;
     z-index: 10;
 }
-.zhuyin{
-    display:flex;
+
+.zhuyin {
+    display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;   
+    position: relative;
 }
-.word{
-    width: 900px;
-    position: relative;   
-    z-index:1;
+
+.word {
+    width: 650px;
+    position: relative;
+    z-index: 1;
 }
-.score{
+
+.score {
     border: 1px solid black;
     line-height: 50px;
     text-align: center;
     width: 100px;
     height: 50px;
 }
-.result{
+
+.result {
     width: 500px;
-    height: 500px;  
-    position: relative;  
+    height: 500px;
+    position: relative;
     z-index: 25;
     display: flex;
     flex-direction: column;
@@ -241,36 +261,38 @@ video{
     align-items: center;
     background-color: aliceblue;
     opacity: .90;
-  }
-  .challengeAgain{
+}
+
+.challengeAgain {
     position: absolute;
     left: 20px;
     bottom: 20px;
     padding: 10px;
-    background-color:burlywood;
+    background-color: burlywood;
     text-align: center;
     border-radius: 10px;
-  }
-  .nextLevel{
+}
+
+.nextLevel {
     position: absolute;
     right: 20px;
     bottom: 20px;
     padding: 10px;
-    background-color:burlywood;
+    background-color: burlywood;
     text-align: center;
     border-radius: 10px;
-  }
+}
 
-  .status{
+.status {
     text-align: center;
     display: flex;
     flex-direction: column;
     font-size: 40px;
     padding: 5px;
-  }
- 
-  .black_overlay {
-    visibility:hidden;
+}
+
+.black_overlay {
+    visibility: hidden;
     position: absolute;
     z-index: 20;
     top: 0%;
@@ -283,29 +305,28 @@ video{
     filter: alpha(opacity=80);
     display: flex;
     align-items: center;
-        justify-content: center;
+    justify-content: center;
+}
 
-  }
-  .close{
+.close {
     position: absolute;
     top: 10px;
     right: 10px;
     font-size: xx-large;
+}
 
-  }
-  .props {
+.props {
     display: flex;
     justify-content: center;
     flex-direction: row;
-    
-  }
-  .props div{
+}
 
-    background-color:darkcyan;
+.props div {
+    background-color: darkcyan;
     text-align: center;
     display: flex;
     align-items: center;
     border-radius: 10px;
-    margin:10px ;
+    margin: 10px;
     padding: 10px;
-  }
+}
