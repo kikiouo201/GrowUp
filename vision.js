@@ -35,11 +35,25 @@ async function start(){
             text = labels[i].description;
         }
 
-        if(labels[i].description.toString() == "Pen"){
+        if(labels[i].description.toString() == "chair"){
             text = labels[i].description;
         }
+
+        if(labels[i].description.toString() == "kettle"){
+            text = labels[i].description;
+        }
+
+        if(labels[i].description.toString() == "notebook"){
+            text = labels[i].description;
+        }
+
+        if(labels[i].description.toString() == "Glasses"){
+            text = labels[i].description;
+        }
+
+    
         else{
-            text = labels[0].description;
+            // text = labels[0].description;
         }
     }
     
