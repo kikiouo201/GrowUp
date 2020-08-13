@@ -13,10 +13,11 @@
 
 .closeMap {
     position: absolute;
-    top: 40px;
-    right: 180px;
+    top: 3px;
+    right: 12px;
     font-size: xx-large;
     cursor: pointer;
+    color: white;
 }
 
 
