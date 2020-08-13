@@ -51,6 +51,10 @@ async function start(){
             text = labels[i].description;
         }
 
+        if(labels[i].description.toString() == "Smartphone"){
+            text = labels[i].description;
+        }
+
     
         else{
             // text = labels[0].description;
