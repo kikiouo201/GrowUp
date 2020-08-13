@@ -86,9 +86,9 @@ body {
 }
 
 .bookCover h1 {
-  font-size: 36px;
-  margin-top: 20%;
-  color: rgb(136, 138, 143);
+  font-size: 30px;
+  margin-top: 25%;
+  color: rgb(52, 53, 58);
 }
 
 .bookCover img {
@@ -112,7 +112,7 @@ body {
 .Child{
   background-size: cover;
   /* background: url(../image/Animals_BookCover.png); */
-  background-image: url( ../image/Child_BookCover.png );
+  background-image: url( ../image/nurseryRhymes_BookCover.png );
 }
 
 
