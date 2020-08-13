@@ -5,11 +5,12 @@ let y = 0;
 let points = [];
 let level=['b','p','m','f',''];
 let nextLevel ='no';
+let id = (new URLSearchParams(location.search)).get("id");
 
 const myPics = document.querySelectorAll('.draw');
 console.log('pics' + myPics.length);
 myPics.forEach((pics, num) => {
-    let id = (new URLSearchParams(location.search)).get("id");
+    
     const context = pics.getContext('2d');
     points.push([0, 0, 0, 0, 0]);
     // event.offsetX, event.offsetY gives the (x,y) offset from the edge of the canvas.
@@ -70,26 +71,21 @@ score.addEventListener('click', () => {
     console.log('score onclick');
     let totalPoint = 0;
     points.forEach((grid) => {
-        // console.log('grid= ' + grid);
-        grid.forEach((point) => {
-            console.log('point= ' + point);
-            if (point == 1) {
-                totalPoint++;
-            }
-        });
+        if (grid == 1) {
+            totalPoint++;
+        }
     });
-
     const status=document.querySelector('.status');
     const props=document.querySelector('.props');
+    const smallCard=document.querySelector('.smallCard');
   
    if (totalPoint < 3) {
-        status.innerHTML="再加油";
+        status.innerHTML='<img src="../../image/drawZhuyin/tryAgain.png" width="300px"/>失敗';
         props.style.visibility="hidden";
-       
-       // nextLevel='no';
     } else  {
-        status.innerHTML="你好棒";
+        status.innerHTML='<img src="../../image/drawZhuyin/good.png" width="200px"/>你好棒';
         props.style.visibility="visible";
+        smallCard.innerHTML='<img src="../../image/magicCard/chineseAlphabet/'+id+'.png" width="50px"/>';
         
     }
     console.log('totalPoint= ' + totalPoint);
@@ -103,7 +99,9 @@ score.addEventListener('click', () => {
 const close = document.querySelector('.close');
 close.addEventListener('click',() => {
     const black_overlay=document.querySelector('.black_overlay');
+    const props=document.querySelector('.props');
     black_overlay.style.visibility = "hidden";
+    props.style.visibility="hidden";
 });
 
 function reset(){
@@ -111,10 +109,14 @@ function reset(){
    let canvas = document.querySelector('.draw');
     let ctx = canvas.getContext('2d');
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+    for(let i=0;i<points.length;i++){
+       points[i]=0;
+    }
+    
 }
 
 function challengeAgain(){
-    let id = (new URLSearchParams(location.search)).get("id");
+    
     window.location.href="../../view/game/drawzhuyin.html?id="+id;
 }
 
@@ -130,32 +132,24 @@ function goNextLevel(){
 
 function onload() {
 
-    let id = (new URLSearchParams(location.search)).get("id");
-
+    
+    let zhuyin = document.querySelector(".zhuyin img");
      console.log(`id=${id}`);
-    if (id != null) {
-        let zhuyin = document.querySelector(".zhuyin img");
-        zhuyin.src = `../../image/drawZhuyin/${id}.png`;
+    if (id == null) {
+       
+        id='b';
         
-        const counties = (new URLSearchParams(location.search)).get("counties");
-        const returnfloat = document.querySelector('.returnfloat');
+        // const counties = (new URLSearchParams(location.search)).get("counties");
+        // const returnfloat = document.querySelector('.returnfloat');
 
-        if(counties!=null){
-            returnfloat.href=`../../view/level/${counties}.html`;
-        }else{
-            returnfloat.href=`../../treature_list.html`;
-        }
-        
-        // if((level.indexOf(id)!=-1)&&(level.indexOf(id)+1)<level.length){
-        //     nextLevel=level[(level.indexOf(id)+1)];
+        // if(counties!=null){
+        //     returnfloat.href=`../../view/level/${counties}.html`;
         // }else{
-        //     nextLevel='no';
+        //     returnfloat.href=`../../treature_list.html`;
         // }
-    //     console.log("nextLevel"+nextLevel);
-    //    console.log('level.indexOf(id)='+level.indexOf(id));
-        
+ 
     }
-
+    zhuyin.src = `../../image/drawZhuyin/${id}.png`;
      moveFinger();
  
 }
@@ -213,7 +207,7 @@ function scoreJudgment(id ,x, y, points, num) {
             let criteria=criterias[i];
             console.log(`x=${x},y=${y}`)
             if (criteria.y[0] < y && y < criteria.y[1] && criteria.x[0] < x && x < criteria.x[1]) {
-                points[num][i] = 1;
+                points[i] = 1;
             }
         }
   
