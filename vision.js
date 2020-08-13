@@ -39,7 +39,7 @@ async function start(){
             text = labels[i].description;
         }
         else{
-            text = labels[0].description;
+            // text = labels[0].description;
         }
     }
     
