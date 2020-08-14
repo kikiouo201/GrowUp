@@ -1,74 +1,132 @@
-.mapsize{
+body {
+    background-repeat: no-repeat;
+    background-size: 100%;
+    margin-top: auto;
+    margin-left: 0;
+}
+
+.home_page {
+    top: 0px;
+    width: 100%;
+    height: 8.7%;
+    font-size: 18px;
+    font-weight: bolder;
+    background-color: #ffb906cf;
+    text-align: center;
+    margin: 0px auto;
+    /* 置中*/
+    padding-top: 8px;
+    line-height: 40px;
+    /*配合高度px 垂直置中*/
+    position: fixed;
+    z-index: 98;
+}
+
+.mapsize {
     position: relative;
-    top:75px;
-    width: 1300px;
+    top: 75px;
+    width: 1200px;
     margin-left: 120px;
 }
-.panda{
+
+.panda {
     position: absolute;
-    top: 160px;
-    left: 435px;
+    top: 150px;
+    left: 400px;
     width: 150px;
 }
 
-.penguin{
+.penguin {
     position: absolute;
-    top: 410px;
-    left: 197px;
+    top: 380px;
+    left: 178px;
     width: 135px;
 }
 
-.camel{
+.camel {
     position: absolute;
-    top: 155px;
-    left: 821px;
+    top: 139px;
+    left: 749px;
     width: 210px;
 }
 
-.elephant{
+.elephant {
     position: absolute;
-    top: 363px;
-    left: 647px;
+    top: 338px;
+    left: 591px;
     width: 179px;
 }
 
-.lion{
+.lion {
     position: absolute;
-    top: 571px;
-    left: 786px;
+    top: 528px;
+    left: 722px;
     width: 163px;
 }
 
-.leopard{
+.leopard {
     position: absolute;
-    top: 505px;
-    left: 621px;
+    top: 464px;
+    left: 570px;
     width: 170px;
 }
 
-.bear{
+.bear {
     position: absolute;
-    top: 252px;
-    left: 1097px;
+    top: 236px;
+    left: 1010px;
     width: 112px;
 }
 
-.spoonbill{
+.spoonbill {
     position: absolute;
-    top: 408px;
-    left: 1209px;
-    width: 152px;
+    top: 381px;
+    left: 1114px;
+    width: 144px;
 }
 
-.parrot{
+.parrot {
     position: absolute;
-    top: 630px;
-    left: 947px;
+    top: 588px;
+    left: 869px;
     width: 114px;
 }
-.gorilla{
+
+.gorilla {
     position: absolute;
-    top: 536px;
-    left: 1112px;
-    width: 105px;
+    top: 502px;
+    left: 1025px;
+    width: 99px;
+}
+
+#explain_page {
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    text-align: center;
+    width: 50%;
+    height: 50%;
+    padding: 20px;
+    border-radius: 20px;
+    font-size: 24pt;
+    background-color: rgb(238, 194, 98);
+}
+
+#black_overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #333333a1;
+    z-index: 2000;
+    visibility: hidden;
+}
+
+
+#closepage {
+    position: absolute;
+    top: 3px;
+    right: 12px;
+    font-size: xx-large;
+    cursor: pointer;
+    color: white;
 }
