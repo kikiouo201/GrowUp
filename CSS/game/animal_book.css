@@ -25,78 +25,78 @@ body {
 .mapsize {
     position: relative;
     top: 75px;
-    width: 1200px;
+    width: 800px;
     margin-left: 120px;
 }
 
 .panda {
     position: absolute;
-    top: 150px;
-    left: 400px;
-    width: 150px;
+    top: 121px;
+    left: 305px;
+    width: 100px;
 }
 
 .penguin {
     position: absolute;
-    top: 380px;
-    left: 178px;
-    width: 135px;
+    top: 275px;
+    left: 159px;
+    width: 91px;
 }
 
 .camel {
     position: absolute;
-    top: 139px;
-    left: 749px;
-    width: 210px;
+    top: 116px;
+    left: 538px;
+    width: 141px;
 }
 
 .elephant {
     position: absolute;
-    top: 338px;
-    left: 591px;
-    width: 179px;
+    top: 245px;
+    left: 431px;
+    width: 120px;
 }
 
 .lion {
     position: absolute;
-    top: 528px;
-    left: 722px;
-    width: 163px;
+    top: 374px;
+    left: 523px;
+    width: 110px;
 }
 
 .leopard {
     position: absolute;
-    top: 464px;
-    left: 570px;
-    width: 170px;
+    top: 334px;
+    left: 420px;
+    width: 112px;
 }
 
 .bear {
     position: absolute;
-    top: 236px;
-    left: 1010px;
-    width: 112px;
+    top: 184px;
+    left: 715px;
+    width: 71px;
 }
 
 .spoonbill {
     position: absolute;
-    top: 381px;
-    left: 1114px;
-    width: 144px;
+    top: 279px;
+    left: 784px;
+    width: 96px;
 }
 
 .parrot {
     position: absolute;
-    top: 588px;
-    left: 869px;
-    width: 114px;
+    top: 415px;
+    left: 623px;
+    width: 74px;
 }
 
 .gorilla {
     position: absolute;
-    top: 502px;
-    left: 1025px;
-    width: 99px;
+    top: 358px;
+    left: 726px;
+    width: 66px;
 }
 
 #explain_page {
@@ -108,7 +108,7 @@ body {
     height: 50%;
     padding: 20px;
     border-radius: 20px;
-    font-size: 24pt;
+    font-size: 18pt;
     background-color: rgb(238, 194, 98);
 }
 
