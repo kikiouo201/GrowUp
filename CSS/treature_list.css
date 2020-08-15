@@ -19,6 +19,35 @@ body {
     background-image: url("../image/map/kraftPaper2.png");
 }
 
+nav {
+    height: auto;
+    width: 55px;
+    background-color: burlywood;
+    /* margin-top: 135px; */
+    position: absolute;
+    top: 81px;
+    right: 337px;
+    border-radius: 25px 5px 5px 25px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0% 18%;
+    margin: 8px 0;
+}
+
+li {
+    margin: 5px -3px;
+    padding: 6px 9px;
+    font-size: 18px;
+    line-height: 20px;
+    border-radius: 8px;
+    border-color: coral;
+    border-style: dashed;
+    cursor: pointer;
+    z-index: 100;
+}
+
 a:-webkit-any-link {
     color: black;
     outline: none;
