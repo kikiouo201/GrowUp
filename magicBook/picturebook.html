@@ -176,6 +176,7 @@
     </script>
 
     <script>
+
         function OpenDataList() {
             const dataurl = "https://children.moc.gov.tw/opendata/2";
             const request = new XMLHttpRequest();
@@ -212,23 +213,43 @@
 
                 book_textdiv.append(bookname);
 
-                bookdiv.append(book_textdiv)
-                imgurltemp = getimg(imgurltemp, bookdiv);
+                bookdiv.append(book_textdiv);
+                imgurltemp = getimg(imgurltemp, bookdiv, i);
+                console.log(imgurltemp);
+
                 imgurltemp++;
             }
 
+            // let imgurl = 'https://children.moc.gov.tw/resource/animate_image/' + imgurltemp + '.jpg';
+
+            // let bookdiv = document.createElement("div");
+            // bookdiv.className = 'book';
+
+            // let book_textdiv = document.createElement("div");
+            // book_textdiv.className = 'text-div'
+
+            // let bookname = document.createElement("h2");
+            // bookname.append(document.createTextNode(jsons[0]['name']));
+
+            // book_textdiv.append(bookname);
+
+            // bookdiv.append(book_textdiv);
+
+            // getimg(imgurltemp, bookdiv,1);
+
+            // imgurltemp++;
 
 
         }
 
-        function getimg(imgurltemp, bookdiv) {
+        function getimg(imgurltemp, bookdiv, i) {
+            console.log(i);
+
             const list = document.querySelector("#disrecommend_book");
             let request = new XMLHttpRequest();
             let imgurl = 'https://children.moc.gov.tw/resource/animate_image/' + imgurltemp + '.jpg';
             request.open('GET', imgurl);
             request.send()
-
-
             request.onreadystatechange = function (evt) {
                 if (request.readyState !== 4)
                     return;
@@ -241,11 +262,22 @@
                     bookdiv_imgdiv.append(bookimg);
                     bookdiv.append(bookdiv_imgdiv);
                     list.append(bookdiv);
+                    console.log("success");
 
-                } else
-                    imgurl = 'https://children.moc.gov.tw/resource/animate_image/' + (imgurltemp++) + '.jpg';
+                } else {
+                    console.log(imgurltemp);
+                    let bookdiv_imgdiv = document.createElement("div");
+                    bookdiv_imgdiv.className = 'image-div';
+                    let bookimg = document.createElement('img');
+                    bookimg.src = 'https://children.moc.gov.tw/resource/animate_image/6805.jpg';
+                    bookdiv_imgdiv.append(bookimg);
+                    bookdiv.append(bookdiv_imgdiv);
+                    list.append(bookdiv);
+                    console.log("success");
+                    // getimg(++imgurltemp, bookdiv, i);
+                }
+                return imgurltemp;
             }
-
             return imgurltemp;
         }
     </script>
