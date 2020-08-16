@@ -23,9 +23,9 @@
             <td >資訊介紹</td>
         </tr>
         <tr>
-            <td><img src="../../image/map/Taitung.png" onclick="featuresText('臺東地區')"/>臺東地區</td>
+            <td><img src="../../image/map/Taitung_origin.png" onclick="featuresText('臺東地區')"/>臺東地區</td>
             <td id="information" rowspan="5" valign="top" style="font-size:x-large;" >
-                &emsp;&emsp;臺東地區擁有豐富的生態資源，無論是海岸、高山、森林、溪谷，都保持著自然完整的風貌，並孕育了多樣的動植物種類，處處都是天然美景。臺東各鄉鎮的物產豐饒，遠近馳名的縱谷好米、金針花、洛神花、臺東釋迦；漁產亦十分興盛，旗魚、柴魚片都是極富盛名的當地特產品。
+                &emsp;&emsp;臺東地區，擁有豐富的生態資源。無論是海岸、高山、森林、溪谷，都保持著自然完整的風貌，並孕育了多樣的動植物種類，處處都是天然美景。
             </td>
         </tr>
         <tr>
@@ -83,24 +83,24 @@
     const information = document.querySelector('#information')
     switch (category) {
         case "臺東地區":
-            information.innerHTML = "&emsp;&emsp;臺東擁有豐富的生態資源，無論是海岸、高山、森林、溪谷，都保持著自然完整的風貌，並孕育了多樣的動植物種類，處處都是天然美景。臺東各鄉鎮的物產豐饒，遠近馳名的縱谷好米、金針花、洛神花、臺東釋迦；漁產亦十分興盛，旗魚、柴魚片都是極富盛名的當地特產品。";
+            information.innerHTML = "&emsp;&emsp;臺東地區，擁有豐富的生態資源。無論是海岸、高山、森林、溪谷，都保持著自然完整的風貌，並孕育了多樣的動植物種類，處處都是天然美景。";
             mouseDownText(category+information.innerHTML);
             break;
         case "熱氣球":
-            information.innerHTML = "&emsp;&emsp;將氣球內的氣體用瓦斯加熱，使其較冷空氣輕，產生上升力量，使氣球往高空飄浮。";
+            information.innerHTML = "&emsp;&emsp;熱氣球，是將氣球內的氣體用瓦斯加熱，使氣球往高空飄浮。每年6月至8月，台東縣鹿野鄉所舉辦的臺灣國際熱氣球嘉年華，可以坐在熱氣球上觀賞花東縱谷的美景。";
             mouseDownText(category+information.innerHTML);
             break;
         
          case "初鹿牧場":
-            information.innerHTML="&emsp;&emsp;初鹿牧場位於台東縣卑南鄉境內一座乳牛牧場，也是全台唯一的坡地牧場。從事森林浴、滾草、餵食黑白相間的荷蘭種乳牛等觀光活動，以出產新鮮、香醇的初鹿鮮奶聞名。";
+            information.innerHTML="&emsp;&emsp;初鹿牧場，位於台東縣卑南鄉。~~境內一座乳牛牧場~~是全台唯一的坡地牧場。從事森林浴、滾草、餵食黑白相間的荷蘭種乳牛等觀光活動，以出產新鮮、香醇的初鹿鮮奶聞名。";
             mouseDownText(category+information.innerHTML);
             break;
          case "鯉魚山公園":
-            information.innerHTML="&emsp;&emsp;鯉魚山位於臺東市西側，俗稱卑南山，因外形與鯉魚相似而得名，是臺東市區最明顯的地標和風景區之一，鯉魚山公園是一處適合平日休閒運動，放鬆心情的好去處。";
+            information.innerHTML="&emsp;&emsp;鯉魚山公園，位於臺東市西側，俗稱卑南山。因外形與鯉魚相似而得名，是臺東市區最明顯的地標和風景區之一。";
             mouseDownText(category+information.innerHTML);
             break;
          case "金城武樹":
-            information.innerHTML="&emsp;&emsp;金城武樹是位於臺灣臺東縣池上鄉伯朗大道上的一棵茄苳樹，周圍為一望無際的稻田，該樹孤立其中，配上遠方的山景。";
+            information.innerHTML="&emsp;&emsp;金城武樹，位於臺東縣池上鄉。在伯朗大道上的一棵茄苳樹，周圍為一望無際的稻田，該樹孤立其中，配上遠方的山景。";
             mouseDownText(category+information.innerHTML);
             break;
     }
