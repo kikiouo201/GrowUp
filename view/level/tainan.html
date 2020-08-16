@@ -22,9 +22,12 @@
         </tr>
         <tr>
             <td><img src="../../image/map/Tainan_origin.png" onclick="featuresText('台南地區')" />台南地區</td>
-            <td id="information" rowspan="4" valign="top" style="font-size:x-large;">
-                &emsp;&emsp;台南地區位於臺灣西南部，地勢平坦。安平港東北方，是臺灣最早開發地區之一，文物鼎盛，素有古都之稱，亦為南部教育、文化中心。
+            <td id="information" rowspan="5" valign="top" style="font-size:x-large;">
+                &emsp;&emsp;台南地區，為六都之一，位於臺灣西南部，平原區比例最大、地形最平緩的城市，耕地面積全臺第一，盛產豐富的農產品。現以傳統小吃、夜市商圈、旅遊度假、古蹟文化、山川田園、溫泉戲水吸引觀光人潮，並以宜居樂活城市著稱。
             </td>
+        </tr>
+        <tr>
+            <td><img src="../../image/icon/temple.png" onclick="featuresText('赤崁樓')" />赤崁樓</td>
         </tr>
         <tr>
             <td><img src="../../image/map_icon/Tainan_Chimei_Museum.png" onclick="featuresText('奇美博物館')" />奇美博物館</td>
@@ -86,19 +89,23 @@
             const information = document.querySelector('#information')
             switch (category) {
                 case "台南地區":
-                    information.innerHTML = "&emsp;&emsp;台南地區位於臺灣西南部，地勢平坦。安平港東北方，是臺灣最早開發地區之一，文物鼎盛，素有古都之稱，亦為南部教育、文化中心。";
+                    information.innerHTML = "&emsp;&emsp;台南地區，為六都之一，位於臺灣西南部，平原區比例最大、地形最平緩的城市，耕地面積全臺第一，盛產豐富的農產品。現以傳統小吃、夜市商圈、旅遊度假、古蹟文化、山川田園、溫泉戲水吸引觀光人潮，並以宜居樂活城市著稱。";
                     mouseDownText(information.innerHTML);
                     break;
+                case "赤崁樓":
+                    information.innerHTML = `&emsp;&emsp;赤崁樓，位於臺南市的中西區，又作赤崁樓。前身為1653年荷治時期於赤崁行省興建之歐式城塞，又稱「普羅民遮城」，在地人稱為「番仔樓」，曾為全台灣島的商業中心。`;
+                    mouseDownText(information.innerHTML);
+                    break;    
                 case "奇美博物館":
-                    information.innerHTML = `&emsp;&emsp;奇美博物館位於臺南市仁德區，為奇美實業創辦人許文龍創立，是臺灣館藏最豐富的私人博物館、美術館。以典藏西洋藝術品為主，展出藝術、樂器、兵器與自然史四大領域。`;
+                    information.innerHTML = `&emsp;&emsp;奇美博物館，位於臺南市仁德區。是臺灣館藏最豐富的私人博物館、美術館。以典藏西洋藝術品為主，展出藝術、樂器、兵器與自然史四大領域。`;
                     mouseDownText(information.innerHTML);
                     break;
                 case "七股鹽山":
-                    information.innerHTML = "&emsp;&emsp;七股鹽山是臺灣面積最大、最晚發展的七股鹽場遺蹟之一。鹽山海拔高度為20公尺，約相當於七層樓高，也如白雪耀眼，像長年堆雪的長白山，也稱作「南台的長白山」，來臺觀光的日本人則戲稱是「台灣的富士山」。";
+                    information.innerHTML = "&emsp;&emsp;七股鹽山，位於台南市七股區和將軍區。是臺灣面積最大、最晚發展的七股鹽場遺蹟之一。鹽山如白雪耀眼，像長年堆雪的長白山，也稱作「南台的長白山」，來臺觀光的日本人則戲稱是「台灣的富士山」。";
                     mouseDownText(information.innerHTML);
                     break;
                 case "曾文水庫":
-                    information.innerHTML = "&emsp;&emsp;曾文水庫為台灣最大的水庫與湖泊，興建之目的主要為提供嘉南地區灌溉用水，另具發電、防洪和觀光的功能，是個多目標利用的水庫。";
+                    information.innerHTML = "&emsp;&emsp;曾文水庫，位於嘉義縣大埔鄉。為台灣最大的水庫與湖泊，興建之目的主要為提供嘉南地區灌溉用水，另具發電、防洪和觀光的功能，是個多目標利用的水庫。";
                     mouseDownText(information.innerHTML);
                     break;
             }
