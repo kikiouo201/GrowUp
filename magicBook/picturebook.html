@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html style="width: 100%; height: 100%;" lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -10,8 +10,9 @@
     <link rel="stylesheet" href="./css/picturebook.css">
     <title>Document</title>
 </head>
+<!-- onload="ShowTime()" -->
 
-<body background="../image/background/desk.png" onload="ShowTime()">
+<body style="width: 100%; height: 100%;" background="../image/background/desk.png">
     <div class="home_page">
         <a href="../game_home.html">繪本</a>
 
@@ -22,97 +23,80 @@
     </div>
 
     <div id="show_page">
-        <div id="booklist">
-
-            <div id="book1">
-                <div style="border-bottom: 2px black dashed;">
-                    <h2 align="left" id="bookname">環遊世界做蘋果派</h2>
+        <div class="booklist" id="recommend_book">
+            <button style="position: absolute;" onclick="OpenDataList()">try try see</button>
+            <div class="book">
+                <div class="text-div">
+                    <h2>環遊世界做蘋果派</h2>
                 </div>
-
-                <div style="padding: 5%;">
-                    <a href="./summary.html">
-                        <img style="width: 40%;" src="https://children.moc.gov.tw/resource/book_image/215552.jpg">
-                    </a>
-
+                <div class="image-div">
+                    <img src="https://children.moc.gov.tw/resource/book_image/215552.jpg">
                 </div>
 
             </div>
 
-
-            <div id="book1">
-                <div style="border-bottom: 2px black dashed;">
-                    <h2 align="left" id="bookname">送你一顆蘋果</h2>
+            <div class="book">
+                <div class="text-div">
+                    <h2>送你一顆蘋果</h2>
                 </div>
 
-                <div style="padding: 5%;">
-                    <a href="">
-                        <img style="width: 40%; " src="https://children.moc.gov.tw/resource/book_image/216245.jpg">
-                    </a>
+                <div class="image-div">
+                    <img src="https://children.moc.gov.tw/resource/book_image/216245.jpg">
 
                 </div>
             </div>
 
 
-            <div id="book1">
-                <div style="border-bottom: 2px black dashed;">
-                    <h2 align="left" id="bookname">致命的蘋果</h2>
+            <div class="book">
+                <div class="text-div">
+                    <h2>致命的蘋果</h2>
                 </div>
 
-                <div style="padding: 5%;">
-                    <a href="">
-                        <img style="width: 40%; " src="https://children.moc.gov.tw/resource/book_image/217133.jpg">
-                    </a>
-
+                <div class="image-div">
+                    <img src="https://children.moc.gov.tw/resource/book_image/217133.jpg">
                 </div>
 
             </div>
 
 
-            <div id="book1">
-                <div style="border-bottom: 2px black dashed;">
-                    <h2 align="left" id="bookname">蘋果的引力-牛頓</h2>
+            <div class="book">
+                <div class="text-div">
+                    <h2>蘋果的引力-牛頓</h2>
                 </div>
 
-                <div style="padding: 5%;">
-                    <a href="">
-                        <img style="width: 40%; " src="https://children.moc.gov.tw/resource/book_image/217317.jpg">
-                    </a>
-
+                <div class="image-div">
+                    <img src="https://children.moc.gov.tw/resource/book_image/217317.jpg">
                 </div>
-
             </div>
 
 
-            <div id="book1">
-                <div style="border-bottom: 2px black dashed;">
-                    <h2 align="left" id="bookname">蘋果纖維</h2>
+            <div class="book">
+                <div class="text-div">
+                    <h2>蘋果纖維</h2>
                 </div>
 
-                <div style="padding: 5%;">
-                    <a href="">
-                        <img style="width: 40%; " src="https://children.moc.gov.tw/resource/book_image/217849.jpg">
-                    </a>
+                <div class="image-div">
+                    <img src="https://children.moc.gov.tw/resource/book_image/217849.jpg">
+                </div>
+            </div>
 
+            <div class="book">
+                <div class="text-div">
+                    <h2>蘋果甜蜜蜜</h2>
+                </div>
+
+                <div class="image-div">
+                    <img src="https://children.moc.gov.tw/resource/book_image/218424.jpg">
                 </div>
 
             </div>
+        </div>
 
-            <div id="book1">
-                <div style="border-bottom: 2px black dashed;">
-                    <h2 align="left" id="bookname">蘋果甜蜜蜜</h2>
-                </div>
-
-                <div style="padding: 5%;">
-                    <a href="">
-                        <img style="width: 40%; " src="https://children.moc.gov.tw/resource/book_image/218424.jpg">
-                    </a>
-
-                </div>
-
-            </div>
+        <div class="booklist" id="disrecommend_book">
 
         </div>
     </div>
+
 
     <div>
         <a href="../game_home.html" class="sosfloat sos_mark" id="menu-share">
@@ -164,9 +148,7 @@
             document.getElementById('showtime').innerHTML = h + ':' + m;
             setTimeout('ShowTime()', 1000);
         }
-    </script>
 
-    <script>
         function toggleBtn() {
             const Btns = document.querySelector(".btns");
             const add = document.getElementById("add");
@@ -190,6 +172,81 @@
                     e.style.bottom = "0px";
                 });
             }
+        }
+    </script>
+
+    <script>
+        function OpenDataList() {
+            const dataurl = "https://children.moc.gov.tw/opendata/2";
+            const request = new XMLHttpRequest();
+            request.open('GET', dataurl);
+            request.responseType = 'json';
+            request.send();
+            // let jsontext;
+            request.onreadystatechange = function (evt) {
+                if (request.readyState !== 4) {
+                    return;
+                }
+                // console.log("waited for it to finish")
+                console.log(request.response);
+                recommendListbook(request.response);
+            }
+        }
+
+        function recommendListbook(jsons) {
+            let request = new XMLHttpRequest();
+            const list = document.querySelector("#disrecommend_book");
+            let imgurltemp = 6802;
+
+            for (let i = 0; i < jsons.length; i++) {
+                let imgurl = 'https://children.moc.gov.tw/resource/animate_image/' + imgurltemp + '.jpg';
+
+                let bookdiv = document.createElement("div");
+                bookdiv.className = 'book';
+
+                let book_textdiv = document.createElement("div");
+                book_textdiv.className = 'text-div'
+
+                let bookname = document.createElement("h2");
+                bookname.append(document.createTextNode(jsons[i]['name']));
+
+                book_textdiv.append(bookname);
+
+                bookdiv.append(book_textdiv)
+                imgurltemp = getimg(imgurltemp, bookdiv);
+                imgurltemp++;
+            }
+
+
+
+        }
+
+        function getimg(imgurltemp, bookdiv) {
+            const list = document.querySelector("#disrecommend_book");
+            let request = new XMLHttpRequest();
+            let imgurl = 'https://children.moc.gov.tw/resource/animate_image/' + imgurltemp + '.jpg';
+            request.open('GET', imgurl);
+            request.send()
+
+
+            request.onreadystatechange = function (evt) {
+                if (request.readyState !== 4)
+                    return;
+                // console.log("waited for it to finish")
+                if (request.status != 404) {
+                    let bookdiv_imgdiv = document.createElement("div");
+                    bookdiv_imgdiv.className = 'image-div';
+                    let bookimg = document.createElement('img');
+                    bookimg.src = imgurl
+                    bookdiv_imgdiv.append(bookimg);
+                    bookdiv.append(bookdiv_imgdiv);
+                    list.append(bookdiv);
+
+                } else
+                    imgurl = 'https://children.moc.gov.tw/resource/animate_image/' + (imgurltemp++) + '.jpg';
+            }
+
+            return imgurltemp;
         }
     </script>
 </body>

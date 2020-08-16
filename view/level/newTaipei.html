@@ -23,9 +23,12 @@
         </tr>
         <tr>
             <td ><img src="../../image/map/NewTaipei_origin.png" onclick="featuresText('新北市')" />新北地區</td>
-            <td id="information" rowspan="5" valign="top" style="font-size:x-large;" >
-                &emsp;&emsp;新北地區是臺灣本島最北的城市，環繞整個臺北市，總面積達二千多平方公里，海岸線長達120餘公里，幅員遼闊，新北市的東北、北部、西北部均臨海，市內北海岸與東北角海岸擁有豐富的海景奇觀及海岸風光，每逢夏日，海上盡是弄潮張帆的人潮，整條綿延的山海線，銜接成臺北人最鍾愛的黃金旅遊路線。
+            <td id="information" rowspan="6" valign="top" style="font-size:x-large;" >
+                &emsp;&emsp;新北地區，為六都之一，是全臺人口最多的市。全境環繞臺北市，東北則三面環繞基隆市，東南鄰宜蘭縣，西南鄰桃園市；其所轄石門區富貴角地處臺灣本島最北端，貢寮區三貂角地處臺灣本島最東端。
             </td>
+        </tr>
+        <tr>
+            <td ><img src="../../image/icon/NewTaipei_icon.png" onclick="featuresText('陶瓷')" />陶瓷</td>
         </tr>
         <tr>
             <td ><img src="../../image/map_icon/NewTaipei_queen_head.png" onclick="featuresText('女王頭')" />女王頭</td>
@@ -102,23 +105,27 @@
     const information = document.querySelector('#information')
     switch (category) {
         case "新北地區":
-            information.innerHTML = "&emsp;&emsp;新北地區是臺灣本島最北的城市，環繞整個臺北市，總面積達二千多平方公里，海岸線長達120餘公里，幅員遼闊，新北市的東北、北部、西北部均臨海，市內北海岸與東北角海岸擁有豐富的海景奇觀及海岸風光，每逢夏日，海上盡是弄潮張帆的人潮，整條綿延的山海線，銜接成臺北人最鍾愛的黃金旅遊路線。";
+            information.innerHTML = "&emsp;&emsp;新北地區，為六都之一，是全臺人口最多的市。全境環繞臺北市，東北則三面環繞基隆市，東南鄰宜蘭縣，西南鄰桃園市；其所轄石門區富貴角地處臺灣本島最北端，貢寮區三貂角地處臺灣本島最東端。";
             mouseDownText(information.innerHTML);
             break;
+        case "陶瓷":
+            information.innerHTML = "&emsp;&emsp;陶瓷，是新北市鶯歌區最著名的特產。相傳清朝嘉慶年間發現鄰近的尖山地區盛產黏土，遂於此設窯製陶。現多已轉向觀光化發展。 ";
+            mouseDownText(information.innerHTML);
+            break;     
         case "女王頭":
-            information.innerHTML = "&emsp;&emsp;野柳女王頭是蕈狀岩的一種，在地殼抬升的過程中，因受到海水差異侵蝕而逐漸形成今日的面貌。若以其高度比對台灣北部地殼平均上升速度推算，女王頭的芳齡將近4000歲。";
+            information.innerHTML = "&emsp;&emsp;女王頭，位於新北市萬里區。是野柳地質公園的一個知名的風化地形景觀，外型宛如一個凝視遠方的女王，其頸部修長、臉部線條優美。";
             mouseDownText(information.innerHTML);
             break;
         case "黃金瀑布":
-            information.innerHTML="&emsp;&emsp;黃金瀑布位置在往水湳洞的公路邊，可看到流水從地下伏流湧出，滲入礦區後，與黃鐵礦和硫砷銅礦接觸，經過「氧化還原」與「鐵菌催化」使瀑布水呈現金黃偏橘色的酸礦水，遠看猶如一幅巨型的黃金岩壁，此等奇觀被後人美其名為「黃金瀑布」。";
+            information.innerHTML="&emsp;&emsp;黃金瀑布，位於新北市瑞芳區。由於金瓜石一帶有礦脈，地下水和雨水和礦物經過化學反應後水色帶有氧化後的金屬礦石顏色，使得黃金瀑布的水色略帶黃色，加上裸露的石塊也是黃色，因而得名。";
             mouseDownText(information.innerHTML);
             break;
         case "新北市歡樂耶誕城":
-            information.innerHTML="&emsp;&emsp;新北市歡樂耶誕城活動，很有創意地將廣場的竹筍地標化身為全台獨一無二的耶誕樹，並推出耶誕主燈秀，年年結合最新的科技和音樂，每年都有創新和驚喜。除了耶誕主燈秀、周邊美麗裝置燈飾，市府更整合跨局處活動，歡迎民眾周周都可以來廣場參與各項精彩活動。";
+            information.innerHTML="&emsp;&emsp;新北市歡樂耶誕城，位於新北市板橋區。是新北市新板特區商圈的一系列耶誕節活動的總稱，很有創意地將廣場的竹筍地標化身為全台獨一無二的耶誕樹，並推出耶誕主燈秀，年年結合最新的科技和音樂，每年都有創新和驚喜。";
             mouseDownText(information.innerHTML);
             break;
         case "烏來台車":
-            information.innerHTML="&emsp;&emsp;烏來台車，又稱烏來蹦蹦車，位於台灣新北市烏來區，是台灣少數仍留存的輕便鐵路（臺車）之一。";
+            information.innerHTML="&emsp;&emsp;烏來台車，位於新北市烏來區。又稱烏來蹦蹦車，是台灣少數仍留存的輕便鐵路（臺車）之一。";
             mouseDownText(information.innerHTML);
             break;
     }

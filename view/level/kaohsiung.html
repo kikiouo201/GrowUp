@@ -22,9 +22,12 @@
         </tr>
         <tr>
             <td><img src="../../image/map/Kaohsiung_origin.png" onclick="featuresText('高雄地區')" />高雄地區</td>
-            <td id="information" rowspan="3" valign="top" style="font-size:x-large;">
-                &emsp;&emsp;高雄地區位於臺灣西南部。為「六都」之一，也是臺灣最大工業區。又因有優越的港口，近海漁業發達，亦為重要遠洋漁業基地之一。昔稱為「打狗」。
+            <td id="information" rowspan="4" valign="top" style="font-size:x-large;">
+                &emsp;&emsp;高雄地區，為六都之一，位於臺灣西南部，昔稱為「打狗」。是臺灣最大工業區。又因有優越的港口，近海漁業發達，亦為重要遠洋漁業基地之一。
             </td>
+        </tr>
+        <tr>
+            <td><img src="../../image/icon/85building.png" onclick="featuresText('85大樓')" />85大樓</td>
         </tr>
         <tr>
             <td><img src="../../image/map_icon/Kaohsiung_E_DA_Theme_Park.png" onclick="featuresText('義大遊樂世界')" />義大遊樂世界</td>
@@ -83,15 +86,19 @@
             const information = document.querySelector('#information')
             switch (category) {
                 case "高雄地區":
-                    information.innerHTML = "&emsp;&emsp;高雄地區位於臺灣西南部。為「六都」之一，也是臺灣最大工業區。又因有優越的港口，近海漁業發達，亦為重要遠洋漁業基地之一。昔稱為「打狗」。";
+                    information.innerHTML = "&emsp;&emsp;高雄地區，為六都之一，位於臺灣西南部，昔稱為「打狗」。是臺灣最大工業區。又因有優越的港口，近海漁業發達，亦為重要遠洋漁業基地之一。";
+                    mouseDownText(information.innerHTML);
+                    break;
+                case "85大樓":
+                    information.innerHTML = "&emsp;&emsp;85大樓，位於高雄市苓雅區。外觀如同高字，為高雄第一高樓，且有世界第三的高速電梯，為台灣第二高的摩天大樓。";
                     mouseDownText(information.innerHTML);
                     break;
                 case "義大遊樂世界":
-                    information.innerHTML = "&emsp;&emsp;義大遊樂世界是南臺灣規模最大的主題遊樂園區，園區內的主題樂園皆採希臘情境設計，希臘神殿、希臘主題商品、希臘餐廳，還有希臘歷史場景的遊樂館等，讓遊客享受如在異國的旅遊情趣。";
+                    information.innerHTML = "&emsp;&emsp;義大遊樂世界，位於高雄市大樹區。是南臺灣規模最大的主題遊樂園區，也是台灣首創古希臘情境主題的主題樂園。";
                     mouseDownText(information.innerHTML);
                     break;
                 case "不老溫泉":
-                    information.innerHTML = "&emsp;&emsp;早先在荖濃溪上有一條支流小溪，由於終年冒出 自地層內的熱水，村民皆扶老攜幼去沐浴，對皮膚病有神奇的功效，村民稱此為熱水溪。現在改名為不老溪。";
+                    information.innerHTML = "&emsp;&emsp;不老溫泉，位於高雄市六龜區。早先在荖濃溪上有一條支流小溪，由於終年冒出 自地層內的熱水，村民皆扶老攜幼去沐浴，對皮膚病有神奇的功效，村民稱此為「熱水溪」。現在改名為 「不老溪」。";
                     mouseDownText(information.innerHTML);
                     break;
             }
