@@ -22,9 +22,12 @@
         </tr>
         <tr>
             <td><img src="../../image/map/Pingtung_origin.png" onclick="featuresText('屏東地區')" />屏東地區</td>
-            <td id="information" rowspan="3" valign="top" style="font-size:x-large;">
-                &emsp;&emsp;屏東地區位於臺灣西南部最南端，也是臺灣西部南北最狹長的縣份，地處熱帶地區，富有熱帶風情。
+            <td id="information" rowspan="4" valign="top" style="font-size:x-large;">
+                &emsp;&emsp;屏東地區，位於臺灣西南部最南端，也是臺灣西部南北最狹長的縣份，地處熱帶地區，富有熱帶風情。
             </td>
+        </tr>
+        <tr>
+            <td><img src="../../image/icon/black_tuna.png" onclick="featuresText('黑鮪魚')" />黑鮪魚</td>
         </tr>
         <tr>
             <td><img src="../../image/map_icon/Pingtung_aquarium.png" onclick="featuresText('國立海洋生物博物館')" />國立海洋生物博物館</td>
@@ -83,15 +86,19 @@
             const information = document.querySelector('#information')
             switch (category) {
                 case "屏東地區":
-                    information.innerHTML = "&emsp;&emsp;屏東地區位於臺灣西南部最南端，也是臺灣西部南北最狹長的縣份，地處熱帶地區，富有熱帶風情。";
+                    information.innerHTML = "&emsp;&emsp;屏東地區，位於臺灣西南部最南端，也是臺灣西部南北最狹長的縣份，地處熱帶地區，富有熱帶風情。";
+                    mouseDownText(information.innerHTML);
+                    break;
+                case "黑鮪魚":
+                    information.innerHTML = "&emsp;&emsp;黑鮪魚因其體背色黑如墨，身型大如甕，所以一向俗稱『黑甕串』，再因其經濟價值極高，亦有『海中黑金』之稱謂。";
                     mouseDownText(information.innerHTML);
                     break;
                 case "國立海洋生物博物館":
-                    information.innerHTML = "&emsp;&emsp;國立海洋生物博物館是全台灣規模最大的，館內魚類種類豐富，分成台灣水域館、珊瑚王國館、世界水域館，包含三層樓高的水族箱、海底隧道，或是可愛的企鵝、悠游自在的小白鯨與鯊魚，都讓人猶如親臨海底世界般，非常值得一遊！";
+                    information.innerHTML = "&emsp;&emsp;國立海洋生物博物館，位於屏東縣車城鄉，簡稱海生館。是全台灣規模最大的，館內魚類種類豐富，分成台灣水域館、珊瑚王國館和世界水域館。";
                     mouseDownText(information.innerHTML);
                     break;
                 case "大鵬灣跨海大橋":
-                    information.innerHTML = "&emsp;&emsp;大鵬灣跨海大橋是連接起南平里與嘉蓮里的交通樞紐，為特殊三向度設計的斜張橋，橋身側看如揚帆啟航，背面如第一個英文字母A；最大的特色還是全台首座可開啟式的橋樑。";
+                    information.innerHTML = "&emsp;&emsp;大鵬灣跨海大橋，位於屏東縣的大鵬灣灣口。全長約195公尺，為台灣唯一的開啟橋。";
                     mouseDownText(information.innerHTML);
                     break;
             }

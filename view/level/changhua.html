@@ -21,17 +21,17 @@
         <tr>
             <td><img src="../../image/map/Changhua_origin.png" onclick="featuresText('彰化地區')" />彰化地區</td>
             <td id="information" rowspan="4" valign="top" style="font-size:x-large;">
-                &emsp;&emsp;彰化地區古稱半線，因幅員完整，地勢平坦開闊，土地肥沃，物產豐饒，素有「臺灣穀倉」之稱，為臺灣開拓較早之地區。清朝時，鹿港迅速發展成為中部地區最具發展潛力的城鎮，時人並以「一府、二鹿、三艋岬」譽之，便可窺見當時風光景況。
+                &emsp;&emsp;彰化地區古稱半線，因幅員完整，地勢平坦開闊，土地肥沃，物產豐饒，素有「臺灣穀倉」之稱。清朝時，鹿港迅速發展成為中部地區最具發展潛力的城鎮，時人並以「一府、二鹿、三艋岬」譽之，便可窺見當時風光景況。
             </td>
         </tr>
         <tr>
-            <td><img src="../../image/icon/meat_ball.png" onclick="featuresText('肉圓')" />肉圓</td>
+            <td><img src="../../image/icon/meat_ball.png" onclick="featuresText('彰化肉圓')" />彰化肉圓</td>
         </tr>
         <tr>
             <td><img src="../../image/map_icon/Changhua_mountain_Bagua.png" onclick="featuresText('八卦山')" />八卦山</td>
         </tr>
         <tr>
-            <td><img src="../../image/map_icon/Changhua_wind_turbine.png" onclick="featuresText('風力發電')" />風力發電</td>
+            <td><img src="../../image/map_icon/Changhua_wind_turbine.png" onclick="featuresText('王功小型風力發電機')" />王功小型風力發電機</td>
         </tr>
 
     </table>
@@ -110,19 +110,19 @@
             const information = document.querySelector('#information')
             switch (category) {
                 case "彰化地區":
-                    information.innerHTML = "&emsp;&emsp;彰化地區古稱半線，因幅員完整，地勢平坦開闊，土地肥沃，物產豐饒，素有「臺灣穀倉」之稱，為臺灣開拓較早之地區。清朝時，鹿港迅速發展成為中部地區最具發展潛力的城鎮，時人並以「一府、二鹿、三艋岬」譽之，便可窺見當時風光景況。";
+                    information.innerHTML = "&emsp;&emsp;彰化地區古稱半線，因幅員完整，地勢平坦開闊，土地肥沃，物產豐饒，素有「臺灣穀倉」之稱。清朝時，鹿港迅速發展成為中部地區最具發展潛力的城鎮，時人並以「一府、二鹿、三艋岬」譽之，便可窺見當時風光景況。";
                     mouseDownText(information.innerHTML);
                     break;
-                case "肉圓":
-                    information.innerHTML = `&emsp;&emsp;肉圓，台灣特色小吃。最有名的發源地是：彰化（彰化、北斗、員林） `;
+                case "彰化肉圓":
+                    information.innerHTML = `&emsp;&emsp;彰化肉圓，台灣特色小吃。當地特色為涼式的吃法，將蒸好的肉圓放冷後，再放到冰涼的湯水內，夏天吃極為清爽。`;
                     mouseDownText(information.innerHTML);
                     break;
                 case "八卦山":
-                    information.innerHTML = `&emsp;&emsp;臺灣中部氣候宜人、景色秀麗，擁有豐富的自然、人文及產業資源，極具發展觀光潛能，因此交通部觀光局將獅頭山、梨山、八卦山 3 個省級風景區合併為「參山國家風景區」。 `;
+                    information.innerHTML = `&emsp;&emsp;八卦山，位於彰化市東方之卦山里轄內。古有「定寨望洋」的美名，為「彰化八景」之首。交通部觀光局將獅頭山、梨山、八卦山 3 個省級風景區合併為「參山國家風景區」。 `;
                     mouseDownText(information.innerHTML);
                     break;
-                case "風力發電":
-                    information.innerHTML = "&emsp;&emsp;彰化離岸風力發電計畫為中華民國政府的能源轉型綠能政策之一，涵蓋於前瞻基礎建設計畫中。該風場位於臺灣彰化縣外海35至60公里，包括東北、西北、東南、西南4個部份2個階段的開發案，皆已於2018年2月通過環評審查，運轉後將可為台灣280萬個家庭供電。";
+                case "王功小型風力發電機":
+                    information.innerHTML = "&emsp;&emsp;王功小型風力發電機，位於臺灣彰化縣芳苑鄉。2018年2月通過環評審查，運轉後將可為台灣280萬個家庭供電。";
                     mouseDownText(information.innerHTML);
                     break;  
             }

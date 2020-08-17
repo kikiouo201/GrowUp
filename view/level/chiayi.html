@@ -22,9 +22,12 @@
         </tr>
         <tr>
             <td><img src="../../image/map/Chiayi_origin.png" onclick="featuresText('嘉義地區')" />嘉義地區</td>
-            <td id="information" rowspan="4" valign="top" style="font-size:x-large;">
+            <td id="information" rowspan="5" valign="top" style="font-size:x-large;">
                 &emsp;&emsp;嘉義地區倚山面海，是臺灣所有縣市中，唯一擁有三大國家風景區的縣份：阿里山國家風景區管理處、雲嘉南濱海國家風景區管理處及西拉雅國家風景區管理處，坐擁山色、平原、海景等不同的壯麗與遼闊。
             </td>
+        </tr>
+        <tr>
+            <td><img src="../../image/icon/meat_rice.png" onclick="featuresText('嘉義火雞肉飯')" />嘉義火雞肉飯</td>
         </tr>
         <tr>
             <td><img src="../../image/map_icon/Chiayi_high_heels.png" onclick="featuresText('高跟鞋教堂')" />高跟鞋教堂</td>
@@ -89,16 +92,20 @@
                     information.innerHTML = "&emsp;&emsp;嘉義地區倚山面海，是臺灣所有縣市中，唯一擁有三大國家風景區的縣份：阿里山國家風景區管理處、雲嘉南濱海國家風景區管理處及西拉雅國家風景區管理處，坐擁山色、平原、海景等不同的壯麗與遼闊。";
                     mouseDownText(information.innerHTML);
                     break;
+                case "嘉義火雞肉飯":
+                    information.innerHTML = `&emsp;&emsp;嘉義火雞肉飯，是嘉義地區知名小吃之一。選用火雞肉當作素材，而雞汁是以全雞蒸煮所熬成的醬汁，加上酥炸過紅蔥頭的豬油，混合雞肉和白飯攪拌，味道香而不膩。`;
+                    mouseDownText(information.innerHTML);
+                    break;    
                 case "高跟鞋教堂":
-                    information.innerHTML = `&emsp;&emsp;高跟鞋教堂高度約17公尺，造型亮麗美觀，象徵著「每個小女孩都曾夢想有雙漂亮的高跟鞋，伴著自己走出美麗優雅的人生。」`;
+                    information.innerHTML = `&emsp;&emsp;高跟鞋教堂，位於嘉義縣布袋鎮。外觀為藍色透明玻璃高跟鞋造型，造型亮麗美觀，象徵著「每個小女孩都曾夢想有雙漂亮的高跟鞋，伴著自己走出美麗優雅的人生。」`;
                     mouseDownText(information.innerHTML);
                     break;
                 case "阿里山森林鐵路":
-                    information.innerHTML = "&emsp;&emsp;阿里山森林鐵路從嘉義火車站，歷經3.5小時車程，到達2216公尺的阿里山火車站，與印度大吉嶺至喜馬拉雅山鐵路、智利至阿根廷之安地斯山鐵路，稱世界上僅存的三條登山鐵路，昔日為轉運木材而興建的它，今以蛻變成阿里山森林旅遊列車，讓大家有機會體驗一下阿里山小火車的風情。";
+                    information.innerHTML = "&emsp;&emsp;阿里山森林鐵路，是臺灣仍在營運的高山林業鐵路系統，亦是臺灣第一個國家級重要文化景觀，與印度大吉嶺至喜馬拉雅山鐵路、智利至阿根廷之安地斯山鐵路，稱世界上僅存的三條登山鐵路。";
                     mouseDownText(information.innerHTML);
                     break;
                 case "北回歸線":
-                    information.innerHTML = "&emsp;&emsp;嘉義北回歸線標誌是指位於台灣嘉義縣水上機場附近的一系列北回歸線標誌物。 首座標誌碑設立於1908年，是世界首座於回歸線上設置的標誌物；1995年於標誌碑旁興建科學教育設施「北回歸線太陽館」。";
+                    information.innerHTML = "&emsp;&emsp;北回歸線標誌，位於嘉義縣水上機場附近的一系列北回歸線標誌物。 首座標誌碑設立於1908年，是世界首座於回歸線上設置的標誌物；1995年於標誌碑旁興建科學教育設施「北回歸線太陽館」。";
                     mouseDownText(information.innerHTML);
                     break;
             }

@@ -52,7 +52,7 @@ function RegionIcon(featureIcon) {
                 iconRegion.style.visibility = "visible";
                 iconDiv.innerHTML = `<img onclick="returnBMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
                 <img src="./image/icon/NewTaipei_icon.png" onclick="featuresText(this)" style="width: 120px;height: auto;margin: 8% 36%;/* margin-right: 10px; */cursor: pointer;">
-                <a style="/* display: inline-block; */position: absolute;font-size: 20px;font-weight: bold;bottom: 0;margin: 12px 20px;right: 0;">鶯歌陶瓷，是新北市鶯歌區最著名的特產。相傳清朝嘉慶年間發現鄰近的尖山地區盛產黏土，遂於此設窯製陶。現多已轉向觀光化發展。</a>
+                <a style="/* display: inline-block; */position: absolute;font-size: 20px;font-weight: bold;bottom: 0;margin: 12px 20px;right: 0;">陶瓷，是新北市鶯歌區最著名的特產。相傳清朝嘉慶年間發現鄰近的尖山地區盛產黏土，遂於此設窯製陶。現多已轉向觀光化發展。</a>
                 <a style="position: absolute;font-size: 20px;font-weight: bold;top: 0;margin: 24px 29px;right: 0;z-index: 10;background-color: #f90b898f;border-radius: 20px;padding-left: 20px;padding-right: 20px;padding-bottom: 5px;padding-top: 5px;">新北地區</a>
                 <br><br>`
             } else {
@@ -91,7 +91,7 @@ function RegionIcon(featureIcon) {
                 iconRegion.style.visibility = "visible";
                 iconDiv.innerHTML = `<img onclick="returnBMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
                 <img src="./image/icon/pork_ball.png" onclick="featuresText(this)" style="width: 131px;height: auto;margin: 17% 34%;/* margin-right: 10px; */cursor: pointer;">
-                <a style="/* display: inline-block; */position: absolute;font-size: 20px;font-weight: bold;bottom: 0;margin: 12px 20px;right: 0;">新竹貢丸，為豬肉製作的一種肉丸。新竹的貢丸特別有名，主要科技上的貢獻是運用機器，令貢丸可大量生產。而新竹貢丸的材料必須用新鮮溫體豬肉製作。</a>
+                <a style="/* display: inline-block; */position: absolute;font-size: 20px;font-weight: bold;bottom: 0;margin: 12px 20px;right: 0;">貢丸，為豬肉製作的一種肉丸。新竹的貢丸特別有名，主要科技上的貢獻是運用機器，令貢丸可大量生產。而新竹貢丸的材料必須用新鮮溫體豬肉製作。</a>
                 <a style="position: absolute;font-size: 20px;font-weight: bold;top: 0;margin: 24px 29px;right: 0;z-index: 10;background-color: #f90b898f;border-radius: 20px;padding-left: 20px;padding-right: 20px;padding-bottom: 5px;padding-top: 5px;">新竹地區</a>
                 <br><br>`
 
@@ -112,7 +112,7 @@ function RegionIcon(featureIcon) {
                 iconRegion.style.visibility = "visible";
                 iconDiv.innerHTML = `<img onclick="returnBMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
                 <img src="./image/icon/strawberry.png" onclick="featuresText(this)" style="width: 127px;height: auto;margin: 50px 34%;/* margin-right: 10px; */cursor: pointer;">
-                <a style="/* display: inline-block; */position: absolute;font-size: 20px;font-weight: bold;bottom: 0;margin: 20px 20px;right: 0;">大湖草莓，台灣苗栗縣大湖鄉的特產，氣候溫和多雨，以草莓聞名全國，素有臺灣草莓王國雅號。</a>
+                <a style="/* display: inline-block; */position: absolute;font-size: 20px;font-weight: bold;bottom: 0;margin: 20px 20px;right: 0;">草莓，是苗栗縣大湖鄉的特產，氣候溫和多雨，以草莓聞名全國，素有臺灣草莓王國雅號。</a>
                 <a style="position: absolute;font-size: 20px;font-weight: bold;top: 0;margin: 24px 29px;right: 0;z-index: 10;background-color: #3fcd96c2;border-radius: 20px;padding-left: 20px;padding-right: 20px;padding-bottom: 5px;padding-top: 5px;">苗栗地區</a>
                 <br><br>`
 
