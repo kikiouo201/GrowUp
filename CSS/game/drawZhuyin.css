@@ -15,74 +15,93 @@ video {
 }
 
 .anvas {
-    border: 1px black solid;
-    /* width: 9%;
-    height: 65%; */
-    width: 120px;
-    height: 490px;
+    /* border: 1px black solid; */
+    width: 295px;
+    height: 295px;
     display: flex;
     flex-direction: column;
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    z-index: 10;
 }
 
-.anvas87 {
+/* .anvas87 {
     border: 1px black solid;
-    width: 268px;
-    height: 268px;
+    width: 300px;
+    height: 300px;
     display: flex;
     flex-direction: column;
-}
+} */
 
 .draw {
-    border: 1px blue solid;
-    width: 268px;
-    height: 268px;
+    /* border: 1px blue solid; */
+    width: 295px;
+    height: 295px;
 }
 
-.draw78 {
+/* .draw78 {
     border: 1px blue solid;
     width: 370px;
     height: 370px;
-}
+} */
 
-.draw87 {
-    border: 1px blue solid;
+/* .draw87 {
+    border: 1px blue solid; */
     /* position: absolute; */
-    width: 310px;
-    height: 310px;
+    /* width: 310px;
+    height: 310px; */
     /* z-index: 40; */
-}
+/*} */
 
-.write87 {
+/* .write87 {
     position: absolute;
     left: 53.3%;
     top: 8%;
     z-index: 10;
-}
+} */
 
 .speaker {
     position: absolute;
-    left: 5px;
-    bottom: 5px;
+    left: 10px;
+    bottom: 10px;
     height: 40px;
     z-index: 20;
 }
+.tool{
+    position: absolute;
+    right: -85px;
+    bottom: 0px;
+    width: 70px;
+    height: 130px;
+    background-color: khaki;
+    border-radius: 7%;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+    opacity: .90;
+}
+
 
 .again {
     position: absolute;
-    right: -25px;
-    bottom: -35px;
-    height: 50px;
+    right: 17px;
+    bottom: 0px;
+    height: 70px;
     z-index: 10;
     transform: rotate(-130deg);
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+   
 }
 
 .reset {
     position: absolute;
-    right: -35px;
-    bottom: 20px;
-    height: 35px;
+    right: 10px;
+    bottom: 70px;
+    height: 50px;
     z-index: 10;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+
 }
+
 
 .finger {
     visibility: visible;
@@ -216,7 +235,7 @@ video {
     z-index: 10;
 }
 
-.write {
+/* .write {
     position: absolute;
     left: 26.3%;
     top: 18%;
@@ -228,7 +247,7 @@ video {
     left: 7.3%;
     top: 18%;
     z-index: 10;
-}
+} */
 
 .zhuyin {
     display: flex;
@@ -238,17 +257,22 @@ video {
 }
 
 .word {
-    width: 650px;
+    height: 300px;
     position: relative;
     z-index: 1;
 }
 
 .score {
-    border: 1px solid black;
+    /* border: 1px solid black; */
+    margin-top: 10px;
     line-height: 50px;
     text-align: center;
     width: 100px;
     height: 50px;
+    background-color: khaki;
+    border-radius: 7%;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+    opacity: .90;
 }
 
 .result {
@@ -262,6 +286,7 @@ video {
     align-items: center;
     background-color: aliceblue;
     opacity: .90;
+   
 }
 
 .challengeAgain {
