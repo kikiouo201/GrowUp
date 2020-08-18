@@ -19,8 +19,12 @@ table {
 
 table tr td p {
     font-weight: bold;
-    margin: 4px;
+    margin: 5px;
     font-size: 16px;
+}
+
+tbody tr td {
+    vertical-align: top;
 }
 
 table tr th {
@@ -28,7 +32,8 @@ table tr th {
 }
 
 h2 {
-    margin-left: 35%;
+    margin-left: 29%;
+    margin-top: -12px;
 }
 
 a {
@@ -99,7 +104,7 @@ a {
 .goodBaby_regard {
     width: 85%;
     height: 30px;
-    margin: 4px;
+    margin: -3px;
     margin-left: 7.5%;
     border-radius: 40px;
     border-color: black;
@@ -140,7 +145,7 @@ a {
 .cardTable {
     width: 100%;
     border-bottom: 0px;
-    height: 80%;
+    height: 75%;
 }
 
 .card {
@@ -150,6 +155,7 @@ a {
     transition: 0.3s;
     margin-left: 5%;
     margin-top: 5%;
+    padding-bottom: 20px;
     background-color: #fae363f8;
     border-radius: 12px;
 }
