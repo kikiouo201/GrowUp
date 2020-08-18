@@ -17,22 +17,35 @@
        
       <style type="text/css">
         * {
-            margin-bottom: 0px;
+            /* margin-bottom: 0px;
             margin-top: 0px;
             margin-left: 0px;
-            margin-right: 0px;
-            padding-right: 0px;
+            margin-right: 0px; */
+            /* padding-right: 0px;
             padding-left: 0px;
             padding-top: 0px;
-            padding-bottom: 0px;
+            padding-bottom: 0px; */
             border: 0px;
+            background: url("../../image/background/Almost-100-Vertices.jpeg");
+            
+            
+        }
+        .puzzle{
+            display: flex;
+            justify-content:center;
+            align-items:center;
+            position: relative;
+            
+        }
+        .name{
+            font-size: 25px;
+            position: absolute;
         }
 
         #box {
-
             position: absolute;
-            top: 0px;
-            left: 0px;
+            top: 50px;
+            /* left: 0px; */
             width: 300px;
             height: 300px;
             border: 1px solid red;
@@ -99,7 +112,7 @@
             float: left;
             position: absolute;
             top: 400px;
-            left: 100px;
+            /* left: 100px; */
         }
 
         #output {
@@ -131,6 +144,8 @@
  
 
 <body>
+    <div class="puzzle">
+    <div class="name">拼圖</div>
      <div id="box">
           
          <img class="pj" src="../../image/puzzle/dog_01.jpg">
@@ -144,9 +159,9 @@
                     <img class="p9" src="../../image/puzzle/dog_09.jpg">
          </div>
       
-     <div id="output">
-         目标图形：
-         <img alt="" src="img1/output.jpg">
+    <!--  <div id="output">
+         目標圖形：
+         <img alt="" src="../../image/puzzle/output.png">
          </div>
      
      <div id="notice">
@@ -154,11 +169,11 @@
          <br>
          点击“开始新游戏”开始游戏。鼠标点击黑色方块周围的方块时，即可移动方块。。
     </div>
+       -->
       
+     <input type="button" id="button" value="開始新遊戲">
       
-     <input type="button" id="button" value="开始新游戏">
-      
-      
+  </div>
       
      
     <script type="text/javascript">
@@ -168,7 +183,7 @@
         src.push("../../image/puzzle/dog_02.jpg");
         src.push("../../image/puzzle/dog_03.jpg");
         src.push("../../image/puzzle/dog_04.jpg");
-        src.push("../../image/puzzle/dog_05.jpg");
+        src.push("../../image/puzzle/output.png");
         src.push("../../image/puzzle/dog_06.jpg");
         src.push("../../image/puzzle/dog_07.jpg");
         src.push("../../image/puzzle/dog_08.jpg");
@@ -195,7 +210,7 @@
 
             for (var i = 0; i < Arrps.length; i++) {
                 Arrps[i].onclick = function () {
-                    if (this.getAttribute("src") == "img1/pj.png");
+                    if (this.getAttribute("src") == "../../image/puzzle/output.png");
                     changeP(this, Arrps);
                 };
             }
@@ -218,27 +233,27 @@
             for (var i = 0; i < Arrps.length; i++) {
                 if (Arrps[i] == ob)
                     Ni = i;
-                if (Arrps[i].getAttribute("src") == "img1/pj.png")
+                if (Arrps[i].getAttribute("src") == "../../image/puzzle/output.png")
                     Nj = i;
             }
 
             if (Math.abs(Ni - Nj) == 3) {
                 var temperOb = ob.getAttribute("src");
-                ob.setAttribute("src", "img1/pj.png");
+                ob.setAttribute("src", "../../image/puzzle/output.png");
                 Arrps[Nj].setAttribute("src", temperOb);
                 times++;
                 ifright();
 
             } else if ((Ni - Nj) == 1 && (Ni % 3) != 0) {
                 var temperOb = ob.getAttribute("src");
-                ob.setAttribute("src", "img1/pj.png");
+                ob.setAttribute("src", "../../image/puzzle/output.png");
                 Arrps[Nj].setAttribute("src", temperOb);
                 times++;
                 ifright();
 
             } else if ((Ni - Nj) == -1 && (Ni % 3) != 2) {
                 var temperOb = ob.getAttribute("src");
-                ob.setAttribute("src", "img1/pj.png");
+                ob.setAttribute("src", "../../image/puzzle/output.png");
                 Arrps[Nj].setAttribute("src", temperOb);
                 times++;
                 ifright();

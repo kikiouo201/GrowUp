@@ -24,79 +24,79 @@ body {
 
 .mapsize {
     position: relative;
-    top: 75px;
-    width: 800px;
-    margin-left: 120px;
+    top: 54px;
+    width: 745px;
+    margin-left: 22px;
 }
 
 .panda {
     position: absolute;
-    top: 121px;
-    left: 305px;
-    width: 100px;
+    top: 101px;
+    left: 198px;
+    width: 86px;
 }
 
 .penguin {
     position: absolute;
-    top: 275px;
-    left: 159px;
-    width: 91px;
+    top: 244px;
+    left: 61px;
+    width: 80px;
 }
 
 .camel {
     position: absolute;
-    top: 116px;
-    left: 538px;
-    width: 141px;
+    top: 99px;
+    left: 418px;
+    width: 122px;
 }
 
 .elephant {
     position: absolute;
-    top: 245px;
-    left: 431px;
-    width: 120px;
+    top: 220px;
+    left: 320px;
+    width: 102px;
 }
 
 .lion {
     position: absolute;
-    top: 374px;
-    left: 523px;
-    width: 110px;
+    top: 337px;
+    left: 398px;
+    width: 95px;
 }
 
 .leopard {
     position: absolute;
-    top: 334px;
-    left: 420px;
-    width: 112px;
+    top: 299px;
+    left: 305px;
+    width: 98px;
 }
 
 .bear {
     position: absolute;
-    top: 184px;
-    left: 715px;
-    width: 71px;
+    top: 155px;
+    left: 577px;
+    width: 65px;
 }
 
 .spoonbill {
     position: absolute;
-    top: 279px;
-    left: 784px;
-    width: 96px;
+    top: 245px;
+    left: 641px;
+    width: 88px;
 }
 
 .parrot {
     position: absolute;
-    top: 415px;
-    left: 623px;
-    width: 74px;
+    top: 373px;
+    left: 492px;
+    width: 65px;
 }
 
 .gorilla {
     position: absolute;
-    top: 358px;
-    left: 726px;
-    width: 66px;
+    top: 318px;
+    left: 586px;
+    width: 61px;
 }
 
 #explain_page {
@@ -105,10 +105,10 @@ body {
     left: 20%;
     text-align: center;
     width: 50%;
-    height: 50%;
+    height: 65%;
     padding: 20px;
     border-radius: 20px;
-    font-size: 18pt;
+    font-size: 17pt;
     background-color: rgb(238, 194, 98);
 }
 
@@ -129,4 +129,26 @@ body {
     font-size: xx-large;
     cursor: pointer;
     color: white;
+}
+
+#animalclassName{
+    position: absolute;
+    top: 45%;
+    left: 6%;
+    display: inline-block;
+    visibility: visible;
+}
+
+#animalclassExplain{
+    position: absolute;
+    top: 60%;
+    left: 6%;
+    display: inline-block;
+    visibility: visible;
+}
+
+#animalclass{
+    background-color: rgb(248, 196, 118);
+    font-size: 14pt;
+    border-radius: 10px;
 }
