@@ -23,7 +23,7 @@
     </div>
 
     <div id="show_page">
-        <div class="booklist" id="recommend_book">
+        <div class="booklist" id="recommend_book" style="background-color: cadetblue;">
             <button style="position: absolute;" onclick="OpenDataList()">try try see</button>
             <div class="book">
                 <div class="text-div">
@@ -92,7 +92,7 @@
             </div>
         </div>
 
-        <div class="booklist" id="disrecommend_book">
+        <div class="booklist" id="disrecommend_book" style="background-color: burlywood; margin-top:0px">
 
         </div>
     </div>
@@ -176,7 +176,6 @@
     </script>
 
     <script>
-
         function OpenDataList() {
             const dataurl = "https://children.moc.gov.tw/opendata/2";
             const request = new XMLHttpRequest();
