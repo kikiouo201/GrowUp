@@ -36,37 +36,30 @@
         <tr>
             <td><img src="../../image/map_icon/Hualien_farm.png" onclick="featuresText('瑞穗牧場')" />瑞穗牧場</td>
         </tr>
-      
+
     </table>
     <div class="map">
         <img class="terrain" src="../../image/map/Hualien1.png" />
         <div class="level1">
-            <img class="level_basic" src="../../image/icon/watermelon.png"
-                onclick="location.href='../../view/game/findBallast.html';mouseDownText('找找看');" />
-           <div class="level_text"  onclick="location.href='../../view/game/findBallast.html';mouseDownText('找找看');">找找看</div>
+            <img class="level_basic" src="../../image/icon/watermelon.png" onclick="location.href='../../view/game/findBallast.html';mouseDownText('找找看');" />
+            <div class="level_text" onclick="location.href='../../view/game/findBallast.html';mouseDownText('找找看');">找找看</div>
         </div>
         <div class="level2">
-            <img class="level_basic" src="../../image/icon/watermelon.png"
-<<<<<<< HEAD
-                onclick="location.href='../../view/game/drawzhuyin.html?id=2&counties=hualien';mouseDownText(2);" />
-            <img class="level_text" src="../../image/numbers/2.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=2&counties=chiayi';mouseDownText(2);" />
-=======
-                onclick="location.href='../../view/game/gophers.html';mouseDownText('打地鼠');" />
-                <div class="level_text"  onclick="location.href='../../view/game/gophers.html';mouseDownText('打地鼠');">打地鼠</div>
->>>>>>> 715822d1a8f4b3a2d02cd12e126cfb1d89b70176
-            </div>
-       
-        <div class="level3"> 
-            <img class="level" src="../../image/icon/devil_lock.png"
-            onclick="alert('需要先完成縣市所有關卡！')" />
-            </div>
+            <img class="level_basic" src="../../image/icon/watermelon.png" <<<<<<< HEAD onclick="location.href='../../view/game/drawzhuyin.html?id=2&counties=hualien';mouseDownText(2);" />
+            <img class="level_text" src="../../image/numbers/2.png" onclick="location.href='../../view/game/drawzhuyin.html?id=2&counties=chiayi';mouseDownText(2);" /> ======= onclick="location.href='../../view/game/gophers.html';mouseDownText('打地鼠');"
+            />
+            <div class="level_text" onclick="location.href='../../view/game/gophers.html';mouseDownText('打地鼠');">打地鼠</div>
+            >>>>>>> 715822d1a8f4b3a2d02cd12e126cfb1d89b70176
+        </div>
 
-       
+        <div class="level3">
+            <img class="level" src="../../image/icon/devil_lock.png" onclick="alert('需要先完成縣市所有關卡！')" />
+        </div>
+
+
 
     </div>
-    <img class="taiwan" src="../../image/character/NowInNantou.png"
-        onclick="location.href='../../view/level/taiwan.html'" />
+    <img class="taiwan" src="../../image/character/Taiwn_small.png" onclick="location.href='../../view/level/taiwan.html'" />
     <div>
         <a href="../../test1.html" class="sosfloat" id="menu-share">
             <i class="fab fa-share my-float"><img src="../../photo/help.png" width="70%"></i>
@@ -88,24 +81,24 @@
             switch (category) {
                 case "花蓮地區":
                     information.innerHTML = "&emsp;&emsp;花蓮地區，位於臺灣本島東部。古稱奇萊、洄瀾、多羅滿。是臺灣面積最大的縣級行政區。花蓮地區是台灣原住民最多的區域，境內原住民以台灣原住民第一大族阿美族分布最廣。";
-                    mouseDownText(category+information.innerHTML);
+                    mouseDownText(category + information.innerHTML);
                     break;
                 case "花蓮大西瓜":
                     information.innerHTML = `&emsp;&emsp;花蓮大西瓜，主要分布種植在秀姑巒溪、萬里溪、壽豐溪等流域河床地區，環境自然潔淨，並富含養分，讓西瓜的口感「沙甜」且「清脆」!`;
-                        mouseDownText(category+information.innerHTML);
-                        break;
+                    mouseDownText(category + information.innerHTML);
+                    break;
                 case "遠雄海洋公園":
                     information.innerHTML = "&emsp;&emsp;遠雄海洋公園，位於花蓮縣壽豐鄉，俗稱花蓮海洋公園。是臺灣第一座以海洋為主題、並結合自然景觀公園與五星級休閒飯店的主題樂園。";
-                    mouseDownText(category+information.innerHTML);
+                    mouseDownText(category + information.innerHTML);
                     break;
                 case "瑞穗牧場":
                     information.innerHTML = "&emsp;&emsp;瑞穗牧場，位於花蓮縣瑞穗鄉，是一座開放式的休閒牧場，以放牧乳牛、生產乳製品而聞名。";
-                    mouseDownText(category+information.innerHTML);
+                    mouseDownText(category + information.innerHTML);
                     break;
             }
         }
     </script>
-     <script src="../../model/util/voiceOut.js"></script>
+    <script src="../../model/util/voiceOut.js"></script>
 </body>
 
 </html>

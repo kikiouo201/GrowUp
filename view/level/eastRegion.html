@@ -10,21 +10,22 @@
     <link rel="stylesheet" href="../../CSS/interface.css">
     <link rel="stylesheet" href="../../CSS/icon.css">
     <style>
-        
         .terrain {
             height: 400px;
             margin-top: 20px;
             position: relative;
             z-index: 1;
         }
-        .hualien{
+        
+        .hualien {
             position: absolute;
             top: 21px;
             right: 1px;
             width: 137px;
             z-index: 1;
         }
-        .taitung{
+        
+        .taitung {
             position: absolute;
             bottom: 6px;
             left: 1px;
@@ -53,12 +54,12 @@
     </table>
     <div class="map">
         <img class="terrain" src="../../image/map/EastRegion.png" />
-        <img class="hualien" src="../../image/map/Hualien1.png" onclick="location.href='../../view/level/hualien.html';mouseDownText('花蓮');"/>
-        <img class="taitung" src="../../image/map/Taitung1.png" onclick="location.href='../../view/level/taitung.html';mouseDownText('台東');"/>
-       
- 
+        <img class="hualien" src="../../image/map/Hualien1.png" onclick="location.href='../../view/level/hualien.html';mouseDownText('花蓮');" />
+        <img class="taitung" src="../../image/map/Taitung1.png" onclick="location.href='../../view/level/taitung.html';mouseDownText('台東');" />
+
+
     </div>
-    <img class="taiwan" src="../../image/character/NowInNantou.png" onclick="location.href='../../view/level/taiwan.html'" />
+    <img class="taiwan" src="../../image/character/Taiwn_small.png" onclick="location.href='../../view/level/taiwan.html'" />
     <div>
         <a href="../../test1.html" class="sosfloat" id="menu-share">
             <i class="fab fa-share my-float"><img src="../../photo/help.png" width="70%"></i>
@@ -75,17 +76,17 @@
         </a>
     </div>
     <script>
-    function featuresText(category) {
-        const information = document.querySelector('#information')
-        switch (category) {
-            case "東部地區":
-                information.innerHTML = "&emsp;&emsp;東部地區，簡稱東臺灣，又有「臺灣最後一塊淨土」之稱。這種依山傍海的地理環境，造就了無數的山水美景。但經濟較不發達，人口密度也較低，是臺灣最晚開發的地區。";
-                mouseDownText(information.innerHTML);
-                break;
+        function featuresText(category) {
+            const information = document.querySelector('#information')
+            switch (category) {
+                case "東部地區":
+                    information.innerHTML = "&emsp;&emsp;東部地區，簡稱東臺灣，又有「臺灣最後一塊淨土」之稱。這種依山傍海的地理環境，造就了無數的山水美景。但經濟較不發達，人口密度也較低，是臺灣最晚開發的地區。";
+                    mouseDownText(information.innerHTML);
+                    break;
+            }
         }
-    }
-</script>
-<script src="../../model/util/voiceOut.js"></script>
+    </script>
+    <script src="../../model/util/voiceOut.js"></script>
 </body>
 
 </html>
