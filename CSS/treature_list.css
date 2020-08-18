@@ -179,6 +179,9 @@ a:-webkit-any-link {
     /* background-color: darkred; */
 }
 
+
+/* 注音 */
+
 .leftZhuyin {
     width: 30px;
     display: initial;
@@ -208,6 +211,78 @@ a:-webkit-any-link {
     right: 0;
     position: absolute;
     margin-top: 68px;
+    margin-right: 16px;
+    cursor: pointer;
+}
+
+
+/* 英文字母 */
+
+.leftEng {
+    width: 30px;
+    display: initial;
+    z-index: 100;
+    right: 0;
+    position: absolute;
+    margin-top: 75px;
+    margin-right: 203px;
+    cursor: pointer;
+}
+
+.midEng {
+    width: 30px;
+    display: initial;
+    z-index: 100;
+    right: 0;
+    position: absolute;
+    margin-top: 75px;
+    margin-right: 106px;
+    cursor: pointer;
+}
+
+.rightEng {
+    width: 30px;
+    display: initial;
+    z-index: 100;
+    right: 0;
+    position: absolute;
+    margin-top: 75px;
+    margin-right: 16px;
+    cursor: pointer;
+}
+
+
+/* 數字 */
+
+.leftNumber {
+    width: 30px;
+    display: initial;
+    z-index: 100;
+    right: 0;
+    position: absolute;
+    margin-top: 75px;
+    margin-right: 208px;
+    cursor: pointer;
+}
+
+.midNumber {
+    width: 30px;
+    display: initial;
+    z-index: 100;
+    right: 0;
+    position: absolute;
+    margin-top: 75px;
+    margin-right: 111px;
+    cursor: pointer;
+}
+
+.rightNumber {
+    width: 30px;
+    display: initial;
+    z-index: 100;
+    right: 0;
+    position: absolute;
+    margin-top: 75px;
     margin-right: 16px;
     cursor: pointer;
 }
