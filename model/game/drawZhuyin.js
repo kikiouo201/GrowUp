@@ -162,15 +162,15 @@ function moveFinger(){
     setTimeout("document.querySelector('.finger').className = 'moveFinger';", 500);
     setTimeout("document.querySelector('.moveFinger').className = 'moveFinger2';", 1500);
     setTimeout("document.querySelector('.moveFinger2').className = 'moveFinger3';", 3500);
-    setTimeout("document.querySelector('.moveFinger3').className = 'moveFinger4';", 5500);
+    setTimeout("document.querySelector('.moveFinger3').className = 'moveFinger4';", 5000);
     setTimeout("document.querySelector('.moveFinger4').className = 'moveFinger5';", 6000);
     setTimeout("document.querySelector('.moveFinger5').className = 'moveFinger6';", 6300);
     setTimeout("document.querySelector('.moveFinger6').className = 'moveFinger7';", 7000);
-    setTimeout("document.querySelector('.moveFinger7').className = 'moveFinger8';", 9300);
-    setTimeout("document.querySelector('.moveFinger8').className = 'moveFinger9';", 9800);
-    setTimeout("document.querySelector('.moveFinger9').className = 'moveFinger10';", 12000);
-    setTimeout("document.querySelector('.moveFinger10').className = 'finger';", 12800);
-    setTimeout("document.querySelector('.finger').style.visibility='hidden';", 12800);
+    setTimeout("document.querySelector('.moveFinger7').className = 'moveFinger8';", 8300);
+    // setTimeout("document.querySelector('.moveFinger8').className = 'moveFinger9';", 9800);
+    // setTimeout("document.querySelector('.moveFinger9').className = 'moveFinger10';", 12000);
+    setTimeout("document.querySelector('.moveFinger8').className = 'finger';", 9500);
+    setTimeout("document.querySelector('.finger').style.visibility='hidden';", 9600);
     
 }
 
@@ -185,11 +185,11 @@ function drawLine(context, x1, y1, x2, y2) {
 }
 
 let judgmentCriteria = {
-    b: [{ x: [127, 158], y: [50, 76] },
-     { x: [69, 124], y: [120, 130] },
-     { x: [265, 300], y: [120, 145] },
-     { x: [175, 205], y: [280, 335] },
-     { x: [150, 160], y: [270, 295] } ] ,
+    b: [{ x: [87, 128], y: [75, 85] },
+     { x: [180, 220], y: [112, 150] },
+     { x: [235, 270], y: [120, 145] },
+     { x: [145, 175], y: [280, 335] },
+     { x: [120, 130], y: [270, 295] } ] ,
      p: [{ x: [43, 50], y: [19, 22] },
      { x: [25, 40], y: [45, 48] },
      { x: [84, 86], y: [37, 48] },

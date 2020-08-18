@@ -109,12 +109,11 @@ video {
     height: 100px;
     transform: rotate(300deg);
     position: absolute;
-    top: 30px;
-    left: 160px;
+    top: -130px;
+    left: -185px;
     z-index: 30;
     filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
 }
-
 .moveFinger {
     width: 50px;
     height: 100px;
@@ -122,8 +121,8 @@ video {
     transition: all 1s ease-out;
     transform: rotate(300deg);
     position: absolute;
-    top: 115px;
-    left: 108px;
+    top: -65px;
+    left: -215px;
     z-index: 10;
 }
 
@@ -134,8 +133,8 @@ video {
     transition: all 1.5s ease-out;
     transform: rotate(300deg);
     position: absolute;
-    top: 105px;
-    left: 180px;
+    top: -80px;
+    left: -145px;
     z-index: 10;
 }
 
@@ -146,8 +145,8 @@ video {
     transition: all 1.5s ease-out;
     transform: rotate(300deg);
     position: absolute;
-    top: 97px;
-    left: 300px;
+    top: -90px;
+    left: -85px;
     z-index: 10;
 }
 
@@ -158,8 +157,8 @@ video {
     transition: all 1.5s ease-out;
     transform: rotate(300deg);
     position: absolute;
-    top: 110px;
-    left: 309px;
+    top: -75px;
+    left: -70px;
     z-index: 10;
 }
 
@@ -170,8 +169,8 @@ video {
     transition: all 1.5s ease-out;
     transform: rotate(300deg);
     position: absolute;
-    top: 215px;
-    left: 283px;
+    top: -5px;
+    left: -100px;
     z-index: 10;
 }
 
@@ -182,8 +181,8 @@ video {
     transition: all 1.5s ease-out;
     transform: rotate(300deg);
     position: absolute;
-    top: 240px;
-    left: 270px;
+    top: -5px;
+    left: -100px;
     z-index: 10;
 }
 
@@ -194,8 +193,8 @@ video {
     transition: all 1.5s ease-out;
     transform: rotate(300deg);
     position: absolute;
-    top: 270px;
-    left: 247px;
+    top: 45px;
+    left: -130px;
     z-index: 10;
 }
 
@@ -206,8 +205,8 @@ video {
     transition: all 1.5s ease-out;
     transform: rotate(300deg);
     position: absolute;
-    top: 290px;
-    left: 209px;
+    top: 30px;
+    left: -155px;
     z-index: 10;
 }
 
@@ -218,8 +217,8 @@ video {
     transition: all 1.5s ease-out;
     transform: rotate(300deg);
     position: absolute;
-    top: 290px;
-    left: 210px;
+    top: 130px;
+    left: -135px;
     z-index: 10;
 }
 
@@ -230,8 +229,8 @@ video {
     transition: all 1.5s ease-out;
     transform: rotate(300deg);
     position: absolute;
-    top: 255px;
-    left: 169px;
+    top: 95px;
+    left: -176px;
     z-index: 10;
 }
 
