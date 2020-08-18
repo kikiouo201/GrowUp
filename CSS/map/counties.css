@@ -8,15 +8,14 @@
 .features img {
     width: 100px;
     filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
-    
 }
-table{
-    box-shadow:3px 3px 12px gray;
+
+table {
+    box-shadow: 3px 3px 12px gray;
 }
 
 table,
 td {
-   
     border-collapse: collapse;
     opacity: 0.9;
 }
@@ -26,14 +25,14 @@ td {
     border: 4px dashed black;
 }
 
-.taiwan{
-    width: 90px;
-    height: 90px;
+.taiwan {
+    width: auto;
+    height: 120px;
     position: absolute;
     top: 0px;
     left: 0px;
     border-bottom: 5px solid black;
     border-right: 5px solid black;
-    border-radius:0px 0px 40px 0px ;
+    border-radius: 25px 25px 25px 25px;
     background: url('../../image/background/sea1.png');
 }
