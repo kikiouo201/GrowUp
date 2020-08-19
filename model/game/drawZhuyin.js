@@ -195,10 +195,20 @@ function onload() {
 // }
 
 function moveFinger(){
-    const shape=drawShape[id];
-    let finger=document.querySelector('.finger');
-    finger.style.visibility="visible";
-    document.querySelector('.finger').className = 'finger'+id;
+    //const shape=drawShape[id];
+    let finger;
+    try {
+        finger=document.querySelector('.finger');
+        finger.style.visibility="visible";
+        document.querySelector('.finger').className = 'finger'+id;
+    } catch (error) {
+        finger=document.querySelector('.finger'+id);
+        finger.style.visibility="visible";
+    }
+   
+   
+    
+    
     setTimeout("document.querySelector('.finger"+id+"').className = 'moveFinger"+id+"1';", 500);
     setTimeout("document.querySelector('.moveFinger"+id+"1').className = 'moveFinger"+id+"2';", 1500);
     setTimeout("document.querySelector('.moveFinger"+id+"2').className = 'moveFinger"+id+"3';", 3500);
@@ -208,7 +218,7 @@ function moveFinger(){
     setTimeout("document.querySelector('.moveFinger"+id+"6').className = 'moveFinger"+id+"7';", 7000);
     setTimeout("document.querySelector('.moveFinger"+id+"7').className = 'moveFinger"+id+"8';", 8300);
     setTimeout("document.querySelector('.moveFinger"+id+"8').className = 'finger"+id+"';", 9500);
-    setTimeout("document.querySelector('.finger"+id+"').style.visibility='hidden';", 9600);
+    setTimeout("document.querySelector('.finger"+id+"').style.visibility='hidden';", 9550);
 
 
 }

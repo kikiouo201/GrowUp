@@ -217,3 +217,114 @@
     left: -125px;
     z-index: 10;
 }
+/* f1 */
+
+.fingerf1 {
+    visibility: visible;
+    width: 50px;
+    height: 100px;
+    transform: rotate(300deg);
+    position: absolute;
+    top: -110px;
+    left: -155px;
+    z-index: 30;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+}
+.moveFingerf11 {
+    width: 50px;
+    height: 100px;
+    transform: scale(4);
+    transition: all 1s ease-out;
+    transform: rotate(300deg);
+    position: absolute;
+    top: 20px;
+    left: -155px;
+    z-index: 10;
+    animation-delay: 1s;
+}
+
+.moveFingerf12 {
+    width: 50px;
+    height: 100px;
+    transform: scale(4);
+    transition: all 1.5s ease-out;
+    transform: rotate(300deg);
+    position: absolute;
+    top: -110px;
+    left: -155px;
+    z-index: 10;
+    animation-delay: 1s;
+}
+
+.moveFingerf13 {
+    width: 50px;
+    height: 100px;
+    transform: scale(4);
+    transition: all 1.5s ease-out;
+    transform: rotate(300deg);
+    position: absolute;
+    top: -110px;
+    left: -100px;
+    z-index: 10;
+    animation-delay: 1s;
+}
+
+.moveFingerf14 {
+    width: 50px;
+    height: 100px;
+    transform: scale(4);
+    transition: all 1.5s ease-out;
+    transform: rotate(300deg);
+    position: absolute;
+    top: -45px;
+    left: -155px;
+    z-index: 10;
+}
+
+.moveFingerf15 {
+    width: 50px;
+    height: 100px;
+    transform: scale(4);
+    transition: all 1.5s ease-out;
+    transform: rotate(300deg);
+    position: absolute;
+    top: -45px;
+    left: -155px;
+    z-index: 10;
+}
+
+.moveFingerf16 {
+    width: 50px;
+    height: 100px;
+    transform: scale(4);
+    transition: all 1.5s ease-out;
+    transform: rotate(300deg);
+    position: absolute;
+    top: -45px;
+    left: -155px;
+    z-index: 10;
+}
+
+.moveFingerf17 {
+    width: 50px;
+    height: 100px;
+    transform: scale(4);
+    transition: all 1.5s ease-out;
+    transform: rotate(300deg);
+    position: absolute;
+    top: -45px;
+    left: -100px;
+    z-index: 10;
+}
+
+.moveFingerf18 {
+    width: 50px;
+    height: 100px;
+    transform: scale(4);
+    transition: all 1.5s ease-out;
+    transform: rotate(300deg);
+    position: absolute;
+    top: -45px;
+    left: -100px;
+    z-index: 10;
+}
