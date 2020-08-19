@@ -1,7 +1,7 @@
 body {
-  background-repeat: no-repeat;
+  /* background-repeat: no-repeat;
   background-size: 100%;
-  background-attachment: fixed;
+  background-attachment: fixed; */
   margin: 0px;
   /* margin-top: auto; */
 }
@@ -21,7 +21,7 @@ body {
   position: fixed;
 }
 
-#show_page::-webkit-scrollbar {
+body::-webkit-scrollbar {
   display: none;
 }
 
@@ -32,38 +32,39 @@ body {
   /* text-align: center; */
 }
 
+#recommend_book {
+  /* border-bottom: 5px solid black; */
+}
+
+#disrecommend_book {
+  margin-top: 1%;
+}
+
 .booklist {
-  width: auto;
+  width: 100%;
   height: auto;
   padding: 0.5%;
   margin-top: 5.5%;
-  display: block;
+  /* display: block; */
   color: white;
-  font-family: 文鼎標楷注音;
-  box-sizing: border-box;
+  /* font-family: 文鼎標楷注音; */
+  /* box-sizing: border-box; */
+}
 
-}
-#recommend_book {
-  border-bottom: 5px solid black;
-}
-#disrecommend_book{
-  margin-top: 1%;
-
-}
 .book {
+  display: inline-block;
   width: 27.8%;
-  /* height: 30%; */
-  display: inline-table;
+  height: 230px;
   color: rgb(19, 1, 1);
-  font-weight: bold;
-  padding: 10px;
+  /* font-weight: bold; */
   /* margin: 10px;
   margin-right: 2%;
   margin-left: 4%; */
   margin: 11px 0% 10px 2.063%;
+  padding: 10px;
   text-align: center;
   font-family: Microsoft JhengHei;
-  border-radius: 10px;
+  border-radius: 15px;
   background-color: white;
 
 }
@@ -80,20 +81,23 @@ body {
 }
 
 .book .text-div {
+  height: 30%;
   border-bottom: 2px rgb(71, 70, 70) solid;
 }
 
 .book .text-div h2 {
+  margin: auto;
   text-align: left;
 }
 
 .book .image-div {
+  height: 65%;
   padding: 5%;
 }
 
 .book .image-div img {
   width: 50%;
-  height: 50%;
+  height: 83%;
 }
 
 /* 
