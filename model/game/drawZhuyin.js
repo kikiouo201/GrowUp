@@ -154,24 +154,63 @@ function onload() {
  
 }
 
+// let drawShape = {
+//     b: [{ top: [-130], left: [-185],time:[0] },
+//      { top: [-65], left: [-215],time:[500] },
+//      { top: [-80], left: [-145],time:[1500] },
+//      { top: [-90], left: [-85],time:[3500] },
+//      { top: [-75], left: [-70],time:[5000] },
+//      { top: [-5], left: [-100],time:[6000] },
+//      { top: [-5], left: [-100],time:[6300] },
+//      { top: [45], left: [-130],time:[7000] },
+//      { top: [30], left: [-155],time:[8300] },
+//       ],
+//      4: [{ top: [-110], left: [-145],time:[0] },
+//      { top: [-10], left: [-200],time:[500] },
+//      { top: [-10], left: [-100],time:[1500] },
+//      { top: [-110], left: [-125],time:[3500] },
+//      { top: [25], left: [-125],time:[5000] },
+//     ] ,
+
+// };
+// function setFingerDrawPath(nextDrawPathNum){
+//     const shape=drawShape[id];
+//     if(nextDrawPathNum==0){
+//         document.querySelector('.finger').style.top = shape[1].top;
+//         document.querySelector('.finger').style.left = shape[1].left;
+//     }else if(nextDrawPathNum==1){
+//         console.log(`'moveFinger'+nextDrawPathNum=${ shape[nextDrawPathNum].top}`)
+//         document.querySelector('.finger').className = 'moveFinger1';
+//         document.querySelector('.moveFinger1').style.top = ""+shape[nextDrawPathNum].top;
+//         document.querySelector('.moveFinger1').style.left = shape[nextDrawPathNum].left;
+//     }else{
+//         let nextFingerPoint='moveFinger'+nextDrawPathNum;
+//         console.log(`nextFingerPoint=${nextFingerPoint}`)
+//         document.querySelector('.moveFinger'+(nextDrawPathNum-1)).className =nextFingerPoint;
+//         document.querySelector('.'+nextFingerPoint).style.top = ""+shape[nextDrawPathNum].top;
+//         document.querySelector('.'+nextFingerPoint).style.left = shape[nextDrawPathNum].left;
+//         console.log(`'('.'+nextFingerPoint).style.top=${document.querySelector('.'+nextFingerPoint).style.top}`)
+//         console.log(`'('.'+nextFingerPoint).style.left=${document.querySelector('.'+nextFingerPoint).style.left}`)
+//     }
+// }
+
 function moveFinger(){
+    const shape=drawShape[id];
     let finger=document.querySelector('.finger');
-    // finger.className = 'moveFinger';
-    // console.log(`finger=${finger.className}`);
     finger.style.visibility="visible";
-    setTimeout("document.querySelector('.finger').className = 'moveFinger';", 500);
-    setTimeout("document.querySelector('.moveFinger').className = 'moveFinger2';", 1500);
-    setTimeout("document.querySelector('.moveFinger2').className = 'moveFinger3';", 3500);
-    setTimeout("document.querySelector('.moveFinger3').className = 'moveFinger4';", 5000);
-    setTimeout("document.querySelector('.moveFinger4').className = 'moveFinger5';", 6000);
-    setTimeout("document.querySelector('.moveFinger5').className = 'moveFinger6';", 6300);
-    setTimeout("document.querySelector('.moveFinger6').className = 'moveFinger7';", 7000);
-    setTimeout("document.querySelector('.moveFinger7').className = 'moveFinger8';", 8300);
-    // setTimeout("document.querySelector('.moveFinger8').className = 'moveFinger9';", 9800);
-    // setTimeout("document.querySelector('.moveFinger9').className = 'moveFinger10';", 12000);
-    setTimeout("document.querySelector('.moveFinger8').className = 'finger';", 9500);
-    setTimeout("document.querySelector('.finger').style.visibility='hidden';", 9600);
-    
+    document.querySelector('.finger').className = 'finger'+id;
+    setTimeout("document.querySelector('.finger"+id+"').className = 'moveFinger"+id+"1';", 500);
+    setTimeout("document.querySelector('.moveFinger"+id+"1').className = 'moveFinger"+id+"2';", 1500);
+    setTimeout("document.querySelector('.moveFinger"+id+"2').className = 'moveFinger"+id+"3';", 3500);
+    setTimeout("document.querySelector('.moveFinger"+id+"3').className = 'moveFinger"+id+"4';", 5000);
+    setTimeout("document.querySelector('.moveFinger"+id+"4').className = 'moveFinger"+id+"5';", 6000);
+    setTimeout("document.querySelector('.moveFinger"+id+"5').className = 'moveFinger"+id+"6';", 6300);
+    setTimeout("document.querySelector('.moveFinger"+id+"6').className = 'moveFinger"+id+"7';", 7000);
+    setTimeout("document.querySelector('.moveFinger"+id+"7').className = 'moveFinger"+id+"8';", 8300);
+    setTimeout("document.querySelector('.moveFinger"+id+"8').className = 'finger"+id+"';", 9500);
+    setTimeout("document.querySelector('.finger"+id+"').style.visibility='hidden';", 9600);
+
+
 }
 
 function drawLine(context, x1, y1, x2, y2) {

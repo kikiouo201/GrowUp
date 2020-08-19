@@ -114,7 +114,7 @@ video {
     z-index: 30;
     filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
 }
-.moveFinger {
+.moveFinger1 {
     width: 50px;
     height: 100px;
     transform: scale(4);
@@ -124,6 +124,7 @@ video {
     top: -65px;
     left: -215px;
     z-index: 10;
+    animation-delay: 1s;
 }
 
 .moveFinger2 {
@@ -136,6 +137,7 @@ video {
     top: -80px;
     left: -145px;
     z-index: 10;
+    animation-delay: 1s;
 }
 
 .moveFinger3 {
@@ -148,6 +150,7 @@ video {
     top: -90px;
     left: -85px;
     z-index: 10;
+    animation-delay: 1s;
 }
 
 .moveFinger4 {
