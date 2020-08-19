@@ -51,7 +51,8 @@ body {
 
 }
 .book {
-  width: 24%;
+  width: 27.8%;
+  /* height: 30%; */
   display: inline-table;
   color: rgb(19, 1, 1);
   font-weight: bold;
@@ -59,7 +60,7 @@ body {
   /* margin: 10px;
   margin-right: 2%;
   margin-left: 4%; */
-  margin: 15px 2% 10px 4%;
+  margin: 11px 0% 10px 2.063%;
   text-align: center;
   font-family: Microsoft JhengHei;
   border-radius: 10px;

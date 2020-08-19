@@ -12,7 +12,7 @@
 </head>
 <!-- onload="ShowTime()" -->
 
-<body style="width: 100%; height: 100%;" background="../image/background/desk.png">
+<body onload="OpenDataList()" style="width: 100%; height: 100%;" background="../image/background/desk.png">
     <div class="home_page">
         <a href="../game_home.html">繪本</a>
 
@@ -24,7 +24,7 @@
 
     <div id="show_page">
         <div class="booklist" id="recommend_book" style="background-color: cadetblue;">
-            <button style="position: absolute;" onclick="OpenDataList()">try try see</button>
+            <!-- <button style="position: absolute;" onclick="OpenDataList()">try try see</button> -->
             <div class="book">
                 <div class="text-div">
                     <h2>環遊世界做蘋果派</h2>
@@ -196,9 +196,9 @@
         function recommendListbook(jsons) {
             let request = new XMLHttpRequest();
             const list = document.querySelector("#disrecommend_book");
-            let imgurltemp = 6802;
+            let imgurltemp = 6805;
 
-            for (let i = 0; i < jsons.length; i++) {
+            for (let i = 1; i < jsons.length; i++) {
                 let imgurl = 'https://children.moc.gov.tw/resource/animate_image/' + imgurltemp + '.jpg';
 
                 let bookdiv = document.createElement("div");
