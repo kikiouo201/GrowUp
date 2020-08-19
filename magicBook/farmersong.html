@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../CSS/icon.css">
     <link rel="stylesheet" href="../CSS/interface.css">
     <link rel="stylesheet" href="../CSS/every_four_button.css">
-    <link rel="stylesheet" href="./css/childsong.css">
+    <link rel="stylesheet" href="./css/songsummary.css">
     <title>Document</title>
 </head>
 
@@ -20,49 +20,12 @@
         <div id="showtime"></div>
     </div>
 
-    <img onclick="scrolls(this)" class="Arrow" style="right:15px; visibility: visible;" src="../magicBook/image/ArrowIcon.png" alt="right">
-    <img onclick="scrolls(this)" class="Arrow" style="left:15px; transform:rotate(180deg); visibility: visible;" src="../magicBook/image/ArrowIcon.png" alt="left">
-
-    <div id="bookContent" class="bookContent">
-        <div id="song_list">
-            <div id="song">
-                <div id="song_name">
-                    <h2>1.王老先生有塊地</h2>
-                </div>
-                <div id="songImg">
-                    <img id="img" src="../image/childsongImg/farmer.jpg" onclick="document.location.href='./farmersong.html'">               
-                </div>
-            </div>
-
-            <div id="song">
-                <div id="song_name">
-                    <h2>2.滿天都是小星星</h2>
-                </div>
-                <div id="songImg">
-                    <img id="img" src="../image/childsongImg/star.jpg" onclick="document.location.href='./starsong.html'">               
-                </div>
-            </div>
-
-            <div id="song">
-                <div id="song_name">
-                    <h2>3.兩隻老虎</h2>
-                </div>
-                <div id="songImg">
-                    <img src="../image/childsongImg/farmer.jpg" onclick="document.location.href='./tigersong.html'">               
-                </div>
-            </div>
-
-            <div id="song">
-                <div id="song_name">
-                    <h2>4.Baby shark</h2>
-                </div>
-                <div id="songImg">
-                    <img src="../image/childsongImg/shark.jpg" onclick="document.location.href='./sharksong.html'">               
-                </div>
-            </div>
-        </div>
+    <div id="show_page">
+      <div id="song_page">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/7sP1uZtoDvE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+        
     </div>
-
 
     <div>
         <a href="../game_home.html" class="sosfloat sos_mark" id="menu-share">
@@ -70,9 +33,25 @@
         </a>
     </div>
 
+    <!-- <div class="fabs setting_mark" onclick="toggleBtn()">
+      <div class="action">
+        <i class="fas" id="add"><img src="../photo/settings.png" width="110%"></i>
+        <i class="fas" id="remove" style="display: none"><img src="../photo/settings.png" width="110%"></i>
+      </div>
+
+      <div class="btns">
+        <a href="../personalprofile.html" class="btn"><i class="fab "><img src="../photo/user.png" title="個人簡介"
+          width="95%"></i></a>
+        <a href="../history.html" class="btn"><i class="fab "><img src="../photo/record.png" title="歷史紀錄"
+          width="95%"></i></a>
+        <a href="../score.html" class="btn"><i class="fab "><img src="../photo/analysis.png" title="學習歷程"
+          width="95%"></i></a>
+      </div>
+
+    </div> -->
 
     <div class="return_mark">
-        <a href="./magicBook.html" class="returnfloat" id="menu-share">
+        <a href="./childsong.html" class="returnfloat" id="menu-share">
             <i class="fab fa-share return-float"><img src="../photo/return.png"></i>
         </a>
     </div>
@@ -123,19 +102,6 @@
                     e.style.bottom = "0px";
                 });
             }
-        }
-    </script>
-
-     <script>
-        let bookcontent = document.querySelector("#bookContent");
-
-        function scrolls(direction) {
-            if(direction.alt == "right")
-                bookcontent.scrollLeft += 400;
-            else
-            bookcontent.scrollLeft -= 400;
-
-            console.log(bookcontent.scrollLeft);
         }
     </script>
 </body>
