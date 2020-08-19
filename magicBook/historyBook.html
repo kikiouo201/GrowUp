@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html style="width: 100%; height: 100%;" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/icon.css">
+    <link rel="stylesheet" href="../CSS/interface.css">
+    <link rel="stylesheet" href="../CSS/every_four_button.css">
+    <link rel="stylesheet" href="./css/historyBook.css">
+    <title>歷史寶典</title>
+</head>
+<!-- onload="ShowTime()" -->
+
+<body>
+
+    <div class="home_page">
+        <a href="../game_home.html">歷史寶典</a>
+        <div id="today"></div>
+        <br>
+        <div id="showtime"></div>
+    </div>
+
+    <div class="maincontent">
+        <div class="list_div">
+           <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Apples_in_basket_2018_G2.jpg/375px-Apples_in_basket_2018_G2.jpg" alt="">
+           <h1>答案：蘋果</h1>
+           <h2>解釋：落業喬木。葉軟形，邊緣有細尖鋸齒。果實球形，味美，可食，也可製酒。</h2>
+           <h3>日期：2020/08/19</h3>
+        </div>
+        <div class="list_div">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Watermelon_slices_BNC.jpg/375px-Watermelon_slices_BNC.jpg" alt="">
+            <h1>答案：西瓜</h1>
+            <h2>解釋：植物名。葫蘆科西瓜屬，一年生蔓草。果肉通常為紅色或黃色，水分多，味甜。</h2>
+            <h3>日期：2020/08/19</h3>
+         </div>
+    </div>
+
+
+
+    <div>
+        <div>
+            <a href="../game_home.html" class="sosfloat sos_mark">
+                <i class="fab fa-share my-float"><img src="../photo/help.png" width="70%"></i>
+            </a>
+        </div>
+
+        <div class="return_mark">
+            <a href="../game_home.html" class="returnfloat">
+                <i class="fab fa-share return-float"><img src="../photo/return.png"></i>
+            </a>
+        </div>
+
+        <div class="home_mark">
+            <a href="../game_home.html" class="homefloat">
+                <i class="fab fa-share my-float"><img src="../photo/gobackhome.png" width="70%"></i>
+            </a>
+        </div>
+
+    </div>
+
+    <script>
+        function toggleBtn() {
+            const Btns = document.querySelector(".btns");
+            const add = document.getElementById("add");
+            const remove = document.getElementById("remove");
+            const btn = document.querySelector(".btns").querySelectorAll("a");
+            Btns.classList.toggle("open");
+            if (Btns.classList.contains("open")) {
+                remove.style.display = "block";
+                add.style.display = "none";
+                btn.forEach((e, i) => {
+                    setTimeout(() => {
+                        bottom = 65 * i;
+                        e.style.bottom = bottom + "px";
+                        console.log(e);
+                    }, 100 * i);
+                });
+            } else {
+                add.style.display = "block";
+                remove.style.display = "none";
+                btn.forEach((e, i) => {
+                    e.style.bottom = "0px";
+                });
+            }
+        }
+
+        function ShowTime() {
+
+            var fullDate = new Date();
+            var yyyy = fullDate.getFullYear();
+            var MM = (fullDate.getMonth() + 1) >= 10 ? (fullDate.getMonth() + 1) : ("0" + (fullDate.getMonth() + 1));
+            var dd = fullDate.getDate() < 10 ? ("0" + fullDate.getDate()) : fullDate.getDate();
+            document.getElementById('today').innerHTML = yyyy + "/" + MM + "/" + dd;
+
+            var NowDate = new Date();
+            var h = NowDate.getHours();
+            var m = NowDate.getMinutes();
+            document.getElementById('showtime').innerHTML = h + ':' + m;
+            setTimeout('ShowTime()', 1000);
+        }
+    </script>
+
+    <script>
+        let bookcontent = document.querySelector("#bookContent");
+
+        function scrolls(direction) {
+            if (direction.alt == "right")
+                bookcontent.scrollLeft += 250;
+            else
+                bookcontent.scrollLeft -= 250;
+
+            console.log(bookcontent.scrollLeft);
+        }
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+</body>
+
+</html>

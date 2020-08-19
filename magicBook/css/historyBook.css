@@ -1,0 +1,74 @@
+body {
+  /* margin-top: auto; */
+  /* padding-top: 13%; */
+  /* float: left; */
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background-color:#84b8ec ;
+}
+
+.home_page {
+  top: 0px;
+  width: 100%;
+  height: 8.7%;
+  font-size: 18px;
+  font-weight: bolder;
+  background-color: #ffb906cf;
+  text-align: center;
+  margin: 0px auto;
+  /* 置中*/
+  /* padding-top: 8px; */
+  line-height: 40px;
+  /*配合高度px 垂直置中*/
+  position: fixed;
+  z-index: 98;
+}
+
+.maincontent {
+  position: relative;
+  top: 10%;
+  height: auto;
+  width: 100%;
+}
+
+.list_div {
+  /* position: relative ; */
+  /* top: 15%; */
+  /* right: 20px; */
+  margin: 15px;
+  width: auto;
+  height: 200px;
+  background-color: #ff6666;
+  border-radius:20px;
+  /* white-space: nowrap; */
+}
+
+.list_div img {
+  display: inline-block;
+  float: left;
+  height: 97.3%;
+  width: 30%;
+  border-radius:20px;
+  border: 3px #414141 solid;
+}
+
+.list_div h1 {
+  display: inline-block;
+  width: 65%;
+  float: left;
+  margin: 20px 0 0 20px;
+}
+.list_div h2{
+  display: inline-block;
+  height: 50%;
+  width: 65%;
+  float: left;
+  margin: 10px 0 0 20px;
+}
+
+.list_div h3{
+  display: inline-block;
+  margin: 0 15px 0 0;
+  float: right;
+}
