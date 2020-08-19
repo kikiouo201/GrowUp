@@ -12,63 +12,65 @@ body{
   height: 700px;
 }
 .terrain{
-  width: 700px;
-position: relative;
-top: 70px;
-z-index: 1;
+  width: 325px;
+  position: relative;
+  top: 20px;
+  z-index: 1;
+  margin-right: -45px;
 }
 
 .level1{
   width: 75px;
   position: absolute;
   z-index: 10;
-  top: 520px;
-  left: 270px;
+  top: 239px;
+  left: 117px;
 }
 .level{
-  width: 140px;
+  width: 53px;
 
 }
 .level_text{
-  width: 120px;
+  width: 105px;
   position: absolute;
   z-index: 10;
-  top: 34px;
-  left: 32%;
+  top: -19px;
+  left: -9%;
 }
 .level2{
   width: 100px;
   position: absolute;
   z-index: 10;
-  top: 395px;
-  left: 400px;
+  top: 180px;
+  left: 169px;
 }
 .level3{
   width: 100px;
   position: absolute;
   z-index: 10;
-  top: 230px;
-  left: 515px;
+  top: 105px;
+  left: 222px;
 }
 .level4{
   width: 100px;
   position: absolute;
   z-index: 10;
-  top: 270px;
-  left: 275px;
+  top: 124px;
+  left: 107px;
 }
 .level5{
   width: 100px;
   position: absolute;
   z-index: 10;
-  top: 255px;
-  left: 14px;
+  top: 115px;
+  left: -12px;
 }
 
 .level6{
-  width: 100px;
+  width: 35px;
   position: absolute;
   z-index: 10;
-  top: 155px;
-  left: 170px;
+  top: 67px;
+  left: 87px;
+
 }
