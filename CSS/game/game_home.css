@@ -128,24 +128,32 @@ body {
     position: absolute;
     bottom: 31%;
     right: 26%;
+    box-shadow: 3px 4px 3px 2px #3d3d3d;
+    border-radius: 20px;
 }
 
 .farm {
     position: absolute;
     bottom: 31%;
     right: 2%;
+    box-shadow: 3px 4px 3px 2px #3d3d3d;
+    border-radius: 20px;
 }
 
 .treature_voice_camera {
     position: absolute;
     bottom: 2%;
     right: 26%;
+    box-shadow: 3px 4px 3px 2px #3d3d3d;
+    border-radius: 20px;
 }
 
 .magic_treature {
     position: absolute;
     bottom: 2%;
     right: 2%;
+    box-shadow: 3px 4px 3px 2px #3d3d3d;
+    border-radius: 20px;
 }
 
 .nowInWhere {
