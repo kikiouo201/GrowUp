@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" type="twxt/css">
     <link href="CSS/STT.css" type="text/css" rel="stylesheet">
     <link href="CSS/dialog-region.css" type="text/css" rel="stylesheet">
-    <link href="CSS/collect_QA.css" type="text/css" rel="stylesheet">
     <link href="CSS/link.css" type="text/css" rel="stylesheet">
     <link rel="stylesheet" href="CSS/icon.css">
     <link rel="stylesheet" href="CSS/interface.css">
@@ -51,7 +50,7 @@
     </script>
 
     <div>
-        <img id="AnsImg" src="" style="width: 300px; height: 300px; ">
+        <img id="AnsImg" src="./still-image.jpg" style="width: 300px; height: 300px; ">
     </div>
     <div id="show_page">
         <div class="QA_card_area" id="QA_card">
@@ -70,7 +69,7 @@
                         <img class="speaker_A" onclick="speaker(this)" id="speaker_A" src="icons/speaker.png" />
                     </div>
                 </div>
-                <div class="card-header contentCss" id="QA_num_" style="background-color: #f8f9fa24;">
+                <div class="card-header contentCss" id="QA_num_" style="background-color: #f8f9fa24; height: auto">
                     <p class="contentlink">相關繪本連結：</p>
                     <p class="book_css">畢老師的蘋果</p>
                     <img src="https://children.moc.gov.tw/resource/book_image/215293.jpg" style="margin-left: 20px; display: inline;" width="180" height="153" alt="蘋果甜蜜蜜">
@@ -90,8 +89,8 @@
         請先拍下你想知道的事物</h2>
       <!-- <img src="https://image.flaticon.com/icons/svg/2368/2368264.svg" style="height: 80%; width: 80px;"> -->
       <!-- <h5 style="font-family: Microsoft JhengHei; margin-top: 0px;">開始問問題!</h5> -->
-      <span id="identify-js" class="mh1 voice-btn w3-btn w3-ripple" style="width: auto; height: 50px; margin-top: 2px;"  onclick="changecss()">
-        <img id="identify-js" src="./photo/camera.png"style="height: 80%; width: 50px; margin-top: 5px; cursor: pointer; ">
+      <span  class="mh1 voice-btn w3-btn w3-ripple" style="width: auto; height: 50px; margin-top: 2px;"  onclick="changecss()">
+        <img  src="./photo/camera.png"style="height: 80%; width: 50px; margin-top: 5px; cursor: pointer; ">
         <!-- <h5 style="font-family: Microsoft JhengHei; margin-top: 0px;">開始問問題!</h5> -->
       </span>
         </span>
@@ -183,10 +182,10 @@
 
     <script>
         function changecss(){
-            // var ShowVisibility = document.querySelector('.QA_card_area');
-            // var ImgVisibility = document.querySelector('img#AnsImg');
-            // ShowVisibility.style.visibility = "visible";
-            // ImgVisibility.style.visibility = "visible";
+            var ShowVisibility = document.querySelector('.QA_card_area');
+            var ImgVisibility = document.querySelector('img#AnsImg');
+            ShowVisibility.style.visibility = "visible";
+            ImgVisibility.style.visibility = "visible";
         }
     </script>
     <script src="./render.js"></script>

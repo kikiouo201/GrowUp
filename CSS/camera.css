@@ -93,7 +93,7 @@ img#AnsImg {
 #show_page {
   position: absolute;
   top: 0;
-  left: 20%;
+  left: 22%;
   z-index: 1;
   width: 100%;
   height: calc(100% - 62px);
