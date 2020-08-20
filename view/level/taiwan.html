@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html  lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -16,14 +16,15 @@
             background: url("../../image/background/sea1.png");
             background-size:cover;
             position: relative;
+           
         }
         .map{
             position: relative;
-            height: 500px;
+            
         }
         .mapTaiwan {
             margin-top: -4px;
-            height:  466px;
+            height:  460px;
         }
         .nantou{
             position: absolute;
@@ -35,39 +36,39 @@
         .north{
             position: absolute;
             top: -3px;
-            left: 96px;
-            width: 153px;
+            left: 94px;
+            width: 151px;
             z-index: 1;
         }
-        .sorth{
+        .south{
             position: absolute;
-            bottom: 38px;
+            bottom: 5px;
             left: 0px;
-            width: 137px;
+            width: 135px;
             z-index: 2;
         }
         .east{
             position: absolute;
-            top: 122px;
+            top: 121px;
             left: 51px;
-            width: 201px;
+            width: 197px;
             z-index: 1;
         }
         .west{
             position: absolute;
             top: 77px;
-            left: 4px;
-            width: 174px;
+            left: 3px;
+            width: 172px;
             z-index: 1;
         }
     </style>
 </head>
 
-<body>
+<body >
     <div class="map">
         <img class="mapTaiwan" src="../../image/map/Taiwan_four_region.png" />
         <img class="north" src="../../image/map/NorthRegion_text.png" onclick="location.href='../../view/level/northRegion.html'"/>
-        <img class="sorth" src="../../image/map/SouthRegion_text.png" onclick="location.href='../../view/level/southRegion.html'"/>
+        <img class="south" src="../../image/map/SouthRegion_text.png" onclick="location.href='../../view/level/southRegion.html'"/>
         <img class="east" src="../../image/map/EastRegion_text.png" onclick="location.href='../../view/level/eastRegion.html'"/>
         <img class="west" src="../../image/map/centralRegion_text.png" onclick="location.href='../../view/level/centralRegion.html'"/>
     </div>
