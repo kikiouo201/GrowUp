@@ -97,7 +97,6 @@ img#AnsImg {
   z-index: 1;
   width: 100%;
   height: calc(100% - 62px);
-  overflow-y: scroll;
   padding: 2%;
   box-sizing: border-box;
 }
@@ -255,6 +254,7 @@ img#AnsImg {
 /* top card region */
 .QA_card_area {
   width: auto;
+  height: auto;
   margin:0px 20% 60px 20%;
   padding-top: 80px;
   text-align:center;
