@@ -29,7 +29,7 @@ body {
     top: 9%;
     /* border-style: dashed; */
     /* border-color: #649c03; */
-    background-image: url(../..//image/map/kraftPaper4.png);
+    /* background-image: url(../..//image/map/kraftPaper4.png); */
     /* background-color: #40a7e2; */
     background-size: cover;
     border-radius: 5%;
@@ -128,7 +128,7 @@ body {
     position: absolute;
     bottom: 31%;
     right: 26%;
-    box-shadow: 3px 4px 3px 2px #3d3d3d;
+    box-shadow: 3px 4px 3px 2px #0000004d;
     border-radius: 20px;
 }
 
@@ -136,7 +136,7 @@ body {
     position: absolute;
     bottom: 31%;
     right: 2%;
-    box-shadow: 3px 4px 3px 2px #3d3d3d;
+    box-shadow: 3px 4px 3px 2px #0000004d;
     border-radius: 20px;
 }
 
@@ -144,7 +144,7 @@ body {
     position: absolute;
     bottom: 2%;
     right: 26%;
-    box-shadow: 3px 4px 3px 2px #3d3d3d;
+    box-shadow: 3px 4px 3px 2px #0000004d;
     border-radius: 20px;
 }
 
@@ -152,21 +152,22 @@ body {
     position: absolute;
     bottom: 2%;
     right: 2%;
-    box-shadow: 3px 4px 3px 2px #3d3d3d;
+    box-shadow: 3px 4px 3px 2px #0000004d;
     border-radius: 20px;
 }
 
 .nowInWhere {
-    width: 10%;
-    padding: 8px;
+    width: 29%;
+    /* padding: 8px; */
     margin: 5px 8px;
     position: absolute;
-    left: 25px;
-    bottom: 14%;
+    left: 94px;
+    bottom: 0%;
     /* top: 200px;  */
-    background-image: url(../../image/background/sea1.png);
+    /* background-image: url(../../image/background/sea1.png); */
     background-size: 300px 100px;
     border-radius: 20px;
+    filter: drop-shadow(7px 0px 2px #0000004d);
 }
 
 
