@@ -1,5 +1,5 @@
 const fs = require('fs');
-const { createRouter } = require('../../wrapper/Exsocket');
+const { createRouter } = require('../wrapper/Exsocket');
 const router = createRouter();
 
 const FAVORITE_QUESTION = 'favorite_question';
@@ -36,8 +36,7 @@ function question(app){
             const jsonObject = {
                 book_id: book_id,
             };
-            // console.log(`yo=${growupApi.connectServer.yo}`);
-            // console.log('growupApi.connectServer.yo='+growupApi);
+            
             router.on(ADD_QUIZ,jsonObject,callback);
             app.use(router);
         },
@@ -75,10 +74,16 @@ function question(app){
         },
         
         
-         addQa(child_id, question_text, answer, question_img, category,callback){
+         addQa(child_id, question_text, answer, question_img,book_name,book_img,book_introduction, category,callback){
              let question_url=null;
              if(question_img.match('.jpg') || question_img.match('.png')){
                 question_url = base64_encode(question_img);
+                //question_url = question_url.toString();
+               // console.log('url='+question_url);
+             }
+             let book_url=null;
+             if(book_img.match('.jpg') || book_img.match('.png')){
+                book_url = base64_encode(book_img);
                 //question_url = question_url.toString();
                // console.log('url='+question_url);
              }
@@ -88,6 +93,10 @@ function question(app){
                 answer: answer,
                 base64str : question_url ,
                 category: category,
+                book_name: book_name,
+                book_img: book_url,
+                book_introduction: book_introduction,
+                recommend: "小孩",
             };
             
             router.on(ADD_QA,jsonObject,callback);
@@ -154,6 +163,14 @@ function question(app){
             }
             
             router.on(ALTER_BOOK,jsonObject,callback);
+            app.use(router);
+        },
+        showPictureBook(child_id, callback){
+            const jsonObject = {
+                child_id: child_id,
+            };
+            
+            router.on('show_picture_book',jsonObject,callback);
             app.use(router);
         },
         
