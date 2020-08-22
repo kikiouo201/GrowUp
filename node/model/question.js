@@ -1,5 +1,5 @@
 const fs = require('fs');
-const { createRouter } = require('../wrapper/Exsocket');
+const { createRouter } = require('../../wrapper/Exsocket');
 const router = createRouter();
 
 const FAVORITE_QUESTION = 'favorite_question';
