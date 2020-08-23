@@ -252,7 +252,7 @@ ipcMain.on('pictureWeb', async (event, args) => {
     console.log('readyMain');
 
     const browser = await puppeteers.launch({
-        // executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
+        executablePath: '/usr/share/applications/chromium-browser.desktop',
         headless: false
     });
     const page = await browser.newPage();
