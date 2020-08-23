@@ -1,9 +1,8 @@
 .features {
     margin-top: 55px;
     background-color: aliceblue;
-    width: 255px;
-    height: 350px;
-    
+    width: 340px;
+    height: 400px;
 }
 
 .features img {
@@ -28,12 +27,12 @@ td {
 
 .taiwan {
     width: auto;
-    height: 120px;
+    height: 160px;
     position: absolute;
-    top: 0px;
-    left: 0px;
-    border-bottom: 5px solid black;
-    border-right: 5px solid black;
-    border-radius: 25px 25px 25px 25px;
+    top: 30px;
+    left: 14px;
+    /* border-bottom: 5px solid black; */
+    /* border-right: 5px solid black; */
+    border-radius: 20px 20px 20px 20px;
     background: url('../../image/background/sea1.png');
 }

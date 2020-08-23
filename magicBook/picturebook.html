@@ -9,6 +9,25 @@
     <link rel="stylesheet" href="../CSS/every_four_button.css">
     <link rel="stylesheet" href="./css/picturebook.css">
     <title>Document</title>
+
+    <script>
+        const puppeteers = require('puppeteer');
+        // var videos = document.createElement('video');
+        function web(web) {
+            (async () => {
+                const browser = await puppeteers.launch({
+                    executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
+                    headless: false
+                });
+                const page = await browser.newPage();
+                await page.goto(web);
+                // videos = await page.$$eval('video', video => video);
+                // console.log(videos);
+                // await document.querySelector("#main").append(videos);
+                // await browser.close();
+            })();
+        }
+    </script>
 </head>
 <!-- onload="ShowTime()" -->
 
@@ -23,78 +42,148 @@
     </div>
 
     <!-- <div id="show_page"> -->
-        <div class="booklist" id="recommend_book" style="background-color: cadetblue;">
-            <!-- <button style="position: absolute;" onclick="OpenDataList()">try try see</button> -->
-            <div class="book">
-                <div class="text-div">
-                    <h2>環遊世界做蘋果派</h2>
-                </div>
-                <div class="image-div">
-                    <img src="https://children.moc.gov.tw/resource/book_image/215552.jpg">
-                </div>
-
+    <div id="learn_bookdropdown">學習相關推薦</div>
+    <div class="booklist" id="learn_book" style="background-color: cadetblue; display: block;">
+        <!-- <button style="position: absolute;" onclick="OpenDataList()">try try see</button> -->
+        <div class="book" onclick='web("https:\/\/children.moc.gov.tw/book/215552")'>
+            <div class="text-div">
+                <h2>環遊世界做蘋果派</h2>
+            </div>
+            <div class="image-div">
+                <img src="https://children.moc.gov.tw/resource/book_image/215552.jpg">
             </div>
 
-            <div class="book">
-                <div class="text-div">
-                    <h2>送你一顆蘋果</h2>
-                </div>
+        </div>
 
-                <div class="image-div">
-                    <img src="https://children.moc.gov.tw/resource/book_image/216245.jpg">
-
-                </div>
+        <div class="book" onclick='web("https:\/\/children.moc.gov.tw/book/216245")'>
+            <div class="text-div">
+                <h2>送你一顆蘋果</h2>
             </div>
 
-
-            <div class="book">
-                <div class="text-div">
-                    <h2>致命的蘋果</h2>
-                </div>
-
-                <div class="image-div">
-                    <img src="https://children.moc.gov.tw/resource/book_image/217133.jpg">
-                </div>
-
-            </div>
-
-
-            <div class="book">
-                <div class="text-div">
-                    <h2>蘋果的引力-牛頓</h2>
-                </div>
-
-                <div class="image-div">
-                    <img src="https://children.moc.gov.tw/resource/book_image/217317.jpg">
-                </div>
-            </div>
-
-
-            <div class="book">
-                <div class="text-div">
-                    <h2>蘋果纖維</h2>
-                </div>
-
-                <div class="image-div">
-                    <img src="https://children.moc.gov.tw/resource/book_image/217849.jpg">
-                </div>
-            </div>
-
-            <div class="book">
-                <div class="text-div">
-                    <h2>蘋果甜蜜蜜</h2>
-                </div>
-
-                <div class="image-div">
-                    <img src="https://children.moc.gov.tw/resource/book_image/218424.jpg">
-                </div>
+            <div class="image-div">
+                <img src="https://children.moc.gov.tw/resource/book_image/216245.jpg">
 
             </div>
         </div>
 
-        <div class="booklist" id="disrecommend_book" style="background-color: burlywood; margin-top:0px">
+
+        <div class="book" onclick='web("https:\/\/children.moc.gov.tw/book/217133")'>
+            <div class="text-div">
+                <h2>致命的蘋果</h2>
+            </div>
+
+            <div class="image-div">
+                <img src="https://children.moc.gov.tw/resource/book_image/217133.jpg">
+            </div>
 
         </div>
+
+
+        <div class="book" onclick='web("https:\/\/children.moc.gov.tw/book/217317")'>
+            <div class="text-div">
+                <h2>蘋果的引力-牛頓</h2>
+            </div>
+
+            <div class="image-div">
+                <img src="https://children.moc.gov.tw/resource/book_image/217317.jpg">
+            </div>
+        </div>
+
+
+        <div class="book" onclick='web("https:\/\/children.moc.gov.tw/book/217849")'>
+            <div class="text-div">
+                <h2>蘋果纖維</h2>
+            </div>
+
+            <div class="image-div">
+                <img src="https://children.moc.gov.tw/resource/book_image/217849.jpg">
+            </div>
+        </div>
+
+        <div class="book" onclick='web("https:\/\/children.moc.gov.tw/book/218424")'>
+            <div class="text-div">
+                <h2>蘋果甜蜜蜜</h2>
+            </div>
+
+            <div class="image-div">
+                <img src="https://children.moc.gov.tw/resource/book_image/218424.jpg">
+            </div>
+
+        </div>
+    </div>
+    <div id="recommend_bookdropdown">家長推薦</div>
+    <div class="booklist" id="recommend_book" style="background-color: cadetblue; display: block;">
+        <!-- <button style="position: absolute;" onclick="OpenDataList()">try try see</button> -->
+        <div class="book">
+            <div class="text-div">
+                <h2>環遊世界做蘋果派</h2>
+            </div>
+            <div class="image-div">
+                <img src="https://children.moc.gov.tw/resource/book_image/215552.jpg">
+            </div>
+
+        </div>
+
+        <div class="book">
+            <div class="text-div">
+                <h2>送你一顆蘋果</h2>
+            </div>
+
+            <div class="image-div">
+                <img src="https://children.moc.gov.tw/resource/book_image/216245.jpg">
+
+            </div>
+        </div>
+
+
+        <div class="book">
+            <div class="text-div">
+                <h2>致命的蘋果</h2>
+            </div>
+
+            <div class="image-div">
+                <img src="https://children.moc.gov.tw/resource/book_image/217133.jpg">
+            </div>
+
+        </div>
+
+
+        <div class="book">
+            <div class="text-div">
+                <h2>蘋果的引力-牛頓</h2>
+            </div>
+
+            <div class="image-div">
+                <img src="https://children.moc.gov.tw/resource/book_image/217317.jpg">
+            </div>
+        </div>
+
+
+        <div class="book">
+            <div class="text-div">
+                <h2>蘋果纖維</h2>
+            </div>
+
+            <div class="image-div">
+                <img src="https://children.moc.gov.tw/resource/book_image/217849.jpg">
+            </div>
+        </div>
+
+        <div class="book">
+            <div class="text-div">
+                <h2>蘋果甜蜜蜜</h2>
+            </div>
+
+            <div class="image-div">
+                <img src="https://children.moc.gov.tw/resource/book_image/218424.jpg">
+            </div>
+
+        </div>
+    </div>
+    <div id="disrecommend_bookdropdown">總書目</div>
+    <div class="booklist" id="disrecommend_book" style="background-color:cyan; display: block; margin-top:0px">
+
+    </div>
     <!-- </div> -->
 
 
@@ -176,6 +265,37 @@
     </script>
 
     <script>
+        document.getElementById("recommend_bookdropdown").addEventListener("click", () => {
+            var click = document.querySelector("#recommend_book")
+            if (click.style.display === "block")
+                click.style.display = "none"
+            else {
+                click.style.display = "block"
+            }
+        })
+
+        document.getElementById("disrecommend_bookdropdown").addEventListener("click", () => {
+            var click = document.querySelector("#disrecommend_book")
+            if (click.style.display === "block")
+                click.style.display = "none"
+            else {
+                click.style.display = "block"
+            }
+        })
+
+        document.getElementById("learn_bookdropdown").addEventListener("click", () => {
+            var click = document.querySelector("#learn_book")
+            if (click.style.display === "block")
+                click.style.display = "none"
+            else {
+                click.style.display = "block"
+            }
+        })
+    </script>
+
+    <script>
+        let puppeteer = require('puppeteer');
+
         function OpenDataList() {
             const dataurl = "https://children.moc.gov.tw/opendata/2";
             const request = new XMLHttpRequest();
@@ -201,9 +321,27 @@
             for (let i = 1; i < jsons.length; i++) {
                 let imgurl = 'https://children.moc.gov.tw/resource/animate_image/' + imgurltemp + '.jpg';
 
+                let bookDropdown = document.createElement("div");
+
+
                 let bookdiv = document.createElement("div");
                 bookdiv.className = 'book';
+                bookdiv.onclick  = function () {
+                    (async () => {
+                        const browser = await puppeteer.launch({
+                            executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
+                            headless: false
+                        });
+                        const page = await browser.newPage();
+                        await page.goto(jsons[i]['url']);
+                        // videos = await page.$$eval('video', video => video);
+                        // console.log(videos);
+                        // await document.querySelector("#main").append(videos);
+                        // await browser.close();
+                    })();
+                }
 
+                console.log(bookdiv.onclick);
                 let book_textdiv = document.createElement("div");
                 book_textdiv.className = 'text-div'
 
@@ -280,6 +418,8 @@
             return imgurltemp;
         }
     </script>
+
+
 </body>
 
 </html>

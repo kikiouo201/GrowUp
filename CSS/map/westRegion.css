@@ -1,155 +1,176 @@
-
-body{
+body {
     display: flex;
     width: 100%;
     height: 100%;
     justify-content: center;
     align-items: center;
 }
-.map{
+
+.map {
     text-align: center;
     position: relative;
 }
-.terrain{
-  height: 600px;
-  margin-top: 10px;
-  position: relative;
-  z-index: 1;
+
+.terrain {
+    height: 600px;
+    margin-top: 10px;
+    position: relative;
+    z-index: 1;
 }
-.level1{
+
+.level1 {
     width: 100px;
     position: absolute;
     z-index: 10;
     top: 616px;
     left: 373px;
 }
-.level1_text{
+
+.level1_text {
     width: 50px;
     position: absolute;
     z-index: 10;
     top: 656px;
     left: 393px;
 }
-.level2{
+
+.level2 {
     width: 100px;
     position: absolute;
     z-index: 10;
     top: 500px;
     left: 216px;
 }
-.level2_text{
+
+.level2_text {
     width: 50px;
     position: absolute;
     z-index: 10;
     top: 540px;
     left: 236px;
 }
-.level3{
+
+.level3 {
     width: 100px;
     position: absolute;
     z-index: 10;
     top: 415px;
     left: 72px;
 }
-.level3_text{
+
+.level3_text {
     width: 50px;
     position: absolute;
     z-index: 10;
     top: 455px;
     left: 92px;
 }
-.level4{
+
+.level4 {
     width: 100px;
     position: absolute;
     z-index: 10;
     top: 224px;
     left: 63px;
 }
-.level4_text{
+
+.level4_text {
     width: 50px;
     position: absolute;
     z-index: 10;
     top: 264px;
     left: 83px;
 }
-.level5{
+
+.level5 {
     width: 100px;
     position: absolute;
     z-index: 10;
     top: 155px;
     left: 228px;
 }
-.level5_text{
+
+.level5_text {
     width: 50px;
     position: absolute;
     z-index: 10;
     top: 195px;
     left: 248px;
 }
-.level6{
+
+.level6 {
     width: 100px;
     position: absolute;
     z-index: 10;
     top: 66px;
     left: 390px;
 }
-.level6_text{
+
+.level6_text {
     width: 50px;
     position: absolute;
     z-index: 10;
     top: 106px;
     left: 410px;
 }
-.level7{
+
+.level7 {
     width: 100px;
     position: absolute;
     z-index: 10;
     top: 137px;
     left: 534px;
 }
-.level7_text{
+
+.level7_text {
     width: 50px;
     position: absolute;
     z-index: 10;
     top: 177px;
     left: 554px;
 }
-.level8{
+
+.level8 {
     width: 100px;
     position: absolute;
     z-index: 10;
     top: 290px;
     left: 468px;
 }
-.level8_text{
+
+.level8_text {
     width: 50px;
     position: absolute;
     z-index: 10;
     top: 330px;
     left: 488px;
 }
-.level9{
+
+.level9 {
     width: 100px;
     position: absolute;
     z-index: 10;
     top: 456px;
     left: 427px;
 }
-.level9_text{
+
+.level9_text {
     width: 50px;
     position: absolute;
     z-index: 10;
     top: 496px;
     left: 447px;
 }
-.level10{
+
+.level10 {
     width: 100px;
     position: absolute;
     z-index: 10;
     top: 300px;
     left: 328px;
 }
-.level10_text{
+
+.level10_text {
     width: 50px;
     position: absolute;
     z-index: 10;
@@ -157,14 +178,14 @@ body{
     left: 348px;
 }
 
-.taiwan{
-width: 150px;
-height: 150px;
-position: absolute;
-top: 0px;
-left: 0px;
-border-bottom: 5px solid black;
-border-right: 5px solid black;
-border-radius:0px 0px 40px 0px ;
-background: url('../../image/background/sea1.png');
+.taiwan {
+    width: auto;
+    height: 160px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border-bottom: 0px solid black;
+    border-right: 0px solid black;
+    border-radius: 0px 0px 40px 0px;
+    background: url('../../image/background/sea1.png');
 }
