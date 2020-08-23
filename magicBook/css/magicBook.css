@@ -96,7 +96,8 @@ body {
   background-size: cover;
   transform-origin: 0 50%;
   transition: all 0.3s ease;
-  box-shadow: 6px 3px 7px 2px #3d3d3d;
+  box-shadow: 5px 3px 7px 2px #3d3d3d;
+  /* box-shadow:inset 5px 6px 7px 2px #3d3d3d; */
 
 }
 
