@@ -29,75 +29,83 @@ body {
     margin-left: 22px;
 }
 
-.panda {
+.South_American_Coati {
     position: absolute;
-    top: 101px;
-    left: 198px;
-    width: 86px;
+    top: 98px;
+    left: 109px;
+    width: 52px;
 }
 
-.penguin {
+.Ring_tailed_Lemur {
     position: absolute;
-    top: 244px;
-    left: 61px;
+    top: 96.5px;
+    left: 167px;
+    width: 92px;
+}
+
+.White_handed_Gibbon {
+    position: absolute;
+    top: 123px;
+    left: 230px;
+    width: 92px;
+}
+
+.Black_and_white_ruffed_Lemur {
+    position: absolute;
+    top: 106px;
+    left: 325px;
     width: 80px;
 }
 
-.camel {
+.Kinkajou {
     position: absolute;
-    top: 99px;
-    left: 418px;
-    width: 122px;
+    top: 134px;
+    left: 393px;
+    width: 58px;
 }
 
-.elephant {
+.Brown_Lemur {
     position: absolute;
-    top: 220px;
-    left: 320px;
-    width: 102px;
+    top: 126px;
+    left: 472px;
+    width: 78px;
 }
 
-.lion {
+.Alpaca {
     position: absolute;
-    top: 337px;
-    left: 398px;
-    width: 95px;
+    top: 199px;
+    left: 605px;
+    width: 72px;
 }
 
-.leopard {
+.Greater_Flamingo {
     position: absolute;
-    top: 299px;
-    left: 305px;
-    width: 98px;
+    top: 209px;
+    left: 125px;
+    width: 79px;
 }
 
-.bear {
+.Donkey {
     position: absolute;
-    top: 155px;
-    left: 577px;
-    width: 65px;
+    top: 243px;
+    left: 353px;
+    width: 90px;
 }
 
-.spoonbill {
+.Pony {
     position: absolute;
-    top: 245px;
-    left: 641px;
-    width: 88px;
+    top: 290px;
+    left: 357px;
+    width: 123px;
 }
 
-.parrot {
+.Chinchilla {
     position: absolute;
-    top: 373px;
-    left: 492px;
-    width: 65px;
+    top: 303px;
+    left: 509px;
+    width: 85px;
 }
 
-.gorilla {
-    position: absolute;
-    top: 318px;
-    left: 586px;
-    width: 61px;
-}
 
 #explain_page {
     position: absolute;
