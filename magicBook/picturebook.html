@@ -9,6 +9,25 @@
     <link rel="stylesheet" href="../CSS/every_four_button.css">
     <link rel="stylesheet" href="./css/picturebook.css">
     <title>Document</title>
+
+    <script>
+        const puppeteers = require('puppeteer');
+        // var videos = document.createElement('video');
+        function web(web) {
+            (async () => {
+                const browser = await puppeteers.launch({
+                    executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
+                    headless: false
+                });
+                const page = await browser.newPage();
+                await page.goto(web);
+                // videos = await page.$$eval('video', video => video);
+                // console.log(videos);
+                // await document.querySelector("#main").append(videos);
+                // await browser.close();
+            })();
+        }
+    </script>
 </head>
 <!-- onload="ShowTime()" -->
 
@@ -26,7 +45,7 @@
     <div id="learn_bookdropdown">學習相關推薦</div>
     <div class="booklist" id="learn_book" style="background-color: cadetblue; display: block;">
         <!-- <button style="position: absolute;" onclick="OpenDataList()">try try see</button> -->
-        <div class="book" onclick="document.location.href='./picturebook_index.html'">
+        <div class="book" onclick='web("https:\/\/children.moc.gov.tw/book/215552")'>
             <div class="text-div">
                 <h2>環遊世界做蘋果派</h2>
             </div>
@@ -36,7 +55,7 @@
 
         </div>
 
-        <div class="book">
+        <div class="book" onclick='web("https:\/\/children.moc.gov.tw/book/216245")'>
             <div class="text-div">
                 <h2>送你一顆蘋果</h2>
             </div>
@@ -48,7 +67,7 @@
         </div>
 
 
-        <div class="book">
+        <div class="book" onclick='web("https:\/\/children.moc.gov.tw/book/217133")'>
             <div class="text-div">
                 <h2>致命的蘋果</h2>
             </div>
@@ -60,7 +79,7 @@
         </div>
 
 
-        <div class="book">
+        <div class="book" onclick='web("https:\/\/children.moc.gov.tw/book/217317")'>
             <div class="text-div">
                 <h2>蘋果的引力-牛頓</h2>
             </div>
@@ -71,7 +90,7 @@
         </div>
 
 
-        <div class="book">
+        <div class="book" onclick='web("https:\/\/children.moc.gov.tw/book/217849")'>
             <div class="text-div">
                 <h2>蘋果纖維</h2>
             </div>
@@ -81,7 +100,7 @@
             </div>
         </div>
 
-        <div class="book">
+        <div class="book" onclick='web("https:\/\/children.moc.gov.tw/book/218424")'>
             <div class="text-div">
                 <h2>蘋果甜蜜蜜</h2>
             </div>
@@ -400,25 +419,7 @@
         }
     </script>
 
-    <!-- <script>
-        const puppeteer = require('puppeteer');
-        let log
-        // var videos = document.createElement('video');
-        function web(web) {
-            (async () => {
-                const browser = await puppeteer.launch({
-                    executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
-                    headless: false
-                });
-                const page = await browser.newPage();
-                await page.goto(web);
-                // videos = await page.$$eval('video', video => video);
-                // console.log(videos);
-                // await document.querySelector("#main").append(videos);
-                await browser.close();
-            })();
-        }
-    </script> -->
+
 </body>
 
 </html>
