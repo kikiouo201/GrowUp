@@ -1,13 +1,21 @@
 // 'use strict';
-const { app, BrowserWindow, ipcMain } = require('electron')
+const {
+    app,
+    BrowserWindow,
+    ipcMain
+} = require('electron')
 const path = require('path');
 const url = require('url');
 const appCallPython = require('./app-call-python-child-process')
 const callVis = require('./vision')
-const { StillCamera } = require("pi-camera-connect");
+const {
+    StillCamera
+} = require("pi-camera-connect");
 const fs = require('fs');
 const equals = require('equals');
-const { type } = require('process');
+const {
+    type
+} = require('process');
 const utf8 = require('utf8');
 var explainJSON = require('./magicBook/json/explain.json')
 const api = require('./node/model/api');
@@ -15,6 +23,7 @@ const request = require('request')
 const cheerio = require('cheerio')
 const encoding = require('encoding');
 const iconv = require('iconv-lite');
+const puppeteers = require('puppeteer');
 // const api = require('./model/api');  //伺服器測試暫關
 
 // let {PythonShell} = require('python-shell')
@@ -120,7 +129,7 @@ ipcMain.on('voice-require-to-py', (event, arg) => {
             console.log("Q=" + result.q)
             console.log("A=" + result.a)
             console.log("url=" + result.url)
-                // console.log("QN="+result.QName)
+            // console.log("QN="+result.QName)
             var x = result.a.toString().trim()
             console.log(typeof x + typeof result.a.toString())
             console.log("Testing Log => " + result.a.toString() + "\r\nTest2=>" + x)
@@ -163,7 +172,7 @@ ipcMain.on('vision', (event, args) => {
     event.sender.send('reply-visionready')
 })
 
-ipcMain.on('vision-start', async(event, args) => {
+ipcMain.on('vision-start', async (event, args) => {
     let array = await callVis.start();
 
     //array.forEach(label => console.log("vis="+label.description));
@@ -175,39 +184,38 @@ ipcMain.on('vision-start', async(event, args) => {
 ipcMain.on('crawler', (event, args) => {
     // let webcrawler = await callCrawler.webcrawler();
     //  console.log(`webcrawler=${webcrawler}`)
-    
 
-    if(explainJSON[0][args]==undefined){
+
+    if (explainJSON[0][args] == undefined) {
         const data = encodeURI(args)
         console.log(data)
         const url = 'https://www.moedict.tw/' + data + '#gsc.tab=0'
-    
+
         console.log(url)
         request(url, (err, res, body) => {
-    
-                if (!err && res.statusCode == 200) {
-                    const $ = cheerio.load(body);
-                    let def = $('.def')
-                    output = def.find('a').text()
-                }
-                //console.log(output);
-                event.sender.send('reply-webcrawlerfunction', output);
-                console.log(output);
-    
-            })
-    }
-    else{
+
+            if (!err && res.statusCode == 200) {
+                const $ = cheerio.load(body);
+                let def = $('.def')
+                output = def.find('a').text()
+            }
+            //console.log(output);
+            event.sender.send('reply-webcrawlerfunction', output);
+            console.log(output);
+
+        })
+    } else {
         event.sender.send('reply-webcrawlerfunction', explainJSON[0][args]);
     }
-    
 
-    
+
+
     //  event.sender.send('reply-webcrawlerfunction',webcrawler);
 
 })
 
 
-ipcMain.on('captrue', async(event, args) => {
+ipcMain.on('captrue', async (event, args) => {
 
     console.log("call captrue");
     const stillCamera = new StillCamera();
@@ -225,7 +233,7 @@ ipcMain.on('captrue', async(event, args) => {
 // });
 
 //addQA
-ipcMain.on('getApi-addQuiz', async(event, args) => {
+ipcMain.on('getApi-addQuiz', async (event, args) => {
     api.Question.addQuiz(5, (req) => {
         // console.log("addQuiz=" + JSON.stringify(event));
         const data = JSON.parse(JSON.stringify(req));
@@ -240,6 +248,30 @@ ipcMain.on('getApi-addQuiz', async(event, args) => {
 
 })
 
+ipcMain.on('pictureWeb', async (event, args) => {
+    console.log('readyMain');
+
+    const browser = await puppeteers.launch({
+        executablePath: '/usr/share/applications/chromium-browser.desktop',
+        headless: false
+    });
+    const page = await browser.newPage();
+    await page.goto(args);
+    // videos = await page.$$eval('video', video => video);
+    // page.waitFor(10000);
+    // const btn = await page.waitForSelector('fp-fullscreen');
+    // await btn.click(); // doesn't work
+    // await page.$eval('.fp-ui', elem => elem.click());
+    await page.click('.fp-fullscreen');
+    await page.click('.fp-ui', {
+        delay: 2000
+    });
+
+    // await page.$eval('.fp-ui', elem => elem.click());
+
+    // console.log(videos);
+    // await browser.close();
+})
 // ipcMain.on('callbookJSON-request',async (event,args)=>{
 //     console.log("callbookJSON-request")
 //     event.sender.send('bookJSON-response',bookJSON)
