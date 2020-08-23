@@ -16,14 +16,24 @@
         function web(web) {
             (async () => {
                 const browser = await puppeteers.launch({
-                    executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
+                    // executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
                     headless: false
                 });
                 const page = await browser.newPage();
                 await page.goto(web);
                 // videos = await page.$$eval('video', video => video);
+                // page.waitFor(10000);
+                // const btn = await page.waitForSelector('fp-fullscreen');
+                // await btn.click(); // doesn't work
+                // await page.$eval('.fp-ui', elem => elem.click());
+                await page.click('.fp-fullscreen');
+                await page.click('.fp-ui', {
+                    delay: 2000
+                });
+
+                // await page.$eval('.fp-ui', elem => elem.click());
+
                 // console.log(videos);
-                // await document.querySelector("#main").append(videos);
                 // await browser.close();
             })();
         }
@@ -326,7 +336,7 @@
 
                 let bookdiv = document.createElement("div");
                 bookdiv.className = 'book';
-                bookdiv.onclick  = function () {
+                bookdiv.onclick = function () {
                     (async () => {
                         const browser = await puppeteer.launch({
                             executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
@@ -334,14 +344,15 @@
                         });
                         const page = await browser.newPage();
                         await page.goto(jsons[i]['url']);
-                        // videos = await page.$$eval('video', video => video);
-                        // console.log(videos);
-                        // await document.querySelector("#main").append(videos);
-                        // await browser.close();
+                        await page.click('.fp-fullscreen');
+                        await page.click('.fp-ui', {
+                            delay: 2000
+                        });
                     })();
+
                 }
 
-                console.log(bookdiv.onclick);
+                // console.log(bookdiv.onclick);
                 let book_textdiv = document.createElement("div");
                 book_textdiv.className = 'text-div'
 
