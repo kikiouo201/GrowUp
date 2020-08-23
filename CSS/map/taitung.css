@@ -6,10 +6,18 @@ body{
     justify-content: center;
     align-items: center;
   }
+  .features {
+    background-color: aliceblue;
+    width: 320px;
+    height: 400px;
+    margin-top: 30px;
+}
   .map{
     text-align: center;
     position: relative;
     height: 700px;
+    top: 100px;
+    right: -40px;
   }
   .terrain{
     width: 240px;

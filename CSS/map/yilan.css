@@ -10,6 +10,9 @@ body{
   text-align: center;
   position: relative;
   height: 700px;
+  right: -25px;
+  margin-top: 10px;
+
 }
 .terrain{
   width: 350px;

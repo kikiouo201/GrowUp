@@ -9,6 +9,8 @@ body{
 .map{
     text-align: center;
     position: relative;
+    top: 76px;
+    right: -20px;
 }
 .terrain{
     width: 350px;

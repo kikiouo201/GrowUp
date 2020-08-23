@@ -10,14 +10,15 @@ body{
   text-align: center;
   position: relative;
   height: 700px;
-  right: -40px;
+  right: -30px;
+  top: 50px;
 }
 .terrain{
   width: 325px;
   position: relative;
   top: 20px;
   z-index: 1;
-  margin-right: -45px;
+ 
 }
 
 .level1{

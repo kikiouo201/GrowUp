@@ -6,73 +6,84 @@ body{
     justify-content: center;
     align-items: center;
 }
+
+.features {
+    
+    background-color: aliceblue;
+    width: 320px;
+    height: 400px;
+    margin-top: 50px;
+}
+
+
 .map{
     text-align: center;
     position: relative;
     height: 700px;
+    top: 50px;
+    right: -25px;
 }
 .terrain{
-    width: 700px;
-  position: relative;
-  top: 70px;
-  z-index: 1;
+    width: 362px;
+    position: relative;
+    top: -92px;
+    z-index: 1;
 }
 
 .level1{
     width: 75px;
     position: absolute;
     z-index: 10;
-    top: 136px;
-    left: 290px;
+    top: -59px;
+    left: 132px;
 }
 .level{
-    width: 70px;
-
+    width: 38px;
 }
 .level_text{
     width: 78px;
     position: absolute;
     z-index: 10;
-    top: 34px;
-    left: 32%;
+    top: -4px;
+    left: 20%;
 }
 
 .level2{
     width: 100px;
     position: absolute;
     z-index: 10;
-    top: 225px;
-    left: 46px;
+    top: -13px;
+    left: 1px;
 }
 .level3{
     width: 100px;
     position: absolute;
     z-index: 10;
-    top: 341px;
-    left: 164px;
+    top: 46px;
+    left: 64px;
 }
 
 .level4{
     width: 100px;
     position: absolute;
     z-index: 10;
-    top: 527px;
-    left: 228px;
+    top: 143px;
+    left: 94px;
 }
 
 .level5{
     width: 100px;
     position: absolute;
     z-index: 10;
-    top: 302px;
-    left: 340px;
+    top: 27px;
+    left: 152px;
 }
 
 .level6{
-    width: 78px;
+    width: 38px;
     position: absolute;
     z-index: 10;
-    top: 300px;
-    left: 588px;
+    top: 27px;
+    left: 306px;
 }
 
