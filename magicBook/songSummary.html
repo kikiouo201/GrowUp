@@ -11,7 +11,7 @@
     <title>Document</title>
 </head>
 
-<body style="width: 100%; height: 100%;" background="../image/background/desk.png" onload="ShowTime()">
+<body style="width: 100%; height: 100%;" background="../image/background/desk.png" onload="ShowTime();onload()">
     <div class="home_page">
         <a href="../game_home.html">魔法寶典</a>
 
@@ -22,7 +22,7 @@
 
     <div id="show_page">
       <div id="song_page">
-       <iframe width="560" height="315" src="https://www.youtube.com/embed/rshE1d2RrPg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe id="song" width="560" height="315" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
         
     </div>
@@ -51,7 +51,7 @@
     </div> -->
 
     <div class="return_mark">
-        <a href="./childsong.html"  class="returnfloat" id="menu-share">
+        <a href="./childsong.html" class="returnfloat" id="menu-share">
             <i class="fab fa-share return-float"><img src="../photo/return.png"></i>
         </a>
     </div>
@@ -61,6 +61,9 @@
             <i class="fab fa-share my-float"><img src="../photo/gobackhome.png" width="70%"></i>
         </a>
     </div>
+
+    <script src="./js/songSummary.js"></script>
+
     <script language="JavaScript">
         function ShowTime() {
 
