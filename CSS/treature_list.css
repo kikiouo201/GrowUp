@@ -21,12 +21,13 @@ body {
 
 nav {
     height: auto;
-    width: 52px;
+    width: 47px;
+    /* 52px */
     /* background-color: burlywood; */
     /* margin-top: 135px; */
     position: absolute;
     top: 83px;
-    right: 340px;
+    right: 343px;
     border-radius: 25px 5px 5px 25px;
 }
 
@@ -34,7 +35,7 @@ ul {
     list-style-type: none;
     padding: 8% 4%;
     margin: 4px 0;
-    background-color: burlywood;
+    background-color: #79371a;
     border-radius: 16px 0px 0px 16px;
     padding-right: 0px;
 }
