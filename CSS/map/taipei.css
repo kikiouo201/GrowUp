@@ -12,10 +12,11 @@ body{
   height: 700px;
 }
 .terrain{
-  width: 700px;
-position: relative;
-top: 70px;
-z-index: 1;
+  width: 325px;
+  position: relative;
+  top: 20px;
+  z-index: 1;
+  margin-right: -45px;
 }
 
 .level1{
