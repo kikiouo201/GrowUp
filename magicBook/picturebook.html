@@ -11,32 +11,21 @@
     <title>Document</title>
 
     <script>
-        const puppeteers = require('puppeteer');
-        // var videos = document.createElement('video');
-        function web(web) {
-            (async () => {
-                const browser = await puppeteers.launch({
-                    // executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
-                    headless: false
-                });
-                const page = await browser.newPage();
-                await page.goto(web);
-                // videos = await page.$$eval('video', video => video);
-                // page.waitFor(10000);
-                // const btn = await page.waitForSelector('fp-fullscreen');
-                // await btn.click(); // doesn't work
-                // await page.$eval('.fp-ui', elem => elem.click());
-                await page.click('.fp-fullscreen');
-                await page.click('.fp-ui', {
-                    delay: 2000
-                });
+        // let {
+        //     ipcRenderer
+        // } = require('electron');
+        // // var videos = document.createElement('video');
+        // function web(web) {
+        //     ipcRenderer.send('pictureWeb');
+        //     console.log('ready');
 
-                // await page.$eval('.fp-ui', elem => elem.click());
+        // }
+        // let identifyBtn = document.querySelector('#trybtn');
+        // identifyBtn.addEventListener('click', () => {
+        //     ipcRenderer.send('pictureWeb');
+        //     console.log('ready2');
 
-                // console.log(videos);
-                // await browser.close();
-            })();
-        }
+        // });
     </script>
 </head>
 <!-- onload="ShowTime()" -->
@@ -55,7 +44,8 @@
     <div id="recommend_bookdropdown">家長推薦</div>
     <div class="booklist" id="learn_book" style="background-color: rgb(224, 99, 27); display: block;">
         <!-- <button style="position: absolute;" onclick="OpenDataList()">try try see</button> -->
-        <div class="book" onclick='web("https:\/\/children.moc.gov.tw/book/215552")'>
+        <!-- id="trybtn"   -->
+        <div class="book" onclick='GoWeb("https:\/\/children.moc.gov.tw/book/215552")'>
             <div class="text-div">
                 <h2>環遊世界做蘋果派</h2>
             </div>
@@ -65,7 +55,8 @@
 
         </div>
 
-        <div class="book" onclick='web("https:\/\/children.moc.gov.tw/book/216245")'>
+       
+        <div class="book" onclick='GoWeb("https:\/\/children.moc.gov.tw/book/216245")'>
             <div class="text-div">
                 <h2>送你一顆蘋果</h2>
             </div>
@@ -77,7 +68,7 @@
         </div>
 
 
-        <div class="book" onclick='web("https:\/\/children.moc.gov.tw/book/217133")'>
+        <div class="book" onclick='GoWeb("https:\/\/children.moc.gov.tw/book/217133")'>
             <div class="text-div">
                 <h2>致命的蘋果</h2>
             </div>
@@ -89,7 +80,7 @@
         </div>
 
 
-        <div class="book" onclick='web("https:\/\/children.moc.gov.tw/book/217317")'>
+        <div class="book" onclick='GoWeb("https:\/\/children.moc.gov.tw/book/217317")'>
             <div class="text-div">
                 <h2>蘋果的引力-牛頓</h2>
             </div>
@@ -100,7 +91,7 @@
         </div>
 
 
-        <div class="book" onclick='web("https:\/\/children.moc.gov.tw/book/217849")'>
+        <div class="book" onclick='GoWeb("https:\/\/children.moc.gov.tw/book/217849")'>
             <div class="text-div">
                 <h2>蘋果纖維</h2>
             </div>
@@ -110,7 +101,7 @@
             </div>
         </div>
 
-        <div class="book" onclick='web("https:\/\/children.moc.gov.tw/book/218424")'>
+        <div class="book" onclick='GoWeb("https:\/\/children.moc.gov.tw/book/218424")'>
             <div class="text-div">
                 <h2>蘋果甜蜜蜜</h2>
             </div>
@@ -145,19 +136,6 @@
             </div>
         </div>
 
-
-        <div class="book">
-            <div class="text-div">
-                <h2>致命的蘋果</h2>
-            </div>
-
-            <div class="image-div">
-                <img src="https://children.moc.gov.tw/resource/book_image/217133.jpg">
-            </div>
-
-        </div>
-
-
         <div class="book">
             <div class="text-div">
                 <h2>蘋果的引力-牛頓</h2>
@@ -165,17 +143,6 @@
 
             <div class="image-div">
                 <img src="https://children.moc.gov.tw/resource/book_image/217317.jpg">
-            </div>
-        </div>
-
-
-        <div class="book">
-            <div class="text-div">
-                <h2>蘋果纖維</h2>
-            </div>
-
-            <div class="image-div">
-                <img src="https://children.moc.gov.tw/resource/book_image/217849.jpg">
             </div>
         </div>
 
@@ -336,21 +303,24 @@
 
                 let bookdiv = document.createElement("div");
                 bookdiv.className = 'book';
-                bookdiv.onclick = function () {
-                    (async () => {
-                        const browser = await puppeteer.launch({
-                            executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
-                            headless: false
-                        });
-                        const page = await browser.newPage();
-                        await page.goto(jsons[i]['url']);
-                        await page.click('.fp-fullscreen');
-                        await page.click('.fp-ui', {
-                            delay: 2000
-                        });
-                    })();
-
+                bookdiv.onclick = function(){
+                    GoWeb(jsons[i]['url']);
                 }
+                // function () {                   
+                //     (async () => {
+                //         const browser = await puppeteer.launch({
+                //             executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
+                //             headless: false
+                //         });
+                //         const page = await browser.newPage();
+                //         await page.goto(jsons[i]['url']);
+                //         await page.click('.fp-fullscreen');
+                //         await page.click('.fp-ui', {
+                //             delay: 2000
+                //         });
+                //     })();
+
+                // }
 
                 // console.log(bookdiv.onclick);
                 let book_textdiv = document.createElement("div");
@@ -429,7 +399,10 @@
             return imgurltemp;
         }
     </script>
+    <script src="./js/picturebook.js"></script>
+<script>
 
+</script>
 
 </body>
 
