@@ -209,20 +209,20 @@ function moveFinger(){
    
     
     
-    setTimeout("document.querySelector('.finger"+id+"').className = 'moveFinger"+id+"1';", 500);
-    setTimeout("document.querySelector('.moveFinger"+id+"1').className = 'moveFinger"+id+"2';", 1500);
-    setTimeout("document.querySelector('.moveFinger"+id+"2').className = 'moveFinger"+id+"3';", 3500);
+    setTimeout("document.querySelector('.finger"+id+"').className = 'moveFinger"+id+"1';", 1500);
+    setTimeout("document.querySelector('.moveFinger"+id+"1').className = 'moveFinger"+id+"2';", 2500);
+    setTimeout("document.querySelector('.moveFinger"+id+"2').className = 'moveFinger"+id+"3';", 3600);
     if(id==4){
-       setTimeout("document.querySelector('.moveFinger"+id+"2').style.visibility='hidden';", 2000);
-       setTimeout("document.querySelector('.moveFinger"+id+"3').style.visibility='visible';", 4700);
+       setTimeout("document.querySelector('.moveFinger"+id+"1').style.visibility='hidden';", 2480);
+       setTimeout("document.querySelector('.moveFinger"+id+"3').style.visibility='visible';", 4800);
     }
-    setTimeout("document.querySelector('.moveFinger"+id+"3').className = 'moveFinger"+id+"4';", 5000);
-    setTimeout("document.querySelector('.moveFinger"+id+"4').className = 'moveFinger"+id+"5';", 6000);
-    setTimeout("document.querySelector('.moveFinger"+id+"5').className = 'moveFinger"+id+"6';", 6300);
-    setTimeout("document.querySelector('.moveFinger"+id+"6').className = 'moveFinger"+id+"7';", 7000);
-    setTimeout("document.querySelector('.moveFinger"+id+"7').className = 'moveFinger"+id+"8';", 8300);
-    setTimeout("document.querySelector('.moveFinger"+id+"8').className = 'finger"+id+"';", 9500);
-    setTimeout("document.querySelector('.finger"+id+"').style.visibility='hidden';", 9550);
+    setTimeout("document.querySelector('.moveFinger"+id+"3').className = 'moveFinger"+id+"4';", 4900);
+    setTimeout("document.querySelector('.moveFinger"+id+"4').className = 'moveFinger"+id+"5';", 6100);
+    setTimeout("document.querySelector('.moveFinger"+id+"5').className = 'moveFinger"+id+"6';", 7500);
+    setTimeout("document.querySelector('.moveFinger"+id+"6').className = 'moveFinger"+id+"7';", 9000);
+    setTimeout("document.querySelector('.moveFinger"+id+"7').className = 'moveFinger"+id+"8';", 11000);
+    setTimeout("document.querySelector('.moveFinger"+id+"8').className = 'finger"+id+"';", 12000);
+    setTimeout("document.querySelector('.finger"+id+"').style.visibility='hidden';", 12050);
 
 
 }
