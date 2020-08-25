@@ -157,7 +157,6 @@
     z-index: 10;
     animation-delay: 1s;
 }
-
 .moveFinger44 {
     width: 50px;
     height: 100px;
@@ -165,11 +164,11 @@
     transition: all 1.5s ease-out;
     transform: rotate(300deg);
     position: absolute;
-    top: 25px;
+    top: -110px;
     left: -125px;
     z-index: 10;
+    animation-delay: 1s;
 }
-
 .moveFinger45 {
     width: 50px;
     height: 100px;
@@ -207,6 +206,18 @@
 }
 
 .moveFinger48 {
+    width: 50px;
+    height: 100px;
+    transform: scale(4);
+    transition: all 1.5s ease-out;
+    transform: rotate(300deg);
+    position: absolute;
+    top: 25px;
+    left: -125px;
+    z-index: 10;
+}
+
+.moveFinger49 {
     width: 50px;
     height: 100px;
     transform: scale(4);

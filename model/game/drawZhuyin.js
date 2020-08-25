@@ -212,6 +212,10 @@ function moveFinger(){
     setTimeout("document.querySelector('.finger"+id+"').className = 'moveFinger"+id+"1';", 500);
     setTimeout("document.querySelector('.moveFinger"+id+"1').className = 'moveFinger"+id+"2';", 1500);
     setTimeout("document.querySelector('.moveFinger"+id+"2').className = 'moveFinger"+id+"3';", 3500);
+    if(id==4){
+       setTimeout("document.querySelector('.moveFinger"+id+"2').style.visibility='hidden';", 2000);
+       setTimeout("document.querySelector('.moveFinger"+id+"3').style.visibility='visible';", 4700);
+    }
     setTimeout("document.querySelector('.moveFinger"+id+"3').className = 'moveFinger"+id+"4';", 5000);
     setTimeout("document.querySelector('.moveFinger"+id+"4').className = 'moveFinger"+id+"5';", 6000);
     setTimeout("document.querySelector('.moveFinger"+id+"5').className = 'moveFinger"+id+"6';", 6300);
