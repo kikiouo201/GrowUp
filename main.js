@@ -24,6 +24,13 @@ const cheerio = require('cheerio')
 const encoding = require('encoding');
 const iconv = require('iconv-lite');
 const puppeteers = require('puppeteer');
+
+// STT
+// const callSTT = require('./TTS_API_test')
+var player = require('play-sound')(opts = {})
+    // const fs = require('fs');
+    // const util = require('util');
+
 // const api = require('./model/api');  //伺服器測試暫關
 
 // let {PythonShell} = require('python-shell')
@@ -129,7 +136,7 @@ ipcMain.on('voice-require-to-py', (event, arg) => {
             console.log("Q=" + result.q)
             console.log("A=" + result.a)
             console.log("url=" + result.url)
-            // console.log("QN="+result.QName)
+                // console.log("QN="+result.QName)
             var x = result.a.toString().trim()
             console.log(typeof x + typeof result.a.toString())
             console.log("Testing Log => " + result.a.toString() + "\r\nTest2=>" + x)
@@ -172,7 +179,7 @@ ipcMain.on('vision', (event, args) => {
     event.sender.send('reply-visionready')
 })
 
-ipcMain.on('vision-start', async (event, args) => {
+ipcMain.on('vision-start', async(event, args) => {
     let array = await callVis.start();
 
     //array.forEach(label => console.log("vis="+label.description));
@@ -215,7 +222,7 @@ ipcMain.on('crawler', (event, args) => {
 })
 
 
-ipcMain.on('captrue', async (event, args) => {
+ipcMain.on('captrue', async(event, args) => {
 
     console.log("call captrue");
     const stillCamera = new StillCamera();
@@ -233,7 +240,7 @@ ipcMain.on('captrue', async (event, args) => {
 // });
 
 //addQA
-ipcMain.on('getApi-addQuiz', async (event, args) => {
+ipcMain.on('getApi-addQuiz', async(event, args) => {
     api.Question.addQuiz(5, (req) => {
         // console.log("addQuiz=" + JSON.stringify(event));
         const data = JSON.parse(JSON.stringify(req));
@@ -248,51 +255,51 @@ ipcMain.on('getApi-addQuiz', async (event, args) => {
 
 })
 
-ipcMain.on('pictureWeb', async (event, args) => {
-    console.log('readyMain');
+ipcMain.on('pictureWeb', async(event, args) => {
+        console.log('readyMain');
 
-    const browser = await puppeteers.launch({
-        executablePath: '/usr/bin/chromium-browser',
-        args: ['--disable-infobars','--no-default-browser-check','--start-fullscreen','--start-maximized'/*,'--no-startup-window'*/],
-        ignoreDefaultArgs: ['--enable-automation'],
-        headless: false
-    });
-    const page = await browser.newPage();
-    let currentScreen = await page.evaluate(() => {
-        return {
-            width: window.screen.availWidth,
-            height: window.screen.availHeight,
-        };
-    });
-    //設定預設網頁頁面大小
-    await page.setViewport(currentScreen);
-    await page.goto(args);
-    await page.evaluate(() => {
-        document.querySelector('.fp-fullscreen').click();
-        setTimeout(() => {
-            document.querySelector('.fp-ui').click()
-        }, 2000);
-    });
-    // videos = await page.$$eval('video', video => video);
-    // page.waitFor(10000);
-    // const btn = await page.waitForSelector('fp-fullscreen');
-    // await btn.click(); // doesn't work
-    // await page.$eval('.fp-ui', elem => elem.click());
+        const browser = await puppeteers.launch({
+            executablePath: '/usr/bin/chromium-browser',
+            args: ['--disable-infobars', '--no-default-browser-check', '--start-fullscreen', '--start-maximized' /*,'--no-startup-window'*/ ],
+            ignoreDefaultArgs: ['--enable-automation'],
+            headless: false
+        });
+        const page = await browser.newPage();
+        let currentScreen = await page.evaluate(() => {
+            return {
+                width: window.screen.availWidth,
+                height: window.screen.availHeight,
+            };
+        });
+        //設定預設網頁頁面大小
+        await page.setViewport(currentScreen);
+        await page.goto(args);
+        await page.evaluate(() => {
+            document.querySelector('.fp-fullscreen').click();
+            setTimeout(() => {
+                document.querySelector('.fp-ui').click()
+            }, 2000);
+        });
+        // videos = await page.$$eval('video', video => video);
+        // page.waitFor(10000);
+        // const btn = await page.waitForSelector('fp-fullscreen');
+        // await btn.click(); // doesn't work
+        // await page.$eval('.fp-ui', elem => elem.click());
 
-    // await page.click('.fp-fullscreen');
-    // await page.click('.fp-ui', {
-    //     delay: 2000
-    // });
+        // await page.click('.fp-fullscreen');
+        // await page.click('.fp-ui', {
+        //     delay: 2000
+        // });
 
-    // await page.$eval('.fp-ui', elem => elem.click());
+        // await page.$eval('.fp-ui', elem => elem.click());
 
-    // console.log(videos);
-    // await browser.close();
-})
-// ipcMain.on('callbookJSON-request',async (event,args)=>{
-//     console.log("callbookJSON-request")
-//     event.sender.send('bookJSON-response',bookJSON)
-// })
+        // console.log(videos);
+        // await browser.close();
+    })
+    // ipcMain.on('callbookJSON-request',async (event,args)=>{
+    //     console.log("callbookJSON-request")
+    //     event.sender.send('bookJSON-response',bookJSON)
+    // })
 
 
 
