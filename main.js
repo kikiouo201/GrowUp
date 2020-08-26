@@ -39,7 +39,7 @@ function createWindow() {
     // 创建浏览器窗口。
     win = new BrowserWindow({
         icon: path.join(__dirname, 'icons/raspberry_icon.png'),
-        fullscreen: true,
+        fullscreen: false,
         webSecurity: false,
         webPreferences: {
             nodeIntegration: true, //如果出bug改回true看看
