@@ -15,16 +15,37 @@
 
         function Nooo(web) {
             (async () => {
-                const browser = await puppeteer.launch({
+                let browser = await puppeteer.launch({
                     executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
+                    // args: ['--start-fullscreen'],
                     headless: false
                 });
                 const page = await browser.newPage();
                 await page.goto(web);
-                await page.click('.fp-fullscreen');
-                await page.click('.fp-ui', {
-                    delay: 2000
+                await page.evaluate(() => {
+                    // document.querySelector('.fp-fullscreen').click();
+                    // setTimeout(() => {
+                    //     document.querySelector('.fp-ui').click()
+                    // }, 2000);
                 });
+                const bodyInnerHTML2 = await page.$eval('.fp-ui', dom => dom);
+                console.log(bodyInnerHTML2);
+
+                bodyInnerHTML2.onclick =function(){ 
+                    console.log("AAAAAAAAA");
+                    browser.close();
+                }
+                await page.evaluate(() => {
+                    console.log(this);
+
+                    // document.querySelector('.fp-fullscreen').click();
+                    // setTimeout(() => {
+                    //     document.querySelector('.fp-ui').click()
+                    // }, 2000);
+                });
+
+
+
             })();
         }
     </script>
@@ -46,7 +67,7 @@
     <div class="booklist" id="learn_book" style="background-color: rgb(224, 99, 27); display: block;">
         <!-- <button style="position: absolute;" onclick="OpenDataList()">try try see</button> -->
         <!-- id="trybtn"   -->
-        <div class="book" onclick='GoWeb("https:\/\/children.moc.gov.tw/book/215552")'>
+        <div class="book" onclick='Nooo("https:\/\/children.moc.gov.tw/book/215552")'>
             <div class="text-div">
                 <h2>環遊世界做蘋果派</h2>
             </div>

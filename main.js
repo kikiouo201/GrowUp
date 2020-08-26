@@ -253,7 +253,7 @@ ipcMain.on('pictureWeb', async (event, args) => {
 
     const browser = await puppeteers.launch({
         executablePath: '/usr/bin/chromium-browser',
-        args: ['--disable-infobars',"--no-default-browser-check",'--start-maximized'/*,'--no-startup-window'*/],
+        args: ['--disable-infobars','--no-default-browser-check','--start-fullscreen','--start-maximized'/*,'--no-startup-window'*/],
         ignoreDefaultArgs: ['--enable-automation'],
         headless: false
     });
@@ -267,16 +267,18 @@ ipcMain.on('pictureWeb', async (event, args) => {
     //設定預設網頁頁面大小
     await page.setViewport(currentScreen);
     await page.goto(args);
+    await page.evaluate(() => {
+        document.querySelector('.fp-fullscreen').click();
+        setTimeout(() => {
+            document.querySelector('.fp-ui').click()
+        }, 2000);
+    });
     // videos = await page.$$eval('video', video => video);
     // page.waitFor(10000);
     // const btn = await page.waitForSelector('fp-fullscreen');
     // await btn.click(); // doesn't work
     // await page.$eval('.fp-ui', elem => elem.click());
-    await page.evaluate(() => {
-        document.querySelector('.fp-fullscreen').click();
-        document.querySelector('.fp-ui').click();
 
-    });
     // await page.click('.fp-fullscreen');
     // await page.click('.fp-ui', {
     //     delay: 2000
