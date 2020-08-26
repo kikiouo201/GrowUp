@@ -9,6 +9,20 @@ function mouseDown(index) {
         console.log("click =? " + index.children[0].alt)
         SSU.text = index.children[0].alt;
         var SSTtext = index.children[0].alt;
+        if (SSTtext.toString().trim() == '寶物清單') {
+            console.log("寶物清單OK")
+            player.play('./TTS/mp3/treatureList.mp3', function(err) {
+                if (err) throw err
+            })
+        }
+        if (SSTtext.toString().trim() == '魔法寶典') {
+            console.log("魔法寶典OK")
+                // player.play('output.mp3', function(err) {
+                //     if (err) throw err
+                // })
+        } else {
+            console.log("NO")
+        }
         toggle();
 
 
