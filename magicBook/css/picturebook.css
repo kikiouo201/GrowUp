@@ -113,7 +113,7 @@ body::-webkit-scrollbar {
   width: 95%;
   height: auto;
   margin-left: 1%;
-  margin-top: 1%;
+  margin-top: 6%;
   font-size: 18pt;
   padding: 10px;
   border: 3px solid black;
@@ -139,7 +139,7 @@ body::-webkit-scrollbar {
   margin-top: 5.2%;
   margin-left: 1%;
   font-size: 18pt;
-  margin-top: 5.2%;
+  margin-top: 3.2%;
   padding: 10px;
   border: 3px solid black;
   background-color: burlywood;
