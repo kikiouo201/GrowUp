@@ -11,21 +11,43 @@
     <title>Document</title>
 
     <script>
-        // let {
-        //     ipcRenderer
-        // } = require('electron');
-        // // var videos = document.createElement('video');
-        // function web(web) {
-        //     ipcRenderer.send('pictureWeb');
-        //     console.log('ready');
+        const puppeteerss = require('puppeteer');
 
-        // }
-        // let identifyBtn = document.querySelector('#trybtn');
-        // identifyBtn.addEventListener('click', () => {
-        //     ipcRenderer.send('pictureWeb');
-        //     console.log('ready2');
+        function Nooo(web) {
+            (async () => {
+                let browser = await puppeteer.launch({
+                    executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
+                    // args: ['--start-fullscreen'],
+                    headless: false
+                });
+                const page = await browser.newPage();
+                await page.goto(web);
+                await page.evaluate(() => {
+                    // document.querySelector('.fp-fullscreen').click();
+                    // setTimeout(() => {
+                    //     document.querySelector('.fp-ui').click()
+                    // }, 2000);
+                });
+                const bodyInnerHTML2 = await page.$eval('.fp-ui', dom => dom);
+                console.log(bodyInnerHTML2);
 
-        // });
+                bodyInnerHTML2.onclick =function(){ 
+                    console.log("AAAAAAAAA");
+                    browser.close();
+                }
+                await page.evaluate(() => {
+                    console.log(this);
+
+                    // document.querySelector('.fp-fullscreen').click();
+                    // setTimeout(() => {
+                    //     document.querySelector('.fp-ui').click()
+                    // }, 2000);
+                });
+
+
+
+            })();
+        }
     </script>
 </head>
 <!-- onload="ShowTime()" -->
@@ -45,7 +67,7 @@
     <div class="booklist" id="learn_book" style="background-color: rgb(224, 99, 27); display: block;">
         <!-- <button style="position: absolute;" onclick="OpenDataList()">try try see</button> -->
         <!-- id="trybtn"   -->
-        <div class="book" onclick='GoWeb("https:\/\/children.moc.gov.tw/book/215552")'>
+        <div class="book" onclick='Nooo("https:\/\/children.moc.gov.tw/book/215552")'>
             <div class="text-div">
                 <h2>環遊世界做蘋果派</h2>
             </div>
@@ -55,7 +77,7 @@
 
         </div>
 
-       
+
         <div class="book" onclick='GoWeb("https:\/\/children.moc.gov.tw/book/216245")'>
             <div class="text-div">
                 <h2>送你一顆蘋果</h2>
@@ -303,7 +325,7 @@
 
                 let bookdiv = document.createElement("div");
                 bookdiv.className = 'book';
-                bookdiv.onclick = function(){
+                bookdiv.onclick = function () {
                     GoWeb(jsons[i]['url']);
                 }
                 // function () {                   
@@ -400,9 +422,9 @@
         }
     </script>
     <script src="./js/picturebook.js"></script>
-<script>
+    <script>
 
-</script>
+    </script>
 
 </body>
 

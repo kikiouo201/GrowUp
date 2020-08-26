@@ -74,16 +74,22 @@ body {
   top: 40%;
 }
 
-
+#stream{
+  display: block;
+  margin-top: 8%;
+  margin-left: 25%;
+  border-style: solid;
+  border: 5px black;
+}
 
 img#AnsImg {
-  visibility: hidden;
+  display: none;
   position: absolute;
   border-style: double;
   padding: 5px;
   border-width: 10px;
   top: 26%;
-  left: 5%;
+  left: 3%;
 }
 
 #show_page::-webkit-scrollbar {
@@ -93,7 +99,7 @@ img#AnsImg {
 #show_page {
   position: absolute;
   top: 0;
-  left: 22%;
+  left: 20%;
   z-index: 1;
   width: 100%;
   height: calc(100% - 62px);
@@ -258,7 +264,7 @@ img#AnsImg {
   margin:0px 20% 60px 20%;
   padding-top: 80px;
   text-align:center;
-  visibility: hidden;
+  display: none;
 }
 
 

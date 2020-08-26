@@ -1,0 +1,454 @@
+
+/* 4 */
+.finger4 {
+    visibility: visible;
+    width: 50px;
+    height: 100px;
+    transform: rotate(300deg);
+    position: absolute;
+    top: -110px;
+    left: -145px;
+    z-index: 30;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+}
+.moveFinger41 {
+    width: 50px;
+    height: 100px;
+    transform: scale(4);
+    transition: all 1s ease-out;
+    transform: rotate(300deg);
+    position: absolute;
+    top: -10px;
+    left: -200px;
+    z-index: 10;
+    animation-delay: 1s;
+}
+
+.moveFinger42 {
+    width: 50px;
+    height: 100px;
+    transform: scale(4);
+    transition: all 1.5s ease-out;
+    transform: rotate(300deg);
+    position: absolute;
+    top: -10px;
+    left: -100px;
+    z-index: 10;
+    animation-delay: 1s;
+}
+
+.moveFinger43 {
+    width: 50px;
+    height: 100px;
+    transform: scale(4);
+    transition: all 1.5s ease-out;
+    transform: rotate(300deg);
+    position: absolute;
+    top: -110px;
+    left: -125px;
+    z-index: 10;
+    animation-delay: 1s;
+}
+.moveFinger44 {
+    width: 50px;
+    height: 100px;
+    transform: scale(4);
+    transition: all 1.5s ease-out;
+    transform: rotate(300deg);
+    position: absolute;
+    top: -110px;
+    left: -125px;
+    z-index: 10;
+    animation-delay: 1s;
+}
+.moveFinger45 {
+    width: 50px;
+    height: 100px;
+    transform: scale(4);
+    transition: all 1.5s ease-out;
+    transform: rotate(300deg);
+    position: absolute;
+    top: 25px;
+    left: -125px;
+    z-index: 10;
+}
+
+.moveFinger46 {
+    width: 50px;
+    height: 100px;
+    transform: scale(4);
+    transition: all 1.5s ease-out;
+    transform: rotate(300deg);
+    position: absolute;
+    top: 25px;
+    left: -125px;
+    z-index: 10;
+}
+
+.moveFinger47 {
+    width: 50px;
+    height: 100px;
+    transform: scale(4);
+    transition: all 1.5s ease-out;
+    transform: rotate(300deg);
+    position: absolute;
+    top: 25px;
+    left: -125px;
+    z-index: 10;
+}
+
+.moveFinger48 {
+    width: 50px;
+    height: 100px;
+    transform: scale(4);
+    transition: all 1.5s ease-out;
+    transform: rotate(300deg);
+    position: absolute;
+    top: 25px;
+    left: -125px;
+    z-index: 10;
+}
+
+.moveFinger49 {
+    width: 50px;
+    height: 100px;
+    transform: scale(4);
+    transition: all 1.5s ease-out;
+    transform: rotate(300deg);
+    position: absolute;
+    top: 25px;
+    left: -125px;
+    z-index: 10;
+}
+/* num 5 */
+.finger5 {
+    visibility: visible;
+    width: 50px;
+    height: 100px;
+    transform: rotate(300deg);
+    position: absolute;
+    top: -100px;
+    left: -115px;
+    z-index: 30;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+}
+.moveFinger51 {
+    width: 50px;
+    height: 100px;
+    transform: scale(4);
+    transition: all 1s ease-out;
+    transform: rotate(300deg);
+    position: absolute;
+    top: -100px;
+    left: -170px;
+    z-index: 10;
+    animation-delay: 1s;
+}
+
+.moveFinger52 {
+    width: 50px;
+    height: 100px;
+    transform: scale(4);
+    transition: all 1.5s ease-out;
+    transform: rotate(300deg);
+    position: absolute;
+    top: -100px;
+    left: -170px;
+    z-index: 10;
+    animation-delay: 1s;
+}
+
+.moveFinger53 {
+    width: 50px;
+    height: 100px;
+    transform: scale(4);
+    transition: all 1.5s ease-out;
+    transform: rotate(300deg);
+    position: absolute;
+    top: -45px;
+    left: -170px;
+    z-index: 10;
+    animation-delay: 1s;
+}
+.moveFinger54 {
+    width: 50px;
+    height: 100px;
+    transform: scale(4);
+    transition: all 1.5s ease-out;
+    transform: rotate(300deg);
+    position: absolute;
+    top: -45px;
+    left: -130px;
+    z-index: 10;
+    animation-delay: 1s;
+}
+.moveFinger55 {
+    width: 50px;
+    height: 100px;
+    transform: scale(4);
+    transition: all 1.5s ease-out;
+    transform: rotate(300deg);
+    position: absolute;
+    top: -15px;
+    left: -110px;
+    z-index: 10;
+}
+
+.moveFinger56 {
+    width: 50px;
+    height: 100px;
+    transform: scale(4);
+    transition: all 1.5s ease-out;
+    transform: rotate(300deg);
+    position: absolute;
+    top: 20px;
+    left: -145px;
+    z-index: 10;
+}
+
+.moveFinger57 {
+    width: 50px;
+    height: 100px;
+    transform: scale(4);
+    transition: all 1.5s ease-out;
+    transform: rotate(300deg);
+    position: absolute;
+    top: 14px;
+    left: -180px;
+    z-index: 10;
+}
+
+.moveFinger58 {
+    width: 50px;
+    height: 100px;
+    transform: scale(4);
+    transition: all 1.5s ease-out;
+    transform: rotate(300deg);
+    position: absolute;
+    top: 14px;
+    left: -180px;
+    z-index: 10;
+}
+
+/* num 6 */
+
+.finger6 {
+    visibility: visible;
+    width: 50px;
+    height: 100px;
+    transform: rotate(300deg);
+    position: absolute;
+    top: -100px;
+    left: -115px;
+    z-index: 30;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+}
+.moveFinger61 {
+    width: 50px;
+    height: 100px;
+    transform: scale(4);
+    transition: all 1s ease-out;
+    transform: rotate(300deg);
+    position: absolute;
+    top: -95px;
+    left: -155px;
+    z-index: 10;
+    animation-delay: 1s;
+}
+
+.moveFinger62 {
+    width: 50px;
+    height: 100px;
+    transform: scale(4);
+    transition: all 1.5s ease-out;
+    transform: rotate(300deg);
+    position: absolute;
+    top: -45px;
+    left: -175px;
+    z-index: 10;
+    animation-delay: 1s;
+}
+
+.moveFinger63 {
+    width: 50px;
+    height: 100px;
+    transform: scale(4);
+    transition: all 1.5s ease-out;
+    transform: rotate(300deg);
+    position: absolute;
+    top: 5px;
+    left: -165px;
+    z-index: 10;
+    animation-delay: 1s;
+}
+.moveFinger64 {
+    width: 50px;
+    height: 100px;
+    transform: scale(4);
+    transition: all 1.5s ease-out;
+    transform: rotate(300deg);
+    position: absolute;
+    top: 20px;
+    left: -135px;
+    z-index: 10;
+    animation-delay: 1s;
+}
+.moveFinger65 {
+    width: 50px;
+    height: 100px;
+    transform: scale(4);
+    transition: all 1.5s ease-out;
+    transform: rotate(300deg);
+    position: absolute;
+    top: -10px;
+    left: -105px;
+    z-index: 10;
+}
+
+.moveFinger66 {
+    width: 50px;
+    height: 100px;
+    transform: scale(4);
+    transition: all 1.5s ease-out;
+    transform: rotate(300deg);
+    position: absolute;
+    top: -45px;
+    left: -125px;
+    z-index: 10;
+}
+
+.moveFinger67 {
+    width: 50px;
+    height: 100px;
+    transform: scale(4);
+    transition: all 1.5s ease-out;
+    transform: rotate(300deg);
+    position: absolute;
+    top: -40px;
+    left: -160px;
+    z-index: 10;
+}
+
+.moveFinger68 {
+    width: 50px;
+    height: 100px;
+    transform: scale(4);
+    transition: all 1.5s ease-out;
+    transform: rotate(300deg);
+    position: absolute;
+    top: -40px;
+    left: -160px;
+    z-index: 10;
+}
+
+
+/* num 7 */
+
+.finger7 {
+    visibility: visible;
+    width: 50px;
+    height: 100px;
+    transform: rotate(300deg);
+    position: absolute;
+    top: -100px;
+    left: -180px;
+    z-index: 30;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+}
+.moveFinger71 {
+    width: 50px;
+    height: 100px;
+    transform: scale(4);
+    transition: all 1s ease-out;
+    transform: rotate(300deg);
+    position: absolute;
+    top: -100px;
+    left: -140px;
+    z-index: 10;
+    animation-delay: 1s;
+}
+
+.moveFinger72 {
+    width: 50px;
+    height: 100px;
+    transform: scale(4);
+    transition: all 1.5s ease-out;
+    transform: rotate(300deg);
+    position: absolute;
+    top: -100px;
+    left: -105px;
+    z-index: 10;
+    animation-delay: 1s;
+}
+
+.moveFinger73 {
+    width: 50px;
+    height: 100px;
+    transform: scale(4);
+    transition: all 1.5s ease-out;
+    transform: rotate(300deg);
+    position: absolute;
+    top: -100px;
+    left: -105px;
+    z-index: 10;
+    animation-delay: 1s;
+}
+.moveFinger74 {
+    width: 50px;
+    height: 100px;
+    transform: scale(4);
+    transition: all 1.5s ease-out;
+    transform: rotate(300deg);
+    position: absolute;
+    top: -40px;
+    left: -125px;
+    z-index: 10;
+    animation-delay: 1s;
+}
+.moveFinger75 {
+    width: 50px;
+    height: 100px;
+    transform: scale(4);
+    transition: all 1.5s ease-out;
+    transform: rotate(300deg);
+    position: absolute;
+    top: 20px;
+    left: -155px;
+    z-index: 10;
+}
+
+.moveFinger76 {
+    width: 50px;
+    height: 100px;
+    transform: scale(4);
+    transition: all 1.5s ease-out;
+    transform: rotate(300deg);
+    position: absolute;
+    top: 20px;
+    left: -155px;
+    z-index: 10;
+}
+
+.moveFinger77 {
+    width: 50px;
+    height: 100px;
+    transform: scale(4);
+    transition: all 1.5s ease-out;
+    transform: rotate(300deg);
+    position: absolute;
+    top: 20px;
+    left: -155px;
+    z-index: 10;
+}
+
+.moveFinger78 {
+    width: 50px;
+    height: 100px;
+    transform: scale(4);
+    transition: all 1.5s ease-out;
+    transform: rotate(300deg);
+    position: absolute;
+    top: 20px;
+    left: -155px;
+    z-index: 10;
+}

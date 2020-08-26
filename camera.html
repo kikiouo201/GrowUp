@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html style="width: 100%; height: 100%;">
+<html style="width: auto; height: auto;">
 
 <head>
     <meta charset="BIG-5">
@@ -19,7 +19,7 @@
 
 </head>
 
-<body style="width: 100%; height: 100%;" background="photo/background.png" onload="ShowTime()">
+<body style="width: auto; height: auto;" background="photo/background.png" onload="ShowTime()">
 
 
 
@@ -47,9 +47,11 @@
             setTimeout('ShowTime()', 1000);
         }
     </script>
-
+    <div style="text-align: center;">
+         <img id="stream" src="http://172.20.10.2:8080/?action=stream" style="width: 400px; height: 300px; ">
+    </div>
     <div>
-        <img id="AnsImg" src="./still-image.jpg" style="width: 300px; height: 300px; ">
+        <img id="AnsImg" src="" style="width: 300px; height: 300px; ">
     </div>
     <div id="show_page">
         <div class="QA_card_area" id="QA_card">
@@ -88,8 +90,8 @@
         請先拍下你想知道的事物</h2>
       <!-- <img src="https://image.flaticon.com/icons/svg/2368/2368264.svg" style="height: 80%; width: 80px;"> -->
       <!-- <h5 style="font-family: Microsoft JhengHei; margin-top: 0px;">開始問問題!</h5> -->
-      <span  class="mh1 voice-btn w3-btn w3-ripple" style="width: auto; height: 50px; margin-top: 2px;"  onclick="changecss()">
-        <img  src="./photo/camera.png"style="height: 80%; width: 50px; margin-top: 5px; cursor: pointer; ">
+      <span  class="mh1 voice-btn w3-btn w3-ripple" style="width: auto; height: 50px; margin-top: 2px;" >
+        <img  src="./photo/camera.png"style="height: 80%; width: 50px; margin-top: 5px; cursor: pointer; " onclick="changecss()">
         <!-- <h5 style="font-family: Microsoft JhengHei; margin-top: 0px;">開始問問題!</h5> -->
       </span>
         </span>
@@ -183,8 +185,19 @@
         function changecss(){
             var ShowVisibility = document.querySelector('.QA_card_area');
             var ImgVisibility = document.querySelector('img#AnsImg');
-            ShowVisibility.style.visibility = "visible";
-            ImgVisibility.style.visibility = "visible";
+            var stream = document.querySelector('#stream');
+            if(stream.style.display=="block"){
+                ImgVisibility.src = "./still-image.jpg"
+                stream.style.display="none";
+                ShowVisibility.style.display = "block";
+                ImgVisibility.style.display = "block";
+            }else{
+                stream.src = "http://172.20.10.2:8080/?action=stream"
+                stream.style.display="block";
+                ShowVisibility.style.display = "none";
+                ImgVisibility.style.display = "none";
+            }
+
         }
     </script>
     <script src="./render.js"></script>
