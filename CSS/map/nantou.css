@@ -1,165 +1,182 @@
-
-body{
+body {
     display: flex;
     width: 100%;
     height: 100%;
     justify-content: center;
     align-items: center;
 }
-.map{
+
+.map {
     text-align: center;
     position: relative;
-    top: 76px;
-    right: -20px;
+    top: 10px;
+    right: -9px;
 }
-.terrain{
+
+.terrain {
     width: 350px;
     position: relative;
-    top: -85px;
+    /* top: -85px; */
     z-index: 1;
     margin-right: -45px;
 }
-.level1{
+
+.level1 {
     width: 48px;
     position: absolute;
     z-index: 10;
-    top: 229px;
+    top: 316px;
     left: 182px;
 }
-.level1_text{
+
+.level1_text {
     width: 50px;
     position: absolute;
     z-index: 10;
-    top: 237px;
+    top: 324px;
     left: 182px;
 }
-.level2{
+
+.level2 {
     width: 48px;
     position: absolute;
     z-index: 10;
-    top: 169px;
+    top: 256px;
     left: 109px;
 }
-.level2_text{
+
+.level2_text {
     width: 50px;
     position: absolute;
     z-index: 10;
-    top: 177px;
+    top: 264px;
     left: 109px;
 }
-.level3{
+
+.level3 {
     width: 48px;
     position: absolute;
     z-index: 10;
-    top: 123px;
+    top: 210px;
     left: 37px;
 }
-.level3_text{
+
+.level3_text {
     width: 54px;
     position: absolute;
     z-index: 10;
-    top: 132px;
+    top: 219px;
     left: 34px;
 }
-.level4{
+
+.level4 {
     width: 48px;
     position: absolute;
     z-index: 10;
-    top: 29px;
+    top: 116px;
     left: 35px;
 }
-.level4_text{
+
+.level4_text {
     width: 54px;
     position: absolute;
     z-index: 10;
-    top: 37px;
+    top: 124px;
     left: 35px;
 }
-.level5{
+
+.level5 {
     width: 48px;
     position: absolute;
     z-index: 10;
-    top: -7px;
+    top: 78px;
     left: 121px;
 }
-.level5_text{
+
+.level5_text {
     width: 50px;
     position: absolute;
     z-index: 10;
-    top: 1px;
+    top: 88px;
     left: 121px;
 }
-.level6{
+
+.level6 {
     width: 48px;
     position: absolute;
     z-index: 10;
-    top: -50px;
+    top: 35px;
     left: 199px;
 }
-.level6_text{
+
+.level6_text {
     width: 50px;
     position: absolute;
     z-index: 10;
-    top: -43px;
+    top: 44px;
     left: 199px;
 }
-.level7{
+
+.level7 {
     width: 48px;
     position: absolute;
     z-index: 10;
-    top: -18px;
+    top: 67px;
     left: 272px;
-
 }
-.level7_text{
+
+.level7_text {
     width: 50px;
     position: absolute;
     z-index: 10;
-    top: -9px;
+    top: 78px;
     left: 272px;
+}
 
-}
-.level8{
+.level8 {
     width: 48px;
     position: absolute;
     z-index: 10;
-    top: 65px;
+    top: 150px;
     left: 244px;
 }
-.level8_text{
-    width: 50px;
-    position: absolute;
-    z-index: 10;
-    top: 73px;
-    left: 244px;
-}
-.level9{
-    width: 48px;
-    position: absolute;
-    z-index: 10;
-    top: 151px;
-    left: 209px;
-}
-.level9_text{
+
+.level8_text {
     width: 50px;
     position: absolute;
     z-index: 10;
     top: 160px;
-    left: 209px;
+    left: 244px;
 }
-.level10{
-    width: 45px;
+
+.level9 {
+    width: 48px;
     position: absolute;
     z-index: 10;
-    top: 72px;
-    left: 166px;
-
+    top: 237px;
+    left: 209px;
 }
-.level10_text{
+
+.level9_text {
     width: 50px;
     position: absolute;
     z-index: 10;
-    top: 340px;
-    left: 348px;
+    top: 247px;
+    left: 209px;
 }
 
+.level10 {
+    width: 45px;
+    position: absolute;
+    z-index: 10;
+    top: 159px;
+    left: 166px;
+}
+
+.level10_text {
+    width: 50px;
+    position: absolute;
+    z-index: 10;
+    top: 427px;
+    left: 348px;
+}

@@ -1,5 +1,4 @@
 .features {
-    
     background-color: aliceblue;
     width: 320px;
     height: 400px;
@@ -18,11 +17,20 @@ table,
 td {
     border-collapse: collapse;
     opacity: 0.9;
+    /* width: 40px; */
+    text-align: center;
+}
+
+table,
+a {
+    width: 75px;
 }
 
 td {
-    padding: 10px;
+    padding: 4px;
     border: 4px dashed black;
+    /* width: 40px; */
+    text-align: center;
 }
 
 .taiwan {
@@ -30,7 +38,7 @@ td {
     height: 160px;
     position: absolute;
     top: 30px;
-    left: 14px;
+    left: 8px;
     /* border-bottom: 5px solid black; */
     /* border-right: 5px solid black; */
     border-radius: 20px 20px 20px 20px;
