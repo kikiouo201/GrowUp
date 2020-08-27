@@ -428,27 +428,3 @@
     left: -155px;
     z-index: 10;
 }
-
-.moveFinger77 {
-    width: 50px;
-    height: 100px;
-    transform: scale(4);
-    transition: all 1.5s ease-out;
-    transform: rotate(300deg);
-    position: absolute;
-    top: 20px;
-    left: -155px;
-    z-index: 10;
-}
-
-.moveFinger78 {
-    width: 50px;
-    height: 100px;
-    transform: scale(4);
-    transition: all 1.5s ease-out;
-    transform: rotate(300deg);
-    position: absolute;
-    top: 20px;
-    left: -155px;
-    z-index: 10;
-}
