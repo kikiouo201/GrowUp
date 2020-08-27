@@ -1,4 +1,5 @@
 const SSU = new SpeechSynthesisUtterance();
+var player = require('play-sound')(opts = {})
 
 function mouseDown(index) {
     if (index) {
