@@ -1,4 +1,5 @@
 const SSU = new SpeechSynthesisUtterance();
+let { ipcRenderer } = require('electron');
 var player = require('play-sound')(opts = {})
 
 function mouseDown(index) {
@@ -26,12 +27,14 @@ function mouseDownText(text) {
     console.log("text =? " + text)
     SSU.text = text;
     toggle();
-    // if (text.toString().trim() == 'ㄅ') {
-    console.log("ㄅ")
-    var audio = player.play('../../TTS/mp3/bpm/b.mp3', function(err) {
-        if (err) throw err
-    })
-    audio.kill()
+    ipcRenderer.send('callSTT-start');
+    console.log("call main STT")
+        // if (text.toString().trim() == 'ㄅ') {
+        // console.log("ㄅ")
+        // var audio = player.play('../../TTS/mp3/bpm/b.mp3', function(err) {
+        //     if (err) throw err
+        // })
+        // audio.kill()
         // }
 
 }

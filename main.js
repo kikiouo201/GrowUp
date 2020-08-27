@@ -314,3 +314,20 @@ ipcMain.on('pictureWeb', async(event, args) => {
 //     });
 
 // })
+
+
+ipcMain.on('callSTT-start', async(event, args) => {
+    // let STTtext = await callSTT.quickStart();
+    if (event.text.toString().trim() == 'ㄅ') {
+        console.log("ㄅ")
+        var audio = player.play('./TTS/mp3/bpm/b.mp3', function(err) {
+            if (err) throw err;
+            console.log("Audio finished");
+        })
+        audio.kill()
+    }
+    console.log("success call STT-API =) " + event.text.toString())
+        //array.forEach(label => console.log("vis="+label.description));
+        // event.sender.send('reply-mainjsfunction', array)
+
+})
