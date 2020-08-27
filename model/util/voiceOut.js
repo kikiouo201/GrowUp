@@ -12,9 +12,11 @@ function mouseDown(index) {
 
         if (md_index.toString().trim() == 'ㄅ') {
             console.log("ㄅ")
-            player.play('../../TTS/mp3/bpm/b.mp3', function(err) {
+
+            var audio = player.play('../../TTS/mp3/bpm/b.mp3', function(err) {
                 if (err) throw err
             })
+            audio.kill()
         }
     }
 }
