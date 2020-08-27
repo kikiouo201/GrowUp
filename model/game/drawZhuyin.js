@@ -1,5 +1,4 @@
 
-
 let isDrawing = false;
 let x = 0;
 let y = 0;
@@ -143,8 +142,6 @@ function onload() {
  
 }
 
-
-
 function moveFinger(){
     let finger;
     try {
@@ -155,19 +152,27 @@ function moveFinger(){
         finger=document.querySelector('.finger'+id);
         finger.style.visibility="visible";
     }
+    let drawTime = {b:[1500,2500,3600,4900,6100,7500,9000,10000,11000,12500,13500,14500,15500,16500]
+        ,4:[1500,2500,3600,4900,6100,7500,9000,10000,11000,12500,13500,14500,15500,16500]
+        ,5:[1500,2500,3600,4900,6100,7500,9000,10000,11000,12500,13500,14500,15500,16500]
+        ,6:[1500,2500,3600,4900,6100,7500,9000,10000,11000,12500,13500,14500,15500,16500]
+        ,7:[1500,2500,3600,4900,6100,7500,9000,10000,11000,12500,13500,14500,15500,16500]
+        ,8:[1500,2500,3500,4500,5500,6500,8000,9000,10000,11000,12000,12000,14000,14500,15500]
+        ,9:[1500,2500,3500,4500,5500,6500,7500,8500,9500,10500,11500,12500,13500,14500,15500]
+        ,f1:[1500,2500,3600,4900,6100,7500,9000,10000,11000,12500,13500,14500,15500,16500]}
    
-   
-    let drawTime = [1500,2500,3600,4900,6100,7500,9000,10000,11000,12500];
-    let strokeNumber = {b:8,4:8,5:8,6:8,7:6,f1:8}
-        setTimeout("document.querySelector('.finger"+id+"').className = 'moveFinger"+id+"1';", drawTime[0]);
+    let strokeNumber = {b:8,
+        4:8,5:8,6:8,7:6,8:13,9:12,
+        f1:8}
+        setTimeout("document.querySelector('.finger"+id+"').className = 'moveFinger"+id+"1';", drawTime[id][0]);
         console.log(`strokeNumber[id]=${strokeNumber[id]}`);
         for(let i=1; i<strokeNumber[id];i++){
-            setTimeout("document.querySelector('.moveFinger"+id+i+"').className = 'moveFinger"+id+(i+1)+"';", drawTime[i]);
+            setTimeout("document.querySelector('.moveFinger"+id+i+"').className = 'moveFinger"+id+(i+1)+"';", drawTime[id][i]);
             console.log(`moveFinger"+id+(i+1)+=${id+(i+1)}`);
         }
-        setTimeout("document.querySelector('.moveFinger"+id+(strokeNumber[id])+"').className = 'finger"+id+"';", drawTime[strokeNumber[id]+1]);
+        setTimeout("document.querySelector('.moveFinger"+id+(strokeNumber[id])+"').className = 'finger"+id+"';", drawTime[id][strokeNumber[id]+1]);
         console.log(`drawTime[strokeNumber[id]+1]=${drawTime[strokeNumber[id]+1]}`)
-        setTimeout("document.querySelector('.finger"+id+"').style.visibility='hidden';", (drawTime[strokeNumber[id]+1]+20));
+        setTimeout("document.querySelector('.finger"+id+"').style.visibility='hidden';", (drawTime[id][strokeNumber[id]+1]+20));
 
         if(id==4){
            setTimeout("document.querySelector('.moveFinger"+id+"1').style.visibility='hidden';", 2480);
