@@ -27,7 +27,7 @@ function mouseDownText(text) {
     console.log("text =? " + text)
     SSU.text = text;
     toggle();
-    ipcRenderer.send('callSTT-start');
+    ipcRenderer.send('callSTT-start', text);
     console.log("call main STT")
         // if (text.toString().trim() == 'ㄅ') {
         // console.log("ㄅ")
