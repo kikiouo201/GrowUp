@@ -6,7 +6,15 @@ function mouseDown(index) {
         console.log("index = " + index)
         console.log("click =? " + index.innerHTML)
         SSU.text = index.children[0].alt;
+        var md_index = index.children[0].alt;
         toggle();
+
+        if (md_index.toString().trim() == 'ㄅ') {
+            console.log("ㄅ")
+            player.play('../../TTS/mp3/bpm/b.mp3', function(err) {
+                if (err) throw err
+            })
+        }
     }
 }
 
@@ -17,7 +25,7 @@ function mouseDownText(text) {
     toggle();
     if (text.toString().trim() == 'ㄅ') {
         console.log("ㄅ")
-        player.play('./TTS/mp3/bpm/b.mp3', function(err) {
+        player.play('../../TTS/mp3/bpm/b.mp3', function(err) {
             if (err) throw err
         })
     }
