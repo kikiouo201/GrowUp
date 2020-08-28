@@ -72,10 +72,10 @@
                 </div>
                 <div class="card-header contentCss" id="QA_num_" style="background-color: #f8f9fa24; height: auto">
                     <p class="contentlink">相關繪本連結：</p>
-                    <p class="book_css">畢老師的蘋果</p>
-                    <img src="https://children.moc.gov.tw/resource/book_image/215293.jpg" style="margin-left: 25%; padding: 10px;" width="180" height="153" alt="蘋果甜蜜蜜">
+                    <p class="book_css">環遊世界做蘋果派</p>
+                    <img src="https://children.moc.gov.tw/resource/animate_image/6850.jpg" style="margin-left: 25%; padding: 10px;" width="180" height="153" alt="蘋果甜蜜蜜">
                     <p style="display: inline-block; margin-left: 20px; margin-right: 40px; font-size: 18pt;">
-                        赫普村是個小村莊，在赫普村裡畢老師向棒球隊的小選手們說恭喜，恭喜他們打了一場漂亮的棒球賽。</p>
+                       做蘋果派一點也不難，只要到市場買齊材料，混合一下，烤一烤，就可以上桌了。可是市場關門了，買不到材料的小女孩該怎麼辦？沒問題，回家打包行李，搭輪船、坐火車、乘飛機，周遊世界尋找烤派的材料吧。</p>
                 </div>
                
 
@@ -90,8 +90,8 @@
         請先拍下你想知道的事物</h2>
       <!-- <img src="https://image.flaticon.com/icons/svg/2368/2368264.svg" style="height: 80%; width: 80px;"> -->
       <!-- <h5 style="font-family: Microsoft JhengHei; margin-top: 0px;">開始問問題!</h5> -->
-      <span  class="mh1 voice-btn w3-btn w3-ripple" style="width: auto; height: 50px; margin-top: 2px;" >
-        <img  src="./photo/camera.png"style="height: 80%; width: 50px; margin-top: 5px; cursor: pointer; " onclick="changecss()">
+      <span id="identify-js"  class="mh1 voice-btn w3-btn w3-ripple" style="width: auto; height: 50px; margin-top: 2px;" >
+        <img id="identify-js"  src="./photo/camera.png"style="height: 80%; width: 50px; margin-top: 5px; cursor: pointer; " onclick="changecss()">
         <!-- <h5 style="font-family: Microsoft JhengHei; margin-top: 0px;">開始問問題!</h5> -->
       </span>
         </span>
@@ -183,20 +183,20 @@
 
     <script>
         function changecss(){
-            var ShowVisibility = document.querySelector('.QA_card_area');
-            var ImgVisibility = document.querySelector('img#AnsImg');
-            var stream = document.querySelector('#stream');
-            if(stream.style.display=="block"){
-                ImgVisibility.src = "./still-image.jpg"
-                stream.style.display="none";
-                ShowVisibility.style.display = "block";
-                ImgVisibility.style.display = "block";
-            }else{
-                stream.src = "http://172.20.10.2:8080/?action=stream"
-                stream.style.display="block";
-                ShowVisibility.style.display = "none";
-                ImgVisibility.style.display = "none";
-            }
+            // var ShowVisibility = document.querySelector('.QA_card_area');
+            // var ImgVisibility = document.querySelector('img#AnsImg');
+            // var stream = document.querySelector('#stream');
+            // if(stream.style.display=="block"){
+            //     ImgVisibility.src = "./still-image.jpg"
+            //     stream.style.display="none";
+            //     ShowVisibility.style.display = "block";
+            //     ImgVisibility.style.display = "block";
+            // }else{
+            //     stream.src = "http://172.20.10.2:8080/?action=stream"
+            //     stream.style.display="block";
+            //     ShowVisibility.style.display = "none";
+            //     ImgVisibility.style.display = "none";
+            // }
 
         }
     </script>
