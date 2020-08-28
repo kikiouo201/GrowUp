@@ -148,7 +148,8 @@ ipcMain.on('voice-require-to-py', (event, arg) => {
             console.log(" result(?)=" + result.toString())
 
             //api code
-            api.Question.addQa(1, result.q, result.a, "", "知識", (event) => {
+            // api.Question.addQa
+            api.Question.addQa(1, result.q, result.a, "https:" + result.url, "蘋果甜蜜蜜", "https://children.moc.gov.tw/resource/animate_image/6892.jpg", "嫁接的蜜蘋果要先習慣這塊土地，接受泥土的養分之後，才能慢慢慢慢的發芽開花。在這塊土地上接受多元文化洗禮、共同生活的人，不也像蜜蘋果一樣嗎？願藉此，獻上我們最深的祝福！", "知識", (event) => {
                 console.log("callback=" + JSON.stringify(event));
             });
 
