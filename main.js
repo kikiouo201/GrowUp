@@ -23,7 +23,7 @@ const request = require('request')
 const cheerio = require('cheerio')
 const encoding = require('encoding');
 const iconv = require('iconv-lite');
-const puppeteers = require('puppeteer');
+const puppeteer = require('puppeteer');
 // const api = require('./model/api');  //伺服器測試暫關
 
 // let {PythonShell} = require('python-shell')
@@ -251,8 +251,8 @@ ipcMain.on('getApi-addQuiz', async (event, args) => {
 ipcMain.on('pictureWeb', async (event, args) => {
     console.log('readyMain');
 
-    const browser = await puppeteers.launch({
-        executablePath: '/usr/bin/chromium-browser',
+    const browser = await puppeteer.launch({
+        executablePath: '/usr/bin/chromium-browser',        
         args: ['--disable-infobars','--no-default-browser-check','--start-fullscreen','--start-maximized'/*,'--no-startup-window'*/],
         ignoreDefaultArgs: ['--enable-automation'],
         headless: false
@@ -272,7 +272,12 @@ ipcMain.on('pictureWeb', async (event, args) => {
         setTimeout(() => {
             document.querySelector('.fp-ui').click()
         }, 2000);
+        console.log(document.querySelector('video'));
+
     });
+    // const bodyInnerHTML2 = await page.waitForSelector('video');
+    // console.log(bodyInnerHTML2);
+
     // videos = await page.$$eval('video', video => video);
     // page.waitFor(10000);
     // const btn = await page.waitForSelector('fp-fullscreen');
@@ -294,6 +299,51 @@ ipcMain.on('pictureWeb', async (event, args) => {
 //     event.sender.send('bookJSON-response',bookJSON)
 // })
 
+ipcMain.on('childsongCrawler', async (event, args) => {
+    // 套件名稱 puppeteer
+    // https://wcc723.github.io/development/2020/03/01/puppeteer/ 教學網址
+
+    const browser = await puppeteer.launch({
+
+        executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe', // 運行的瀏覽器
+
+        // '/usr/bin/chromium-browser' 這是樹梅派 chromium 位置
+        // 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe', 這是我電腦 chrome 的位置 
+
+        args: ['--disable-infobars','--no-default-browser-check'], // 設定參數，不用在意
+        ignoreDefaultArgs: ['--enable-automation'],
+        headless: false //headless:false代表虛擬瀏覽器會呈現出來 headless:true等於虛擬瀏覽器不會呈現，不管怎樣都會執行下面程式碼
+    });
+
+    const page = await browser.newPage();
+    await page.goto("https://children.moc.gov.tw/song_list"); // 前往 XXX 網址
+    
+    //EX：page.evaluate可以相當於直接進入網頁用js
+    // await page.evaluate(() => {
+    //     document.querySelector('.row');
+    //     setTimeout(() => {
+    //         document.querySelector('.prev').click()
+    //     }, 2000);
+    // });
+
+    // EX：page.waitForSelector('你想搜尋的元素') 這等於等頁面跑出這個元素然後抓取 || 等待頁面上的特定元素出現，在非同步的過程中很實用。
+    // const PrevBtn = await page.waitForSelector('.prev'); PrevBtn = class 等於 prev 的元素
+
+    // page.click('你想搜尋的元素') 等於直接 點擊 你搜尋的元素
+    // await page.click('.prev'); => 點擊 class = prev 的元素
+    // await page.click('#button'); 點擊網頁中 id 為 button 的元素
+
+    // page.type(selector, text[, options])：在特定的元素上輸入文字內容，通常是 input 上輸入
+    // page.type('.keyword', "蘋果")：在  class 等於 keyword 元素上輸入 蘋果
+
+    // await page.$eval(selector, pageFunction[, ...args]); 對於選取的元素進行特定行為，例如取出元素的 HTML 屬性值。
+    // await page.$eval('.fp-ui', elem => elem.click());
+
+    // await 是 非同步過程 || 等待程序(進程) 的概念 很重要基本上都要加
+
+
+    await browser.close(); //關閉瀏覽器
+})
 
 
 
