@@ -1,7 +1,7 @@
 const fs = require('fs');
 const { createRouter } = require('../../wrapper/Exsocket');
 const router = createRouter();
-
+const Buffer = require('safer-buffer').Buffer ;
 const FAVORITE_QUESTION = 'favorite_question';
 
 const ADD_QA = 'add_qa';
@@ -26,7 +26,7 @@ function base64_encode(file) {
     // read binary data
     var bitmap = fs.readFileSync(file);
     // convert binary data to base64 encoded string
-    return new Buffer(bitmap).toString('base64');
+    return Buffer.from(bitmap).toString('base64');
 }
 
 function question(app){
