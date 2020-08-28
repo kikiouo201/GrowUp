@@ -115,6 +115,11 @@ if (voiceBtn) {
                 console.log()
                 let pictureBook = document.querySelector('#pictureText');
 
+                // data.book_name = "蘋果甜蜜蜜";
+                // data.book_img = "https://children.moc.gov.tw/resource/animate_image/6892.jpg";
+                // data.book_introduction = "嫁接的蜜蘋果要先習慣這塊土地，接受泥土的養分之後，才能慢慢慢慢的發芽開花。在這塊土地上接受多元文化洗禮、共同生活的人，不也像蜜蘋果一樣嗎？願藉此，獻上我們最深的祝福！";
+
+                console.log("bookName ==" + book_name);
                 if (pictureBook) {
                     pictureBook.innerHTML += `<div class="card-header contentCss" id="QA_num_" style="background-color: #f8f9fa24; padding-bottom: 40px;">
                     <p class="contentlink">相關繪本連結：</p>
@@ -122,7 +127,7 @@ if (voiceBtn) {
                     <img class="speaker_A" onclick="speakerBookName(this)" id="speaker_A" src="icons/speaker.png" style="margin-top: -55px" />
     
                     <img src="https://children.moc.gov.tw/resource/animate_image/6892.jpg" style="margin-left: 20px; display: inline;" width="180" height="153" alt="蘋果甜蜜蜜">
-                    <p style="display: inline; margin-left: 20px; margin-top: 40px; position: absolute; margin-right: 40px;">
+                    <p style="display: inline; margin-left: 20px; margin-top: -10px; position: absolute; margin-right: 40px;">
                         嫁接的蜜蘋果要先習慣這塊土地，接受泥土的養分之後，才能慢慢慢慢的發芽開花。在這塊土地上接受多元文化洗禮、共同生活的人，不也像蜜蘋果一樣嗎？願藉此，獻上我們最深的祝福！</p>
                     <img class="speaker_A" onclick="speakerBook(this)" id="speaker_A" src="icons/speaker.png" style="margin-top: 131px; display: inline; bottom: 31px;" />
     

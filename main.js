@@ -23,7 +23,18 @@ const request = require('request')
 const cheerio = require('cheerio')
 const encoding = require('encoding');
 const iconv = require('iconv-lite');
+<<<<<<< HEAD
 const puppeteer = require('puppeteer');
+=======
+const puppeteers = require('puppeteer');
+
+// STT
+// const callSTT = require('./TTS_API_test')
+var player = require('play-sound')(opts = {})
+    // const fs = require('fs');
+    // const util = require('util');
+
+>>>>>>> b3433501a6325d95b3bf12664a5837cb59e4f908
 // const api = require('./model/api');  //伺服器測試暫關
 
 // let {PythonShell} = require('python-shell')
@@ -129,7 +140,7 @@ ipcMain.on('voice-require-to-py', (event, arg) => {
             console.log("Q=" + result.q)
             console.log("A=" + result.a)
             console.log("url=" + result.url)
-            // console.log("QN="+result.QName)
+                // console.log("QN="+result.QName)
             var x = result.a.toString().trim()
             console.log(typeof x + typeof result.a.toString())
             console.log("Testing Log => " + result.a.toString() + "\r\nTest2=>" + x)
@@ -141,7 +152,8 @@ ipcMain.on('voice-require-to-py', (event, arg) => {
             console.log(" result(?)=" + result.toString())
 
             //api code
-            api.Question.addQa(1, result.q, result.a, "", "知識", (event) => {
+            // api.Question.addQa
+            api.Question.addQa(1, result.q, result.a, "https:" + result.url, "蘋果甜蜜蜜", "https://children.moc.gov.tw/resource/animate_image/6892.jpg", "嫁接的蜜蘋果要先習慣這塊土地，接受泥土的養分之後，才能慢慢慢慢的發芽開花。在這塊土地上接受多元文化洗禮、共同生活的人，不也像蜜蘋果一樣嗎？願藉此，獻上我們最深的祝福！", "知識", (event) => {
                 console.log("callback=" + JSON.stringify(event));
             });
 
@@ -171,10 +183,10 @@ ipcMain.on('close-main-window', () => {
 ipcMain.on('vision', (event, args) => {
     event.sender.send('reply-visionready')
 })
-
-ipcMain.on('vision-start', async (event, args) => {
+let visionAnswer;
+ipcMain.on('vision-start', async(event, args) => {
     let array = await callVis.start();
-
+    visionAnswer = array
     //array.forEach(label => console.log("vis="+label.description));
     event.sender.send('reply-mainjsfunction', array)
 })
@@ -214,17 +226,22 @@ ipcMain.on('crawler', (event, args) => {
 
 })
 
-
-ipcMain.on('captrue', async (event, args) => {
+ipcMain.on('captrue', async(event, args) => {
 
     console.log("call captrue");
     const stillCamera = new StillCamera();
 
     const image = await stillCamera.takeImage();
 
-    fs.writeFileSync("still-image.jpg", image);
+    fs.writeFileSync("still-image.png", image);
 
     event.sender.send('reply-mainjsfunction-captrue')
+})
+
+ipcMain.on('addQAtoServer',async(event,arg)=>{
+    api.Question.addQa(1,"",arg,"", "環遊世界做蘋果派", "https://children.moc.gov.tw/resource/animate_image/6850.jpg", "做蘋果派一點也不難，只要到市場買齊材料，混合一下，烤一烤，就可以上桌了。可是市場關門了，買不到材料的小女孩該怎麼辦？沒問題，回家打包行李，搭輪船、坐火車、乘飛機，周遊世界尋找烤派的材料吧。", "單詞", (event) => {
+                console.log("callback=" + JSON.stringify(event));
+            });
 })
 
 // ipcMain.on('invokeAction', function(event, data){
@@ -233,7 +250,7 @@ ipcMain.on('captrue', async (event, args) => {
 // });
 
 //addQA
-ipcMain.on('getApi-addQuiz', async (event, args) => {
+ipcMain.on('getApi-addQuiz', async(event, args) => {
     api.Question.addQuiz(5, (req) => {
         // console.log("addQuiz=" + JSON.stringify(event));
         const data = JSON.parse(JSON.stringify(req));
@@ -294,10 +311,6 @@ ipcMain.on('pictureWeb', async (event, args) => {
     // console.log(videos);
     // await browser.close();
 })
-// ipcMain.on('callbookJSON-request',async (event,args)=>{
-//     console.log("callbookJSON-request")
-//     event.sender.send('bookJSON-response',bookJSON)
-// })
 
 ipcMain.on('childsongCrawler', async (event, args) => {
     // 套件名稱 puppeteer
@@ -357,3 +370,20 @@ ipcMain.on('childsongCrawler', async (event, args) => {
 //     });
 
 // })
+
+
+ipcMain.on('callSTT-start', async(event, args) => {
+    // let STTtext = await callSTT.quickStart();
+    if (args.toString().trim() == 'ㄅ') {
+        console.log("ㄅ")
+        var audio = player.play('./TTS/mp3/bpm/b.mp3', function(err) {
+            if (err) throw err;
+            console.log("Audio finished");
+        })
+        audio.kill()
+    }
+    console.log("success call STT-API =) " + args.toString())
+        //array.forEach(label => console.log("vis="+label.description));
+        // event.sender.send('reply-mainjsfunction', array)
+
+})

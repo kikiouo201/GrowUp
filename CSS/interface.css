@@ -1,34 +1,34 @@
 .head {
-  width: auto;
-  height: auto;
-  background-color: #ffb906cf;
-  text-align: center;
-  opacity: .7;
-  font-size: 32px;
+    width: auto;
+    height: auto;
+    background-color: #ffb906cf;
+    text-align: center;
+    opacity: .7;
+    font-size: 32px;
 }
 
 .style {
   background-repeat: no-repeat;
   background-size: 100%;
   background-attachment: fixed;
-  margin-top: auto;
+  margin: auto;
 }
 
 .arrow {
-  width: 50px;
-  height: 10px;
+    width: 50px;
+    height: 10px;
 }
 
 #showtime {
-  position: fixed;
-  top: 2.7%;
-  right: 4%;
-  font-size: 18px;
+    position: fixed;
+    top: 2.7%;
+    right: 4%;
+    font-size: 18px;
 }
 
 #today {
-  position: fixed;
-  top: 0%;
-  right: 2%;
-  font-size: 18px;
+    position: fixed;
+    top: 0%;
+    right: 2%;
+    font-size: 18px;
 }

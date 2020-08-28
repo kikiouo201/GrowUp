@@ -1,7 +1,7 @@
 const fs = require('fs');
 const { createRouter } = require('../../wrapper/Exsocket');
 const router = createRouter();
-
+const Buffer = require('safer-buffer').Buffer ;
 const FAVORITE_QUESTION = 'favorite_question';
 
 const ADD_QA = 'add_qa';
@@ -26,7 +26,7 @@ function base64_encode(file) {
     // read binary data
     var bitmap = fs.readFileSync(file);
     // convert binary data to base64 encoded string
-    return new Buffer(bitmap).toString('base64');
+    return Buffer.from(bitmap).toString('base64');
 }
 
 function question(app){
@@ -74,34 +74,39 @@ function question(app){
         },
         
         
-         addQa(child_id, question_text, answer, question_img,book_name,book_img,book_introduction, category,callback){
-             let question_url=null;
-             if(question_img.match('.jpg') || question_img.match('.png')){
-                question_url = base64_encode(question_img);
-                //question_url = question_url.toString();
-               // console.log('url='+question_url);
-             }
-             let book_url=null;
-             if(book_img.match('.jpg') || book_img.match('.png')){
-                book_url = base64_encode(book_img);
-                //question_url = question_url.toString();
-               // console.log('url='+question_url);
-             }
-            const jsonObject = {
-                child_id: child_id,
-                question_text: question_text, 
-                answer: answer,
-                base64str : question_url ,
-                category: category,
-                book_name: book_name,
-                book_img: book_url,
-                book_introduction: book_introduction,
-                recommend: "小孩",
-            };
-            
-            router.on(ADD_QA,jsonObject,callback);
-            app.use(router);
-        },
+        addQa(child_id, question_text, answer, question_img,book_name,book_img,book_introduction, category,callback){
+            let question_url=null;
+            console.log('question_img.substring(0, 4)'+question_img.substring(0, 4));
+            if(question_img.substring(0, 4) == 'http'){
+               question_url = question_img.toString();
+            } else if(question_img.match('.jpg') || question_img.match('.png')){
+               question_url = base64_encode(question_img);
+               //question_url = question_url.toString();
+              // console.log('url='+question_url);
+            }
+            let book_url=null;
+            if(book_img.substring(0, 4) == 'http'){
+               book_url = book_img.toString();
+           } else if(book_img.match('.jpg') || book_img.match('.png')){
+               book_url = base64_encode(book_img);
+               //question_url = question_url.toString();
+              // console.log('url='+question_url);
+            }
+           const jsonObject = {
+               child_id: child_id,
+               question_text: question_text, 
+               answer: answer,
+               base64str : question_url ,
+               category: category,
+               book_name: book_name,
+               book_img: book_url,
+               book_introduction: book_introduction,
+               recommend: "小孩",
+           };
+           
+           router.on(ADD_QA,jsonObject,callback);
+           app.use(router);
+       },
         
         
          deletePastQuestion(book_content_id, callback){
