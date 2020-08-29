@@ -1,259 +1,262 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../CSS/icon.css">
-  <link rel="stylesheet" href="../CSS/interface.css">
-  <link rel="stylesheet" href="../CSS/every_four_button.css">
-  <link rel="stylesheet" href="../CSS/game/animal_book.css">
-  <title>Document</title>
-</head>
-<body  background="../image/map/kraftPaper5.png" onload="ShowTime()">
-  <div class="home_page">
-      <a href="../game_home.html">魔法寶典</a>
 
-      <div id="today"></div>
-      <br>
-      <div id="showtime"></div>
-  </div>
-  <script language="JavaScript">
-  
-    function ShowTime(){
-  
-      var fullDate = new Date();
-  var yyyy = fullDate.getFullYear();
-  var MM = (fullDate.getMonth() + 1) >= 10 ? (fullDate.getMonth() + 1) : ("0" + (fullDate.getMonth() + 1));
-  var dd = fullDate.getDate() < 10 ? ("0"+fullDate.getDate()) : fullDate.getDate();
-  document.getElementById('today').innerHTML = yyyy + "/" + MM + "/" + dd;
-  
-    　var NowDate=new Date();
-    　var h=NowDate.getHours();
-    　var m=NowDate.getMinutes();
-    　document.getElementById('showtime').innerHTML = h+':'+m;
-    　setTimeout('ShowTime()',1000);
-    }
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/icon.css">
+    <link rel="stylesheet" href="../CSS/interface.css">
+    <link rel="stylesheet" href="../CSS/every_four_button.css">
+    <link rel="stylesheet" href="../CSS/game/animal_book.css">
+    <title>Document</title>
+</head>
+
+<body background="../image/map/kraftPaper5.png" onload="ShowTime()">
+    <div class="home_page">
+        <a class="home_title">動物寶典</a>
+
+        <div id="today"></div>
+        <br>
+        <div id="showtime"></div>
+    </div>
+    <script language="JavaScript">
+        function ShowTime() {
+
+            var fullDate = new Date();
+            var yyyy = fullDate.getFullYear();
+            var MM = (fullDate.getMonth() + 1) >= 10 ? (fullDate.getMonth() + 1) : ("0" + (fullDate.getMonth() + 1));
+            var dd = fullDate.getDate() < 10 ? ("0" + fullDate.getDate()) : fullDate.getDate();
+            document.getElementById('today').innerHTML = yyyy + "/" + MM + "/" + dd;
+
+            　
+            var NowDate = new Date();　
+            var h = NowDate.getHours();　
+            var m = NowDate.getMinutes();　
+            document.getElementById('showtime').innerHTML = h + ':' + m;　
+            setTimeout('ShowTime()', 1000);
+        }
     </script>
 
     <div id="black_overlay">
-      <div id="closepage">X</div>
-      <div style="text-align: center;">
-        <div id="explain_page">
-          <div style="text-align: left;">
-            <button id="animalclass" onclick="changeTxt()"></button>
-          </div>
+        <div id="closepage">X</div>
+        <div style="text-align: center;">
+            <div id="explain_page">
+                <div style="text-align: left;">
+                    <button id="animalclass" onclick="changeTxt()"></button>
+                </div>
 
-          <img id="animalImg" style="width:100px; height:100px;" src="">
-          <img  onclick="mouseDownText(explain.innerHTML);" src="../icons/speaker.png"  class="speaker"/>
-          <div id="text_page" style="display: inline-block; text-align: left; padding: 7px;">
-            <span id="animalname"></span><br>
-            <span style="display: inline-block;">敘述:</span><span id="explain"></span>
-          </div>
+                <img id="animalImg" style="width:100px; height:100px;" src="">
+                <img onclick="mouseDownText(explain.innerHTML);" src="../icons/speaker.png" class="speaker" />
+                <div id="text_page" style="display: inline-block; text-align: left; padding: 7px;">
+                    <span id="animalname"></span><br>
+                    <span style="display: inline-block;">敘述:</span><span id="explain"></span>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-    
-  <div>
-      <img class="mapsize" src="../image/map/animal_map.png" >
-  </div>
-  <div>
-    <img class="South_American_Coati" src="../image/animal/South_American_Coati.png" onclick="mouseDownText('長鼻浣熊');">
-  </div>
-  <div>
-    <img class="Ring_tailed_Lemur" src="../image/animal/Ring_tailed_Lemur.png" onclick="mouseDownText('環尾狐猴');">
-  </div>
-  <div>
-    <img class="White_handed_Gibbon" src="../image/animal/White_handed_Gibbon.png" onclick="mouseDownText('白手長臂猿');">
-  </div>
-  <div>
-    <img class="Black_and_white_ruffed_Lemur" src="../image/animal/Black_and_white_ruffed_Lemur.png" onclick="mouseDownText('白頸狐猴');">
-  </div>
-  <div>
-    <img class="Kinkajou" src="../image/animal/Kinkajou.png" onclick="mouseDownText('蜜熊');">
-  </div>
-  <div>
-    <img class="Brown_Lemur" src="../image/animal/Brown_Lemur.png" onclick="mouseDownText('褐狐猴');">
-  </div>
-  <div>
-    <img class="Alpaca" src="../image/animal/Alpaca.png" onclick="mouseDownText('羊駝');">
-  </div>
-  <div>
-    <img class="Greater_Flamingo" src="../image/animal/Greater_Flamingo.png" onclick="mouseDownText('大紅鶴');">
-  </div>
-  <div>
-    <img class="Donkey" src="../image/animal/Donkey.png" onclick="mouseDownText('家驢');">
-  </div>
-  <div>
-    <img class="Pony" src="../image/animal/Pony.png" onclick="mouseDownText('迷你馬');">
-  </div>
-  <div>
-    <img class="Chinchilla" src="../image/animal/Chinchilla.png" onclick="mouseDownText('絨鼠');">
-  </div>
-  <div>
-    <a href="../../test1.html" class="sosfloat" id="menu-share">
-        <i class="fab fa-share my-float"><img src="../photo/help.png" width="70%"></i>
-    </a>
-</div>
-<div>
-    <a href="../magicBook/magicBook.html" class="returnfloat" id="menu-share">
-        <i class="fab fa-share return-float"><img src="../photo/return.png"></i>
-    </a>
-</div>
-<div>
-    <a href="../game_home.html" class="homefloat" id="menu-share">
-        <i class="fab fa-share my-float"><img src="../photo/gobackhome.png" width="70%"></i>
-    </a>
-</div>
 
-  <script>
-    var animalImg = document.getElementById("animalImg")
-    let animalname = document.getElementById("animalname")
-    let explain = document.getElementById("explain")
-    let animalclass = document.getElementById("animalclass")
-   
-    document.querySelector(".South_American_Coati").addEventListener('click',()=>{
-      document.getElementById("black_overlay").style.visibility = 'visible';
-      animalname.style.visibility = 'visible';
-      explain.style.visibility = 'visible';
-      animalImg.src="../image/animal/South_American_Coati.png"
-      animalname.innerHTML="動物名: 長鼻浣熊"
-      explain.innerHTML="長鼻浣熊，上半身為褐色或灰色，腹部白色。細長的尾巴大約32~69公分，棕黑色並有一圈圈黃色環，具有平衡的功能。腳爪和前肢十分強壯，便於爬樹和挖掘朽木下的食物。"
-      animalclass.innerHTML="獸類"
-      mouseDownText('長鼻浣熊，上半身為褐色或灰色，腹部白色。細長的尾巴大約32~69公分，棕黑色並有一圈圈黃色環，具有平衡的功能。腳爪和前肢十分強壯，便於爬樹和挖掘朽木下的食物。');
-    })
+    <div>
+        <img class="mapsize" src="../image/map/animal_map.png">
+    </div>
+    <div>
+        <img class="South_American_Coati" src="../image/animal/South_American_Coati.png" onclick="mouseDownText('長鼻浣熊');">
+    </div>
+    <div>
+        <img class="Ring_tailed_Lemur" src="../image/animal/Ring_tailed_Lemur.png" onclick="mouseDownText('環尾狐猴');">
+    </div>
+    <div>
+        <img class="White_handed_Gibbon" src="../image/animal/White_handed_Gibbon.png" onclick="mouseDownText('白手長臂猿');">
+    </div>
+    <div>
+        <img class="Black_and_white_ruffed_Lemur" src="../image/animal/Black_and_white_ruffed_Lemur.png" onclick="mouseDownText('白頸狐猴');">
+    </div>
+    <div>
+        <img class="Kinkajou" src="../image/animal/Kinkajou.png" onclick="mouseDownText('蜜熊');">
+    </div>
+    <div>
+        <img class="Brown_Lemur" src="../image/animal/Brown_Lemur.png" onclick="mouseDownText('褐狐猴');">
+    </div>
+    <div>
+        <img class="Alpaca" src="../image/animal/Alpaca.png" onclick="mouseDownText('羊駝');">
+    </div>
+    <div>
+        <img class="Greater_Flamingo" src="../image/animal/Greater_Flamingo.png" onclick="mouseDownText('大紅鶴');">
+    </div>
+    <div>
+        <img class="Donkey" src="../image/animal/Donkey.png" onclick="mouseDownText('家驢');">
+    </div>
+    <div>
+        <img class="Pony" src="../image/animal/Pony.png" onclick="mouseDownText('迷你馬');">
+    </div>
+    <div>
+        <img class="Chinchilla" src="../image/animal/Chinchilla.png" onclick="mouseDownText('絨鼠');">
+    </div>
+    <div>
+        <a href="../../test1.html" class="sosfloat" id="menu-share">
+            <i class="fab fa-share my-float"><img src="../photo/help.png" width="70%"></i>
+        </a>
+    </div>
+    <div>
+        <a href="../magicBook/magicBook.html" class="returnfloat" id="menu-share">
+            <i class="fab fa-share return-float"><img src="../photo/return.png"></i>
+        </a>
+    </div>
+    <div>
+        <a href="../game_home.html" class="homefloat" id="menu-share">
+            <i class="fab fa-share my-float"><img src="../photo/gobackhome.png" width="70%"></i>
+        </a>
+    </div>
 
-    document.querySelector(".Ring_tailed_Lemur").addEventListener('click',()=>{
-      document.getElementById("black_overlay").style.visibility = 'visible';
-      animalname.style.visibility = 'visible';
-      explain.style.visibility = 'visible';
-      animalImg.src="../image/animal/Ring_tailed_Lemur.png"
-      animalname.innerHTML="動物名: 環尾狐猴"
-      animalclass.innerHTML="獸類"
-      explain.innerHTML="環尾狐猴，背側的毛色為棕灰色，腹側是白色，有一條黑白相間的尾巴，非常醒目。"
-      mouseDownText('環尾狐猴，背側的毛色為棕灰色，腹側是白色，有一條黑白相間的尾巴，非常醒目。');
-    })
+    <script>
+        var animalImg = document.getElementById("animalImg")
+        let animalname = document.getElementById("animalname")
+        let explain = document.getElementById("explain")
+        let animalclass = document.getElementById("animalclass")
 
-    document.querySelector(".White_handed_Gibbon").addEventListener('click',()=>{
-      document.getElementById("black_overlay").style.visibility = 'visible';
-      animalname.style.visibility = 'visible';
-      explain.style.visibility = 'visible';
-      animalImg.src="../image/animal/White_handed_Gibbon.png"
-      animalname.innerHTML="動物名: 白手長臂猿"
-      animalclass.innerHTML="獸類"
-      explain.innerHTML="白手長臂猿，全身長有濃密的毛，毛色變化很多。最大特徵為臉的周圍和手、腳呈白色。"
-      mouseDownText('白手長臂猿，全身長有濃密的毛，毛色變化很多。最大特徵為臉的周圍和手、腳呈白色。');
-    })
+        document.querySelector(".South_American_Coati").addEventListener('click', () => {
+            document.getElementById("black_overlay").style.visibility = 'visible';
+            animalname.style.visibility = 'visible';
+            explain.style.visibility = 'visible';
+            animalImg.src = "../image/animal/South_American_Coati.png"
+            animalname.innerHTML = "動物名: 長鼻浣熊"
+            explain.innerHTML = "長鼻浣熊，上半身為褐色或灰色，腹部白色。細長的尾巴大約32~69公分，棕黑色並有一圈圈黃色環，具有平衡的功能。腳爪和前肢十分強壯，便於爬樹和挖掘朽木下的食物。"
+            animalclass.innerHTML = "獸類"
+            mouseDownText('長鼻浣熊，上半身為褐色或灰色，腹部白色。細長的尾巴大約32~69公分，棕黑色並有一圈圈黃色環，具有平衡的功能。腳爪和前肢十分強壯，便於爬樹和挖掘朽木下的食物。');
+        })
 
-    document.querySelector(".Black_and_white_ruffed_Lemur").addEventListener('click',()=>{
-      document.getElementById("black_overlay").style.visibility = 'visible';
-      animalname.style.visibility = 'visible';
-      explain.style.visibility = 'visible';
-      animalImg.src="../image/animal/Black_and_white_ruffed_Lemur.png"
-      animalname.innerHTML="動物名: 白頸狐猴"
-      animalclass.innerHTML="獸類"
-      explain.innerHTML="白頸狐猴，皮毛長而柔軟，耳朵被毛髮遮蓋著，毛的顏色變化很大，以黑色為主，四肢、背部及頭部有白色的斑紋，具有三對乳房。"
-      mouseDownText('白頸狐猴，皮毛長而柔軟，耳朵被毛髮遮蓋著，毛的顏色變化很大，以黑色為主，四肢、背部及頭部有白色的斑紋，具有三對乳房。');
-    })
+        document.querySelector(".Ring_tailed_Lemur").addEventListener('click', () => {
+            document.getElementById("black_overlay").style.visibility = 'visible';
+            animalname.style.visibility = 'visible';
+            explain.style.visibility = 'visible';
+            animalImg.src = "../image/animal/Ring_tailed_Lemur.png"
+            animalname.innerHTML = "動物名: 環尾狐猴"
+            animalclass.innerHTML = "獸類"
+            explain.innerHTML = "環尾狐猴，背側的毛色為棕灰色，腹側是白色，有一條黑白相間的尾巴，非常醒目。"
+            mouseDownText('環尾狐猴，背側的毛色為棕灰色，腹側是白色，有一條黑白相間的尾巴，非常醒目。');
+        })
 
-    document.querySelector(".Kinkajou").addEventListener('click',()=>{
-      document.getElementById("black_overlay").style.visibility = 'visible';
-      animalname.style.visibility = 'visible';
-      explain.style.visibility = 'visible';
-      animalImg.src="../image/animal/Kinkajou.png"
-      animalname.innerHTML="動物名: 蜜熊"
-      animalclass.innerHTML="獸類"
-      explain.innerHTML="蜜熊，重量:1.8至4.6公斤，頭身長：41至57公分，尾長跟體長相似，蜜熊是浣熊的同類，但身材像猴子。"
-      mouseDownText('蜜熊，重量:1.8至4.6公斤，頭身長：41至57公分，尾長跟體長相似，蜜熊是浣熊的同類，但身材像猴子。');
-    })
+        document.querySelector(".White_handed_Gibbon").addEventListener('click', () => {
+            document.getElementById("black_overlay").style.visibility = 'visible';
+            animalname.style.visibility = 'visible';
+            explain.style.visibility = 'visible';
+            animalImg.src = "../image/animal/White_handed_Gibbon.png"
+            animalname.innerHTML = "動物名: 白手長臂猿"
+            animalclass.innerHTML = "獸類"
+            explain.innerHTML = "白手長臂猿，全身長有濃密的毛，毛色變化很多。最大特徵為臉的周圍和手、腳呈白色。"
+            mouseDownText('白手長臂猿，全身長有濃密的毛，毛色變化很多。最大特徵為臉的周圍和手、腳呈白色。');
+        })
 
-    document.querySelector(".Brown_Lemur").addEventListener('click',()=>{
-      document.getElementById("black_overlay").style.visibility = 'visible';
-      animalname.style.visibility = 'visible';
-      explain.style.visibility = 'visible';
-      animalImg.src="../image/animal/Brown_Lemur.png"
-      animalname.innerHTML="動物名: 褐狐猴"
-      animalclass.innerHTML="獸類"
-      explain.innerHTML="褐狐猴，背側的毛色為棕灰色，腹側則是灰白色，尾巴的顏色比較深，臉部略黑，眼睛的上方有較淡的斑紋，臉部周圍均有毛鬚。"
-      mouseDownText('褐狐猴，背側的毛色為棕灰色，腹側則是灰白色，尾巴的顏色比較深，臉部略黑，眼睛的上方有較淡的斑紋，臉部周圍均有毛鬚。');
-    })
+        document.querySelector(".Black_and_white_ruffed_Lemur").addEventListener('click', () => {
+            document.getElementById("black_overlay").style.visibility = 'visible';
+            animalname.style.visibility = 'visible';
+            explain.style.visibility = 'visible';
+            animalImg.src = "../image/animal/Black_and_white_ruffed_Lemur.png"
+            animalname.innerHTML = "動物名: 白頸狐猴"
+            animalclass.innerHTML = "獸類"
+            explain.innerHTML = "白頸狐猴，皮毛長而柔軟，耳朵被毛髮遮蓋著，毛的顏色變化很大，以黑色為主，四肢、背部及頭部有白色的斑紋，具有三對乳房。"
+            mouseDownText('白頸狐猴，皮毛長而柔軟，耳朵被毛髮遮蓋著，毛的顏色變化很大，以黑色為主，四肢、背部及頭部有白色的斑紋，具有三對乳房。');
+        })
 
-    document.querySelector(".Alpaca").addEventListener('click',()=>{
-      document.getElementById("black_overlay").style.visibility = 'visible';
-      animalname.style.visibility = 'visible';
-      explain.style.visibility = 'visible';
-      animalImg.src="../image/animal/Alpaca.png"
-      animalname.innerHTML="動物名: 羊駝"
-      animalclass.innerHTML="獸類"
-      explain.innerHTML="羊駝，成年雄獸肩高約90-100公分，體長約200公分，重70-90公斤。外型像綿羊頸部較長。"
-      mouseDownText('羊駝，成年雄獸肩高約90-100公分，體長約200公分，重70-90公斤。外型像綿羊頸部較長。');
-    })
+        document.querySelector(".Kinkajou").addEventListener('click', () => {
+            document.getElementById("black_overlay").style.visibility = 'visible';
+            animalname.style.visibility = 'visible';
+            explain.style.visibility = 'visible';
+            animalImg.src = "../image/animal/Kinkajou.png"
+            animalname.innerHTML = "動物名: 蜜熊"
+            animalclass.innerHTML = "獸類"
+            explain.innerHTML = "蜜熊，重量:1.8至4.6公斤，頭身長：41至57公分，尾長跟體長相似，蜜熊是浣熊的同類，但身材像猴子。"
+            mouseDownText('蜜熊，重量:1.8至4.6公斤，頭身長：41至57公分，尾長跟體長相似，蜜熊是浣熊的同類，但身材像猴子。');
+        })
 
-    document.querySelector(".Greater_Flamingo").addEventListener('click',()=>{
-      document.getElementById("black_overlay").style.visibility = 'visible';
-      animalname.style.visibility = 'visible';
-      explain.style.visibility = 'visible';
-      animalImg.src="../image/animal/Greater_Flamingo.png"
-      animalname.innerHTML="動物名: 大紅鶴"
-      animalclass.innerHTML="鳥類"
-      explain.innerHTML="大紅鶴，是最大型的紅鶴。雌鳥體型及腿較雄鳥小達到20﹪。幼鳥灰褐色，在身體下面、翼及尾帶有一些粉紅色，嘴、腿及足褐色。在前3年的亞成鳥，羽色有相當的變異。"
-      mouseDownText('大紅鶴，大紅鶴是最大型的紅鶴。雌鳥體型及腿較雄鳥小達到20﹪。幼鳥灰褐色，在身體下面、翼及尾帶有一些粉紅色，嘴、腿及足褐色。在前3年的亞成鳥，羽色有相當的變異。');
-    })
+        document.querySelector(".Brown_Lemur").addEventListener('click', () => {
+            document.getElementById("black_overlay").style.visibility = 'visible';
+            animalname.style.visibility = 'visible';
+            explain.style.visibility = 'visible';
+            animalImg.src = "../image/animal/Brown_Lemur.png"
+            animalname.innerHTML = "動物名: 褐狐猴"
+            animalclass.innerHTML = "獸類"
+            explain.innerHTML = "褐狐猴，背側的毛色為棕灰色，腹側則是灰白色，尾巴的顏色比較深，臉部略黑，眼睛的上方有較淡的斑紋，臉部周圍均有毛鬚。"
+            mouseDownText('褐狐猴，背側的毛色為棕灰色，腹側則是灰白色，尾巴的顏色比較深，臉部略黑，眼睛的上方有較淡的斑紋，臉部周圍均有毛鬚。');
+        })
 
-    document.querySelector(".Donkey").addEventListener('click',()=>{
-      document.getElementById("black_overlay").style.visibility = 'visible';
-      animalname.style.visibility = 'visible';
-      explain.style.visibility = 'visible';
-      animalImg.src="../image/animal/Donkey.png"
-      animalname.innerHTML="動物名: 鸚鵡"
-      animalclass.innerHTML="鳥類"
-      explain.innerHTML="鸚鵡，數量最多的地區為大洋洲（澳洲）、南美洲和中美洲等熱帶及亞熱帶地區。"
-      mouseDownText('鸚鵡，數量最多的地區為大洋洲（澳洲）、南美洲和中美洲等熱帶及亞熱帶地區。');
-    })
+        document.querySelector(".Alpaca").addEventListener('click', () => {
+            document.getElementById("black_overlay").style.visibility = 'visible';
+            animalname.style.visibility = 'visible';
+            explain.style.visibility = 'visible';
+            animalImg.src = "../image/animal/Alpaca.png"
+            animalname.innerHTML = "動物名: 羊駝"
+            animalclass.innerHTML = "獸類"
+            explain.innerHTML = "羊駝，成年雄獸肩高約90-100公分，體長約200公分，重70-90公斤。外型像綿羊頸部較長。"
+            mouseDownText('羊駝，成年雄獸肩高約90-100公分，體長約200公分，重70-90公斤。外型像綿羊頸部較長。');
+        })
 
-    document.querySelector(".Pony").addEventListener('click',()=>{
-      document.getElementById("black_overlay").style.visibility = 'visible';
-      animalname.style.visibility = 'visible';
-      explain.style.visibility = 'visible';
-      animalImg.src="../image/animal/Pony.png"
-      animalname.innerHTML="動物名: 迷你馬"
-      animalclass.innerHTML="獸類"
-      explain.innerHTML="迷你馬，其實就是所謂的小型馬，體型比一般馬矮小，肩高約100至150公分，肩高矮於86公分。"
-      mouseDownText('迷你馬，其實就是所謂的小型馬，體型比一般馬矮小，肩高約100至150公分，肩高矮於86公分。');
-    })
+        document.querySelector(".Greater_Flamingo").addEventListener('click', () => {
+            document.getElementById("black_overlay").style.visibility = 'visible';
+            animalname.style.visibility = 'visible';
+            explain.style.visibility = 'visible';
+            animalImg.src = "../image/animal/Greater_Flamingo.png"
+            animalname.innerHTML = "動物名: 大紅鶴"
+            animalclass.innerHTML = "鳥類"
+            explain.innerHTML = "大紅鶴，是最大型的紅鶴。雌鳥體型及腿較雄鳥小達到20﹪。幼鳥灰褐色，在身體下面、翼及尾帶有一些粉紅色，嘴、腿及足褐色。在前3年的亞成鳥，羽色有相當的變異。"
+            mouseDownText('大紅鶴，大紅鶴是最大型的紅鶴。雌鳥體型及腿較雄鳥小達到20﹪。幼鳥灰褐色，在身體下面、翼及尾帶有一些粉紅色，嘴、腿及足褐色。在前3年的亞成鳥，羽色有相當的變異。');
+        })
 
-    document.querySelector(".Chinchilla").addEventListener('click',()=>{
-      document.getElementById("black_overlay").style.visibility = 'visible';
-      animalname.style.visibility = 'visible';
-      explain.style.visibility = 'visible';
-      animalImg.src="../image/animal/Chinchilla.png"
-      animalname.innerHTML="動物名: 絨鼠"
-      animalclass.innerHTML="獸類"
-      explain.innerHTML="絨鼠，進食時，牠們會用臀部坐著，且以手拿食物。雖然生活環境中的水很少，但草葉上的露水就足夠牠們生活了。"
-      mouseDownText('絨鼠，進食時，牠們會用臀部坐著，且以手拿食物。雖然生活環境中的水很少，但草葉上的露水就足夠牠們生活了。');
-    })
+        document.querySelector(".Donkey").addEventListener('click', () => {
+            document.getElementById("black_overlay").style.visibility = 'visible';
+            animalname.style.visibility = 'visible';
+            explain.style.visibility = 'visible';
+            animalImg.src = "../image/animal/Donkey.png"
+            animalname.innerHTML = "動物名: 鸚鵡"
+            animalclass.innerHTML = "鳥類"
+            explain.innerHTML = "鸚鵡，數量最多的地區為大洋洲（澳洲）、南美洲和中美洲等熱帶及亞熱帶地區。"
+            mouseDownText('鸚鵡，數量最多的地區為大洋洲（澳洲）、南美洲和中美洲等熱帶及亞熱帶地區。');
+        })
+
+        document.querySelector(".Pony").addEventListener('click', () => {
+            document.getElementById("black_overlay").style.visibility = 'visible';
+            animalname.style.visibility = 'visible';
+            explain.style.visibility = 'visible';
+            animalImg.src = "../image/animal/Pony.png"
+            animalname.innerHTML = "動物名: 迷你馬"
+            animalclass.innerHTML = "獸類"
+            explain.innerHTML = "迷你馬，其實就是所謂的小型馬，體型比一般馬矮小，肩高約100至150公分，肩高矮於86公分。"
+            mouseDownText('迷你馬，其實就是所謂的小型馬，體型比一般馬矮小，肩高約100至150公分，肩高矮於86公分。');
+        })
+
+        document.querySelector(".Chinchilla").addEventListener('click', () => {
+            document.getElementById("black_overlay").style.visibility = 'visible';
+            animalname.style.visibility = 'visible';
+            explain.style.visibility = 'visible';
+            animalImg.src = "../image/animal/Chinchilla.png"
+            animalname.innerHTML = "動物名: 絨鼠"
+            animalclass.innerHTML = "獸類"
+            explain.innerHTML = "絨鼠，進食時，牠們會用臀部坐著，且以手拿食物。雖然生活環境中的水很少，但草葉上的露水就足夠牠們生活了。"
+            mouseDownText('絨鼠，進食時，牠們會用臀部坐著，且以手拿食物。雖然生活環境中的水很少，但草葉上的露水就足夠牠們生活了。');
+        })
 
 
-    document.getElementById("closepage").addEventListener('click',()=>{
-      document.getElementById("black_overlay").style.visibility = 'hidden';
-      document.getElementById("animalname").style.visibility = 'hidden';
-      document.getElementById("explain").style.visibility = 'hidden';
-      document.getElementById("animalclassName").style.visibility = 'hidden';
-      document.getElementById("animalclassExplain").style.visibility = 'hidden';
-    })
-  </script>
-  <script>
-    function changeTxt() {
-      if(document.getElementById("animalclass").innerHTML=="獸類"){
-        document.getElementById("animalclass").innerHTML="動物名稱"
-        document.getElementById("animalname").innerHTML="動物類: 獸類"
-        document.getElementById("explain").innerHTML="獸類，是脊椎動物哺乳綱動物的泛稱。從象、虎、豹等大型動物，到老鼠、蝙蝠等小型動物，到海洋中的鯨豚等海獸，都是獸類的一員。"
-      }else{
-        document.getElementById("animalclass").innerHTML="動物名稱"
-        document.getElementById("animalname").innerHTML="動物類: 鳥類"
-        document.getElementById("explain").innerHTML="鳥類，是爬行動物演化而成的脊椎動物，也是現今世界上唯一有羽毛的動物。大多具有飛行能力，但還是有不具飛翔能力的鳥類，像企鵝、雞、鴕鳥就屬這一類。"
-      }
-    }
-  </script>
-  <script src="../model/util/voiceOut.js"></script>
+        document.getElementById("closepage").addEventListener('click', () => {
+            document.getElementById("black_overlay").style.visibility = 'hidden';
+            document.getElementById("animalname").style.visibility = 'hidden';
+            document.getElementById("explain").style.visibility = 'hidden';
+            document.getElementById("animalclassName").style.visibility = 'hidden';
+            document.getElementById("animalclassExplain").style.visibility = 'hidden';
+        })
+    </script>
+    <script>
+        function changeTxt() {
+            if (document.getElementById("animalclass").innerHTML == "獸類") {
+                document.getElementById("animalclass").innerHTML = "動物名稱"
+                document.getElementById("animalname").innerHTML = "動物類: 獸類"
+                document.getElementById("explain").innerHTML = "獸類，是脊椎動物哺乳綱動物的泛稱。從象、虎、豹等大型動物，到老鼠、蝙蝠等小型動物，到海洋中的鯨豚等海獸，都是獸類的一員。"
+            } else {
+                document.getElementById("animalclass").innerHTML = "動物名稱"
+                document.getElementById("animalname").innerHTML = "動物類: 鳥類"
+                document.getElementById("explain").innerHTML = "鳥類，是爬行動物演化而成的脊椎動物，也是現今世界上唯一有羽毛的動物。大多具有飛行能力，但還是有不具飛翔能力的鳥類，像企鵝、雞、鴕鳥就屬這一類。"
+            }
+        }
+    </script>
+    <script src="../model/util/voiceOut.js"></script>
 </body>
+
 </html>
