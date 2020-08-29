@@ -12,36 +12,37 @@ body{
     height: 700px;
 }
 .terrain{
-    width: 700px;
-  position: relative;
-  top: 70px;
-  z-index: 1;
+    width: 350px;
+    position: relative;
+    top: 110px;
+    z-index: 1;
+    right: -4px;
 }
 
 .level1{
     width: 75px;
     position: absolute;
     z-index: 10;
-    top: 203px;
-    left: 557px;
+    top: 177px;
+    left: 269px;
 }
 .level{
-    width: 69px;
+    width: 33px;
 
 }
 .level_text{
     width: 40px;
     position: absolute;
     z-index: 10;
-    top: 34px;
+    top: -6px;
     left: 32%;
 }
 .level2{
     width: 100px;
     position: absolute;
     z-index: 10;
-    top: 252px;
-    left: 390px;
+    top: 202px;
+    left: 179px;
 }
 
 .level3{
@@ -49,15 +50,15 @@ body{
     position: absolute;
     z-index: 10;
     top: 153px;
-    left: 135px;
+    left: 50px;
 }
 
 .level4{
     width: 100px;
     position: absolute;
     z-index: 10;
-    top: 234px;
-    left: 12px;
+    top: 193px;
+    left: -10px;
 }
 
 
