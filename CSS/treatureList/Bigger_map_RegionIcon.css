@@ -38,7 +38,7 @@
     top: 45px;
     right: 314px;
     cursor: pointer;
-    z-index: 100;
+    z-index: 101;
 }
 
 .Keelung_B {
@@ -78,7 +78,7 @@
 .Hsinchu_B {
     width: 80px;
     position: absolute;
-    top: 55px;
+    top: 53px;
     left: 384px;
     z-index: 99;
 }
@@ -111,9 +111,9 @@
 }
 
 .Taichung_B {
-    width: 136px;
+    width: 137px;
     position: absolute;
-    top: 121px;
+    top: 120px;
     left: 335px;
     /* left: 103px; */
     z-index: 99;
@@ -198,10 +198,10 @@
 }
 
 .Hualien_B {
-    width: 104px;
+    width: 105px;
     position: absolute;
-    top: 132px;
-    left: 158px;
+    top: 131px;
+    left: 157px;
 }
 
 .Hualien_icon_B {
