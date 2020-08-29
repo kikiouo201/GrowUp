@@ -96,9 +96,10 @@ body {
 
 .good-regard-text {
     position: absolute;
-    right: 0;
+    left: 285px;
     margin-right: -65px;
     margin-top: 3px;
+    top: 100px;
 }
 
 .personal_profile {

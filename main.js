@@ -394,3 +394,21 @@ ipcMain.on('callMapCondition', (event, arg) => {
         event.sender.send('selectJsonOnTL', data);
     });
 });
+
+
+ipcMain.on('callGoodRegard', (event, arg) => {
+    console.log("success call GoodRegard value =) ")
+    api.People.showChildGoodBabyTotalValue(1, (req) => {
+        const tot = JSON.parse(JSON.stringify(req));
+        // console.log("data = " + JSON.stringify(data))
+
+        event.sender.send('replyGoodregardTot', tot);
+    });
+
+    // api.People.showChildGoodBabyDayValue(1, (req) => {
+    //     const data = JSON.parse(JSON.stringify(req));
+    //     // console.log("data = " + JSON.stringify(data))
+
+    //     event.sender.send('replyGoodregardValue', data);
+    // });
+});
