@@ -119,7 +119,7 @@ if (voiceBtn) {
                 // data.book_img = "https://children.moc.gov.tw/resource/animate_image/6892.jpg";
                 // data.book_introduction = "嫁接的蜜蘋果要先習慣這塊土地，接受泥土的養分之後，才能慢慢慢慢的發芽開花。在這塊土地上接受多元文化洗禮、共同生活的人，不也像蜜蘋果一樣嗎？願藉此，獻上我們最深的祝福！";
 
-                console.log("bookName ==" + book_name);
+                // console.log("bookName ==" + book_name);
                 if (pictureBook) {
                     pictureBook.innerHTML += `<div class="card-header contentCss" id="QA_num_" style="background-color: #f8f9fa24; padding-bottom: 40px;">
                     <p class="contentlink">相關繪本連結：</p>
