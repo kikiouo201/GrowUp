@@ -8,10 +8,12 @@
     <link rel="stylesheet" href="../CSS/interface.css">
     <link rel="stylesheet" href="../CSS/every_four_button.css">
     <link rel="stylesheet" href="./css/picturebook.css">
-    <title>Document</title>
+    <script src="./js/picturebook.js"></script>
+
+    <title>繪本</title>
 
     <script>
-        const puppeteerss = require('puppeteer');
+        const puppeteer = require('puppeteer');
 
         function Nooo(web) {
             (async () => {
@@ -27,187 +29,161 @@
                     // setTimeout(() => {
                     //     document.querySelector('.fp-ui').click()
                     // }, 2000);
+                    console.log(document.querySelector('video'));
+
                 });
-                const bodyInnerHTML2 = await page.$eval('.fp-ui', dom => dom);
+                const bodyInnerHTML2 = await page.waitForSelector('.fp-engine');
+
+                // var vid = await document.createElement('VIDEO');
+                // vid.src = await bodyInnerHTML2.src;
+                // vid.setAttribute("width", "320");
+                // vid.setAttribute("height", "240");
+                // vid.setAttribute("controls", "controls");
+                // await console.log(vid);
                 console.log(bodyInnerHTML2);
 
-                bodyInnerHTML2.onclick =function(){ 
-                    console.log("AAAAAAAAA");
-                    browser.close();
-                }
-                await page.evaluate(() => {
-                    console.log(this);
-
-                    // document.querySelector('.fp-fullscreen').click();
-                    // setTimeout(() => {
-                    //     document.querySelector('.fp-ui').click()
-                    // }, 2000);
-                });
+                let dos = document.querySelector('#learn_book');
+                await dos.append(bodyInnerHTML2);
 
 
+                // bodyInnerHTML2.onclick =function(){ 
+                //     console.log("AAAAAAAAA");
+                //     browser.close();
+                // }
+                // await page.evaluate(() => {
+                //     console.log(this);
 
+                // document.querySelector('.fp-fullscreen').click();
+                // setTimeout(() => {
+                //     document.querySelector('.fp-ui').click()
+                // }, 2000);
+                // });
+                // await browser.close();
             })();
         }
     </script>
 </head>
 <!-- onload="ShowTime()" -->
+<!-- onload="OpenDataList()" -->
 
-<body onload="OpenDataList()" style="width: 100%; height: 100%;" background="../image/background/desk.png">
+<body style="width: 100%; height: 100%;" onload="OpenDataList()">
     <div class="home_page">
         <a href="../game_home.html">繪本</a>
-
         <div id="today"></div>
         <br>
         <div id="showtime"></div>
 
     </div>
 
-    <!-- <div id="show_page"> -->
-    <div id="recommend_bookdropdown">家長推薦</div>
-    <div class="booklist" id="learn_book" style="background-color: rgb(224, 99, 27); display: block;">
-        <!-- <button style="position: absolute;" onclick="OpenDataList()">try try see</button> -->
-        <!-- id="trybtn"   -->
-        <div class="book" onclick='Nooo("https:\/\/children.moc.gov.tw/book/215552")'>
-            <div class="text-div">
-                <h2>環遊世界做蘋果派</h2>
-            </div>
-            <div class="image-div">
-                <img src="https://children.moc.gov.tw/resource/book_image/215552.jpg">
-            </div>
-
+    <div class="tags">
+        <div id="parent_tag" class="tag">
+            <img src="./image/icon_parent.png">
+            <span>家長推薦</span>
         </div>
 
-
-        <div class="book" onclick='GoWeb("https:\/\/children.moc.gov.tw/book/216245")'>
-            <div class="text-div">
-                <h2>送你一顆蘋果</h2>
-            </div>
-
-            <div class="image-div">
-                <img src="https://children.moc.gov.tw/resource/book_image/216245.jpg">
-
-            </div>
+        <div id="machine_tag" class="tag">
+            <img src="./image/icon_tablet.png ">
+            <span>學習機推薦</span>
         </div>
 
-
-        <div class="book" onclick='GoWeb("https:\/\/children.moc.gov.tw/book/217133")'>
-            <div class="text-div">
-                <h2>致命的蘋果</h2>
-            </div>
-
-            <div class="image-div">
-                <img src="https://children.moc.gov.tw/resource/book_image/217133.jpg">
-            </div>
-
-        </div>
-
-
-        <div class="book" onclick='GoWeb("https:\/\/children.moc.gov.tw/book/217317")'>
-            <div class="text-div">
-                <h2>蘋果的引力-牛頓</h2>
-            </div>
-
-            <div class="image-div">
-                <img src="https://children.moc.gov.tw/resource/book_image/217317.jpg">
-            </div>
-        </div>
-
-
-        <div class="book" onclick='GoWeb("https:\/\/children.moc.gov.tw/book/217849")'>
-            <div class="text-div">
-                <h2>蘋果纖維</h2>
-            </div>
-
-            <div class="image-div">
-                <img src="https://children.moc.gov.tw/resource/book_image/217849.jpg">
-            </div>
-        </div>
-
-        <div class="book" onclick='GoWeb("https:\/\/children.moc.gov.tw/book/218424")'>
-            <div class="text-div">
-                <h2>蘋果甜蜜蜜</h2>
-            </div>
-
-            <div class="image-div">
-                <img src="https://children.moc.gov.tw/resource/book_image/218424.jpg">
-            </div>
-
+        <div id="else_tag" class="tag">
+            <img src="./image/icon_book.png">
+            <span>全部繪本</span>
         </div>
     </div>
-    <div id="learn_bookdropdown">學習相關推薦</div>
-    <div class="booklist" id="recommend_book" style="background-color: cadetblue; display: block;">
-        <!-- <button style="position: absolute;" onclick="OpenDataList()">try try see</button> -->
-        <div class="book">
-            <div class="text-div">
-                <h2>環遊世界做蘋果派</h2>
+
+    <div class="maincontent">
+        <div id="parent_recommend">
+            <div class="book">
+                <div class="bookname-div">
+                    <h2>環遊世界做蘋果派</h2>
+                    <img class="voice" src=" ../icons/speaker.png" />
+
+                </div>
+                <div class="activity-div">
+                    <img src="https://children.moc.gov.tw/resource/book_image/215552.jpg">
+                    <button onclick='Nooo("https:\/\/children.moc.gov.tw/book/215552")'>
+                        <img src="./image/icon_watchVideo.png" />
+                        <h2>觀看繪本</h2>
+                    </button>
+                </div>
             </div>
-            <div class="image-div">
-                <img src="https://children.moc.gov.tw/resource/book_image/215552.jpg">
+
+            <div class="book">
+                <div class="bookname-div">
+                    <h2>蘋果的引力-牛頓</h2>
+                    <img class="voice" src=" ../icons/speaker.png" />
+
+                </div>
+                <div class="activity-div">
+                    <img src="https://children.moc.gov.tw/resource/book_image/217317.jpg">
+                    <button onclick='Nooo("https:\/\/children.moc.gov.tw/book/217317")'>
+                        <img src="./image/icon_watchVideo.png" />
+                        <h2>觀看繪本</h2>
+                    </button>
+                </div>
+            </div>
+            <div class="book">
+                <div class="bookname-div">
+                    <h2>致命的蘋果</h2>
+                    <img class="voice" src=" ../icons/speaker.png" />
+
+                </div>
+                <div class="activity-div">
+                    <img src="https://children.moc.gov.tw/resource/book_image/217133.jpg">
+                    <button onclick='Nooo("https:\/\/children.moc.gov.tw/book/217133")'>
+                        <img src="./image/icon_watchVideo.png" />
+                        <h2>觀看繪本</h2>
+                    </button>
+
+                </div>
+            </div>
+        </div>
+
+        <div id="machine_recommend">
+
+            <div class="book">
+                <div class="bookname-div">
+                    <h2>送你一顆蘋果</h2>
+                    <img class="voice" src=" ../icons/speaker.png" />
+
+                </div>
+                <div class="activity-div">
+                    <img src="https://children.moc.gov.tw/resource/book_image/216245.jpg">
+                    <button onclick='Nooo("https:\/\/children.moc.gov.tw/book/216245")'>
+                        <img src="./image/icon_watchVideo.png" />
+                        <h2>觀看繪本</h2>
+                    </button>
+                </div>
+            </div>
+
+            <div class="book">
+                <div class="bookname-div">
+                    <h2>蘋果甜蜜蜜</h2>
+                    <img class="voice" src=" ../icons/speaker.png" />
+
+                </div>
+                <div class="activity-div">
+                    <img src="https://children.moc.gov.tw/resource/book_image/218424.jpg">
+                    <button onclick='Nooo("https:\/\/children.moc.gov.tw/book/218424")'>
+                        <img src="./image/icon_watchVideo.png" />
+                        <h2>觀看繪本</h2>
+                    </button>
+                </div>
             </div>
 
         </div>
 
-        <div class="book">
-            <div class="text-div">
-                <h2>送你一顆蘋果</h2>
-            </div>
-
-            <div class="image-div">
-                <img src="https://children.moc.gov.tw/resource/book_image/216245.jpg">
-
-            </div>
-        </div>
-
-        <div class="book">
-            <div class="text-div">
-                <h2>蘋果的引力-牛頓</h2>
-            </div>
-
-            <div class="image-div">
-                <img src="https://children.moc.gov.tw/resource/book_image/217317.jpg">
-            </div>
-        </div>
-
-        <div class="book">
-            <div class="text-div">
-                <h2>蘋果甜蜜蜜</h2>
-            </div>
-
-            <div class="image-div">
-                <img src="https://children.moc.gov.tw/resource/book_image/218424.jpg">
-            </div>
+        <div id="else_book">
 
         </div>
+
     </div>
-    <div id="disrecommend_bookdropdown">總書目</div>
-    <div class="booklist" id="disrecommend_book" style="background-color:cyan; display: block; margin-top:0px">
-
-    </div>
-    <!-- </div> -->
-
-
     <div>
         <a href="../game_home.html" class="sosfloat sos_mark" id="menu-share">
             <i class="fab fa-share my-float"><img src="../photo/help.png" width="70%"></i>
         </a>
     </div>
-
-    <!-- <div class="fabs setting_mark" onclick="toggleBtn()">
-      <div class="action">
-        <i class="fas" id="add"><img src="../photo/settings.png" width="110%"></i>
-        <i class="fas" id="remove" style="display: none"><img src="../photo/settings.png" width="110%"></i>
-      </div>
-
-      <div class="btns">
-        <a href="../personalprofile.html" class="btn"><i class="fab "><img src="../photo/user.png" title="個人簡介"
-          width="95%"></i></a>
-        <a href="../history.html" class="btn"><i class="fab "><img src="../photo/record.png" title="歷史紀錄"
-          width="95%"></i></a>
-        <a href="../score.html" class="btn"><i class="fab "><img src="../photo/analysis.png" title="學習歷程"
-          width="95%"></i></a>
-      </div>
-
-    </div> -->
 
     <div class="return_mark">
         <a href="./magicBook.html" class="returnfloat" id="menu-share">
@@ -264,37 +240,6 @@
     </script>
 
     <script>
-        document.getElementById("recommend_bookdropdown").addEventListener("click", () => {
-            var click = document.querySelector("#recommend_book")
-            if (click.style.display === "block")
-                click.style.display = "none"
-            else {
-                click.style.display = "block"
-            }
-        })
-
-        document.getElementById("disrecommend_bookdropdown").addEventListener("click", () => {
-            var click = document.querySelector("#disrecommend_book")
-            if (click.style.display === "block")
-                click.style.display = "none"
-            else {
-                click.style.display = "block"
-            }
-        })
-
-        document.getElementById("learn_bookdropdown").addEventListener("click", () => {
-            var click = document.querySelector("#learn_book")
-            if (click.style.display === "block")
-                click.style.display = "none"
-            else {
-                click.style.display = "block"
-            }
-        })
-    </script>
-
-    <script>
-        let puppeteer = require('puppeteer');
-
         function OpenDataList() {
             const dataurl = "https://children.moc.gov.tw/opendata/2";
             const request = new XMLHttpRequest();
@@ -314,78 +259,37 @@
 
         function recommendListbook(jsons) {
             let request = new XMLHttpRequest();
-            const list = document.querySelector("#disrecommend_book");
             let imgurltemp = 6805;
 
             for (let i = 1; i < jsons.length; i++) {
                 let imgurl = 'https://children.moc.gov.tw/resource/animate_image/' + imgurltemp + '.jpg';
 
-                let bookDropdown = document.createElement("div");
-
-
                 let bookdiv = document.createElement("div");
                 bookdiv.className = 'book';
-                bookdiv.onclick = function () {
-                    GoWeb(jsons[i]['url']);
-                }
-                // function () {                   
-                //     (async () => {
-                //         const browser = await puppeteer.launch({
-                //             executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
-                //             headless: false
-                //         });
-                //         const page = await browser.newPage();
-                //         await page.goto(jsons[i]['url']);
-                //         await page.click('.fp-fullscreen');
-                //         await page.click('.fp-ui', {
-                //             delay: 2000
-                //         });
-                //     })();
 
-                // }
+                let bookname = document.createElement("div");
+                bookname.className = 'bookname-div'
 
-                // console.log(bookdiv.onclick);
-                let book_textdiv = document.createElement("div");
-                book_textdiv.className = 'text-div'
+                let name = document.createElement("h2");
+                name.append(document.createTextNode(jsons[i]['name']));
 
-                let bookname = document.createElement("h2");
-                bookname.append(document.createTextNode(jsons[i]['name']));
+                let voice_ic = document.createElement('img');
+                    voice_ic.src="../icons/speaker.png";
+                    voice_ic.className="voice"
 
-                book_textdiv.append(bookname);
+                bookname.append(name);
+                bookname.append(voice_ic);
+                
+                bookdiv.append(bookname);
 
-                bookdiv.append(book_textdiv);
-                imgurltemp = getimg(imgurltemp, bookdiv, i);
-                console.log(imgurltemp);
-
+                imgurltemp = getimg(imgurltemp, bookdiv, jsons[i]['url']);
                 imgurltemp++;
             }
 
-            // let imgurl = 'https://children.moc.gov.tw/resource/animate_image/' + imgurltemp + '.jpg';
-
-            // let bookdiv = document.createElement("div");
-            // bookdiv.className = 'book';
-
-            // let book_textdiv = document.createElement("div");
-            // book_textdiv.className = 'text-div'
-
-            // let bookname = document.createElement("h2");
-            // bookname.append(document.createTextNode(jsons[0]['name']));
-
-            // book_textdiv.append(bookname);
-
-            // bookdiv.append(book_textdiv);
-
-            // getimg(imgurltemp, bookdiv,1);
-
-            // imgurltemp++;
-
-
         }
 
-        function getimg(imgurltemp, bookdiv, i) {
-            console.log(i);
-
-            const list = document.querySelector("#disrecommend_book");
+        function getimg(imgurltemp, bookdiv, url) {
+            const list = document.querySelector("#else_book");
             let request = new XMLHttpRequest();
             let imgurl = 'https://children.moc.gov.tw/resource/animate_image/' + imgurltemp + '.jpg';
             request.open('GET', imgurl);
@@ -393,35 +297,43 @@
             request.onreadystatechange = function (evt) {
                 if (request.readyState !== 4)
                     return;
-                // console.log("waited for it to finish")
                 if (request.status != 404) {
-                    let bookdiv_imgdiv = document.createElement("div");
-                    bookdiv_imgdiv.className = 'image-div';
+                    let activity_div = document.createElement("div");
+                    activity_div.className = 'activity-div';
+
                     let bookimg = document.createElement('img');
                     bookimg.src = imgurl
-                    bookdiv_imgdiv.append(bookimg);
-                    bookdiv.append(bookdiv_imgdiv);
+                    activity_div.append(bookimg);
+
+                    let watch_btn = document.createElement('button');
+                    watch_btn.onclick = function () {
+                        GoWeb(url);
+                    }
+                    let watch_ic = document.createElement('img');
+                    watch_ic.src="./image/icon_watchVideo.png";
+                    let watch_h2 = document.createElement('h2');
+                    watch_h2.append("觀看繪本");
+                    watch_btn.append(watch_ic,watch_h2);
+
+                    activity_div.append(watch_btn);
+                    bookdiv.append(activity_div);
                     list.append(bookdiv);
-                    console.log("success");
 
                 } else {
-                    console.log(imgurltemp);
-                    let bookdiv_imgdiv = document.createElement("div");
-                    bookdiv_imgdiv.className = 'image-div';
+                    // console.log(imgurltemp);
+                    let activity_div = document.createElement("div");
+                    activity_div.className = 'image-div';
                     let bookimg = document.createElement('img');
                     bookimg.src = 'https://children.moc.gov.tw/resource/animate_image/6805.jpg';
-                    bookdiv_imgdiv.append(bookimg);
-                    bookdiv.append(bookdiv_imgdiv);
+                    activity_div.append(bookimg);
+                    bookdiv.append(activity_div);
                     list.append(bookdiv);
-                    console.log("success");
-                    // getimg(++imgurltemp, bookdiv, i);
                 }
                 return imgurltemp;
             }
             return imgurltemp;
         }
     </script>
-    <script src="./js/picturebook.js"></script>
     <script>
 
     </script>
