@@ -106,6 +106,9 @@ body::-webkit-scrollbar {
   /* overflow-y: hidden; */
   /* white-space: nowrap; */
 }
+.maincontent::-webkit-scrollbar {
+  display: none;
+}
 
 .book {
   display: inline-block;
@@ -168,10 +171,10 @@ body::-webkit-scrollbar {
 
 .book .bookname-div .voice {
   position: absolute;
-  width: 15%;
+  width: 12%;
   height: auto;
-  right: -5px;
-  bottom: 0px;
+  right: -8px;
+  top: -5px;
 }
 
 .bookdropdown {

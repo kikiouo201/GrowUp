@@ -16,7 +16,7 @@
         const puppeteer = require('puppeteer');
 
         function Nooo(web) {
-            (async() => {
+            (async () => {
                 let browser = await puppeteer.launch({
                     executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
                     // args: ['--start-fullscreen'],
@@ -77,17 +77,17 @@
     </div>
 
     <div class="tags">
-        <div id="parent_tag" class="tag">
+        <div id="parent_tag" class="tag" onclick="window.location.hash = '#parent_recommend'">
             <img src="./image/icon_parent.png">
             <span>家長推薦</span>
         </div>
 
-        <div id="machine_tag" class="tag">
+        <div id="machine_tag" class="tag" onclick="window.location.hash = '#machine_recommend'">
             <img src="./image/icon_tablet.png ">
             <span>學習機推薦</span>
         </div>
 
-        <div id="else_tag" class="tag">
+        <div id="else_tag" class="tag" onclick="window.location.hash = '#else_book'">
             <img src="./image/icon_book.png">
             <span>全部繪本</span>
         </div>
@@ -102,56 +102,8 @@
 
                 </div>
                 <div class="activity-div">
-                    <img src="https://children.moc.gov.tw/resource/book_image/215552.jpg">
+                    <img src="https://children.moc.gov.tw/resource/animate_image/6850.jpg">
                     <button onclick='Nooo("https:\/\/children.moc.gov.tw/book/215552")'>
-                        <img src="./image/icon_watchVideo.png" />
-                        <h2>觀看繪本</h2>
-                    </button>
-                </div>
-            </div>
-
-            <div class="book">
-                <div class="bookname-div">
-                    <h2>蘋果的引力-牛頓</h2>
-                    <img class="voice" src=" ../icons/speaker.png" />
-
-                </div>
-                <div class="activity-div">
-                    <img src="https://children.moc.gov.tw/resource/book_image/217317.jpg">
-                    <button onclick='Nooo("https:\/\/children.moc.gov.tw/book/217317")'>
-                        <img src="./image/icon_watchVideo.png" />
-                        <h2>觀看繪本</h2>
-                    </button>
-                </div>
-            </div>
-            <div class="book">
-                <div class="bookname-div">
-                    <h2>致命的蘋果</h2>
-                    <img class="voice" src=" ../icons/speaker.png" />
-
-                </div>
-                <div class="activity-div">
-                    <img src="https://children.moc.gov.tw/resource/book_image/217133.jpg">
-                    <button onclick='Nooo("https:\/\/children.moc.gov.tw/book/217133")'>
-                        <img src="./image/icon_watchVideo.png" />
-                        <h2>觀看繪本</h2>
-                    </button>
-
-                </div>
-            </div>
-        </div>
-
-        <div id="machine_recommend">
-
-            <div class="book">
-                <div class="bookname-div">
-                    <h2>送你一顆蘋果</h2>
-                    <img class="voice" src=" ../icons/speaker.png" />
-
-                </div>
-                <div class="activity-div">
-                    <img src="https://children.moc.gov.tw/resource/book_image/216245.jpg">
-                    <button onclick='Nooo("https:\/\/children.moc.gov.tw/book/216245")'>
                         <img src="./image/icon_watchVideo.png" />
                         <h2>觀看繪本</h2>
                     </button>
@@ -165,7 +117,7 @@
 
                 </div>
                 <div class="activity-div">
-                    <img src="https://children.moc.gov.tw/resource/book_image/218424.jpg">
+                    <img src="https://children.moc.gov.tw/resource/animate_image/6892.jpg">
                     <button onclick='Nooo("https:\/\/children.moc.gov.tw/book/218424")'>
                         <img src="./image/icon_watchVideo.png" />
                         <h2>觀看繪本</h2>
@@ -173,6 +125,40 @@
                 </div>
             </div>
 
+
+        </div>
+
+        <div id="machine_recommend">
+
+            <div class="book">
+                <div class="bookname-div">
+                    <h2>我的水果寶寶</h2>
+                    <img class="voice" src=" ../icons/speaker.png" />
+
+                </div>
+                <div class="activity-div">
+                    <img src="https://children.moc.gov.tw/resource/animate_image/7008.png">
+                    <button onclick='Nooo("https:\/\/children.moc.gov.tw/book/218424")'>
+                        <img src="./image/icon_watchVideo.png" />
+                        <h2>觀看繪本</h2>
+                    </button>
+                </div>
+            </div>
+
+            <div class="book">
+                <div class="bookname-div">
+                    <h2>香蕉的祕密</h2>
+                    <img class="voice" src=" ../icons/speaker.png" />
+
+                </div>
+                <div class="activity-div">
+                    <img src="https://children.moc.gov.tw/resource/animate_image/6924.jpg">
+                    <button onclick='Nooo("https:\/\/children.moc.gov.tw/book/219116")'>
+                        <img src="./image/icon_watchVideo.png" />
+                        <h2>觀看繪本</h2>
+                    </button>
+                </div>
+            </div>
         </div>
 
         <div id="else_book">
@@ -248,7 +234,7 @@
             request.responseType = 'json';
             request.send();
             // let jsontext;
-            request.onreadystatechange = function(evt) {
+            request.onreadystatechange = function (evt) {
                 if (request.readyState !== 4) {
                     return;
                 }
@@ -275,12 +261,12 @@
                 name.append(document.createTextNode(jsons[i]['name']));
 
                 let voice_ic = document.createElement('img');
-                    voice_ic.src="../icons/speaker.png";
-                    voice_ic.className="voice"
+                voice_ic.src = "../icons/speaker.png";
+                voice_ic.className = "voice"
 
                 bookname.append(name);
                 bookname.append(voice_ic);
-                
+
                 bookdiv.append(bookname);
 
                 imgurltemp = getimg(imgurltemp, bookdiv, jsons[i]['url']);
@@ -295,7 +281,7 @@
             let imgurl = 'https://children.moc.gov.tw/resource/animate_image/' + imgurltemp + '.jpg';
             request.open('GET', imgurl);
             request.send()
-            request.onreadystatechange = function(evt) {
+            request.onreadystatechange = function (evt) {
                 if (request.readyState !== 4)
                     return;
                 if (request.status != 404) {
@@ -311,10 +297,10 @@
                         GoWeb(url);
                     }
                     let watch_ic = document.createElement('img');
-                    watch_ic.src="./image/icon_watchVideo.png";
+                    watch_ic.src = "./image/icon_watchVideo.png";
                     let watch_h2 = document.createElement('h2');
                     watch_h2.append("觀看繪本");
-                    watch_btn.append(watch_ic,watch_h2);
+                    watch_btn.append(watch_ic, watch_h2);
 
                     activity_div.append(watch_btn);
                     bookdiv.append(activity_div);
