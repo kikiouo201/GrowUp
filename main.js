@@ -27,8 +27,8 @@ const puppeteer = require('puppeteer');
 // STT
 // const callSTT = require('./TTS_API_test')
 var player = require('play-sound')(opts = {})
-// const fs = require('fs');
-// const util = require('util');
+    // const fs = require('fs');
+    // const util = require('util');
 
 // const api = require('./model/api');  //伺服器測試暫關
 
@@ -135,7 +135,7 @@ ipcMain.on('voice-require-to-py', (event, arg) => {
             console.log("Q=" + result.q)
             console.log("A=" + result.a)
             console.log("url=" + result.url)
-            // console.log("QN="+result.QName)
+                // console.log("QN="+result.QName)
             var x = result.a.toString().trim()
             console.log(typeof x + typeof result.a.toString())
             console.log("Testing Log => " + result.a.toString() + "\r\nTest2=>" + x)
@@ -179,10 +179,10 @@ ipcMain.on('vision', (event, args) => {
     event.sender.send('reply-visionready')
 })
 let visionAnswer;
-ipcMain.on('vision-start', async (event, args) => {
+ipcMain.on('vision-start', async(event, args) => {
     let array = await callVis.start();
     visionAnswer = array
-    //array.forEach(label => console.log("vis="+label.description));
+        //array.forEach(label => console.log("vis="+label.description));
     event.sender.send('reply-mainjsfunction', array)
 })
 
@@ -221,7 +221,7 @@ ipcMain.on('crawler', (event, args) => {
 
 })
 
-ipcMain.on('captrue', async (event, args) => {
+ipcMain.on('captrue', async(event, args) => {
 
     console.log("call captrue");
     const stillCamera = new StillCamera();
@@ -233,7 +233,7 @@ ipcMain.on('captrue', async (event, args) => {
     event.sender.send('reply-mainjsfunction-captrue')
 })
 
-ipcMain.on('addQAtoServer', async (event, arg) => {
+ipcMain.on('addQAtoServer', async(event, arg) => {
     api.Question.addQa(1, "", arg, "", "環遊世界做蘋果派", "https://children.moc.gov.tw/resource/animate_image/6850.jpg", "做蘋果派一點也不難，只要到市場買齊材料，混合一下，烤一烤，就可以上桌了。可是市場關門了，買不到材料的小女孩該怎麼辦？沒問題，回家打包行李，搭輪船、坐火車、乘飛機，周遊世界尋找烤派的材料吧。", "單詞", (event) => {
         console.log("callback=" + JSON.stringify(event));
     });
@@ -245,7 +245,7 @@ ipcMain.on('addQAtoServer', async (event, arg) => {
 // });
 
 //addQA
-ipcMain.on('getApi-addQuiz', async (event, args) => {
+ipcMain.on('getApi-addQuiz', async(event, args) => {
     api.Question.addQuiz(5, (req) => {
         // console.log("addQuiz=" + JSON.stringify(event));
         const data = JSON.parse(JSON.stringify(req));
@@ -260,7 +260,7 @@ ipcMain.on('getApi-addQuiz', async (event, args) => {
 
 })
 
-ipcMain.on('pictureWeb', async (event, args) => {
+ipcMain.on('pictureWeb', async(event, args) => {
     console.log('readyMain');
 
     const browser = await puppeteer.launch({
@@ -307,7 +307,7 @@ ipcMain.on('pictureWeb', async (event, args) => {
     // await browser.close();
 })
 
-ipcMain.on('childsongCrawler', async (event, args) => {
+ipcMain.on('childsongCrawler', async(event, args) => {
     // 套件名稱 puppeteer
     // https://wcc723.github.io/development/2020/03/01/puppeteer/ 教學網址
 
@@ -367,18 +367,30 @@ ipcMain.on('childsongCrawler', async (event, args) => {
 // })
 
 
-ipcMain.on('callSTT-start', async (event, args) => {
+ipcMain.on('callSTT-start', async(event, args) => {
     // let STTtext = await callSTT.quickStart();
     if (args.toString().trim() == 'ㄅ') {
         console.log("ㄅ")
-        var audio = player.play('./TTS/mp3/bpm/b.mp3', function (err) {
+        var audio = player.play('./TTS/mp3/bpm/b.mp3', function(err) {
             if (err) throw err;
             console.log("Audio finished");
         })
         audio.kill()
     }
     console.log("success call STT-API =) " + args.toString())
-    //array.forEach(label => console.log("vis="+label.description));
-    // event.sender.send('reply-mainjsfunction', array)
+        //array.forEach(label => console.log("vis="+label.description));
+        // event.sender.send('reply-mainjsfunction', array)
 
 })
+
+
+
+ipcMain.on('callMapCondition', (event, arg) => {
+    console.log("success call Map Condition =) ")
+    api.Level.showLevel(1, (req) => {
+        const data = JSON.parse(JSON.stringify(req));
+        // console.log("data = " + JSON.stringify(data))
+
+        event.sender.send('selectJsonOnTL', data);
+    });
+});

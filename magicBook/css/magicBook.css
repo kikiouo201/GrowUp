@@ -20,11 +20,16 @@ body {
     text-align: center;
     margin: 0px auto;
     /* 置中*/
-    /* padding-top: 8px; */
+    padding-top: 8px;
     line-height: 40px;
     /*配合高度px 垂直置中*/
     position: fixed;
     z-index: 98;
+}
+
+.home_title {
+    /* padding-right: 38px;  強迫症配合左邊返回按鈕，代研究還可以怎麼改，問kiki */
+    font-size: 36px;
 }
 
 #show_page::-webkit-scrollbar {

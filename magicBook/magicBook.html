@@ -14,7 +14,7 @@
 
 <body background="../image/background/desk.png">
     <div class="home_page">
-        <a href="../game_home.html">魔法寶典</a>
+        <a class="home_title">魔法寶典</a>
 
         <div id="today"></div>
         <br>
@@ -139,11 +139,12 @@
 
     <script>
         let bookcontent = document.querySelector("#bookContent");
+
         function scrolls(direction) {
-            if(direction.alt == "right")
+            if (direction.alt == "right")
                 bookcontent.scrollLeft += 250;
             else
-            bookcontent.scrollLeft -= 250;
+                bookcontent.scrollLeft -= 250;
 
             console.log(bookcontent.scrollLeft);
         }
