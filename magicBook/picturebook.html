@@ -31,20 +31,6 @@
                     // }, 2000);
                     console.log(document.querySelector('video'));
 
-<<<<<<< HEAD
-=======
-                bodyInnerHTML2.onclick = function() {
-                    console.log("AAAAAAAAA");
-                    browser.close();
-                }
-                await page.evaluate(() => {
-                    console.log(this);
-
-                    // document.querySelector('.fp-fullscreen').click();
-                    // setTimeout(() => {
-                    //     document.querySelector('.fp-ui').click()
-                    // }, 2000);
->>>>>>> 3125e239bfeb228d967a17da20aa2468fe84203d
                 });
                 const bodyInnerHTML2 = await page.waitForSelector('.fp-engine');
 
@@ -285,25 +271,6 @@
 
                 let bookdiv = document.createElement("div");
                 bookdiv.className = 'book';
-<<<<<<< HEAD
-=======
-                bookdiv.onclick = function() {
-                        GoWeb(jsons[i]['url']);
-                    }
-                    // function () {                   
-                    //     (async () => {
-                    //         const browser = await puppeteer.launch({
-                    //             executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
-                    //             headless: false
-                    //         });
-                    //         const page = await browser.newPage();
-                    //         await page.goto(jsons[i]['url']);
-                    //         await page.click('.fp-fullscreen');
-                    //         await page.click('.fp-ui', {
-                    //             delay: 2000
-                    //         });
-                    //     })();
->>>>>>> 3125e239bfeb228d967a17da20aa2468fe84203d
 
                 let bookname = document.createElement("div");
                 bookname.className = 'bookname-div'
