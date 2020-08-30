@@ -20,39 +20,7 @@ const { spawn, spawnSync } = require("child_process")
 // callPythonProcess()          //如果開了他 一跑會直接開始執行child-process XDD，要跑Electron要註解掉
 function callPythonProcess(req, res) {
 
-    // console.log(`question: ${req.query.question}, answer: ${req.query.answer}`)
-
-    // let spawn = require("child_process").spawn
-
-
-    // let process = spawn('python', [
-    //   "./dialogFlow-perfect.py",
-    //   req.query.question,
-    //   req.query.answer,
-    //   console.log(req.query.question)
-    // ])
     const process = spawn('python', ["./dialogFlow-perfect.py"]); //之後會放到py_STT，要改路徑
-
-    // process.stdout
-    //         .pipe(es.split('\n')
-    //         .pipe(es.through(function(line) {
-    //             if(codition){
-    //               process.kill()
-    //               this.queue(null)
-    //             }
-
-    //             const parsedString = JSON.parse(data)
-    //             res.json(parsedString)
-
-    //             console.log(line.toString());
-    //             res.write(line);
-    //             // res.end('end');
-    //             // res.endCallback();
-    //             console.log(`question: ${req.query.question}, answer: ${req.query.answer}`)
-
-    //         })))
-
-    // var bufferHelper = new BufferHelper();
 
     process.stdout.on('data', (data) => {
         // const parsedString = data.toString()
@@ -93,34 +61,8 @@ function callPythonProcess(req, res) {
         // iconv.encodingExists("gbk")
 
         document.getElementById('yourQuestion').innerHTML.value = bufferOriginal.toString();
-        // console.log(str == data);
-        // parsedString.Question()
-        // console.log(data);
-        // console.log("問題QQ"+res.Question.toString()+"\n");
-        // res.write(data);
-        // console.log(data);
-        // res.end('end');
-        // res.endCallback();
-        // console.log(`question: ${req.query.question}, answer: ${req.query.answer}`)
     })
 
-
-    // process.stdout.on('end',function(){
-    //   var str = iconv.decode(bufferHelper.toBuffer(),'gbk');
-    //   callback(null,str);
-    // }); 
-
-
-
-    //   req.query.question,
-    //   req.query.answer,
-    //   console.log(req.query.question)
-    // ])
-
-    // process.stdout.on('data', (data) => {
-    //   const parsedString = JSON.parse(data)
-    //   res.json(parsedString)
-    // })
 
 }
 
@@ -132,7 +74,10 @@ function startSpeak(
 ) {
     const process = spawn('python', ["-u", "./dialogFlow-perfect.py"]);
 
-    let q = null
+    let q = null;
+    let a = null;
+    let url = null;
+    let keyWord = null;
 
     //stdout 輸出 stdin 輸入
     process.stdout.on('data', (data) => {
@@ -181,8 +126,12 @@ function startSpeak(
         // }
 
         if (result.includes('data[url]')) {
-            const url = result.split('=')[1]
-            callbackWhenSuccess({ q, a, url })
+            url = result.split('=')[1]
+        }
+
+        if (result.includes('data[keyWord]')) {
+            keyWord = result.split('=')[3]
+            callbackWhenSuccess({ q, a, url, keyWord })
             process.kill()
         }
     })

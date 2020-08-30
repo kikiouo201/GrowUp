@@ -91,9 +91,9 @@ if (voiceBtn) {
         const QA_card = document.querySelector('#QA_card');
         console.log("Q:" + createQA)
         ipcRenderer.once('voice-require-to-py-reply-result', (event, data) => {
-            console.log("q =>" + data.q + " a =>" + data.a + " url =>" + data.url)
+            console.log("q =>" + data.q + " a =>" + data.a + " url =>" + data.url + " keyword=>" + data.keyWord)
             console.log("url =>" + data.url)
-            console.log("q =>" + data.q)
+            console.log("data obj:" + JSON.stringify(data))
                 // console.log("QName =>" + data.QName)
                 // debugger
             QA_card.innerHTML = QA_card.innerHTML + createQA(data.q, data.url, data.a);
