@@ -14,29 +14,17 @@ ipcRenderer.send('callGoodRegard');
 ipcRenderer.on('replyGoodregardTot', (event, data) => {
     console.log("data = " + JSON.stringify(data))
         // console.log("dataContent=" + data.content);
-    console.log("data event=" + data.content[0]["SUM(add_value)"]);
-    var totValue = data.content[0]["SUM(add_value)"];
+        // console.log("data event=" + data.content[0]["SUM(add_value)"]);
+        // var totValue = data.content[0]["SUM(add_value)"];
+    console.log(data);
 
-    for (i = 1; i < 10; i++) {
-        var RangeMax = (1 + i) * i * 10;
-        var RangeMin = i * (i - 1) * 10;
-        if (totValue < RangeMax && totValue > RangeMin) {
-            console.log("level : " + i);
-            // console.log("max:" + RangeMax + " min:" + RangeMin)
-            var levelFull = RangeMax - RangeMin;
-            var exValue = totValue - RangeMin;
-            console.log("Full ex: " + levelFull + "Ex value: " + exValue);
-            level.innerText = i;
-            currentEx.innerHTML = exValue + "/" + levelFull;
-            var downValueColor = Math.floor(exValue / levelFull * 100);
-            // console.log("downValueColor:" + downValueColor)
-            var percentColor = Math.round(exValue / levelFull * 100);
-            document.querySelector(".good-regard-value").style.width = percentColor + "%";
-            // 距離nextLevel
-            var nextLevelEx = levelFull - exValue;
-            console.log("nextLevelEx:" + nextLevelEx)
-        }
-    }
+    // 等級
+    level.innerText = data['level'];
+    // 目前ex/滿級Ex
+    currentEx.innerHTML = data['exValue'] + "/" + data['levelFull'];
+    // Ex進度條
+    document.querySelector(".good-regard-value").style.width = data['percentColor'] + "%";
+
 });
 
 function mouseDown(index) {

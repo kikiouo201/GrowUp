@@ -96,7 +96,8 @@ body {
 
 .good-regard-text {
     position: absolute;
-    left: 285px;
+    /* left: 285px; */
+    left: 240px;
     margin-right: -65px;
     margin-top: 3px;
     top: 100px;
