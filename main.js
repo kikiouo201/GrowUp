@@ -401,8 +401,36 @@ ipcMain.on('callGoodRegard', (event, arg) => {
     api.People.showChildGoodBabyTotalValue(1, (req) => {
         const tot = JSON.parse(JSON.stringify(req));
         // console.log("data = " + JSON.stringify(data))
+        var totValue = tot.content[0]["SUM(add_value)"];
+        // 目前總值
+        // console.log("data event=" + tot.content[0]["SUM(add_value)"]);
+        for (i = 1; i < 100; i++) {
+            var RangeMax = (1 + i) * i * 10;
+            var RangeMin = i * (i - 1) * 10;
+            if (totValue < RangeMax && totValue > RangeMin) {
+                console.log("level : " + i);
+                var level = i;
+                // console.log("max:" + RangeMax + " min:" + RangeMin)
+                var levelFull = RangeMax - RangeMin;
+                var exValue = totValue - RangeMin;
+                // console.log("Full ex: " + levelFull + "Ex value: " + exValue);
 
-        event.sender.send('replyGoodregardTot', tot);
+                // level.innerText = i;
+                // currentEx.innerHTML = exValue + "/" + levelFull;
+                var downValueColor = Math.floor(exValue / levelFull * 100);
+                // console.log("downValueColor:" + downValueColor)
+                var percentColor = Math.round(exValue / levelFull * 100);
+                // document.querySelector(".good-regard-value").style.width = percentColor + "%";
+
+                // 距離nextLevel
+                var nextLevelEx = levelFull - exValue;
+                console.log("nextLevelEx:" + nextLevelEx)
+                var AllExData = { "level": level, "exValue": exValue, "levelFull": levelFull, "nextLevelEx": nextLevelEx, "percentColor": percentColor }
+
+                event.sender.send('replyGoodregardTot', AllExData);
+
+            }
+        }
     });
 
     // api.People.showChildGoodBabyDayValue(1, (req) => {
