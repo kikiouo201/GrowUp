@@ -1,6 +1,31 @@
 const { ipcRenderer } = require('electron');
 var player = require('play-sound')(opts = {})
+const level = document.getElementById("level");
+const currentEx = document.getElementById("currentEx");
+
 const SSU = new SpeechSynthesisUtterance();
+
+ipcRenderer.send('callGoodRegard');
+// ipcRenderer.on('replyGoodregardValue', (event, data) => {
+//     console.log("data = " + JSON.stringify(data))
+
+// });
+
+ipcRenderer.on('replyGoodregardTot', (event, data) => {
+    console.log("data = " + JSON.stringify(data))
+        // console.log("dataContent=" + data.content);
+        // console.log("data event=" + data.content[0]["SUM(add_value)"]);
+        // var totValue = data.content[0]["SUM(add_value)"];
+    console.log(data);
+
+    // 等級
+    level.innerText = data['level'];
+    // 目前ex/滿級Ex
+    currentEx.innerHTML = data['exValue'] + "/" + data['levelFull'];
+    // Ex進度條
+    document.querySelector(".good-regard-value").style.width = data['percentColor'] + "%";
+
+});
 
 function mouseDown(index) {
     if (index) {

@@ -1,102 +1,103 @@
 body {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background: "../../image/map/kraftPaper5.png";
 }
 
 .map {
-  text-align: center;
-  position: relative;
-  height: 700px;
+    text-align: center;
+    position: relative;
+    /* height: 700px; */
 }
 
 .terrain {
-  width: 400px;
-  overflow: hidden;
-  position: relative;
-  z-index: 1;
-  filter: drop-shadow(10px 10px 5px rgba(0, 0, 0, 0.3));
-  top:150px;
+    width: 400px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    filter: drop-shadow(10px 10px 5px rgba(0, 0, 0, 0.3));
+    /* top: 150px; */
 }
 
 .level1 {
-  width: 75px;
-  position: absolute;
-  z-index: 10;
-  top: 235px;
-  left: 313px;
+    width: 75px;
+    position: absolute;
+    z-index: 10;
+    top: 85px;
+    left: 313px;
 }
+
 .level_basic {
-  width: 38px;
-
+    width: 38px;
 }
-.level {
-  width: 30px;
 
+.level {
+    width: 30px;
 }
 
 .level_text {
-  width: 40px;
-  position: absolute;
-  z-index: 10;
-  top: 2px;
-  left: 32%;
+    width: 40px;
+    position: absolute;
+    z-index: 10;
+    top: 2px;
+    left: 32%;
 }
 
 .level2 {
-  width: 100px;
-  position: absolute;
-  z-index: 10;
-  top: 170px;
-  left: 317px;
+    width: 100px;
+    position: absolute;
+    z-index: 10;
+    top: 20px;
+    left: 317px;
 }
 
 .level3 {
-  width: 100px;
-  position: absolute;
-  z-index: 10;
-  top: 195px;
-  left: 240px;
+    width: 100px;
+    position: absolute;
+    z-index: 10;
+    top: 45px;
+    left: 240px;
 }
 
 .level4 {
-  width: 100px;
-  position: absolute;
-  z-index: 10;
-  top: 230px;
-  left: 195px;
+    width: 100px;
+    position: absolute;
+    z-index: 10;
+    top: 80px;
+    left: 195px;
 }
 
 .level5 {
-  width: 100px;
-  position: absolute;
-  z-index: 10;
-  top: 220px;
-  left: 75px;
+    width: 100px;
+    position: absolute;
+    z-index: 10;
+    top: 69px;
+    left: 75px;
 }
 
 .level6 {
-  width: 100px;
-  position: absolute;
-  z-index: 10;
-  top: 190px;
-  left: 12px;
+    width: 100px;
+    position: absolute;
+    z-index: 10;
+    top: 42px;
+    left: 12px;
 }
 
 .level7 {
-  width: 100px;
-  position: absolute;
-  z-index: 10;
-  top: 255px;
-  left: 45px;
+    width: 100px;
+    position: absolute;
+    z-index: 10;
+    top: 106px;
+    left: 45px;
 }
 
 .level8 {
-  width: 100px;
-  position: absolute;
-  z-index: 10;
-  top: 305px;
-  left: 68px;
+    width: 100px;
+    position: absolute;
+    z-index: 10;
+    top: 157px;
+    left: 67px;
 }
