@@ -13,53 +13,61 @@ async function start(){
   });
 
   // Performs label detection on the image file
-    const [result] =await client.labelDetection('still-image.jpg');
+    const [result] =await client.labelDetection('still-image.png');
     var labels = result.labelAnnotations;
-    console.log(labels)
     let text = ""; 
     
     for(var i=0;i<labels.length;i++){
         if(labels[i].description.toString() == "Watermelon"){
             text = labels[i].description;
+            break;
         }
         
-        if(labels[i].description.toString() == "Apple"){
+        else if(labels[i].description.toString() == "Apple"){
             text = labels[i].description;
+            break;
         }
 
-        if(labels[i].description.toString() == "Banana"){
+        else if(labels[i].description.toString() == "Banana"){
             text = labels[i].description;
+            break;
         }
 
-        if(labels[i].description.toString() == "Laptop"){
+        else if(labels[i].description.toString() == "Laptop"){
             text = labels[i].description;
+            break;
         }
 
-        if(labels[i].description.toString() == "chair"){
+        else if(labels[i].description.toString() == "chair"){
             text = labels[i].description;
+            break;
         }
 
-        if(labels[i].description.toString() == "kettle"){
+        else if(labels[i].description.toString() == "kettle"){
             text = labels[i].description;
+            break;
         }
 
-        if(labels[i].description.toString() == "notebook"){
+        else if(labels[i].description.toString() == "notebook"){
             text = labels[i].description;
+            break;
         }
 
-        if(labels[i].description.toString() == "Glasses"){
+        else if(labels[i].description.toString() == "Glasses"){
             text = labels[i].description;
+            break;
         }
 
-        if(labels[i].description.toString() == "Smartphone"){
+        else if(labels[i].description.toString() == "Smartphone"){
             text = labels[i].description;
+            break;
         }
-
     
         else{
-            // text = labels[0].description;
+            text = labels[0].description;
         }
-    }
+    } 
+    
     
     const target = "zh-TW"
     let [translations] = await translate.translate(text, target);

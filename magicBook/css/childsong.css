@@ -35,33 +35,20 @@ body {
     width: 100%;
 }
 
-#song_list {
-    width: auto;
-    height: auto;
-    padding: 5%;
-    padding-top: 7%;
-    vertical-align: middle;
-    margin-top: 5.5%;
-    display: block;
-    color: white;
-    font-family: 文鼎標楷注音;
-    box-sizing: border-box;
-}
+
 
 #song {
-    width: 24%;
-    display: inline-table;
+    width: 45%;
+    display: inline-block;
     color: rgb(19, 1, 1);
     font-weight: bold;
     padding: 10px;
-    /* margin: 10px;
-  margin-right: 2%;
-  margin-left: 4%; */
-    margin: 15px 2% 10px 4%;
+    margin: 15px 2% 10px 2%;
     text-align: center;
     font-family: Microsoft JhengHei;
     border-radius: 10px;
     background-color: white;
+    box-sizing: border-box;
 }
 
 .bookContent::-webkit-scrollbar {
@@ -71,7 +58,7 @@ body {
 .bookContent {
     position: relative;
     top: 20%;
-    /* margin-top: 13%; */
+    margin-top: 13%;
     width: 100%;
     height: 70%;
     /* text-align: center; */
