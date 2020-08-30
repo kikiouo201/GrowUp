@@ -24,14 +24,20 @@
                 const page = await browser.newPage();
                 await page.goto("https://children.moc.gov.tw/song_list");
 
-                await browser.close();
+                const a = await page.$$('.songbox')
+
+                const href = await (a[0].$eval('a', el => el.getAttribute('href')));
+
+                console.log(href)
+
+                // await browser.close();
             })();
         }
     </script>
 
 </head>
 
-<body style="width: 100%; height: 100%; margin-left: 0px;" background="../image/background/desk.png" onload="ShowTime(), dataCrawler()">
+<body style="width: 100%; height: 100%; margin-left: 0px;" background="../image/background/desk.png" onload="ShowTime(), tastPuppeteer()">
     <div class="home_page">
         <a class="home_title">兒歌寶典</a>
 

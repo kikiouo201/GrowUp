@@ -278,13 +278,24 @@ ipcMain.on('pictureWeb', async(event, args) => {
     });
     //設定預設網頁頁面大小
     await page.setViewport(currentScreen);
+
+    page.on('colse', async () => {
+        await browser.close();
+    });
+
+    await page.exposeFunction('colseBrowser', () => {
+        page.emit('colse');
+    });
+
     await page.goto(args);
     await page.evaluate(() => {
         document.querySelector('.fp-fullscreen').click();
+
         setTimeout(() => {
             document.querySelector('.fp-ui').click()
         }, 2000);
-        console.log(document.querySelector('video'));
+
+        document.querySelector('.fp-fullscreen').onclick = () => window.colseBrowser();
 
     });
     // const bodyInnerHTML2 = await page.waitForSelector('video');

@@ -24,41 +24,24 @@
                 });
                 const page = await browser.newPage();
                 await page.goto(web);
-                await page.evaluate(() => {
-                    // document.querySelector('.fp-fullscreen').click();
-                    // setTimeout(() => {
-                    //     document.querySelector('.fp-ui').click()
-                    // }, 2000);
-                    console.log(document.querySelector('video'));
 
+                page.on('colse', async () => {
+                    await browser.close();
                 });
-                const bodyInnerHTML2 = await page.waitForSelector('.fp-engine');
 
-                // var vid = await document.createElement('VIDEO');
-                // vid.src = await bodyInnerHTML2.src;
-                // vid.setAttribute("width", "320");
-                // vid.setAttribute("height", "240");
-                // vid.setAttribute("controls", "controls");
-                // await console.log(vid);
-                console.log(bodyInnerHTML2);
+                await page.exposeFunction('colseBrowser', () => {
+                    page.emit('colse');
+                });
 
-                let dos = document.querySelector('#learn_book');
-                await dos.append(bodyInnerHTML2);
+                await page.evaluate(() => {
+                    
+                    document.querySelector('.fp-fullscreen').click();
+                    setTimeout(() => {
+                        document.querySelector('.fp-ui').click()
+                    }, 2000);
+                    document.querySelector('.fp-fullscreen').onclick = () => window.colseBrowser();
+                });
 
-
-                // bodyInnerHTML2.onclick =function(){ 
-                //     console.log("AAAAAAAAA");
-                //     browser.close();
-                // }
-                // await page.evaluate(() => {
-                //     console.log(this);
-
-                // document.querySelector('.fp-fullscreen').click();
-                // setTimeout(() => {
-                //     document.querySelector('.fp-ui').click()
-                // }, 2000);
-                // });
-                // await browser.close();
             })();
         }
     </script>
