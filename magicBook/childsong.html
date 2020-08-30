@@ -15,7 +15,7 @@
     <script>
         const puppeteer = require('puppeteer');
 
-        function tastPuppeteer() {
+        function tastPuppeteer(num) {
             (async() => {
                 let browser = await puppeteer.launch({
                     executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
@@ -24,6 +24,27 @@
                 const page = await browser.newPage();
                 await page.goto("https://children.moc.gov.tw/song_list");
 
+                const a = await page.$$('.songbox')
+                await (a[num].$eval('img' , al => al.click()))
+
+                // await browser.close();
+            })();
+        }
+
+
+        function createSong() {
+            (async() => {
+                let browser = await puppeteer.launch({
+                    executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
+                    headless: true
+                });
+                const page = await browser.newPage();
+                await page.goto("https://children.moc.gov.tw/song_list");
+
+                const a = await page.$$('.songbox')
+
+                console.log(href)
+                console.log(h2)
                 await browser.close();
             })();
         }
@@ -31,7 +52,7 @@
 
 </head>
 
-<body style="width: 100%; height: 100%; margin-left: 0px;" background="../image/background/desk.png" onload="ShowTime(), dataCrawler()">
+<body style="width: 100%; height: 100%; margin-left: 0px;" background="../image/background/desk.png" onload="ShowTime()">
     <div class="home_page">
         <a class="home_title">兒歌寶典</a>
 
@@ -44,43 +65,88 @@
     <img onclick="scrolls(this)" class="Arrow" style="left:15px; transform:rotate(180deg); visibility: visible;" src="../magicBook/image/ArrowIcon.png" alt="left">
 
     <div id="bookContent" class="bookContent">
-        <div id="song_list">
+
             <div id="song">
                 <div id="song_name">
-                    <h2>1.王老先生有塊地</h2>
+                    <h2>1.一禮拜</h2>
                 </div>
                 <div id="songImg">
-                    <img id="img" src="../image/childsongImg/farmer.jpg" onclick="location.href='./songSummary.html?src=https://www.youtube.com/embed/7sP1uZtoDvE'">
+                    <img id="img" src="https://children.moc.gov.tw/resource/song_image/s_480.jpg" onclick="tastPuppeteer(0)">
                 </div>
             </div>
 
             <div id="song">
                 <div id="song_name">
-                    <h2>2.滿天都是小星星</h2>
+                    <h2>2.讓愛看得的見</h2>
                 </div>
                 <div id="songImg">
-                    <img id="img" src="../image/childsongImg/star.jpg" onclick="location.href='./songSummary.html?src=https://www.youtube.com/embed/-Dy08V8X5o8'">
+                    <img id="img" src="https://children.moc.gov.tw/resource/song_image/s_479.jpg" onclick="tastPuppeteer(1)">
                 </div>
             </div>
 
             <div id="song">
                 <div id="song_name">
-                    <h2>3.兩隻老虎</h2>
+                    <h2>3.阿不倒</h2>
                 </div>
                 <div id="songImg">
-                    <img src="../image/childsongImg/tiger.jpg" onclick="location.href='./songSummary.html?src=https://www.youtube.com/embed/rshE1d2RrPg'">
+                    <img src="https://children.moc.gov.tw/resource/song_image/s_478.jpg" onclick="tastPuppeteer(2)">
                 </div>
             </div>
 
             <div id="song">
                 <div id="song_name">
-                    <h2>4.Baby shark</h2>
+                    <h2>4.露珠</h2>
                 </div>
                 <div id="songImg">
-                    <img src="../image/childsongImg/shark.jpg" onclick="location.href='./songSummary.html?src=https://www.youtube.com/embed/FvTmSB4tDZg'">
+                    <img src="https://children.moc.gov.tw/resource/song_image/s_477.jpg" onclick="tastPuppeteer(3)">
                 </div>
             </div>
-        </div>
+
+            <div id="song">
+                <div id="song_name">
+                    <h2>5.疊羅漢</h2>
+                </div>
+                <div id="songImg">
+                    <img src="https://children.moc.gov.tw/resource/song_image/s_476.jpg" onclick="tastPuppeteer(4)">
+                </div>
+            </div>
+
+            <div id="song">
+                <div id="song_name">
+                    <h2>6.雨的花蕊</h2>
+                </div>
+                <div id="songImg">
+                    <img src="https://children.moc.gov.tw/resource/song_image/s_475.jpg" onclick="tastPuppeteer(5)">
+                </div>
+            </div>
+
+            <div id="song">
+                <div id="song_name">
+                    <h2>7.Snbarux 換工</h2>
+                </div>
+                <div id="songImg">
+                    <img src="https://children.moc.gov.tw/resource/song_image/s_474.jpg" onclick="tastPuppeteer(6)">
+                </div>
+            </div>
+
+            <div id="song">
+                <div id="song_name">
+                    <h2>8.白鶴</h2>
+                </div>
+                <div id="songImg">
+                    <img src="https://children.moc.gov.tw/resource/song_image/s_473.jpg" onclick="tastPuppeteer(7)">
+                </div>
+            </div>
+            
+
+            <div id="song">
+                <div id="song_name">
+                    <h2>9.燕子回來的時候</h2>
+                </div>
+                <div id="songImg">
+                    <img src="https://children.moc.gov.tw/resource/song_image/s_472.jpg" onclick="tastPuppeteer(8)">
+                </div>
+            </div>
     </div>
 
 
