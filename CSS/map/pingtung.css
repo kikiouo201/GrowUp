@@ -1,72 +1,76 @@
-
-body{
+body {
     display: flex;
     width: 100%;
     height: 100%;
     justify-content: center;
     align-items: center;
 }
-.map{
+
+.map {
     text-align: center;
     position: relative;
-    height: 700px;
-    top: 50px;
+    /* height: 700px; */
+    /* top: 50px; */
     right: -30px;
 }
-.terrain{
+
+table,
+a {
+    width: 103px;
+}
+
+.terrain {
     width: 240px;
     position: relative;
-    top: -25px;
+    /* top: -25px; */
     z-index: 1;
     margin-right: -45px;
 }
 
-.level1{
+.level1 {
     width: 75px;
     position: absolute;
     z-index: 10;
-    top: -28px;
+    top: -2px;
     left: 133px;
 }
-.level_basic{
-    width: 67px;
 
+.level_basic {
+    width: 66px;
 }
-.level{
+
+.level {
     width: 56px;
-
 }
-.level_text{
+
+.level_text {
     width: 40px;
     position: absolute;
     z-index: 10;
     top: 16px;
     left: 30%;
 }
-.level2{
+
+.level2 {
     width: 100px;
     position: absolute;
     z-index: 10;
-    top: 27px;
+    top: 52px;
     left: 41px;
 }
 
-.level3{
+.level3 {
     width: 100px;
     position: absolute;
     z-index: 10;
-    top: 138px;
+    top: 164px;
     left: 56px;
 }
 
-.level4{
+.level4 {
     width: 100px;
     position: absolute;
     z-index: 10;
-    top: 305px;
+    top: 330px;
     left: 150px;
 }
-
-
-
-
