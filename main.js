@@ -47,6 +47,7 @@ function createWindow() {
         icon: path.join(__dirname, 'icons/raspberry_icon.png'),
         fullscreen: false,
         webSecurity: false,
+        blinkFeatures : 'Touch' ,
         webPreferences: {
             nodeIntegration: true, //如果出bug改回true看看
             width: 1200,
@@ -76,12 +77,12 @@ function createWindow() {
         win = null
     })
 }
-app.commandLine.appendSwitch('--enable-touch-events')
+
 // Electron 会在初始化后并准备
 // 创建浏览器窗口时，调用这个函数。
 // 部分 API 在 ready 事件触发后才能使用。
 app.on('ready', createWindow)
-
+app.commandLine.appendSwitch('--enable-touch-events')
 // 当全部窗口关闭时退出。
 app.on('window-all-closed', () => {
     // 在 macOS 上，除非用户用 Cmd + Q 确定地退出，
