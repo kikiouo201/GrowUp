@@ -1,78 +1,87 @@
-
-body{
-  display: flex;
-  width: 100%;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
-}
-.map{
-  text-align: center;
-  position: relative;
-  height: 700px;
-  right: -30px;
-  top: 50px;
-}
-.terrain{
-  width: 325px;
-  position: relative;
-  top: 20px;
-  z-index: 1;
- 
+body {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
 }
 
-.level1{
-  width: 75px;
-  position: absolute;
-  z-index: 10;
-  top: 239px;
-  left: 117px;
-}
-.level{
-  width: 53px;
-
-}
-.level_text{
-  width: 105px;
-  position: absolute;
-  z-index: 10;
-  top: -19px;
-  left: -9%;
-}
-.level2{
-  width: 100px;
-  position: absolute;
-  z-index: 10;
-  top: 180px;
-  left: 169px;
-}
-.level3{
-  width: 100px;
-  position: absolute;
-  z-index: 10;
-  top: 105px;
-  left: 222px;
-}
-.level4{
-  width: 100px;
-  position: absolute;
-  z-index: 10;
-  top: 124px;
-  left: 107px;
-}
-.level5{
-  width: 100px;
-  position: absolute;
-  z-index: 10;
-  top: 115px;
-  left: -12px;
+table,
+a {
+    width: 92px;
 }
 
-.level6{
-  width: 35px;
-  position: absolute;
-  z-index: 10;
-  top: 67px;
-  left: 87px;
+.map {
+    text-align: center;
+    position: relative;
+    /* height: 700px; */
+    left: 20px;
+    /* top: 50px; */
+}
 
+.terrain {
+    width: 325px;
+    position: relative;
+    /* top: 20px; */
+    z-index: 1;
+}
+
+.level1 {
+    width: 75px;
+    position: absolute;
+    z-index: 10;
+    top: 220px;
+    left: 117px;
+}
+
+.level {
+    width: 53px;
+}
+
+.level_text {
+    width: 105px;
+    position: absolute;
+    z-index: 10;
+    top: -19px;
+    left: -9%;
+}
+
+.level2 {
+    width: 100px;
+    position: absolute;
+    z-index: 10;
+    top: 161px;
+    left: 170px;
+}
+
+.level3 {
+    width: 100px;
+    position: absolute;
+    z-index: 10;
+    top: 85px;
+    left: 222px;
+}
+
+.level4 {
+    width: 100px;
+    position: absolute;
+    z-index: 10;
+    top: 105px;
+    left: 108px;
+}
+
+.level5 {
+    width: 100px;
+    position: absolute;
+    z-index: 10;
+    top: 96px;
+    left: -12px;
+}
+
+.level6 {
+    width: 35px;
+    position: absolute;
+    z-index: 10;
+    top: 46px;
+    left: 87px;
 }
