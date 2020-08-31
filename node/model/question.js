@@ -74,7 +74,7 @@ function question(app){
         },
         
         
-        addQa(child_id, question_text, answer, question_img,book_name,book_img,book_introduction, category,callback){
+        addQa(child_id, question_text, answer, question_img,keyword,book_name,book_img,book_introduction, category,callback){
             let question_url=null;
             console.log('question_img.substring(0, 4)'+question_img.substring(0, 4));
             if(question_img.substring(0, 4) == 'http'){
@@ -98,6 +98,7 @@ function question(app){
                answer: answer,
                base64str : question_url ,
                category: category,
+               keyword: keyword ,
                book_name: book_name,
                book_img: book_url,
                book_introduction: book_introduction,
