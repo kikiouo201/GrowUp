@@ -130,7 +130,7 @@ body {
     height: 100%;
     background-color: #333333a1;
     z-index: 2000;
-    visibility: hidden;
+    display: none;
 }
 
 #closepage {
@@ -142,20 +142,32 @@ body {
     color: white;
 }
 
-#animalclassName {
+.animalName {
     position: absolute;
     top: 45%;
     left: 6%;
     display: inline-block;
-    visibility: visible;
 }
 
-#animalclassExplain {
+.animalExplain {
     position: absolute;
     top: 53%;
     left: 6%;
     display: inline-block;
-    visibility: visible;
+}
+
+.animalclassName {
+    position: absolute;
+    top: 45%;
+    left: 6%;
+    display: none;
+}
+
+.animalclassExplain {
+    position: absolute;
+    top: 53%;
+    left: 6%;
+    display: none;
 }
 
 #animalclass {

@@ -8,8 +8,7 @@
     <link rel="stylesheet" href="../CSS/interface.css">
     <link rel="stylesheet" href="../CSS/every_four_button.css">
     <link rel="stylesheet" href="./css/picturebook.css">
-    <script src="./js/picturebook.js"></script>
-
+    <script src="./js/crawler.js"></script>
     <title>繪本</title>
 
     <script>
@@ -277,7 +276,7 @@
 
                     let watch_btn = document.createElement('button');
                     watch_btn.onclick = function () {
-                        GoWeb(url);
+                        showWeb(url);
                     }
                     let watch_ic = document.createElement('img');
                     watch_ic.src = "./image/icon_watchVideo.png";
