@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html style="width: 100%; height: 100%;" lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -8,22 +8,22 @@
     <link rel="stylesheet" href="../CSS/interface.css">
     <link rel="stylesheet" href="../CSS/every_four_button.css">
     <link rel="stylesheet" href="./css/childsong.css">
-    <script src="./js/childsong.js"></script>
+    <script src="./js/crawler.js"></script>
 
-    <title>Document</title>
+    <title>兒歌寶典</title>
 
     <script>
         const puppeteer = require('puppeteer');
 
         function tastPuppeteer(num) {
-            (async() => {
+            (async () => {
                 let browser = await puppeteer.launch({
                     executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
                     headless: false,
-                    args : [
+                    args: [
                         '--window-size=800,600'
-                        ]
-                    
+                    ]
+
                 });
 
                 const page = await browser.newPage();
@@ -31,28 +31,28 @@
 
                 const a = await page.$$('.songbox')
 
-                const href = await (a[0].$eval('a' , al => al.getAttribute('href')))
-                await (a[num].$eval('img' , al => al.click()))
+                const href = await (a[0].$eval('a', al => al.getAttribute('href')))
+                await (a[num].$eval('img', al => al.click()))
 
 
-                await page.goto("https://children.moc.gov.tw/"+href)
+                await page.goto("https://children.moc.gov.tw/" + href)
                 await page.evaluate(() => {
-                document.querySelector('.fp-fullscreen').click();
+                    document.querySelector('.fp-fullscreen').click();
 
-                setTimeout(() => {
-                    document.querySelector('.fp-ui').click()
-                }, 2000);
+                    setTimeout(() => {
+                        document.querySelector('.fp-ui').click()
+                    }, 2000);
 
-                document.querySelector('.fp-fullscreen').onclick = () => window.colseBrowser();
+                    document.querySelector('.fp-fullscreen').onclick = () => window.colseBrowser();
 
-            });
+                });
                 // await browser.close();
             })();
         }
 
 
         function createSong() {
-            (async() => {
+            (async () => {
                 let browser = await puppeteer.launch({
                     executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
                     headless: true
@@ -67,11 +67,41 @@
                 await browser.close();
             })();
         }
+
+        function TestCrawler(web) {
+            (async () => {
+                let browser = await puppeteer.launch({
+                    executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
+                    // args: ['--start-fullscreen'],
+                    headless: false
+                });
+                const page = await browser.newPage();
+                await page.goto(web);
+
+                page.on('colse', async () => {
+                    await browser.close();
+                });
+
+                await page.exposeFunction('colseBrowser', () => {
+                    page.emit('colse');
+                });
+
+                await page.evaluate(() => {
+
+                    document.querySelector('.fp-fullscreen').click();
+                    setTimeout(() => {
+                        document.querySelector('.fp-ui').click()
+                    }, 2000);
+                    document.querySelector('.fp-fullscreen').onclick = () => window.colseBrowser();
+                });
+
+            })();
+        }
     </script>
 
 </head>
 
-<body style="width: 100%; height: 100%; margin-left: 0px;" background="../image/background/desk.png" onload="ShowTime()">
+<body style="width: 100%; height: 100%; margin-left: 0px;" onload="ShowTime()">
     <div class="home_page">
         <a class="home_title">兒歌寶典</a>
 
@@ -80,94 +110,144 @@
         <div id="showtime"></div>
     </div>
 
-    <img onclick="scrolls(this)" class="Arrow" style="right:15px; visibility: visible;" src="../magicBook/image/ArrowIcon.png" alt="right">
-    <img onclick="scrolls(this)" class="Arrow" style="left:15px; transform:rotate(180deg); visibility: visible;" src="../magicBook/image/ArrowIcon.png" alt="left">
 
-    <div id="bookContent" class="bookContent">
+    <div class="maincontent">
+        <div class="song">
+            <div class="songname-div">
+                <h2>一禮拜</h2>
+                <img class="voice" src=" ../icons/speaker.png" />
 
-            <div id="song">
-                <div id="song_name">
-                    <h2>1.一禮拜</h2>
-                </div>
-                <div id="songImg">
-                    <img id="img" src="https://children.moc.gov.tw/resource/song_image/s_480.jpg" onclick="tastPuppeteer(0)">
-                </div>
             </div>
-
-            <div id="song">
-                <div id="song_name">
-                    <h2>2.讓愛看得的見</h2>
-                </div>
-                <div id="songImg">
-                    <img id="img" src="https://children.moc.gov.tw/resource/song_image/s_479.jpg" onclick="tastPuppeteer(1)">
-                </div>
+            <div class="activity-div">
+                <img id="img" src="https://children.moc.gov.tw/resource/song_image/s_480.jpg">
+                <button onclick='TestCrawler("https:\/\/children.moc.gov.tw/song/480")'>
+                    <img src="./image/icon_watchVideo.png" />
+                    <h2>觀看繪本</h2>
+                </button>
             </div>
+        </div>
 
-            <div id="song">
-                <div id="song_name">
-                    <h2>3.阿不倒</h2>
-                </div>
-                <div id="songImg">
-                    <img src="https://children.moc.gov.tw/resource/song_image/s_478.jpg" onclick="tastPuppeteer(2)">
-                </div>
-            </div>
 
-            <div id="song">
-                <div id="song_name">
-                    <h2>4.露珠</h2>
-                </div>
-                <div id="songImg">
-                    <img src="https://children.moc.gov.tw/resource/song_image/s_477.jpg" onclick="tastPuppeteer(3)">
-                </div>
-            </div>
+        <div class="song">
+            <div class="songname-div">
+                <h2>讓愛看得見</h2>
+                <img class="voice" src=" ../icons/speaker.png" />
 
-            <div id="song">
-                <div id="song_name">
-                    <h2>5.疊羅漢</h2>
-                </div>
-                <div id="songImg">
-                    <img src="https://children.moc.gov.tw/resource/song_image/s_476.jpg" onclick="tastPuppeteer(4)">
-                </div>
             </div>
+            <div class="activity-div">
+                <img id="img" src="https://children.moc.gov.tw/resource/song_image/s_479.jpg">
+                <button onclick='TestCrawler("https:\/\/children.moc.gov.tw/song/479")'>
+                    <img src="./image/icon_watchVideo.png" />
+                    <h2>觀看繪本</h2>
+                </button>
+            </div>
+        </div>
 
-            <div id="song">
-                <div id="song_name">
-                    <h2>6.雨的花蕊</h2>
-                </div>
-                <div id="songImg">
-                    <img src="https://children.moc.gov.tw/resource/song_image/s_475.jpg" onclick="tastPuppeteer(5)">
-                </div>
-            </div>
+        <div class="song">
+            <div class="songname-div">
+                <h2>阿不倒</h2>
+                <img class="voice" src=" ../icons/speaker.png" />
 
-            <div id="song">
-                <div id="song_name">
-                    <h2>7.Snbarux 換工</h2>
-                </div>
-                <div id="songImg">
-                    <img src="https://children.moc.gov.tw/resource/song_image/s_474.jpg" onclick="tastPuppeteer(6)">
-                </div>
             </div>
+            <div class="activity-div">
+                <img id="img" src="https://children.moc.gov.tw/resource/song_image/s_478.jpg">
+                <button onclick='TestCrawler("https:\/\/children.moc.gov.tw/song/478")'>
+                    <img src="./image/icon_watchVideo.png" />
+                    <h2>觀看繪本</h2>
+                </button>
+            </div>
+        </div>
 
-            <div id="song">
-                <div id="song_name">
-                    <h2>8.白鶴</h2>
-                </div>
-                <div id="songImg">
-                    <img src="https://children.moc.gov.tw/resource/song_image/s_473.jpg" onclick="tastPuppeteer(7)">
-                </div>
-            </div>
-            
+        <div class="song">
+            <div class="songname-div">
+                <h2>露珠</h2>
+                <img class="voice" src=" ../icons/speaker.png" />
 
-            <div id="song">
-                <div id="song_name">
-                    <h2>9.燕子回來的時候</h2>
-                </div>
-                <div id="songImg">
-                    <img src="https://children.moc.gov.tw/resource/song_image/s_472.jpg" onclick="tastPuppeteer(8)">
-                </div>
             </div>
+            <div class="activity-div">
+                <img id="img" src="https://children.moc.gov.tw/resource/song_image/s_477.jpg">
+                <button onclick='TestCrawler("https:\/\/children.moc.gov.tw/song/477")'>
+                    <img src="./image/icon_watchVideo.png" />
+                    <h2>觀看繪本</h2>
+                </button>
+            </div>
+        </div>
+
+        <div class="song">
+            <div class="songname-div">
+                <h2>疊羅漢</h2>
+                <img class="voice" src=" ../icons/speaker.png" />
+
+            </div>
+            <div class="activity-div">
+                <img id="img" src="https://children.moc.gov.tw/resource/song_image/s_476.jpg">
+                <button onclick='TestCrawler("https:\/\/children.moc.gov.tw/song/476")'>
+                    <img src="./image/icon_watchVideo.png" />
+                    <h2>觀看繪本</h2>
+                </button>
+            </div>
+        </div>
+
+        <div class="song">
+            <div class="songname-div">
+                <h2>雨的花蕊</h2>
+                <img class="voice" src=" ../icons/speaker.png" />
+
+            </div>
+            <div class="activity-div">
+                <img id="img" src="https://children.moc.gov.tw/resource/song_image/s_475.jpg">
+                <button onclick='TestCrawler("https:\/\/children.moc.gov.tw/song/475")'>
+                    <img src="./image/icon_watchVideo.png" />
+                    <h2>觀看繪本</h2>
+                </button>
+            </div>
+        </div>
+        <div class="song">
+            <div class="songname-div">
+                <h2>換工</h2>
+                <img class="voice" src=" ../icons/speaker.png" />
+
+            </div>
+            <div class="activity-div">
+                <img id="img" src="https://children.moc.gov.tw/resource/song_image/s_474.jpg">
+                <button onclick='TestCrawler("https:\/\/children.moc.gov.tw/song/474")'>
+                    <img src="./image/icon_watchVideo.png" />
+                    <h2>觀看繪本</h2>
+                </button>
+            </div>
+        </div>
+
+        <div class="song">
+            <div class="songname-div">
+                <h2>白鶴</h2>
+                <img class="voice" src=" ../icons/speaker.png" />
+
+            </div>
+            <div class="activity-div">
+                <img id="img" src="https://children.moc.gov.tw/resource/song_image/s_473.jpg">
+                <button onclick='TestCrawler("https:\/\/children.moc.gov.tw/song/473")'>
+                    <img src="./image/icon_watchVideo.png" />
+                    <h2>觀看繪本</h2>
+                </button>
+            </div>
+        </div>
+
+        <div class="song">
+            <div class="songname-div">
+                <h2>燕子回來的時候</h2>
+                <img class="voice" src=" ../icons/speaker.png" />
+
+            </div>
+            <div class="activity-div">
+                <img id="img" src="https://children.moc.gov.tw/resource/song_image/s_472.jpg">
+                <button onclick='TestCrawler("https:\/\/children.moc.gov.tw/song/472")'>
+                    <img src="./image/icon_watchVideo.png" />
+                    <h2>觀看繪本</h2>
+                </button>
+            </div>
+        </div>
+        
     </div>
-
 
     <div>
         <a href="../game_home.html" class="sosfloat sos_mark" id="menu-share">
