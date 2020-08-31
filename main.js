@@ -229,13 +229,13 @@ ipcMain.on('captrue', async(event, args) => {
 
     const image = await stillCamera.takeImage();
 
-    fs.writeFileSync("still-image.png", image);
+    fs.writeFileSync("still-image.jpg", image);
 
     event.sender.send('reply-mainjsfunction-captrue')
 })
 
 ipcMain.on('addQAtoServer', async(event, arg) => {
-    api.Question.addQa(1, "", arg, "./still-image.png",arg, "環遊世界做蘋果派", "https://children.moc.gov.tw/resource/animate_image/6850.jpg", "做蘋果派一點也不難，只要到市場買齊材料，混合一下，烤一烤，就可以上桌了。可是市場關門了，買不到材料的小女孩該怎麼辦？沒問題，回家打包行李，搭輪船、坐火車、乘飛機，周遊世界尋找烤派的材料吧。", "單詞", (event) => {
+    api.Question.addQa(1, "", arg, "./still-image.jpg",arg, "環遊世界做蘋果派", "https://children.moc.gov.tw/resource/animate_image/6850.jpg", "做蘋果派一點也不難，只要到市場買齊材料，混合一下，烤一烤，就可以上桌了。可是市場關門了，買不到材料的小女孩該怎麼辦？沒問題，回家打包行李，搭輪船、坐火車、乘飛機，周遊世界尋找烤派的材料吧。", "單詞", (event) => {
         console.log("callback=" + JSON.stringify(event));
     });
 })
