@@ -40,11 +40,11 @@ let identifyBtn = document.querySelector('#identify-js');
 var answer;
 if(identifyBtn){
 identifyBtn.addEventListener('click',()=>{   
-    ipcRenderer.send('captrue');
+    // ipcRenderer.send('captrue');
     ShowVisibility.style.display = "none";
     ImgVisibility.style.display = "none";
     stream.style.display="block";
-    // ipcRenderer.send('vision-start');
+    ipcRenderer.send('vision-start');
     document.getElementById('leadTxt').innerHTML="拍照中。。。";
     console.log('ready');
 
@@ -79,7 +79,7 @@ identifyBtn.addEventListener('click',()=>{
             ImgVisibility.style.display = "block";
             stream.style.display="none";
             document.getElementById('leadTxt').innerHTML="辨識成功!!";
-            document.getElementById('AnsImg').src="./still-image.jpg"
+            document.getElementById('AnsImg').src="./still-image.png"
             QA_card.innerHTML = createQA(answer,data)
             
         }
