@@ -1,8 +1,9 @@
 body {
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-attachment: fixed;
-    margin-top: auto;
+    margin: 0px;
+}
+
+body::-webkit-scrollbar {
+    display: none;
 }
 
 .home_page {
@@ -27,53 +28,94 @@ body {
     font-size: 36px;
 }
 
-#show_page::-webkit-scrollbar {
-    display: none;
-}
-
-#show_page {
-    width: 100%;
-}
-
-
-
-#song {
-    width: 45%;
-    display: inline-block;
-    color: rgb(19, 1, 1);
-    font-weight: bold;
-    padding: 10px;
-    margin: 15px 2% 10px 2%;
-    text-align: center;
-    font-family: Microsoft JhengHei;
-    border-radius: 10px;
-    background-color: white;
-    box-sizing: border-box;
-}
-
-.bookContent::-webkit-scrollbar {
-    display: none;
-}
-
-.bookContent {
+.maincontent {
     position: relative;
-    top: 20%;
-    margin-top: 13%;
+    top: 10%;
     width: 100%;
-    height: 70%;
-    /* text-align: center; */
-    /* float: left; */
-    overflow: visible;
+    height: auto;
+    background-color: white;
+    overflow: gone;
     overflow-x: auto;
     overflow-y: hidden;
-    white-space: nowrap;
-    visibility: visible;
-    /* overflow-y:auto; */
+    /* white-space: nowrap; */
 }
 
-.Arrow {
-    width: 8%;
-    z-index: 1;
-    position: fixed;
-    top: 45%;
+.maincontent::-webkit-scrollbar {
+    display: none;
+}
+
+.songContent::-webkit-scrollbar {
+    display: none;
+}
+
+.song {
+    display: inline-block;
+    width: 44%;
+    height: 150px;
+    color: rgb(19, 1, 1);
+    background-color: rgb(250, 255, 173);
+    /* font-weight: bold; */
+    /* margin: 10px;
+    margin-right: 2%;
+    margin-left: 4%; */
+    margin: 11px 0% 10px 2.063%;
+    padding: 10px;
+    text-align: left;
+    font-family: Microsoft JhengHei;
+    border-radius: 15px;
+}
+
+
+.song .songname-div {
+    width: 100%;
+    height: 30%;
+    top: 0px;
+    position: relative;
+    text-align: center;
+    float: left;
+}
+
+.song .songname-div h2 {
+    width: 100%;
+    margin: auto;
+}
+
+.song .songname-div .voice {
+    position: absolute;
+    width: 12%;
+    height: auto;
+    right: -8px;
+    top: -5px;
+}
+.song .activity-div {
+    width: 100%;
+    height: 70%;
+    bottom: 0px;
+    position: relative;
+    text-align: center;
+    margin: auto;
+    float: left;
+    vertical-align:middle;
+}
+
+.song .activity-div img {
+    position: relative;
+    float: left;
+    top: 15%;
+    height: 76%;
+}
+
+.song .activity-div button {
+    height: 100%;
+    width: 53%;
+    margin: 0% 0 0 5%;
+    text-align: center;
+    border-radius: 10px;
+
+}
+
+.song .activity-div button img {
+    display: inline;
+    float: left;
+    height: 60%;
 }

@@ -27,8 +27,8 @@ const puppeteer = require('puppeteer');
 // STT
 // const callSTT = require('./TTS_API_test')
 var player = require('play-sound')(opts = {})
-    // const fs = require('fs');
-    // const util = require('util');
+// const fs = require('fs');
+// const util = require('util');
 
 // const api = require('./model/api');  //伺服器測試暫關
 
@@ -136,7 +136,7 @@ ipcMain.on('voice-require-to-py', (event, arg) => {
             console.log("Q=" + result.q)
             console.log("A=" + result.a)
             console.log("url=" + result.url)
-                // console.log("QN="+result.QName)
+            // console.log("QN="+result.QName)
             var x = result.a.toString().trim()
             console.log(typeof x + typeof result.a.toString())
             console.log("Testing Log => " + result.a.toString() + "\r\nTest2=>" + x)
@@ -180,10 +180,10 @@ ipcMain.on('vision', (event, args) => {
     event.sender.send('reply-visionready')
 })
 let visionAnswer;
-ipcMain.on('vision-start', async(event, args) => {
+ipcMain.on('vision-start', async (event, args) => {
     let array = await callVis.start();
     visionAnswer = array
-        //array.forEach(label => console.log("vis="+label.description));
+    //array.forEach(label => console.log("vis="+label.description));
     event.sender.send('reply-mainjsfunction', array)
 })
 
@@ -222,7 +222,7 @@ ipcMain.on('crawler', (event, args) => {
 
 })
 
-ipcMain.on('captrue', async(event, args) => {
+ipcMain.on('captrue', async (event, args) => {
 
     console.log("call captrue");
     const stillCamera = new StillCamera();
@@ -246,7 +246,7 @@ ipcMain.on('addQAtoServer', async(event, arg) => {
 // });
 
 //addQA
-ipcMain.on('getApi-addQuiz', async(event, args) => {
+ipcMain.on('getApi-addQuiz', async (event, args) => {
     api.Question.addQuiz(5, (req) => {
         // console.log("addQuiz=" + JSON.stringify(event));
         const data = JSON.parse(JSON.stringify(req));
@@ -261,8 +261,8 @@ ipcMain.on('getApi-addQuiz', async(event, args) => {
 
 })
 
-ipcMain.on('pictureWeb', async(event, args) => {
-    console.log('readyMain');
+ipcMain.on('crawlerShowWeb', async (event, args) => {
+    console.log('Catch ShowWeb');
 
     const browser = await puppeteer.launch({
         executablePath: '/usr/bin/chromium-browser',
@@ -271,14 +271,6 @@ ipcMain.on('pictureWeb', async(event, args) => {
         headless: false
     });
     const page = await browser.newPage();
-    let currentScreen = await page.evaluate(() => {
-        return {
-            width: window.screen.availWidth,
-            height: window.screen.availHeight,
-        };
-    });
-    //設定預設網頁頁面大小
-    await page.setViewport(currentScreen);
 
     page.on('colse', async() => {
         await browser.close();
@@ -299,27 +291,9 @@ ipcMain.on('pictureWeb', async(event, args) => {
         document.querySelector('.fp-fullscreen').onclick = () => window.colseBrowser();
 
     });
-    // const bodyInnerHTML2 = await page.waitForSelector('video');
-    // console.log(bodyInnerHTML2);
-
-    // videos = await page.$$eval('video', video => video);
-    // page.waitFor(10000);
-    // const btn = await page.waitForSelector('fp-fullscreen');
-    // await btn.click(); // doesn't work
-    // await page.$eval('.fp-ui', elem => elem.click());
-
-    // await page.click('.fp-fullscreen');
-    // await page.click('.fp-ui', {
-    //     delay: 2000
-    // });
-
-    // await page.$eval('.fp-ui', elem => elem.click());
-
-    // console.log(videos);
-    // await browser.close();
 })
 
-ipcMain.on('childsongCrawler', async(event, args) => {
+ipcMain.on('crawlerGetDate', async (event, args) => {
     // 套件名稱 puppeteer
     // https://wcc723.github.io/development/2020/03/01/puppeteer/ 教學網址
 
@@ -379,19 +353,19 @@ ipcMain.on('childsongCrawler', async(event, args) => {
 // })
 
 
-ipcMain.on('callSTT-start', async(event, args) => {
+ipcMain.on('callSTT-start', async (event, args) => {
     // let STTtext = await callSTT.quickStart();
     if (args.toString().trim() == 'ㄅ') {
         console.log("ㄅ")
-        var audio = player.play('./TTS/mp3/bpm/b.mp3', function(err) {
+        var audio = player.play('./TTS/mp3/bpm/b.mp3', function (err) {
             if (err) throw err;
             console.log("Audio finished");
         })
         audio.kill()
     }
     console.log("success call STT-API =) " + args.toString())
-        //array.forEach(label => console.log("vis="+label.description));
-        // event.sender.send('reply-mainjsfunction', array)
+    //array.forEach(label => console.log("vis="+label.description));
+    // event.sender.send('reply-mainjsfunction', array)
 
 })
 
@@ -448,7 +422,13 @@ ipcMain.on('callGoodRegard', (event, arg) => {
                 // 距離nextLevel
                 var nextLevelEx = levelFull - exValue;
                 console.log("nextLevelEx:" + nextLevelEx)
-                var AllExData = { "level": level, "exValue": exValue, "levelFull": levelFull, "nextLevelEx": nextLevelEx, "percentColor": percentColor }
+                var AllExData = {
+                    "level": level,
+                    "exValue": exValue,
+                    "levelFull": levelFull,
+                    "nextLevelEx": nextLevelEx,
+                    "percentColor": percentColor
+                }
 
                 event.sender.send('replyGoodregardTot', AllExData);
 
