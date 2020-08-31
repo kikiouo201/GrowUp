@@ -114,53 +114,28 @@ with sr.Microphone() as source:
 
     # sys.stdout.reconfigure(encoding='utf-8')
     print("sys="+sys.getdefaultencoding())
-   
-# sys.stdout.flush()
-# print(result)   #{'Question': '', 'Answer': ''}
-# print(result.Question)
-# sys.stdout.reconfigure(encoding='utf-8')
+    
 print("data[Q]="+result['Question'])
-# sys.stdout.reconfigure(encoding='utf-8')
-# print("data[A]="+result['Answer'])
-
-#######################################
-
-
-
 codde=urllib.parse.quote(result['Answer'])
 # print(codde)
 
-#spider
-# import urllib.request as req
-# import urllib
+
+
+# 關鍵字去爬維基的圖片
 url="https://zh.wikipedia.org/wiki/"+codde
 #建立request物件
 request=req.Request(url, headers={
     "User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36"
     
 })
-
-# keyword=req.Request(url, data={
-#     "keyword":"蘋果"
-# })
-
 #讓request物件去打開url
 with req.urlopen(request) as response :
     data=response.read().decode("utf-8")
-# response = urllib.request.urlopen()
-# print(data)
-
 import bs4
 soup=bs4.BeautifulSoup(data, "html.parser")
-# print(soup.title)   #<title>首頁 - 文化部-兒童文化館</title>
 search=soup.find("div", class_="mw-parser-output") #找查詢ㄉdiv
-# findPic = pic.
-# result = search.p.get('value')
-# print(search.p.text) #這是簡中
-
-#turn zh-TW
-# print(cc.convert(search.p.text))
-turnCC = cc.convert(search.p.text)
+# 爬蟲的解釋
+turnCC = cc.convert(search.p.text)  #變繁中
 result['Answer'] = turnCC.strip()
 # print(result)
 
@@ -172,7 +147,7 @@ for key in dictionary_keyword.keys():
         result['Answer'] = dictionary_keyword[key]
         break
 
-print("data[A]="+str(result['Answer'])) #爬wiki的Answer
+print("data[A]="+str(result['Answer'])) #輸出Answer
 # print(result['Answer'])
 
 #圖片名
@@ -190,6 +165,7 @@ try:
     # print(img)
     result['Answer_pic'] = img.strip()
     print('data[url]='+result['Answer_pic'])
+    print('=data[keyWord]='+result['keyWord'])
 except:
     print("Something went wrong, maybe this wiki Not found the img")
 

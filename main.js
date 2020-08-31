@@ -130,6 +130,7 @@ ipcMain.on('voice-require-to-py', (event, arg) => {
         // },
         (result) => {
 
+            console.log("result.keyword" + result.keyword)
             event.reply('voice-require-to-py-reply-result', result)
 
             console.log("Q=" + result.q)
@@ -148,7 +149,7 @@ ipcMain.on('voice-require-to-py', (event, arg) => {
 
             //api code
             // api.Question.addQa
-            api.Question.addQa(1, result.q, result.a, "https:" + result.url, "蘋果甜蜜蜜", "https://children.moc.gov.tw/resource/animate_image/6892.jpg", "嫁接的蜜蘋果要先習慣這塊土地，接受泥土的養分之後，才能慢慢慢慢的發芽開花。在這塊土地上接受多元文化洗禮、共同生活的人，不也像蜜蘋果一樣嗎？願藉此，獻上我們最深的祝福！", "知識", (event) => {
+            api.Question.addQa(1, result.q, result.a, "https:" + result.url, result.keyWord, "蘋果甜蜜蜜", "https://children.moc.gov.tw/resource/animate_image/6892.jpg", "嫁接的蜜蘋果要先習慣這塊土地，接受泥土的養分之後，才能慢慢慢慢的發芽開花。在這塊土地上接受多元文化洗禮、共同生活的人，不也像蜜蘋果一樣嗎？願藉此，獻上我們最深的祝福！", "知識", (event) => {
                 console.log("callback=" + JSON.stringify(event));
             });
 
@@ -234,7 +235,7 @@ ipcMain.on('captrue', async(event, args) => {
 })
 
 ipcMain.on('addQAtoServer', async(event, arg) => {
-    api.Question.addQa(1, "", arg, "", "環遊世界做蘋果派", "https://children.moc.gov.tw/resource/animate_image/6850.jpg", "做蘋果派一點也不難，只要到市場買齊材料，混合一下，烤一烤，就可以上桌了。可是市場關門了，買不到材料的小女孩該怎麼辦？沒問題，回家打包行李，搭輪船、坐火車、乘飛機，周遊世界尋找烤派的材料吧。", "單詞", (event) => {
+    api.Question.addQa(1, "", arg, "./still-image.png",arg, "環遊世界做蘋果派", "https://children.moc.gov.tw/resource/animate_image/6850.jpg", "做蘋果派一點也不難，只要到市場買齊材料，混合一下，烤一烤，就可以上桌了。可是市場關門了，買不到材料的小女孩該怎麼辦？沒問題，回家打包行李，搭輪船、坐火車、乘飛機，周遊世界尋找烤派的材料吧。", "單詞", (event) => {
         console.log("callback=" + JSON.stringify(event));
     });
 })
@@ -279,7 +280,7 @@ ipcMain.on('pictureWeb', async(event, args) => {
     //設定預設網頁頁面大小
     await page.setViewport(currentScreen);
 
-    page.on('colse', async () => {
+    page.on('colse', async() => {
         await browser.close();
     });
 
@@ -393,6 +394,17 @@ ipcMain.on('callSTT-start', async(event, args) => {
         // event.sender.send('reply-mainjsfunction', array)
 
 })
+
+
+ipcMain.on('callMagicCard', (event, arg) => {
+    console.log("success call Magic Card")
+    api.Level.showLevel(1, (req) => {
+        const data = JSON.parse(JSON.stringify(req));
+        // console.log("data = " + JSON.stringify(data))
+
+        event.sender.send('replyMagicCard', data);
+    });
+});
 
 
 
