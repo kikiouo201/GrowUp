@@ -1,7 +1,7 @@
 let {ipcRenderer }= require('electron');
 
 function GoWeb(url){
-  ipcRenderer.send('pictureWeb',url);
+  ipcRenderer.send('crawlerShowWeb',url);
   console.log('Ready_GoWeb');
 
 }
