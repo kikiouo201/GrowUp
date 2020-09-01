@@ -69,7 +69,7 @@ identifyBtn.addEventListener('click',()=>{
 
     ipcRenderer.on('reply-webcrawlerfunction',(event,data) =>{
         console.log("addQAtoServer",answer);
-        ipcRenderer.send('addQAtoServer')
+        ipcRenderer.send('addQAtoServer',answer)
         if(data==undefined){
             document.getElementById('leadTxt').innerHTML="辨識失敗!!";
             document.getElementById('explainTxt').innerHTML="";
