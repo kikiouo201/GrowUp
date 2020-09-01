@@ -14,43 +14,6 @@
 
     <script>
         const puppeteer = require('puppeteer');
-
-        function tastPuppeteer(num) {
-            (async () => {
-                let browser = await puppeteer.launch({
-                    executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
-                    headless: false,
-                    args: [
-                        '--window-size=800,600'
-                    ]
-
-                });
-
-                const page = await browser.newPage();
-                await page.goto("https://children.moc.gov.tw/song_list");
-
-                const a = await page.$$('.songbox')
-
-                const href = await (a[0].$eval('a', al => al.getAttribute('href')))
-                await (a[num].$eval('img', al => al.click()))
-
-
-                await page.goto("https://children.moc.gov.tw/" + href)
-                await page.evaluate(() => {
-                    document.querySelector('.fp-fullscreen').click();
-
-                    setTimeout(() => {
-                        document.querySelector('.fp-ui').click()
-                    }, 2000);
-
-                    document.querySelector('.fp-fullscreen').onclick = () => window.colseBrowser();
-
-                });
-                // await browser.close();
-            })();
-        }
-
-
         function createSong() {
             (async () => {
                 let browser = await puppeteer.launch({
@@ -62,8 +25,10 @@
 
                 const a = await page.$$('.songbox')
 
+                const href = await (a[0].$eval('a', al => al.getAttribute('href')))
+                await (a[num].$eval('img', al => al.click()))
+
                 console.log(href)
-                console.log(h2)
                 await browser.close();
             })();
         }
@@ -119,10 +84,10 @@
 
             </div>
             <div class="activity-div">
-                <img id="img" src="https://children.moc.gov.tw/resource/song_image/s_480.jpg">
+                <img src="https://children.moc.gov.tw/resource/song_image/s_480.jpg">
                 <button onclick='TestCrawler("https:\/\/children.moc.gov.tw/song/480")'>
                     <img src="./image/icon_watchVideo.png" />
-                    <h2>觀看繪本</h2>
+                    <h2>觀看兒歌</h2>
                 </button>
             </div>
         </div>
@@ -135,10 +100,10 @@
 
             </div>
             <div class="activity-div">
-                <img id="img" src="https://children.moc.gov.tw/resource/song_image/s_479.jpg">
+                <img src="https://children.moc.gov.tw/resource/song_image/s_479.jpg">
                 <button onclick='showWeb("https:\/\/children.moc.gov.tw/song/479")'>
                     <img src="./image/icon_watchVideo.png" />
-                    <h2>觀看繪本</h2>
+                    <h2>觀看兒歌</h2>
                 </button>
             </div>
         </div>
@@ -150,10 +115,10 @@
 
             </div>
             <div class="activity-div">
-                <img id="img" src="https://children.moc.gov.tw/resource/song_image/s_478.jpg">
+                <img src="https://children.moc.gov.tw/resource/song_image/s_478.jpg">
                 <button onclick='showWeb("https:\/\/children.moc.gov.tw/song/478")'>
                     <img src="./image/icon_watchVideo.png" />
-                    <h2>觀看繪本</h2>
+                    <h2>觀看兒歌</h2>
                 </button>
             </div>
         </div>
@@ -165,10 +130,10 @@
 
             </div>
             <div class="activity-div">
-                <img id="img" src="https://children.moc.gov.tw/resource/song_image/s_477.jpg">
+                <img src="https://children.moc.gov.tw/resource/song_image/s_477.jpg">
                 <button onclick='showWeb("https:\/\/children.moc.gov.tw/song/477")'>
                     <img src="./image/icon_watchVideo.png" />
-                    <h2>觀看繪本</h2>
+                    <h2>觀看兒歌</h2>
                 </button>
             </div>
         </div>
@@ -180,10 +145,10 @@
 
             </div>
             <div class="activity-div">
-                <img id="img" src="https://children.moc.gov.tw/resource/song_image/s_476.jpg">
+                <img src="https://children.moc.gov.tw/resource/song_image/s_476.jpg">
                 <button onclick='showWeb("https:\/\/children.moc.gov.tw/song/476")'>
                     <img src="./image/icon_watchVideo.png" />
-                    <h2>觀看繪本</h2>
+                    <h2>觀看兒歌</h2>
                 </button>
             </div>
         </div>
@@ -195,10 +160,10 @@
 
             </div>
             <div class="activity-div">
-                <img id="img" src="https://children.moc.gov.tw/resource/song_image/s_475.jpg">
+                <img src="https://children.moc.gov.tw/resource/song_image/s_475.jpg">
                 <button onclick='showWeb("https:\/\/children.moc.gov.tw/song/475")'>
                     <img src="./image/icon_watchVideo.png" />
-                    <h2>觀看繪本</h2>
+                    <h2>觀看兒歌</h2>
                 </button>
             </div>
         </div>
@@ -209,10 +174,10 @@
 
             </div>
             <div class="activity-div">
-                <img id="img" src="https://children.moc.gov.tw/resource/song_image/s_474.jpg">
+                <img src="https://children.moc.gov.tw/resource/song_image/s_474.jpg">
                 <button onclick='showWeb("https:\/\/children.moc.gov.tw/song/474")'>
                     <img src="./image/icon_watchVideo.png" />
-                    <h2>觀看繪本</h2>
+                    <h2>觀看兒歌</h2>
                 </button>
             </div>
         </div>
@@ -224,10 +189,10 @@
 
             </div>
             <div class="activity-div">
-                <img id="img" src="https://children.moc.gov.tw/resource/song_image/s_473.jpg">
+                <img src="https://children.moc.gov.tw/resource/song_image/s_473.jpg">
                 <button onclick='showWeb("https:\/\/children.moc.gov.tw/song/473")'>
                     <img src="./image/icon_watchVideo.png" />
-                    <h2>觀看繪本</h2>
+                    <h2>觀看兒歌</h2>
                 </button>
             </div>
         </div>
@@ -239,10 +204,10 @@
 
             </div>
             <div class="activity-div">
-                <img id="img" src="https://children.moc.gov.tw/resource/song_image/s_472.jpg">
+                <img src="https://children.moc.gov.tw/resource/song_image/s_472.jpg">
                 <button onclick='showWeb("https:\/\/children.moc.gov.tw/song/472")'>
                     <img src="./image/icon_watchVideo.png" />
-                    <h2>觀看繪本</h2>
+                    <h2>觀看兒歌</h2>
                 </button>
             </div>
         </div>
@@ -255,7 +220,6 @@
         </a>
     </div>
 
-
     <div class="return_mark">
         <a href="./magicBook.html" class="returnfloat" id="menu-share">
             <i class="fab fa-share return-float"><img src="../photo/return.png"></i>
@@ -267,6 +231,7 @@
             <i class="fab fa-share my-float"><img src="../photo/gobackhome.png" width="70%"></i>
         </a>
     </div>
+
     <script language="JavaScript">
         function ShowTime() {
 
@@ -282,9 +247,6 @@
             document.getElementById('showtime').innerHTML = h + ':' + m;
             setTimeout('ShowTime()', 1000);
         }
-    </script>
-
-    <script>
         function toggleBtn() {
             const Btns = document.querySelector(".btns");
             const add = document.getElementById("add");
@@ -311,18 +273,6 @@
         }
     </script>
 
-    <script>
-        let bookcontent = document.querySelector("#bookContent");
-
-        function scrolls(direction) {
-            if (direction.alt == "right")
-                bookcontent.scrollLeft += 400;
-            else
-                bookcontent.scrollLeft -= 400;
-
-            console.log(bookcontent.scrollLeft);
-        }
-    </script>
 </body>
 
 </html>
