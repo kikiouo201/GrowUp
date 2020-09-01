@@ -15,11 +15,11 @@
         background-color: aliceblue;
         width: 320px;
         height: 400px;
-        margin-top: -112px;
+        /* margin-top: -112px; */
         margin-left: 103px;
     }
-
-    .map_location{
+    
+    .map_location {
         width: 16px;
         position: absolute;
         top: 101px;
@@ -27,29 +27,30 @@
         left: 26px;
     }
 </style>
+
 <body class="style" background="../../image/map/kraftPaper5.png">
     <table class="features">
         <tr>
             <td colspan="2" style="font-size: 40px;text-align: center;">高雄地區</td>
         </tr>
-        <tr>
+        <tr style="display: none;">
             <td>特色</td>
             <td>資訊介紹</td>
         </tr>
         <tr>
-            <td><img src="../../image/map/Kaohsiung_origin.png" onclick="featuresText('高雄地區')" />高雄地區</td>
+            <td><img src="../../image/map/Kaohsiung_origin.png" onclick="featuresText('高雄地區')" /><a style="display: block;">高雄地區</a></td>
             <td id="information" rowspan="4" valign="top" style="font-size:x-large;">
                 &emsp;&emsp;高雄地區，為六都之一，位於臺灣西南部，昔稱為「打狗」。是臺灣最大工業區。又因有優越的港口，近海漁業發達，亦為重要遠洋漁業基地之一。
             </td>
         </tr>
         <tr>
-            <td><img src="../../image/icon/85building.png" onclick="featuresText('85大樓')" />85大樓</td>
+            <td><img style="width: 40px;" src="../../image/icon/85building.png" onclick="featuresText('85大樓')" /><a style="display: block;">85大樓</a></td>
         </tr>
         <tr>
-            <td><img src="../../image/map_icon/Kaohsiung_E_DA_Theme_Park.png" onclick="featuresText('義大遊樂世界')" />義大遊樂世界</td>
+            <td><img src="../../image/map_icon/Kaohsiung_E_DA_Theme_Park.png" onclick="featuresText('義大遊樂世界')" /><a style="display: block;">義大遊樂世界</a></td>
         </tr>
         <tr>
-            <td><img src="../../image/map_icon/Kaohsiung_pu_lao_hot_spring.png" onclick="featuresText('不老溫泉')" />不老溫泉</td>
+            <td><img src="../../image/map_icon/Kaohsiung_pu_lao_hot_spring.png" onclick="featuresText('不老溫泉')" /><a style="display: block;">不老溫泉</a></td>
         </tr>
 
     </table>

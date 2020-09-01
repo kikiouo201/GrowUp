@@ -13,7 +13,7 @@ async function start(){
   });
 
   // Performs label detection on the image file
-    const [result] =await client.labelDetection('still-image.png');
+    const [result] =await client.labelDetection('still-image.jpg');
     var labels = result.labelAnnotations;
     let text = ""; 
     

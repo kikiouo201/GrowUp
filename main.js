@@ -27,8 +27,8 @@ const puppeteer = require('puppeteer');
 // STT
 // const callSTT = require('./TTS_API_test')
 var player = require('play-sound')(opts = {})
-// const fs = require('fs');
-// const util = require('util');
+    // const fs = require('fs');
+    // const util = require('util');
 
 // const api = require('./model/api');  //伺服器測試暫關
 
@@ -47,6 +47,7 @@ function createWindow() {
         icon: path.join(__dirname, 'icons/raspberry_icon.png'),
         fullscreen: false,
         webSecurity: false,
+        blinkFeatures : 'Touch' ,
         webPreferences: {
             nodeIntegration: true, //如果出bug改回true看看
             width: 1200,
@@ -81,7 +82,7 @@ function createWindow() {
 // 创建浏览器窗口时，调用这个函数。
 // 部分 API 在 ready 事件触发后才能使用。
 app.on('ready', createWindow)
-
+app.commandLine.appendSwitch('--enable-touch-events')
 // 当全部窗口关闭时退出。
 app.on('window-all-closed', () => {
     // 在 macOS 上，除非用户用 Cmd + Q 确定地退出，
@@ -136,7 +137,7 @@ ipcMain.on('voice-require-to-py', (event, arg) => {
             console.log("Q=" + result.q)
             console.log("A=" + result.a)
             console.log("url=" + result.url)
-            // console.log("QN="+result.QName)
+                // console.log("QN="+result.QName)
             var x = result.a.toString().trim()
             console.log(typeof x + typeof result.a.toString())
             console.log("Testing Log => " + result.a.toString() + "\r\nTest2=>" + x)
@@ -149,7 +150,7 @@ ipcMain.on('voice-require-to-py', (event, arg) => {
 
             //api code
             // api.Question.addQa
-            api.Question.addQa(1, result.q, result.a, "https:" + result.url, result.keyWord, "蘋果甜蜜蜜", "https://children.moc.gov.tw/resource/animate_image/6892.jpg", "嫁接的蜜蘋果要先習慣這塊土地，接受泥土的養分之後，才能慢慢慢慢的發芽開花。在這塊土地上接受多元文化洗禮、共同生活的人，不也像蜜蘋果一樣嗎？願藉此，獻上我們最深的祝福！", "知識", (event) => {
+            api.Question.addQa(1, result.q, result.a, "https:" + result.url, result.keyWord.trim(), "蘋果甜蜜蜜", "https://children.moc.gov.tw/resource/animate_image/6892.jpg", "嫁接的蜜蘋果要先習慣這塊土地，接受泥土的養分之後，才能慢慢慢慢的發芽開花。在這塊土地上接受多元文化洗禮、共同生活的人，不也像蜜蘋果一樣嗎？願藉此，獻上我們最深的祝福！", "知識", (event) => {
                 console.log("callback=" + JSON.stringify(event));
             });
 
@@ -180,10 +181,10 @@ ipcMain.on('vision', (event, args) => {
     event.sender.send('reply-visionready')
 })
 let visionAnswer;
-ipcMain.on('vision-start', async (event, args) => {
+ipcMain.on('vision-start', async(event, args) => {
     let array = await callVis.start();
     visionAnswer = array
-    //array.forEach(label => console.log("vis="+label.description));
+        //array.forEach(label => console.log("vis="+label.description));
     event.sender.send('reply-mainjsfunction', array)
 })
 
@@ -222,20 +223,20 @@ ipcMain.on('crawler', (event, args) => {
 
 })
 
-ipcMain.on('captrue', async (event, args) => {
+ipcMain.on('captrue', async(event, args) => {
 
     console.log("call captrue");
     const stillCamera = new StillCamera();
 
     const image = await stillCamera.takeImage();
 
-    fs.writeFileSync("still-image.png", image);
+    fs.writeFileSync("still-image.jpg", image);
 
     event.sender.send('reply-mainjsfunction-captrue')
 })
 
 ipcMain.on('addQAtoServer', async(event, arg) => {
-    api.Question.addQa(1, "", arg, "./still-image.png",arg, "環遊世界做蘋果派", "https://children.moc.gov.tw/resource/animate_image/6850.jpg", "做蘋果派一點也不難，只要到市場買齊材料，混合一下，烤一烤，就可以上桌了。可是市場關門了，買不到材料的小女孩該怎麼辦？沒問題，回家打包行李，搭輪船、坐火車、乘飛機，周遊世界尋找烤派的材料吧。", "單詞", (event) => {
+    api.Question.addQa(1, "", arg, "./still-image.jpg", arg, "環遊世界做蘋果派", "https://children.moc.gov.tw/resource/animate_image/6850.jpg", "做蘋果派一點也不難，只要到市場買齊材料，混合一下，烤一烤，就可以上桌了。可是市場關門了，買不到材料的小女孩該怎麼辦？沒問題，回家打包行李，搭輪船、坐火車、乘飛機，周遊世界尋找烤派的材料吧。", "影像辨識", (event) => {
         console.log("callback=" + JSON.stringify(event));
     });
 })
@@ -246,7 +247,7 @@ ipcMain.on('addQAtoServer', async(event, arg) => {
 // });
 
 //addQA
-ipcMain.on('getApi-addQuiz', async (event, args) => {
+ipcMain.on('getApi-addQuiz', async(event, args) => {
     api.Question.addQuiz(5, (req) => {
         // console.log("addQuiz=" + JSON.stringify(event));
         const data = JSON.parse(JSON.stringify(req));
@@ -261,7 +262,7 @@ ipcMain.on('getApi-addQuiz', async (event, args) => {
 
 })
 
-ipcMain.on('crawlerShowWeb', async (event, args) => {
+ipcMain.on('crawlerShowWeb', async(event, args) => {
     console.log('Catch ShowWeb');
 
     const browser = await puppeteer.launch({
@@ -293,7 +294,7 @@ ipcMain.on('crawlerShowWeb', async (event, args) => {
     });
 })
 
-ipcMain.on('crawlerGetDate', async (event, args) => {
+ipcMain.on('crawlerGetDate', async(event, args) => {
     // 套件名稱 puppeteer
     // https://wcc723.github.io/development/2020/03/01/puppeteer/ 教學網址
 
@@ -353,19 +354,19 @@ ipcMain.on('crawlerGetDate', async (event, args) => {
 // })
 
 
-ipcMain.on('callSTT-start', async (event, args) => {
+ipcMain.on('callSTT-start', async(event, args) => {
     // let STTtext = await callSTT.quickStart();
     if (args.toString().trim() == 'ㄅ') {
         console.log("ㄅ")
-        var audio = player.play('./TTS/mp3/bpm/b.mp3', function (err) {
+        var audio = player.play('./TTS/mp3/bpm/b.mp3', function(err) {
             if (err) throw err;
             console.log("Audio finished");
         })
         audio.kill()
     }
     console.log("success call STT-API =) " + args.toString())
-    //array.forEach(label => console.log("vis="+label.description));
-    // event.sender.send('reply-mainjsfunction', array)
+        //array.forEach(label => console.log("vis="+label.description));
+        // event.sender.send('reply-mainjsfunction', array)
 
 })
 
