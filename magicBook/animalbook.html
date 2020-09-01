@@ -46,7 +46,7 @@
                 </div>
 
                 <img id="animalImg" style="width:100px; height:100px;" src="">
-                <img onclick="mouseDownText(explain.innerHTML);" src="../icons/speaker.png" class="speaker" />
+                <img onclick="mouseDownText(explain.innerHTML.substring(4,200));" src="../icons/speaker.png" class="speaker" />
                 <div id="text_page" style="display: inline-block; text-align: left; padding: 7px;">
                     <span id="animalname" class="animalName" ></span><br>
                     <span id="explain" class="animalExplain" ></span>
@@ -112,17 +112,17 @@
     <script>
         var animalImg = document.getElementById("animalImg")
         let animalname = document.getElementById("animalname")
-        let explain = document.getElementById("explain")
+        var explain = document.getElementById("explain")
         let animalclass = document.getElementById("animalclass")
         let animalclassName = document.getElementById("animalclassName")
-        let animalclassExplain = document.getElementById("animalclassExplain")
+        var animalclassExplain = document.getElementById("animalclassExplain")
         let speaker = document.querySelector(".speaker")
 
 
         document.querySelector(".South_American_Coati").addEventListener('click', () => {
-            document.getElementById("black_overlay").style.display = 'inline-block';
-            animalname.style.style.display = 'inline-block';
-            explain.style.style.display = 'inline-block';
+            document.getElementById("black_overlay").style.display = 'block';
+            animalname.style.display = 'inline-block';
+            explain.style.display = 'inline-block';
             animalImg.src = "../image/animal/South_American_Coati.png"
             animalname.innerHTML = "動物名: 長鼻浣熊"
             explain.innerHTML = "敘述: 長鼻浣熊，上半身為褐色或灰色，腹部白色。細長的尾巴大約32~69公分，棕黑色並有一圈圈黃色環，具有平衡的功能。腳爪和前肢十分強壯，便於爬樹和挖掘朽木下的食物。"
@@ -131,7 +131,7 @@
         })
 
         document.querySelector(".Ring_tailed_Lemur").addEventListener('click', () => {
-            document.getElementById("black_overlay").style.display = 'inline-block';
+            document.getElementById("black_overlay").style.display = 'block';
             animalname.style.display = 'inline-block';
             explain.style.display = 'inline-block';
             animalImg.src = "../image/animal/Ring_tailed_Lemur.png"
@@ -142,7 +142,7 @@
         })
 
         document.querySelector(".White_handed_Gibbon").addEventListener('click', () => {
-            document.getElementById("black_overlay").style.display = 'inline-block';
+            document.getElementById("black_overlay").style.display = 'block';
             animalname.style.display = 'inline-block';
             explain.style.display = 'inline-block';
             animalImg.src = "../image/animal/White_handed_Gibbon.png"
@@ -153,7 +153,7 @@
         })
 
         document.querySelector(".Black_and_white_ruffed_Lemur").addEventListener('click', () => {
-            document.getElementById("black_overlay").style.display = 'inline-block';
+            document.getElementById("black_overlay").style.display = 'block';
             animalname.style.display = 'inline-block';
             explain.style.display = 'inline-block';
             animalImg.src = "../image/animal/Black_and_white_ruffed_Lemur.png"
@@ -164,7 +164,7 @@
         })
 
         document.querySelector(".Kinkajou").addEventListener('click', () => {
-            document.getElementById("black_overlay").style.display = 'inline-block';
+            document.getElementById("black_overlay").style.display = 'block';
             animalname.style.display = 'inline-block';
             explain.style.display = 'inline-block';
             animalImg.src = "../image/animal/Kinkajou.png"
@@ -175,7 +175,7 @@
         })
 
         document.querySelector(".Brown_Lemur").addEventListener('click', () => {
-            document.getElementById("black_overlay").style.display = 'inline-block';
+            document.getElementById("black_overlay").style.display = 'block';
             animalname.style.display = 'inline-block';
             explain.style.display = 'inline-block';
             animalImg.src = "../image/animal/Brown_Lemur.png"
@@ -186,7 +186,7 @@
         })
 
         document.querySelector(".Alpaca").addEventListener('click', () => {
-            document.getElementById("black_overlay").style.display = 'inline-block';
+            document.getElementById("black_overlay").style.display = 'block';
             animalname.style.display = 'inline-block';
             explain.style.display = 'inline-block';
             animalImg.src = "../image/animal/Alpaca.png"
@@ -197,7 +197,7 @@
         })
 
         document.querySelector(".Greater_Flamingo").addEventListener('click', () => {
-            document.getElementById("black_overlay").style.display = 'inline-block';
+            document.getElementById("black_overlay").style.display = 'block';
             animalname.style.display = 'inline-block';
             explain.style.display = 'inline-block';
             animalImg.src = "../image/animal/Greater_Flamingo.png"
@@ -208,7 +208,7 @@
         })
 
         document.querySelector(".Donkey").addEventListener('click', () => {
-            document.getElementById("black_overlay").style.display = 'inline-block';
+            document.getElementById("black_overlay").style.display = 'block';
             animalname.style.display = 'inline-block';
             explain.style.display = 'inline-block';
             animalImg.src = "../image/animal/Donkey.png"
@@ -219,7 +219,7 @@
         })
 
         document.querySelector(".Pony").addEventListener('click', () => {
-            document.getElementById("black_overlay").style.display = 'inline-block';
+            document.getElementById("black_overlay").style.display = 'block';
             animalname.style.display = 'inline-block';
             explain.style.display = 'inline-block';
             animalImg.src = "../image/animal/Pony.png"
@@ -230,7 +230,7 @@
         })
 
         document.querySelector(".Chinchilla").addEventListener('click', () => {
-            document.getElementById("black_overlay").style.display = 'inline-block';
+            document.getElementById("black_overlay").style.display = 'block';
             animalname.style.display = 'inline-block';
             explain.style.display = 'inline-block';
             animalImg.src = "../image/animal/Chinchilla.png"
@@ -249,17 +249,19 @@
             animalclassExplain.style.display = 'none';
         })
 
-        speaker.onclick = ()=>{
-            if(animalclassExplain.style.display =="none")
-            {
-                mouseDownText(explain.innerHTML);
-            }
+        // speaker.onclick = function () {
+        //     if(animalclassExplain.style.display =="none")
+        //     {
+        //         mouseDownText(explain.innerHTML);
+        //         console.log("explain: "+explain.innerHTML)
+        //     }
             
-            else
-            {
-                mouseDownText(animalclassExplain.innerHTML);
-            }
-        }
+        //     else
+        //     {
+        //         mouseDownText(animalclassExplain.innerHTML);
+        //         console.log("explain: "+animalclassExplain.innerHTML)
+        //     }
+        // }
     </script>
     <script>
         function changeTxt() {
