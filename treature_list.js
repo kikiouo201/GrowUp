@@ -1,5 +1,55 @@
 const minMap = document.querySelector('.minMap');
 let { ipcRenderer } = require('electron');
+const bpm = document.querySelectorAll('.bpm')
+const abc = document.querySelectorAll('.abc')
+const number = document.querySelectorAll('.num')
+    // var n = 0;
+ipcRenderer.send('callMagicCard');
+ipcRenderer.on('replyMagicCard', (event, data) => {
+    // console.log("data = " + JSON.stringify(data))
+    // magicCard
+    for (i = 0; i < 73; i++) {
+
+        // ㄅㄆㄇ
+        if (data.content[i].ispass == 0 && i < 37) {
+            console.log(data.content[i].id + " name : " + data.content[i].level_name);
+            if (data.content[i].level_name == bpm[i].alt) {
+                console.log("log:" + bpm[i].alt)
+                    // bpm[i].parentNode = "file:///C:/Users/mcuim/Desktop/Raspberry/2020_07_06/GrowUp/view/game/drawzhuyin.html?id=t"
+                console.log("img:" + bpm[i].parentNode.getAttribute('alt'))
+                bpm[i].src = "./image/magicCard/chineseAlphabet/" + bpm[i].parentNode.getAttribute('alt') + "_lock.png";
+                console.log("src:" + bpm[i].src)
+            }
+        }
+
+        // 012
+        if (data.content[i].ispass == 0 && i > 36 && i < 47) {
+            console.log(data.content[i].id + " 012 name : " + data.content[i].level_name);
+            for (n = 0; n < 10; n++) {
+                // console.log("n:" + number[n].alt)
+                if (data.content[i].level_name == number[n].alt) {
+                    console.log("number level : " + data.content[i].level_name + " card " + number[n].alt);
+                    number[n].src = "./image/magicCard/012/" + number[n].parentNode.getAttribute('alt') + "_lock.png"
+                    console.log("src:" + number[n].src)
+                }
+            }
+        }
+
+        // abc
+        if (data.content[i].ispass == 0 && i > 46 && i < 73) {
+            console.log(data.content[i].id + " abc name : " + data.content[i].level_name);
+            for (n = 0; n < 26; n++) {
+                console.log("n:" + abc[n].alt)
+                if (data.content[i].level_name == abc[n].alt) {
+                    console.log("abc level : " + data.content[i].level_name + " card " + abc[n].alt);
+                    abc[n].src = "./image/magicCard/mixABC/" + abc[n].parentNode.getAttribute('alt') + "_lock.png"
+                    console.log("src:" + abc[n].src)
+                }
+            }
+        }
+
+    }
+});
 
 // All feature Icon
 const newTaipei = document.getElementById("NewTaipei_feature");
