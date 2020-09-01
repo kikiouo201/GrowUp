@@ -33,12 +33,25 @@
                 });
 
                 await page.evaluate(() => {
-                    
-                    document.querySelector('.fp-fullscreen').click();
+
+                    function css(el, styles) {
+                        for (var property in styles)
+                            el.style[property] = styles[property];
+                    }
+
+
                     setTimeout(() => {
                         document.querySelector('.fp-ui').click()
                     }, 2000);
+
+                    console.log(document.querySelector('.fp-fullscreen').sheet);
+
+                    css(document.querySelector('.fp-fullscreen'), {
+                        background: 'green',
+                    });
+
                     document.querySelector('.fp-fullscreen').onclick = () => window.colseBrowser();
+
                 });
 
             })();
@@ -275,7 +288,7 @@
                     activity_div.append(bookimg);
 
                     let watch_btn = document.createElement('button');
-                    watch_btn.onclick = function () {
+                    watch_btn.onclick = () => {
                         showWeb(url);
                     }
                     let watch_ic = document.createElement('img');
