@@ -47,7 +47,7 @@ function createWindow() {
         icon: path.join(__dirname, 'icons/raspberry_icon.png'),
         fullscreen: false,
         webSecurity: false,
-        blinkFeatures : 'Touch' ,
+        blinkFeatures: 'Touch',
         webPreferences: {
             nodeIntegration: true, //如果出bug改回true看看
             width: 1200,
@@ -83,7 +83,7 @@ function createWindow() {
 // 部分 API 在 ready 事件触发后才能使用。
 app.on('ready', createWindow)
 app.commandLine.appendSwitch('--enable-touch-events')
-// 当全部窗口关闭时退出。
+    // 当全部窗口关闭时退出。
 app.on('window-all-closed', () => {
     // 在 macOS 上，除非用户用 Cmd + Q 确定地退出，
     // 否则绝大部分应用及其菜单栏会保持激活。
@@ -150,7 +150,7 @@ ipcMain.on('voice-require-to-py', (event, arg) => {
 
             //api code
             // api.Question.addQa
-            api.Question.addQa(1, result.q, result.a, "https:" + result.url, result.keyWord.trim(), "知識", (event) => {
+            api.Question.addQa(1, result.q, result.a, "https:" + result.url, result.keyWord.trim(), "語音", (event) => {
                 console.log("callback=" + JSON.stringify(event));
             });
 
