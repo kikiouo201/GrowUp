@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../CSS/map/changhua.css">
     <link rel="stylesheet" href="../../CSS/map/counties.css">
+    <link rel="stylesheet" href="../../CSS/map/changhua.css">
     <link rel="stylesheet" href="../../CSS/interface.css">
     <link rel="stylesheet" href="../../CSS/icon.css">
     <title>Document</title>
@@ -16,11 +16,11 @@
         background-color: aliceblue;
         width: 320px;
         height: 400px;
-        margin-top: -73px;
+        /* margin-top: -73px; */
         margin-left: 100px;
     }
-
-    .map_location{
+    
+    .map_location {
         width: 16px;
         position: absolute;
         top: 56px;
@@ -34,24 +34,24 @@
         <tr>
             <td colspan="2" style="font-size: 40px;text-align: center;">彰化地區</td>
         </tr>
-        <tr>
+        <tr style="display: none;">
             <td>特色</td>
             <td>資訊介紹</td>
         </tr>
         <tr>
-            <td><img src="../../image/map/Changhua_origin.png" onclick="featuresText('彰化地區')" />彰化地區</td>
+            <td><img src="../../image/map/Changhua_origin.png" onclick="featuresText('彰化地區')" /><a style="display: block;">彰化地區</a></td>
             <td id="information" rowspan="4" valign="top" style="font-size:x-large;">
                 &emsp;&emsp;彰化地區古稱半線，因幅員完整，地勢平坦開闊，土地肥沃，物產豐饒，素有「臺灣穀倉」之稱。清朝時，鹿港迅速發展成為中部地區最具發展潛力的城鎮，時人並以「一府、二鹿、三艋岬」譽之，便可窺見當時風光景況。
             </td>
         </tr>
         <tr>
-            <td><img src="../../image/icon/meat_ball.png" onclick="featuresText('彰化肉圓')" />彰化肉圓</td>
+            <td><img src="../../image/icon/meat_ball.png" onclick="featuresText('彰化肉圓')" /><a style="display: block;">彰化肉圓</a></td>
         </tr>
         <tr>
-            <td><img src="../../image/map_icon/Changhua_mountain_Bagua.png" onclick="featuresText('八卦山')" />八卦山</td>
+            <td><img src="../../image/map_icon/Changhua_mountain_Bagua.png" onclick="featuresText('八卦山')" /><a style="display: block;">八卦山</a></td>
         </tr>
         <tr>
-            <td><img src="../../image/map_icon/Changhua_wind_turbine.png" onclick="featuresText('王功小型風力發電機')" />王功小型風力發電機</td>
+            <td><img src="../../image/map_icon/Changhua_wind_turbine.png" onclick="featuresText('王功小型風力發電機')" /><a style="display: block;">王功小型</a><a style="display: block;">風力發電機</a></td>
         </tr>
 
     </table>
