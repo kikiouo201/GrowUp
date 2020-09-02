@@ -1,12 +1,6 @@
 const SSU = new SpeechSynthesisUtterance();
 let { ipcRenderer } = require('electron');
 var player = require('play-sound')(opts = {})
-var nantouBPM = {
-    "ㄅ": "b",
-    "ㄆ": "p",
-    "ㄇ": "m",
-    "ㄈ": "f"
-}
 
 function mouseDown(index) {
     if (index) {
@@ -33,16 +27,7 @@ function mouseDownText(text) {
     console.log("text =? " + text)
     SSU.text = text;
     toggle();
-    // ipcRenderer.send('callSTT-start', text);
-    // if (nantou[text].trim() == "b") {
-    player.play('../../TTS/mp3/bpm/' + nantouBPM[text] + '.mp3', function(err) {
-            if (err) throw err
-            console.log("Audio finished");
-        })
-        // audio.kill()
-    console.log("call " + nantouBPM[text])
-
-    // }
+    ipcRenderer.send('callSTT-start', text);
     console.log("call main STT")
         // if (text.toString().trim() == 'ㄅ') {
         // console.log("ㄅ")

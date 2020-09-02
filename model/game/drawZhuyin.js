@@ -103,17 +103,6 @@ close.addEventListener('click', () => {
     props.style.visibility = "hidden";
 });
 
-var xxxx = document.getElementById("myAudio");
-
-function playAudio() {
-    xxxx.play();
-    console.log("OK")
-}
-
-function pauseAudio() {
-    xxxx.pause();
-}
-
 function reset() {
     // let reset=document.querySelector('.reset');
     let canvas = document.querySelector('.draw');
@@ -155,15 +144,15 @@ function onload() {
 function moveFinger() {
     let finger;
 
-        finger = document.querySelector('#finger');
-        finger.style.visibility = "visible";
-        
-        finger.classList.add('moveFinger'+ id)  ;
-        
-        finger.addEventListener('animationend',function(){
-            finger.classList.remove('moveFinger'+ id);
-            finger.style.visibility="hidden";
-          },{once:true});
+    finger = document.querySelector('#finger');
+    finger.style.visibility = "visible";
+
+    finger.classList.add('moveFinger' + id);
+
+    finger.addEventListener('animationend', function() {
+        finger.classList.remove('moveFinger' + id);
+        finger.style.visibility = "hidden";
+    }, { once: true });
 
     // document.querySelector('.finger' + id ).className = 'moveFinger'+ id ;
 
@@ -258,4 +247,21 @@ function scoreJudgment(id, x, y, points, num) {
     }
 
     console.log(`point=${points}`);
+}
+
+
+// var aaauu = document.querySelector(".audio")
+
+function playAudio() {
+    var audioCreate = document.createElement("AUDIO");
+
+    if (audioCreate.canPlayType("audio/mpeg")) {
+        audioCreate.setAttribute("src", "../../TTS/mp3/bpm/" + `${id}` + ".mp3");
+    }
+
+    // x.setAttribute("controls", "controls");
+    document.body.appendChild(audioCreate);
+    // console.log("OK " + `${id} ` + aaauu.children[0].src)
+    // aaauu.children[0].src = "../../TTS/mp3/bpm/" + `${id}` + ".mp3"
+    audioCreate.play();
 }
