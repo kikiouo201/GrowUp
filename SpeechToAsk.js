@@ -48,7 +48,7 @@ if (voiceBtn) {
                                             <div class="card-body" style="margin-top: 30px;">
                                                 <img class="collect_LeftTop" onclick="collect(this)" id="` + CardID_Collect + `" src="icons/bookmark.png"/>
                                                     <div style="float:left; display: block; text-align: left;">
-                                                        <p class="card-title card_Q">Ｑ：</p>
+                                                        <p class="card-title card_Q">問題：</p>
                                                         <p class="card-title card_Q" style="margin-left: 0px;">${text}</p>
                                                         <img class="speaker_Q" onclick="speaker(this)" id="` + CardID_Q + `" src="icons/speaker.png" onclick=speakerTest(this)>
                                                     </div>
@@ -58,7 +58,7 @@ if (voiceBtn) {
                                                     </div>
                                                     <br>
                                                     <div style="float:left; display: block; text-align: left;">
-                                                        <p class="card-text card_A" style="float: left;">Ａ：</p>
+                                                        <p class="card-text card_A" style="float: left;">敘述：</p>
                                                         <p class="card-text card_A" style="margin-left: 0px;">${text3}</p>
                                                         <img class="speaker_A" onclick="speaker(this)" id="` + CardID_A + `" src="icons/speaker.png" />
                                                     </div>
