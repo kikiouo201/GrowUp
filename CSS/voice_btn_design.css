@@ -1,17 +1,19 @@
 /* 語音按按鈕動畫 */
-.voice-btn{
+
+.voice-btn {
     /* width: auto; */
     height: 50px;
-    font-size: 24px; 
+    font-size: 24px;
     /* padding-top: 10px;  */
     display: block;
     /* margin-left: 20%; */
-    margin-right: 3%; 
+    margin-right: 3%;
     text-align: center;
     background-color: #ffcd2bc9;
     float: right;
     position: relative;
 }
+
 .mh5 {
     transition: all 0.5s;
     border: 1px solid #ffcd2bc9;
@@ -25,7 +27,6 @@
     position: absolute;
     width: 100%;
     height: 100%;
-
 }
 
 .mh5::before {
@@ -52,8 +53,6 @@
     background-color: tomato;
 }
 
-
-
 .mh1 {
     position: relative;
     border: 1px solid #ffcd2bc9;
@@ -69,21 +68,24 @@
 }
 
 
-
-
 /* 按鈕旁邊系統ING */
+
 .system-show {
     /* width: auto; */
     height: 62px;
-    font-size: 24px; 
+    font-size: 24px;
     /* padding-top: 10px;  */
     display: block;
-    margin-left: 20%;
-    margin-right: 20%; 
+    margin-left: 120px;
+    /* 110 */
+    margin-right: 120px;
+    /* 130 */
     text-align: center;
     background-color: #ffce2b;
     padding-top: 3px;
     padding-bottom: 3px;
+    padding-left: 12px;
+    /* left 16px */
 }
 
 .mh0 {
@@ -102,19 +104,21 @@
 
 
 /* top card region */
+
 .QA_card_area {
     width: auto;
-    margin:0px 20% 60px 20%;
+    margin: 0px 20% 60px 20%;
     padding-top: 80px;
-    text-align:center;
+    text-align: center;
 }
 
 
 /* im setting */
+
 #im {
-    position:relative;
-    margin:0 auto;
-    width:100%;
-    height:100%;
-    box-sizing:border-box;
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
 }
