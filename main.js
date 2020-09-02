@@ -47,7 +47,7 @@ function createWindow() {
         icon: path.join(__dirname, 'icons/raspberry_icon.png'),
         fullscreen: false,
         webSecurity: false,
-        blinkFeatures : 'Touch' ,
+        blinkFeatures: 'Touch',
         webPreferences: {
             nodeIntegration: true, //如果出bug改回true看看
             width: 1200,
@@ -83,7 +83,7 @@ function createWindow() {
 // 部分 API 在 ready 事件触发后才能使用。
 app.on('ready', createWindow)
 app.commandLine.appendSwitch('--enable-touch-events')
-// 当全部窗口关闭时退出。
+    // 当全部窗口关闭时退出。
 app.on('window-all-closed', () => {
     // 在 macOS 上，除非用户用 Cmd + Q 确定地退出，
     // 否则绝大部分应用及其菜单栏会保持激活。
@@ -150,7 +150,7 @@ ipcMain.on('voice-require-to-py', (event, arg) => {
 
             //api code
             // api.Question.addQa
-            api.Question.addQa(1, result.q, result.a, "https:" + result.url, result.keyWord.trim(), "蘋果甜蜜蜜", "https://children.moc.gov.tw/resource/animate_image/6892.jpg", "嫁接的蜜蘋果要先習慣這塊土地，接受泥土的養分之後，才能慢慢慢慢的發芽開花。在這塊土地上接受多元文化洗禮、共同生活的人，不也像蜜蘋果一樣嗎？願藉此，獻上我們最深的祝福！", "知識", (event) => {
+            api.Question.addQa(1, result.q, result.a, "https:" + result.url, result.keyWord.trim(), "語音", (event) => {
                 console.log("callback=" + JSON.stringify(event));
             });
 
@@ -236,7 +236,7 @@ ipcMain.on('captrue', async(event, args) => {
 })
 
 ipcMain.on('addQAtoServer', async(event, arg) => {
-    api.Question.addQa(1, "", arg, "./still-image.jpg", arg, "環遊世界做蘋果派", "https://children.moc.gov.tw/resource/animate_image/6850.jpg", "做蘋果派一點也不難，只要到市場買齊材料，混合一下，烤一烤，就可以上桌了。可是市場關門了，買不到材料的小女孩該怎麼辦？沒問題，回家打包行李，搭輪船、坐火車、乘飛機，周遊世界尋找烤派的材料吧。", "影像辨識", (event) => {
+    api.Question.addQa(1, "", arg, "./still-image.jpg", arg, "影像", (event) => {
         console.log("callback=" + JSON.stringify(event));
     });
 })
@@ -412,12 +412,22 @@ ipcMain.on('callMagicCard', (event, arg) => {
 });
 
 
+ipcMain.on('callZhuyinCondition',(event,arg) =>{
+    console.log("success call Zhuyin Condition ~~~~ ")
+    api.Level.showLevel(1,(req) =>{
+        const data = JSON.parse(JSON.stringify(req));
+        // console.log("data = " + JSON.stringify(data))
+        event.sender.send('reply-callZhuyindata', data);
+    })
+})
+
+
 
 ipcMain.on('callMapCondition', (event, arg) => {
     console.log("success call Map Condition =) ")
     api.Level.showLevel(1, (req) => {
         const data = JSON.parse(JSON.stringify(req));
-        // console.log("data = " + JSON.stringify(data))
+        
 
         event.sender.send('selectJsonOnTL', data);
     });

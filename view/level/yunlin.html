@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../CSS/map/yunlin.css">
     <link rel="stylesheet" href="../../CSS/map/counties.css">
+    <link rel="stylesheet" href="../../CSS/map/yunlin.css">
     <link rel="stylesheet" href="../../CSS/interface.css">
     <link rel="stylesheet" href="../../CSS/icon.css">
     <title>Document</title>
@@ -19,8 +19,8 @@
         margin-top: 29px;
         margin-left: 100px;
     }
-
-    .map_location{
+    
+    .map_location {
         width: 16px;
         position: absolute;
         top: 67px;
@@ -34,34 +34,34 @@
         <tr>
             <td colspan="2" style="font-size: 40px;text-align: center;">雲林地區</td>
         </tr>
-        <tr>
+        <tr style="display: none;">
             <td>特色</td>
             <td>資訊介紹</td>
         </tr>
         <tr>
-            <td><img src="../../image/map/Yunlin_origin.png" onclick="featuresText('雲林地區')" />雲林地區</td>
+            <td><img src="../../image/map/Yunlin_origin.png" onclick="featuresText('雲林地區')" /><a style="display: block;">雲林地區</a></td>
             <td id="information" rowspan="5" valign="top" style="font-size:x-large;">
                 &emsp;&emsp;雲林地區，位在臺灣西方的中南部，大部縣域位處臺灣西部的嘉南平原上，地形平坦，氣候溫和。由於早期中央政府的重北輕南政策，時至今日，雲林帶給人們的印象通常除了「臺灣的糧倉」之外，就是俗稱為六輕的第六套輕油裂解廠。
             </td>
         </tr>
         <tr>
-            <td><img src="../../image/icon/soy_sauce.png" onclick="featuresText('西螺醬油')" />西螺醬油</td>
+            <td><img src="../../image/icon/soy_sauce.png" onclick="featuresText('西螺醬油')" /><a style="display: block;">西螺醬油</a></td>
         </tr>
         <tr>
-            <td><img src="../../image/map_icon/Yunlin_amusement_park.png" onclick="featuresText('劍湖山世界主題樂園')" />劍湖山世界主題樂園</td>
+            <td><img src="../../image/map_icon/Yunlin_amusement_park.png" onclick="featuresText('劍湖山世界主題樂園')" /><a style="display: block;">劍湖山世界主題樂園</a></td>
         </tr>
         <tr>
-            <td><img src="../../image/map_icon/Yunlin_temple.png" onclick="featuresText('北港朝天宮')" />北港朝天宮</td>
+            <td><img src="../../image/map_icon/Yunlin_temple.png" onclick="featuresText('北港朝天宮')" /><a style="display: block;">北港朝天宮</a></td>
         </tr>
         <tr>
-            <td><img src="../../image/map_icon/Yunlin_mushroom_farm.png" onclick="featuresText('金億陽蘑菇農場')" />金億陽蘑菇農場</td>
+            <td><img src="../../image/map_icon/Yunlin_mushroom_farm.png" onclick="featuresText('金億陽蘑菇農場')" /><a style="display: block;">金億陽蘑菇農場</a></td>
         </tr>
     </table>
     <div class="map">
         <img class="terrain" src="../../image/map/Yunlin1.png" />
         <div class="level1">
             <img class="level" src="../../image/icon/soy_sauce.png" onclick="location.href='../../view/game/drawzhuyin.html?id=k&counties=yunlin';mouseDownText(ㄎ);" />
-            <img class="level_text" src="../../image/chinese_alphabet/k.png" onclick="location.href='../../view/game/drawzhuyin.html?id=k&counties=yunlin';mouseDownText(ㄎ);" />
+            <img class="level_text" src="../../image/chinese_alphabet/k.png" onclick="location.href='../../view/game/drawzhuyin.html?id=k&counties=yunlin';mouseDownText(ㄎ);" style="left: -69%;" />
         </div>
         <div class="level2"><img class="level" src="../../image/icon/soy_sauce.png" onclick="location.href='../../view/game/drawzhuyin.html?id=h&counties=yunlin';mouseDownText(ㄏ);" />
             <img class="level_text" src="../../image/chinese_alphabet/h.png" onclick="location.href='../../view/game/drawzhuyin.html?id=h&counties=yunlin';mouseDownText(ㄏ);" />
@@ -88,7 +88,7 @@
             <img class="level_text" src="../../image/chinese_alphabet/ch.png" onclick="location.href='../../view/game/drawzhuyin.html?id=chi&counties=yunlin';mouseDownText(ㄔ);" />
         </div>
         <div class="level8">
-            <img class="level" src="../../image/icon/devil_lock.png" onclick="alert('需要先完成縣市所有關卡！')" />
+            <img class="level" style="width:39px;" src="../../image/icon/devil_lock.png" onclick="alert('需要先完成縣市所有關卡！')" />
 
         </div>
 
