@@ -454,3 +454,77 @@ ipcMain.on('callGoodRegard', (event, arg) => {
     //     event.sender.send('replyGoodregardValue', data);
     // });
 });
+
+
+ipcMain.on('call-speechfrequency',(event,arg) =>{
+    console.log("success call call-speechfrequency")
+    api.Question.showPastQuestion(1,(req)=>{
+        const freq = JSON.parse(JSON.stringify(req));
+        var totalfreq =0;
+        
+        console.log("data =>"+JSON.stringify(req))
+        for( i = 66; i >=0; i--){
+
+            if(freq.content[i].created_at.substring(0, 10) =="2020-09-02"){
+                
+                if(freq.content[i].category == "知識"){
+                    totalfreq++
+                }
+                
+            }
+            
+        }
+        var percentColor = 0;
+       if(percentColor>100){
+            percentColor = 100;
+       }else{
+            percentColor = Math.round(totalfreq / 3 * 100);
+       }
+        // console.log("total =>"+totalfreq)
+        // console.log("percentColor =>"+percentColor)
+        var AllData = {
+            "totalfreq": totalfreq,
+            "percentColor": percentColor
+        }
+        event.sender.send('reply-speachfrequency', AllData);
+        // console.log("data =>"+ Object.keys(freq.content).length)
+    })
+    
+})
+
+
+ipcMain.on('call-camerafrequency',(event,arg) =>{
+    console.log("success call call-camerafrequency")
+    api.Question.showPastQuestion(1,(req)=>{
+        const freq = JSON.parse(JSON.stringify(req));
+        var totalfreq =0;
+        
+        console.log("data =>"+JSON.stringify(req))
+        for( i = 66; i >=0; i--){
+
+            if(freq.content[i].created_at.substring(0, 10) =="2020-09-02"){
+                
+                if(freq.content[i].category == "影像辨識"){
+                    totalfreq++
+                }
+                
+            }
+            
+        }
+        var percentColor = Math.round(totalfreq / 3 * 100);
+       if(percentColor>100){
+            percentColor = 100;
+       }else{
+            percentColor = Math.round(totalfreq / 3 * 100);
+       }
+        console.log("total =>"+totalfreq)
+        console.log("percentColor =>"+percentColor)
+        var AllData = {
+            "totalfreq": totalfreq,
+            "percentColor": percentColor
+        }
+        event.sender.send('reply-camerafrequency', AllData);
+        // console.log("data =>"+ Object.keys(freq.content).length)
+    })
+    
+})
