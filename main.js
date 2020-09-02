@@ -236,7 +236,7 @@ ipcMain.on('captrue', async(event, args) => {
 })
 
 ipcMain.on('addQAtoServer', async(event, arg) => {
-    api.Question.addQa(1, "", arg, "./still-image.jpg", arg, "影像辨識", (event) => {
+    api.Question.addQa(1, "", arg, "./still-image.jpg", arg, "影像", (event) => {
         console.log("callback=" + JSON.stringify(event));
     });
 })
@@ -382,12 +382,22 @@ ipcMain.on('callMagicCard', (event, arg) => {
 });
 
 
+ipcMain.on('callZhuyinCondition',(event,arg) =>{
+    console.log("success call Zhuyin Condition ~~~~ ")
+    api.Level.showLevel(1,(req) =>{
+        const data = JSON.parse(JSON.stringify(req));
+        // console.log("data = " + JSON.stringify(data))
+        event.sender.send('reply-callZhuyindata', data);
+    })
+})
+
+
 
 ipcMain.on('callMapCondition', (event, arg) => {
     console.log("success call Map Condition =) ")
     api.Level.showLevel(1, (req) => {
         const data = JSON.parse(JSON.stringify(req));
-        // console.log("data = " + JSON.stringify(data))
+        
 
         event.sender.send('selectJsonOnTL', data);
     });
