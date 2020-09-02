@@ -75,7 +75,7 @@ video {
 
 .speaker {
     position: absolute;
-    left: 10px;
+    left: -60px;
     bottom: 10px;
     height: 40px;
     z-index: 10;
