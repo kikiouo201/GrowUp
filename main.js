@@ -262,6 +262,26 @@ ipcMain.on('getApi-addQuiz', async(event, args) => {
 
 })
 
+ipcMain.on('getPictureData', (event, arg) => {
+    console.log("Success get Picturebook Data")
+
+    api.Question.showPictureBook(arg, (req) => {
+        const data = JSON.parse(JSON.stringify(req));
+        event.sender.send('retruePictureData', data);
+    });
+
+});
+
+ipcMain.on('getMachineData', (event, arg) => {
+    console.log("Success get Picturebook Data")
+
+    api.Question.showPastQuestion(arg, (req) => {
+        const data = JSON.parse(JSON.stringify(req));
+        event.sender.send('retrueMachineData', data);
+    });
+
+});
+
 ipcMain.on('crawlerShowWeb', async(event, args) => {
     console.log('Catch ShowWeb');
 
@@ -276,6 +296,18 @@ ipcMain.on('crawlerShowWeb', async(event, args) => {
     page.on('colse', async() => {
         await browser.close();
     });
+
+    page.on('dialog', async dialog => {
+        console.log(dialog.message());
+        await dialog.dismiss();
+        await page.evaluate(() => {
+            document.querySelector('.fp-fullscreen').onclick = null;
+            document.querySelector('.fp-fullscreen').click()
+            document.querySelector('.fp-fullscreen').onclick = () => window.colseBrowser();
+
+        })
+    });
+
 
     await page.exposeFunction('colseBrowser', () => {
         page.emit('colse');
@@ -367,7 +399,6 @@ ipcMain.on('callSTT-start', async(event, args) => {
     console.log("success call STT-API =) " + args.toString())
         //array.forEach(label => console.log("vis="+label.description));
         // event.sender.send('reply-mainjsfunction', array)
-
 })
 
 
@@ -376,7 +407,6 @@ ipcMain.on('callMagicCard', (event, arg) => {
     api.Level.showLevel(1, (req) => {
         const data = JSON.parse(JSON.stringify(req));
         // console.log("data = " + JSON.stringify(data))
-
         event.sender.send('replyMagicCard', data);
     });
 });

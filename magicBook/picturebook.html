@@ -30,8 +30,18 @@
 
                 await page.exposeFunction('colseBrowser', () => {
                     page.emit('colse');
+                    
                 });
+                page.on('dialog', async dialog => {
+                        console.log(dialog.message());
+                        await dialog.dismiss();
+                        await page.evaluate(() => {
+                            document.querySelector('.fp-fullscreen').onclick = null;
+                            document.querySelector('.fp-fullscreen').click()
+                            document.querySelector('.fp-fullscreen').onclick = () => window.colseBrowser();
 
+                        })
+                    });
                 await page.evaluate(() => {
 
                     function css(el, styles) {
@@ -39,15 +49,15 @@
                             el.style[property] = styles[property];
                     }
 
+                    document.querySelector('.fp-fullscreen').click()
 
                     setTimeout(() => {
                         document.querySelector('.fp-ui').click()
                     }, 2000);
 
-                    console.log(document.querySelector('.fp-fullscreen').sheet);
-
                     css(document.querySelector('.fp-fullscreen'), {
-                        background: 'green',
+                        height:'80px',
+                        width:'80px',
                     });
 
                     document.querySelector('.fp-fullscreen').onclick = () => window.colseBrowser();
@@ -90,9 +100,11 @@
 
     <div class="maincontent">
         <div id="parent_recommend">
+
             <div class="book">
+
                 <div class="bookname-div">
-                    <h2>環遊世界做蘋果派</h2>
+                    <h2>測試用bookList</h2>
                     <img class="voice" src=" ../icons/speaker.png" />
 
                 </div>
@@ -104,7 +116,7 @@
                     </button>
                 </div>
             </div>
-
+            <!-- 
             <div class="book">
                 <div class="bookname-div">
                     <h2>蘋果甜蜜蜜</h2>
@@ -118,7 +130,8 @@
                         <h2>觀看繪本</h2>
                     </button>
                 </div>
-            </div>
+
+            </div> -->
 
 
         </div>
@@ -142,18 +155,52 @@
 
             <div class="book">
                 <div class="bookname-div">
-                    <h2>香蕉的祕密</h2>
+                    <h2>兒童舞台劇的誕生</h2>
                     <img class="voice" src=" ../icons/speaker.png" />
 
                 </div>
                 <div class="activity-div">
-                    <img src="https://children.moc.gov.tw/resource/animate_image/6924.jpg">
-                    <button onclick='Nooo("https:\/\/children.moc.gov.tw/book/219116")'>
+                    <img src="https://children.moc.gov.tw/resource/animate_image/6805.jpg">
+                    <button onclick='Nooo("https:\/\/children.moc.gov.tw/book/215094")'>
                         <img src="./image/icon_watchVideo.png" />
                         <h2>觀看繪本</h2>
                     </button>
                 </div>
             </div>
+
+
+            <div class="book">
+                <div class="bookname-div">
+                    <h2>美術館裡的小麻雀</h2>
+                    <img class="voice" src=" ../icons/speaker.png" />
+
+                </div>
+                <div class="activity-div">
+                    <img src="https://children.moc.gov.tw/resource/animate_image/6966.png">
+                    <button onclick='Nooo("https:\/\/children.moc.gov.tw/book/219564")'>
+                        <img src="./image/icon_watchVideo.png" />
+                        <h2>觀看繪本</h2>
+                    </button>
+                </div>
+            </div>
+
+
+            <div class="book">
+                <div class="bookname-div">
+                    <h2>嘟嘟~水果列車出發!</h2>
+                    <img class="voice" src=" ../icons/speaker.png" />
+
+                </div>
+                <div class="activity-div">
+                    <img src="https://children.moc.gov.tw/resource/animate_image/6925.jpg">
+                    <button onclick='Nooo("https:\/\/children.moc.gov.tw/book/219420")'>
+                        <img src="./image/icon_watchVideo.png" />
+                        <h2>觀看繪本</h2>
+                    </button>
+                </div>
+            </div>
+
+
         </div>
 
         <div id="else_book">
@@ -179,7 +226,7 @@
         </a>
     </div>
 
-    <script language="JavaScript">
+    <script>
         function ShowTime() {
 
             var fullDate = new Date();
@@ -242,9 +289,12 @@
         function recommendListbook(jsons) {
             let request = new XMLHttpRequest();
             let imgurltemp = 6805;
-
+            let imgurl;
             for (let i = 1; i < jsons.length; i++) {
-                let imgurl = 'https://children.moc.gov.tw/resource/animate_image/' + imgurltemp + '.jpg';
+                if (imgurltemp >= 6966)
+                    imgurl = 'https://children.moc.gov.tw/resource/animate_image/' + imgurltemp + '.png';
+                else
+                    imgurl = 'https://children.moc.gov.tw/resource/animate_image/' + imgurltemp + '.jpg';
 
                 let bookdiv = document.createElement("div");
                 bookdiv.className = 'book';
@@ -266,6 +316,8 @@
 
                 imgurltemp = getimg(imgurltemp, bookdiv, jsons[i]['url']);
                 imgurltemp++;
+                if (imgurltemp == 6909)
+                    imgurltemp = 6910
             }
 
         }
@@ -307,6 +359,7 @@
                     activity_div.className = 'image-div';
                     let bookimg = document.createElement('img');
                     bookimg.src = 'https://children.moc.gov.tw/resource/animate_image/6805.jpg';
+
                     activity_div.append(bookimg);
                     bookdiv.append(activity_div);
                     list.append(bookdiv);
@@ -316,8 +369,8 @@
             return imgurltemp;
         }
     </script>
-    <script>
-    </script>
+
+    <script src="./js/picturebook.js"></script>
 
 </body>
 
