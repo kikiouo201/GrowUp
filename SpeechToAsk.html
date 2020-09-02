@@ -23,18 +23,16 @@
 
 </head>
 
-<body>
+<body onload="ShowTime()">
+    <div style="z-index: 101;" id="today"></div>
+    <br>
+    <div style="z-index: 101;" id="showtime"></div>
     <div id="im">
         <div class="home_page">
             <a class="home_title">魔咒</a>
 
             <!-- <a href="game_home.html" class="home_title">你問我答</a> -->
 
-            <body onload="ShowTime()">
-                <div id="today"></div>
-                <br>
-                <div id="showtime"></div>
-            </body>
         </div>
         <script language="JavaScript">
             function ShowTime() {
@@ -53,6 +51,7 @@
             }
         </script>
         <div class="QA_card_area" id="QA_card">
+            <button onclick='callCaw("https:\/\/children.moc.gov.tw/opendata/1")'>測試</button>
 
             <!-- 註解01 -->
             <!-- <div class="card text-white  mb-3" style="background-color: #92337eba;">
@@ -277,57 +276,6 @@
                 <i class="fab fa-share my-float"><img src="photo/gobackhome.png" width="70%"></i>
             </a>
         </div>
-        <script>
-            function toggleBtn() {
-                const Btns = document.querySelector(".btns");
-                const add = document.getElementById("add");
-                const remove = document.getElementById("remove");
-                const btn = document.querySelector(".btns").querySelectorAll("a");
-                Btns.classList.toggle("open");
-                if (Btns.classList.contains("open")) {
-                    remove.style.display = "block";
-                    add.style.display = "none";
-                    btn.forEach((e, i) => {
-                        setTimeout(() => {
-                            bottom = 65 * i;
-                            e.style.bottom = bottom + "px";
-                            console.log(e);
-                        }, 100 * i);
-                    });
-                } else {
-                    add.style.display = "block";
-                    remove.style.display = "none";
-                    btn.forEach((e, i) => {
-                        e.style.bottom = "0px";
-                    });
-                }
-            }
-        </script>
-        <script>
-            var chk1 = document.querySelector("#yoKnowledgeChk");
-            var chk2 = document.querySelector("#fruitKnowledgeChk")
-            var show = document.querySelector("#showCollect")
-            var black_overlay = document.querySelector(".black_overlay")
-
-            function changecss() { /*設定置中的函式*/
-
-                chk1.style.visibility = "visible";
-                chk2.style.visibility = "visible";
-                show.style.visibility = "visible";
-                black_overlay.style.visibility = "visible"
-
-            }
-
-            function closecollection() {
-
-                chk1.style.visibility = "hidden";
-                chk2.style.visibility = "hidden";
-                show.style.visibility = "hidden";
-                black_overlay.style.visibility = "hidden";
-
-            }
-        </script>
-
 
 </body>
 
