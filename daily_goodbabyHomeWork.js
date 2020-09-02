@@ -3,6 +3,8 @@ var player = require('play-sound')(opts = {})
 const nextLevelEx = document.getElementById("nextLevelEx");
 const currentEx = document.getElementById("currentEx");
 
+ipcRenderer.send('call-speechfrequency')
+ipcRenderer.send('call-camerafrequency')
 
 ipcRenderer.send('callGoodRegard');
 ipcRenderer.on('replyGoodregardTot', (event, data) => {
@@ -26,3 +28,17 @@ ipcRenderer.on('replyGoodregardTot', (event, data) => {
     console.log(data['nextLevelEx']);
 
 });
+
+
+ipcRenderer.on('reply-speachfrequency',(event,data) =>{
+    
+    document.querySelector("#speechfreq").innerHTML = data['totalfreq']+"/3";
+    document.querySelector(".SpeechcardStatus").style.width = data['percentColor']+"%";
+})
+
+
+ipcRenderer.on('reply-camerafrequency',(event,data) =>{
+    
+    document.querySelector("#camerafreq").innerHTML = data['totalfreq']+"/3";
+    document.querySelector(".CameracardStatus").style.width = data['percentColor']+"%";
+})

@@ -165,7 +165,20 @@ a {
     border-radius: 12px;
 }
 
-.cardStatus {
+.CameracardStatus {
+    width: 33.33%;
+    /* position: absolute; */
+    height: 100%;
+    border-radius: 40px 40px 40px 40px;
+    /* border-color: darkred; */
+    /* border-style: solid; */
+    background-color: #6c8eff;
+    /* border-width: 2px; */
+    display: inline-block;
+    /* margin-left: 12px; */
+}
+
+.SpeechcardStatus {
     width: 33.33%;
     /* position: absolute; */
     height: 100%;

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../../CSS/map/changhua.css">
     <link rel="stylesheet" href="../../CSS/interface.css">
     <link rel="stylesheet" href="../../CSS/icon.css">
+    <script src="./centralRegionjs/changhua.js"></script>
     <title>Document</title>
 </head>
 
@@ -29,7 +30,7 @@
     }
 </style>
 
-<body class="style" background="../../image/map/kraftPaper5.png">
+<body class="style" background="../../image/map/kraftPaper5.png" onload="checkZhuyin()">
     <table class="features">
         <tr>
             <td colspan="2" style="font-size: 40px;text-align: center;">彰化地區</td>
@@ -58,32 +59,37 @@
     <div class="map">
         <img class="terrain" src="../../image/map/Changhua1.png" />
         <div class="level1">
-            <img class="level_basic" src="../../image/icon/meat_ball.png" onclick="location.href='../../view/game/drawzhuyin.html?id=shi&counties=changhua';mouseDownText(ㄕ);" />
+            <img id="zhuyin" alt="ㄕ" class="level_basic" src="../../image/icon/meat_ball.png" onclick="location.href='../../view/game/drawzhuyin.html?id=shi&counties=changhua';mouseDownText(ㄕ);" />
             <img class="level_text" src="../../image/chinese_alphabet/sh.png" onclick="location.href='../../view/game/drawzhuyin.html?id=shi&counties=changhua';mouseDownText(ㄕ);" />
         </div>
 
         <div class="level2">
-            <img class="level_basic" src="../../image/icon/meat_ball.png" onclick="location.href='../../view/game/drawzhuyin.html?id=ri&counties=changhua';mouseDownText(ㄖ);" />
+            <img id="zhuyin" alt="ㄖ" class="level_basic" src="../../image/icon/meat_ball.png" onclick="location.href='../../view/game/drawzhuyin.html?id=ri&counties=changhua';mouseDownText(ㄖ);" />
             <img class="level_text" src="../../image/chinese_alphabet/r.png" onclick="location.href='../../view/game/drawzhuyin.html?id=ri&counties=changhua';mouseDownText(ㄖ);" />
         </div>
-        <div class="level3"> <img class="level_basic" src="../../image/icon/meat_ball.png" onclick="location.href='../../view/game/drawzhuyin.html?id=zi&counties=changhua';mouseDownText(ㄗ);" />
+        <div class="level3"> 
+            <img id="zhuyin" alt="ㄗ" class="level_basic" src="../../image/icon/meat_ball.png" onclick="location.href='../../view/game/drawzhuyin.html?id=zi&counties=changhua';mouseDownText(ㄗ);" />
             <img class="level_text" src="../../image/chinese_alphabet/z.png" onclick="location.href='../../view/game/drawzhuyin.html?id=zi&counties=changhua';mouseDownText(ㄗ);" />
         </div>
 
-        <div class="level4"> <img class="level_basic" src="../../image/icon/meat_ball.png" onclick="location.href='../../view/game/drawzhuyin.html?id=ci&counties=changhua';mouseDownText(ㄘ);" />
+        <div class="level4"> 
+            <img id="zhuyin" alt="ㄘ" class="level_basic" src="../../image/icon/meat_ball.png" onclick="location.href='../../view/game/drawzhuyin.html?id=ci&counties=changhua';mouseDownText(ㄘ);" />
             <img class="level_text" src="../../image/chinese_alphabet/c.png" onclick="location.href='../../view/game/drawzhuyin.html?id=ci&counties=changhua';mouseDownText(ㄘ);" />
         </div>
 
-        <div class="level5"> <img class="level_basic" src="../../image/icon/meat_ball.png" onclick="location.href='../../view/game/drawzhuyin.html?id=si&counties=changhua';mouseDownText(ㄙ);" />
+        <div class="level5"> 
+            <img id="zhuyin" alt="ㄙ" class="level_basic" src="../../image/icon/meat_ball.png" onclick="location.href='../../view/game/drawzhuyin.html?id=si&counties=changhua';mouseDownText(ㄙ);" />
             <img class="level_text" src="../../image/chinese_alphabet/s.png" onclick="location.href='../../view/game/drawzhuyin.html?id=si&counties=changhua';mouseDownText(ㄙ);" />
         </div>
 
 
-        <div class="level6"> <img class="level_basic" src="../../image/icon/meat_ball.png" onclick="location.href='../../view/game/drawzhuyin.html?id=yi&counties=changhua';mouseDownText(ㄧ);" />
+        <div class="level6"> 
+            <img id="zhuyin" alt="ㄧ" class="level_basic" src="../../image/icon/meat_ball.png" onclick="location.href='../../view/game/drawzhuyin.html?id=yi&counties=changhua';mouseDownText(ㄧ);" />
             <img class="level_text" src="../../image/chinese_alphabet/(y)i.png" onclick="location.href='../../view/game/drawzhuyin.html?id=yi&counties=changhua';mouseDownText(ㄧ);" />
         </div>
 
-        <div class="level7"> <img class="level_basic" src="../../image/icon/meat_ball.png" onclick="location.href='../../view/game/drawzhuyin.html?id=wu&counties=changhua';mouseDownText(ㄨ);" />
+        <div class="level7"> 
+            <img id="zhuyin" alt="ㄨ" class="level_basic" src="../../image/icon/meat_ball.png" onclick="location.href='../../view/game/drawzhuyin.html?id=wu&counties=changhua';mouseDownText(ㄨ);" />
             <img class="level_text" src="../../image/chinese_alphabet/u.png" onclick="location.href='../../view/game/drawzhuyin.html?id=wu&counties=changhua';mouseDownText(ㄨ);" />
         </div>
         <div class="level8">
