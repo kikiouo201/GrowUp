@@ -36,10 +36,10 @@ function mouseDownText(text) {
     // ipcRenderer.send('callSTT-start', text);
     // if (nantou[text].trim() == "b") {
     player.play('../../TTS/mp3/bpm/' + nantouBPM[text] + '.mp3', function(err) {
-        if (err) throw err
-        console.log("Audio finished");
-    })
-    audio.kill()
+            if (err) throw err
+            console.log("Audio finished");
+        })
+        // audio.kill()
     console.log("call " + nantouBPM[text])
 
     // }
