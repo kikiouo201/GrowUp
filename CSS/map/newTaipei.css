@@ -1,46 +1,47 @@
-
-body{
+body {
     display: flex;
     width: 100%;
     height: 100%;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
 }
 
 .features {
-    
     background-color: aliceblue;
     width: 320px;
     height: 400px;
     margin-top: 50px;
+    margin-left: 110px;
 }
 
-
-.map{
+.map {
     text-align: center;
     position: relative;
-    height: 700px;
-    top: 50px;
-    right: -25px;
+    /* height: 700px; */
+    top: 102px;
+    /* right: -25px; */
 }
-.terrain{
+
+.terrain {
     width: 362px;
     position: relative;
-    top: -92px;
+    /* top: -92px; */
     z-index: 1;
 }
 
-.level1{
+.level1 {
     width: 75px;
     position: absolute;
     z-index: 10;
-    top: -59px;
+    top: 33px;
     left: 132px;
 }
-.level{
+
+.level {
     width: 38px;
 }
-.level_text{
+
+.level_text {
     width: 78px;
     position: absolute;
     z-index: 10;
@@ -48,42 +49,42 @@ body{
     left: 20%;
 }
 
-.level2{
+.level2 {
     width: 100px;
     position: absolute;
     z-index: 10;
-    top: -13px;
-    left: 1px;
+    top: 79px;
+    left: 0px;
 }
-.level3{
+
+.level3 {
     width: 100px;
     position: absolute;
     z-index: 10;
-    top: 46px;
+    top: 141px;
     left: 64px;
 }
 
-.level4{
+.level4 {
     width: 100px;
     position: absolute;
     z-index: 10;
-    top: 143px;
+    top: 236px;
     left: 94px;
 }
 
-.level5{
+.level5 {
     width: 100px;
     position: absolute;
     z-index: 10;
-    top: 27px;
+    top: 119px;
     left: 152px;
 }
 
-.level6{
+.level6 {
     width: 38px;
     position: absolute;
     z-index: 10;
-    top: 27px;
+    top: 120px;
     left: 306px;
 }
-
