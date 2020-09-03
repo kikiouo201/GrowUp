@@ -120,7 +120,7 @@ a {
 }
 
 .goodBaby_regard_value {
-    width: 67%;
+    width: 0%;
     position: absolute;
     height: 7%;
     border-radius: 40px 0px 0px 40px;
@@ -166,7 +166,7 @@ a {
 }
 
 .CameracardStatus {
-    width: 33.33%;
+    width: 0%;
     /* position: absolute; */
     height: 100%;
     border-radius: 40px 40px 40px 40px;
@@ -179,7 +179,7 @@ a {
 }
 
 .SpeechcardStatus {
-    width: 33.33%;
+    width: 0%;
     /* position: absolute; */
     height: 100%;
     border-radius: 40px 40px 40px 40px;

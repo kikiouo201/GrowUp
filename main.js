@@ -236,7 +236,7 @@ ipcMain.on('captrue', async(event, args) => {
 })
 
 ipcMain.on('addQAtoServer', async(event, arg) => {
-    api.Question.addQa(1, "", arg, "./still-image.jpg", arg, "影像", (event) => {
+    api.Question.addQa(1, "", arg, "./still-image.jpg", arg, "影像辨識", (event) => {
         console.log("callback=" + JSON.stringify(event));
     });
 })
@@ -486,75 +486,90 @@ ipcMain.on('callGoodRegard', (event, arg) => {
 });
 
 
-ipcMain.on('call-speechfrequency',(event,arg) =>{
-    console.log("success call call-speechfrequency")
+
+
+ipcMain.on('call-frequency',(event,arg) =>{
+    console.log("success call call-frequency")
     api.Question.showPastQuestion(1,(req)=>{
         const freq = JSON.parse(JSON.stringify(req));
-        var totalfreq =0;
-        
+        let Cameratotalfreq =0;
+        let Speechtotalfreq = 0;
+        let dt = new Date();
         // console.log("data =>"+JSON.stringify(req))
         for( i = (Object.keys(freq.content).length-1); i >=0; i--){
 
-            if(freq.content[i].created_at.substring(0, 4) == dt.getFullYear() && freq.content[i].created_at.substring(7, 7) == dt.getMonth() && freq.content[i].created_at.substring(10, 10) == dt.getDate()){
-                
-                if(freq.content[i].category == "知識"){
-                    totalfreq++
-                }
-                
-            }
-            
-        }
-        var percentColor = 0;
-       if(percentColor>100){
-            percentColor = 100;
-       }else{
-            percentColor = Math.round(totalfreq / 3 * 100);
-       }
-        // console.log("total =>"+totalfreq)
-        // console.log("percentColor =>"+percentColor)
-        var AllData = {
-            "totalfreq": totalfreq,
-            "percentColor": percentColor
-        }
-        event.sender.send('reply-speachfrequency', AllData);
-        // console.log("data =>"+ Object.keys(freq.content).length)
-    })
-    
-})
-
-
-ipcMain.on('call-camerafrequency',(event,arg) =>{
-    console.log("success call call-camerafrequency")
-    api.Question.showPastQuestion(1,(req)=>{
-        const freq = JSON.parse(JSON.stringify(req));
-        var totalfreq =0;
-        var dt = new Date();
-        // console.log("data =>"+JSON.stringify(req))
-        for( i = (Object.keys(freq.content).length-1); i >=0; i--){
-
-            if(freq.content[i].created_at.substring(0, 4) == dt.getFullYear() && freq.content[i].created_at.substring(7, 7) == dt.getMonth() && freq.content[i].created_at.substring(10, 10) == dt.getDate()){
+            if(freq.content[i].created_at.substring(7, 7) == dt.getMonth() && freq.content[i].created_at.substring(10, 10) == dt.getDate()){
                 
                 if(freq.content[i].category == "影像辨識"){
-                    totalfreq++
+                    Cameratotalfreq++
+                }
+                if(freq.content[i].category == "語音"){
+                    Speechtotalfreq++
                 }
                 
             }
             
         }
-        var percentColor = Math.round(totalfreq / 3 * 100);
-       if(percentColor>100){
-            percentColor = 100;
+        let CamerapercentColor = Math.round(Cameratotalfreq / 3 * 100);
+       if(CamerapercentColor>100){
+            CamerapercentColor = 100;
        }else{
-            percentColor = Math.round(totalfreq / 3 * 100);
+            CamerapercentColor = Math.round(Cameratotalfreq / 3 * 100);
        }
-        console.log("total =>"+totalfreq)
-        console.log("percentColor =>"+percentColor)
-        var AllData = {
-            "totalfreq": totalfreq,
-            "percentColor": percentColor
+
+
+       let SpeechpercentColor = Math.round(Speechtotalfreq / 3 * 100);
+       if(SpeechpercentColor>100){
+            SpeechpercentColor = 100;
+       }else{
+            SpeechpercentColor = Math.round(Speechtotalfreq / 3 * 100);
+       }
+
+        // console.log("total =>"+totalfreq)
+        // console.log("percentColor =>"+percentColor)
+        let AllData = {
+            "Cameratotalfreq": Cameratotalfreq,
+            "CamerapercentColor": CamerapercentColor,
+            "Speechtotalfreq": Speechtotalfreq,
+            "SpeechpercentColor": SpeechpercentColor,
         }
-        event.sender.send('reply-camerafrequency', AllData);
+        event.sender.send('reply-frequency', AllData);
         // console.log("data =>"+ Object.keys(freq.content).length)
     })
     
 })
+
+// ipcMain.on('call-speechfrequency',(event,arg) =>{
+//     console.log("success call call-speechfrequency")
+//     api.Question.showPastQuestion(1,(req)=>{
+//         const speechfreq = JSON.parse(JSON.stringify(req));
+//         let totalfreq =0;
+//         let dt = new Date();
+//         // console.log("data =>"+JSON.stringify(req))
+//         for( i = (Object.keys(speechfreq.content).length-1); i >=0; i--){
+
+//             if( speechfreq.content[i].created_at.substring(7, 7) == dt.getMonth() && speechfreq.content[i].created_at.substring(10, 10) == dt.getDate()){
+                
+//                 if(speechfreq.content[i].category == "語音"){
+//                     totalfreq++
+//                 }
+                
+//             }
+            
+//         }
+//         let percentColor = Math.round(totalfreq / 3 * 100);
+//        if(percentColor>100){
+//             percentColor = 100;
+//        }else{
+//             percentColor = Math.round(totalfreq / 3 * 100);
+//        }
+//         console.log("total =>"+totalfreq)
+//         console.log("percentColor =>"+percentColor)
+//         let speechAllData = {
+//             "totalfreq": totalfreq,
+//             "percentColor": percentColor
+//         }
+//         event.sender.send('reply-speechfrequency', speechAllData);
+//         // console.log("data =>"+ Object.keys(freq.content).length)
+//     })
+// })
