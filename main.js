@@ -117,40 +117,26 @@ ipcMain.on('voice-require-to-py', (event, arg) => {
     // });
 
     appCallPython.startSpeak(
+        // callbackWhenCanSpeak
         () => {
             event.reply('voice-require-to-py-reply-start')
             console.log('voice-require-to-py-reply-start')
         },
+
+        // callbackWhenAnaysisVoice
         () => {
             event.reply('voice-require-to-py-anaysis-voice')
             console.log('anaysis-voice')
 
         },
-        // () => {
-        //   event.reply('voice-require-to-py-when-ask-what-isThat')
-        // },
+
+        // callbackWhenSuccess
         (result) => {
 
-            console.log("result.keyword" + result.keyword)
             event.reply('voice-require-to-py-reply-result', result)
 
-            console.log("Q=" + result.q)
-            console.log("A=" + result.a)
-            console.log("url=" + result.url)
-                // console.log("QN="+result.QName)
-            var x = result.a.toString().trim()
-            console.log(typeof x + typeof result.a.toString())
-            console.log("Testing Log => " + result.a.toString() + "\r\nTest2=>" + x)
-            if (x === 'TurnToOpenCamera') {
-                console.log("BinGO!")
-            } else {
-                console.log("NOOOOOOOO!")
-            }
-            console.log(" result(?)=" + result.toString())
-
-            //api code
             // api.Question.addQa
-            api.Question.addQa(1, result.q, result.a, "https:" + result.url, result.keyWord.trim(), "語音", (event) => {
+            api.Question.addQa(1, result['Question'], result['Answer'], "https:" + "//upload.wikimedia.org/wikipedia/commons/thumb/9/99/Apples_in_basket_2018_G2.jpg/250px-Apples_in_basket_2018_G2.jpg", result['keyWord'].trim(), "語音", (event) => {
                 console.log("callback=" + JSON.stringify(event));
             });
 
@@ -412,9 +398,9 @@ ipcMain.on('callMagicCard', (event, arg) => {
 });
 
 
-ipcMain.on('callZhuyinCondition',(event,arg) =>{
+ipcMain.on('callZhuyinCondition', (event, arg) => {
     console.log("success call Zhuyin Condition ~~~~ ")
-    api.Level.showLevel(1,(req) =>{
+    api.Level.showLevel(1, (req) => {
         const data = JSON.parse(JSON.stringify(req));
         // console.log("data = " + JSON.stringify(data))
         event.sender.send('reply-callZhuyindata', data);
@@ -427,7 +413,7 @@ ipcMain.on('callMapCondition', (event, arg) => {
     console.log("success call Map Condition =) ")
     api.Level.showLevel(1, (req) => {
         const data = JSON.parse(JSON.stringify(req));
-        
+
 
         event.sender.send('selectJsonOnTL', data);
     });
@@ -488,59 +474,59 @@ ipcMain.on('callGoodRegard', (event, arg) => {
 
 
 
-ipcMain.on('call-frequency',(event,arg) =>{
+ipcMain.on('call-frequency', (event, arg) => {
     console.log("success call call-frequency")
-    api.Question.showPastQuestion(1,(req)=>{
+    api.Question.showPastQuestion(1, (req) => {
         const freq = JSON.parse(JSON.stringify(req));
-        var Cameratotalfreq =0;
+        var Cameratotalfreq = 0;
         var Speechtotalfreq = 0;
         let dt = new Date();
         // console.log("speechdata =>"+JSON.stringify(req))
-        console.log("speechdata =>"+freq.content[(Object.keys(freq.content).length-1)].created_at.substring(9, 10))
-        
-        for( i = (Object.keys(freq.content).length-1); i >=0; i--){
+        console.log("speechdata =>" + freq.content[(Object.keys(freq.content).length - 1)].created_at.substring(9, 10))
 
-            if(freq.content[i].created_at.substring(6, 7) == (dt.getMonth()+1) & freq.content[i].created_at.substring(9, 10) == (dt.getDate()-1)){
-                
-                 if(freq.content[i].category == "語音"){
+        for (i = (Object.keys(freq.content).length - 1); i >= 0; i--) {
+
+            if (freq.content[i].created_at.substring(6, 7) == (dt.getMonth() + 1) & freq.content[i].created_at.substring(9, 10) == (dt.getDate() - 1)) {
+
+                if (freq.content[i].category == "語音") {
                     // console.log("speechdata =>"+freq.content[i].created_at.substring(9, 10))
                     Speechtotalfreq++
                 }
-                
+
             }
-            
+
         }
 
-        for( i = (Object.keys(freq.content).length-1); i >=0; i--){
+        for (i = (Object.keys(freq.content).length - 1); i >= 0; i--) {
 
-            if(freq.content[i].created_at.substring(6, 7) == (dt.getMonth()+1) & freq.content[i].created_at.substring(9, 10) == (dt.getDate()-1)){
-                
-                if(freq.content[i].category == "影像辨識"){
-                    
+            if (freq.content[i].created_at.substring(6, 7) == (dt.getMonth() + 1) & freq.content[i].created_at.substring(9, 10) == (dt.getDate() - 1)) {
+
+                if (freq.content[i].category == "影像辨識") {
+
                     Cameratotalfreq++
                 }
-                
+
             }
-            
+
         }
-        
+
         var CamerapercentColor = Math.round(Cameratotalfreq / 3 * 100);
-       if(CamerapercentColor>100){
+        if (CamerapercentColor > 100) {
             CamerapercentColor = 100;
-       }else{
+        } else {
             CamerapercentColor = Math.round(Cameratotalfreq / 3 * 100);
-       }
+        }
 
 
-       var SpeechpercentColor = Math.round(Speechtotalfreq / 3 * 100);
-       if(SpeechpercentColor>100){
+        var SpeechpercentColor = Math.round(Speechtotalfreq / 3 * 100);
+        if (SpeechpercentColor > 100) {
             SpeechpercentColor = 100;
-       }else{
+        } else {
             SpeechpercentColor = Math.round(Speechtotalfreq / 3 * 100);
-       }
+        }
 
-        console.log("Speechtotalfreq =>"+Speechtotalfreq)
-        console.log("Cameratotalfreq =>"+Cameratotalfreq)
+        console.log("Speechtotalfreq =>" + Speechtotalfreq)
+        console.log("Cameratotalfreq =>" + Cameratotalfreq)
         let AllData = {
             "Cameratotalfreq": Cameratotalfreq,
             "CamerapercentColor": CamerapercentColor,
@@ -550,19 +536,19 @@ ipcMain.on('call-frequency',(event,arg) =>{
         event.sender.send('reply-frequency', AllData);
         // console.log("data =>"+ Object.keys(freq.content).length)
     })
-    
+
 })
 
-ipcMain.on('levelIsPass',(event,arg) =>{
-    api.Level.alterLevel(1,arg,(req) =>{
+ipcMain.on('levelIsPass', (event, arg) => {
+    api.Level.alterLevel(1, arg, (req) => {
         console.log("data = " + JSON.stringify(req))
-        //event.sender.send('reply-callZhuyindata', data);
+            //event.sender.send('reply-callZhuyindata', data);
     });
-    api.People.AddChildGoodBabyValue(1,20,(req) =>{
+    api.People.AddChildGoodBabyValue(1, 20, (req) => {
         console.log("data = " + JSON.stringify(req))
-        //event.sender.send('reply-callZhuyindata', data);
+            //event.sender.send('reply-callZhuyindata', data);
     });
-    
+
 })
 
 // ipcMain.on('call-speechfrequency',(event,arg) =>{
@@ -575,13 +561,13 @@ ipcMain.on('levelIsPass',(event,arg) =>{
 //         for( i = (Object.keys(speechfreq.content).length-1); i >=0; i--){
 
 //             if( speechfreq.content[i].created_at.substring(7, 7) == dt.getMonth() && speechfreq.content[i].created_at.substring(10, 10) == dt.getDate()){
-                
+
 //                 if(speechfreq.content[i].category == "語音"){
 //                     totalfreq++
 //                 }
-                
+
 //             }
-            
+
 //         }
 //         let percentColor = Math.round(totalfreq / 3 * 100);
 //        if(percentColor>100){
