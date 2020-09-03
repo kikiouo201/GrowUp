@@ -31,14 +31,28 @@ ipcRenderer.on('replyGoodregardTot', (event, data) => {
 
 
 ipcRenderer.on('reply-speachfrequency',(event,data) =>{
-    
+
+    if(data['totalfreq'] > 3){
+    document.querySelector("speech_success_icon").style.visibility = visible;
     document.querySelector("#speechfreq").innerHTML = data['totalfreq']+"/3";
     document.querySelector(".SpeechcardStatus").style.width = data['percentColor']+"%";
+    }else{
+        document.querySelector("#camerafreq").innerHTML = data['totalfreq']+"/3";
+        document.querySelector(".CameracardStatus").style.width = data['percentColor']+"%";
+    }
+
 })
 
 
 ipcRenderer.on('reply-camerafrequency',(event,data) =>{
-    
-    document.querySelector("#camerafreq").innerHTML = data['totalfreq']+"/3";
-    document.querySelector(".CameracardStatus").style.width = data['percentColor']+"%";
+
+    if(data['totalfreq'] > 3){
+        document.querySelector("camera_success_icon").style.visibility = visible;
+        document.querySelector("#camerafreq").innerHTML = data['totalfreq']+"/3";
+        document.querySelector(".CameracardStatus").style.width = data['percentColor']+"%";
+    }else{
+        document.querySelector("#camerafreq").innerHTML = data['totalfreq']+"/3";
+        document.querySelector(".CameracardStatus").style.width = data['percentColor']+"%";
+    }
+   
 })

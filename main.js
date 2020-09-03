@@ -492,10 +492,10 @@ ipcMain.on('call-speechfrequency',(event,arg) =>{
         const freq = JSON.parse(JSON.stringify(req));
         var totalfreq =0;
         
-        console.log("data =>"+JSON.stringify(req))
-        for( i = 66; i >=0; i--){
+        // console.log("data =>"+JSON.stringify(req))
+        for( i = (Object.keys(freq.content).length-1); i >=0; i--){
 
-            if(freq.content[i].created_at.substring(0, 10) =="2020-09-02"){
+            if(freq.content[i].created_at.substring(0, 4) == dt.getFullYear() && freq.content[i].created_at.substring(7, 7) == dt.getMonth() && freq.content[i].created_at.substring(10, 10) == dt.getDate()){
                 
                 if(freq.content[i].category == "知識"){
                     totalfreq++
@@ -528,11 +528,11 @@ ipcMain.on('call-camerafrequency',(event,arg) =>{
     api.Question.showPastQuestion(1,(req)=>{
         const freq = JSON.parse(JSON.stringify(req));
         var totalfreq =0;
-        
-        console.log("data =>"+JSON.stringify(req))
-        for( i = 66; i >=0; i--){
+        var dt = new Date();
+        // console.log("data =>"+JSON.stringify(req))
+        for( i = (Object.keys(freq.content).length-1); i >=0; i--){
 
-            if(freq.content[i].created_at.substring(0, 10) =="2020-09-02"){
+            if(freq.content[i].created_at.substring(0, 4) == dt.getFullYear() && freq.content[i].created_at.substring(7, 7) == dt.getMonth() && freq.content[i].created_at.substring(10, 10) == dt.getDate()){
                 
                 if(freq.content[i].category == "影像辨識"){
                     totalfreq++
