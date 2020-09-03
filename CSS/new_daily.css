@@ -191,6 +191,23 @@ a {
     /* margin-left: 12px; */
 }
 
+.speech_success_icon{
+    position: absolute;
+    top: 22%;
+    left: 0%;
+    height: auto;
+    width: 13.5%;
+    visibility: hidden;
+}
+
+.camera_success_icon{
+    position: absolute; 
+    height: auto;
+    width: 13.5%; 
+    visibility: hidden;
+}
+
+
 .card:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }

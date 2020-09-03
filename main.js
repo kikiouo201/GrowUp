@@ -492,25 +492,39 @@ ipcMain.on('call-frequency',(event,arg) =>{
     console.log("success call call-frequency")
     api.Question.showPastQuestion(1,(req)=>{
         const freq = JSON.parse(JSON.stringify(req));
-        let Cameratotalfreq =0;
-        let Speechtotalfreq = 0;
+        var Cameratotalfreq =0;
+        var Speechtotalfreq = 0;
         let dt = new Date();
-        // console.log("data =>"+JSON.stringify(req))
+        // console.log("speechdata =>"+JSON.stringify(req))
+        console.log("speechdata =>"+freq.content[(Object.keys(freq.content).length-1)].created_at.substring(9, 10))
+        
         for( i = (Object.keys(freq.content).length-1); i >=0; i--){
 
-            if(freq.content[i].created_at.substring(7, 7) == dt.getMonth() && freq.content[i].created_at.substring(10, 10) == dt.getDate()){
+            if(freq.content[i].created_at.substring(6, 7) == (dt.getMonth()+1) & freq.content[i].created_at.substring(9, 10) == (dt.getDate()-1)){
                 
-                if(freq.content[i].category == "影像辨識"){
-                    Cameratotalfreq++
-                }
-                if(freq.content[i].category == "語音"){
+                 if(freq.content[i].category == "語音"){
+                    // console.log("speechdata =>"+freq.content[i].created_at.substring(9, 10))
                     Speechtotalfreq++
                 }
                 
             }
             
         }
-        let CamerapercentColor = Math.round(Cameratotalfreq / 3 * 100);
+
+        for( i = (Object.keys(freq.content).length-1); i >=0; i--){
+
+            if(freq.content[i].created_at.substring(6, 7) == (dt.getMonth()+1) & freq.content[i].created_at.substring(9, 10) == (dt.getDate()-1)){
+                
+                if(freq.content[i].category == "影像辨識"){
+                    
+                    Cameratotalfreq++
+                }
+                
+            }
+            
+        }
+        
+        var CamerapercentColor = Math.round(Cameratotalfreq / 3 * 100);
        if(CamerapercentColor>100){
             CamerapercentColor = 100;
        }else{
@@ -518,15 +532,15 @@ ipcMain.on('call-frequency',(event,arg) =>{
        }
 
 
-       let SpeechpercentColor = Math.round(Speechtotalfreq / 3 * 100);
+       var SpeechpercentColor = Math.round(Speechtotalfreq / 3 * 100);
        if(SpeechpercentColor>100){
             SpeechpercentColor = 100;
        }else{
             SpeechpercentColor = Math.round(Speechtotalfreq / 3 * 100);
        }
 
-        // console.log("total =>"+totalfreq)
-        // console.log("percentColor =>"+percentColor)
+        console.log("Speechtotalfreq =>"+Speechtotalfreq)
+        console.log("Cameratotalfreq =>"+Cameratotalfreq)
         let AllData = {
             "Cameratotalfreq": Cameratotalfreq,
             "CamerapercentColor": CamerapercentColor,
