@@ -539,6 +539,18 @@ ipcMain.on('call-frequency',(event,arg) =>{
     
 })
 
+ipcMain.on('levelIsPass',(event,arg) =>{
+    api.Level.alterLevel(1,arg,(req) =>{
+        console.log("data = " + JSON.stringify(req))
+        //event.sender.send('reply-callZhuyindata', data);
+    });
+    api.People.AddChildGoodBabyValue(1,20,(req) =>{
+        console.log("data = " + JSON.stringify(req))
+        //event.sender.send('reply-callZhuyindata', data);
+    });
+    
+})
+
 // ipcMain.on('call-speechfrequency',(event,arg) =>{
 //     console.log("success call call-speechfrequency")
 //     api.Question.showPastQuestion(1,(req)=>{
