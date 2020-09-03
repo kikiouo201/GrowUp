@@ -68,14 +68,43 @@
         top: 135px;
         left: 230px;
       }
+      45%{
+        top: 130px;
+        left: 240px;
+      }
+      50%{
+        top: 130px;
+        left: 260px;
+      }
+      55%{
+        top: 138px;
+        left: 275px;
+      }
+      60%{
+        top: 185px;
+        left: 275px;
+        visibility: hidden;
+      }
+      60.5%{
+        visibility: visible;
+        top: 155px;
+        left: 275px;
+      }
+      70%{
+        top: 165px;
+        left: 230px;
+      }
+      80%{
+        top: 185px;
+        left: 230px;
+      }
       90%{
-        top: 210px;
-        left: 172px;
+        top: 190px;
+        left: 240px;
       }
       100%{
-        top: 195px;
-        left: 152px;
+        top: 180px;
+        left: 270px;
         visibility: hidden;
-       
       }
   }
