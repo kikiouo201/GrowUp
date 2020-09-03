@@ -1,4 +1,4 @@
-let {ipcRenderer }= require('electron');
+// let {ipcRenderer }= require('electron');
 
 function checkZhuyin() {
   const zhuyin = document.querySelectorAll("#zhuyin")
