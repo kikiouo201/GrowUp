@@ -332,114 +332,147 @@
       }
 }
 
-/* f1 */
 
-.fingerf1 {
+/* ㄊ */
+.fingert {
     visibility: visible;
     width: 50px;
     height: 100px;
     transform: rotate(300deg);
     position: absolute;
-    top: -110px;
-    left: -155px;
+    top: 125px;
+    left: 100px;
     z-index: 30;
     filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
 }
-.moveFingerf11 {
+
+
+.moveFingert {
     width: 50px;
     height: 100px;
     transform: scale(4);
     transition: all 1s ease-out;
     transform: rotate(300deg);
     position: absolute;
-    top: 20px;
-    left: -155px;
+    top: 125px;
+    left: 100px;
     z-index: 10;
-    animation-delay: 1s;
+    /* animation-delay: 1s; */
+    animation-name: drawt;
+    animation-duration:4s;
+    animation-fill-mode:forwards;
+    animation-timing-function:linear;
+    /* animation-iteration-count:infinite; */
+    /* animation-timing-function:step-start; */
+  }
+
+  @keyframes drawt{
+     
+      0%{
+        top: 125px;
+        left: 100px;
+      }
+      30%{
+        top: 105px;
+        left: 230px;
+        visibility: hidden;
+      }
+      30.5%{
+        visibility: visible;
+        top: 50px;
+        left: 170px;
+      }
+      60%{
+        top: 205px;
+        left: 115px;
+      }
+      70%{
+        top: 175px;
+        left: 205px;
+      }
+      85%{
+        top: 170px;
+        left: 207px;
+        visibility: hidden;
+      }
+      85.2%{
+        visibility: visible;
+        top: 155px;
+        left: 195px;
+      }
+      100%{
+        top: 200px;
+        left: 230px;
+        visibility: hidden;
+       
+      }
 }
 
-.moveFingerf12 {
+
+/* ㄋ */
+.fingern {
+    visibility: visible;
+    width: 50px;
+    height: 100px;
+    transform: rotate(300deg);
+    position: absolute;
+    top: 47px;
+    left: 115px;
+    z-index: 30;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+}
+
+
+.moveFingern {
     width: 50px;
     height: 100px;
     transform: scale(4);
-    transition: all 1.5s ease-out;
+    transition: all 1s ease-out;
     transform: rotate(300deg);
     position: absolute;
-    top: -110px;
-    left: -155px;
+    top: 47px;
+    left: 115px;
     z-index: 10;
-    animation-delay: 1s;
-}
+    /* animation-delay: 1s; */
+    animation-name: drawn;
+    animation-duration:4s;
+    animation-fill-mode:forwards;
+    animation-timing-function:linear;
+    /* animation-iteration-count:infinite; */
+    /* animation-timing-function:step-start; */
+  }
 
-.moveFingerf13 {
-    width: 50px;
-    height: 100px;
-    transform: scale(4);
-    transition: all 1.5s ease-out;
-    transform: rotate(300deg);
-    position: absolute;
-    top: -110px;
-    left: -100px;
-    z-index: 10;
-    animation-delay: 1s;
-}
+  @keyframes drawn{
+     
+      0%{
+        top: 47px;
+        left: 115px;
+      }
+      20%{
+        top: 42px;
+        left: 175px;
+      }
+      40%{
+        top: 110px;
+        left: 135px;
+      }
+      70%{
+        top: 95px;
+        left: 215px;
+      }
+      75%{
+        top: 105px;
+        left: 220px;
+      }
+      90%{
+        top: 210px;
+        left: 170px;
+      }
+      100%{
 
-.moveFingerf14 {
-    width: 50px;
-    height: 100px;
-    transform: scale(4);
-    transition: all 1.5s ease-out;
-    transform: rotate(300deg);
-    position: absolute;
-    top: -45px;
-    left: -155px;
-    z-index: 10;
-}
+        top: 195px;
+        left: 140px;
+        visibility: hidden;
+      }
 
-.moveFingerf15 {
-    width: 50px;
-    height: 100px;
-    transform: scale(4);
-    transition: all 1.5s ease-out;
-    transform: rotate(300deg);
-    position: absolute;
-    top: -45px;
-    left: -155px;
-    z-index: 10;
-}
-
-.moveFingerf16 {
-    width: 50px;
-    height: 100px;
-    transform: scale(4);
-    transition: all 1.5s ease-out;
-    transform: rotate(300deg);
-    position: absolute;
-    top: -45px;
-    left: -155px;
-    z-index: 10;
-}
-
-.moveFingerf17 {
-    width: 50px;
-    height: 100px;
-    transform: scale(4);
-    transition: all 1.5s ease-out;
-    transform: rotate(300deg);
-    position: absolute;
-    top: -45px;
-    left: -100px;
-    z-index: 10;
-}
-
-.moveFingerf18 {
-    width: 50px;
-    height: 100px;
-    transform: scale(4);
-    transition: all 1.5s ease-out;
-    transform: rotate(300deg);
-    position: absolute;
-    top: -45px;
-    left: -100px;
-    z-index: 10;
 }
