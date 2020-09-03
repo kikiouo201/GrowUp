@@ -1,5 +1,5 @@
 
-/* b */
+/* ㄅ */
 .fingerb {
     visibility: visible;
     width: 50px;
@@ -64,8 +64,140 @@
         visibility: hidden;
        
       }
+}
+
+
+/* ㄆ */
+.fingerp {
+    visibility: visible;
+    width: 50px;
+    height: 100px;
+    transform: rotate(300deg);
+    position: absolute;
+    top: 45px;
+    left: 130px;
+    z-index: 30;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+}
+
+
+.moveFingerp {
+    width: 50px;
+    height: 100px;
+    transform: scale(4);
+    transition: all 1s ease-out;
+    transform: rotate(300deg);
+    position: absolute;
+    top: 45px;
+    left: 130px;
+    z-index: 10;
+    /* animation-delay: 1s; */
+    animation-name: drawp;
+    animation-duration:4s;
+    animation-fill-mode:forwards;
+    animation-timing-function:linear;
+    /* animation-iteration-count:infinite; */
+    /* animation-timing-function:step-start; */
   }
 
+  @keyframes drawp{
+     
+      0%{
+        top: 45px;
+        left: 130px;
+      }
+      25%{
+        top: 105px;
+        left: 100px;
+      }
+      50%{
+        top: 80px;
+        left: 215px;
+      }
+      55%{
+        top: 90px;
+        left: 225px;
+      }
+      75%{
+        top: 220px;
+        left: 100px;
+        visibility: hidden;
+      }
+      75.5%{
+        visibility: visible;
+        top: 141px;
+        left: 135px;
+      }
+      100%{
+        top: 211px;
+        left: 225px;
+        visibility: hidden;
+       
+      }
+  }
+
+
+
+/* ㄇ */
+.fingerm {
+    visibility: visible;
+    width: 50px;
+    height: 100px;
+    transform: rotate(300deg);
+    position: absolute;
+    top: 75px;
+    left: 95px;
+    z-index: 30;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+}
+
+
+.moveFingerm {
+    width: 50px;
+    height: 100px;
+    transform: scale(4);
+    transition: all 1s ease-out;
+    transform: rotate(300deg);
+    position: absolute;
+    top: 75px;
+    left: 95px;
+    z-index: 10;
+    /* animation-delay: 1s; */
+    animation-name: drawm;
+    animation-duration:3s;
+    animation-fill-mode:forwards;
+    animation-timing-function:linear;
+    /* animation-iteration-count:infinite; */
+    /* animation-timing-function:step-start; */
+  }
+
+  @keyframes drawm{
+     
+      0%{
+        top: 75px;
+        left: 95px;
+      }
+      33%{
+        top: 178px;
+        left: 95px;
+        visibility: hidden;
+      }
+      33.5%{
+        visibility: visible;
+        top: 75px;
+        left: 95px;
+      }
+      66%{
+        top: 55px;
+        left: 225px;
+      }
+      100%{
+        top: 198px;
+        left: 225px;
+        visibility: hidden;
+      }
+     
+}
 
 /* f1 */
 
