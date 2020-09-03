@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../../CSS/map/counties.css">
     <link rel="stylesheet" href="../../CSS/interface.css">
     <link rel="stylesheet" href="../../CSS/icon.css">
+    <script src="./centralRegionjs/levelIsPass.js"></script>
 </head>
 <style>
     .features {
@@ -28,7 +29,7 @@
     }
 </style>
 
-<body class="style" background="../../image/map/kraftPaper5.png">
+<body class="style" background="../../image/map/kraftPaper5.png" onload="checkLevelIsPass('meat_rice','chiayi')">
 
     <iframe id="AllIconIfram" src="./ifram/chiayi_ifram.html" frameborder="0" class="collect_icon" style="z-index: 100;"></iframe>
 
@@ -66,18 +67,18 @@
         <img class="terrain" src="../../image/map/Chiayi1.png" />
 
         <div class="level1">
-            <img class="level" src="../../image/icon/meat_rice.png" onclick="location.href='../../view/game/drawzhuyin.html?id=1&counties=chiayi';mouseDownText(1);" />
+            <img class="level" alt="1" src="../../image/icon/meat_rice.png" onclick="location.href='../../view/game/drawzhuyin.html?id=1&counties=chiayi';mouseDownText(1);" />
             <img class="level_text" src="../../image/numbers/1.png" onclick="location.href='../../view/game/drawzhuyin.html?id=1&counties=chiayi';mouseDownText(1);" />
         </div>
-        <div class="level2"><img class="level" src="../../image/icon/meat_rice_dark.png" onclick="location.href='../../view/game/drawzhuyin.html?id=2&counties=chiayi';mouseDownText(2);" />
+        <div class="level2"><img class="level" alt="2" src="../../image/icon/meat_rice_dark.png" onclick="location.href='../../view/game/drawzhuyin.html?id=2&counties=chiayi';mouseDownText(2);" />
             <img class="level_text" src="../../image/numbers/2.png" onclick="location.href='../../view/game/drawzhuyin.html?id=2&counties=chiayi';mouseDownText(2);" />
         </div>
 
-        <div class="level3"> <img class="level" src="../../image/icon/meat_rice_dark.png" onclick="location.href='../../view/game/drawzhuyin.html?id=3&counties=chiayi';mouseDownText(3);" />
+        <div class="level3"> <img class="level" alt="3" src="../../image/icon/meat_rice_dark.png" onclick="location.href='../../view/game/drawzhuyin.html?id=3&counties=chiayi';mouseDownText(3);" />
             <img class="level_text" src="../../image/numbers/3.png" onclick="location.href='../../view/game/drawzhuyin.html?id=3&counties=chiayi';mouseDownText(3);" />
         </div>
         <div class="level4">
-            <img class="level" src="../../image/icon/devil_lock.png" onclick="alert('需要先完成縣市所有關卡！')" />
+            <img class="level" alt="chiayi" src="../../image/icon/devil_lock.png" onclick="alert('需要先完成縣市所有關卡！')" />
 
         </div>
         、
