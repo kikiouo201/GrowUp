@@ -3,6 +3,8 @@ body {
   background-size: 100%;
   background-attachment: fixed; */
     margin: 0px;
+    overflow-y: hidden;
+    overflow-x: hidden;
     /* margin-top: auto; */
 }
 
@@ -32,7 +34,7 @@ body::-webkit-scrollbar {
 }
 
 
-.tags {
+.tabs {
   position: fixed;
   top: 11%;
   width: 100%;
@@ -45,7 +47,7 @@ body::-webkit-scrollbar {
   /* background-color: lightblue; */
 }
 
-.tag {
+.tab {
   width: 24%;
   height: 100%;
   float: left;
@@ -57,7 +59,7 @@ body::-webkit-scrollbar {
   cursor: pointer;
 }
 
-.tag img {
+.tab img {
   display: inline-block;
   float: left;
   width: 30%;
@@ -65,7 +67,7 @@ body::-webkit-scrollbar {
   margin-right: 5px;
 }
 
-.tag span {
+.tab span {
   display: inline-block;
   font-size: 22px;
   margin-top: 7%;
@@ -75,7 +77,7 @@ body::-webkit-scrollbar {
   background-color: rgb(255, 220, 160);
 }
 
-#parent_tag {
+#parent_tab {
   background-color: rgb(255, 220, 160);
 
 }
@@ -84,7 +86,7 @@ body::-webkit-scrollbar {
   background-color: rgb(255, 182, 160);
 }
 
-#machine_tag {
+#machine_tab {
   background-color: rgb(255, 182, 160);
 
 }
@@ -93,7 +95,7 @@ body::-webkit-scrollbar {
   background-color: rgb(206, 255, 160);
 }
 
-#else_tag {
+#else_tab {
   background-color: rgb(206, 255, 160);
 
 }

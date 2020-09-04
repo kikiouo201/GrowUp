@@ -1,11 +1,13 @@
 const parent_recommend = document.querySelector("#parent_recommend");
 const machine_recommend = document.querySelector("#machine_recommend");
+const else_book = document.querySelector("#else_book");
 
 let par_book;
 
 ipcRenderer.send('getPictureData', 1);
 ipcRenderer.once('retruePictureData', (event, data) => {
   console.log("Success catch Picturebook Data")
+  console.log("Success catch Picturebook Data" + data.toString())
 
   par_book = new Array(data['content'].length);
 
@@ -39,7 +41,7 @@ ipcRenderer.once('retruePictureData', (event, data) => {
 
     let watch_btn = document.createElement('button');
     watch_btn.onclick = () => {
-      showWeb('https://www.google.com.tw/webhp?hl=zh-TW');
+      showWeb(data['content'][i]['introduction']);
     }
 
     let watch_ic = document.createElement('img');
@@ -57,6 +59,23 @@ ipcRenderer.once('retruePictureData', (event, data) => {
   }
 })
 
+// onclick="window.location.hash = '#else_book'"
+function tabClick(temp) {
+  if (temp == 1) {
+    parent_recommend.style.display = "block"
+    machine_recommend.style.display = "none"
+    else_book.style.display = "none"
+  } else if (temp == 2) {
+    parent_recommend.style.display = "none"
+    machine_recommend.style.display = "block"
+    else_book.style.display = "none"
+  } else {
+    parent_recommend.style.display = "none"
+    machine_recommend.style.display = "none"
+    else_book.style.display = "block"
+
+  }
+}
 
 
 // ipcRenderer.send('getMachineData', 1);
@@ -115,7 +134,7 @@ ipcRenderer.once('retruePictureData', (event, data) => {
 //               break;
 //             }
 //           }
-       
+
 //           break;
 //         }
 //       }
