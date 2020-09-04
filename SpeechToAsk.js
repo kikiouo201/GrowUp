@@ -19,12 +19,12 @@ if (voiceBtn) {
             // status.value= '開啟語音模組'
         ipcRenderer.send('voice-require-to-py');
 
-        ipcRenderer.once('voice-require-to-py-reply-start', () => {
+        ipcRenderer.once('reply-start', () => {
             // status.value = '系統提示：  請開始說話！';
             SystemVal.innerHTML = '系統提示：請開始說話！';
         });
 
-        ipcRenderer.once('voice-require-to-py-anaysis-voice', () => {
+        ipcRenderer.once('anaysis-voice', () => {
             SystemVal.innerHTML = '系統分析你的問題中...請稍後...'
         });
 
@@ -43,23 +43,23 @@ if (voiceBtn) {
         var CardID_A = 'speaker_A_' + click_num
         console.log("A= " + 'speaker_A_' + click_num)
 
-        var createQA = (text, text2, text3) => `<div id="pictureText_` + click_num + `" class="card text-white mb-3" style="background-color: #92337eba;">
+        var createQA = (question, url, answer) => `<div id="pictureText_` + click_num + `" class="card text-white mb-3" style="background-color: #92337eba;">
                                         
                                             <div class="card-body" style="margin-top: 30px;">
                                                 <img class="collect_LeftTop" onclick="collect(this)" id="` + CardID_Collect + `" src="icons/bookmark.png"/>
                                                     <div style="float:left; display: block; text-align: left;">
                                                         <p class="card-title card_Q">問題：</p>
-                                                        <p class="card-title card_Q" style="margin-left: 0px;">${text}</p>
+                                                        <p class="card-title card_Q" style="margin-left: 0px;">${question}</p>
                                                         <img class="speaker_Q" onclick="speaker(this)" id="` + CardID_Q + `" src="icons/speaker.png" onclick=speakerTest(this)>
                                                     </div>
                                                     <br><br><br><br>
                                                     <div>
-                                                        <img src="https:${text2}">
+                                                        <img src="https:${url}">
                                                     </div>
                                                     <br>
                                                     <div style="float:left; display: block; text-align: left;">
                                                         <p class="card-text card_A" style="float: left;">敘述：</p>
-                                                        <p class="card-text card_A" style="margin-left: 0px;">${text3}</p>
+                                                        <p class="card-text card_A" style="margin-left: 0px;">${answer}</p>
                                                         <img class="speaker_A" onclick="speaker(this)" id="` + CardID_A + `" src="icons/speaker.png" />
                                                     </div>
 
@@ -70,8 +70,7 @@ if (voiceBtn) {
 
         const messages = document.querySelector('#messages');
         const QA_card = document.querySelector('#QA_card');
-        console.log("Q:" + createQA)
-        ipcRenderer.once('voice-require-to-py-reply-result', (event, data) => {
+        ipcRenderer.once('reply-result', (event, data) => {
             console.log("New data:" + typeof(data))
             console.log("result catch:" + data)
             console.log("q =>" + data['Question'] + " a =>" + data['Answer'] + " url =>" + data['Answer_pic'] + " keyword=>" + data['keyWord'])

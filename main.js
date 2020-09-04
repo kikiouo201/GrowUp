@@ -111,22 +111,17 @@ app.on('activate', () => {
 //> ipcMain is ipc of main process
 //> ipcMain listen to voice-require-to-py channel here 是否有被按下去
 ipcMain.on('voice-require-to-py', (event, arg) => {
-    //   api.Question.showQuizContent(1, (event) => {
-    //           const data = JSON.parse(JSON.stringify(event));
-    //           const content = data.content;        
-    //           console.log("showQuizContent =" + JSON.stringify(content)  );       
-    // });
 
     appCallPython.startSpeak(
         // callbackWhenCanSpeak
         () => {
-            event.reply('voice-require-to-py-reply-start')
-            console.log('voice-require-to-py-reply-start')
+            event.reply('reply-start')
+            console.log('reply-start')
         },
 
         // callbackWhenAnaysisVoice
         () => {
-            event.reply('voice-require-to-py-anaysis-voice')
+            event.reply('anaysis-voice')
             console.log('anaysis-voice')
 
         },
@@ -134,7 +129,7 @@ ipcMain.on('voice-require-to-py', (event, arg) => {
         // callbackWhenSuccess
         (result) => {
 
-            event.reply('voice-require-to-py-reply-result', result)
+            event.reply('reply-result', result)
 
             // api.Question.addQa
             api.Question.addQa(1, result['Question'], result['Answer'], "https:" + "//upload.wikimedia.org/wikipedia/commons/thumb/9/99/Apples_in_basket_2018_G2.jpg/250px-Apples_in_basket_2018_G2.jpg", result['keyWord'].trim(), "語音", (event) => {
@@ -145,20 +140,7 @@ ipcMain.on('voice-require-to-py', (event, arg) => {
     )
 });
 
-//     ipcMain.on('AddQA-to-server', (event, data) => {
 
-
-// })
-
-
-// ipcMain.handle('voice-require-to-py', async (event, args) => {
-//   const result = await somePromise(args)
-//   return result
-//   console.log(result)
-// })
-
-//> ipcMain is ipc of main process
-//> ipcMain listen to close-main-window channel here
 ipcMain.on('close-main-window', () => {
     console.log('closed by ipc');
     app.quit();
@@ -435,8 +417,6 @@ ipcMain.on('callMapCondition', (event, arg) => {
     console.log("success call Map Condition =) ")
     api.Level.showLevel(1, (req) => {
         const data = JSON.parse(JSON.stringify(req));
-
-
         event.sender.send('selectJsonOnTL', data);
     });
 });
