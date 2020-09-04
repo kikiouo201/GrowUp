@@ -32,26 +32,26 @@ ipcRenderer.on('replyGoodregardTot', (event, data) => {
 
 
 ipcRenderer.on('reply-frequency',(event,data) =>{
-    console.log("data =>"+data)
+    console.log("data =>"+data.Cameratotalfreq)
     if(data['Cameratotalfreq'] > 3){
-        document.querySelector("#camera_success_icon").style.visibility = visible
-        document.querySelector("#camerafreq").innerHTML = data['Cameratotalfreq']+"/3";
-        document.querySelector(".CameracardStatus").style.width = data['CamerapercentColor']+"%";
-        document.querySelector("#speechfreq").innerHTML = data['Speechtotalfreq']+"/3";
-        document.querySelector(".SpeechcardStatus").style.width = data['SpeechpercentColor']+"%";
+        document.querySelector("#camera_success_icon").style.visibility = "visible";
+        document.querySelector("#camerafreq").innerHTML = data.Cameratotalfreq+"/3";
+        document.querySelector(".CameracardStatus").style.width = data.CamerapercentColor+"%";
+        document.querySelector("#speechfreq").innerHTML = data.Speechtotalfreq+"/3";
+        document.querySelector(".SpeechcardStatus").style.width = data.SpeechpercentColor+"%";
     }
-    else if(data['Speechtotalfreq'] > 3){
-        document.querySelector("#speech_success_icon").style.visibility = visible
-        document.querySelector("#speechfreq").innerHTML = data['Speechtotalfreq']+"/3";
-        document.querySelector(".SpeechcardStatus").style.width = data['SpeechpercentColor']+"%";
-        document.querySelector("#camerafreq").innerHTML = data['Cameratotalfreq']+"/3";
-        document.querySelector(".CameracardStatus").style.width = data['CamerapercentColor']+"%";
+    if(data['Speechtotalfreq'] > 3){
+        document.querySelector("#speech_success_icon").style.visibility = "visible";
+        document.querySelector("#speechfreq").innerHTML = data.Speechtotalfreq+"/3";
+        document.querySelector(".SpeechcardStatus").style.width = data.SpeechpercentColor+"%";
+        document.querySelector("#camerafreq").innerHTML = data.Cameratotalfreq+"/3";
+        document.querySelector(".CameracardStatus").style.width = data.CamerapercentColor+"%";
     }
     else{
-        document.querySelector("#speechfreq").innerHTML = data['Speechtotalfreq']+"/3";
-        document.querySelector(".SpeechcardStatus").style.width = data['SpeechpercentColor']+"%";
-        document.querySelector("#camerafreq").innerHTML = data['Cameratotalfreq']+"/3";
-        document.querySelector(".CameracardStatus").style.width = data['CamerapercentColor']+"%";
+        document.querySelector("#speechfreq").innerHTML = data.Speechtotalfreq+"/3";
+        document.querySelector(".SpeechcardStatus").style.width = data.SpeechpercentColor+"%";
+        document.querySelector("#camerafreq").innerHTML = data.Cameratotalfreq+"/3";
+        document.querySelector(".CameracardStatus").style.width = data.CamerapercentColor+"%";
     }
 
 })

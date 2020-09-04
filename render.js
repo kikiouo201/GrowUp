@@ -40,13 +40,16 @@ let identifyBtn = document.querySelector('#identify-js');
 var answer;
 if(identifyBtn){
 identifyBtn.addEventListener('click',()=>{   
-    // ipcRenderer.send('captrue');
-    ShowVisibility.style.display = "none";
-    ImgVisibility.style.display = "none";
-    stream.style.display="block";
-    ipcRenderer.send('vision-start');
-    document.getElementById('leadTxt').innerHTML="拍照中。。。";
-    console.log('ready');
+    // ipcRenderer.send('close-mjpg-streamer')
+
+    // ipcRenderer.on('reply-close-mjpg-streamer',(event,data)=>{
+        document.getElementById('leadTxt').innerHTML="拍照中。。。";
+        ipcRenderer.send('captrue');
+        ShowVisibility.style.display = "none";
+        ImgVisibility.style.display = "none";
+        stream.style.display="block";
+        console.log('ready');
+    // })
 
     ipcRenderer.on('reply-mainjsfunction-captrue',(event,data)=>{
         console.log("hihi");
@@ -69,7 +72,7 @@ identifyBtn.addEventListener('click',()=>{
 
     ipcRenderer.on('reply-webcrawlerfunction',(event,data) =>{
         console.log("addQAtoServer",answer);
-        ipcRenderer.send('addQAtoServer',answer)
+        ipcRenderer.send('addQAtoServer')
         if(data==undefined){
             document.getElementById('leadTxt').innerHTML="辨識失敗!!";
             document.getElementById('explainTxt').innerHTML="";
@@ -79,7 +82,7 @@ identifyBtn.addEventListener('click',()=>{
             ImgVisibility.style.display = "block";
             stream.style.display="none";
             document.getElementById('leadTxt').innerHTML="辨識成功!!";
-            document.getElementById('AnsImg').src="./still-image.png"
+            document.getElementById('AnsImg').src="./still-image.jpg"
             QA_card.innerHTML = createQA(answer,data)
             
         }

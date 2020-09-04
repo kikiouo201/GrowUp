@@ -68,50 +68,33 @@ if (voiceBtn) {
                                         </div>`;
 
 
-
-        // const createQA = function (t1, t2) {
-        //     `<h5 class="card-title">Q:${t1}</h5> <p class="card-text">A:${t2}</p>`                       
-        // }
-
-        // function collect() {
-        //     $(document).ready(function () {
-        //         $('.card-header').each(function (i) {
-        //             $(this).attr('id', 'QA_num_' + click_num);
-        //         });
-
-        //         $(".collect_rightTop").click(function (value) {                                 //click事件
-        //             $("#heart_collect").attr("src", "icons/heart.png");      //要更換的圖片位置
-
-        //         });
-        //     });
-        // }
-
-
         const messages = document.querySelector('#messages');
         const QA_card = document.querySelector('#QA_card');
         console.log("Q:" + createQA)
         ipcRenderer.once('voice-require-to-py-reply-result', (event, data) => {
-            console.log("q =>" + data.q + " a =>" + data.a + " url =>" + data.url + " keyword=>" + data.keyWord)
-            console.log("url =>" + data.url)
-            console.log("data obj:" + JSON.stringify(data))
-                // console.log("QName =>" + data.QName)
-                // debugger
-            QA_card.innerHTML = QA_card.innerHTML + createQA(data.q, data.url, data.a);
+            console.log("New data:" + typeof(data))
+            console.log("result catch:" + data)
+            console.log("q =>" + data['Question'] + " a =>" + data['Answer'] + " url =>" + data['Answer_pic'] + " keyword=>" + data['keyWord'])
+            console.log("url =>" + data['Answer_pic'])
 
-            if (data.a.toString().trim() == 'TurnToOpenCamera') { //如果偵測到「問這是什麼」類型的問題
+            // console.log("QName =>" + data.QName)
+            // debugger
+            QA_card.innerHTML = QA_card.innerHTML + createQA(data['Question'], "./00.png", data['Answer']);
+
+            if (data['Answer'].toString().trim() == 'TurnToOpenCamera') { //如果偵測到「問這是什麼」類型的問題
                 SystemVal.innerHTML = '切換至「你拍我答」'
                 setTimeout(document.location.href = "result.html", 5000);
                 // document.location.href="result.html";   //直接跳轉到camera的html
                 console.log("camera true")
-            } else if (data.a.toString().trim() == 'OpenPickingUpIsALittleRed') { //玩翻牌
+            } else if (data['Answer'].toString().trim() == 'OpenPickingUpIsALittleRed') { //玩翻牌
                 SystemVal.innerHTML = '開啟小遊戲至「翻牌遊戲」'
                 setTimeout(document.location.href = "./view/pickingUpIsALittleRed.html", 5000);
                 console.log("picking true")
-            } else if (data.a.toString().trim() == 'OpenGophers') { //玩打地鼠
+            } else if (data['Answer'].toString().trim() == 'OpenGophers') { //玩打地鼠
                 SystemVal.innerHTML = '開啟小遊戲至「打地鼠遊戲」'
                 setTimeout(document.location.href = "./view/gophers.html", 5000);
                 console.log("gophers true")
-            } else if (data.q.toString().trim().includes('蘋果')) {
+            } else if (data['Question'].toString().trim().includes('蘋果')) {
                 console.log()
                 let pictureBook = document.querySelector('#pictureText_' + click_num);
 
@@ -156,7 +139,7 @@ if (voiceBtn) {
                 </div>`
 
                 }
-            } else if (data.q.toString().trim().includes('香蕉')) {
+            } else if (data['Question'].toString().trim().includes('香蕉')) {
                 console.log()
                 let pictureBook = document.querySelector('#pictureText_' + click_num);
 
@@ -177,7 +160,7 @@ if (voiceBtn) {
                 </div>`
 
                 }
-            } else if (data.q.toString().trim().includes('水果')) {
+            } else if (data['Question'].toString().trim().includes('水果')) {
                 console.log()
                 let pictureBook = document.querySelector('#pictureText_' + click_num);
 
@@ -231,7 +214,14 @@ if (closeBtn) {
     });
 }
 
-
+function isJsonString(str) {
+    try {
+        if (typeof JSON.parse(str) == "object") {
+            return true;
+        }
+    } catch (e) {}
+    return false;
+}
 //語音唸出來
 let voices = [];
 // const speaker_Q_btn = document.querySelector('.speaker_Q');

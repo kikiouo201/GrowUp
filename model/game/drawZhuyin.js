@@ -1,3 +1,4 @@
+// let {ipcRenderer }= require('electron');
 let isDrawing = false;
 let x = 0;
 let y = 0;
@@ -66,6 +67,12 @@ myPics.forEach((pics, num) => {
 const score = document.querySelector('.score');
 console.log('score= ' + score);
 
+const levelName = {
+    b:'ㄅ',
+    p:'ㄆ',
+}
+
+
 score.addEventListener('click', () => {
     console.log('score onclick');
     let totalPoint = 0;
@@ -85,7 +92,7 @@ score.addEventListener('click', () => {
         status.innerHTML = '<img src="../../image/drawZhuyin/good.png" width="200px"/>你好棒';
         props.style.visibility = "visible";
         smallCard.innerHTML = '<img src="../../image/magicCard/chineseAlphabet/' + id + '.png" width="50px"/>';
-
+       // ipcRenderer.send("levelIsPass",levelName[id]);
     }
     console.log('totalPoint= ' + totalPoint);
 
@@ -129,7 +136,7 @@ function goNextLevel() {
     }
 }
 
-function onload() {
+function load() {
 
     let zhuyin = document.querySelector(".zhuyin img");
     console.log(`id=${id}`);
