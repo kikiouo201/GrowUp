@@ -6,6 +6,7 @@ const {
 } = require('electron')
 const path = require('path');
 const url = require('url');
+const shell = require('shelljs')
 const appCallPython = require('./app-call-python-child-process')
 const callVis = require('./vision')
 const {
@@ -163,6 +164,38 @@ ipcMain.on('close-main-window', () => {
     app.quit();
 });
 
+// ipcMain.on('close-mjpg-streamer',async(event,arg) =>{
+//     // let command = './mjpg_streamer -i "./input_uvc.so -y -n" -o "./output_http.so -w ./www"';
+//     let command = 'killall mjpg_streamer'
+//     shell.exec(command, (code, std, err) => {
+//         console.log('Exit code:', code);
+//         console.log('Program output:', std);
+//         console.log('Program stderr:', err);
+//     })
+//     event.sender.send('reply-close-mjpg-streamer')
+// })
+
+ipcMain.on('captrue', async(event, args) => {
+    let command = 'killall mjpg_streamer'
+    shell.exec(command, (code, std, err) => {
+        console.log('Exit code:', code);
+        console.log('Program output:', std);
+        console.log('Program stderr:', err);
+    })
+    event.sender.send('reply-close-mjpg-streamer')
+
+    console.log("call captrue");
+    const stillCamera = new StillCamera();
+
+    const image = await stillCamera.takeImage();
+
+    fs.writeFileSync("still-image.jpg", image);
+
+    event.sender.send('reply-mainjsfunction-captrue')
+})
+
+
+
 ipcMain.on('vision', (event, args) => {
     event.sender.send('reply-visionready')
 })
@@ -209,22 +242,11 @@ ipcMain.on('crawler', (event, args) => {
 
 })
 
-ipcMain.on('captrue', async(event, args) => {
-
-    console.log("call captrue");
-    const stillCamera = new StillCamera();
-
-    const image = await stillCamera.takeImage();
-
-    fs.writeFileSync("still-image.jpg", image);
-
-    event.sender.send('reply-mainjsfunction-captrue')
-})
 
 ipcMain.on('addQAtoServer', async(event, arg) => {
-    api.Question.addQa(1, "", arg, "./still-image.jpg", arg, "影像辨識", (event) => {
-        console.log("callback=" + JSON.stringify(event));
-    });
+    // api.Question.addQa(1, "", arg, "./still-image.jpg", arg, "影像辨識", (event) => {
+    //     console.log("callback=" + JSON.stringify(event));
+    // });
 })
 
 // ipcMain.on('invokeAction', function(event, data){
