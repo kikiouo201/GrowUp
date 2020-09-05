@@ -54,7 +54,7 @@ if (voiceBtn) {
                                                     </div>
                                                     <br><br><br><br>
                                                     <div>
-                                                        <img src="https:${url}">
+                                                        <img class="img_` + click_num + `" src="https:${url}">
                                                     </div>
                                                     <br>
                                                     <div style="float:left; display: block; text-align: left;">
@@ -71,6 +71,17 @@ if (voiceBtn) {
         const messages = document.querySelector('#messages');
         const QA_card = document.querySelector('#QA_card');
         ipcRenderer.once('reply-result', (event, data) => {
+
+            ipcRenderer.send('serchImgURL', data['keyWord']);
+            ipcRenderer.once('replyImgURL', (event, data) => {
+
+                const imgURL = document.querySelector('.img_' + click_num);
+                data['Answer_pic'] = data;
+                console.log("data" + data)
+                console.log("URLLLL:" + imgURL);
+                imgURL.src = data;
+
+            })
             console.log("New data:" + typeof(data))
             console.log("result catch:" + data)
             console.log("q =>" + data['Question'] + " a =>" + data['Answer'] + " url =>" + data['Answer_pic'] + " keyword=>" + data['keyWord'])
@@ -78,7 +89,9 @@ if (voiceBtn) {
 
             // console.log("QName =>" + data.QName)
             // debugger
-            QA_card.innerHTML = QA_card.innerHTML + createQA(data['Question'], "./00.png", data['Answer']);
+            QA_card.innerHTML = QA_card.innerHTML + createQA(data['Question'], data['Answer_pic'], data['Answer']);
+
+
 
             if (data['Answer'].toString().trim() == 'TurnToOpenCamera') { //如果偵測到「問這是什麼」類型的問題
                 SystemVal.innerHTML = '切換至「你拍我答」'
@@ -97,11 +110,7 @@ if (voiceBtn) {
                 console.log()
                 let pictureBook = document.querySelector('#pictureText_' + click_num);
 
-                // data.book_name = "蘋果甜蜜蜜";
-                // data.book_img = "https://children.moc.gov.tw/resource/animate_image/6892.jpg";
-                // data.book_introduction = "嫁接的蜜蘋果要先習慣這塊土地，接受泥土的養分之後，才能慢慢慢慢的發芽開花。在這塊土地上接受多元文化洗禮、共同生活的人，不也像蜜蘋果一樣嗎？願藉此，獻上我們最深的祝福！";
 
-                // console.log("bookName ==" + book_name);
                 if (pictureBook.id.includes('2')) {
                     console.log("id:" + pictureBook.id)
                     pictureBook.innerHTML += `<div class="card-header contentCss" id="QA_num_" style="background-color: #f8f9fa24; padding-bottom: 40px;">
@@ -181,16 +190,8 @@ if (voiceBtn) {
 
                 }
             }
-            // messages.innerHTML = messages.innerHTML + createQ(data.q) + createA(data.a);
-            // console.log("dataA="+data.a.toString())
-            // console.log("test=A? =>"+document.getElementById('Answer01').textContent);
-
-            //傳伺服器
-            // ipcRenderer.send('AddQA-to-server');
-            // console.log('call Server Success');
 
             console.log("data=" + data)
-                // status.value = '再問一次問題';
             SystemVal.innerHTML = '再問一次問題';
 
 
@@ -312,55 +313,22 @@ stopDOM.addEventListener('dblclick', toggle.bind(null, false));
 
 const puppeteer = require('puppeteer');
 
-function callCaw(web) {
+function searchImg(keyword) {
     (async() => {
         let browser = await puppeteer.launch({
             executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
             // args: ['--start-fullscreen'],
-            headless: false
+            headless: true
         });
         const page = await browser.newPage();
-        await page.goto(web);
+        await page.goto("https:\/\/www.google.com.tw/search?q=" + keyword + "&tbm=isch&ved=2ahUKEwj2p87NgdDrAhXOzIsBHc45DzQQ2-cCegQIABAA&oq=ppo;l&gs_lcp=CgNpbWcQAzoFCAAQsQM6AggAOgQIABATUMj_AViuhwJg_YwCaABwAHgAgAGBAYgBtAaSAQM1LjSYAQCgAQGqAQtnd3Mtd2l6LWltZ8ABAQ&sclient=img&ei=nXdSX7blMM6Zr7wPzvO8oAM&bih=577&biw=1034&hl=zh-TW");
 
-        page.on('colse', async() => {
-            await browser.close();
-        });
+        const ImgSrc = await page.$eval('.rg_i', imgs => imgs.getAttribute('src'));
 
-        await page.exposeFunction('colseBrowser', () => {
-            page.emit('colse');
+        await console.log("Imgsrc:" + ImgSrc)
+            // browser.close();
 
-        });
-        page.on('dialog', async dialog => {
-            console.log(dialog.message());
-            await dialog.dismiss();
-            await page.evaluate(() => {
-                document.querySelector('.fp-fullscreen').onclick = null;
-                document.querySelector('.fp-fullscreen').click()
-                document.querySelector('.fp-fullscreen').onclick = () => window.colseBrowser();
-
-            })
-        });
-        await page.evaluate(() => {
-
-            function css(el, styles) {
-                for (var property in styles)
-                    el.style[property] = styles[property];
-            }
-
-            document.querySelector('.fp-fullscreen').click()
-
-            setTimeout(() => {
-                document.querySelector('.fp-ui').click()
-            }, 2000);
-
-            css(document.querySelector('.fp-fullscreen'), {
-                height: '80px',
-                width: '80px',
-            });
-
-            document.querySelector('.fp-fullscreen').onclick = () => window.colseBrowser();
-
-        });
+        return ImgSrc;
 
     })();
 }

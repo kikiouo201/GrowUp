@@ -587,3 +587,26 @@ ipcMain.on('levelIsPass', (event, arg) => {
 //         // console.log("data =>"+ Object.keys(freq.content).length)
 //     })
 // })
+
+
+ipcMain.on('serchImgURL', async(event, keyword) => {
+    console.log('Catch ImgURL');
+
+    const browser = await puppeteer.launch({
+        // executablePath: '/usr/bin/chromium-browser',
+        executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
+        args: ['--disable-infobars', '--no-default-browser-check', '--start-fullscreen', '--start-maximized' /*,'--no-startup-window'*/ ],
+        ignoreDefaultArgs: ['--enable-automation'],
+        headless: true
+    });
+    const page = await browser.newPage();
+
+    await page.goto("https:\/\/www.google.com.tw/search?q=" + keyword + "&tbm=isch&ved=2ahUKEwj2p87NgdDrAhXOzIsBHc45DzQQ2-cCegQIABAA&oq=ppo;l&gs_lcp=CgNpbWcQAzoFCAAQsQM6AggAOgQIABATUMj_AViuhwJg_YwCaABwAHgAgAGBAYgBtAaSAQM1LjSYAQCgAQGqAQtnd3Mtd2l6LWltZ8ABAQ&sclient=img&ei=nXdSX7blMM6Zr7wPzvO8oAM&bih=577&biw=1034&hl=zh-TW");
+
+    const ImgSrc = await page.$eval('.rg_i', imgs => imgs.getAttribute('src'));
+
+    await console.log("Imgsrc:" + ImgSrc)
+        // browser.close();
+    event.reply('replyImgURL', ImgSrc)
+
+})
