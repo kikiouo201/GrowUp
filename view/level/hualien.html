@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="../../CSS/map/hualien.css">
     <link rel="stylesheet" href="../../CSS/interface.css">
     <link rel="stylesheet" href="../../CSS/icon.css">
-
 </head>
 <style>
 .map_location{
@@ -20,7 +19,7 @@
     left: 62px;
 }
 </style>
-<body class="style" background="../../image/map/kraftPaper5.png">
+<body class="style" background="../../image/map/kraftPaper5.png" onload="checkLevelIsPass('watermelon','hualien')">
     <table class="features">
         <tr>
             <td colspan="2" style="font-size: 40px;text-align: center;">花蓮地區</td>
@@ -49,16 +48,16 @@
     <div class="map">
         <img class="terrain" src="../../image/map/Hualien1.png" />
         <div class="level1">
-            <img class="level_basic" src="../../image/icon/watermelon.png" onclick="location.href='../../view/game/findBallast.html';mouseDownText('找找看');" />
+            <img class="level " alt="findBallast" src="../../image/icon/watermelon.png" onclick="location.href='../../view/game/findBallast.html';mouseDownText('找找看');" />
             <div class="level_text" onclick="location.href='../../view/game/findBallast.html';mouseDownText('找找看');">找找看</div>
         </div>
         <div class="level2">
-            <img class="level_basic" src="../../image/icon/watermelon.png" onclick="location.href='../../view/game/gophers.html';mouseDownText('打地鼠');" />
+            <img class="level" alt="gophers" src="../../image/icon/watermelon.png" onclick="location.href='../../view/game/gophers.html';mouseDownText('打地鼠');" />
             <div class="level_text" onclick="location.href='../../view/game/gophers.html';mouseDownText('打地鼠');">打地鼠</div>
         </div>
 
         <div class="level3">
-            <img class="level" src="../../image/icon/devil_lock.png" onclick="alert('需要先完成縣市所有關卡！')" />
+            <img class="level" alt="hualien" src="../../image/icon/devil_lock.png" onclick="alert('需要先完成縣市所有關卡！')" />
         </div>
 
 

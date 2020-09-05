@@ -20,7 +20,7 @@
         left: 52px;
     }
 </style>
-<body class="style" background="../../image/map/kraftPaper5.png">
+<body class="style" background="../../image/map/kraftPaper5.png" onload="checkLevelIsPass('togan','taoyuan')">
     <table class="features" style="margin-left: 70px;">
         <tr>
             <td colspan="2" style="font-size: 40px;text-align: center;">桃園地區</td>
@@ -50,23 +50,25 @@
     <div class="map">
         <img id="county" class="terrain" src="../../image/map/Taoyuan1.png" />
         <div class="level1">
-            <img class="level" src="../../image/icon/togan.png" onclick="location.href='../../view/game/drawzhuyin.html?id=o1&counties=taoyuan';mouseDownText('o');" />
+            <img class="level" alt="o" src="../../image/icon/togan.png" onclick="location.href='../../view/game/drawzhuyin.html?id=o1&counties=taoyuan';mouseDownText('o');" />
             <img class="level_text" src="../../image/english_alphabet/O.png" onclick="location.href='../../view/game/drawzhuyin.html?id=o1&counties=taoyuan';mouseDownText('o');" />
         </div>
         <div class="level2">
-            <img class="level" src="../../image/icon/togan_dark.png" onclick="location.href='../../view/game/drawzhuyin.html?id=p1&counties=taoyuan';mouseDownText('p');" />
+            <img class="level" alt="p" src="../../image/icon/togan_dark.png" onclick="location.href='../../view/game/drawzhuyin.html?id=p1&counties=taoyuan';mouseDownText('p');" />
             <img class="level_text" src="../../image/english_alphabet/P.png" onclick="location.href='../../view/game/drawzhuyin.html?id=p1&counties=taoyuan';mouseDownText('p');" />
         </div>
         <div class="level3">
-            <img class="level" src="../../image/icon/togan_dark.png" onclick="location.href='../../view/game/drawzhuyin.html?id=q1&counties=taoyuan';mouseDownText('q');" />
+            <img class="level" alt="q" src="../../image/icon/togan_dark.png" onclick="location.href='../../view/game/drawzhuyin.html?id=q1&counties=taoyuan';mouseDownText('q');" />
             <img class="level_text" src="../../image/english_alphabet/Q.png" onclick="location.href='../../view/game/drawzhuyin.html?id=q1&counties=taoyuan';mouseDownText('q');" />
         </div>
         <div class="level4">
-            <img class="level" src="../../image/icon/togan_dark.png" onclick="location.href='../../view/game/drawzhuyin.html?id=r1&counties=taoyuan';mouseDownText('r');" />
+            <img class="level" alt="r" src="../../image/icon/togan_dark.png" onclick="location.href='../../view/game/drawzhuyin.html?id=r1&counties=taoyuan';mouseDownText('r');" />
             <img class="level_text" src="../../image/english_alphabet/R.png" onclick="location.href='../../view/game/drawzhuyin.html?id=r1&counties=taoyuan';mouseDownText('r');" />
         </div>
-
-        <img class="level5" src="../../image/icon/devil_lock.png" onclick="alert('需要先完成縣市所有關卡！')" />
+        <div class="level5" >
+            <img class="level" alt="taoyuan" src="../../image/icon/devil_lock.png" onclick="alert('需要先完成縣市所有關卡！')" />
+        </div>
+       
 
     </div>
     <img class="taiwan" src="../../image/character/Taiwn_small.png" onclick="location.href='../../view/level/taiwan.html'" />

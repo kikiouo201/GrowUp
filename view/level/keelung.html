@@ -20,7 +20,7 @@
     left: 73px;
 }
 </style>
-<body class="style" background="../../image/map/kraftPaper5.png">
+<body class="style" background="../../image/map/kraftPaper5.png" onload="checkLevelIsPass('oceanliner','keelung')">
     <table class="features" style="margin-top: 30px; margin-left: 65px;">
         <tr>
             <td colspan="2" style="font-size: 40px;text-align: center;">基隆地區</td>
@@ -50,27 +50,30 @@
     <div class="map">
         <img id="county" class="terrain" src="../../image/map/Keelung1.png" />
         <div class="level1">
-            <img class="level" src="../../image/icon/oceanliner.png" onclick="location.href='../../view/game/drawzhuyin.html?id=a1&counties=Keelung';mouseDownText('a');" />
+            <img class="level" alt="a"  src="../../image/icon/oceanliner.png" onclick="location.href='../../view/game/drawzhuyin.html?id=a1&counties=Keelung';mouseDownText('a');" />
             <img class="level_text" src="../../image/english_alphabet/A.png" onclick="location.href='../../view/game/drawzhuyin.html?id=a1&counties=Keelung';mouseDownText('a');" />
         </div>
         <div class="level2">
-            <img class="level" src="../../image/icon/oceanliner.png" onclick="location.href='../../view/game/drawzhuyin.html?id=b1&counties=Keelung';mouseDownText('b');" />
+            <img class="level" alt="b" src="../../image/icon/oceanliner.png" onclick="location.href='../../view/game/drawzhuyin.html?id=b1&counties=Keelung';mouseDownText('b');" />
             <img class="level_text" src="../../image/english_alphabet/B.png" onclick="location.href='../../view/game/drawzhuyin.html?id=b1&counties=Keelung';mouseDownText('b');" />
         </div>
         <div class="level3">
-            <img class="level" src="../../image/icon/oceanliner.png" onclick="location.href='../../view/game/drawzhuyin.html?id=c1&counties=Keelung';mouseDownText('c');" />
+            <img class="level" alt="c" src="../../image/icon/oceanliner.png" onclick="location.href='../../view/game/drawzhuyin.html?id=c1&counties=Keelung';mouseDownText('c');" />
             <img class="level_text" src="../../image/english_alphabet/C.png" onclick="location.href='../../view/game/drawzhuyin.html?id=c1&counties=Keelung';mouseDownText('c');" />
         </div>
         <div class="level4">
-            <img class="level" src="../../image/icon/oceanliner.png" onclick="location.href='../../view/game/drawzhuyin.html?id=d1&counties=Keelung';mouseDownText('d');" />
+            <img class="level" alt="d" src="../../image/icon/oceanliner.png" onclick="location.href='../../view/game/drawzhuyin.html?id=d1&counties=Keelung';mouseDownText('d');" />
             <img class="level_text" src="../../image/english_alphabet/D.png" onclick="location.href='../../view/game/drawzhuyin.html?id=d1&counties=Keelung';mouseDownText('d');" />
         </div>
 
         <div class="level5">
-            <img class="level" src="../../image/icon/oceanliner.png" onclick="location.href='../../view/game/drawzhuyin.html?id=e1&counties=Keelung';mouseDownText('e');" />
+            <img class="level" alt="e" src="../../image/icon/oceanliner.png" onclick="location.href='../../view/game/drawzhuyin.html?id=e1&counties=Keelung';mouseDownText('e');" />
             <img class="level_text" src="../../image/english_alphabet/E.png" onclick="location.href='../../view/game/drawzhuyin.html?id=e1&counties=Keelung';mouseDownText('e');" />
         </div>
-        <img class="level6" src="../../image/icon/devil_lock.png" onclick="alert('需要先完成縣市所有關卡！')" />
+        <div class="level6">
+            <img class="level" alt="keelung" src="../../image/icon/devil_lock.png" onclick="alert('需要先完成縣市所有關卡！')" />
+        </div>
+       
 
     </div>
     <img class="taiwan" src="../../image/character/Taiwn_small.png" onclick="location.href='../../view/level/taiwan.html'" />

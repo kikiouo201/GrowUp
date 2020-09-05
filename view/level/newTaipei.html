@@ -21,7 +21,7 @@
     }
 </style>
 
-<body class="style" background="../../image/map/kraftPaper5.png">
+<body class="style" background="../../image/map/kraftPaper5.png" onload="checkLevelIsPass('NewTaipei_icon','newTaipei')">
     <table class="features">
         <tr>
             <td colspan="2" style="font-size: 40px;text-align: center;">新北地區</td>
@@ -56,31 +56,32 @@
     <div class="map">
         <img id="county" class="terrain" src="../../image/map/NewTaipei1.png" />
         <div class="level1">
-            <img class="level" src="../../image/icon/NewTaipei_icon.png" onclick="location.href='../../view/game/drawzhuyin.html?id=j1&counties=newTaipei';mouseDownText('J');" />
+            <img class="level" alt="j" src="../../image/icon/NewTaipei_icon.png" onclick="location.href='../../view/game/drawzhuyin.html?id=j1&counties=newTaipei';mouseDownText('J');" />
             <img class="level_text" src="../../image/english_alphabet/J.png" onclick="location.href='../../view/game/drawzhuyin.html?id=j1&counties=newTaipei';mouseDownText('J');" />
         </div>
 
         <div class="level2">
-            <img class="level" src="../../image/icon/NewTaipei_icon.png" onclick="location.href='../../view/game/drawzhuyin.html?id=k1&counties=newTaipei';mouseDownText('k');" />
+            <img class="level" alt="k" src="../../image/icon/NewTaipei_icon.png" onclick="location.href='../../view/game/drawzhuyin.html?id=k1&counties=newTaipei';mouseDownText('k');" />
             <img class="level_text" src="../../image/english_alphabet/K.png" onclick="location.href='../../view/game/drawzhuyin.html?id=k1&counties=newTaipei';mouseDownText('K');" />
         </div>
         <div class="level3">
-            <img class="level" src="../../image/icon/NewTaipei_icon_dark.png" onclick="location.href='../../view/game/drawzhuyin.html?id=l1&counties=newTaipei';mouseDownText('l');" />
+            <img class="level" alt="l" src="../../image/icon/NewTaipei_icon_dark.png" onclick="location.href='../../view/game/drawzhuyin.html?id=l1&counties=newTaipei';mouseDownText('l');" />
             <img class="level_text" src="../../image/english_alphabet/L.png" onclick="location.href='../../view/game/drawzhuyin.html?id=l1&counties=newTaipei';mouseDownText('l');" />
         </div>
 
         <div class="level4">
-            <img class="level" src="../../image/icon/NewTaipei_icon.png" onclick="location.href='../../view/game/drawzhuyin.html?id=m1&counties=newTaipei';mouseDownText('m');" />
+            <img class="level" alt="m" src="../../image/icon/NewTaipei_icon.png" onclick="location.href='../../view/game/drawzhuyin.html?id=m1&counties=newTaipei';mouseDownText('m');" />
             <img class="level_text" src="../../image/english_alphabet/M.png" onclick="location.href='../../view/game/drawzhuyin.html?id=m1&counties=newTaipei';mouseDownText('m');" />
         </div>
 
         <div class="level5">
-            <img class="level" src="../../image/icon/NewTaipei_icon.png" onclick="location.href='../../view/game/drawzhuyin.html?id=n1&counties=newTaipei';mouseDownText('n');" />
+            <img class="level" alt="n" src="../../image/icon/NewTaipei_icon.png" onclick="location.href='../../view/game/drawzhuyin.html?id=n1&counties=newTaipei';mouseDownText('n');" />
             <img class="level_text" src="../../image/english_alphabet/N.png" onclick="location.href='../../view/game/drawzhuyin.html?id=n1&counties=newTaipei';mouseDownText('n');" />
         </div>
-
-
-        <img class="level6" src="../../image/icon/devil_lock.png" onclick="alert('需要先完成縣市所有關卡！')" />
+        <div class="level6">
+            <img class="level" alt="newTaipei" src="../../image/icon/devil_lock.png" onclick="alert('需要先完成縣市所有關卡！')" />
+        </div>
+       
     </div>
     <img class="taiwan" src="../../image/character/Taiwn_small.png" onclick="location.href='../../view/level/taiwan.html'" />
     <img class="map_location" src="../../image/map/map.png" />

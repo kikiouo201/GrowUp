@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../../CSS/map/counties.css">
     <link rel="stylesheet" href="../../CSS/interface.css">
     <link rel="stylesheet" href="../../CSS/icon.css">
+
 </head>
 <style>
     .features {
@@ -28,7 +29,7 @@
     }
 </style>
 
-<body class="style" background="../../image/map/kraftPaper5.png">
+<body class="style" background="../../image/map/kraftPaper5.png" onload="checkLevelIsPass('85building','kaohsiung')">
     <table class="features">
         <tr>
             <td colspan="2" style="font-size: 40px;text-align: center;">高雄地區</td>
@@ -58,18 +59,20 @@
         <img class="terrain" src="../../image/map/Kaohsiung1.png" />
 
         <div class="level1">
-            <img class="level_basic" src="../../image/icon/85building.png" onclick="location.href='../../view/game/drawzhuyin.html?id=7&counties=Kaohsiungi';mouseDownText(7);" />
+            <img class="level" alt="7" src="../../image/icon/85building.png" onclick="location.href='../../view/game/drawzhuyin.html?id=7&counties=Kaohsiungi';mouseDownText(7);" />
             <img class="level_text" src="../../image/numbers/7.png" onclick="location.href='../../view/game/drawzhuyin.html?id=7&counties=Kaohsiung';mouseDownText(7);" />
         </div>
-        <div class="level2"><img class="level_basic" src="../../image/icon/85building_dark.png" onclick="location.href='../../view/game/drawzhuyin.html?id=8&counties=Kaohsiung';mouseDownText(8);" />
+        <div class="level2">
+            <img class="level" alt="8" src="../../image/icon/85building_dark.png" onclick="location.href='../../view/game/drawzhuyin.html?id=8&counties=Kaohsiung';mouseDownText(8);" />
             <img class="level_text" src="../../image/numbers/8.png" onclick="location.href='../../view/game/drawzhuyin.html?id=8&counties=Kaohsiung';mouseDownText(8);" />
         </div>
 
-        <div class="level3"> <img class="level_basic" src="../../image/icon/85building_dark.png" onclick="location.href='../../view/game/drawzhuyin.html?id=9&counties=Kaohsiung';mouseDownText(9);" />
+        <div class="level3"> 
+            <img class="level" alt="9" src="../../image/icon/85building_dark.png" onclick="location.href='../../view/game/drawzhuyin.html?id=9&counties=Kaohsiung';mouseDownText(9);" />
             <img class="level_text" src="../../image/numbers/9.png" onclick="location.href='../../view/game/drawzhuyin.html?id=9&counties=Kaohsiung';mouseDownText(9);" />
         </div>
         <div class="level4">
-            <img class="level" src="../../image/icon/devil.png" onclick="alert('需要先完成縣市所有關卡！')" />
+            <img class="level" style="width: 54px;" alt="kaohsiung" src="../../image/icon/devil.png" onclick="alert('需要先完成縣市所有關卡！')" />
 
         </div>
         、
