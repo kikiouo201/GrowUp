@@ -46,6 +46,35 @@ body {
     left: 15%;
 }
 
+.northImg {
+    position: absolute;
+    width: 141px;
+    top: 45px;
+    left: 190px;
+}
+
+.southImg {
+    position: absolute;
+    width: 126px;
+    top: 258px;
+    left: 102px;
+}
+
+.eastImg {
+    position: absolute;
+    width: 117px;
+    left: 194px;
+    top: 161px;
+    z-index: 2;
+}
+
+.westImg {
+    position: absolute;
+    width: 163px;
+    left: 104px;
+    top: 119px;
+}
+
 .child_profile_detail {
     width: 44%;
     /*35%*/
@@ -80,7 +109,7 @@ body {
 }
 
 .good-regard-value {
-    width: 67%;
+    width: 0%;
     position: absolute;
     /* bottom: 18.5%; */
     height: 100%;
@@ -91,7 +120,7 @@ body {
     /* border-width: 2px; */
     display: inline-block;
     /* margin-left: 12px; */
-    padding-left: 20px;
+    /* padding-left: 20px; */
 }
 
 .good-regard-text {

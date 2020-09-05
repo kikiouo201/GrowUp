@@ -6,6 +6,7 @@ const {
 } = require('electron')
 const path = require('path');
 const url = require('url');
+const shell = require('shelljs')
 const appCallPython = require('./app-call-python-child-process')
 const callVis = require('./vision')
 const {
@@ -47,6 +48,7 @@ function createWindow() {
         icon: path.join(__dirname, 'icons/raspberry_icon.png'),
         fullscreen: false,
         webSecurity: false,
+        blinkFeatures: 'Touch',
         webPreferences: {
             nodeIntegration: true, //如果出bug改回true看看
             width: 1200,
@@ -81,8 +83,8 @@ function createWindow() {
 // 创建浏览器窗口时，调用这个函数。
 // 部分 API 在 ready 事件触发后才能使用。
 app.on('ready', createWindow)
-
-// 当全部窗口关闭时退出。
+app.commandLine.appendSwitch('--enable-touch-events')
+    // 当全部窗口关闭时退出。
 app.on('window-all-closed', () => {
     // 在 macOS 上，除非用户用 Cmd + Q 确定地退出，
     // 否则绝大部分应用及其菜单栏会保持激活。
@@ -109,47 +111,28 @@ app.on('activate', () => {
 //> ipcMain is ipc of main process
 //> ipcMain listen to voice-require-to-py channel here 是否有被按下去
 ipcMain.on('voice-require-to-py', (event, arg) => {
-    //   api.Question.showQuizContent(1, (event) => {
-    //           const data = JSON.parse(JSON.stringify(event));
-    //           const content = data.content;        
-    //           console.log("showQuizContent =" + JSON.stringify(content)  );       
-    // });
 
     appCallPython.startSpeak(
+        // callbackWhenCanSpeak
         () => {
-            event.reply('voice-require-to-py-reply-start')
-            console.log('voice-require-to-py-reply-start')
+            event.reply('reply-start')
+            console.log('reply-start')
         },
+
+        // callbackWhenAnaysisVoice
         () => {
-            event.reply('voice-require-to-py-anaysis-voice')
+            event.reply('anaysis-voice')
             console.log('anaysis-voice')
 
         },
-        // () => {
-        //   event.reply('voice-require-to-py-when-ask-what-isThat')
-        // },
+
+        // callbackWhenSuccess
         (result) => {
 
-            console.log("result.keyword" + result.keyword)
-            event.reply('voice-require-to-py-reply-result', result)
+            event.reply('reply-result', result)
 
-            console.log("Q=" + result.q)
-            console.log("A=" + result.a)
-            console.log("url=" + result.url)
-                // console.log("QN="+result.QName)
-            var x = result.a.toString().trim()
-            console.log(typeof x + typeof result.a.toString())
-            console.log("Testing Log => " + result.a.toString() + "\r\nTest2=>" + x)
-            if (x === 'TurnToOpenCamera') {
-                console.log("BinGO!")
-            } else {
-                console.log("NOOOOOOOO!")
-            }
-            console.log(" result(?)=" + result.toString())
-
-            //api code
             // api.Question.addQa
-            api.Question.addQa(1, result.q, result.a, "https:" + result.url, result.keyWord, "蘋果甜蜜蜜", "https://children.moc.gov.tw/resource/animate_image/6892.jpg", "嫁接的蜜蘋果要先習慣這塊土地，接受泥土的養分之後，才能慢慢慢慢的發芽開花。在這塊土地上接受多元文化洗禮、共同生活的人，不也像蜜蘋果一樣嗎？願藉此，獻上我們最深的祝福！", "知識", (event) => {
+            api.Question.addQa(1, result['Question'], result['Answer'], "https:" + "//upload.wikimedia.org/wikipedia/commons/thumb/9/99/Apples_in_basket_2018_G2.jpg/250px-Apples_in_basket_2018_G2.jpg", result['keyWord'].trim(), "語音", (event) => {
                 console.log("callback=" + JSON.stringify(event));
             });
 
@@ -157,24 +140,43 @@ ipcMain.on('voice-require-to-py', (event, arg) => {
     )
 });
 
-//     ipcMain.on('AddQA-to-server', (event, data) => {
 
-
-// })
-
-
-// ipcMain.handle('voice-require-to-py', async (event, args) => {
-//   const result = await somePromise(args)
-//   return result
-//   console.log(result)
-// })
-
-//> ipcMain is ipc of main process
-//> ipcMain listen to close-main-window channel here
 ipcMain.on('close-main-window', () => {
     console.log('closed by ipc');
     app.quit();
 });
+
+// ipcMain.on('close-mjpg-streamer',async(event,arg) =>{
+//     // let command = './mjpg_streamer -i "./input_uvc.so -y -n" -o "./output_http.so -w ./www"';
+//     let command = 'killall mjpg_streamer'
+//     shell.exec(command, (code, std, err) => {
+//         console.log('Exit code:', code);
+//         console.log('Program output:', std);
+//         console.log('Program stderr:', err);
+//     })
+//     event.sender.send('reply-close-mjpg-streamer')
+// })
+
+ipcMain.on('captrue', async(event, args) => {
+    let command = 'killall mjpg_streamer'
+    shell.exec(command, (code, std, err) => {
+        console.log('Exit code:', code);
+        console.log('Program output:', std);
+        console.log('Program stderr:', err);
+    })
+    event.sender.send('reply-close-mjpg-streamer')
+
+    console.log("call captrue");
+    const stillCamera = new StillCamera();
+
+    const image = await stillCamera.takeImage();
+
+    fs.writeFileSync("still-image.jpg", image);
+
+    event.sender.send('reply-mainjsfunction-captrue')
+})
+
+
 
 ipcMain.on('vision', (event, args) => {
     event.sender.send('reply-visionready')
@@ -222,22 +224,11 @@ ipcMain.on('crawler', (event, args) => {
 
 })
 
-ipcMain.on('captrue', async(event, args) => {
-
-    console.log("call captrue");
-    const stillCamera = new StillCamera();
-
-    const image = await stillCamera.takeImage();
-
-    fs.writeFileSync("still-image.png", image);
-
-    event.sender.send('reply-mainjsfunction-captrue')
-})
 
 ipcMain.on('addQAtoServer', async(event, arg) => {
-    api.Question.addQa(1, "", arg, "./still-image.png",arg, "環遊世界做蘋果派", "https://children.moc.gov.tw/resource/animate_image/6850.jpg", "做蘋果派一點也不難，只要到市場買齊材料，混合一下，烤一烤，就可以上桌了。可是市場關門了，買不到材料的小女孩該怎麼辦？沒問題，回家打包行李，搭輪船、坐火車、乘飛機，周遊世界尋找烤派的材料吧。", "單詞", (event) => {
-        console.log("callback=" + JSON.stringify(event));
-    });
+    // api.Question.addQa(1, "", arg, "./still-image.jpg", arg, "影像辨識", (event) => {
+    //     console.log("callback=" + JSON.stringify(event));
+    // });
 })
 
 // ipcMain.on('invokeAction', function(event, data){
@@ -261,8 +252,28 @@ ipcMain.on('getApi-addQuiz', async(event, args) => {
 
 })
 
-ipcMain.on('pictureWeb', async(event, args) => {
-    console.log('readyMain');
+ipcMain.on('getPictureData', (event, arg) => {
+    console.log("Success get Picturebook Data")
+
+    api.Question.showPictureBook(arg, (req) => {
+        const data = JSON.parse(JSON.stringify(req));
+        event.sender.send('retruePictureData', data);
+    });
+
+});
+
+ipcMain.on('getMachineData', (event, arg) => {
+    console.log("Success get Picturebook Data")
+
+    api.Question.showPastQuestion(arg, (req) => {
+        const data = JSON.parse(JSON.stringify(req));
+        event.sender.send('retrueMachineData', data);
+    });
+
+});
+
+ipcMain.on('crawlerShowWeb', async(event, args) => {
+    console.log('Catch ShowWeb');
 
     const browser = await puppeteer.launch({
         executablePath: '/usr/bin/chromium-browser',
@@ -271,18 +282,22 @@ ipcMain.on('pictureWeb', async(event, args) => {
         headless: false
     });
     const page = await browser.newPage();
-    let currentScreen = await page.evaluate(() => {
-        return {
-            width: window.screen.availWidth,
-            height: window.screen.availHeight,
-        };
-    });
-    //設定預設網頁頁面大小
-    await page.setViewport(currentScreen);
 
     page.on('colse', async() => {
         await browser.close();
     });
+
+    page.on('dialog', async dialog => {
+        console.log(dialog.message());
+        await dialog.dismiss();
+        await page.evaluate(() => {
+            document.querySelector('.fp-fullscreen').onclick = null;
+            document.querySelector('.fp-fullscreen').click()
+            document.querySelector('.fp-fullscreen').onclick = () => window.colseBrowser();
+
+        })
+    });
+
 
     await page.exposeFunction('colseBrowser', () => {
         page.emit('colse');
@@ -299,27 +314,9 @@ ipcMain.on('pictureWeb', async(event, args) => {
         document.querySelector('.fp-fullscreen').onclick = () => window.colseBrowser();
 
     });
-    // const bodyInnerHTML2 = await page.waitForSelector('video');
-    // console.log(bodyInnerHTML2);
-
-    // videos = await page.$$eval('video', video => video);
-    // page.waitFor(10000);
-    // const btn = await page.waitForSelector('fp-fullscreen');
-    // await btn.click(); // doesn't work
-    // await page.$eval('.fp-ui', elem => elem.click());
-
-    // await page.click('.fp-fullscreen');
-    // await page.click('.fp-ui', {
-    //     delay: 2000
-    // });
-
-    // await page.$eval('.fp-ui', elem => elem.click());
-
-    // console.log(videos);
-    // await browser.close();
 })
 
-ipcMain.on('childsongCrawler', async(event, args) => {
+ipcMain.on('crawlerGetDate', async(event, args) => {
     // 套件名稱 puppeteer
     // https://wcc723.github.io/development/2020/03/01/puppeteer/ 教學網址
 
@@ -392,7 +389,6 @@ ipcMain.on('callSTT-start', async(event, args) => {
     console.log("success call STT-API =) " + args.toString())
         //array.forEach(label => console.log("vis="+label.description));
         // event.sender.send('reply-mainjsfunction', array)
-
 })
 
 
@@ -401,10 +397,19 @@ ipcMain.on('callMagicCard', (event, arg) => {
     api.Level.showLevel(1, (req) => {
         const data = JSON.parse(JSON.stringify(req));
         // console.log("data = " + JSON.stringify(data))
-
         event.sender.send('replyMagicCard', data);
     });
 });
+
+
+ipcMain.on('callZhuyinCondition', (event, arg) => {
+    console.log("success call Zhuyin Condition ~~~~ ")
+    api.Level.showLevel(1, (req) => {
+        const data = JSON.parse(JSON.stringify(req));
+        // console.log("data = " + JSON.stringify(data))
+        event.sender.send('reply-callZhuyindata', data);
+    })
+})
 
 
 
@@ -412,8 +417,6 @@ ipcMain.on('callMapCondition', (event, arg) => {
     console.log("success call Map Condition =) ")
     api.Level.showLevel(1, (req) => {
         const data = JSON.parse(JSON.stringify(req));
-        // console.log("data = " + JSON.stringify(data))
-
         event.sender.send('selectJsonOnTL', data);
     });
 });
@@ -448,7 +451,13 @@ ipcMain.on('callGoodRegard', (event, arg) => {
                 // 距離nextLevel
                 var nextLevelEx = levelFull - exValue;
                 console.log("nextLevelEx:" + nextLevelEx)
-                var AllExData = { "level": level, "exValue": exValue, "levelFull": levelFull, "nextLevelEx": nextLevelEx, "percentColor": percentColor }
+                var AllExData = {
+                    "level": level,
+                    "exValue": exValue,
+                    "levelFull": levelFull,
+                    "nextLevelEx": nextLevelEx,
+                    "percentColor": percentColor
+                }
 
                 event.sender.send('replyGoodregardTot', AllExData);
 
@@ -463,3 +472,118 @@ ipcMain.on('callGoodRegard', (event, arg) => {
     //     event.sender.send('replyGoodregardValue', data);
     // });
 });
+
+
+
+
+ipcMain.on('call-frequency', (event, arg) => {
+    console.log("success call call-frequency")
+    api.Question.showPastQuestion(1, (req) => {
+        const freq = JSON.parse(JSON.stringify(req));
+        var Cameratotalfreq = 0;
+        var Speechtotalfreq = 0;
+        let dt = new Date();
+        // console.log("speechdata =>"+JSON.stringify(req))
+        console.log("speechdata =>" + freq.content[(Object.keys(freq.content).length - 1)].created_at.substring(9, 10))
+
+        for (i = (Object.keys(freq.content).length - 1); i >= 0; i--) {
+
+            if (freq.content[i].created_at.substring(6, 7) == (dt.getMonth() + 1) & freq.content[i].created_at.substring(9, 10) == (dt.getDate() - 1)) {
+
+                if (freq.content[i].category == "語音") {
+                    // console.log("speechdata =>"+freq.content[i].created_at.substring(9, 10))
+                    Speechtotalfreq++
+                }
+
+            }
+
+        }
+
+        for (i = (Object.keys(freq.content).length - 1); i >= 0; i--) {
+
+            if (freq.content[i].created_at.substring(6, 7) == (dt.getMonth() + 1) & freq.content[i].created_at.substring(9, 10) == (dt.getDate() - 1)) {
+
+                if (freq.content[i].category == "影像辨識") {
+
+                    Cameratotalfreq++
+                }
+
+            }
+
+        }
+
+        var CamerapercentColor = Math.round(Cameratotalfreq / 3 * 100);
+        if (CamerapercentColor > 100) {
+            CamerapercentColor = 100;
+        } else {
+            CamerapercentColor = Math.round(Cameratotalfreq / 3 * 100);
+        }
+
+
+        var SpeechpercentColor = Math.round(Speechtotalfreq / 3 * 100);
+        if (SpeechpercentColor > 100) {
+            SpeechpercentColor = 100;
+        } else {
+            SpeechpercentColor = Math.round(Speechtotalfreq / 3 * 100);
+        }
+
+        console.log("Speechtotalfreq =>" + Speechtotalfreq)
+        console.log("Cameratotalfreq =>" + Cameratotalfreq)
+        let AllData = {
+            "Cameratotalfreq": Cameratotalfreq,
+            "CamerapercentColor": CamerapercentColor,
+            "Speechtotalfreq": Speechtotalfreq,
+            "SpeechpercentColor": SpeechpercentColor,
+        }
+        event.sender.send('reply-frequency', AllData);
+        // console.log("data =>"+ Object.keys(freq.content).length)
+    })
+
+})
+
+ipcMain.on('levelIsPass', (event, arg) => {
+    api.Level.alterLevel(1, arg, (req) => {
+        console.log("data = " + JSON.stringify(req))
+            //event.sender.send('reply-callZhuyindata', data);
+    });
+    api.People.AddChildGoodBabyValue(1, 20, (req) => {
+        console.log("data = " + JSON.stringify(req))
+            //event.sender.send('reply-callZhuyindata', data);
+    });
+
+})
+
+// ipcMain.on('call-speechfrequency',(event,arg) =>{
+//     console.log("success call call-speechfrequency")
+//     api.Question.showPastQuestion(1,(req)=>{
+//         const speechfreq = JSON.parse(JSON.stringify(req));
+//         let totalfreq =0;
+//         let dt = new Date();
+//         // console.log("data =>"+JSON.stringify(req))
+//         for( i = (Object.keys(speechfreq.content).length-1); i >=0; i--){
+
+//             if( speechfreq.content[i].created_at.substring(7, 7) == dt.getMonth() && speechfreq.content[i].created_at.substring(10, 10) == dt.getDate()){
+
+//                 if(speechfreq.content[i].category == "語音"){
+//                     totalfreq++
+//                 }
+
+//             }
+
+//         }
+//         let percentColor = Math.round(totalfreq / 3 * 100);
+//        if(percentColor>100){
+//             percentColor = 100;
+//        }else{
+//             percentColor = Math.round(totalfreq / 3 * 100);
+//        }
+//         console.log("total =>"+totalfreq)
+//         console.log("percentColor =>"+percentColor)
+//         let speechAllData = {
+//             "totalfreq": totalfreq,
+//             "percentColor": percentColor
+//         }
+//         event.sender.send('reply-speechfrequency', speechAllData);
+//         // console.log("data =>"+ Object.keys(freq.content).length)
+//     })
+// })

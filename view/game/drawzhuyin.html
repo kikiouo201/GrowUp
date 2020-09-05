@@ -2,65 +2,90 @@
 <html lang="zn-cn">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../../CSS/game/drawNumbar.css">
-  <link rel="stylesheet" href="../../CSS/game/drawShape.css">
-  <link rel="stylesheet" href="../../CSS/game/drawZhuyin.css">
-  <link rel="stylesheet" href="../../CSS/interface.css">
-  <link rel="stylesheet" href="../../CSS/icon.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../CSS/game/drawNumbar.css">
+    <link rel="stylesheet" href="../../CSS/game/drawEnglish.css">
+    <link rel="stylesheet" href="../../CSS/game/drawShape.css">
+    <link rel="stylesheet" href="../../CSS/game/drawZhuyin.css">
+    <link rel="stylesheet" href="../../CSS/interface.css">
+    <link rel="stylesheet" href="../../CSS/icon.css">
 
 </head>
 
-<body class="style" background="../../photo/background.png" onload="onload()">
-  <div class="black_overlay">
-    <div class="result">
-      <div class="close">X</div>
-      <div class="status"><img src="../../image/drawZhuyin/good.png"/></div>
-      <div class="props">
-        <div class="smallCard">小卡</div>
-        <div><img src="../../image/drawZhuyin/obedient.png" width='50px'/>+10</div>
+<body class="style" background="../../photo/background.png" onload="load()">
+    <audio id="myAudio">
+        <source src="../../TTS/mp3/bpm/b.mp3" type="audio/ogg">
+    </audio>
+    <div class="black_overlay">
+        <div class="result">
+            <div class="close">X</div>
+            <div class="status"><img src="../../image/drawZhuyin/good.png" /></div>
+            <div class="props">
+                <div class="smallCard">小卡</div>
+                <div><img src="../../image/drawZhuyin/obedient.png" width='50px' />+10</div>
 
-      </div>
-      <div class="challengeAgain" onclick="challengeAgain()">再次挑戰</div>
-      <div class="nextLevel" onclick="history.back()">確認</div>
+            </div>
+            <div class="challengeAgain" onclick="challengeAgain()">再次挑戰</div>
+            <div class="nextLevel" onclick="history.back()">確認</div>
+        </div>
     </div>
-  </div>
-  <div style="font-size: 50px;">請照著下面描寫</div>
-  <div class="zhuyin">
-    
-    <img src="../../image/drawZhuyin/b.png" class="word"/>
-    <img src="../../icons/speaker.png" class="speaker" onclick="mouseDownText('ㄅ');"/>
-    <!-- <video loop="true" autoplay="autoplay"  muted="true">
+    <div style="font-size: 50px;">請照著下面描寫</div>
+    <div class="zhuyin">
+
+
+        <img src="../../image/drawZhuyin/b.png" class="word" />
+        <img src="../../icons/speaker.png" class="speaker" onclick="playAudio()" />
+        <!-- <video loop="true" autoplay="autoplay"  muted="true">
       <source src="../../image/drawZhuyin/b.mp4" type="video/mp4">
       </video> -->
-    <div class="anvas">
-      <!-- <canvas class="draw78" width="370px" height="370px"></canvas> -->
-      <div class="tool">
-      <img src="../../image/drawZhuyin/finger.png" class="finger"  />
-      <img src="../../image/drawZhuyin/eraser.png" class="reset" onclick="reset();"/>
-      <img src="../../image/drawZhuyin/finger.png" class="again" onclick="moveFinger();mouseDownText('ㄅ');"/>
-    </div>
-    </div> 
-    
-    <div class="anvas">
-      <canvas class="draw" width="295px" height="295px"></canvas>
-      <!-- <canvas class="draw" width="120px" height="122px"></canvas>
+        <div class="anvas">
+            <!-- <canvas class="draw78" width="370px" height="370px"></canvas> -->
+            <img src="../../image/drawZhuyin/finger.png" id="finger" />
+            <div class="tool">
+                
+                <img src="../../image/drawZhuyin/eraser.png" class="reset" onclick="reset();" />
+                <img src="../../image/drawZhuyin/finger.png" class="again" onclick="moveFinger();mouseDownText('ㄅ');" />
+            </div>
+        </div>
+
+        <div class="anvas">
+            <canvas class="draw" width="295px" height="295px"></canvas>
+            <!-- <canvas class="draw" width="120px" height="122px"></canvas>
       <canvas class="draw" width="120px" height="122px"></canvas>
       <canvas class="draw" width="120px" height="122px"></canvas> -->
-    </div>
-    <!-- <div class="anvas write2">
+        </div>
+        <!-- <div class="anvas write2">
       <canvas class="draw" width="120px" height="122px"></canvas>
       <canvas class="draw" width="120px" height="122px"></canvas>
       <canvas class="draw" width="120px" height="122px"></canvas>
       <canvas class="draw" width="120px" height="122px"></canvas>
     </div> -->
-  </div>
-  
-  <div class="score">完成</div>
+    </div>
 
-  <script src="../../model/game/drawZhuyin.js"></script>
+    <div class="score">完成</div>
 
+    <script src="../../model/game/drawZhuyin.js"></script>
+
+    <div>
+        <a href="../../exam_phonetic copy.html" class="sosfloat" id="menu-share">
+            <i class="fab fa-share my-float"><img src="../../photo/help.png" width="70%"></i>
+        </a>
+    </div>
+    <div>
+        <a onclick="history.back()" class="returnfloat" id="menu-share">
+            <i class="fab fa-share return-float"><img src="../../photo/return.png"></i>
+        </a>
+    </div>
+    <div>
+        <a href="../../game_home.html" class="homefloat" id="menu-share">
+            <i class="fab fa-share my-float"><img src="../../photo/gobackhome.png" width="70%"></i>
+        </a>
+    </div>
+
+    <script src="../../model/util/voiceOut.js"></script>
+
+<<<<<<< HEAD
   <div>
     <a onclick="history.back()" class="returnfloat" id="menu-share">
       <i class="fab fa-share return-float"><img src="../../photo/return.png"></i>
@@ -72,6 +97,8 @@
     </a>
   </div>
   <script src="../../model/util/voiceOut.js"></script>
+=======
+>>>>>>> 3e4acb79c814eada45aea0643856e82aaba97a81
 </body>
 
 </html>

@@ -23,18 +23,16 @@
 
 </head>
 
-<body>
+<body onload="ShowTime()">
+    <div style="z-index: 101;" id="today"></div>
+    <br>
+    <div style="z-index: 101;" id="showtime"></div>
     <div id="im">
         <div class="home_page">
             <a class="home_title">魔咒</a>
 
             <!-- <a href="game_home.html" class="home_title">你問我答</a> -->
 
-            <body onload="ShowTime()">
-                <div id="today"></div>
-                <br>
-                <div id="showtime"></div>
-            </body>
         </div>
         <script language="JavaScript">
             function ShowTime() {
@@ -53,6 +51,7 @@
             }
         </script>
         <div class="QA_card_area" id="QA_card">
+            <!-- <button onclick='callCaw("https:\/\/children.moc.gov.tw/opendata/1")'>測試</button> -->
 
             <!-- 註解01 -->
             <!-- <div class="card text-white  mb-3" style="background-color: #92337eba;">
@@ -80,130 +79,26 @@
                         <img class="speaker_A" onclick="speakerDemo('一種可食用果實，有大量的維他命C，俗語說：「一天一蘋果，醫生遠離我」。')" id="speaker_A" src="icons/speaker.png" />
                     </div> -->
 
-            <script>
-                function collect() {
-                    // function heart_collect()
-                    // $(document).ready(function( {
-                    //     $("#QA_num").
-                    // }))
-                    // $(document).ready(function () {
-                    //     $(".collect_rightTop").click(function () {                                 //click事件
-                    //         $("#heart_collect").attr("src", "icons/heart.png");      //要更換的圖片位置
-                    //     });
-                    // });
-                }
-            </script>
-
-            <!-- 註解03 -->
-            <!-- </div>
-                <div class="card-header contentCss" id="QA_num_" style="background-color: #f8f9fa24; padding-bottom: 40px;">
-                    <p class="contentlink">相關繪本連結：</p>
-                    <p class="book_css">蘋果甜蜜蜜</p>
-                    <img class="speaker_A" onclick="" id="speaker_A" src="icons/speaker.png" style="margin-top: -55px" />
-
-                    <img src="https://children.moc.gov.tw/resource/animate_image/6892.jpg" style="margin-left: 20px; display: inline; margin-top: 15px;" width="180" height="153" alt="蘋果甜蜜蜜">
-                    <p style="display: inline; margin-left: 20px; margin-top: 20px; position: absolute; margin-right: 40px;">
-                        嫁接的蜜蘋果要先習慣這塊土地，接受泥土的養分之後，才能慢慢慢慢的發芽開花。在這塊土地上接受多元文化洗禮、共同生活的人，不也像蜜蘋果一樣嗎？願藉此，獻上我們最深的祝福！</p>
-                    <img class="speaker_A" style="bottom: 31px;" onclick="speakerDemo('嫁接的蜜蘋果要先習慣這塊土地，接受泥土的養分之後，才能慢慢慢慢的發芽開花。在這塊土地上接受多元文化洗禮、共同生活的人，不也像蜜蘋果一樣嗎？願藉此，獻上我們最深的祝福！')" id="speaker_A" src="icons/speaker.png" />
-
-                </div>
-                <div class="card-header" id="QA_num_"> -->
-
-
-            <!-- <p class="contentlink">相關連結解釋：</p> -->
-
-            <!-- 註解04 -->
-            <!-- </div>
-
-            </div>
-
-
-            <div class="card text-white  mb-3" style="background-color: #92337eba;"> -->
-
-            <!-- <div class="card-header" id="QA_num_">#${QAnum}</div> -->
-
-            <!-- 註解05 -->
-            <!-- <div class="card-body" style="margin-top: 30px;">
-                    <img class="collect_rightTop" onclick="collect()" id="Collection" src="icons/bookmark.png" title="" />
-                    <div style="float:left; display: block; text-align: left;">
-                        <h5 class="card-title card_Q" style="text-align:left ; display: inline;">Q:草莓是什麼</h5>
-                        <img class="speaker_Q" onclick="speakerDemo('草莓是什麼')" id="speaker_Q_" src="icons/speaker.png" />
-                    </div>
-                    <div style="float:left; display: block; text-align: left;">
-                        <p class="card-text card_A" style="text-align:left; display: inline;">
-                            A:草莓是多年生草本植物，果實略呈心形，鮮紅多汁，質地柔軟，氣味芳香。</p>
-                        <img class="speaker_A" onclick="speakerDemo('草莓是多年生草本植物，果實略呈心形，鮮紅多汁，質地柔軟，氣味芳香。')" id="speaker_A" src="icons/speaker.png" />
-                    </div>
-                </div>
-            </div>
-
-            <div class="card text-white  mb-3" style="background-color: #92337eba;"> -->
-
-            <!-- <div class="card-header" id="QA_num_">#${QAnum}</div> -->
-
-            <!-- 註解06 -->
-            <!-- <div class="card-body" style="margin-top: 30px;">
-                    <img class="collect_rightTop" onclick="changecss()" id="heart_collect" src="icons/bookmark.png" title="" />
-                    <div style="float:left; display: block; text-align: left;">
-                        <h5 class="card-title card_Q" style="text-align:left ; display: inline;">Q:莓是什麼</h5>
-                        <img class="speaker_Q" onclick="speakerDemo('莓是什麼')" id="speaker_Q_" src="icons/speaker.png" />
-                    </div>
-                    <div style="float:left; display: block; text-align: left;">
-                        <p class="card-text card_A" style="text-align:left ; display: inline;">
-                            A:草莓是多年生草本植物，果實略呈心形，鮮紅多汁，質地柔軟，氣味芳香。</p>
-                        <img class="speaker_A" onclick="speakerDemo('草莓是多年生草本植物，果實略呈心形，鮮紅多汁，質地柔軟，氣味芳香。')" id="speaker_A" src="icons/speaker.png" />
-
-                    </div>
-                </div>
-            </div> -->
         </div>
         <div class="main_area">
 
             <span class="mh0 system-show w3-btn w3-ripple" id="voice">
                 <h2 style="font-family: Microsoft JhengHei; display:inline-block; margin-top: 8px; margin-bottom: 0px;">
                     開始問問題!</h2>
-                <!-- <img src="https://image.flaticon.com/icons/svg/2368/2368264.svg" style="height: 80%; width: 80px;"> -->
-                <!-- <h5 style="font-family: Microsoft JhengHei; margin-top: 0px;">開始問問題!</h5> -->
                 <span class="mh1 voice-btn w3-btn w3-ripple" style="width: auto; height: 50px; margin-top: 2px;"
                     id="voice">
                     <img src="https://image.flaticon.com/icons/svg/2368/2368264.svg"
                         style="height: 80%; width: 80px; margin-top: 5px; cursor: pointer; ">
-                    <!-- <h5 style="font-family: Microsoft JhengHei; margin-top: 0px;">開始問問題!</h5> -->
                 </span>
             </span>
         </div>
 
-        <!-- <br /><br /><br />
-        <input type="text" font-size="18px" id="messageSystem" name="系統就緒了"
-            style="font-family: Microsoft JhengHei; display:inline-block; margin-top: 18px; margin-bottom: 0px;">
-        <br />
-
-        <div id="messages">
-
-        </div> -->
 
         <br><br><br>
         <!-- 空行啦 -->
 
 
         <!-- <button id="close">Close Windows</button> -->
-        <!-- <script src="index.js"></script> -->
-        <script type="text/javascript">
-            // function speechResourse(){
-
-            //     document.getElementById("result").innerHTML = "Hello World";
-            //     const pyRequestValue=document.getElementById("voice");
-            //     pyRequestValue.addEventListener('click', () => {
-
-            //         // document.getElementById("result").innerHTML = "Hello World";
-            // });
-            // }
-            // // console.log(callpy);
-        </script>
-
-
-        <!-- </p> -->
-        <!-- </center> -->
         <script>
             if (window.module) module = window.module; //如果要使用jQuery function 可能可以減少問題
         </script>
@@ -212,6 +107,7 @@
         <script src="SpeechToAsk.js"></script>
         <br><br>
 
+<<<<<<< HEAD
 
 
         <!-- Modal -->
@@ -249,6 +145,13 @@
         </a>
     </div>
     -->
+=======
+        <div>
+            <a href="test1.html" class="sosfloat sos_mark" id="menu-share">
+                <i class="fab fa-share my-float"><img src="photo/help.png" width="70%"></i>
+            </a>
+        </div>
+>>>>>>> 3e4acb79c814eada45aea0643856e82aaba97a81
 
         <!-- <div class="fabs setting_mark" onclick="toggleBtn()">
             <div class="action">
@@ -278,57 +181,6 @@
                 <i class="fab fa-share my-float"><img src="photo/gobackhome.png" width="70%"></i>
             </a>
         </div>
-        <script>
-            function toggleBtn() {
-                const Btns = document.querySelector(".btns");
-                const add = document.getElementById("add");
-                const remove = document.getElementById("remove");
-                const btn = document.querySelector(".btns").querySelectorAll("a");
-                Btns.classList.toggle("open");
-                if (Btns.classList.contains("open")) {
-                    remove.style.display = "block";
-                    add.style.display = "none";
-                    btn.forEach((e, i) => {
-                        setTimeout(() => {
-                            bottom = 65 * i;
-                            e.style.bottom = bottom + "px";
-                            console.log(e);
-                        }, 100 * i);
-                    });
-                } else {
-                    add.style.display = "block";
-                    remove.style.display = "none";
-                    btn.forEach((e, i) => {
-                        e.style.bottom = "0px";
-                    });
-                }
-            }
-        </script>
-        <script>
-            var chk1 = document.querySelector("#yoKnowledgeChk");
-            var chk2 = document.querySelector("#fruitKnowledgeChk")
-            var show = document.querySelector("#showCollect")
-            var black_overlay = document.querySelector(".black_overlay")
-
-            function changecss() { /*設定置中的函式*/
-
-                chk1.style.visibility = "visible";
-                chk2.style.visibility = "visible";
-                show.style.visibility = "visible";
-                black_overlay.style.visibility = "visible"
-
-            }
-
-            function closecollection() {
-
-                chk1.style.visibility = "hidden";
-                chk2.style.visibility = "hidden";
-                show.style.visibility = "hidden";
-                black_overlay.style.visibility = "hidden";
-
-            }
-        </script>
-
 
 </body>
 

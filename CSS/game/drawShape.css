@@ -1,222 +1,478 @@
+
+/* ㄅ */
 .fingerb {
     visibility: visible;
     width: 50px;
     height: 100px;
     transform: rotate(300deg);
     position: absolute;
-    top: -130px;
-    left: -185px;
+    top: 40px;
+    left: 125px;
     z-index: 30;
     filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
 }
-.moveFingerb1 {
+
+
+.moveFingerb {
     width: 50px;
     height: 100px;
     transform: scale(4);
     transition: all 1s ease-out;
     transform: rotate(300deg);
     position: absolute;
-    top: -65px;
-    left: -215px;
+    top: 40px;
+    left: 125px;
     z-index: 10;
-    animation-delay: 1s;
-}
+    /* animation-delay: 1s; */
+    animation-name: drawb;
+    animation-duration:4s;
+    animation-fill-mode:forwards;
+    animation-timing-function:linear;
+    /* animation-iteration-count:infinite; */
+    /* animation-timing-function:step-start; */
+  }
 
-.moveFingerb2 {
-    width: 50px;
-    height: 100px;
-    transform: scale(4);
-    transition: all 1.5s ease-out;
-    transform: rotate(300deg);
-    position: absolute;
-    top: -80px;
-    left: -145px;
-    z-index: 10;
-    animation-delay: 1s;
-}
-
-.moveFingerb3 {
-    width: 50px;
-    height: 100px;
-    transform: scale(4);
-    transition: all 1.5s ease-out;
-    transform: rotate(300deg);
-    position: absolute;
-    top: -90px;
-    left: -85px;
-    z-index: 10;
-    animation-delay: 1s;
-}
-
-.moveFingerb4 {
-    width: 50px;
-    height: 100px;
-    transform: scale(4);
-    transition: all 1.5s ease-out;
-    transform: rotate(300deg);
-    position: absolute;
-    top: -75px;
-    left: -70px;
-    z-index: 10;
-}
-
-.moveFingerb5 {
-    width: 50px;
-    height: 100px;
-    transform: scale(4);
-    transition: all 1.5s ease-out;
-    transform: rotate(300deg);
-    position: absolute;
-    top: -5px;
-    left: -100px;
-    z-index: 10;
-}
-
-.moveFingerb6 {
-    width: 50px;
-    height: 100px;
-    transform: scale(4);
-    transition: all 1.5s ease-out;
-    transform: rotate(300deg);
-    position: absolute;
-    top: 45px;
-    left: -130px;
-    z-index: 10;
-}
-
-.moveFingerb7 {
-    width: 50px;
-    height: 100px;
-    transform: scale(4);
-    transition: all 1.5s ease-out;
-    transform: rotate(300deg);
-    position: absolute;
-    top: 30px;
-    left: -155px;
-    z-index: 10;
-}
-
-.moveFingerb8 {
-    width: 50px;
-    height: 100px;
-    transform: scale(4);
-    transition: all 1.5s ease-out;
-    transform: rotate(300deg);
-    position: absolute;
-    top: 30px;
-    left: -155px;
-    z-index: 10;
+  @keyframes drawb{
+     
+      0%{
+        top: 40px;
+        left: 125px;
+      }
+      15%{
+        top: 95px;
+        left: 97px;
+      }
+      40%{
+        top: 75px;
+        left: 220px;
+      }
+      50%{
+        top: 90px;
+        left: 230px;
+      }
+      70%{
+        top: 170px;
+        left: 207px;
+      }
+      90%{
+        top: 210px;
+        left: 172px;
+      }
+      100%{
+        top: 195px;
+        left: 152px;
+        visibility: hidden;
+       
+      }
 }
 
 
-/* f1 */
-
-.fingerf1 {
+/* ㄆ */
+.fingerp {
     visibility: visible;
     width: 50px;
     height: 100px;
     transform: rotate(300deg);
     position: absolute;
-    top: -110px;
-    left: -155px;
+    top: 45px;
+    left: 130px;
     z-index: 30;
     filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
 }
-.moveFingerf11 {
+
+
+.moveFingerp {
     width: 50px;
     height: 100px;
     transform: scale(4);
     transition: all 1s ease-out;
     transform: rotate(300deg);
     position: absolute;
-    top: 20px;
-    left: -155px;
+    top: 45px;
+    left: 130px;
     z-index: 10;
-    animation-delay: 1s;
+    /* animation-delay: 1s; */
+    animation-name: drawp;
+    animation-duration:4s;
+    animation-fill-mode:forwards;
+    animation-timing-function:linear;
+    /* animation-iteration-count:infinite; */
+    /* animation-timing-function:step-start; */
+  }
+
+  @keyframes drawp{
+     
+      0%{
+        top: 45px;
+        left: 130px;
+      }
+      25%{
+        top: 105px;
+        left: 100px;
+      }
+      50%{
+        top: 80px;
+        left: 215px;
+      }
+      55%{
+        top: 90px;
+        left: 225px;
+      }
+      75%{
+        top: 220px;
+        left: 100px;
+        visibility: hidden;
+      }
+      75.5%{
+        visibility: visible;
+        top: 141px;
+        left: 135px;
+      }
+      100%{
+        top: 211px;
+        left: 225px;
+        visibility: hidden;
+       
+      }
+  }
+
+
+
+/* ㄇ */
+.fingerm {
+    visibility: visible;
+    width: 50px;
+    height: 100px;
+    transform: rotate(300deg);
+    position: absolute;
+    top: 75px;
+    left: 95px;
+    z-index: 30;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
 }
 
-.moveFingerf12 {
+
+.moveFingerm {
     width: 50px;
     height: 100px;
     transform: scale(4);
-    transition: all 1.5s ease-out;
+    transition: all 1s ease-out;
     transform: rotate(300deg);
     position: absolute;
-    top: -110px;
-    left: -155px;
+    top: 75px;
+    left: 95px;
     z-index: 10;
-    animation-delay: 1s;
+    /* animation-delay: 1s; */
+    animation-name: drawm;
+    animation-duration:3s;
+    animation-fill-mode:forwards;
+    animation-timing-function:linear;
+    /* animation-iteration-count:infinite; */
+    /* animation-timing-function:step-start; */
+  }
+
+  @keyframes drawm{
+     
+      0%{
+        top: 75px;
+        left: 95px;
+      }
+      33%{
+        top: 178px;
+        left: 95px;
+        visibility: hidden;
+      }
+      33.5%{
+        visibility: visible;
+        top: 75px;
+        left: 95px;
+      }
+      66%{
+        top: 55px;
+        left: 225px;
+      }
+      100%{
+        top: 198px;
+        left: 225px;
+        visibility: hidden;
+      }
+     
 }
 
-.moveFingerf13 {
+
+/* ㄈ */
+.fingerf {
+    visibility: visible;
+    width: 50px;
+    height: 100px;
+    transform: rotate(300deg);
+    position: absolute;
+    top: 65px;
+    left: 225px;
+    z-index: 30;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+}
+
+
+.moveFingerf {
     width: 50px;
     height: 100px;
     transform: scale(4);
-    transition: all 1.5s ease-out;
+    transition: all 1s ease-out;
     transform: rotate(300deg);
     position: absolute;
-    top: -110px;
-    left: -100px;
+    top: 65px;
+    left: 225px;
     z-index: 10;
-    animation-delay: 1s;
+    /* animation-delay: 1s; */
+    animation-name: drawf;
+    animation-duration:4s;
+    animation-fill-mode:forwards;
+    animation-timing-function:linear;
+    /* animation-iteration-count:infinite; */
+    /* animation-timing-function:step-start; */
+  }
+
+  @keyframes drawf{
+     
+      0%{
+        top: 65px;
+        left: 225px;
+      }
+      33%{
+        top: 80px;
+        left: 105px;
+      }
+      66%{
+        top: 180px;
+        left: 115px;
+      }
+      70%{
+        top: 190px;
+        left: 130px;
+      }
+      100%{
+        top: 190px;
+        left: 230px;
+        visibility: hidden;
+      }
+     
 }
 
-.moveFingerf14 {
+
+/* ㄉ */
+.fingerd {
+    visibility: visible;
+    width: 50px;
+    height: 100px;
+    transform: rotate(300deg);
+    position: absolute;
+    top: 45px;
+    left: 125px;
+    z-index: 30;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+}
+
+
+.moveFingerd {
     width: 50px;
     height: 100px;
     transform: scale(4);
-    transition: all 1.5s ease-out;
+    transition: all 1s ease-out;
     transform: rotate(300deg);
     position: absolute;
-    top: -45px;
-    left: -155px;
+    top: 45px;
+    left: 125px;
     z-index: 10;
+    /* animation-delay: 1s; */
+    animation-name: drawd;
+    animation-duration:4s;
+    animation-fill-mode:forwards;
+    animation-timing-function:linear;
+    /* animation-iteration-count:infinite; */
+    /* animation-timing-function:step-start; */
+  }
+
+  @keyframes drawd{
+     
+      0%{
+        top: 45px;
+        left: 125px;
+      }
+      20%{
+        top: 105px;
+        left: 100px;
+      }
+      40%{
+        top: 85px;
+        left: 230px;
+      }
+      40.2%{
+        top: 95px;
+        left: 240px;
+      }
+      65%{
+        top: 215px;
+        left: 180px;
+      }
+      67%{
+        top: 195px;
+        left: 160px;
+        visibility: hidden;
+      }
+      68.5%{
+        visibility: visible;
+        top: 115px;
+        left: 145px;
+      }
+      100%{
+        top: 200px;
+        left: 85px;
+        visibility: hidden;
+      }
 }
 
-.moveFingerf15 {
+
+/* ㄊ */
+.fingert {
+    visibility: visible;
+    width: 50px;
+    height: 100px;
+    transform: rotate(300deg);
+    position: absolute;
+    top: 125px;
+    left: 100px;
+    z-index: 30;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+}
+
+
+.moveFingert {
     width: 50px;
     height: 100px;
     transform: scale(4);
-    transition: all 1.5s ease-out;
+    transition: all 1s ease-out;
     transform: rotate(300deg);
     position: absolute;
-    top: -45px;
-    left: -155px;
+    top: 125px;
+    left: 100px;
     z-index: 10;
+    /* animation-delay: 1s; */
+    animation-name: drawt;
+    animation-duration:4s;
+    animation-fill-mode:forwards;
+    animation-timing-function:linear;
+    /* animation-iteration-count:infinite; */
+    /* animation-timing-function:step-start; */
+  }
+
+  @keyframes drawt{
+     
+      0%{
+        top: 125px;
+        left: 100px;
+      }
+      30%{
+        top: 105px;
+        left: 230px;
+        visibility: hidden;
+      }
+      30.5%{
+        visibility: visible;
+        top: 50px;
+        left: 170px;
+      }
+      60%{
+        top: 205px;
+        left: 115px;
+      }
+      70%{
+        top: 175px;
+        left: 205px;
+      }
+      85%{
+        top: 170px;
+        left: 207px;
+        visibility: hidden;
+      }
+      85.2%{
+        visibility: visible;
+        top: 155px;
+        left: 195px;
+      }
+      100%{
+        top: 200px;
+        left: 230px;
+        visibility: hidden;
+       
+      }
 }
 
-.moveFingerf16 {
+
+/* ㄋ */
+.fingern {
+    visibility: visible;
+    width: 50px;
+    height: 100px;
+    transform: rotate(300deg);
+    position: absolute;
+    top: 47px;
+    left: 115px;
+    z-index: 30;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+}
+
+
+.moveFingern {
     width: 50px;
     height: 100px;
     transform: scale(4);
-    transition: all 1.5s ease-out;
+    transition: all 1s ease-out;
     transform: rotate(300deg);
     position: absolute;
-    top: -45px;
-    left: -155px;
+    top: 47px;
+    left: 115px;
     z-index: 10;
-}
+    /* animation-delay: 1s; */
+    animation-name: drawn;
+    animation-duration:4s;
+    animation-fill-mode:forwards;
+    animation-timing-function:linear;
+    /* animation-iteration-count:infinite; */
+    /* animation-timing-function:step-start; */
+  }
 
-.moveFingerf17 {
-    width: 50px;
-    height: 100px;
-    transform: scale(4);
-    transition: all 1.5s ease-out;
-    transform: rotate(300deg);
-    position: absolute;
-    top: -45px;
-    left: -100px;
-    z-index: 10;
-}
+  @keyframes drawn{
+     
+      0%{
+        top: 47px;
+        left: 115px;
+      }
+      20%{
+        top: 42px;
+        left: 175px;
+      }
+      40%{
+        top: 110px;
+        left: 135px;
+      }
+      70%{
+        top: 95px;
+        left: 215px;
+      }
+      75%{
+        top: 105px;
+        left: 220px;
+      }
+      90%{
+        top: 210px;
+        left: 170px;
+      }
+      100%{
 
-.moveFingerf18 {
-    width: 50px;
-    height: 100px;
-    transform: scale(4);
-    transition: all 1.5s ease-out;
-    transform: rotate(300deg);
-    position: absolute;
-    top: -45px;
-    left: -100px;
-    z-index: 10;
+        top: 195px;
+        left: 140px;
+        visibility: hidden;
+      }
+
 }

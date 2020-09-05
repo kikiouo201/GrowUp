@@ -9,17 +9,18 @@
     <link rel="stylesheet" href="../../CSS/map/counties.css">
     <link rel="stylesheet" href="../../CSS/interface.css">
     <link rel="stylesheet" href="../../CSS/icon.css">
+    <script src="./centralRegionjs/levelIsPass.js"></script>
 </head>
 <style>
     .features {
         background-color: aliceblue;
         width: 320px;
         height: 400px;
-        margin-top: 1px;
+        margin-top: 16px;
         margin-left: 105px;
     }
-
-    .map_location{
+    
+    .map_location {
         width: 16px;
         position: absolute;
         top: 82px;
@@ -27,33 +28,38 @@
         left: 26px;
     }
 </style>
-<body class="style" background="../../image/map/kraftPaper5.png">
-  
+
+<body class="style" background="../../image/map/kraftPaper5.png" onload="checkLevelIsPass('meat_rice','chiayi')">
+
+    <iframe id="AllIconIfram" src="./ifram/chiayi_ifram.html" frameborder="0" class="collect_icon" style="z-index: 100;"></iframe>
+
     <table class="features">
         <tr>
             <td colspan="2" style="font-size: 40px;text-align: center;">嘉義地區</td>
         </tr>
-        <tr>
+        <tr style="display: none;">
             <td>特色</td>
             <td>資訊介紹</td>
         </tr>
+
         <tr>
-            <td><img src="../../image/map/Chiayi_origin.png" onclick="featuresText('嘉義地區')" />嘉義地區</td>
+            <td style="height: 365px; width: 82px;">
+            </td>
             <td id="information" rowspan="5" valign="top" style="font-size:x-large;">
                 &emsp;&emsp;嘉義地區倚山面海，是臺灣所有縣市中，唯一擁有三大國家風景區的縣份：阿里山國家風景區管理處、雲嘉南濱海國家風景區管理處及西拉雅國家風景區管理處，坐擁山色、平原、海景等不同的壯麗與遼闊。
             </td>
         </tr>
-        <tr>
-            <td><img src="../../image/icon/meat_rice.png" onclick="featuresText('嘉義火雞肉飯')" />嘉義火雞肉飯</td>
+        <tr style="display: none;">
+            <td><img src="../../image/icon/meat_rice.png" onclick="featuresText('嘉義火雞肉飯')" /><a style="display: block;">嘉義火雞肉飯</a></td>
         </tr>
-        <tr>
-            <td><img src="../../image/map_icon/Chiayi_high_heels.png" onclick="featuresText('高跟鞋教堂')" />高跟鞋教堂</td>
+        <tr style="display: none;">
+            <td><img src="../../image/map_icon/Chiayi_high_heels.png" onclick="featuresText('高跟鞋教堂')" /><a style="display: block;">高跟鞋教堂</a></td>
         </tr>
-        <tr>
-            <td><img src="../../image/map_icon/Chiayi_train.png" onclick="featuresText('阿里山森林鐵路')" />阿里山森林鐵路</td>
+        <tr style="display: none;">
+            <td><img src="../../image/map_icon/Chiayi_train.png" onclick="featuresText('阿里山森林鐵路')" /><a style="display: block;">阿里山森林鐵路</a></td>
         </tr>
-        <tr>
-            <td><img src="../../image/map_icon/Chiayi_tropic_of_cancer.png" style="width: 45%;" onclick="featuresText('北回歸線')" /><br>北回歸線</td>
+        <tr style="display: none;">
+            <td><img src="../../image/map_icon/Chiayi_tropic_of_cancer.png" style="width: 45%;" onclick="featuresText('北回歸線')" /><a style="display: block;">北回歸線</a></td>
         </tr>
 
     </table>
@@ -61,25 +67,33 @@
         <img class="terrain" src="../../image/map/Chiayi1.png" />
 
         <div class="level1">
-            <img class="level" src="../../image/icon/meat_rice.png" onclick="location.href='../../view/game/drawzhuyin.html?id=1&counties=chiayi';mouseDownText(1);" />
+            <img class="level" alt="1" src="../../image/icon/meat_rice.png" onclick="location.href='../../view/game/drawzhuyin.html?id=1&counties=chiayi';mouseDownText(1);" />
             <img class="level_text" src="../../image/numbers/1.png" onclick="location.href='../../view/game/drawzhuyin.html?id=1&counties=chiayi';mouseDownText(1);" />
         </div>
-        <div class="level2"><img class="level" src="../../image/icon/meat_rice_dark.png" onclick="location.href='../../view/game/drawzhuyin.html?id=2&counties=chiayi';mouseDownText(2);" />
+        <div class="level2"><img class="level" alt="2" src="../../image/icon/meat_rice_dark.png" onclick="location.href='../../view/game/drawzhuyin.html?id=2&counties=chiayi';mouseDownText(2);" />
             <img class="level_text" src="../../image/numbers/2.png" onclick="location.href='../../view/game/drawzhuyin.html?id=2&counties=chiayi';mouseDownText(2);" />
         </div>
 
-        <div class="level3"> <img class="level" src="../../image/icon/meat_rice_dark.png" onclick="location.href='../../view/game/drawzhuyin.html?id=3&counties=chiayi';mouseDownText(3);" />
+        <div class="level3"> <img class="level" alt="3" src="../../image/icon/meat_rice_dark.png" onclick="location.href='../../view/game/drawzhuyin.html?id=3&counties=chiayi';mouseDownText(3);" />
             <img class="level_text" src="../../image/numbers/3.png" onclick="location.href='../../view/game/drawzhuyin.html?id=3&counties=chiayi';mouseDownText(3);" />
         </div>
         <div class="level4">
-            <img class="level" src="../../image/icon/devil_lock.png" onclick="alert('需要先完成縣市所有關卡！')" />
+            <img class="level" alt="chiayi" src="../../image/icon/devil_lock.png" onclick="alert('需要先完成縣市所有關卡！')" />
 
         </div>
         、
     </div>
     <img class="taiwan" src="../../image/character/Taiwn_small.png" onclick="location.href='../../view/level/taiwan.html'" />
     <img class="map_location" src="../../image/map/map.png" />
+<<<<<<< HEAD
    
+=======
+    <div>
+        <a href="./ifram/chiayi_ifram.html" class="sosfloat" id="menu-share">
+            <i class="fab fa-share my-float"><img src="../../photo/help.png" width="70%"></i>
+        </a>
+    </div>
+>>>>>>> 3e4acb79c814eada45aea0643856e82aaba97a81
     <div>
         <a onclick="history.back()" class="returnfloat" id="menu-share">
             <i class="fab fa-share return-float"><img src="../../photo/return.png"></i>

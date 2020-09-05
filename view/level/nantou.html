@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../../CSS/map/counties.css">
     <link rel="stylesheet" href="../../CSS/interface.css">
     <link rel="stylesheet" href="../../CSS/icon.css">
-
+    <script src="./centralRegionjs/nantou.js"></script>
 </head>
 <style>
     .features {
@@ -19,8 +19,8 @@
         margin-top: 40px;
         margin-left: 40px;
     }
-
-    .map_location{
+    
+    .map_location {
         width: 16px;
         position: absolute;
         top: 64px;
@@ -29,7 +29,7 @@
     }
 </style>
 
-<body class="style" background="../../image/map/kraftPaper5.png">
+<body class="style" background="../../image/map/kraftPaper5.png" onload="checkZhuyin()">
     <table class="features">
         <tr>
             <td colspan="2" style="font-size: 40px;text-align: center;">南投地區</td>
@@ -54,23 +54,23 @@
     </table>
     <div class="map">
         <img id="county" class="terrain" src="../../image/map/Nantou_small.png" />
-        <img class="level1" src="../../image/icon/herbal_tea.png" onclick="location.href='../../view/game/drawzhuyin.html?id=b&counties=nantou';mouseDownText('ㄅ');" />
+        <img id="zhuyin" alt="ㄅ" class="level1" src="../../image/icon/herbal_tea.png" onclick="location.href='../../view/game/drawzhuyin.html?id=b&counties=nantou';mouseDownText('ㄅ');" />
         <img class="level1_text" src="../../image/chinese_alphabet/b.png" onclick="location.href='../../view/game/drawzhuyin.html?id=b&counties=nantou';mouseDownText('ㄅ');" />
-        <img class="level2" src="../../image/icon/herbal_tea.png" onclick="location.href='../../view/game/drawzhuyin.html?id=p&counties=nantou';mouseDownText('ㄆ');" />
+        <img id="zhuyin" alt="ㄆ" class="level2" src="../../image/icon/herbal_tea.png" onclick="location.href='../../view/game/drawzhuyin.html?id=p&counties=nantou';mouseDownText('ㄆ');" />
         <img class="level2_text" src="../../image/chinese_alphabet/p.png" onclick="location.href='../../view/game/drawzhuyin.html?id=p&counties=nantou';mouseDownText('ㄆ');" />
-        <img class="level3" src="../../image/icon/herbal_tea.png" onclick="location.href='../../view/game/drawzhuyin.html?id=m&counties=nantou';mouseDownText('ㄇ');" />
+        <img id="zhuyin" alt="ㄇ" class="level3" src="../../image/icon/herbal_tea.png" onclick="location.href='../../view/game/drawzhuyin.html?id=m&counties=nantou';mouseDownText('ㄇ');" />
         <img class="level3_text" src="../../image/chinese_alphabet/m.png" onclick="location.href='../../view/game/drawzhuyin.html?id=m&counties=nantou';mouseDownText('ㄇ');" />
-        <img class="level4" src="../../image/icon/herbal_tea.png" onclick="location.href='../../view/game/drawzhuyin.html?id=f';mouseDownText('ㄈ');" />
+        <img id="zhuyin" alt="ㄈ" class="level4" src="../../image/icon/herbal_tea.png" onclick="location.href='../../view/game/drawzhuyin.html?id=f';mouseDownText('ㄈ');" />
         <img class="level4_text" src="../../image/chinese_alphabet/f.png" onclick="location.href='../../view/game/drawzhuyin.html?id=f&counties=nantou';mouseDownText('ㄈ');" />
-        <img class="level5" src="../../image/icon/herbal_tea_dark.png" onclick="location.href='../../view/game/drawzhuyin.html?id=d&counties=nantou';mouseDownText('ㄉ');" />
+        <img id="zhuyin" alt="ㄉ" class="level5" src="../../image/icon/herbal_tea_dark.png" onclick="location.href='../../view/game/drawzhuyin.html?id=d&counties=nantou';mouseDownText('ㄉ');" />
         <img class="level5_text" src="../../image/chinese_alphabet/d.png" onclick="location.href='../../view/game/drawzhuyin.html?id=d&counties=nantou';mouseDownText('ㄉ');" />
-        <img class="level6" src="../../image/icon/herbal_tea_dark.png" onclick="location.href='../../view/game/drawzhuyin.html?id=t&counties=nantou';mouseDownText('ㄊ');" />
+        <img id="zhuyin" alt="ㄊ" class="level6" src="../../image/icon/herbal_tea_dark.png" onclick="location.href='../../view/game/drawzhuyin.html?id=t&counties=nantou';mouseDownText('ㄊ');" />
         <img class="level6_text" src="../../image/chinese_alphabet/t.png" onclick="location.href='../../view/game/drawzhuyin.html?id=t&counties=nantou';mouseDownText('ㄊ');" />
-        <img class="level7" src="../../image/icon/herbal_tea_dark.png" onclick="location.href='../../view/game/drawzhuyin.html?id=n&counties=nantou';mouseDownText('ㄋ');" />
+        <img id="zhuyin" alt="ㄋ" class="level7" src="../../image/icon/herbal_tea_dark.png" onclick="location.href='../../view/game/drawzhuyin.html?id=n&counties=nantou';mouseDownText('ㄋ');" />
         <img class="level7_text" src="../../image/chinese_alphabet/n.png" onclick="location.href='../../view/game/drawzhuyin.html?id=n&counties=nantou';mouseDownText('ㄋ');" />
-        <img class="level8" src="../../image/icon/herbal_tea_dark.png" onclick="location.href='../../view/game/drawzhuyin.html?id=l&counties=nantou';mouseDownText('ㄌ');" />
+        <img id="zhuyin" alt="ㄌ" class="level8" src="../../image/icon/herbal_tea_dark.png" onclick="location.href='../../view/game/drawzhuyin.html?id=l&counties=nantou';mouseDownText('ㄌ');" />
         <img class="level8_text" src="../../image/chinese_alphabet/l.png" onclick="location.href='../../view/game/drawzhuyin.html?id=l&counties=nantou';mouseDownText('ㄌ');" />
-        <img class="level9" src="../../image/icon/herbal_tea_dark.png" onclick="location.href='../../view/game/drawzhuyin.html?id=g&counties=nantou';mouseDownText('ㄍ');" />
+        <img id="zhuyin" alt="ㄍ" class="level9" src="../../image/icon/herbal_tea_dark.png" onclick="location.href='../../view/game/drawzhuyin.html?id=g&counties=nantou';mouseDownText('ㄍ');" />
         <img class="level9_text" src="../../image/chinese_alphabet/g.png" onclick="location.href='../../view/game/drawzhuyin.html?id=g&counties=nantou';mouseDownText('ㄍ');" />
         <img class="level10" src="../../image/icon/devil_lock.png" onclick="alert('需要先完成縣市所有關卡！')" />
 
@@ -96,19 +96,34 @@
                     information.innerHTML = "&emsp;&emsp;南投地區，是唯一不靠海的縣市，而南投的地名由來，源自平埔族洪雅族支族阿立昆族的族語「Ramtau」，即以臺語音譯為「南投」。";
                     mouseDownText(information.innerHTML);
                     break;
+                    
                 case "高山茶":
-                    information.innerHTML = "&emsp;&emsp;高山茶，是指在海拔1000公尺以上茶園，所摘取製作的茶葉。高山茶由於生長高度高、採收慢，因此茶葉苦澀度較低。近年來成為台灣最具知名度茶品，可見其品質優良。";
-                    mouseDownText(information.innerHTML);
+                    information.innerHTML = " <img style = 'width:100%; border-radius: 15px;'  src = 'https://s.yimg.com/os/zh-Hant-TW/homerun/tw-travel.travelweb.com.tw/71e4ae358ca78944aaec7b6a4320bd07'/> "
+                    
+                    let info = document.createElement("h4");
+                    info.style= 'margin: auto;';
+
+                    info.innerHTML="高山茶，是指在海拔1000公尺以上茶園，所摘取製作的茶葉。"
+                    information.append(info)
+
+                    mouseDownText(info.innerHTML);
                     break;
                 case "日月潭":
-                    information.innerHTML = "&emsp;&emsp;日月潭，位於臺灣南投縣魚池鄉。潭面以拉魯島為界，東側形如「日」，西側形如「月」，故名日月潭，是一座美麗的高山湖泊。";
-                    mouseDownText(information.innerHTML);
+                    information.innerHTML = " <img style = 'width:100%; border-radius: 15px;'  src ='https://www.funtime.com.tw/blog/wp-content/uploads/2020/04/25.jpg'/>";
+                    
+                    let infor = document.createElement("h4");
+                    infor.style= 'margin: auto;';
+                    infor.innerHTML = "東側形如「日」，西側形如「月」，故名日月潭，是一座美麗的高山湖泊。"; 
+                    information.append(infor)
+
+                    mouseDownText(infor.innerHTML);
                     break;
 
             }
         }
     </script>
     <script src="../../model/util/voiceOut.js"></script>
+    
 </body>
 
 </html>

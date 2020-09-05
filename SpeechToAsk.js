@@ -19,12 +19,12 @@ if (voiceBtn) {
             // status.value= '開啟語音模組'
         ipcRenderer.send('voice-require-to-py');
 
-        ipcRenderer.once('voice-require-to-py-reply-start', () => {
+        ipcRenderer.once('reply-start', () => {
             // status.value = '系統提示：  請開始說話！';
             SystemVal.innerHTML = '系統提示：請開始說話！';
         });
 
-        ipcRenderer.once('voice-require-to-py-anaysis-voice', () => {
+        ipcRenderer.once('anaysis-voice', () => {
             SystemVal.innerHTML = '系統分析你的問題中...請稍後...'
         });
 
@@ -36,30 +36,30 @@ if (voiceBtn) {
 
         var countCardNum = 0
         countCardNum++
-        var CardID_Collect = 'collect_select_' + countCardNum
-        console.log("collect " + 'collect_select_' + countCardNum)
-        var CardID_Q = 'speaker_Q_' + countCardNum
-        console.log("Q= " + 'speaker_Q_' + countCardNum)
-        var CardID_A = 'speaker_A_' + countCardNum
-        console.log("A= " + 'speaker_A_' + countCardNum)
+        var CardID_Collect = 'collect_select_' + click_num
+        console.log("collect " + 'collect_select_' + click_num)
+        var CardID_Q = 'speaker_Q_' + click_num
+        console.log("Q= " + 'speaker_Q_' + click_num)
+        var CardID_A = 'speaker_A_' + click_num
+        console.log("A= " + 'speaker_A_' + click_num)
 
-        const createQA = (text, text2, text3) => `<div id="pictureText" class="card text-white mb-3" style="background-color: #92337eba;">
+        var createQA = (question, url, answer) => `<div id="pictureText_` + click_num + `" class="card text-white mb-3" style="background-color: #92337eba;">
                                         
                                             <div class="card-body" style="margin-top: 30px;">
                                                 <img class="collect_LeftTop" onclick="collect(this)" id="` + CardID_Collect + `" src="icons/bookmark.png"/>
                                                     <div style="float:left; display: block; text-align: left;">
-                                                        <p class="card-title card_Q">Ｑ：</p>
-                                                        <p class="card-title card_Q" style="margin-left: 0px;">${text}</p>
+                                                        <p class="card-title card_Q">問題：</p>
+                                                        <p class="card-title card_Q" style="margin-left: 0px;">${question}</p>
                                                         <img class="speaker_Q" onclick="speaker(this)" id="` + CardID_Q + `" src="icons/speaker.png" onclick=speakerTest(this)>
                                                     </div>
                                                     <br><br><br><br>
                                                     <div>
-                                                        <img src="https:${text2}">
+                                                        <img src="https:${url}">
                                                     </div>
                                                     <br>
                                                     <div style="float:left; display: block; text-align: left;">
-                                                        <p class="card-text card_A" style="float: left;">Ａ：</p>
-                                                        <p class="card-text card_A" style="margin-left: 0px;">${text3}</p>
+                                                        <p class="card-text card_A" style="float: left;">敘述：</p>
+                                                        <p class="card-text card_A" style="margin-left: 0px;">${answer}</p>
                                                         <img class="speaker_A" onclick="speaker(this)" id="` + CardID_A + `" src="icons/speaker.png" />
                                                     </div>
 
@@ -68,59 +68,42 @@ if (voiceBtn) {
                                         </div>`;
 
 
-
-        // const createQA = function (t1, t2) {
-        //     `<h5 class="card-title">Q:${t1}</h5> <p class="card-text">A:${t2}</p>`                       
-        // }
-
-        // function collect() {
-        //     $(document).ready(function () {
-        //         $('.card-header').each(function (i) {
-        //             $(this).attr('id', 'QA_num_' + click_num);
-        //         });
-
-        //         $(".collect_rightTop").click(function (value) {                                 //click事件
-        //             $("#heart_collect").attr("src", "icons/heart.png");      //要更換的圖片位置
-
-        //         });
-        //     });
-        // }
-
-
         const messages = document.querySelector('#messages');
         const QA_card = document.querySelector('#QA_card');
-        console.log("Q:" + createQA)
-        ipcRenderer.once('voice-require-to-py-reply-result', (event, data) => {
-            console.log("q =>" + data.q + " a =>" + data.a + " url =>" + data.url + " keyword=>" + data.keyWord)
-            console.log("url =>" + data.url)
-            console.log("data obj:" + JSON.stringify(data))
-                // console.log("QName =>" + data.QName)
-                // debugger
-            QA_card.innerHTML = QA_card.innerHTML + createQA(data.q, data.url, data.a);
+        ipcRenderer.once('reply-result', (event, data) => {
+            console.log("New data:" + typeof(data))
+            console.log("result catch:" + data)
+            console.log("q =>" + data['Question'] + " a =>" + data['Answer'] + " url =>" + data['Answer_pic'] + " keyword=>" + data['keyWord'])
+            console.log("url =>" + data['Answer_pic'])
 
-            if (data.a.toString().trim() == 'TurnToOpenCamera') { //如果偵測到「問這是什麼」類型的問題
+            // console.log("QName =>" + data.QName)
+            // debugger
+            QA_card.innerHTML = QA_card.innerHTML + createQA(data['Question'], "./00.png", data['Answer']);
+
+            if (data['Answer'].toString().trim() == 'TurnToOpenCamera') { //如果偵測到「問這是什麼」類型的問題
                 SystemVal.innerHTML = '切換至「你拍我答」'
                 setTimeout(document.location.href = "result.html", 5000);
                 // document.location.href="result.html";   //直接跳轉到camera的html
                 console.log("camera true")
-            } else if (data.a.toString().trim() == 'OpenPickingUpIsALittleRed') { //玩翻牌
+            } else if (data['Answer'].toString().trim() == 'OpenPickingUpIsALittleRed') { //玩翻牌
                 SystemVal.innerHTML = '開啟小遊戲至「翻牌遊戲」'
                 setTimeout(document.location.href = "./view/pickingUpIsALittleRed.html", 5000);
                 console.log("picking true")
-            } else if (data.a.toString().trim() == 'OpenGophers') { //玩打地鼠
+            } else if (data['Answer'].toString().trim() == 'OpenGophers') { //玩打地鼠
                 SystemVal.innerHTML = '開啟小遊戲至「打地鼠遊戲」'
                 setTimeout(document.location.href = "./view/gophers.html", 5000);
                 console.log("gophers true")
-            } else if (data.q.toString().trim() == '蘋果是什麼') {
+            } else if (data['Question'].toString().trim().includes('蘋果')) {
                 console.log()
-                let pictureBook = document.querySelector('#pictureText');
+                let pictureBook = document.querySelector('#pictureText_' + click_num);
 
                 // data.book_name = "蘋果甜蜜蜜";
                 // data.book_img = "https://children.moc.gov.tw/resource/animate_image/6892.jpg";
                 // data.book_introduction = "嫁接的蜜蘋果要先習慣這塊土地，接受泥土的養分之後，才能慢慢慢慢的發芽開花。在這塊土地上接受多元文化洗禮、共同生活的人，不也像蜜蘋果一樣嗎？願藉此，獻上我們最深的祝福！";
 
                 // console.log("bookName ==" + book_name);
-                if (pictureBook) {
+                if (pictureBook.id.includes('2')) {
+                    console.log("id:" + pictureBook.id)
                     pictureBook.innerHTML += `<div class="card-header contentCss" id="QA_num_" style="background-color: #f8f9fa24; padding-bottom: 40px;">
                     <p class="contentlink">相關繪本連結：</p>
                     <p class="book_css">蘋果甜蜜蜜</p>
@@ -137,9 +120,27 @@ if (voiceBtn) {
                 </div>`
 
                 }
-            } else if (data.q.toString().trim() == '香蕉是什麼') {
+                if (pictureBook.id.includes('1')) {
+
+                    pictureBook.innerHTML += `<div class="card-header contentCss" id="QA_num_" style="background-color: #f8f9fa24; padding-bottom: 40px;">
+                    <p class="contentlink">相關繪本連結：</p>
+                    <p class="book_css">環遊世界做蘋果派</p>
+                    <img class="speaker_A" onclick="speakerBookName(this)" id="speaker_A" src="icons/speaker.png" style="margin-top: -55px" />
+    
+                    <img src="https://children.moc.gov.tw/resource/animate_image/6850.jpg" style="margin-left: 20px; display: inline;" width="180" height="153" alt="環遊世界做蘋果派">
+                    <p style="display: inline; margin-left: 20px; margin-top: -10px; position: absolute; margin-right: 40px;">
+                    要怎樣認識「國家」呢？每一個國家總有不同的、具代表性的文物、景物、建築或美食，在環遊世界一周後，可以帶回的東西，會是不同的明信片、紀念品，還有好吃特產呢？</p>
+                    <img class="speaker_A" onclick="speakerBook(this)" id="speaker_A" src="icons/speaker.png" style="margin-top: 131px; display: inline; bottom: 31px;" />
+    
+                </div>
+                <div class="card-header" id="QA_num_">
+                
+                </div>`
+
+                }
+            } else if (data['Question'].toString().trim().includes('香蕉')) {
                 console.log()
-                let pictureBook = document.querySelector('#pictureText');
+                let pictureBook = document.querySelector('#pictureText_' + click_num);
 
                 if (pictureBook) {
                     pictureBook.innerHTML += `<div class="card-header contentCss" id="QA_num_" style="background-color: #f8f9fa24; padding-bottom: 40px;">
@@ -150,6 +151,27 @@ if (voiceBtn) {
                     <img src="https://children.moc.gov.tw/resource/animate_image/6924.jpg" style="margin-left: 20px; display: inline;" width="180" height="153" alt="蘋果甜蜜蜜">
                     <p style="display: inline; margin-left: 20px; margin-top: -5px; position: absolute; margin-right: 40px;">
                     從日本回到台灣的小表妹，第一次吃到不用沾蜂蜜就又香又甜的香蕉。但是過了幾天，香蕉皮上長出了黑點，是已經壞掉不能吃了嗎？這你就搞錯囉，香蕉皮上的黑點可是香蕉成熟的暗號呢！\r\n內容介紹香蕉的生長過程、香蕉的採收、產銷過程，為你完整解開香蕉的祕密。</p>
+                    <img class="speaker_A" onclick="speakerBook(this)" id="speaker_A" src="icons/speaker.png" style="margin-top: 131px; display: inline; bottom: 31px;" />
+    
+                </div>
+                <div class="card-header" id="QA_num_">
+                
+                </div>`
+
+                }
+            } else if (data['Question'].toString().trim().includes('水果')) {
+                console.log()
+                let pictureBook = document.querySelector('#pictureText_' + click_num);
+
+                if (pictureBook) {
+                    pictureBook.innerHTML += `<div class="card-header contentCss" id="QA_num_" style="background-color: #f8f9fa24; padding-bottom: 40px;">
+                    <p class="contentlink">相關繪本連結：</p>
+                    <p class="book_css">嘟嘟~水果列車出發</p>
+                    <img class="speaker_A" onclick="speakerBookName(this)" id="speaker_A" src="icons/speaker.png" style="margin-top: -55px" />
+    
+                    <img src="https://children.moc.gov.tw/resource/animate_image/6924.jpg" style="margin-left: 20px; display: inline;" width="180" height="153" alt="勇敢小火車：卡爾的特別任務">
+                    <p style="display: inline; margin-left: 20px; margin-top: -5px; position: absolute; margin-right: 40px;">
+                    卡爾的特別任務－勇敢是，「帶著害怕前進」勇敢是，「不對自己說不可能」勇敢是，「愛的陪伴與分享」　　這裡是咕咕鎮的火車貨運站，也是藍色小火車卡爾和媽媽溫蒂工作的地方。　　這天，店裡來了一位很特別的客人...</p>
                     <img class="speaker_A" onclick="speakerBook(this)" id="speaker_A" src="icons/speaker.png" style="margin-top: 131px; display: inline; bottom: 31px;" />
     
                 </div>
@@ -191,7 +213,14 @@ if (closeBtn) {
     });
 }
 
-
+function isJsonString(str) {
+    try {
+        if (typeof JSON.parse(str) == "object") {
+            return true;
+        }
+    } catch (e) {}
+    return false;
+}
 //語音唸出來
 let voices = [];
 // const speaker_Q_btn = document.querySelector('.speaker_Q');
@@ -279,3 +308,59 @@ stopDOM.addEventListener('dblclick', toggle.bind(null, false));
 
 //     })
 // }
+
+
+const puppeteer = require('puppeteer');
+
+function callCaw(web) {
+    (async() => {
+        let browser = await puppeteer.launch({
+            executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
+            // args: ['--start-fullscreen'],
+            headless: false
+        });
+        const page = await browser.newPage();
+        await page.goto(web);
+
+        page.on('colse', async() => {
+            await browser.close();
+        });
+
+        await page.exposeFunction('colseBrowser', () => {
+            page.emit('colse');
+
+        });
+        page.on('dialog', async dialog => {
+            console.log(dialog.message());
+            await dialog.dismiss();
+            await page.evaluate(() => {
+                document.querySelector('.fp-fullscreen').onclick = null;
+                document.querySelector('.fp-fullscreen').click()
+                document.querySelector('.fp-fullscreen').onclick = () => window.colseBrowser();
+
+            })
+        });
+        await page.evaluate(() => {
+
+            function css(el, styles) {
+                for (var property in styles)
+                    el.style[property] = styles[property];
+            }
+
+            document.querySelector('.fp-fullscreen').click()
+
+            setTimeout(() => {
+                document.querySelector('.fp-ui').click()
+            }, 2000);
+
+            css(document.querySelector('.fp-fullscreen'), {
+                height: '80px',
+                width: '80px',
+            });
+
+            document.querySelector('.fp-fullscreen').onclick = () => window.colseBrowser();
+
+        });
+
+    })();
+}

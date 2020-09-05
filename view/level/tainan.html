@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GrowUp學習趣</title>
-    <link rel="stylesheet" href="../../CSS/map/tainan.css">
     <link rel="stylesheet" href="../../CSS/map/counties.css">
+    <link rel="stylesheet" href="../../CSS/map/tainan.css">
     <link rel="stylesheet" href="../../CSS/interface.css">
     <link rel="stylesheet" href="../../CSS/icon.css">
 </head>
@@ -15,11 +15,11 @@
         background-color: aliceblue;
         width: 320px;
         height: 400px;
-        margin-top: -22px;
+        margin-top: 8px;
         margin-left: 105px;
     }
-
-    .map_location{
+    
+    .map_location {
         width: 16px;
         position: absolute;
         top: 98px;
@@ -27,32 +27,33 @@
         left: 12px;
     }
 </style>
+
 <body class="style" background="../../image/map/kraftPaper5.png">
     <table class="features">
         <tr>
             <td colspan="2" style="font-size: 40px;text-align: center;">台南地區</td>
         </tr>
-        <tr>
+        <tr style="display: none;">
             <td>特色</td>
             <td>資訊介紹</td>
         </tr>
         <tr>
-            <td><img src="../../image/map/Tainan_origin.png" onclick="featuresText('台南地區')" />台南地區</td>
+            <td><img src="../../image/map/Tainan_origin.png" onclick="featuresText('台南地區')" /><a style="display: block;">台南地區</a></td>
             <td id="information" rowspan="5" valign="top" style="font-size:x-large;">
-                &emsp;&emsp;台南地區，為六都之一，位於臺灣西南部，平原區比例最大、地形最平緩的城市，耕地面積全臺第一，盛產豐富的農產品。現以傳統小吃、夜市商圈、旅遊度假、古蹟文化、山川田園、溫泉戲水吸引觀光人潮，並以宜居樂活城市著稱。
+                &emsp;&emsp;台南地區，為六都之一，位於臺灣西南部，平原區比例最大、地形最平緩的城市，耕地面積全臺第一，盛產豐富的農產品
             </td>
         </tr>
         <tr>
-            <td><img src="../../image/icon/temple.png" onclick="featuresText('赤崁樓')" />赤崁樓</td>
+            <td><img src="../../image/icon/temple.png" onclick="featuresText('赤崁樓')" /><a style="display: block;">赤崁樓</a></td>
         </tr>
         <tr>
-            <td><img src="../../image/map_icon/Tainan_Chimei_Museum.png" onclick="featuresText('奇美博物館')" />奇美博物館</td>
+            <td><img src="../../image/map_icon/Tainan_Chimei_Museum.png" onclick="featuresText('奇美博物館')" /><a style="display: block;">奇美</a><a style="display: block;">博物館</a></td>
         </tr>
         <tr>
-            <td><img src="../../image/map_icon/Tainan_salt_mountion.png" onclick="featuresText('七股鹽山')" />七股鹽山</td>
+            <td><img src="../../image/map_icon/Tainan_salt_mountion.png" onclick="featuresText('七股鹽山')" /><a style="display: block;">七股鹽山</a></td>
         </tr>
         <tr>
-            <td><img src="../../image/map_icon/Tainan_Tseng_Wen_Reservoir.png" onclick="featuresText('曾文水庫')" /><br>曾文水庫</td>
+            <td><img src="../../image/map_icon/Tainan_Tseng_Wen_Reservoir.png" onclick="featuresText('曾文水庫')" /><a style="display: block;">曾文水庫</a></td>
         </tr>
 
     </table>
@@ -94,7 +95,7 @@
             const information = document.querySelector('#information')
             switch (category) {
                 case "台南地區":
-                    information.innerHTML = "&emsp;&emsp;台南地區，為六都之一，位於臺灣西南部，平原區比例最大、地形最平緩的城市，耕地面積全臺第一，盛產豐富的農產品。現以傳統小吃、夜市商圈、旅遊度假、古蹟文化、山川田園、溫泉戲水吸引觀光人潮，並以宜居樂活城市著稱。";
+                    information.innerHTML = "&emsp;&emsp;台南地區，為六都之一，位於臺灣西南部，平原區比例最大、地形最平緩的城市，耕地面積全臺第一，盛產豐富的農產品";
                     mouseDownText(information.innerHTML);
                     break;
                 case "赤崁樓":

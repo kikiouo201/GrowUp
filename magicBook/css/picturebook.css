@@ -3,6 +3,8 @@ body {
   background-size: 100%;
   background-attachment: fixed; */
     margin: 0px;
+    overflow-y: hidden;
+    overflow-x: hidden;
     /* margin-top: auto; */
 }
 
@@ -32,29 +34,32 @@ body::-webkit-scrollbar {
 }
 
 
-.tags {
+.tabs {
   position: fixed;
-  top: 10%;
+  top: 11%;
   width: 100%;
   height: 12%;
   border-radius: 8px;
+  overflow-y: hidden;
+  overflow-x: hidden;
+
   /* margin-left: 0.1%; */
   /* background-color: lightblue; */
 }
 
-.tag {
+.tab {
   width: 24%;
   height: 100%;
   float: left;
   text-align: center;
   padding: 3px 2% 5px 2%;
   border-radius: 8px;
-  margin-left: 1%;
+  margin-left: 4%;
   background-color: rgb(240, 182, 128);
   cursor: pointer;
 }
 
-.tag img {
+.tab img {
   display: inline-block;
   float: left;
   width: 30%;
@@ -62,7 +67,7 @@ body::-webkit-scrollbar {
   margin-right: 5px;
 }
 
-.tag span {
+.tab span {
   display: inline-block;
   font-size: 22px;
   margin-top: 7%;
@@ -72,7 +77,7 @@ body::-webkit-scrollbar {
   background-color: rgb(255, 220, 160);
 }
 
-#parent_tag {
+#parent_tab {
   background-color: rgb(255, 220, 160);
 
 }
@@ -81,7 +86,7 @@ body::-webkit-scrollbar {
   background-color: rgb(255, 182, 160);
 }
 
-#machine_tag {
+#machine_tab {
   background-color: rgb(255, 182, 160);
 
 }
@@ -90,19 +95,21 @@ body::-webkit-scrollbar {
   background-color: rgb(206, 255, 160);
 }
 
-#else_tag {
+#else_tab {
   background-color: rgb(206, 255, 160);
 
 }
 
 .maincontent {
   position: relative;
-  top: 20%;
+  top: 22%;
   width: 100%;
   height: 80%;
-  background-color: white;
+  background-color: rgb(253, 238, 228);
+  /* background: url(../../image/map/kraftPaper5.png) no-repeat;     */
   overflow: gone;
   overflow-x: auto;
+  border-radius: 10px;
   /* overflow-y: hidden; */
   /* white-space: nowrap; */
 }
@@ -119,8 +126,8 @@ body::-webkit-scrollbar {
   /* margin: 10px;
   margin-right: 2%;
   margin-left: 4%; */
-  margin: 11px 0% 10px 2.063%;
-  padding: 10px;
+  margin: 1.8% 0% 0% 1.8%;
+  padding: 13px;
   text-align: left;
   font-family: Microsoft JhengHei;
   border-radius: 15px;

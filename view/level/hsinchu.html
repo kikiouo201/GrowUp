@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../../CSS/map/counties.css">
     <link rel="stylesheet" href="../../CSS/interface.css">
     <link rel="stylesheet" href="../../CSS/icon.css">
-
+    <script src="./centralRegionjs/levelIsPass.js"></script>
 </head>
 <style>
     .map_location{
@@ -20,29 +20,29 @@
         left: 46px;
     }
 </style>
-<body class="style" background="../../image/map/kraftPaper5.png">
-    <table class="features">
+<body class="style" background="../../image/map/kraftPaper5.png"  onload="checkLevelIsPass('pork_ball','hsinchu')">
+    <table class="features" style="margin-left: 100px">
         <tr>
             <td colspan="2" style="font-size: 40px;text-align: center;">新竹地區</td>
         </tr>
-        <tr>
+        <tr style="display: none;">
             <td>特色</td>
             <td>資訊介紹</td>
         </tr>
         <tr>
-            <td><img src="../../image/map/Hsinchu_origin.png" onclick="featuresText('新竹地區')" />新竹地區</td>
+            <td><img src="../../image/map/Hsinchu_origin.png" onclick="featuresText('新竹地區')" /><a style="display: block;">新竹地區</a></td>
             <td id="information" rowspan="4" valign="top" style="font-size:x-large;">
-                &emsp;&emsp;新竹地區地形多元、氣候溫和、農產豐盛，全縣客家族群約佔總人口數的84%，是典型的客家大縣，並以「好客竹縣」著稱。本縣從農業到科技的轉型、從傳統到現代的結合，還有隨著科技發展遷入的新移民，形成多元融合的族群結構與文化特色。
+                &emsp;&emsp;新竹地區，全縣客家族群約佔總人口數的84%，是典型的客家大縣。本縣從農業到科技的轉型、從傳統到現代的結合，形成多元融合的族群結構與文化特色。
             </td>
         </tr>
         <tr>
-            <td><img src="../../image/icon/pork_ball.png" onclick="featuresText('貢丸')" />貢丸</td>
+            <td><img src="../../image/icon/pork_ball.png" onclick="featuresText('貢丸')" /><a style="display: block;">貢丸</a></td>
         </tr>
         <tr>
-            <td><img src="../../image/map_icon/Hsinchu_Leofoo_Village.png" onclick="featuresText('六福村主題遊樂園')" />六福村主題遊樂園</td>
+            <td><img src="../../image/map_icon/Hsinchu_Leofoo_Village.png" onclick="featuresText('六福村主題遊樂園')" /><a style="display: block;">六福村主題遊樂園</a></td>
         </tr>
         <tr>
-            <td><img src="../../image/map_icon/Hsinchu_zoo.png" onclick="featuresText('新竹市立動物園')" />新竹市立動物園</td>
+            <td><img src="../../image/map_icon/Hsinchu_zoo.png" onclick="featuresText('新竹市立動物園')" /><a style="display: block;">新竹市立動物園</a></td>
         </tr>
 
 
@@ -50,23 +50,23 @@
     <div class="map">
         <img id="county" class="terrain" src="../../image/map/Hsinchu1.png" />
         <div class="level1">
-            <img class="level" src="../../image/icon/pork_ball_dark.png" onclick="location.href='../../view/game/drawzhuyin.html?id=s1&counties=hsinchu';mouseDownText('s');" />
+            <img class="level" alt="s1" src="../../image/icon/pork_ball_dark.png" onclick="location.href='../../view/game/drawzhuyin.html?id=s1&counties=hsinchu';mouseDownText('s');" />
             <img class="level_text" src="../../image/english_alphabet/S.png" onclick="location.href='../../view/game/drawzhuyin.html?id=s1&counties=hsinchu';mouseDownText('s');" />
         </div>
         <div class="level2">
-            <img class="level" src="../../image/icon/pork_ball_dark.png" onclick="location.href='../../view/game/drawzhuyin.html?id=t1&counties=newTaipei';mouseDownText('t');" />
+            <img class="level" alt="t1" src="../../image/icon/pork_ball_dark.png" onclick="location.href='../../view/game/drawzhuyin.html?id=t1&counties=newTaipei';mouseDownText('t');" />
             <img class="level_text" src="../../image/english_alphabet/T.png" onclick="location.href='../../view/game/drawzhuyin.html?id=t1&counties=newTaipei';mouseDownText('t');" />
         </div>
         <div class="level3">
-            <img class="level" src="../../image/icon/pork_ball_dark.png" onclick="location.href='../../view/game/drawzhuyin.html?id=u1&counties=hsinchu';mouseDownText('u');" />
+            <img class="level" alt="u1" src="../../image/icon/pork_ball_dark.png" onclick="location.href='../../view/game/drawzhuyin.html?id=u1&counties=hsinchu';mouseDownText('u');" />
             <img class="level_text" src="../../image/english_alphabet/U.png" onclick="location.href='../../view/game/drawzhuyin.html?id=u1&counties=hsinchu';mouseDownText('u');" />
         </div>
         <div class="level4">
-            <img class="level" src="../../image/icon/pork_ball_dark.png" onclick="location.href='../../view/game/drawzhuyin.html?id=v1&counties=hsinchu';mouseDownText('v');" />
+            <img class="level" alt="v1" src="../../image/icon/pork_ball_dark.png" onclick="location.href='../../view/game/drawzhuyin.html?id=v1&counties=hsinchu';mouseDownText('v');" />
             <img class="level_text" src="../../image/english_alphabet/V.png" onclick="location.href='../../view/game/drawzhuyin.html?id=v1&counties=hsinchu';mouseDownText('v');" />
         </div>
 
-        <img class="level5" src="../../image/icon/devil_lock.png" onclick="alert('需要先完成縣市所有關卡！')" />
+        <img class="level5" alt="hsinchu" src="../../image/icon/devil_lock.png" onclick="alert('需要先完成縣市所有關卡！')" />
 
     </div>
     <img class="taiwan" src="../../image/character/Taiwn_small.png" onclick="location.href='../../view/level/taiwan.html'" />
@@ -87,7 +87,7 @@
             const information = document.querySelector('#information')
             switch (category) {
                 case "新竹地區":
-                    information.innerHTML = "&emsp;&emsp;新竹地區地形多元、氣候溫和、農產豐盛，全縣客家族群約佔總人口數的84%，是典型的客家大縣，並以「好客竹縣」著稱。本縣從農業到科技的轉型、從傳統到現代的結合，還有隨著科技發展遷入的新移民，形成多元融合的族群結構與文化特色。";
+                    information.innerHTML = "&emsp;&emsp;新竹地區，全縣客家族群約佔總人口數的84%，是典型的客家大縣。本縣從農業到科技的轉型、從傳統到現代的結合，形成多元融合的族群結構與文化特色。";
                     mouseDownText(information.innerHTML);
                     break;
                 case "貢丸":

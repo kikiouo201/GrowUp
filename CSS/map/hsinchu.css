@@ -1,67 +1,74 @@
-
-body{
-  display: flex;
-  width: 100%;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
-}
-.map{
-  text-align: center;
-  position: relative;
-  height: 700px;
-  right: -25px;
-}
-.terrain{
-  width: 350px;
-  position: relative;
-  top: 80px;
-  z-index: 1;
+body {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    /* justify-content: center; */
+    align-items: center;
 }
 
-.level1{
-  width: 75px;
-  position: absolute;
-  z-index: 10;
-  top: 314px;
-  left: 259px;
+.map {
+    text-align: center;
+    position: relative;
+    /* height: 700px; */
+    /* right: -25px; */
+    left: 3px;
 }
-.level{
-  width: 66px;
 
+.terrain {
+    width: 350px;
+    position: relative;
+    /* top: 80px; */
+    z-index: 1;
 }
-.level_text{
-  width: 120px;
-  position: absolute;
-  z-index: 10;
-  top: -24px;
-  left: -10%;
-}
-.level2{
-  width: 100px;
-  position: absolute;
-  z-index: 10;
-  top: 250px;
-  left: 176px;
-}
-.level3{
-  width: 100px;
-  position: absolute;
-  z-index: 10;
-  top: 171px;
-  left: 150px;
-}
-.level4{
-  width: 100px;
-  position: absolute;
-  z-index: 10;
-  top: 90px;
-  left: 34px;
-}
-.level5{
-  width: 38px;
+
+.level1 {
+    width: 75px;
     position: absolute;
     z-index: 10;
-    top: 189px;
+    top: 234px;
+    left: 259px;
+}
+
+.level {
+    width: 66px;
+}
+
+.level_text {
+    width: 120px;
+    position: absolute;
+    z-index: 10;
+    top: -24px;
+    left: -10%;
+}
+
+.level2 {
+    width: 100px;
+    position: absolute;
+    z-index: 10;
+    top: 170px;
+    left: 176px;
+}
+
+.level3 {
+    width: 100px;
+    position: absolute;
+    z-index: 10;
+    top: 91px;
+    left: 150px;
+}
+
+.level4 {
+    width: 100px;
+    position: absolute;
+    z-index: 10;
+    top: 10px;
+    left: 34px;
+}
+
+.level5 {
+    width: 38px;
+    position: absolute;
+    z-index: 10;
+    top: 109px;
     left: 49px;
 }

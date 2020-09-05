@@ -1,71 +1,80 @@
-
-body{
-  display: flex;
-  width: 100%;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
- 
+body {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
 }
 
-.map{
-  text-align: center;
-  position: relative;
-  height: 700px;
-  right: -20px;
-}
-.terrain{
-  width: 325px;
-  position: relative;
-  top: 20px;
-  z-index: 1;
-  margin-right: -45px;
+table,
+a {
+    width: 95px;
 }
 
-.level1{
-  width: 77px;
-  position: absolute;
-  z-index: 10;
-  top: 318px;
-  left: 160px;
+.map {
+    text-align: center;
+    position: relative;
+    /* height: 700px; */
+    /* right: -20px; */
+    left: 8px;
+}
 
+.terrain {
+    width: 325px;
+    position: relative;
+    /* top: 20px; */
+    z-index: 1;
+    /* margin-right: -45px; */
 }
-.level{
-  width: 102px;
 
+.level1 {
+    width: 77px;
+    position: absolute;
+    z-index: 10;
+    top: 298px;
+    left: 161px;
 }
-.level_text{
-  width: 120px;
-  position: absolute;
-  z-index: 10;
-  top: 3px;
-  left: -5%;
+
+.level {
+    width: 102px;
 }
-.level2{
-  width: 100px;
-  position: absolute;
-  z-index: 10;
-  top: 184px;
-  left: 207px;
+
+.level_text {
+    width: 120px;
+    position: absolute;
+    z-index: 10;
+    top: 3px;
+    left: -5%;
 }
-.level3{
-  width: 100px;
-  position: absolute;
-  z-index: 10;
-  top: 192px;
-  left: 53px;
+
+.level2 {
+    width: 100px;
+    position: absolute;
+    z-index: 10;
+    top: 164px;
+    left: 206px;
 }
-.level4{
-  width: 100px;
-  position: absolute;
-  z-index: 10;
-  top: 64px;
-  left: 41px;
+
+.level3 {
+    width: 100px;
+    position: absolute;
+    z-index: 10;
+    top: 162px;
+    left: 53px;
 }
-.level5{
-  width: 54px;
-  position: absolute;
-  z-index: 10;
-  top: 150px;
-  left: 178px;
+
+.level4 {
+    width: 100px;
+    position: absolute;
+    z-index: 10;
+    top: 44px;
+    left: 41px;
+}
+
+.level5 {
+    width: 54px;
+    position: absolute;
+    z-index: 10;
+    top: 130px;
+    left: 178px;
 }

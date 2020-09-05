@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../../CSS/map/counties.css">
     <link rel="stylesheet" href="../../CSS/interface.css">
     <link rel="stylesheet" href="../../CSS/icon.css">
+    <script src="./centralRegionjs/miaoli.js"></script>
     <title>Document</title>
 </head>
 
@@ -29,7 +30,7 @@
     }
 </style>
 
-<body class="style" background="../../image/map/kraftPaper5.png">
+<body class="style" background="../../image/map/kraftPaper5.png" onload="checkZhuyin()">
     <table class="features">
         <tr>
             <td colspan="2" style="font-size: 40px;text-align: center;">苗栗地區</td>
@@ -54,31 +55,36 @@
     <div class="map">
         <img class="terrain" src="../../image/map/Miaoli1.png" />
         <div class="level1">
-            <img class="level" src="../../image/icon/strawberry_dark.png" onclick="location.href='../../view/game/drawzhuyin.html?id=ao&counties=miaoli';mouseDownText(ㄠ);" />
+            <img id="zhuyin" alt="ㄠ" class="level" src="../../image/icon/strawberry_dark.png" onclick="location.href='../../view/game/drawzhuyin.html?id=ao&counties=miaoli';mouseDownText(ㄠ);" />
             <img class="level_text" src="../../image/chinese_alphabet/ao.png" onclick="location.href='../../view/game/drawzhuyin.html?id=ao&counties=miaoli';mouseDownText(ㄠ);" />
         </div>
         <div class="level2">
-            <img class="level" src="../../image/icon/strawberry_dark.png" onclick="location.href='../../view/game/drawzhuyin.html?id=ou&counties=miaoli';mouseDownText(ㄡ);" />
+            <img id="zhuyin" alt="ㄡ" class="level" src="../../image/icon/strawberry_dark.png" onclick="location.href='../../view/game/drawzhuyin.html?id=ou&counties=miaoli';mouseDownText(ㄡ);" />
             <img class="level_text" src="../../image/chinese_alphabet/ou.png" onclick="location.href='../../view/game/drawzhuyin.html?id=ou&counties=miaoli';mouseDownText(ㄡ);" />
         </div>
-        <div class="level3"> <img class="level" src="../../image/icon/strawberry_dark.png" onclick="location.href='../../view/game/drawzhuyin.html?id=an&counties=miaoli';mouseDownText(ㄢ);" />
+        <div class="level3"> 
+            <img id="zhuyin" alt="ㄢ" class="level" src="../../image/icon/strawberry_dark.png" onclick="location.href='../../view/game/drawzhuyin.html?id=an&counties=miaoli';mouseDownText(ㄢ);" />
             <img class="level_text" src="../../image/chinese_alphabet/an.png" onclick="location.href='../../view/game/drawzhuyin.html?id=an&counties=miaoli';mouseDownText(ㄢ);" />
         </div>
 
-        <div class="level4"> <img class="level" src="../../image/icon/strawberry_dark.png" onclick="location.href='../../view/game/drawzhuyin.html?id=en&counties=miaoli';mouseDownText(ㄣ);" />
+        <div class="level4">
+            <img id="zhuyin" alt="ㄣ" class="level" src="../../image/icon/strawberry_dark.png" onclick="location.href='../../view/game/drawzhuyin.html?id=en&counties=miaoli';mouseDownText(ㄣ);" />
             <img class="level_text" src="../../image/chinese_alphabet/en.png" onclick="location.href='../../view/game/drawzhuyin.html?id=en&counties=miaoli';mouseDownText(ㄣ);" />
         </div>
 
-        <div class="level5"> <img class="level" src="../../image/icon/strawberry_dark.png" onclick="location.href='../../view/game/drawzhuyin.html?id=ang&counties=miaoli';mouseDownText(ㄤ);" />
+        <div class="level5"> 
+            <img id="zhuyin" alt="ㄤ" class="level" src="../../image/icon/strawberry_dark.png" onclick="location.href='../../view/game/drawzhuyin.html?id=ang&counties=miaoli';mouseDownText(ㄤ);" />
             <img class="level_text" src="../../image/chinese_alphabet/ang.png" onclick="location.href='../../view/game/drawzhuyin.html?id=ang&counties=miaoli';mouseDownText(ㄤ);" />
         </div>
 
 
-        <div class="level6"> <img class="level" src="../../image/icon/strawberry_dark.png" onclick="location.href='../../view/game/drawzhuyin.html?id=eng&counties=miaoli';mouseDownText(ㄥ);" />
+        <div class="level6"> 
+            <img id="zhuyin" alt="ㄥ" class="level" src="../../image/icon/strawberry_dark.png" onclick="location.href='../../view/game/drawzhuyin.html?id=eng&counties=miaoli';mouseDownText(ㄥ);" />
             <img class="level_text" src="../../image/chinese_alphabet/eng.png" onclick="location.href='../../view/game/drawzhuyin.html?id=eng&counties=miaoli';mouseDownText(ㄥ);" />
         </div>
 
-        <div class="level7"> <img class="level" src="../../image/icon/strawberry_dark.png" onclick="location.href='../../view/game/drawzhuyin.html?id=er&counties=miaoli';mouseDownText(ㄦ);" />
+        <div class="level7"> 
+            <img id="zhuyin" alt="ㄦ" class="level" src="../../image/icon/strawberry_dark.png" onclick="location.href='../../view/game/drawzhuyin.html?id=er&counties=miaoli';mouseDownText(ㄦ);" />
             <img class="level_text" src="../../image/chinese_alphabet/er.png" onclick="location.href='../../view/game/drawzhuyin.html?id=er&counties=miaoli';mouseDownText(ㄦ);" />
         </div>
         <div class="level8">

@@ -1,7 +1,8 @@
 const express = require('express')
 const app = express()
 const es = require('event-stream')
-const { spawn, spawnSync } = require("child_process")
+const { spawn, spawnSync } = require("child_process");
+const { Question } = require('./node/model/api');
 
 // const api = require('./model/api'); api
 // const iconv = require('iconv-lite')
@@ -69,7 +70,6 @@ function callPythonProcess(req, res) {
 function startSpeak(
     callbackWhenCanSpeak,
     callbackWhenAnaysisVoice,
-    // callbackWhenAskWhatIsThat,
     callbackWhenSuccess
 ) {
     const process = spawn('python', ["-u", "./dialogFlow-perfect.py"]);
@@ -83,13 +83,12 @@ function startSpeak(
     process.stdout.on('data', (data) => {
         // console.log("python data => "+data)
         const result = data.toString('utf8')
-        console.log("python result => " + result)
+            // console.log("python result => " + result)
         if (result.includes('Speak Now!')) {
             // setTimeout(function() {callbackWhenCanSpeak()}, 2000)
             callbackWhenCanSpeak()
             console.log("python result 3 => " + result)
         }
-
         if (result.includes('Google Speech Recognition thinks you said:')) {
 
             // setTimeout(function() {callbackWhenAnaysisVoice()}, 3000)
@@ -97,44 +96,21 @@ function startSpeak(
             console.log("python result 4 => " + result)
         }
 
-        if (result.includes('data[Q]')) {
-            q = result.split('=')[1]
-                // const [q, a] = result.split('\n').map((el) => el.split('=')[1])
-                // console.log("python result 2 => "+result)
-                // if(a=='TurnToOpenCamera'){
-                //   callbackWhenAskWhatIsThat()
-                // }
-                //   api.Question.addQa(1, q, a, "", "知識", (event) => {
-                //     console.log("callback=" + JSON.stringify(event));
-                // });
-                // process.kill()
-
-            // setTimeout(function() {callbackWhenSuccess({ q, a })}, 4000)
-            // callbackWhenSuccess({ q, a })
-        }
-
-        if (result.includes('data[A]')) {
-            a = result.split('=')[1]
-                // callbackWhenSuccess({ q, a })
-                // process.kill()
-        }
-
-        // if (result.includes('data[QName]')) {
-        //     QName = result.split('=')[1]
-        //         // callbackWhenSuccess({ q, a })
-        //         // process.kill()
-        // }
-
-        if (result.includes('data[url]')) {
-            url = result.split('=')[1]
-        }
-
-        if (result.includes('data[keyWord]')) {
-            keyWord = result.split('=')[3]
-            callbackWhenSuccess({ q, a, url, keyWord })
+        if (result.includes("Question")) {
+            console.log("Json No3 :" + typeof(result))
+            callbackWhenSuccess(JSON.parse(result))
             process.kill()
         }
     })
+}
+
+function isJsonString(str) {
+    try {
+        if (typeof JSON.parse(str) == "object") {
+            return true;
+        }
+    } catch (e) {}
+    return false;
 }
 
 module.exports = {

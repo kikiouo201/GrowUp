@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GrowUp學習趣</title>
-    <link rel="stylesheet" href="../../CSS/map/pingtung.css">
     <link rel="stylesheet" href="../../CSS/map/counties.css">
+    <link rel="stylesheet" href="../../CSS/map/pingtung.css">
     <link rel="stylesheet" href="../../CSS/interface.css">
     <link rel="stylesheet" href="../../CSS/icon.css">
 </head>
@@ -15,11 +15,11 @@
         background-color: aliceblue;
         width: 320px;
         height: 400px;
-        margin-top: -51px;
+        /* margin-top: -51px; */
         margin-left: -30px;
     }
-
-    .map_location{
+    
+    .map_location {
         width: 16px;
         position: absolute;
         top: 122px;
@@ -27,29 +27,30 @@
         left: 29px;
     }
 </style>
+
 <body class="style" background="../../image/map/kraftPaper5.png">
     <table class="features">
         <tr>
             <td colspan="2" style="font-size: 40px;text-align: center;">屏東地區</td>
         </tr>
-        <tr>
+        <tr style="display: none;">
             <td>特色</td>
             <td>資訊介紹</td>
         </tr>
         <tr>
-            <td><img src="../../image/map/Pingtung_origin.png" onclick="featuresText('屏東地區')" />屏東地區</td>
+            <td><img src="../../image/map/Pingtung_origin.png" style="width: 35px;" onclick="featuresText('屏東地區')" /><a style="display: block;">屏東地區</a></td>
             <td id="information" rowspan="4" valign="top" style="font-size:x-large;">
                 &emsp;&emsp;屏東地區，位於臺灣西南部最南端，也是臺灣西部南北最狹長的縣份，地處熱帶地區，富有熱帶風情。
             </td>
         </tr>
         <tr>
-            <td><img src="../../image/icon/black_tuna.png" onclick="featuresText('黑鮪魚')" />黑鮪魚</td>
+            <td><img src="../../image/icon/black_tuna.png" onclick="featuresText('黑鮪魚')" /><a style="display: block;">黑鮪魚</a></td>
         </tr>
         <tr>
-            <td><img src="../../image/map_icon/Pingtung_aquarium.png" onclick="featuresText('國立海洋生物博物館')" />國立海洋生物博物館</td>
+            <td><img src="../../image/map_icon/Pingtung_aquarium.png" onclick="featuresText('國立海洋生物博物館')" /><a style="display: block;">國立海洋生物博物館</a></td>
         </tr>
         <tr>
-            <td><img src="../../image/map_icon/Pingtung_bridge.png" onclick="featuresText('大鵬灣跨海大橋')" />大鵬灣跨海大橋</td>
+            <td><img src="../../image/map_icon/Pingtung_bridge.png" onclick="featuresText('大鵬灣跨海大橋')" /><a style="display: block;">大鵬灣</a><a style="display: block;">跨海大橋</a></td>
         </tr>
 
     </table>

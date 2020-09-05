@@ -120,7 +120,7 @@ a {
 }
 
 .goodBaby_regard_value {
-    width: 67%;
+    width: 0%;
     position: absolute;
     height: 7%;
     border-radius: 40px 0px 0px 40px;
@@ -165,8 +165,8 @@ a {
     border-radius: 12px;
 }
 
-.cardStatus {
-    width: 33.33%;
+.CameracardStatus {
+    width: 0%;
     /* position: absolute; */
     height: 100%;
     border-radius: 40px 40px 40px 40px;
@@ -177,6 +177,36 @@ a {
     display: inline-block;
     /* margin-left: 12px; */
 }
+
+.SpeechcardStatus {
+    width: 0%;
+    /* position: absolute; */
+    height: 100%;
+    border-radius: 40px 40px 40px 40px;
+    /* border-color: darkred; */
+    /* border-style: solid; */
+    background-color: #6c8eff;
+    /* border-width: 2px; */
+    display: inline-block;
+    /* margin-left: 12px; */
+}
+
+.speech_success_icon{
+    position: absolute;
+    top: 22%;
+    left: 0%;
+    height: auto;
+    width: 13.5%;
+    visibility: hidden;
+}
+
+.camera_success_icon{
+    position: absolute; 
+    height: auto;
+    width: 13.5%; 
+    visibility: hidden;
+}
+
 
 .card:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
