@@ -3,7 +3,7 @@
   width: 60px;
   height: 60px;
   bottom: 10px;
-  right: 8px;
+  left: 8px;
   background-color: rgb(211, 211, 211);
   color: #FFF;
   border-radius: 999em;
@@ -30,7 +30,7 @@
   width: 60px;
   height: 60px;
   bottom: 10px;
-  right: 80px;
+  right: 8px;
   background-color: rgb(211, 211, 211);
   color: #FFF;
   border-radius: 999em;
