@@ -75,10 +75,11 @@ video {
 
 .speaker {
     position: absolute;
-    left: -60px;
-    bottom: 10px;
-    height: 40px;
+    right: 10px;
+    bottom: 130px;
+    height: 50px;
     z-index: 10;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
 }
 
 .tool {
@@ -86,7 +87,7 @@ video {
     right: -85px;
     bottom: 0px;
     width: 70px;
-    height: 130px;
+    height: 195px;
     background-color: khaki;
     border-radius: 7%;
     filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
