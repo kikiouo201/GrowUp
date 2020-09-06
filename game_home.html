@@ -12,6 +12,9 @@
 </head>
 
 <body onload="ShowTime()">
+    <!-- <audio id="myAudio">
+        <source src="./TTS/mp3/treatureList.mp3" type="audio/ogg">
+    </audio> -->
     <div class="home_header">
         <a href="game_home.html">
             <img src="./icons/title.png" style="width: 350px; height: 40px;">
@@ -71,29 +74,29 @@
       </div>
      -->
 
-        <a href="./treature_list.html" onmousedown="mouseDown(this)">
-            <img class="trophy" onclick="document.location.href='./treature_list.html'" src="image/character/treature_list_zhuyin.png" width="170px" alt="寶物清單">
+        <!-- <a href="./treature_list.html" onmousedown="playAudio('treatureList')"> -->
+        <img class="trophy" touchstart="playAudio(this)" onclick="setTimeout(()=>document.location.href='./treature_list.html',1000); playAudio(this)" src="image/character/treature_list_zhuyin.png" width="170px" alt="treatureList">
 
-        </a>
+        <!-- </a> -->
         <img src="./image/character/alert.png" style="width: 62px; position: absolute; bottom: 22%; right: 42%; z-index: 100;">
 
-        <a href="./magic_weapon_voiceAndCapture.html" onmousedown="mouseDown(this)">
-            <img class="farm" onclick="document.location.href='./magic_weapon_voiceAndCapture.html'" src="image/character/magic_QA_zhuyin.png" width="170px" alt="問題法寶">
-        </a>
+        <!-- <a href="./magic_weapon_voiceAndCapture.html" onmousedown="mouseDown(this)"> -->
+        <img class="farm" touchstart="playAudio(this)" onclick="setTimeout(()=>document.location.href='./magic_weapon_voiceAndCapture.html',1000); playAudio(this)" src="image/character/magic_QA_zhuyin.png" width="170px" alt="questionMagicWeapon">
+        <!-- </a> -->
 
 
 
 
-        <a href="./daily.html" onmousedown="mouseDown(this)">
-            <img class="treature_voice_camera" onclick="document.location.href='./daily.html'" src="image/character/goodKidHomework.png" width="170px" alt="乖寶寶作業">
-        </a>
+        <!-- <a href="./daily.html" onmousedown="mouseDown(this)"> -->
+        <img class="treature_voice_camera" touchstart="playAudio(this)" onclick="setTimeout(()=>document.location.href='./daily.html',1500); playAudio(this)" src="image/character/goodKidHomework.png" width="170px" alt="goodBabyHomeWork">
+        <!-- </a> -->
 
 
 
         <!-- <img src="./image/character/alert.png" style="width: 62px;z-index: 100;"> -->
-        <a href="./magicBook/magicBook.html" onmousedown="mouseDown(this)">
-            <img class="magic_treature" onclick="document.location.href='./magicBook/magicBook.html'" src="image/character/magicBook_zhuyin.png" width="170px" alt="魔法寶典">
-        </a>
+        <!-- <a href="./magicBook/magicBook.html" onmousedown="mouseDown(this)"> -->
+        <img class="magic_treature" touchstart="playAudio(this)" onclick="setTimeout(()=>document.location.href='./magicBook/magicBook.html',1000); playAudio(this)" src="image/character/magicBook_zhuyin.png" width="170px" alt="magicBook">
+        <!-- </a> -->
 
 
     </div>
@@ -108,11 +111,12 @@
         }
     </script>
 
-    <div>
-        <a href="./view/level/nantou.html" class="sosfloat" id="menu-share">
-            <i class="fab fa-share my-float"><img src="photo/help.png" width="70%"></i>
+    <!--<div>
+        <a href="../../test1.html" class="sosfloat" id="menu-share">
+            <i class="fab fa-share my-float"><img src="../photo/help.png" width="70%"></i>
         </a>
     </div>
+    -->
 
 </body>
 <script src="game_home.js"></script>

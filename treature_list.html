@@ -100,10 +100,10 @@
 
     <div class="main_area">
         <div class="left_main_area">
-            <p>目前收集到的徽章</p>
-            <!-- <img src="./image/character/bg.png" style="position: absolute; top: 0; left: 0; width: 50%; height: 625px;"> -->
-            <!-- <textarea name="magicCard" cols="20" rows="3" style="background-color: #ffffff00; border-color: #ffffff00;">我我我</textarea> -->
+            <p>徽章</p>
         </div>
+        <img src="./image/character/medal.png" style="width: 60px; position: absolute; left: 130px; top: 17px;">
+
 
         <!-- All icon ifram -->
         <iframe id="AllIconIfram" src="./alreadyCollect_icon.html" frameborder="0" class="collect_icon" style="visibility: hidden;"></iframe>
@@ -121,10 +121,10 @@
 
 
         <div class="right_main_area">
-            <p>目前收集到的魔法小卡</p>
-            <!-- <img src="./image/character/bg.png" style="position: absolute; top: 0; right: 0; width: 50%; height: 625px;"> -->
-
+            <p>魔法小卡</p>
         </div>
+        <img src="./image/character/tarot.png" style="width: 60px; position: absolute; left: 500px; top: 17px;">
+
 
         <div>
             <nav style="display: none;">
@@ -137,13 +137,22 @@
             <nav class="navber navbar-dark bg-dark">
                 <div>
                     <ul>
-                        <li><a href="#bpm_card" style="color: white;">注音</a></li>
+                        <li style="padding: 6px 3px;">
+                            <a href="#bpm_card" style="color: white;">
+                                <img src="./image/character/zhuyin.png" style="width: 46px;"></a>
+                        </li>
                     </ul>
                     <ul>
-                        <li><a href="#abc_card" style="color: white;">英文字母</a></li>
+                        <li>
+                            <a href="#abc_card" style="color: white;">
+                                <img src="./image/character/child.png" style="width: 40px;"></a>
+                        </li>
                     </ul>
                     <ul>
-                        <li><a href="#012_card" style="color: white;">數字</a></li>
+                        <li>
+                            <a href="#012_card" style="color: white; ">
+                                <img src="./image/character/numbers.png" style="width: 40px;"></a>
+                        </li>
                     </ul>
                 </div>
             </nav>
@@ -701,21 +710,6 @@
 
     </div>
 
-    <!-- <div>
-        <button class="magic_word" onclick="">
-            <a href="./SpeechToAsk.html"><img src="./image/character/magic_word.png" width="50%"></a><br>
-            魔咒</button>
-
-        <button class="metal-detector" onclick="">
-            <a href="./camera.html"><img src="./image/character/metal-detector.png" width="50%"></a><br>
-            探測儀</button>
-    </div> -->
-
-    <div class="sos_mark">
-        <a href="./alreadyCollect_icon.html" class="sosfloat" id="menu-share">
-            <i class="fab fa-share my-float"><img src="photo/help.png" width="70%"></i>
-        </a>
-    </div>
 
     <div class="return_mark">
         <a onclick="history.back()" class="returnfloat" id="menu-share">

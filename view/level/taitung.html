@@ -20,7 +20,7 @@
         left: 48px;
     }
 </style>
-<body class="style" background="../../image/map/kraftPaper5.png">
+<body class="style" background="../../image/map/kraftPaper5.png" onload="checkLevelIsPass('hot_air_balloon','taitung')">
     <img class="taiwan" src="../../image/character/Taiwn_small.png" onclick="location.href='../../view/level/taiwan.html'" />
     <img class="map_location" src="../../image/map/map.png" />
     <table class="features">
@@ -54,26 +54,21 @@
     <div class="map">
         <img id="county" class="terrain" src="../../image/map/Taitung1.png" />
         <div class="level1">
-            <img class="level_basic" src="../../image/icon/hot_air_balloon.png" onclick="location.href='../../view/game/pickingUpIsALittleRed.html';mouseDownText('撿紅點');" />
+            <img class="level" alt="pickingUpIsALittleRed" src="../../image/icon/hot_air_balloon.png" onclick="location.href='../../view/game/pickingUpIsALittleRed.html';mouseDownText('撿紅點');" />
             <div class="level_text" onclick="location.href='../../view/game/pickingUpIsALittleRed.html';mouseDownText('撿紅點');">撿紅點</div>
         </div>
         <div class="level2">
-            <img class="level_basic" src="../../image/icon/hot_air_balloon.png" onclick="location.href='../../view/game/puzzle.html';mouseDownText('拼圖');" />
+            <img class="level" alt="puzzle" src="../../image/icon/hot_air_balloon.png" onclick="location.href='../../view/game/puzzle.html';mouseDownText('拼圖');" />
             <div class="level_text" onclick="location.href='../../view/game/puzzle.html';mouseDownText('拼圖');">拼圖</div>
         </div>
 
         <div class="level3">
-            <img class="level" src="../../image/icon/devil_lock.png" onclick="alert('需要先完成縣市所有關卡！')" />
+            <img class="level" alt="taitung" src="../../image/icon/devil_lock.png" onclick="alert('需要先完成縣市所有關卡！')" />
 
         </div>
 
 
 
-        <div>
-            <a href="../../test1.html" class="sosfloat" id="menu-share">
-                <i class="fab fa-share my-float"><img src="../../photo/help.png" width="70%"></i>
-            </a>
-        </div>
         <div>
             <a onclick="history.back()" class="returnfloat" id="menu-share">
                 <i class="fab fa-share return-float"><img src="../../photo/return.png"></i>

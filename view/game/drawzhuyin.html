@@ -35,7 +35,7 @@
 
 
         <img src="../../image/drawZhuyin/b.png" class="word" />
-        <img src="../../icons/speaker.png" class="speaker" onclick="playAudio()" />
+        <!-- <img src="../../icons/speaker.png" class="speaker" onclick="playAudio()" /> -->
         <!-- <video loop="true" autoplay="autoplay"  muted="true">
       <source src="../../image/drawZhuyin/b.mp4" type="video/mp4">
       </video> -->
@@ -43,7 +43,7 @@
             <!-- <canvas class="draw78" width="370px" height="370px"></canvas> -->
             <img src="../../image/drawZhuyin/finger.png" id="finger" />
             <div class="tool">
-                
+                <img src="../../icons/speaker.png" class="speaker" onclick="playAudio()" />
                 <img src="../../image/drawZhuyin/eraser.png" class="reset" onclick="reset();" />
                 <img src="../../image/drawZhuyin/finger.png" class="again" onclick="moveFinger();mouseDownText('ㄅ');" />
             </div>
@@ -85,6 +85,17 @@
 
     <script src="../../model/util/voiceOut.js"></script>
 
+    <div>
+        <a onclick="history.back()" class="returnfloat" id="menu-share">
+            <i class="fab fa-share return-float"><img src="../../photo/return.png"></i>
+        </a>
+    </div>
+    <div>
+        <a href="../../game_home.html" class="homefloat" id="menu-share">
+            <i class="fab fa-share my-float"><img src="../../photo/gobackhome.png" width="70%"></i>
+        </a>
+    </div>
+    <script src="../../model/util/voiceOut.js"></script>
 </body>
 
 </html>

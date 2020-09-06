@@ -242,10 +242,10 @@ let judgmentCriteria = {
 function scoreJudgment(id, x, y, points, num) {
     if (id == null) id = 'b';
     let criterias = judgmentCriteria[id];
-
+    console.log(`x=${x},y=${y}`)
     for (let i = 0; i < criterias.length; i++) {
         let criteria = criterias[i];
-        console.log(`x=${x},y=${y}`)
+      
         if (criteria.y[0] < y && y < criteria.y[1] && criteria.x[0] < x && x < criteria.x[1]) {
             points[i] = 1;
         } else if (points[i] != 1) {

@@ -28,7 +28,7 @@
     }
 </style>
 
-<body class="style" background="../../image/map/kraftPaper5.png">
+<body class="style" background="../../image/map/kraftPaper5.png" onload="checkLevelIsPass('temple','tainan')">
     <table class="features">
         <tr>
             <td colspan="2" style="font-size: 40px;text-align: center;">台南地區</td>
@@ -61,29 +61,27 @@
         <img class="terrain" src="../../image/map/Tainan1.png" />
 
         <div class="level1">
-            <img class="level_basic" src="../../image/icon/temple.png" onclick="location.href='../../view/game/drawzhuyin.html?id=4&counties=tainan';mouseDownText(4);" />
+            <img class="level" alt="4" src="../../image/icon/temple.png" onclick="location.href='../../view/game/drawzhuyin.html?id=4&counties=tainan';mouseDownText(4);" />
             <img class="level_text" src="../../image/numbers/4.png" onclick="location.href='../../view/game/drawzhuyin.html?id=4&counties=tainan';mouseDownText(4);" />
         </div>
-        <div class="level2"><img class="level_basic" src="../../image/icon/temple.png" onclick="location.href='../../view/game/drawzhuyin.html?id=5&counties=tainan';mouseDownText(5);" />
+        <div class="level2">
+            <img class="level" alt="5" src="../../image/icon/temple.png" onclick="location.href='../../view/game/drawzhuyin.html?id=5&counties=tainan';mouseDownText(5);" />
             <img class="level_text" src="../../image/numbers/5.png" onclick="location.href='../../view/game/drawzhuyin.html?id=5&counties=tainan';mouseDownText(5);" />
         </div>
 
-        <div class="level3"> <img class="level_basic" src="../../image/icon/temple.png" onclick="location.href='../../view/game/drawzhuyin.html?id=6&counties=tainan';mouseDownText(6);" />
+        <div class="level3"> 
+            <img class="level" alt="6" src="../../image/icon/temple.png" onclick="location.href='../../view/game/drawzhuyin.html?id=6&counties=tainan';mouseDownText(6);" />
             <img class="level_text" src="../../image/numbers/6.png" onclick="location.href='../../view/game/drawzhuyin.html?id=6&counties=tainan';mouseDownText(6);" />
         </div>
         <div class="level4">
-            <img class="level" src="../../image/icon/devil.png" onclick="alert('需要先完成縣市所有關卡！')" />
+            <img class="level level_basic" alt="tainan" src="../../image/icon/devil.png" onclick="alert('需要先完成縣市所有關卡！')" />
 
         </div>
         、
     </div>
     <img class="taiwan" src="../../image/character/Taiwn_small.png" onclick="location.href='../../view/level/taiwan.html'" />
     <img class="map_location" src="../../image/map/map.png" />
-    <div>
-        <a href="../../test1.html" class="sosfloat" id="menu-share">
-            <i class="fab fa-share my-float"><img src="../../photo/help.png" width="70%"></i>
-        </a>
-    </div>
+   
     <div>
         <a onclick="history.back()" class="returnfloat" id="menu-share">
             <i class="fab fa-share return-float"><img src="../../photo/return.png"></i>
