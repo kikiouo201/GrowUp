@@ -2,7 +2,55 @@ const parent_recommend = document.querySelector("#parent_recommend");
 const machine_recommend = document.querySelector("#machine_recommend");
 const else_book = document.querySelector("#else_book");
 
+const parent_tab = document.querySelector("#parent_tab");
+const machine_tab = document.querySelector("#machine_tab");
+const else_tab = document.querySelector("#else_tab");
+
 let par_book;
+
+function tabClick(temp) {
+  if (temp == 1) {
+    parent_recommend.style.display = "block";
+    parent_tab.style.boxShadow = "15px 30px 20px #342727";
+    parent_tab.style.backgroundColor = 'rgb(223, 192, 140)';
+
+    machine_recommend.style.display = "none"
+    machine_tab.style.boxShadow =  ""
+    machine_tab.style.backgroundColor = 'rgb(255, 182, 160)';
+
+
+    else_book.style.display = "none"
+    else_tab.style.boxShadow =  ""
+    else_tab.style.backgroundColor = 'rgb(206, 255, 160)';
+
+
+  } else if (temp == 2) {
+    parent_recommend.style.display = "none"
+    parent_tab.style.boxShadow =  ""
+    parent_tab.style.backgroundColor = 'rgb(255, 220, 160)';
+
+    machine_recommend.style.display = "block"
+    machine_tab.style.boxShadow = "15px 30px 20px #342727"
+    machine_tab.style.backgroundColor = 'rgb(209, 149, 131)';
+
+    else_book.style.display = "none"
+    else_tab.style.boxShadow =  ""
+    else_tab.style.backgroundColor = 'rgb(206, 255, 160)';
+  } else {
+    parent_recommend.style.display = "none"
+    parent_tab.style.boxShadow =  ""
+    parent_tab.style.backgroundColor = 'rgb(255, 220, 160)';
+
+    machine_recommend.style.display = "none"
+    machine_tab.style.boxShadow =  ""
+    machine_tab.style.backgroundColor = 'rgb(255, 182, 160)';
+
+    else_book.style.display = "block"
+    else_tab.style.boxShadow = "15px 30px 20px #342727"
+    else_tab.style.backgroundColor = 'rgb(173, 214, 134)';
+
+  }
+}
 
 ipcRenderer.send('getPictureData', 1);
 ipcRenderer.once('retruePictureData', (event, data) => {
@@ -58,26 +106,7 @@ ipcRenderer.once('retruePictureData', (event, data) => {
 
   }
 })
-
 // onclick="window.location.hash = '#else_book'"
-function tabClick(temp) {
-  if (temp == 1) {
-    parent_recommend.style.display = "block"
-    machine_recommend.style.display = "none"
-    else_book.style.display = "none"
-  } else if (temp == 2) {
-    parent_recommend.style.display = "none"
-    machine_recommend.style.display = "block"
-    else_book.style.display = "none"
-  } else {
-    parent_recommend.style.display = "none"
-    machine_recommend.style.display = "none"
-    else_book.style.display = "block"
-
-  }
-}
-
-
 ipcRenderer.send('getMachineData', 1);
 ipcRenderer.once('retrueMachineData', (event, data) => {
   // console.log(par_book);
