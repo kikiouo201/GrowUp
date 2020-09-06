@@ -89,7 +89,7 @@ if (voiceBtn) {
 
             // console.log("QName =>" + data.QName)
             // debugger
-            QA_card.innerHTML = QA_card.innerHTML + createQA(data['Question'], data['Answer_pic'], data['Answer']);
+            // QA_card.innerHTML = QA_card.innerHTML + createQA(data['Question'], data['Answer_pic'], data['Answer']);
 
 
 
@@ -107,6 +107,8 @@ if (voiceBtn) {
                 setTimeout(document.location.href = "./view/gophers.html", 5000);
                 console.log("gophers true")
             } else if (data['Question'].toString().trim().includes('蘋果')) {
+                QA_card.innerHTML = QA_card.innerHTML + createQA(data['Question'], data['Answer_pic'], "落業喬木。葉軟形，邊緣有細尖鋸齒。果實球形，味美，可食，也可製酒。");
+
                 console.log()
                 let pictureBook = document.querySelector('#pictureText_' + click_num);
 
@@ -148,6 +150,8 @@ if (voiceBtn) {
 
                 }
             } else if (data['Question'].toString().trim().includes('香蕉')) {
+                QA_card.innerHTML = QA_card.innerHTML + createQA(data['Question'], data['Answer_pic'], "植物名。芭蕉科芭蕉屬，多年生草本。莖短，葉長而寬，夏秋間自偽莖抽出大花軸，上部為雄花，下部為雌花，花色淡黃。果實為長形，稍彎，味香甜，亦稱為「香蕉」。");
+
                 console.log()
                 let pictureBook = document.querySelector('#pictureText_' + click_num);
 
@@ -169,6 +173,8 @@ if (voiceBtn) {
 
                 }
             } else if (data['Question'].toString().trim().includes('水果')) {
+                QA_card.innerHTML = QA_card.innerHTML + createQA(data['Question'], data['Answer_pic'], "可以生食，內含有漿液的果實。如橘子、梨子、西瓜、鳳梨等。");
+
                 console.log()
                 let pictureBook = document.querySelector('#pictureText_' + click_num);
 
@@ -178,9 +184,79 @@ if (voiceBtn) {
                     <p class="book_css">嘟嘟~水果列車出發</p>
                     <img class="speaker_A" onclick="speakerBookName(this)" id="speaker_A" src="icons/speaker.png" style="margin-top: -55px" />
     
-                    <img src="https://children.moc.gov.tw/resource/animate_image/6924.jpg" style="margin-left: 20px; display: inline;" width="180" height="153" alt="勇敢小火車：卡爾的特別任務">
+                    <img src="https://children.moc.gov.tw/resource/animate_image/6925.jpg" style="margin-left: 20px; display: inline;" width="180" height="153" alt="勇敢小火車：卡爾的特別任務">
                     <p style="display: inline; margin-left: 20px; margin-top: -5px; position: absolute; margin-right: 40px;">
                     卡爾的特別任務－勇敢是，「帶著害怕前進」勇敢是，「不對自己說不可能」勇敢是，「愛的陪伴與分享」　　這裡是咕咕鎮的火車貨運站，也是藍色小火車卡爾和媽媽溫蒂工作的地方。　　這天，店裡來了一位很特別的客人...</p>
+                    <img class="speaker_A" onclick="speakerBook(this)" id="speaker_A" src="icons/speaker.png" style="margin-top: 131px; display: inline; bottom: 31px;" />
+    
+                </div>
+                <div class="card-header" id="QA_num_">
+                
+                </div>`
+
+
+                }
+            } else if (data['Question'].toString().trim().includes('獅子')) {
+                QA_card.innerHTML = QA_card.innerHTML + createQA(data['Question'], data['Answer_pic'], "動物名。哺乳綱食肉目貓科。多分布於印度及非洲一帶。身長約二、三公尺，頭圓肩闊，四肢強健，有鉤爪，尾細長。雄獅頭至頸部有鬣，雌獅體型較小，無鬣。營社會生活。以大型草食性動物為主食。");
+
+                console.log()
+                let pictureBook = document.querySelector('#pictureText_' + click_num);
+
+                if (pictureBook) {
+                    pictureBook.innerHTML += `<div class="card-header contentCss" id="QA_num_" style="background-color: #f8f9fa24; padding-bottom: 40px;">
+                    <p class="contentlink">相關繪本連結：</p>
+                    <p class="book_css">小獅子多多</p>
+                    <img class="speaker_A" onclick="speakerBookName(this)" id="speaker_A" src="icons/speaker.png" style="margin-top: -55px" />
+    
+                    <img src="https://children.moc.gov.tw/resource/animate_image/6737.jpg" style="margin-left: 20px; display: inline;" width="180" height="153" alt="勇敢小火車：卡爾的特別任務">
+                    <p style="display: inline; margin-left: 20px; margin-top: -5px; position: absolute; margin-right: 40px;">
+                    有一天，森林裡突然發生大火，小獅子多多奮不顧身的搶救同伴。但是多多美麗的鬃毛，卻被燒毀…他很難過，很傷心，他覺得自己的樣子變得很醜，一定沒有人會喜歡他。真的會這樣嗎？</p>
+                    <img class="speaker_A" onclick="speakerBook(this)" id="speaker_A" src="icons/speaker.png" style="margin-top: 131px; display: inline; bottom: 31px;" />
+    
+                </div>
+                <div class="card-header" id="QA_num_">
+                
+                </div>`
+
+                }
+            } else if (data['Question'].toString().trim().includes('桃子')) {
+                QA_card.innerHTML = QA_card.innerHTML + createQA(data['Question'], data['Answer_pic'], "植物名。薔薇科櫻屬，落葉小喬木。高約三公尺，葉橢圓而長。春初開花，有白、紅二色。果實亦稱為「桃」，呈圓形，頂端有尖，味酸可口。");
+
+                console.log()
+                let pictureBook = document.querySelector('#pictureText_' + click_num);
+
+                if (pictureBook) {
+                    pictureBook.innerHTML += `<div class="card-header contentCss" id="QA_num_" style="background-color: #f8f9fa24; padding-bottom: 40px;">
+                    <p class="contentlink">相關繪本連結：</p>
+                    <p class="book_css">誰先吃桃子</p>
+                    <img class="speaker_A" onclick="speakerBookName(this)" id="speaker_A" src="icons/speaker.png" style="margin-top: -55px" />
+    
+                    <img src="https://children.moc.gov.tw/resource/book_image/218933.jpg" style="margin-left: 20px; display: inline;" width="180" height="153" alt="勇敢小火車：卡爾的特別任務">
+                    <p style="display: inline; margin-left: 20px; margin-top: -5px; position: absolute; margin-right: 40px;">
+                    森林裡的動物都想吃紅咚咚、香噴噴的大桃子，但誰有資格先吃呢？是個子最高的，還是體重最重的？是嘴巴最大的，還是耳朵最長的……最後的發展絕對出乎你的意料！數學能帶來新觀點：孩子讀過各類的數學繪本後，不僅...</p>
+                    <img class="speaker_A" onclick="speakerBook(this)" id="speaker_A" src="icons/speaker.png" style="margin-top: 131px; display: inline; bottom: 31px;" />
+    
+                </div>
+                <div class="card-header" id="QA_num_">
+                
+                </div>`
+
+                }
+            } else if (data['Question'].toString().trim().includes('杯子')) {
+                QA_card.innerHTML = QA_card.innerHTML + createQA(data['Question'], data['Answer_pic'], "可盛裝液體或其他物品的小型容器。");
+
+                console.log()
+                let pictureBook = document.querySelector('#pictureText_' + click_num);
+
+                if (pictureBook) {
+                    pictureBook.innerHTML += `<div class="card-header contentCss" id="QA_num_" style="background-color: #f8f9fa24; padding-bottom: 40px;">
+                    <p class="contentlink">相關繪本連結：</p>
+                    <p class="book_css">杯杯英雄</p>
+                    <img class="speaker_A" onclick="speakerBookName(this)" id="speaker_A" src="icons/speaker.png" style="margin-top: -55px" />
+    
+                    <img src="https://children.moc.gov.tw/resource/animate_image/6979.png" style="margin-left: 20px; display: inline;" width="180" height="153" alt="勇敢小火車：卡爾的特別任務">
+                    <p style="display: inline; margin-left: 20px; margin-top: -5px; position: absolute; margin-right: 40px;">
+                    杯杯王國，有個傳說，誰能爬上廣場中央的高塔，就是杯杯英雄。英雄要有智慧、英雄要有超人體格、英雄要有領導力、英雄要堅持夢想……到底誰能當上英雄？反諷的寓言故事，令人深省、又不覺莞爾。波隆那拉加茲獎得主...</p>
                     <img class="speaker_A" onclick="speakerBook(this)" id="speaker_A" src="icons/speaker.png" style="margin-top: 131px; display: inline; bottom: 31px;" />
     
                 </div>
@@ -319,7 +395,7 @@ function searchImg(keyword) {
             executablePath: '/usr/bin/chromium-browser',
             // executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
             // args: ['--start-fullscreen'],
-            headless: true
+            headless: false
         });
         const page = await browser.newPage();
         await page.goto("https:\/\/www.google.com.tw/search?q=" + keyword + "&tbm=isch&ved=2ahUKEwj2p87NgdDrAhXOzIsBHc45DzQQ2-cCegQIABAA&oq=ppo;l&gs_lcp=CgNpbWcQAzoFCAAQsQM6AggAOgQIABATUMj_AViuhwJg_YwCaABwAHgAgAGBAYgBtAaSAQM1LjSYAQCgAQGqAQtnd3Mtd2l6LWltZ8ABAQ&sclient=img&ei=nXdSX7blMM6Zr7wPzvO8oAM&bih=577&biw=1034&hl=zh-TW");
