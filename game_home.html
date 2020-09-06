@@ -12,9 +12,9 @@
 </head>
 
 <body onload="ShowTime()">
-    <audio id="myAudio">
+    <!-- <audio id="myAudio">
         <source src="./TTS/mp3/treatureList.mp3" type="audio/ogg">
-    </audio>
+    </audio> -->
     <div class="home_header">
         <a href="game_home.html">
             <img src="./icons/title.png" style="width: 350px; height: 40px;">
@@ -75,27 +75,27 @@
      -->
 
         <!-- <a href="./treature_list.html" onmousedown="playAudio('treatureList')"> -->
-        <img class="trophy" onmousedown="playAudio(this)" onclick="document.location.href='./treature_list.html'; playAudio(this)" src="image/character/treature_list_zhuyin.png" width="170px" alt="treatureList">
+        <img class="trophy" touchstart="playAudio(this)" onclick="document.location.href='./treature_list.html'; playAudio(this)" src="image/character/treature_list_zhuyin.png" width="170px" alt="treatureList">
 
         <!-- </a> -->
         <img src="./image/character/alert.png" style="width: 62px; position: absolute; bottom: 22%; right: 42%; z-index: 100;">
 
         <!-- <a href="./magic_weapon_voiceAndCapture.html" onmousedown="mouseDown(this)"> -->
-        <img class="farm" onmousedown="playAudio(this)" onclick="document.location.href='./magic_weapon_voiceAndCapture.html'; playAudio(this)" src="image/character/magic_QA_zhuyin.png" width="170px" alt="questionMagicWeapon">
+        <img class="farm" touchstart="playAudio(this)" onclick="document.location.href='./magic_weapon_voiceAndCapture.html'; playAudio(this)" src="image/character/magic_QA_zhuyin.png" width="170px" alt="questionMagicWeapon">
         <!-- </a> -->
 
 
 
 
         <!-- <a href="./daily.html" onmousedown="mouseDown(this)"> -->
-        <img class="treature_voice_camera" onmousedown="playAudio(this)" onclick="playAudio(this);document.location.href='./daily.html'" src="image/character/goodKidHomework.png" width="170px" alt="goodBabyHomeWork">
+        <img class="treature_voice_camera" touchstart="playAudio(this)" onclick="playAudio(this);document.location.href='./daily.html'" src="image/character/goodKidHomework.png" width="170px" alt="goodBabyHomeWork">
         <!-- </a> -->
 
 
 
         <!-- <img src="./image/character/alert.png" style="width: 62px;z-index: 100;"> -->
         <!-- <a href="./magicBook/magicBook.html" onmousedown="mouseDown(this)"> -->
-        <img class="magic_treature" onmousedown="playAudio(this)" onclick="playAudio(this); document.location.href='./magicBook/magicBook.html'" src="image/character/magicBook_zhuyin.png" width="170px" alt="magicBook">
+        <img class="magic_treature" touchstart="playAudio(this)" onclick="playAudio(this); document.location.href='./magicBook/magicBook.html'" src="image/character/magicBook_zhuyin.png" width="170px" alt="magicBook">
         <!-- </a> -->
 
 
