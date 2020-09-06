@@ -316,7 +316,8 @@ const puppeteer = require('puppeteer');
 function searchImg(keyword) {
     (async() => {
         let browser = await puppeteer.launch({
-            executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
+            executablePath: '/usr/bin/chromium-browser',
+            // executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
             // args: ['--start-fullscreen'],
             headless: true
         });
