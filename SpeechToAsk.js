@@ -265,6 +265,9 @@ if (voiceBtn) {
                 </div>`
 
                 }
+            } else {
+                QA_card.innerHTML = QA_card.innerHTML + createQA(data['Question'], data['Answer_pic'], data['Answer']);
+
             }
 
             console.log("data=" + data)
