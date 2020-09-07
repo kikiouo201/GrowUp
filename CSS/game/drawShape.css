@@ -749,3 +749,266 @@
     }
 
 }
+
+
+/* ㄐ */
+.fingerj {
+  visibility: visible;
+  width: 50px;
+  height: 100px;
+  transform: rotate(300deg);
+  position: absolute;
+  top: 70px;
+  left: 125px;
+  z-index: 30;
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+}
+
+
+.moveFingerj {
+  width: 50px;
+  height: 100px;
+  transform: scale(4);
+  transition: all 1s ease-out;
+  transform: rotate(300deg);
+  position: absolute;
+  top: 70px;
+  left: 125px;
+  z-index: 10;
+  /* animation-delay: 1s; */
+  animation-name: drawj;
+  animation-duration:2s;
+  animation-fill-mode:forwards;
+  animation-timing-function:linear;
+  /* animation-iteration-count:infinite; */
+  /* animation-timing-function:step-start; */
+}
+
+@keyframes drawj{
+   
+    0%{
+      top: 70px;
+      left: 125px;
+    }
+    33%{
+      top: 160px;
+      left: 125px;
+      
+    }
+    38.5%{
+      top: 165px;
+      left: 135px;
+      
+    }
+    66%{
+      top: 135px;
+      left: 195px;
+      visibility: hidden;
+    }
+    66.5%{
+      visibility: visible;
+      top: 45px;
+      left: 205px;
+    }
+    100%{
+      top: 215px;
+      left: 205px;
+      visibility: hidden;
+    }
+
+}
+
+
+/* ㄑ */
+.fingerq {
+  visibility: visible;
+  width: 50px;
+  height: 100px;
+  transform: rotate(300deg);
+  position: absolute;
+  top: 50px;
+  left: 195px;
+  z-index: 30;
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+}
+
+
+.moveFingerq {
+  width: 50px;
+  height: 100px;
+  transform: scale(4);
+  transition: all 1s ease-out;
+  transform: rotate(300deg);
+  position: absolute;
+  top: 50px;
+  left: 195px;
+  z-index: 10;
+  /* animation-delay: 1s; */
+  animation-name: drawq;
+  animation-duration:2s;
+  animation-fill-mode:forwards;
+  animation-timing-function:linear;
+  /* animation-iteration-count:infinite; */
+  /* animation-timing-function:step-start; */
+}
+
+@keyframes drawq{
+   
+    0%{
+      top: 50px;
+      left: 195px;
+    }
+    50%{
+      top: 130px;
+      left: 125px;
+      
+    }
+    100%{
+      top: 210px;
+      left: 195px;
+      visibility: hidden;
+    }
+
+}
+
+
+
+/* ㄒ */
+.fingerx {
+  visibility: visible;
+  width: 50px;
+  height: 100px;
+  transform: rotate(300deg);
+  position: absolute;
+  top: 70px;
+  left: 105px;
+  z-index: 30;
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+}
+
+
+.moveFingerx {
+  width: 50px;
+  height: 100px;
+  transform: scale(4);
+  transition: all 1s ease-out;
+  transform: rotate(300deg);
+  position: absolute;
+  top: 70px;
+  left: 105px;
+  z-index: 10;
+  /* animation-delay: 1s; */
+  animation-name: drawx;
+  animation-duration:2s;
+  animation-fill-mode:forwards;
+  animation-timing-function:linear;
+  /* animation-iteration-count:infinite; */
+  /* animation-timing-function:step-start; */
+}
+
+@keyframes drawx{
+   
+    0%{
+      top: 70px;
+      left: 105px;
+    }
+    50%{
+      top: 50px;
+      left: 225px;
+      visibility: hidden;
+    }
+    50.5%{
+      visibility: visible;
+      top: 65px;
+      left: 175px;
+    }
+    100%{
+      top: 195px;
+      left: 175px;
+      visibility: hidden;
+    }
+
+}
+
+
+
+/* ㄓ */
+.fingerzhi {
+  visibility: visible;
+  width: 50px;
+  height: 100px;
+  transform: rotate(300deg);
+  position: absolute;
+  top: 75px;
+  left: 115px;
+  z-index: 30;
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+}
+
+
+.moveFingerzhi {
+  width: 50px;
+  height: 100px;
+  transform: scale(4);
+  transition: all 1s ease-out;
+  transform: rotate(300deg);
+  position: absolute;
+  top: 75px;
+  left: 115px;
+  z-index: 10;
+  /* animation-delay: 1s; */
+  animation-name: drawzhi;
+  animation-duration:3s;
+  animation-fill-mode:forwards;
+  animation-timing-function:linear;
+  /* animation-iteration-count:infinite; */
+  /* animation-timing-function:step-start; */
+}
+
+@keyframes drawzhi{
+   
+    0%{
+      top: 75px;
+      left: 115px;
+    }
+    20%{
+      top: 145px;
+      left: 115px;
+    }
+    40%{
+      top: 130px;
+      left: 220px;
+      visibility: hidden;
+    }
+    40.5%{
+      visibility: visible;
+      top: 75px;
+      left: 230px;
+    }
+    60%{
+      top: 130px;
+      left: 220px;
+      visibility: hidden;
+    }
+    60.5%{
+      visibility: visible;
+      top: 60px;
+      left: 170px;
+    }
+    80%{
+      top: 200px;
+      left: 170px;
+      visibility: hidden;
+    }
+    80.5%{
+      visibility: visible;
+      top: 208px;
+      left: 105px;
+    }
+    100%{
+      top: 195px;
+      left: 235px;
+      visibility: hidden;
+    }
+
+}
