@@ -1012,3 +1012,206 @@
     }
 
 }
+
+
+/* ㄔ */
+.fingerchi {
+  visibility: visible;
+  width: 50px;
+  height: 100px;
+  transform: rotate(300deg);
+  position: absolute;
+  top: 35px;
+  left: 195px;
+  z-index: 30;
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+}
+
+
+.moveFingerchi {
+  width: 50px;
+  height: 100px;
+  transform: scale(4);
+  transition: all 1s ease-out;
+  transform: rotate(300deg);
+  position: absolute;
+  top: 35px;
+  left: 195px;
+  z-index: 10;
+  /* animation-delay: 1s; */
+  animation-name: drawchi;
+  animation-duration:3s;
+  animation-fill-mode:forwards;
+  animation-timing-function:linear;
+  /* animation-iteration-count:infinite; */
+  /* animation-timing-function:step-start; */
+}
+
+@keyframes drawchi{
+   
+    0%{
+      top: 35px;
+      left: 195px;
+    }
+    33%{
+      top: 105px;
+      left: 130px;
+      visibility: hidden;
+    }
+    33.5%{
+      visibility: visible;
+      top: 85px;
+      left: 210px;
+    }
+    66%{
+      top: 170px;
+      left: 120px;
+      visibility: hidden;
+    }
+    66.5%{
+      visibility: visible;
+      top: 140px;
+      left: 185px;
+    }
+    100%{
+      top: 220px;
+      left: 185px;
+      visibility: hidden;
+    }
+
+}
+
+
+/* ㄕ */
+.fingershi {
+  visibility: visible;
+  width: 50px;
+  height: 100px;
+  transform: rotate(300deg);
+  position: absolute;
+  top: 57px;
+  left: 140px;
+  z-index: 30;
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+}
+
+
+.moveFingershi {
+  width: 50px;
+  height: 100px;
+  transform: scale(4);
+  transition: all 1s ease-out;
+  transform: rotate(300deg);
+  position: absolute;
+  top: 57px;
+  left: 140px;
+  z-index: 10;
+  /* animation-delay: 1s; */
+  animation-name: drawshi;
+  animation-duration:3s;
+  animation-fill-mode:forwards;
+  animation-timing-function:linear;
+  /* animation-iteration-count:infinite; */
+  /* animation-timing-function:step-start; */
+}
+
+@keyframes drawshi{
+   
+    0%{
+      top: 57px;
+      left: 140px;
+    }
+    30%{
+      top: 52px;
+      left: 225px;
+    }
+    40%{
+      top: 95px;
+    left: 215px;
+    }
+    70%{
+      top: 105px;
+      left: 130px;
+     
+    }
+    100%{
+      top: 210px;
+      left: 95px;
+      visibility: hidden;
+    }
+}
+
+
+/* ㄖ */
+.fingerri {
+  visibility: visible;
+  width: 50px;
+  height: 100px;
+  transform: rotate(300deg);
+  position: absolute;
+  top: 75px;
+  left: 110px;
+  z-index: 30;
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+}
+
+
+.moveFingerri {
+  width: 50px;
+  height: 100px;
+  transform: scale(4);
+  transition: all 1s ease-out;
+  transform: rotate(300deg);
+  position: absolute;
+  top: 75px;
+  left: 110px;
+  z-index: 10;
+  /* animation-delay: 1s; */
+  animation-name: drawri;
+  animation-duration:3s;
+  animation-fill-mode:forwards;
+  animation-timing-function:linear;
+  /* animation-iteration-count:infinite; */
+  /* animation-timing-function:step-start; */
+}
+
+@keyframes drawri{
+   
+    0%{
+      top: 75px;
+      left: 110px;
+    }
+    25%{
+      top: 195px;
+      left: 110px;
+      visibility: hidden;
+    }
+    25.5%{
+      visibility: visible;
+      top: 60px;
+      left: 130px;
+    }
+    45%{
+      top: 50px;
+      left: 215px;
+    }
+    70%{
+      top: 190px;
+      left: 215px;
+    }
+    85%{
+      top: 195px;
+      left: 110px;
+      visibility: hidden;
+    }
+    85.5%{
+      visibility: visible;
+      top: 110px;
+      left: 150px;
+    }
+    100%{
+      top: 145px;
+      left: 175px;
+      visibility: hidden;
+    }
+}
