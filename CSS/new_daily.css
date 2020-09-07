@@ -121,8 +121,8 @@ a {
 
 .goodBaby_regard_value {
     width: 0%;
-    position: absolute;
-    height: 7%;
+    /* position: absolute; */
+    height: 100%;
     border-radius: 40px 0px 0px 40px;
     /* border-color: darkred; */
     /* border-style: solid; */
@@ -191,7 +191,7 @@ a {
     /* margin-left: 12px; */
 }
 
-.speech_success_icon{
+.speech_success_icon {
     position: absolute;
     top: 22%;
     left: 0%;
@@ -200,13 +200,12 @@ a {
     visibility: hidden;
 }
 
-.camera_success_icon{
-    position: absolute; 
+.camera_success_icon {
+    position: absolute;
     height: auto;
-    width: 13.5%; 
+    width: 13.5%;
     visibility: hidden;
 }
-
 
 .card:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
