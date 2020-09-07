@@ -1198,11 +1198,16 @@
     70%{
       top: 190px;
       left: 215px;
+      visibility: hidden;
     }
-    85%{
+    70.5%{
       top: 195px;
       left: 110px;
-      visibility: hidden;
+      visibility: visible;
+    }
+    85%{
+      top: 190px;
+      left: 215px;
     }
     85.5%{
       visibility: visible;
