@@ -1,4 +1,4 @@
-let {ipcRenderer }= require('electron');
+//let {ipcRenderer }= require('electron');
 let isDrawing = false;
 let x = 0;
 let y = 0;
@@ -93,7 +93,7 @@ score.addEventListener('click', () => {
         props.style.visibility = "visible";
 
         smallCard.innerHTML = '<img src="../../image/magicCard/chineseAlphabet/' + id + '.png" width="50px"/>';
-        ipcRenderer.send("levelIsPass",levelName[id]);
+        //ipcRenderer.send("levelIsPass",levelName[id]);
     // }
     console.log('totalPoint= ' + totalPoint);
     tool.style.visibility= "hidden"

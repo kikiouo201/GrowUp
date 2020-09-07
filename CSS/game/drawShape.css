@@ -612,3 +612,140 @@
     }
 
 }
+
+
+/* ㄎ */
+.fingerk {
+  visibility: visible;
+  width: 50px;
+  height: 100px;
+  transform: rotate(300deg);
+  position: absolute;
+  top: 60px;
+  left: 90px;
+  z-index: 30;
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+}
+
+
+.moveFingerk {
+  width: 50px;
+  height: 100px;
+  transform: scale(4);
+  transition: all 1s ease-out;
+  transform: rotate(300deg);
+  position: absolute;
+  top: 60px;
+  left: 90px;
+  z-index: 10;
+  /* animation-delay: 1s; */
+  animation-name: drawk;
+  animation-duration:4s;
+  animation-fill-mode:forwards;
+  animation-timing-function:linear;
+  /* animation-iteration-count:infinite; */
+  /* animation-timing-function:step-start; */
+}
+
+@keyframes drawk{
+   
+    0%{
+      top: 60px;
+      left: 90px;
+    }
+    25%{
+      top: 45px;
+      left: 240px;
+      visibility: hidden;
+    }
+    25.5%{
+      top: 70px;
+      left: 150px;
+      visibility: visible;
+    }
+    30.5%{
+      top: 110px;
+      left: 130px;
+    }
+    55%{
+      top: 100px;
+      left: 225px;
+    }
+    75%{
+      top: 170px;
+      left: 210px;
+    }
+    95%{
+      top: 205px;
+      left: 180px;
+    }
+    100%{
+      top: 195px;
+      left: 150px;
+      visibility: hidden;
+    }
+
+}
+
+
+/* ㄏ */
+.fingerh {
+  visibility: visible;
+  width: 50px;
+  height: 100px;
+  transform: rotate(300deg);
+  position: absolute;
+  top: 70px;
+  left: 120px;
+  z-index: 30;
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+}
+
+
+.moveFingerh {
+  width: 50px;
+  height: 100px;
+  transform: scale(4);
+  transition: all 1s ease-out;
+  transform: rotate(300deg);
+  position: absolute;
+  top: 70px;
+  left: 120px;
+  z-index: 10;
+  /* animation-delay: 1s; */
+  animation-name: drawh;
+  animation-duration:2s;
+  animation-fill-mode:forwards;
+  animation-timing-function:linear;
+  /* animation-iteration-count:infinite; */
+  /* animation-timing-function:step-start; */
+}
+
+@keyframes drawh{
+   
+    0%{
+      top: 70px;
+      left: 120px;
+    }
+    55%{
+      top: 55px;
+      left: 240px;
+      visibility: hidden;
+    }
+    55.5%{
+      top: 70px;
+      left: 120px;
+      visibility: visible;
+    }
+    75%{
+      top: 150px;
+      left: 110px;
+      visibility: visible;
+    }
+    100%{
+      top: 200px;
+      left: 85px;
+      visibility: hidden;
+    }
+
+}
