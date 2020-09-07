@@ -1,4 +1,5 @@
 // require('../../image/pickingUpisALittleRed')
+let {ipcRenderer }= require('electron');
 
 
 //變數設定
@@ -109,7 +110,7 @@ function result(){
   }else{
     str="遊戲結果\n失敗，還有 "+(16-com)+" 張未完成\n<button onclick='startGame()'>繼續遊戲</button>";
   }
-
+  ipcRenderer.send("levelIsPass","pickingUpisALittleRed");
   //把結果字串寫入提示顯示區
   document.getElementsByClassName('intro')[0].innerHTML=str;
   document.getElementsByClassName('mask')[0].style.display="block";

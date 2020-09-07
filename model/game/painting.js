@@ -1,3 +1,4 @@
+let {ipcRenderer }= require('electron');
 let canvas = document.getElementById('art');
 let ctx = canvas.getContext('2d');
 
@@ -32,6 +33,7 @@ document.getElementById('reset').addEventListener('click', function() {
 }, false);
 
 document.getElementById('save').addEventListener('click', function() {
+    ipcRenderer.send("levelIsPass","painting");
     let lowQuality=canvas.toDataURL("image/jpeg", 0.1);
     console.log(`lowQuality=${lowQuality}`);
     let saveImg=document.querySelector('.saveImg');
