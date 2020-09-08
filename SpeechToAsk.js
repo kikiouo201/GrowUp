@@ -73,23 +73,41 @@ if (voiceBtn) {
         ipcRenderer.once('reply-result', (event, data) => {
 
             ipcRenderer.send('serchImgURL', data['keyWord']);
-            ipcRenderer.once('replyImgURL', (event, data) => {
+            ipcRenderer.once('replyImgURL', (event, url) => {
 
-                const imgURL = document.querySelector('.img_' + click_num);
-                data['Answer_pic'] = data;
-                console.log("data" + data)
-                console.log("URLLLL:" + imgURL);
-                imgURL.src = data;
+                    window.onload = () => {
+                        var img = document.querySelector('.img_' + click_num);
+                        var src = img.getAttribute('src');
+                        img.setAttribute('src', '');
+                        img.onload = function() { alert(1); };
 
-            })
-            console.log("New data:" + typeof(data))
-            console.log("result catch:" + data)
-            console.log("q =>" + data['Question'] + " a =>" + data['Answer'] + " url =>" + data['Answer_pic'] + " keyword=>" + data['keyWord'])
-            console.log("url =>" + data['Answer_pic'])
+
+
+                    }
+                    const imgURL = document.querySelector('.img_' + click_num);
+                    data['Answer_pic'] = url;
+                    console.log("data" + url)
+                    console.log("URLLLL:" + imgURL);
+                    console.log("data:" + data + " url:" + url);
+                    imgURL.src = url;
+
+                    onImageLoaded(url, function(icon) {
+                        console.log('img載入完成啦！')
+                        data['Answer_pic'] = url;
+                        ipcRenderer.send('uploadAPI', data);
+                    })
+
+
+                })
+                // console.log("New data:" + typeof(data))
+                // console.log("result catch:" + data)
+                // console.log("q =>" + data['Question'] + " a =>" + data['Answer'] + " url =>" + data['Answer_pic'] + " keyword=>" + data['keyWord'])
+                // console.log("url =>" + data['Answer_pic'])
 
             // console.log("QName =>" + data.QName)
             // debugger
             // QA_card.innerHTML = QA_card.innerHTML + createQA(data['Question'], data['Answer_pic'], data['Answer']);
+
 
 
 
@@ -427,4 +445,19 @@ function playAudio(name) {
     // console.log("OK " + `${id} ` + aaauu.children[0].src)
     // aaauu.children[0].src = "../../TTS/mp3/bpm/" + `${id}` + ".mp3"
     audioCreate.play();
+}
+
+function onImageLoaded(url, cb) {
+    var image = new Image()
+    image.src = url
+
+    if (image.complete) {
+        // 圖片已經被載入
+        cb(image)
+    } else {
+        // 如果圖片未被載入，則設定載入時的回調
+        image.onload = function() {
+            cb(image)
+        }
+    }
 }
