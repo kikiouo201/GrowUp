@@ -88,8 +88,10 @@ ipcRenderer.once('retruePictureData', (event, data) => {
     activity_div.append(bookimg);
 
     let watch_btn = document.createElement('button');
+
+    let web_url = data['content'][i]['introduction']
     watch_btn.onclick = () => {
-      showWeb(data['content'][i]['introduction']);
+      showWeb( web_url);
     }
 
     let watch_ic = document.createElement('img');
