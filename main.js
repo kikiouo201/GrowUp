@@ -276,7 +276,9 @@ ipcMain.on('crawlerShowWeb', async(event, args) => {
     console.log('Catch ShowWeb');
 
     const browser = await puppeteer.launch({
-        executablePath: '/usr/bin/chromium-browser',
+        // executablePath: '/usr/bin/chromium-browser',
+        executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
+
         args: ['--disable-infobars', '--no-default-browser-check', '--start-fullscreen', '--start-maximized' /*,'--no-startup-window'*/ ],
         ignoreDefaultArgs: ['--enable-automation'],
         headless: false
@@ -291,9 +293,19 @@ ipcMain.on('crawlerShowWeb', async(event, args) => {
         console.log(dialog.message());
         await dialog.dismiss();
         await page.evaluate(() => {
-            document.querySelector('.fp-fullscreen').onclick = null;
-            document.querySelector('.fp-fullscreen').click()
-            document.querySelector('.fp-fullscreen').onclick = () => window.colseBrowser();
+            const full =  document.querySelector('.fp-fullscreen');
+
+            full.onclick = null;
+
+            setTimeout(() => {
+                document.querySele
+                ctor('.fp-ui').click()
+            }, 2000);
+            setTimeout(() => {
+                full.click()
+            }, 1000);
+    
+            full.onclick = () => window.colseBrowser();
 
         })
     });
@@ -311,8 +323,12 @@ ipcMain.on('crawlerShowWeb', async(event, args) => {
             document.querySelector('.fp-ui').click()
         }, 2000);
 
-        document.querySelector('.fp-fullscreen').onclick = () => window.colseBrowser();
+        // document.querySelector('.fp-fullscreen').onclick = () => window.colseBrowser();
 
+        function css(el, styles) {
+            for (var property in styles)
+                el.style[property] = styles[property];
+        }
     });
 })
 
