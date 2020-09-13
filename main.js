@@ -314,7 +314,14 @@ ipcMain.on('crawlerShowWeb', async(event, args) => {
     await page.exposeFunction('colseBrowser', () => {
         page.emit('colse');
     });
-
+    let currentScreen = await page.evaluate(() => {
+        return {
+            width: window.screen.availWidth,
+            height: window.screen.availHeight,
+        };
+    });
+    //設定預設網頁頁面大小
+    await page.setViewport(currentScreen);
     await page.goto(args);
     await page.evaluate(() => {
         document.querySelector('.fp-fullscreen').click();
