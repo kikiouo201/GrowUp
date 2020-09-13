@@ -6,10 +6,21 @@ const currentEx = document.getElementById("currentEx");
 const SSU = new SpeechSynthesisUtterance();
 
 ipcRenderer.send('callGoodRegard');
+ipcRenderer.send('call-frequency')
 // ipcRenderer.on('replyGoodregardValue', (event, data) => {
 //     console.log("data = " + JSON.stringify(data))
 
 // });
+
+ipcRenderer.on('reply-frequency',(event,data)=>{
+    console.log("reply-freqency success")
+    let alertIcon = document.querySelector("#alertIcon")
+    if(data['Cameratotalfreq'] > 3 && data['Speechtotalfreq'] > 3){
+        alertIcon.style.display = "none"
+    }else{
+        alertIcon.style.display = "block"
+    }
+})
 
 ipcRenderer.on('replyGoodregardTot', (event, data) => {
     console.log("data = " + JSON.stringify(data))

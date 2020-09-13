@@ -364,18 +364,6 @@ ipcMain.on('crawlerGetDate', async(event, args) => {
 
 
 
-
-
-// ipcMain.on('fruitcheck-call', (event, data) => {
-//     console.log("result");
-
-//     api.Question.addQa(1, "", "西瓜", "./still-image.jpg", "單詞", (event) => {
-//         console.log("callback=" + JSON.stringify(event));
-//     });
-
-// })
-
-
 ipcMain.on('callSTT-start', async(event, args) => {
     // let STTtext = await callSTT.quickStart();
     if (args.toString().trim() == 'ㄅ') {
@@ -618,3 +606,5 @@ ipcMain.on('uploadAPI', async(event, APIdata) => {
     });
 
 })
+
+
