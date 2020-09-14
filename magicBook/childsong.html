@@ -12,61 +12,10 @@
 
     <title>兒歌寶典</title>
 
-    <script>
-        const puppeteer = require('puppeteer');
-        function createSong() {
-            (async () => {
-                let browser = await puppeteer.launch({
-                    executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
-                    headless: true
-                });
-                const page = await browser.newPage();
-                await page.goto("https://children.moc.gov.tw/song_list");
-
-                const a = await page.$$('.songbox')
-
-                const href = await (a[0].$eval('a', al => al.getAttribute('href')))
-                await (a[num].$eval('img', al => al.click()))
-
-                console.log(href)
-                await browser.close();
-            })();
-        }
-
-        function TestCrawler(web) {
-            (async () => {
-                let browser = await puppeteer.launch({
-                    executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
-                    // args: ['--start-fullscreen'],
-                    headless: false
-                });
-                const page = await browser.newPage();
-                await page.goto(web);
-
-                page.on('colse', async () => {
-                    await browser.close();
-                });
-
-                await page.exposeFunction('colseBrowser', () => {
-                    page.emit('colse');
-                });
-
-                await page.evaluate(() => {
-
-                    document.querySelector('.fp-fullscreen').click();
-                    setTimeout(() => {
-                        document.querySelector('.fp-ui').click()
-                    }, 2000);
-                    document.querySelector('.fp-fullscreen').onclick = () => window.colseBrowser();
-                });
-
-            })();
-        }
-    </script>
 
 </head>
 
-<body style="width: 100%; height: 100%; margin-left: 0px;" onload="ShowTime()">
+<body style="width: 100%; height: 100%; margin-left: 0px;" onload="ShowTime(), songGetDate()">
     <div class="home_page">
         <a class="home_title">兒歌寶典</a>
 
@@ -167,9 +116,10 @@
                 </button>
             </div>
         </div>
+
         <div class="song">
             <div class="songname-div">
-                <h2>換工</h2>
+                <h2>Snbarux 換工</h2>
                 <img class="voice" src=" ../icons/speaker.png" />
 
             </div>
@@ -201,7 +151,6 @@
             <div class="songname-div">
                 <h2>燕子回來的時候</h2>
                 <img class="voice" src=" ../icons/speaker.png" />
-
             </div>
             <div class="activity-div">
                 <img src="https://children.moc.gov.tw/resource/song_image/s_472.jpg">
@@ -211,18 +160,9 @@
                 </button>
             </div>
         </div>
-        
+
     </div>
 
-     <!--<div>
-        <a href="../../test1.html" class="sosfloat" id="menu-share">
-            <i class="fab fa-share my-float"><img src="../photo/help.png" width="70%"></i>
-        </a>
-    </div>
-<<<<<<< HEAD
-    -->
-=======
->>>>>>> 3e4acb79c814eada45aea0643856e82aaba97a81
 
     <div class="return_mark">
         <a href="./magicBook.html" class="returnfloat" id="menu-share">
@@ -236,7 +176,7 @@
         </a>
     </div>
 
-    <script language="JavaScript">
+    <script>
         function ShowTime() {
 
             var fullDate = new Date();
@@ -251,6 +191,7 @@
             document.getElementById('showtime').innerHTML = h + ':' + m;
             setTimeout('ShowTime()', 1000);
         }
+
         function toggleBtn() {
             const Btns = document.querySelector(".btns");
             const add = document.getElementById("add");
@@ -276,6 +217,58 @@
             }
         }
     </script>
+
+    <script>
+        const puppeteer = require('puppeteer');
+
+        function createSong() {
+            (async () => {
+                let browser = await puppeteer.launch({
+                    executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
+                    headless: false
+                });
+
+                const page = await browser.newPage();
+                await page.goto(`https://children.moc.gov.tw/song_list?page=2&language=0`);
+
+                for (let i = 2; i <= 10; i++) {
+                    const songbox = await page.$$('.songbox')
+                    const next = await page.$('.next')
+                    for (let j = 0; j < songbox.length; j++) {
+                        const href = await (songbox[j].$eval('a', al => al.getAttribute('href')))
+                        const src = await (songbox[j].$eval('img', al => al.getAttribute('src')))
+                        const name = await (songbox[j].$eval('h2', al => al.textContent.trim()))
+                        const main = await document.querySelector('.maincontent');
+
+                        main.innerHTML +=
+                            `
+                        <div class="song">
+                            <div class="songname-div">
+                                <h2>${name}</h2>
+                                <img class="voice" src=" ../icons/speaker.png" />
+                            </div>
+                            <div class="activity-div">
+                                <img src="${src}">
+                                <button onclick='showWeb("https://children.moc.gov.tw${href}")'>
+                                    <img src="./image/icon_watchVideo.png" />
+                                    <h2>觀看兒歌</h2>
+                                </button>
+                            </div>
+                         </div>
+                         `
+                    }
+                    await (next.$eval('a', al => al.click()))
+
+                }
+
+
+
+
+                // await browser.close();
+            })();
+        }
+    </script>
+    <script src="./js/childsong.js"></script>
 
 </body>
 
