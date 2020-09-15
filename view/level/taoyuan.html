@@ -32,7 +32,9 @@
         <tr>
             <td><img src="../../image/map/Taoyuan_origin.png" onclick="featuresText('桃園地區')" /><a style="display: block;">桃園地區</a></td>
             <td id="information" rowspan="4" valign="top" style="font-size:x-large;">
-                &emsp;&emsp;桃園地區，為六都之一。擁有多元的文化，加上北橫豐富的山水景觀、兩蔣文化園區的獨特歷史文化及「草花王國的故鄉」、「千塘之鄉」等美名，成就桃園為觀光大市。
+                <h4 style="margin: auto;">
+                    桃園地區擁有多元的文化，加上北橫豐富的山水景觀，具有「千塘之鄉」的美名，成就桃園為觀光大市。
+                </h4>
             </td>
         </tr>
         <tr>
@@ -87,22 +89,31 @@
     <script>
         function featuresText(category) {
             const information = document.querySelector('#information')
+            let info = document.createElement("h4");
+            info.style = 'margin: auto;';
             switch (category) {
                 case "桃園地區":
-                    information.innerHTML = "&emsp;&emsp;桃園地區，為六都之一。擁有多元的文化，加上北橫豐富的山水景觀、兩蔣文化園區的獨特歷史文化及「草花王國的故鄉」、「千塘之鄉」等美名，成就桃園為觀光大市。";
-                    mouseDownText(information.innerHTML);
+                    information.innerHTML = "";
+                    info.innerHTML = "桃園地區擁有多元的文化，加上北橫豐富的山水景觀，具有「千塘之鄉」的美名，成就桃園為觀光大市。";
+                    information.append(info)
                     break;
                 case "大溪豆乾":
-                    information.innerHTML = "&emsp;&emsp;大溪豆乾，是桃園市大溪區知名的地方特產。大溪豆乾的特色是黑豆干，外皮厚而黑，整體口感較白豆乾更加硬實，味道也更加重。";
-                    mouseDownText(information.innerHTML);
+                    information.innerHTML = 
+                    " <img style = 'width:100%; border-radius: 15px;'  src = 'https://pic.pimg.tw/linpapahu2012/1435070271-421504407_n.jpg'/> "
+                    info.innerHTML = "大溪豆乾是桃園市大溪區知名的地方特產。特色是黑豆干，外皮厚而黑，整體口感比白豆乾更加硬實，味道也更加重。";
+                    information.append(info)
                     break;
                 case "X park海生館":
-                    information.innerHTML = "&emsp;&emsp;「X park」水族館，位於桃園市中壢區。是由台灣與日本橫濱八景島人氣水族館樂園耗時5年規劃打造，為台灣首座新都會型的水生公園，並創造出360度的沈浸式空間，顛覆傳統水族館樣貌。";
-                    mouseDownText(information.innerHTML);
+                    information.innerHTML =
+                    " <img style = 'width:100%; border-radius: 15px;'  src = 'https://attach.setn.com/newsimages/2020/06/30/2635413-XXL.jpg'/> "
+                    info.innerHTML = "X park水族館是台灣與日本耗時5年規劃打造，是台灣第一座新都會型的水生公園，顛覆傳統水族館樣貌。";
+                    information.append(info)
                     break;
                 case "桃園國際機場":
-                    information.innerHTML = "&emsp;&emsp;桃園國際機場，位於桃園市大園區。在1979年2月26日啟用時名為「中正國際機場」，2006年10月改為桃園國際機場。無論面積或運量上，均是臺灣最大的民航機場。可起降A380、747-8及AN-225等世界上最大型的飛機。";
-                    mouseDownText(information.innerHTML);
+                    information.innerHTML = 
+                    " <img style = 'width:100%; border-radius: 15px;'  src = 'https://www.taoyuanairport.com.tw/assets/images/kv2.jpg'/> "
+                    info.innerHTML = "桃園國際機場。起初命名為「中正國際機場」，到2006年才改為桃園國際機場。是台灣最大的國際機場。";
+                    information.append(info)
                     break;
 
             }

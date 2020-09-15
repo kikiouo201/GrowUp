@@ -32,7 +32,9 @@
         <tr>
             <td><img src="../../image/map/Keelung_origin.png" onclick="featuresText('基隆地區')" /><a style="display: block;">基隆地區</a></td>
             <td id="information" rowspan="4" valign="top" style="font-size:x-large;">
-                &emsp;&emsp;基隆地區，位於臺灣北部。三面環山，僅北面一處有少量平原迎向大海，即為深水谷灣之基隆港。港灣深入市區，水面寬闊，集商港、軍港、漁港於一身，為進入北臺灣門戶。
+                <h4 style='margin: auto;'>
+                    基隆地區位於臺灣北部。三面環山，只有北邊有一些些平原迎向大海，即為基隆港。
+                </h4>
             </td>
         </tr>
         <tr>
@@ -92,22 +94,29 @@
     <script>
         function featuresText(category) {
             const information = document.querySelector('#information')
+            let info = document.createElement("h4");
+            info.style = 'margin: auto;';
+
             switch (category) {
                 case "基隆地區":
-                    information.innerHTML = "&emsp;&emsp;基隆地區，位於臺灣北部。三面環山，僅北面一處有少量平原迎向大海，即為深水谷灣之基隆港。港灣深入市區，水面寬闊，集商港、軍港、漁港於一身，為進入北臺灣門戶。";
-                    mouseDownText(information.innerHTML);
+                    information.innerHTML = "";
+                    info.innerHTML = "基隆地區位於臺灣北部。三面環山，只有北邊有一些些平原迎向大海，即為基隆港。";
+                    information.append(info)
                     break;
                 case "遊輪":
-                    information.innerHTML = "&emsp;&emsp;遊輪，又稱郵輪，特色在於悠閒浪漫，且提供旅遊及娛樂，像是一艘航行在海上的五星級大型度假飯店，兼具交通工具與住宿、餐廳的性質。 ";
-                    mouseDownText(information.innerHTML);
+                information.innerHTML = " <img style = 'width:100%; border-radius: 15px;'  src ='https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Explorer_of_the_Seas%2C_Fremantle%2C_2015_%2803%29.JPG/1920px-Explorer_of_the_Seas%2C_Fremantle%2C_2015_%2803%29.JPG'/>";
+                    info.innerHTML = "又稱郵輪，特色在於悠閒浪漫，且提供旅遊及娛樂，像是一艘航行在海上的五星級大型度假飯店。";
+                    information.append(info)
                     break;
                 case "基隆廟口":
-                    information.innerHTML = "&emsp;&emsp;基隆廟口，位於基隆市仁三路旁的奠濟宮周圍。小吃種類眾多，是全臺灣最著名的夜市之一。全天24小時皆有店家在此營業，每到晚間夜市時段時更為熱鬧，所以也稱為廟口夜市。";
-                    mouseDownText(information.innerHTML);
+                information.innerHTML = " <img style = 'width:100%; border-radius: 15px;'  src ='https://d2j3coy501s4ze.cloudfront.net/images/23079/700/db884329acc7422db0d5866c8683fbc82ef462b2_58c174855f6cc.jpeg'/>";
+                    info.innerHTML = "基隆廟口位於基隆市仁三路旁的奠濟宮周圍。是全臺灣最著名的夜市之一。尤其到晚間時段時更為熱鬧，所以也稱為廟口夜市。";
+                    information.append(info)
                     break;
                 case "二沙灣砲臺(海門天險)":
-                    information.innerHTML = "&emsp;&emsp;大武崙砲台，位於基隆市安樂區。於1840年中英鴉片戰爭時，為防止英軍入侵而建，1884年中法戰爭毀損後劉銘傳又重建，因位處於二沙灣一帶的山路上，因此有「二沙灣砲臺」的別稱。";
-                    mouseDownText(information.innerHTML);
+                information.innerHTML = " <img style = 'width:100%; border-radius: 15px;'  src ='https://tour.klcg.gov.tw/media/1012/%E4%BA%8C%E6%B2%99%E7%81%A3%E7%A0%B2%E5%8F%B01.jpg?anchor=center&mode=crop&width=600&height=350&rnd=131909152500000000'/>";
+                    info.innerHTML = "於戰爭時，為防止敵人入侵而建立的，名稱由來是因為處於二沙灣一帶的山路上，因此有「二沙灣砲臺」的別稱。";
+                    information.append(info)
                     break;
 
             }
