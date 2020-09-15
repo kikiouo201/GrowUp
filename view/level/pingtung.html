@@ -18,7 +18,7 @@
         /* margin-top: -51px; */
         margin-left: -30px;
     }
-    
+
     .map_location {
         width: 16px;
         position: absolute;
@@ -38,19 +38,25 @@
             <td>資訊介紹</td>
         </tr>
         <tr>
-            <td><img src="../../image/map/Pingtung_origin.png" style="width: 35px;" onclick="featuresText('屏東地區')" /><a style="display: block;">屏東地區</a></td>
+            <td><img src="../../image/map/Pingtung_origin.png" style="width: 35px;" onclick="featuresText('屏東地區')" /><a
+                    style="display: block;">屏東地區</a></td>
             <td id="information" rowspan="4" valign="top" style="font-size:x-large;">
-                &emsp;&emsp;屏東地區，位於臺灣西南部最南端，也是臺灣西部南北最狹長的縣份，地處熱帶地區，富有熱帶風情。
+                <h4 style='margin: auto;'>
+                    屏東地區位於臺灣西南部最南端，也是臺灣西部南北最狹長的縣份，地處熱帶地區，富有熱帶風情。
+                </h4>
             </td>
         </tr>
         <tr>
-            <td><img src="../../image/icon/black_tuna.png" onclick="featuresText('黑鮪魚')" /><a style="display: block;">黑鮪魚</a></td>
+            <td><img src="../../image/icon/black_tuna.png" onclick="featuresText('黑鮪魚')" /><a
+                    style="display: block;">黑鮪魚</a></td>
         </tr>
         <tr>
-            <td><img src="../../image/map_icon/Pingtung_aquarium.png" onclick="featuresText('國立海洋生物博物館')" /><a style="display: block;">國立海洋生物博物館</a></td>
+            <td><img src="../../image/map_icon/Pingtung_aquarium.png" onclick="featuresText('國立海洋生物博物館')" /><a
+                    style="display: block;">國立海洋生物博物館</a></td>
         </tr>
         <tr>
-            <td><img src="../../image/map_icon/Pingtung_bridge.png" onclick="featuresText('大鵬灣跨海大橋')" /><a style="display: block;">大鵬灣</a><a style="display: block;">跨海大橋</a></td>
+            <td><img src="../../image/map_icon/Pingtung_bridge.png" onclick="featuresText('大鵬灣跨海大橋')" /><a
+                    style="display: block;">大鵬灣</a><a style="display: block;">跨海大橋</a></td>
         </tr>
 
     </table>
@@ -58,17 +64,23 @@
         <img class="terrain" src="../../image/map/Pingtung1.png" />
 
         <div class="level1">
-            <img class="level" alt="0" src="../../image/icon/black_tuna.png" onclick="location.href='../../view/game/drawzhuyin.html?id=0&counties=pingtung';mouseDownText(0);" />
-            <img class="level_text" src="../../image/numbers/0.png" onclick="location.href='../../view/game/drawzhuyin.html?id=0&counties=pingtung';mouseDownText(0);" />
+            <img class="level" alt="0" src="../../image/icon/black_tuna.png"
+                onclick="location.href='../../view/game/drawzhuyin.html?id=0&counties=pingtung';mouseDownText(0);" />
+            <img class="level_text" src="../../image/numbers/0.png"
+                onclick="location.href='../../view/game/drawzhuyin.html?id=0&counties=pingtung';mouseDownText(0);" />
         </div>
         <div class="level2">
-            <img class="level" alt="plus" src="../../image/icon/black_tuna.png" onclick="location.href='../../view/game/drawzhuyin.html?id=plus&counties=pingtung';mouseDownText(加法);" />
-            <img class="level_text" src="../../image/numbers/plus.png" onclick="location.href='../../view/game/drawzhuyin.html?id=plus&counties=pingtung';mouseDownText(加法);" />
+            <img class="level" alt="plus" src="../../image/icon/black_tuna.png"
+                onclick="location.href='../../view/game/drawzhuyin.html?id=plus&counties=pingtung';mouseDownText(加法);" />
+            <img class="level_text" src="../../image/numbers/plus.png"
+                onclick="location.href='../../view/game/drawzhuyin.html?id=plus&counties=pingtung';mouseDownText(加法);" />
         </div>
 
-        <div class="level3"> 
-            <img class="level" alt="minus" src="../../image/icon/black_tuna_dark.png" onclick="location.href='../../view/game/drawzhuyin.html?id=minus&counties=pingtung';mouseDownText(減法);" />
-            <img class="level_text" src="../../image/numbers/minus.png" onclick="location.href='../../view/game/drawzhuyin.html?id=minus&counties=pingtung';mouseDownText(減法);" />
+        <div class="level3">
+            <img class="level" alt="minus" src="../../image/icon/black_tuna_dark.png"
+                onclick="location.href='../../view/game/drawzhuyin.html?id=minus&counties=pingtung';mouseDownText(減法);" />
+            <img class="level_text" src="../../image/numbers/minus.png"
+                onclick="location.href='../../view/game/drawzhuyin.html?id=minus&counties=pingtung';mouseDownText(減法);" />
         </div>
         <div class="level4">
             <img class="level" alt="pingtung" src="../../image/icon/devil_lock.png" onclick="alert('需要先完成縣市所有關卡！')" />
@@ -76,9 +88,10 @@
         </div>
         、
     </div>
-    <img class="taiwan" src="../../image/character/Taiwn_small.png" onclick="location.href='../../view/level/taiwan.html'" />
+    <img class="taiwan" src="../../image/character/Taiwn_small.png"
+        onclick="location.href='../../view/level/taiwan.html'" />
     <img class="map_location" src="../../image/map/map.png" />
-    
+
     <div>
         <a onclick="history.back()" class="returnfloat" id="menu-share">
             <i class="fab fa-share return-float"><img src="../../photo/return.png"></i>
@@ -92,22 +105,32 @@
     <script>
         function featuresText(category) {
             const information = document.querySelector('#information')
+            let info = document.createElement("h4");
+            info.style = 'margin: auto;';
+
             switch (category) {
                 case "屏東地區":
-                    information.innerHTML = "&emsp;&emsp;屏東地區，位於臺灣西南部最南端，也是臺灣西部南北最狹長的縣份，地處熱帶地區，富有熱帶風情。";
-                    mouseDownText(information.innerHTML);
+                    information.innerHTML = "";
+                    info.innerHTML = "屏東地區位於臺灣西南部最南端，也是臺灣西部南北最狹長的縣份，地處熱帶地區，富有熱帶風情。";
+                    information.append(info)
                     break;
                 case "黑鮪魚":
-                    information.innerHTML = "&emsp;&emsp;黑鮪魚因其體背色黑如墨，身型大如甕，所以一向俗稱『黑甕串』，再因其經濟價值極高，亦有『海中黑金』之稱謂。";
-                    mouseDownText(information.innerHTML);
+                    information.innerHTML =
+                        " <img style = 'width:100%; border-radius: 15px;'  src ='https://pic.17qq.com/uploads/dlcpdkldpv.jpeg'/>";
+                    info.innerHTML = "黑鮪魚因其體背色黑如墨，身型大如甕，所以一向俗稱『黑甕串』，再因其經濟價值極高，亦有『海中黑金』之稱謂。";
+                    information.append(info)
                     break;
                 case "國立海洋生物博物館":
-                    information.innerHTML = "&emsp;&emsp;國立海洋生物博物館，位於屏東縣車城鄉，簡稱海生館。是全台灣規模最大的，館內魚類種類豐富，分成台灣水域館、珊瑚王國館和世界水域館。";
-                    mouseDownText(information.innerHTML);
+                    information.innerHTML =
+                        " <img style = 'width:100%; border-radius: 15px;'  src ='https://thcdc.hakka.gov.tw/wSite/public/Data/f1504074653401.jpg'/>";
+                    info.innerHTML = "國立海洋生物博物館位於屏東縣車城鄉，簡稱海生館。是全台灣規模最大的，館內魚類種類豐富。";
+                    information.append(info)
                     break;
                 case "大鵬灣跨海大橋":
-                    information.innerHTML = "&emsp;&emsp;大鵬灣跨海大橋，位於屏東縣的大鵬灣灣口。全長約195公尺，為台灣唯一的開啟橋。";
-                    mouseDownText(information.innerHTML);
+                    information.innerHTML =
+                        " <img style = 'width:100%; border-radius: 15px;'  src ='https://www.dbnsa.gov.tw/att/pic/b_11005457.JPG'/>";
+                    info.innerHTML = "大鵬灣跨海大橋，位於屏東縣的大鵬灣灣口。全長約195公尺，為台灣唯一的開啟橋。";
+                    information.append(info)
                     break;
             }
         }
