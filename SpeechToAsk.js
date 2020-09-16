@@ -59,7 +59,7 @@ if (voiceBtn) {
                                                     <br>
                                                     <div style="float:left; display: block; text-align: left;">
                                                         <p class="card-text card_A" style="float: left;">敘述：</p>
-                                                        <p class="card-text card_A" style="margin-left: 0px;">${answer}</p>
+                                                        <p class="answer_` + click_num + ` card-text card_A" style="margin-left: 0px;">${answer}</p>
                                                         <img class="speaker_A" onclick="speaker(this)" id="` + CardID_A + `" src="icons/speaker.png" />
                                                     </div>
 
@@ -75,38 +75,39 @@ if (voiceBtn) {
             ipcRenderer.send('serchImgURL', data['keyWord']);
             ipcRenderer.once('replyImgURL', (event, url) => {
 
-                    window.onload = () => {
-                        var img = document.querySelector('.img_' + click_num);
-                        var src = img.getAttribute('src');
-                        img.setAttribute('src', '');
-                        img.onload = function() { alert(1); };
+                window.onload = () => {
+                    var img = document.querySelector('.img_' + click_num);
+                    var src = img.getAttribute('src');
+                    img.setAttribute('src', '');
+                    img.onload = function() { alert(1); };
+                }
+                const imgURL = document.querySelector('.img_' + click_num);
+                data['Answer_pic'] = url;
+                console.log("data" + url)
+                console.log("URLLLL:" + imgURL);
+                console.log("data:" + data + " url:" + url);
+                imgURL.src = url;
 
-
-
-                    }
-                    const imgURL = document.querySelector('.img_' + click_num);
+                onImageLoaded(url, function(icon) {
+                    console.log('img載入完成啦！')
                     data['Answer_pic'] = url;
-                    console.log("data" + url)
-                    console.log("URLLLL:" + imgURL);
-                    console.log("data:" + data + " url:" + url);
-                    imgURL.src = url;
-
-                    onImageLoaded(url, function(icon) {
-                        console.log('img載入完成啦！')
-                        data['Answer_pic'] = url;
-                        ipcRenderer.send('uploadAPI', data);
-                    })
-
-
+                    // ipcRenderer.send('uploadAPI', data);
                 })
-                // console.log("New data:" + typeof(data))
-                // console.log("result catch:" + data)
-                // console.log("q =>" + data['Question'] + " a =>" + data['Answer'] + " url =>" + data['Answer_pic'] + " keyword=>" + data['keyWord'])
-                // console.log("url =>" + data['Answer_pic'])
+            })
 
-            // console.log("QName =>" + data.QName)
-            // debugger
-            // QA_card.innerHTML = QA_card.innerHTML + createQA(data['Question'], data['Answer_pic'], data['Answer']);
+            ipcRenderer.send('searchAnswer', data['keyWord']);
+            ipcRenderer.once('replyAnswer', (event, answer) => {
+
+                // window.onload = () => {
+                var ans = document.querySelector('.answer_' + click_num);
+                // var src = ans.textContent.trim();
+                ans.innerText = answer;
+                // console.log("ans:" + answer)
+                data['Answer'] = answer;
+                ipcRenderer.send('uploadAPI', data);
+
+            })
+
 
 
 
@@ -396,9 +397,14 @@ if (collection) {
     });
 }
 
+function myStop() {
+    snd.pause();
+    snd.currentTime = 0;
+}
 
 const stopDOM = document.body;
-stopDOM.addEventListener('dblclick', toggle.bind(null, false));
+// var snd = new Audio(`${id}.mp3`);
+// stopDOM.addEventListener('dblclick', myStop());
 
 
 // function collect(select){
@@ -410,24 +416,36 @@ stopDOM.addEventListener('dblclick', toggle.bind(null, false));
 
 const puppeteer = require('puppeteer');
 
-function searchImg(keyword) {
+function searchAnswer(keyword) {
     (async() => {
-        let browser = await puppeteer.launch({
-            executablePath: '/usr/bin/chromium-browser',
-            // executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
-            // args: ['--start-fullscreen'],
-            headless: false
+        console.log('Catch Answer');
+        const browser = await puppeteer.launch({
+            // executablePath: '/usr/bin/chromium-browser',
+            executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
+            args: ['--disable-infobars', '--no-default-browser-check', '--start-fullscreen', '--start-maximized' /*,'--no-startup-window'*/ ],
+            ignoreDefaultArgs: ['--enable-automation'],
+            headless: true
         });
         const page = await browser.newPage();
-        await page.goto("https:\/\/www.google.com.tw/search?q=" + keyword + "&tbm=isch&ved=2ahUKEwj2p87NgdDrAhXOzIsBHc45DzQQ2-cCegQIABAA&oq=ppo;l&gs_lcp=CgNpbWcQAzoFCAAQsQM6AggAOgQIABATUMj_AViuhwJg_YwCaABwAHgAgAGBAYgBtAaSAQM1LjSYAQCgAQGqAQtnd3Mtd2l6LWltZ8ABAQ&sclient=img&ei=nXdSX7blMM6Zr7wPzvO8oAM&bih=577&biw=1034&hl=zh-TW");
+        if (keyword.toString().trim().includes('子')) {
+            // await console.log("kw:" + keyword.substring(0, keyword.toString().trim().length - 1))
+            keyword = keyword.substring(0, keyword.toString().trim().length - 1);
+            await page.goto("https://www.moedict.tw/" + keyword);
+        } else {
+            await page.goto("https://www.moedict.tw/" + keyword);
+            // await console.log("kw:" + keyword.substring(0, 1))
+        }
 
-        const ImgSrc = await page.$eval('.rg_i', imgs => imgs.getAttribute('src'));
-
-        await console.log("Imgsrc:" + ImgSrc)
-            // browser.close();
-
-        return ImgSrc;
-
+        const def = await page.$$('.def')
+        let Answer;
+        // await console.log("def:" + def[0]);
+        const test = await def[0].evaluate(node => node.innerText).then((value) => {
+            Answer = value;
+            console.log(value);
+            // expected output: "foo"
+            // event.reply('replyAnswer', test)
+        });
+        // await console.log("Answer:" + test);
     })();
 }
 

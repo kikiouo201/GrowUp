@@ -28,8 +28,8 @@ const puppeteer = require('puppeteer');
 // STT
 // const callSTT = require('./TTS_API_test')
 var player = require('play-sound')(opts = {})
-// const fs = require('fs');
-// const util = require('util');
+    // const fs = require('fs');
+    // const util = require('util');
 
 // const api = require('./model/api');  //伺服器測試暫關
 
@@ -84,7 +84,7 @@ function createWindow() {
 // 部分 API 在 ready 事件触发后才能使用。
 app.on('ready', createWindow)
 app.commandLine.appendSwitch('--enable-touch-events')
-// 当全部窗口关闭时退出。
+    // 当全部窗口关闭时退出。
 app.on('window-all-closed', () => {
     // 在 macOS 上，除非用户用 Cmd + Q 确定地退出，
     // 否则绝大部分应用及其菜单栏会保持激活。
@@ -157,7 +157,7 @@ ipcMain.on('close-main-window', () => {
 //     event.sender.send('reply-close-mjpg-streamer')
 // })
 
-ipcMain.on('captrue', async (event, args) => {
+ipcMain.on('captrue', async(event, args) => {
     let command = 'killall mjpg_streamer'
     shell.exec(command, (code, std, err) => {
         console.log('Exit code:', code);
@@ -182,10 +182,10 @@ ipcMain.on('vision', (event, args) => {
     event.sender.send('reply-visionready')
 })
 let visionAnswer;
-ipcMain.on('vision-start', async (event, args) => {
+ipcMain.on('vision-start', async(event, args) => {
     let array = await callVis.start();
     visionAnswer = array
-    //array.forEach(label => console.log("vis="+label.description));
+        //array.forEach(label => console.log("vis="+label.description));
     event.sender.send('reply-mainjsfunction', array)
 })
 
@@ -225,7 +225,7 @@ ipcMain.on('crawler', (event, args) => {
 })
 
 
-ipcMain.on('addQAtoServer', async (event, arg) => {
+ipcMain.on('addQAtoServer', async(event, arg) => {
     // api.Question.addQa(1, "", arg, "./still-image.jpg", arg, "影像辨識", (event) => {
     //     console.log("callback=" + JSON.stringify(event));
     // });
@@ -237,7 +237,7 @@ ipcMain.on('addQAtoServer', async (event, arg) => {
 // });
 
 //addQA
-ipcMain.on('getApi-addQuiz', async (event, args) => {
+ipcMain.on('getApi-addQuiz', async(event, args) => {
     api.Question.addQuiz(5, (req) => {
         // console.log("addQuiz=" + JSON.stringify(event));
         const data = JSON.parse(JSON.stringify(req));
@@ -272,7 +272,7 @@ ipcMain.on('getMachineData', (event, arg) => {
 
 });
 
-ipcMain.on('crawlerShowWeb', async (event, args) => {
+ipcMain.on('crawlerShowWeb', async(event, args) => {
     console.log('Catch ShowWeb');
 
     const browser = await puppeteer.launch({
@@ -285,7 +285,7 @@ ipcMain.on('crawlerShowWeb', async (event, args) => {
     });
     const page = await browser.newPage();
 
-    page.on('colse', async () => {
+    page.on('colse', async() => {
         await browser.close();
     });
 
@@ -339,7 +339,7 @@ ipcMain.on('crawlerShowWeb', async (event, args) => {
     });
 })
 
-ipcMain.on('crawlerGetDate', async (event, args) => {
+ipcMain.on('crawlerGetDate', async(event, args) => {
     let browser = await puppeteer.launch({
         executablePath: '/usr/bin/chromium-browser',
         // executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
@@ -376,19 +376,19 @@ ipcMain.on('crawlerGetDate', async (event, args) => {
 
 
 
-ipcMain.on('callSTT-start', async (event, args) => {
+ipcMain.on('callSTT-start', async(event, args) => {
     // let STTtext = await callSTT.quickStart();
     if (args.toString().trim() == 'ㄅ') {
         console.log("ㄅ")
-        var audio = player.play('./TTS/mp3/bpm/b.mp3', function (err) {
+        var audio = player.play('./TTS/mp3/bpm/b.mp3', function(err) {
             if (err) throw err;
             console.log("Audio finished");
         })
         audio.kill()
     }
     console.log("success call STT-API =) " + args.toString())
-    //array.forEach(label => console.log("vis="+label.description));
-    // event.sender.send('reply-mainjsfunction', array)
+        //array.forEach(label => console.log("vis="+label.description));
+        // event.sender.send('reply-mainjsfunction', array)
 })
 
 
@@ -544,11 +544,11 @@ ipcMain.on('call-frequency', (event, arg) => {
 ipcMain.on('levelIsPass', (event, arg) => {
     api.Level.alterLevel(1, arg, (req) => {
         console.log("data = " + JSON.stringify(req))
-        //event.sender.send('reply-callZhuyindata', data);
+            //event.sender.send('reply-callZhuyindata', data);
     });
     api.People.AddChildGoodBabyValue(1, 20, (req) => {
         console.log("data = " + JSON.stringify(req))
-        //event.sender.send('reply-callZhuyindata', data);
+            //event.sender.send('reply-callZhuyindata', data);
     });
 
 })
@@ -589,12 +589,12 @@ ipcMain.on('levelIsPass', (event, arg) => {
 // })
 
 
-ipcMain.on('serchImgURL', async (event, keyword) => {
+ipcMain.on('serchImgURL', async(event, keyword) => {
     console.log('Catch ImgURL');
 
     const browser = await puppeteer.launch({
-        // executablePath: '/usr/bin/chromium-browser',
-        executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
+        executablePath: '/usr/bin/chromium-browser',
+        // executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
         args: ['--disable-infobars', '--no-default-browser-check', '--start-fullscreen', '--start-maximized' /*,'--no-startup-window'*/ ],
         ignoreDefaultArgs: ['--enable-automation'],
         headless: true
@@ -606,12 +606,48 @@ ipcMain.on('serchImgURL', async (event, keyword) => {
     const ImgSrc = await page.$eval('.rg_i', imgs => imgs.getAttribute('src'));
 
     await console.log("Imgsrc:" + ImgSrc)
-    // browser.close();
+        // browser.close();
     event.reply('replyImgURL', ImgSrc)
 
 })
 
-ipcMain.on('uploadAPI', async (event, APIdata) => {
+
+ipcMain.on('searchAnswer', async(event, keyword) => {
+    console.log('Catch Answer');
+    const browser = await puppeteer.launch({
+        executablePath: '/usr/bin/chromium-browser',
+        // executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
+        args: ['--disable-infobars', '--no-default-browser-check', '--start-fullscreen', '--start-maximized' /*,'--no-startup-window'*/ ],
+        ignoreDefaultArgs: ['--enable-automation'],
+        headless: true
+    });
+    const page = await browser.newPage();
+    if (keyword.toString().trim().includes('子')) {
+        // await console.log("kw:" + keyword.substring(0, keyword.toString().trim().length - 1))
+        keyword = keyword.substring(0, keyword.toString().trim().length - 1);
+        await page.goto("https://www.moedict.tw/" + keyword);
+    }
+    if (keyword.toString().trim().includes('陶瓷')) {
+        await page.goto("https://www.moedict.tw/" + keyword + "器");
+    } else {
+        await page.goto("https://www.moedict.tw/" + keyword);
+        // await console.log("kw:" + keyword.substring(0, 1))
+    }
+
+    const def = await page.$$('.def')
+    let Answer;
+    // await console.log("def:" + def[0]);
+    const test = await def[0].evaluate(node => node.innerText).then((value) => {
+        Answer = value;
+        console.log(value);
+        event.reply('replyAnswer', value)
+            // expected output: "foo"
+    });
+    // await console.log("Answer:" + test);
+    // event.reply('replyAnswer', test)
+})
+
+ipcMain.on('uploadAPI', async(event, APIdata) => {
     // api.Question.addQa
     api.Question.addQa(1, APIdata['Question'], APIdata['Answer'], "data:image/jpeg;base64,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", APIdata['keyWord'].trim(), "語音", (event) => {
         console.log("callback=" + JSON.stringify(event));
