@@ -84,6 +84,8 @@ function question(app){
                //question_url = question_url.toString();
               // console.log('url='+question_url);
               console.log("question_url="+question_url.substring(0, 20));
+            } else if(question_img != null){
+                question_url=question_img;
             }
             
             // let book_url=null;
