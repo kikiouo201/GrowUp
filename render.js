@@ -47,17 +47,17 @@ if(reset){
 var answer;
 if(identifyBtn){
 identifyBtn.addEventListener('click',()=>{   
-    // ipcRenderer.send('close-mjpg-streamer')
+    ipcRenderer.send('close-mjpg-streamer')
 
-    // ipcRenderer.on('reply-close-mjpg-streamer',(event,data)=>{
+    ipcRenderer.on('reply-close-mjpg-streamer',(event,data)=>{
         document.getElementById('leadTxt').innerHTML="拍照中。。。";
-        // ipcRenderer.send('captrue');
-        ipcRenderer.send('vision')
+        ipcRenderer.send('captrue');
+        // ipcRenderer.send('vision')
         ShowVisibility.style.display = "none";
         ImgVisibility.style.display = "none";
         stream.style.display="block";
         console.log('ready');
-    // })
+    })
 
     ipcRenderer.on('reply-mainjsfunction-captrue',(event,data)=>{
         console.log("hihi");
