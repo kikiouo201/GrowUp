@@ -1725,7 +1725,7 @@
 }
 
 
-/* e */
+/* ㄜ */
 .fingere {
   visibility: visible;
   width: 50px;
@@ -1810,6 +1810,650 @@
 }
 
 
+/* ㄝ */
+.fingerae {
+  visibility: visible;
+  width: 50px;
+  height: 100px;
+  transform: rotate(300deg);
+  position: absolute;
+  top: 125px;
+  left: 100px;
+  z-index: 30;
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+}
+
+
+.moveFingerae {
+  width: 50px;
+  height: 100px;
+  transform: scale(4);
+  transition: all 1s ease-out;
+  transform: rotate(300deg);
+  position: absolute;
+  top: 125px;
+  left: 100px;
+  z-index: 10;
+  /* animation-delay: 1s; */
+  animation-name: drawae;
+  animation-duration:2s;
+  animation-fill-mode:forwards;
+  animation-timing-function:linear;
+  /* animation-iteration-count:infinite; */
+  /* animation-timing-function:step-start; */
+}
+
+@keyframes drawae{
+    0%{
+      top: 125px;
+      left: 100px;
+    }
+    30%{
+      top: 103px;
+      left: 235px;
+      visibility: hidden;
+    }
+    30.5%{
+      visibility: visible;
+      top: 65px;
+      left: 130px;
+    }
+    60%{
+      top: 195px;
+      left: 140px;
+    }
+    80%{
+      top: 195px;
+      left: 220px;
+    }
+    80.5%{
+      top: 60px;
+      left: 200px;
+    }
+    100%{
+      top: 165px;
+      left: 195px;
+      visibility: hidden;
+    }
+}
+
+
+/* ㄞ */
+.fingerai {
+  visibility: visible;
+  width: 50px;
+  height: 100px;
+  transform: rotate(300deg);
+  position: absolute;
+  top: 65px;
+  left: 100px;
+  z-index: 30;
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+}
+
+
+.moveFingerai {
+  width: 50px;
+  height: 100px;
+  transform: scale(4);
+  transition: all 1s ease-out;
+  transform: rotate(300deg);
+  position: absolute;
+  top: 65px;
+  left: 100px;
+  z-index: 10;
+  /* animation-delay: 1s; */
+  animation-name: drawai;
+  animation-duration:2s;
+  animation-fill-mode:forwards;
+  animation-timing-function:linear;
+  /* animation-iteration-count:infinite; */
+  /* animation-timing-function:step-start; */
+}
+
+@keyframes drawai{
+   
+    0%{
+      top: 65px;
+      left: 100px;
+    }
+    20%{
+      top: 45px;
+      left: 215px;
+      visibility: hidden;
+    }
+    20.5%{
+      top: 90px;
+      left: 115px;
+      visibility: visible;
+    }
+    35%{
+      top: 130px;
+      left: 105px;
+    }
+    50%{
+      top: 110px;
+      left: 215px;
+    }
+    75%{
+      top: 210px;
+      left: 185px;
+      visibility: hidden;
+    }
+    75.5%{
+      visibility: visible;
+      top: 70px;
+      left: 170px;
+    }
+   
+    100%{
+      top: 210px;
+      left: 100px;
+      visibility: hidden;
+    }
+}
+
+
+/* ㄟ */
+.fingerei {
+  visibility: visible;
+  width: 50px;
+  height: 100px;
+  transform: rotate(300deg);
+  position: absolute;
+  top: 80px;
+  left: 85px;
+  z-index: 30;
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+}
+
+
+.moveFingerei {
+  width: 50px;
+  height: 100px;
+  transform: scale(4);
+  transition: all 1s ease-out;
+  transform: rotate(300deg);
+  position: absolute;
+  top: 80px;
+  left: 85px;
+  z-index: 10;
+  /* animation-delay: 1s; */
+  animation-name: drawei;
+  animation-duration:1s;
+  animation-fill-mode:forwards;
+  animation-timing-function:linear;
+  /* animation-iteration-count:infinite; */
+  /* animation-timing-function:step-start; */
+}
+
+@keyframes drawei{
+   
+    0%{
+      top: 80px;
+      left: 85px;
+    }
+    20%{
+      top: 65px;
+      left: 110px;
+    }
+    65%{
+      top: 135px;
+      left: 160px;
+    }
+    100%{
+      top: 185px;
+      left: 230px;
+      visibility: hidden;
+    }
+}
 
 
 
+/* ㄠ */
+.fingerao {
+  visibility: visible;
+  width: 50px;
+  height: 100px;
+  transform: rotate(300deg);
+  position: absolute;
+  top: 55px;
+  left: 155px;
+  z-index: 30;
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+}
+
+
+.moveFingerao {
+  width: 50px;
+  height: 100px;
+  transform: scale(4);
+  transition: all 1s ease-out;
+  transform: rotate(300deg);
+  position: absolute;
+  top: 55px;
+  left: 155px;
+  z-index: 10;
+  /* animation-delay: 1s; */
+  animation-name: drawao;
+  animation-duration:3s;
+  animation-fill-mode:forwards;
+  animation-timing-function:linear;
+  /* animation-iteration-count:infinite; */
+  /* animation-timing-function:step-start; */
+}
+
+@keyframes drawao{
+   
+    0%{
+      top: 55px;
+      left: 155px;
+    }
+    20%{
+      top: 115px;
+      left: 115px;
+    }
+    30%{
+      top: 135px;
+      left: 150px;
+    }
+    30.5%{
+      top: 90px;
+      left: 205px;
+    }
+    60%{
+      top: 200px;
+      left: 110px;
+    }
+    80%{
+      top: 185px;
+      left: 200px;
+      visibility: hidden;
+    }
+    80.5%{
+      visibility: visible;
+      top: 160px;
+      left: 200px;
+    }
+    100%{
+      top: 200px;
+      left: 225px;
+      visibility: hidden;
+    }
+}
+
+
+/* ㄡ */
+.fingerou {
+  visibility: visible;
+  width: 50px;
+  height: 100px;
+  transform: rotate(300deg);
+  position: absolute;
+  top: 75px;
+  left: 135px;
+  z-index: 30;
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+}
+
+
+.moveFingerou {
+  width: 50px;
+  height: 100px;
+  transform: scale(4);
+  transition: all 1s ease-out;
+  transform: rotate(300deg);
+  position: absolute;
+  top: 75px;
+  left: 135px;
+  z-index: 10;
+  /* animation-delay: 1s; */
+  animation-name: drawou;
+  animation-duration:2s;
+  animation-fill-mode:forwards;
+  animation-timing-function:linear;
+  /* animation-iteration-count:infinite; */
+  /* animation-timing-function:step-start; */
+}
+
+@keyframes drawou{
+   
+    0%{
+      top: 75px;
+      left: 135px;
+    }
+    30%{
+      top: 55px;
+      left: 220px;
+    }
+    66%{
+      top: 205px;
+      left: 105px;
+    }
+    66.5%{
+      top: 120px;
+      left: 125px;
+    }
+    60%{
+      top: 200px;
+      left: 110px;
+    }
+    100%{
+      top: 200px;
+      left: 235px;
+      visibility: hidden;
+    }
+}
+
+
+
+/* ㄢ */
+.fingeran {
+  visibility: visible;
+  width: 50px;
+  height: 100px;
+  transform: rotate(300deg);
+  position: absolute;
+  top: 58px;
+  left: 120px;
+  z-index: 30;
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+}
+
+
+.moveFingeran {
+  width: 50px;
+  height: 100px;
+  transform: scale(4);
+  transition: all 1s ease-out;
+  transform: rotate(300deg);
+  position: absolute;
+  top: 58px;
+  left: 120px;
+  z-index: 10;
+  /* animation-delay: 1s; */
+  animation-name: drawan;
+  animation-duration:2s;
+  animation-fill-mode:forwards;
+  animation-timing-function:linear;
+  /* animation-iteration-count:infinite; */
+  /* animation-timing-function:step-start; */
+}
+
+@keyframes drawan{
+   
+    0%{
+      top: 58px;
+      left: 120px;
+    }
+    30%{
+      top: 40px;
+      left: 210px;
+    }
+    40%{
+      top: 95px;
+      left: 186px;
+      visibility: hidden;
+    }
+    40.5%{
+      visibility: visible;
+      top: 70px;
+      left: 126px;
+    }
+    50%{
+      top: 120px;
+      left: 106px;
+    }
+    80%{
+      top: 110px;
+      left: 225px;
+    }
+    100%{
+      top: 215px;
+      left: 165px;
+      visibility: hidden;
+    }
+}
+
+
+
+/* ㄣ */
+.fingeren {
+  visibility: visible;
+  width: 50px;
+  height: 100px;
+  transform: rotate(300deg);
+  position: absolute;
+  top: 58px;
+  left: 115px;
+  z-index: 30;
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+}
+
+
+.moveFingeren {
+  width: 50px;
+  height: 100px;
+  transform: scale(4);
+  transition: all 1s ease-out;
+  transform: rotate(300deg);
+  position: absolute;
+  top: 58px;
+  left: 115px;
+  z-index: 10;
+  /* animation-delay: 1s; */
+  animation-name: drawen;
+  animation-duration:1.5s;
+  animation-fill-mode:forwards;
+  animation-timing-function:linear;
+  /* animation-iteration-count:infinite; */
+  /* animation-timing-function:step-start; */
+}
+
+@keyframes drawen{
+    0%{
+      top: 58px;
+      left: 115px;
+    }
+    33%{
+      top: 135px;
+      left: 100px;
+    }
+    66%{
+      top: 120px;
+      left: 235px;
+    }
+    100%{
+      top: 210px;
+      left: 177px;
+      visibility: hidden;
+    }
+}
+
+/* ㄤ */
+.fingerang {
+  visibility: visible;
+  width: 50px;
+  height: 100px;
+  transform: rotate(300deg);
+  position: absolute;
+  top: 118px;
+  left: 105px;
+  z-index: 30;
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+}
+
+
+.moveFingerang {
+  width: 50px;
+  height: 100px;
+  transform: scale(4);
+  transition: all 1s ease-out;
+  transform: rotate(300deg);
+  position: absolute;
+  top: 118px;
+  left: 105px;
+  z-index: 10;
+  /* animation-delay: 1s; */
+  animation-name: drawang;
+  animation-duration:3s;
+  animation-fill-mode:forwards;
+  animation-timing-function:linear;
+  /* animation-iteration-count:infinite; */
+  /* animation-timing-function:step-start; */
+}
+
+@keyframes drawang{
+    0%{
+      top: 118px;
+      left: 105px;
+    }
+    33%{
+      top: 97px;
+      left: 225px;
+      visibility: hidden;
+    }
+    33.5%{
+      visibility: visible;
+      top: 47px;
+      left: 175px;
+    }
+    50%{
+      top: 177px;
+      left: 125px;
+    }
+    66%{
+      top: 205px;
+      left: 95px;
+      visibility: hidden;
+    }
+    66.5%{
+      visibility: visible;
+      top: 125px;
+      left: 170px;
+    }
+    80%{
+      top: 210px;
+      left: 170px;
+    }
+    100%{
+      top: 210px;
+      left: 240px;
+      visibility: hidden;
+    }
+}
+
+
+/* ㄥ */
+.fingereng {
+  visibility: visible;
+  width: 50px;
+  height: 100px;
+  transform: rotate(300deg);
+  position: absolute;
+  top: 68px;
+  left: 160px;
+  z-index: 30;
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+}
+
+
+.moveFingereng {
+  width: 50px;
+  height: 100px;
+  transform: scale(4);
+  transition: all 1s ease-out;
+  transform: rotate(300deg);
+  position: absolute;
+  top: 68px;
+  left: 160px;
+  z-index: 10;
+  /* animation-delay: 1s; */
+  animation-name: draweng;
+  animation-duration:1.5s;
+  animation-fill-mode:forwards;
+  animation-timing-function:linear;
+  /* animation-iteration-count:infinite; */
+  /* animation-timing-function:step-start; */
+}
+
+@keyframes draweng{
+    0%{
+      top: 68px;
+      left: 160px;
+    }
+    50%{
+      top: 190px;
+      left: 90px;
+    }
+    100%{
+      top: 180px;
+      left: 230px;
+      visibility: hidden;
+    }
+}
+
+
+
+/* ㄦ */
+.fingerer {
+  visibility: visible;
+  width: 50px;
+  height: 100px;
+  transform: rotate(300deg);
+  position: absolute;
+  top: 68px;
+  left: 145px;
+  z-index: 30;
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+}
+
+
+.moveFingerer {
+  width: 50px;
+  height: 100px;
+  transform: scale(4);
+  transition: all 1s ease-out;
+  transform: rotate(300deg);
+  position: absolute;
+  top: 68px;
+  left: 145px;
+  z-index: 10;
+  /* animation-delay: 1s; */
+  animation-name: drawer;
+  animation-duration:2s;
+  animation-fill-mode:forwards;
+  animation-timing-function:linear;
+  /* animation-iteration-count:infinite; */
+  /* animation-timing-function:step-start; */
+}
+
+@keyframes drawer{
+    0%{
+      top: 68px;
+      left: 145px;
+    }
+    50%{
+      top: 200px;
+      left: 105px;
+      visibility: hidden;
+    }
+    50.5%{
+      visibility: visible;
+      top: 60px;
+      left: 195px;
+    }
+    80%{
+      top: 200px;
+      left: 195px;
+    }
+    90%{
+      top: 200px;
+      left: 265px;
+    }
+    100%{
+      top: 180px;
+      left: 255px;
+      visibility: hidden;
+    }
+}
