@@ -39,24 +39,30 @@ myPics.forEach((pics, num) => {
             isDrawing = false;
         }
     });
-    pics.addEventListener('touchend', e => {
-        x = e.offsetX;
-        y = e.offsetY;
+    pics.addEventListener('touchstart', e => {
+        const rect = e.target.getBoundingClientRect();
+        const touch = e.targetToches[0];
+        x = touch.pageX - rect.left;
+        y = touch.pageY - rect.top;
         isDrawing = true;
     });
 
     pics.addEventListener('touchmove', e => {
         if (isDrawing === true) {
-            drawLine(context, x, y, e.offsetX, e.offsetY);
-            x = e.offsetX;
-            y = e.offsetY;
+            const rect = e.target.getBoundingClientRect();
+            const touch = e.targetToches[0];
+            drawLine(context, x, y, touch.pageX - rect.left, touch.pageY - rect.top);
+            x = touch.pageX - rect.left;
+            y = touch.pageY - rect.top;
             console.log('scoreJudgment');
             scoreJudgment(id, x, y, points, num);
         }
     });
-    window.addEventListener('touchstart', e => {
+    window.addEventListener('touchend', e => {
         if (isDrawing === true) {
-            drawLine(context, x, y, e.offsetX, e.offsetY);
+            const rect = e.target.getBoundingClientRect();
+            const touch = e.targetToches[0];
+            drawLine(context, x, y, touch.pageX - rect.left, touch.pageY - rect.top);
             x = 0;
             y = 0;
             isDrawing = false;
