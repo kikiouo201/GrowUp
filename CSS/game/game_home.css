@@ -65,7 +65,7 @@ body {
     width: 117px;
     left: 194px;
     top: 161px;
-    z-index: 2;
+    /* z-index: 2; */
 }
 
 .westImg {
