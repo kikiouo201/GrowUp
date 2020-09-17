@@ -54,7 +54,7 @@ if (voiceBtn) {
                                                     </div>
                                                     <br><br><br><br>
                                                     <div>
-                                                        <img class="img_` + click_num + `" src="https:${url}">
+                                                        <img class="img_` + click_num + `" src="${url}">
                                                     </div>
                                                     <br>
                                                     <div style="float:left; display: block; text-align: left;">
@@ -62,14 +62,24 @@ if (voiceBtn) {
                                                         <p class="answer_` + click_num + ` card-text card_A" style="margin-left: 0px;">${answer}</p>
                                                         <img class="speaker_A" onclick="speaker(this)" id="` + CardID_A + `" src="icons/speaker.png" />
                                                     </div>
-
                                             </div>
 
-                                        </div>`;
+                                    </div>`;
+
+        var createPBook = (bookName, bookImg, bookIntro) => `<div class="card-header contentCss" id="QA_num_` + click_num + `" style="background-color: #f8f9fa24; padding-bottom: 40px;">
+                                    <p class="contentlink">相關繪本連結：</p>
+                                    <p class="book_css">${bookName}</p>
+                                    <img class="speaker_A" onclick="speakerBookName(this)" id="speaker_A" src="icons/speaker.png" style="margin-top: -55px" />
+
+                                    <img src="${bookImg}" style="margin-left: 20px; display: inline;" width="180" height="153" alt="${bookName}">
+                                    <p style="display: inline; margin-left: 20px; margin-top: -5px; position: absolute; margin-right: 40px;">${bookIntro}</p>
+                                    <img class="speaker_A" onclick="speakerBook(this)" id="speaker_A" src="icons/speaker.png" style="margin-top: 131px; display: inline; bottom: 31px;" />
+                                </div>`
 
 
         const messages = document.querySelector('#messages');
         const QA_card = document.querySelector('#QA_card');
+
         ipcRenderer.once('reply-result', (event, data) => {
 
             ipcRenderer.send('serchImgURL', data['keyWord']);
@@ -102,202 +112,39 @@ if (voiceBtn) {
                 var ans = document.querySelector('.answer_' + click_num);
                 // var src = ans.textContent.trim();
                 ans.innerText = answer;
-                // console.log("ans:" + answer)
+                console.log("ans:" + answer)
                 data['Answer'] = answer;
+
+            })
+
+            ipcRenderer.send('searchPictureBook', data['keyWord']);
+            ipcRenderer.once('replyPbook', (event, pbook) => {
+                const pictureBook = document.querySelector('#pictureText_' + click_num);
+
+                // QA_card.innerHTML = QA_card.innerHTML + createQA(data['Question'], data['Answer_pic'], data['Answer'], pbook['bookName'], pbook['bookImg'], pbook['bookIntro']);
+
+                // var newDiv = document.createElement("div");
+                // newDiv.className = "card-header contentCss";
+                // newDiv.style.background = "#f8f9fa24";
+                // newDiv.style.padding = "12px 20px 40px 20px";
+                console.log("pictureBook" + pictureBook)
+
+                pictureBook.innerHTML += createPBook(pbook['bookName'], pbook['bookImg'], pbook['bookIntro'])
                 ipcRenderer.send('uploadAPI', data);
 
             })
 
+            QA_card.innerHTML = QA_card.innerHTML + createQA(data['Question'], "./image/character/200.gif", "查詢中...");
 
-
-
-
-            if (data['Answer'].toString().trim() == 'TurnToOpenCamera') { //如果偵測到「問這是什麼」類型的問題
-                SystemVal.innerHTML = '切換至「你拍我答」'
-                setTimeout(document.location.href = "result.html", 5000);
-                // document.location.href="result.html";   //直接跳轉到camera的html
-                console.log("camera true")
-            } else if (data['Answer'].toString().trim() == 'OpenPickingUpIsALittleRed') { //玩翻牌
-                SystemVal.innerHTML = '開啟小遊戲至「翻牌遊戲」'
-                setTimeout(document.location.href = "./view/pickingUpIsALittleRed.html", 5000);
-                console.log("picking true")
-            } else if (data['Answer'].toString().trim() == 'OpenGophers') { //玩打地鼠
-                SystemVal.innerHTML = '開啟小遊戲至「打地鼠遊戲」'
-                setTimeout(document.location.href = "./view/gophers.html", 5000);
-                console.log("gophers true")
-            } else if (data['Question'].toString().trim().includes('蘋果')) {
-                QA_card.innerHTML = QA_card.innerHTML + createQA(data['Question'], data['Answer_pic'], "落業喬木。葉軟形，邊緣有細尖鋸齒。果實球形，味美，可食，也可製酒。");
-
-                console.log()
-                let pictureBook = document.querySelector('#pictureText_' + click_num);
-
-
-                if (pictureBook.id.includes('2')) {
-                    console.log("id:" + pictureBook.id)
-                    pictureBook.innerHTML += `<div class="card-header contentCss" id="QA_num_" style="background-color: #f8f9fa24; padding-bottom: 40px;">
-                    <p class="contentlink">相關繪本連結：</p>
-                    <p class="book_css">蘋果甜蜜蜜</p>
-                    <img class="speaker_A" onclick="speakerBookName(this)" id="speaker_A" src="icons/speaker.png" style="margin-top: -55px" />
-    
-                    <img src="https://children.moc.gov.tw/resource/animate_image/6892.jpg" style="margin-left: 20px; display: inline;" width="180" height="153" alt="蘋果甜蜜蜜">
-                    <p style="display: inline; margin-left: 20px; margin-top: -10px; position: absolute; margin-right: 40px;">
-                        嫁接的蜜蘋果要先習慣這塊土地，接受泥土的養分之後，才能慢慢慢慢的發芽開花。在這塊土地上接受多元文化洗禮、共同生活的人，不也像蜜蘋果一樣嗎？願藉此，獻上我們最深的祝福！</p>
-                    <img class="speaker_A" onclick="speakerBook(this)" id="speaker_A" src="icons/speaker.png" style="margin-top: 131px; display: inline; bottom: 31px;" />
-    
-                </div>
-                <div class="card-header" id="QA_num_">
-                
-                </div>`
-
-                }
-                if (pictureBook.id.includes('1')) {
-
-                    pictureBook.innerHTML += `<div class="card-header contentCss" id="QA_num_" style="background-color: #f8f9fa24; padding-bottom: 40px;">
-                    <p class="contentlink">相關繪本連結：</p>
-                    <p class="book_css">環遊世界做蘋果派</p>
-                    <img class="speaker_A" onclick="speakerBookName(this)" id="speaker_A" src="icons/speaker.png" style="margin-top: -55px" />
-    
-                    <img src="https://children.moc.gov.tw/resource/animate_image/6850.jpg" style="margin-left: 20px; display: inline;" width="180" height="153" alt="環遊世界做蘋果派">
-                    <p style="display: inline; margin-left: 20px; margin-top: -10px; position: absolute; margin-right: 40px;">
-                    要怎樣認識「國家」呢？每一個國家總有不同的、具代表性的文物、景物、建築或美食，在環遊世界一周後，可以帶回的東西，會是不同的明信片、紀念品，還有好吃特產呢？</p>
-                    <img class="speaker_A" onclick="speakerBook(this)" id="speaker_A" src="icons/speaker.png" style="margin-top: 131px; display: inline; bottom: 31px;" />
-    
-                </div>
-                <div class="card-header" id="QA_num_">
-                
-                </div>`
-
-                }
-            } else if (data['Question'].toString().trim().includes('香蕉')) {
-                QA_card.innerHTML = QA_card.innerHTML + createQA(data['Question'], data['Answer_pic'], "植物名。芭蕉科芭蕉屬，多年生草本。莖短，葉長而寬，夏秋間自偽莖抽出大花軸，上部為雄花，下部為雌花，花色淡黃。果實為長形，稍彎，味香甜，亦稱為「香蕉」。");
-
-                console.log()
-                let pictureBook = document.querySelector('#pictureText_' + click_num);
-
-                if (pictureBook) {
-                    pictureBook.innerHTML += `<div class="card-header contentCss" id="QA_num_" style="background-color: #f8f9fa24; padding-bottom: 40px;">
-                    <p class="contentlink">相關繪本連結：</p>
-                    <p class="book_css">香蕉的秘密</p>
-                    <img class="speaker_A" onclick="speakerBookName(this)" id="speaker_A" src="icons/speaker.png" style="margin-top: -55px" />
-    
-                    <img src="https://children.moc.gov.tw/resource/animate_image/6924.jpg" style="margin-left: 20px; display: inline;" width="180" height="153" alt="蘋果甜蜜蜜">
-                    <p style="display: inline; margin-left: 20px; margin-top: -5px; position: absolute; margin-right: 40px;">
-                    從日本回到台灣的小表妹，第一次吃到不用沾蜂蜜就又香又甜的香蕉。但是過了幾天，香蕉皮上長出了黑點，是已經壞掉不能吃了嗎？這你就搞錯囉，香蕉皮上的黑點可是香蕉成熟的暗號呢！\r\n內容介紹香蕉的生長過程、香蕉的採收、產銷過程，為你完整解開香蕉的祕密。</p>
-                    <img class="speaker_A" onclick="speakerBook(this)" id="speaker_A" src="icons/speaker.png" style="margin-top: 131px; display: inline; bottom: 31px;" />
-    
-                </div>
-                <div class="card-header" id="QA_num_">
-                
-                </div>`
-
-                }
-            } else if (data['Question'].toString().trim().includes('水果')) {
-                QA_card.innerHTML = QA_card.innerHTML + createQA(data['Question'], data['Answer_pic'], "可以生食，內含有漿液的果實。如橘子、梨子、西瓜、鳳梨等。");
-
-                console.log()
-                let pictureBook = document.querySelector('#pictureText_' + click_num);
-
-                if (pictureBook) {
-                    pictureBook.innerHTML += `<div class="card-header contentCss" id="QA_num_" style="background-color: #f8f9fa24; padding-bottom: 40px;">
-                    <p class="contentlink">相關繪本連結：</p>
-                    <p class="book_css">嘟嘟~水果列車出發</p>
-                    <img class="speaker_A" onclick="speakerBookName(this)" id="speaker_A" src="icons/speaker.png" style="margin-top: -55px" />
-    
-                    <img src="https://children.moc.gov.tw/resource/animate_image/6925.jpg" style="margin-left: 20px; display: inline;" width="180" height="153" alt="勇敢小火車：卡爾的特別任務">
-                    <p style="display: inline; margin-left: 20px; margin-top: -5px; position: absolute; margin-right: 40px;">
-                    卡爾的特別任務－勇敢是，「帶著害怕前進」勇敢是，「不對自己說不可能」勇敢是，「愛的陪伴與分享」　　這裡是咕咕鎮的火車貨運站，也是藍色小火車卡爾和媽媽溫蒂工作的地方。　　這天，店裡來了一位很特別的客人...</p>
-                    <img class="speaker_A" onclick="speakerBook(this)" id="speaker_A" src="icons/speaker.png" style="margin-top: 131px; display: inline; bottom: 31px;" />
-    
-                </div>
-                <div class="card-header" id="QA_num_">
-                
-                </div>`
-
-
-                }
-            } else if (data['Question'].toString().trim().includes('獅子')) {
-                QA_card.innerHTML = QA_card.innerHTML + createQA(data['Question'], data['Answer_pic'], "動物名。哺乳綱食肉目貓科。多分布於印度及非洲一帶。身長約二、三公尺，頭圓肩闊，四肢強健，有鉤爪，尾細長。雄獅頭至頸部有鬣，雌獅體型較小，無鬣。營社會生活。以大型草食性動物為主食。");
-
-                console.log()
-                let pictureBook = document.querySelector('#pictureText_' + click_num);
-
-                if (pictureBook) {
-                    pictureBook.innerHTML += `<div class="card-header contentCss" id="QA_num_" style="background-color: #f8f9fa24; padding-bottom: 40px;">
-                    <p class="contentlink">相關繪本連結：</p>
-                    <p class="book_css">小獅子多多</p>
-                    <img class="speaker_A" onclick="speakerBookName(this)" id="speaker_A" src="icons/speaker.png" style="margin-top: -55px" />
-    
-                    <img src="https://children.moc.gov.tw/resource/animate_image/6737.jpg" style="margin-left: 20px; display: inline;" width="180" height="153" alt="勇敢小火車：卡爾的特別任務">
-                    <p style="display: inline; margin-left: 20px; margin-top: -5px; position: absolute; margin-right: 40px;">
-                    有一天，森林裡突然發生大火，小獅子多多奮不顧身的搶救同伴。但是多多美麗的鬃毛，卻被燒毀…他很難過，很傷心，他覺得自己的樣子變得很醜，一定沒有人會喜歡他。真的會這樣嗎？</p>
-                    <img class="speaker_A" onclick="speakerBook(this)" id="speaker_A" src="icons/speaker.png" style="margin-top: 131px; display: inline; bottom: 31px;" />
-    
-                </div>
-                <div class="card-header" id="QA_num_">
-                
-                </div>`
-
-                }
-            } else if (data['Question'].toString().trim().includes('桃子')) {
-                QA_card.innerHTML = QA_card.innerHTML + createQA(data['Question'], data['Answer_pic'], "植物名。薔薇科櫻屬，落葉小喬木。高約三公尺，葉橢圓而長。春初開花，有白、紅二色。果實亦稱為「桃」，呈圓形，頂端有尖，味酸可口。");
-
-                console.log()
-                let pictureBook = document.querySelector('#pictureText_' + click_num);
-
-                if (pictureBook) {
-                    pictureBook.innerHTML += `<div class="card-header contentCss" id="QA_num_" style="background-color: #f8f9fa24; padding-bottom: 40px;">
-                    <p class="contentlink">相關繪本連結：</p>
-                    <p class="book_css">誰先吃桃子</p>
-                    <img class="speaker_A" onclick="speakerBookName(this)" id="speaker_A" src="icons/speaker.png" style="margin-top: -55px" />
-    
-                    <img src="https://children.moc.gov.tw/resource/book_image/218933.jpg" style="margin-left: 20px; display: inline;" width="180" height="153" alt="勇敢小火車：卡爾的特別任務">
-                    <p style="display: inline; margin-left: 20px; margin-top: -5px; position: absolute; margin-right: 40px;">
-                    森林裡的動物都想吃紅咚咚、香噴噴的大桃子，但誰有資格先吃呢？是個子最高的，還是體重最重的？是嘴巴最大的，還是耳朵最長的……最後的發展絕對出乎你的意料！數學能帶來新觀點：孩子讀過各類的數學繪本後，不僅...</p>
-                    <img class="speaker_A" onclick="speakerBook(this)" id="speaker_A" src="icons/speaker.png" style="margin-top: 131px; display: inline; bottom: 31px;" />
-    
-                </div>
-                <div class="card-header" id="QA_num_">
-                
-                </div>`
-
-                }
-            } else if (data['Question'].toString().trim().includes('杯子')) {
-                QA_card.innerHTML = QA_card.innerHTML + createQA(data['Question'], data['Answer_pic'], "可盛裝液體或其他物品的小型容器。");
-
-                console.log()
-                let pictureBook = document.querySelector('#pictureText_' + click_num);
-
-                if (pictureBook) {
-                    pictureBook.innerHTML += `<div class="card-header contentCss" id="QA_num_" style="background-color: #f8f9fa24; padding-bottom: 40px;">
-                    <p class="contentlink">相關繪本連結：</p>
-                    <p class="book_css">杯杯英雄</p>
-                    <img class="speaker_A" onclick="speakerBookName(this)" id="speaker_A" src="icons/speaker.png" style="margin-top: -55px" />
-    
-                    <img src="https://children.moc.gov.tw/resource/animate_image/6979.png" style="margin-left: 20px; display: inline;" width="180" height="153" alt="勇敢小火車：卡爾的特別任務">
-                    <p style="display: inline; margin-left: 20px; margin-top: -5px; position: absolute; margin-right: 40px;">
-                    杯杯王國，有個傳說，誰能爬上廣場中央的高塔，就是杯杯英雄。英雄要有智慧、英雄要有超人體格、英雄要有領導力、英雄要堅持夢想……到底誰能當上英雄？反諷的寓言故事，令人深省、又不覺莞爾。波隆那拉加茲獎得主...</p>
-                    <img class="speaker_A" onclick="speakerBook(this)" id="speaker_A" src="icons/speaker.png" style="margin-top: 131px; display: inline; bottom: 31px;" />
-    
-                </div>
-                <div class="card-header" id="QA_num_">
-                
-                </div>`
-
-                }
-            } else {
-                QA_card.innerHTML = QA_card.innerHTML + createQA(data['Question'], data['Answer_pic'], data['Answer']);
-
-            }
-
-            console.log("data=" + data)
+            console.log("data=" + JSON.stringify(data))
             SystemVal.innerHTML = '再問一次問題';
 
-
-            $(document).ready(
-                function() {
-                    $("html").scrollTop($(document).height() + 100);
-                }
-            );
+            // 設定滾輪置底
+            // $(document).ready(
+            //     function() {
+            //         $("html").scrollTop($(document).height() + 100);
+            //     }
+            // );
         });
 
     });
@@ -446,6 +293,62 @@ function searchAnswer(keyword) {
             // event.reply('replyAnswer', test)
         });
         // await console.log("Answer:" + test);
+    })();
+}
+
+function searchPBook(keyword) {
+    (async() => {
+        console.log('Catch picturebook');
+        const browser = await puppeteer.launch({
+            // executablePath: '/usr/bin/chromium-browser',
+            executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
+            args: ['--disable-infobars', '--no-default-browser-check' /*, '--start-fullscreen', '--start-maximized' ,'--no-startup-window'*/ ],
+            ignoreDefaultArgs: ['--enable-automation'],
+            headless: true
+        });
+        const page = await browser.newPage();
+        await page.goto("https://children.moc.gov.tw/index");
+        await page.type('body > header > div > div.search_bar > ul > li:nth-child(5) > form > input[type=text]:nth-child(2)', keyword)
+        await page.click('body > header > div > div.search_bar > ul > li:nth-child(5) > form > input.search_btn')
+            // const findFBook = await page.$('#main > div > div.row > div > div.wood_bg > div > article > div:nth-child(6) > div:nth-child(1) > div > section > h2 > a')
+        await page.waitFor(1000);
+
+        try {
+            // 動畫類的第一本書，之後判斷沒有的話，無書目
+            const findFBookDIV = await page.waitForSelector('#main > div > div.row > div > div.wood_bg > div > article > div:nth-child(4) > div:nth-child(1) > div > section')
+
+            const findFBookName = await page.$('#main > div > div.row > div > div.wood_bg > div > article > div:nth-child(4) > div:nth-child(1) > div > section > h2 > a')
+                // await findFBook.setDefaultNavigationTimeout(10000);
+            await findFBookName.evaluate(node => node.innerText).then((value) => {
+                Answer = value;
+                console.log(value);
+            });
+
+            let PBook = { "bookName": "獅子1", "bookImg": "獅子2", "bookIntro": "獅子3" };
+
+            const findFBookPic = await page.$('.pic')
+            const picURL = await findFBookPic.$eval('img', src => src.getAttribute('src'))
+            await console.log("picURL:" + picURL)
+
+            // 動畫第一本絕對位置
+            // const findBookIntro = await page.$eval('#main > div > div.row > div > div.wood_bg > div > article > div:nth-child(4) > div:nth-child(1) > div > section > a > p', a => a.textContent.trim())
+            const findBookIntro = await page.$eval('p', al => al.textContent.trim())
+            await console.log("findBookIntro:" + findBookIntro)
+
+            PBook['bookName'] = Answer;
+            PBook['bookImg'] = picURL;
+            PBook['bookIntro'] = findBookIntro;
+            console.log("PBook['bookName']:" + PBook['bookName'] + " PBook['bookImg']:" + PBook['bookImg'] + " PBook['bookIntro']" + PBook['bookIntro'])
+
+        } catch (e) {
+            console.log('an expection on page.evaluate ', e);
+
+        }
+        // throw {
+
+        // }
+
+
     })();
 }
 
