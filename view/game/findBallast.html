@@ -5,21 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../../CSS/icon.css">
     <style>
         body {
             background: url("../../image/countingNumbers/true-2.jpeg") no-repeat;
             background-size: cover;
             text-align: center;
             margin: 0px;
+            
         }
 
         .forest {
             position: relative;
-            height: 900px;
+            height: 410px;
         }
 
         .grass {
-            height: 500px;
+            height: 200px;
             position: absolute;
             bottom: 0px;
             right: 0px;
@@ -28,27 +30,27 @@
         }
 
         .grass2 {
-            height: 400px;
+            height: 250px;
             position: absolute;
             bottom: 0px;
-            left: 500px;
+            left: 305px;
             z-index: 50;
             filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
 
         }
 
         .grass3 {
-            height: 300px;
+            height: 150px;
             position: absolute;
             bottom: 0px;
-            left: 100px;
+            left: 200px;
             z-index: 40;
             filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3));
 
         }
 
         .grass4 {
-            height: 500px;
+            height: 300px;
             position: absolute;
             bottom: 0px;
             left: -150px;
@@ -60,7 +62,7 @@
         .target {
             height: 100px;
             position: absolute;
-            bottom: 250px;
+            bottom: 150px;
             left: 40px;
             z-index: 31;
             filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
@@ -69,9 +71,9 @@
         .target2 {
             height: 150px;
             position: absolute;
-            bottom: 300px;
+            bottom: 85px;
             left: 350px;
-            z-index: 31;
+            z-index: 51;
             filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
         }
 
@@ -79,17 +81,17 @@
             height: 100px;
             position: absolute;
             bottom: 20px;
-            left: 40px;
+            left: 140px;
             z-index: 31;
             filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
         }
 
         .target4 {
-            height: 150px;
+            height: 100px;
             position: absolute;
-            bottom: 300px;
-            right: 350px;
-            z-index: 21;
+            bottom: 0px;
+            right: 400px;
+            z-index: 51;
             filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
         }
 
@@ -103,7 +105,7 @@
         }
 
         .getTarget {
-            height: 150px;
+            height: 80px;
             transform: scale(4);
             transition: all 1s ease-out;
             position: absolute;
@@ -133,7 +135,7 @@
         .next {
             position: absolute;
             bottom: 12%;
-            left: 40%;
+            left: 43%;
             right: 40%;
             padding: 10px;
             background-color: burlywood;
@@ -212,7 +214,7 @@
 
             background-color: darkcyan;
             text-align: center;
-            border-radius: 10px;
+            border-radius:  10px;
             margin: 10px;
         }
     </style>
@@ -250,6 +252,16 @@
         <img src="../../image/words/peach.png" class="target3" onclick="toBig('3');mouseDownText('桃子');">
         <img src="../../image/words/strawberry.png" class="target4" onclick="toBig('4');mouseDownText('草莓');">
         <img src="../../image/words/waterpear1.png" class="target5" onclick="toBig('5');mouseDownText('水梨');">
+    </div>
+    <div>
+        <a onclick="history.back()" class="returnfloat" id="menu-share">
+            <i class="fab fa-share return-float"><img src="../../photo/return.png"></i>
+        </a>
+    </div>
+    <div>
+        <a href="../../game_home.html" class="homefloat" id="menu-share">
+            <i class="fab fa-share my-float"><img src="../../photo/gobackhome.png" width="70%"></i>
+        </a>
     </div>
     <script src="../../model/util/voiceOut.js"></script>
 </body>
