@@ -482,25 +482,26 @@ ipcMain.on('call-frequency', (event, arg) => {
         var Cameratotalfreq = 0;
         var Speechtotalfreq = 0;
         let dt = new Date();
-        // console.log("speechdata =>"+JSON.stringify(req))
-        console.log("speechdata =>" + freq.content[(Object.keys(freq.content).length - 1)].created_at.substring(9, 10))
+        console.log("speechdata =>"+freq.content[33].created_at.substring(9, 10))
+        console.log("speechdata =>"+(dt.getDate() - 1))
+        console.log("speechdata =>" + (Object.keys(freq.content).length - 1))
 
         for (i = (Object.keys(freq.content).length - 1); i >= 0; i--) {
+            
+                if (freq.content[i].created_at.substring(6, 7) == (dt.getMonth() + 1) & freq.content[i].created_at.substring(8, 10) == (dt.getDate() - 1)||freq.content[i].created_at.substring(9, 10) == (dt.getDate() - 1)) {
 
-            if (freq.content[i].created_at.substring(6, 7) == (dt.getMonth() + 1) & freq.content[i].created_at.substring(9, 10) == (dt.getDate() - 1)) {
+                    if (freq.content[i].category == "語音") {
+                        // console.log("speechdata =>"+freq.content[i].created_at.substring(9, 10))
+                        Speechtotalfreq++
+                    }
 
-                if (freq.content[i].category == "語音") {
-                    // console.log("speechdata =>"+freq.content[i].created_at.substring(9, 10))
-                    Speechtotalfreq++
                 }
-
-            }
 
         }
 
         for (i = (Object.keys(freq.content).length - 1); i >= 0; i--) {
 
-            if (freq.content[i].created_at.substring(6, 7) == (dt.getMonth() + 1) & freq.content[i].created_at.substring(9, 10) == (dt.getDate() - 1)) {
+            if (freq.content[i].created_at.substring(6, 7) == (dt.getMonth() + 1) & freq.content[i].created_at.substring(8, 10) == (dt.getDate() - 1)||freq.content[i].created_at.substring(9, 10) == (dt.getDate() - 1)) {
 
                 if (freq.content[i].category == "影像辨識") {
 
@@ -514,17 +515,13 @@ ipcMain.on('call-frequency', (event, arg) => {
         var CamerapercentColor = Math.round(Cameratotalfreq / 3 * 100);
         if (CamerapercentColor > 100) {
             CamerapercentColor = 100;
-        } else {
-            CamerapercentColor = Math.round(Cameratotalfreq / 3 * 100);
-        }
+        } 
 
 
         var SpeechpercentColor = Math.round(Speechtotalfreq / 3 * 100);
         if (SpeechpercentColor > 100) {
             SpeechpercentColor = 100;
-        } else {
-            SpeechpercentColor = Math.round(Speechtotalfreq / 3 * 100);
-        }
+        } 
 
         console.log("Speechtotalfreq =>" + Speechtotalfreq)
         console.log("Cameratotalfreq =>" + Cameratotalfreq)
