@@ -50,7 +50,7 @@ if (voiceBtn) {
                                                     <div style="float:left; display: block; text-align: left;">
                                                         <p class="card-title card_Q">問題：</p>
                                                         <p class="card-title card_Q" style="margin-left: 0px;">${question}</p>
-                                                        <img class="speaker_Q" onclick="speaker(this)" id="` + CardID_Q + `" src="icons/speaker.png" onclick=speakerTest(this)>
+                                                        <img class="speaker_Q" onclick="playAudio(this)" id="` + CardID_Q + `" src="icons/speaker.png" onclick=speakerTest(this) alt="">
                                                     </div>
                                                     <br><br><br><br>
                                                     <div>
@@ -60,7 +60,7 @@ if (voiceBtn) {
                                                     <div style="float:left; display: block; text-align: left;">
                                                         <p class="card-text card_A" style="float: left;">敘述：</p>
                                                         <p class="answer_` + click_num + ` card-text card_A" style="margin-left: 0px;">${answer}</p>
-                                                        <img class="speaker_A" onclick="speaker(this)" id="` + CardID_A + `" src="icons/speaker.png" />
+                                                        <img class="speaker_A" onclick="playAudio(this)" id="` + CardID_A + `" src="icons/speaker.png" alt=""/>
                                                     </div>
                                             </div>
 
@@ -69,11 +69,11 @@ if (voiceBtn) {
         var createPBook = (bookName, bookImg, bookIntro) => `<div class="card-header contentCss" id="QA_num_` + click_num + `" style="background-color: #f8f9fa24; padding-bottom: 40px;">
                                     <p class="contentlink">相關繪本連結：</p>
                                     <p class="book_css">${bookName}</p>
-                                    <img class="speaker_A" onclick="speakerBookName(this)" id="speaker_A" src="icons/speaker.png" style="margin-top: -55px" />
+                                    <img class="speaker_A" onclick="playAudio(this)" id="speaker_pbName_` + click_num + `" src="icons/speaker.png" style="margin-top: -55px" alt=""/>
 
                                     <img src="${bookImg}" style="margin-left: 20px; display: inline;" width="180" height="153" alt="${bookName}">
                                     <p style="display: inline; margin-left: 20px; margin-top: -5px; position: absolute; margin-right: 40px;">${bookIntro}</p>
-                                    <img class="speaker_A" onclick="speakerBook(this)" id="speaker_A" src="icons/speaker.png" style="margin-top: 131px; display: inline; bottom: 31px;" />
+                                    <img class="speaker_A" onclick="playAudio(this)" id="speaker_pbIntro_` + click_num + `" src="icons/speaker.png" style="margin-top: 131px; display: inline; bottom: 31px;" alt=""/>
                                 </div>`
 
 
@@ -107,13 +107,15 @@ if (voiceBtn) {
 
             ipcRenderer.send('searchAnswer', data['keyWord']);
             ipcRenderer.once('replyAnswer', (event, answer) => {
-
+                let voiceA = document.getElementById(`speaker_A_${click_num}`);
                 // window.onload = () => {
                 var ans = document.querySelector('.answer_' + click_num);
                 // var src = ans.textContent.trim();
-                ans.innerText = answer;
-                console.log("ans:" + answer)
-                data['Answer'] = answer;
+                ans.innerText = answer['ansText'];
+                console.log("ans:" + answer['ansText'])
+                data['Answer'] = answer['ansText'];
+                console.log("answer['ansVoice']:" + answer['ansVoice'])
+                voiceA.alt = answer['ansVoice'];
 
             })
 
@@ -130,6 +132,13 @@ if (voiceBtn) {
                 console.log("pictureBook" + pictureBook)
 
                 pictureBook.innerHTML += createPBook(pbook['bookName'], pbook['bookImg'], pbook['bookIntro'])
+                let voiceQ = document.getElementById(`speaker_Q_${click_num}`);
+                voiceQ.alt = data['qVoice'];
+
+                let voiceName = document.getElementById(`speaker_pbName_${click_num}`);
+                let voiceIntro = document.getElementById(`speaker_pbIntro_${click_num}`);
+                voiceName.alt = pbook['bNameVoice'];
+                voiceIntro.alt = pbook['bIntroVoice'];
                 ipcRenderer.send('uploadAPI', data);
 
             })
@@ -357,7 +366,7 @@ function playAudio(name) {
     console.log("name:" + name.alt)
     let id = name.alt;
     if (audioCreate.canPlayType("audio/mpeg")) {
-        audioCreate.setAttribute("src", `./TTS/mp3/questionMW/${id}.mp3`);
+        audioCreate.setAttribute("src", `./TTS/mp3/pictureBook/${id}.mp3`);
         console.log(`id:${id}`)
     }
 

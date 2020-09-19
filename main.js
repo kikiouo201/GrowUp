@@ -127,9 +127,10 @@ ipcMain.on('voice-require-to-py', (event, arg) => {
         },
 
         // callbackWhenSuccess
-        (result) => {
-
-            event.reply('reply-result', result)
+        async(result) => {
+            let STT_Q = await callSTT.quickStart(result['Question']);
+            result['qVoice'] = await STT_Q;
+            event.reply('reply-result', result);
 
             // api.Question.addQa
             // api.Question.addQa(1, result['Question'], result['Answer'], "https:" + "//upload.wikimedia.org/wikipedia/commons/thumb/9/99/Apples_in_basket_2018_G2.jpg/250px-Apples_in_basket_2018_G2.jpg", result['keyWord'].trim(), "語音", (event) => {
@@ -482,26 +483,26 @@ ipcMain.on('call-frequency', (event, arg) => {
         var Cameratotalfreq = 0;
         var Speechtotalfreq = 0;
         let dt = new Date();
-        console.log("speechdata =>"+freq.content[33].created_at.substring(9, 10))
-        console.log("speechdata =>"+(dt.getDate() - 1))
+        console.log("speechdata =>" + freq.content[33].created_at.substring(9, 10))
+        console.log("speechdata =>" + (dt.getDate() - 1))
         console.log("speechdata =>" + (Object.keys(freq.content).length - 1))
 
         for (i = (Object.keys(freq.content).length - 1); i >= 0; i--) {
-            
-                if (freq.content[i].created_at.substring(6, 7) == (dt.getMonth() + 1) & freq.content[i].created_at.substring(8, 10) == (dt.getDate() - 1)||freq.content[i].created_at.substring(9, 10) == (dt.getDate() - 1)) {
 
-                    if (freq.content[i].category == "語音") {
-                        // console.log("speechdata =>"+freq.content[i].created_at.substring(9, 10))
-                        Speechtotalfreq++
-                    }
+            if (freq.content[i].created_at.substring(6, 7) == (dt.getMonth() + 1) & freq.content[i].created_at.substring(8, 10) == (dt.getDate() - 1) || freq.content[i].created_at.substring(9, 10) == (dt.getDate() - 1)) {
 
+                if (freq.content[i].category == "語音") {
+                    // console.log("speechdata =>"+freq.content[i].created_at.substring(9, 10))
+                    Speechtotalfreq++
                 }
+
+            }
 
         }
 
         for (i = (Object.keys(freq.content).length - 1); i >= 0; i--) {
 
-            if (freq.content[i].created_at.substring(6, 7) == (dt.getMonth() + 1) & freq.content[i].created_at.substring(8, 10) == (dt.getDate() - 1)||freq.content[i].created_at.substring(9, 10) == (dt.getDate() - 1)) {
+            if (freq.content[i].created_at.substring(6, 7) == (dt.getMonth() + 1) & freq.content[i].created_at.substring(8, 10) == (dt.getDate() - 1) || freq.content[i].created_at.substring(9, 10) == (dt.getDate() - 1)) {
 
                 if (freq.content[i].category == "影像辨識") {
 
@@ -515,13 +516,13 @@ ipcMain.on('call-frequency', (event, arg) => {
         var CamerapercentColor = Math.round(Cameratotalfreq / 3 * 100);
         if (CamerapercentColor > 100) {
             CamerapercentColor = 100;
-        } 
+        }
 
 
         var SpeechpercentColor = Math.round(Speechtotalfreq / 3 * 100);
         if (SpeechpercentColor > 100) {
             SpeechpercentColor = 100;
-        } 
+        }
 
         console.log("Speechtotalfreq =>" + Speechtotalfreq)
         console.log("Cameratotalfreq =>" + Cameratotalfreq)
@@ -629,14 +630,16 @@ ipcMain.on('searchAnswer', async(event, keyword) => {
         await page.goto("https://www.moedict.tw/" + keyword);
         // await console.log("kw:" + keyword.substring(0, 1))
     }
-
+    let Ans = await { "ansText": "", "ansVoice": "" };
     const def = await page.$$('.def')
-    let Answer;
-    // await console.log("def:" + def[0]);
-    const test = await def[0].evaluate(node => node.innerText).then((value) => {
-        Answer = value;
-        console.log(value);
-        event.reply('replyAnswer', value)
+        // await console.log("def:" + def[0]);
+    const test = await def[0].evaluate(node => node.innerText).then(async(value) => {
+        await console.log(value);
+        Ans['ansText'] = await value;
+        let STT_A = await callSTT.quickStart(value);
+        Ans['ansVoice'] = await STT_A;
+
+        await event.reply('replyAnswer', Ans)
     });
 })
 
@@ -658,7 +661,7 @@ ipcMain.on('searchPictureBook', async(event, keyword) => {
             // const findFBook = await page.$('#main > div > div.row > div > div.wood_bg > div > article > div:nth-child(6) > div:nth-child(1) > div > section > h2 > a')
         await page.waitFor(1000);
 
-        let PBook = { "bookName": "", "bookImg": "", "bookIntro": "" };
+        let PBook = { "bookName": "", "bookImg": "", "bookIntro": "", "bNameVoice": "", "bIntroVoice": "" };
 
 
         // 動畫類的第一本書，之後判斷沒有的話，無書目
@@ -681,6 +684,12 @@ ipcMain.on('searchPictureBook', async(event, keyword) => {
         PBook['bookName'] = Answer;
         PBook['bookImg'] = picURL;
         PBook['bookIntro'] = findBookIntro;
+        let STTbName = await callSTT.quickStart(PBook['bookName']);
+        PBook['bNameVoice'] = STTbName;
+
+        let STTbIntro = await callSTT.quickStart(PBook['bookIntro']);
+        PBook['bIntroVoice'] = STTbIntro;
+
         // console.log("PBook['bookName']:" + PBook['bookName'] + " PBook['bookImg']:" + PBook['bookImg'] + " PBook['bookIntro']" + PBook['bookIntro'])
 
         event.reply('replyPbook', PBook)
