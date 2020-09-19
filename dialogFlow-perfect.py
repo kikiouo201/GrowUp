@@ -86,7 +86,10 @@ def speechRecognition():
         "Question": speech_to_text,
         "Answer": response.query_result.fulfillment_text,
         "Answer_pic":"",
-        "keyWord":response.query_result.fulfillment_text
+        "keyWord":response.query_result.fulfillment_text,
+        # 
+        "qVoice":"",
+        "aVoice":""
         }
         # print("data[Q]="+result['Question'])
         # print("result="+data)
