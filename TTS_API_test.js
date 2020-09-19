@@ -10,9 +10,12 @@ var player = require('play-sound')(opts = {})
 const client = new textToSpeech.TextToSpeechClient({
     keyFilename: 'rasberry-20200203-hw-t1-smjjay-7d8b5bc0c204.json'
 });
-async function quickStart() {
+async function quickStart(kword) {
     // The text to synthesize
-    const text = '香蕉是什麼';
+    const text = kword;
+    let kwLength = 0;
+    kwLength = kword.length
+    const result = await randomid(kwLength);
 
     // Construct the request
     const request = {
@@ -23,14 +26,30 @@ async function quickStart() {
         audioConfig: { audioEncoding: 'MP3' },
     };
 
+
+
     // Performs the text-to-speech request
     const [response] = await client.synthesizeSpeech(request);
     // Write the binary audio content to a local file
     const writeFile = util.promisify(fs.writeFile);
-    await writeFile('output.mp3', response.audioContent, 'binary');
-    console.log('Audio content written to file: output.mp3');
+    await writeFile(`./TTS/mp3/pictureBook/${result}.mp3`, response.audioContent, 'binary');
+    console.log(`Audio content written to file: ${result}.mp3`);
+    return result;
 
 }
+
+function randomid(imgLength) {
+    let picName = '';
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+    const charactersLength = characters.length;
+    for (let i = 0; i < imgLength; i += 1) {
+        picName += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    console.log("picName:" + picName)
+    return picName;
+}
+
+
 // quickStart();
 // player.play('output.mp3', function(err) {
 //     if (err) throw err
