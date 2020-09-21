@@ -5,18 +5,18 @@
 <head>
       <title>pingtu.html</title>
      <meta charset="UTF-8">
+      <link rel="stylesheet" href="../../CSS/icon.css">
+    <!-- <meta http-equiv="keywords" content="keyword1,keyword2,keyword3"> -->
      
-    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-     
-    <meta http-equiv="description" content="this is my page">
+    <!-- <meta http-equiv="description" content="this is my page">
      
     <meta http-equiv="content-type" content="text/html; charset=gb2312">
-       
+        -->
      
     <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
        
       <style type="text/css">
-        * {
+        body {
             /* margin-bottom: 0px;
             margin-top: 0px;
             margin-left: 0px;
@@ -138,6 +138,58 @@
             border: 1px solid blue;
             font-size: 15px;
         }
+        .homefloat {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 10px;
+            left: 8px;
+            background-color: rgb(211, 211, 211);
+            color: #FFF;
+            border-radius: 999em;
+            text-align: center;
+            z-index: 1000;
+            animation: lef-to-rig 2s ease-out;
+            margin-top: 6px;
+            transition: All 0.4s ease-in-out;
+            -webkit-transition: All 0.4s ease-in-out;
+            -moz-transition: All 0.4s ease-in-out;
+            -o-transition: All 0.4s ease-in-out;
+        }
+        .homefloat:hover {
+            transform: rotate(360deg);
+            -webkit-transform: rotate(360deg);
+            -moz-transform: rotate(360deg);
+            -o-transform: rotate(360deg);
+            -ms-transform: rotate(360deg);
+        }
+
+        .returnfloat {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 10px;
+            right: 8px;
+            background-color: rgb(211, 211, 211);
+            color: #FFF;
+            border-radius: 999em;
+            text-align: center;
+            z-index: 1000;
+            animation: lef-to-rig 2s ease-out;
+            transition: All 0.4s ease-in-out;
+            -webkit-transition: All 0.4s ease-in-out;
+            -moz-transition: All 0.4s ease-in-out;
+            -o-transition: All 0.4s ease-in-out;
+        }
+
+        .returnfloat:hover {
+            transform: rotate(360deg);
+            -webkit-transform: rotate(360deg);
+            -moz-transform: rotate(360deg);
+            -o-transform: rotate(360deg);
+            -ms-transform: rotate(360deg);
+        }
+
     </style>
      </head>
   
@@ -174,7 +226,16 @@
      <input type="button" id="button" value="開始新遊戲">
       
   </div>
-      
+    <div>
+    <a onclick="history.back()" class="returnfloat" id="menu-share">
+      <i class="fab fa-share return-float"><img src="../../photo/return.png" ></i>
+      </a>
+  </div>
+  <div>
+    <a href="../../game_home.html" class="homefloat" id="menu-share">
+      <i class="fab fa-share my-float"><img src="../../photo/gobackhome.png" width="70%"></i>
+      </a>
+  </div>
      <script src="../../model/game/puzzle.js"></script>
    
      </body>
