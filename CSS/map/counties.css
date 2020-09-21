@@ -36,7 +36,7 @@ body {
     margin-top: 1%;
     font-size: 37px;
     color: rgb(32, 32, 32);
-    background-color: rgb(255, 227, 191);
+    background-color: rgb(255, 254, 191);
     /* border: 3px black solid; */
     border-radius: 10px 10px 10px 10px;
 
@@ -50,7 +50,7 @@ body {
     right: 8px;
     top: 8px;
     border-radius: 20px 20px 20px 20px;
-    background-color: rgb(218, 246, 255);
+    background-color:rgb(255, 254, 223);
     z-index: 2;
 }
 
