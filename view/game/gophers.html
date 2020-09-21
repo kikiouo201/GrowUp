@@ -7,23 +7,23 @@
     <title>收集魔法小卡</title>
     <link rel="stylesheet" href="../../CSS/game/gophers.css">
     <link rel="stylesheet" href="../../CSS/icon.css">
+    <script src="../../model/game/gophers.js"></script>
   </head>
   <body>
-    <div id="container">
+    <div id="container" onclick="addGoodBabyValue();">
       <input id="startFlag" type="checkbox">
       <div id="start" class="window">
         <h1>收集魔法小卡</h1>
         <p>居民：勇者阿，請幫忙打小妖怪吧</p>
         <div class="btn-group">
           <div class="gopher gopher--not-button"></div>
-          <label for="startFlag">开始</label>
+          <label for="startFlag">開始</label>
         </div>
       </div>
-      <div id="end" class="window" onclick="addGoodBabyValue()">
-        <h2>Game end</h2>
+      <div id="end" class="window" >
+        <h2>完成任務</h2>
         <p> 謝謝你幫助!</p>
-        <p class="meta">按 F5/Command R 重来</p>
-        <div class="gopher gopher--not-button"></div>
+        <div class="gopher gopher--not-button" ></div>
       </div>
       <div class="time-wrapper">
         <p>遊戲時間：</p>

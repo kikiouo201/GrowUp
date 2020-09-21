@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="../../CSS/map/counties.css">
     <link rel="stylesheet" href="../../CSS/interface.css">
     <link rel="stylesheet" href="../../CSS/icon.css">
-    <script src="./centralRegionjs/miaoli.js"></script>
+    <script src="./centralRegion_JS/miaoli.js"></script>
+    <script src="./centralRegion_JS/central.js"></script>
     <title>Document</title>
 </head>
 
@@ -20,7 +21,7 @@
         margin-top: 40px;
         margin-left: 103px;
     }
-
+    
     .map_location {
         width: 16px;
         position: absolute;
@@ -36,8 +37,7 @@
             <td colspan="2" style="font-size: 40px;text-align: center;">苗栗地區</td>
         </tr>
         <tr>
-            <td><img src="../../image/map/Miaoli_origin.png" onclick="featuresText('苗栗')" /><a
-                    style="display: block;">苗栗地區</a></td>
+            <td><img src="../../image/map/Miaoli_origin.png" onclick="featuresText('苗栗');playCentral(this)" alt="miaoliRegion" /><a style="display: block;">苗栗地區</a></td>
             <td id="information" rowspan="4" valign="top" style="font-size:x-large;">
                 <h4 style='margin: auto;'>
                     是臺灣西部最適合旅遊及渡假的旅遊勝地。不僅氣候宜人、鮮少天災；交通也是相當便利，每年都吸引數百萬的國內、外旅客來苗觀光旅遊。
@@ -45,67 +45,50 @@
             </td>
         </tr>
         <tr>
-            <td><img src="../../image/icon/strawberry.png" onclick="featuresText('大湖草莓')" /><a
-                    style="display: block;">大湖草莓</a></td>
+            <td><img src="../../image/icon/strawberry.png" onclick="featuresText('大湖草莓');playCentral(this)" alt="miaoli_f1" /><a style="display: block;">大湖草莓</a></td>
         </tr>
         <tr>
-            <td><img src="../../image/map_icon/Miaoli_Hakka_RoundHouse.png" onclick="featuresText('苗栗客家圓樓')" /><a
-                    style="display: block;">苗栗客家圓樓</a></td>
+            <td><img src="../../image/map_icon/Miaoli_Hakka_RoundHouse.png" onclick="featuresText('苗栗客家圓樓');playCentral(this)" alt="miaoli_f2" /><a style="display: block;">苗栗客家圓樓</a></td>
         </tr>
         <tr>
-            <td><img src="../../image/map_icon/Miaoli_Longteng_Broken_Bridge.png" onclick="featuresText('龍騰斷橋')" /><a
-                    style="display: block;">龍騰斷橋</a></td>
+            <td><img src="../../image/map_icon/Miaoli_Longteng_Broken_Bridge.png" onclick="featuresText('龍騰斷橋');playCentral(this)" alt="miaoli_f3" /><a style="display: block;">龍騰斷橋</a></td>
         </tr>
 
     </table>
     <div class="map">
         <img class="terrain" src="../../image/map/Miaoli1.png" />
         <div class="level1">
-            <img id="zhuyin" alt="ㄠ" class="level" src="../../image/icon/strawberry_dark.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=ao&counties=miaoli';mouseDownText(ㄠ);" />
-            <img class="level_text" src="../../image/chinese_alphabet/ao.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=ao&counties=miaoli';mouseDownText(ㄠ);" />
+            <img id="zhuyin" alt="ao" class="level" src="../../image/icon/strawberry_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=ao&counties=miaoli',800);playBPM(this);" />
+            <img class="level_text" alt="ao" src="../../image/chinese_alphabet/ao.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=ao&counties=miaoli',800);playBPM(this);" />
         </div>
         <div class="level2">
-            <img id="zhuyin" alt="ㄡ" class="level" src="../../image/icon/strawberry_dark.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=ou&counties=miaoli';mouseDownText(ㄡ);" />
-            <img class="level_text" src="../../image/chinese_alphabet/ou.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=ou&counties=miaoli';mouseDownText(ㄡ);" />
+            <img id="zhuyin" alt="ou" class="level" src="../../image/icon/strawberry_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=ou&counties=miaoli',800);playBPM(this);" />
+            <img class="level_text" alt="ou" src="../../image/chinese_alphabet/ou.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=ou&counties=miaoli',800);playBPM(this);" />
         </div>
         <div class="level3">
-            <img id="zhuyin" alt="ㄢ" class="level" src="../../image/icon/strawberry_dark.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=an&counties=miaoli';mouseDownText(ㄢ);" />
-            <img class="level_text" src="../../image/chinese_alphabet/an.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=an&counties=miaoli';mouseDownText(ㄢ);" />
+            <img id="zhuyin" alt="an" class="level" src="../../image/icon/strawberry_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=an&counties=miaoli',800);playBPM(this);" />
+            <img class="level_text" alt="an" src="../../image/chinese_alphabet/an.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=an&counties=miaoli',800);playBPM(this);" />
         </div>
 
         <div class="level4">
-            <img id="zhuyin" alt="ㄣ" class="level" src="../../image/icon/strawberry_dark.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=en&counties=miaoli';mouseDownText(ㄣ);" />
-            <img class="level_text" src="../../image/chinese_alphabet/en.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=en&counties=miaoli';mouseDownText(ㄣ);" />
+            <img id="zhuyin" alt="en" class="level" src="../../image/icon/strawberry_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=en&counties=miaoli',800);playBPM(this);" />
+            <img class="level_text" alt="en" src="../../image/chinese_alphabet/en.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=en&counties=miaoli',800);playBPM(this);" />
         </div>
 
         <div class="level5">
-            <img id="zhuyin" alt="ㄤ" class="level" src="../../image/icon/strawberry_dark.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=ang&counties=miaoli';mouseDownText(ㄤ);" />
-            <img class="level_text" src="../../image/chinese_alphabet/ang.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=ang&counties=miaoli';mouseDownText(ㄤ);" />
+            <img id="zhuyin" alt="ang" class="level" src="../../image/icon/strawberry_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=ang&counties=miaoli',800);playBPM(this);" />
+            <img class="level_text" alt="ang" src="../../image/chinese_alphabet/ang.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=ang&counties=miaoli',800);playBPM(this);" />
         </div>
 
 
         <div class="level6">
-            <img id="zhuyin" alt="ㄥ" class="level" src="../../image/icon/strawberry_dark.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=eng&counties=miaoli';mouseDownText(ㄥ);" />
-            <img class="level_text" src="../../image/chinese_alphabet/eng.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=eng&counties=miaoli';mouseDownText(ㄥ);" />
+            <img id="zhuyin" alt="eng" class="level" src="../../image/icon/strawberry_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=eng&counties=miaoli',800);playBPM(this);" />
+            <img class="level_text" alt="eng" src="../../image/chinese_alphabet/eng.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=eng&counties=miaoli',800);playBPM(this);" />
         </div>
 
         <div class="level7">
-            <img id="zhuyin" alt="ㄦ" class="level" src="../../image/icon/strawberry_dark.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=er&counties=miaoli';mouseDownText(ㄦ);" />
-            <img class="level_text" src="../../image/chinese_alphabet/er.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=er&counties=miaoli';mouseDownText(ㄦ);" />
+            <img id="zhuyin" alt="er" class="level" src="../../image/icon/strawberry_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=er&counties=miaoli',800);playBPM(this);" />
+            <img class="level_text" alt="er" src="../../image/chinese_alphabet/er.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=er&counties=miaoli',800);playBPM(this);" />
         </div>
         <div class="level8">
             <img class="level" src="../../image/icon/devil_lock.png" onclick="alert('需要先完成縣市所有關卡！')" />
@@ -114,8 +97,7 @@
 
         、
     </div>
-    <img class="taiwan" src="../../image/character/Taiwn_small.png"
-        onclick="location.href='../../view/level/taiwan.html'" />
+    <img class="taiwan" src="../../image/character/Taiwn_small.png" onclick="location.href='../../view/level/taiwan.html'" />
     <img class="map_location" src="../../image/map/map.png" />
 
     <div>
@@ -148,13 +130,13 @@
                     break;
                 case "龍騰斷橋":
                     information.innerHTML =
-                    " <img style = 'width:100%; border-radius: 15px;'  src = 'https://www.taiwan.net.tw/pic.ashx?qp=1/big_scenic_spots/pic_C100_342_8.jpg&sizetype=3'/> "
+                        " <img style = 'width:100%; border-radius: 15px;'  src = 'https://www.taiwan.net.tw/pic.ashx?qp=1/big_scenic_spots/pic_C100_342_8.jpg&sizetype=3'/> "
                     info.innerHTML = "舊稱「魚藤坪」。相傳於開墾初時，有鯉魚精危害。因此鄉民在龍騰山區遍植魚藤，將東面的高山稱為關刀山，以克制魚怪。";
                     information.append(info)
                     break;
                 case "苗栗客家圓樓":
                     information.innerHTML =
-                    " <img style = 'width:100%; border-radius: 15px;'  src = 'https://www.taiwan.net.tw/pic.ashx?qp=1/big_scenic_spots/pic_A12-00261.jpg&sizetype=3'/> "
+                        " <img style = 'width:100%; border-radius: 15px;'  src = 'https://www.taiwan.net.tw/pic.ashx?qp=1/big_scenic_spots/pic_A12-00261.jpg&sizetype=3'/> "
                     info.innerHTML = "圓樓彰顯苗栗在地客家文化特質外，更結合親水廊道的美麗景觀，打造苗栗亮麗的門面，呈現在地藝文特色。";
                     information.append(info)
                     break;

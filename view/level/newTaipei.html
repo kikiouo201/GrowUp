@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../../CSS/map/counties.css">
     <link rel="stylesheet" href="../../CSS/interface.css">
     <link rel="stylesheet" href="../../CSS/icon.css">
+    <script src="./northRegion_JS/north.js"></script>
 
 </head>
 <style>
@@ -21,8 +22,7 @@
     }
 </style>
 
-<body class="style" background="../../image/map/kraftPaper5.png"
-    onload="checkLevelIsPass('NewTaipei_icon','newTaipei')">
+<body class="style" background="../../image/map/kraftPaper5.png" onload="checkLevelIsPass('NewTaipei_icon','newTaipei')">
     <table class="features">
         <tr>
             <td colspan="2" style="font-size: 40px;text-align: center;">新北地區</td>
@@ -32,8 +32,7 @@
             <td>資訊介紹</td>
         </tr>
         <tr>
-            <td><img src="../../image/map/NewTaipei_origin.png" onclick="featuresText('新北地區')" /><a
-                    style="display: block;">新北地區</a></td>
+            <td><img src="../../image/map/NewTaipei_origin.png" onclick="featuresText('新北地區');playNorth(this)" alt="newTaipeiRegion" /><a style="display: block;">新北地區</a></td>
             <td id="information" rowspan="6" valign="top" style="font-size:x-large;">
                 <h4 style='margin: auto;'>
                     是全臺人口最多的市。全境環繞臺北市，而新北地區三面環繞基隆市、蘭縣、桃園市；同時也是臺灣本島最北端與最東端。
@@ -41,69 +40,53 @@
             </td>
         </tr>
         <tr>
-            <td><img src="../../image/icon/NewTaipei_icon.png" onclick="featuresText('陶瓷')" /><a
-                    style="display: block;">陶瓷</a></td>
+            <td><img src="../../image/icon/NewTaipei_icon.png" onclick="featuresText('陶瓷');playNorth(this)" alt="newTaipei_f1" /><a style="display: block;">陶瓷</a></td>
         </tr>
         <tr>
-            <td><img src="../../image/map_icon/NewTaipei_queen_head.png" onclick="featuresText('女王頭')" /><a
-                    style="display: block;">女王頭</a></td>
+            <td><img src="../../image/map_icon/NewTaipei_queen_head.png" onclick="featuresText('女王頭');playNorth(this)" alt="newTaipei_f2" /><a style="display: block;">女王頭</a></td>
         </tr>
         <tr>
-            <td><img src="../../image/map_icon/NewTaipei_golden_waterfall.png" onclick="featuresText('黃金瀑布')" /><a
-                    style="display: block;">黃金瀑布</a></td>
+            <td><img src="../../image/map_icon/NewTaipei_golden_waterfall.png" onclick="featuresText('黃金瀑布');playNorth(this)" alt="newTaipei_f3" /><a style="display: block;">黃金瀑布</a></td>
         </tr>
         <tr>
-            <td><img src="../../image/map_icon/NewTaipei_christmas_tree.png" onclick="featuresText('新北市歡樂耶誕城')" /><a
-                    style="display: block;">新北市歡樂耶誕城</a></td>
+            <td><img src="../../image/map_icon/NewTaipei_christmas_tree.png" onclick="featuresText('新北市歡樂耶誕城');playNorth(this)" alt="newTaipei_f4" /><a style="display: block;">新北市歡樂耶誕城</a></td>
         </tr>
         <tr>
-            <td><img src="../../image/map_icon/NewTaipei_small_train.png" onclick="featuresText('烏來台車')" /><a
-                    style="display: block;">烏來台車</a></td>
+            <td><img src="../../image/map_icon/NewTaipei_small_train.png" onclick="featuresText('烏來台車');playNorth(this)" alt="newTaipei_f5" /><a style="display: block;">烏來台車</a></td>
         </tr>
 
     </table>
     <div class="map">
         <img id="county" class="terrain" src="../../image/map/NewTaipei1.png" />
         <div class="level1">
-            <img class="level" alt="j" src="../../image/icon/NewTaipei_icon.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=j1&counties=newTaipei';mouseDownText('J');" />
-            <img class="level_text" src="../../image/english_alphabet/J.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=j1&counties=newTaipei';mouseDownText('J');" />
+            <img class="level" alt="j1" src="../../image/icon/NewTaipei_icon.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=j1&counties=newTaipei',800);playABC(this);" />
+            <img class="level_text" alt="j1" src="../../image/english_alphabet/J.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=j1&counties=newTaipei',800);playABC(this);" />
         </div>
 
         <div class="level2">
-            <img class="level" alt="k" src="../../image/icon/NewTaipei_icon.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=k1&counties=newTaipei';mouseDownText('k');" />
-            <img class="level_text" src="../../image/english_alphabet/K.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=k1&counties=newTaipei';mouseDownText('K');" />
+            <img class="level" alt="k1" src="../../image/icon/NewTaipei_icon.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=k1&counties=newTaipei',800);playABC(this);" />
+            <img class="level_text" alt="k1" src="../../image/english_alphabet/K.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=k1&counties=newTaipei',800);playABC(this);" />
         </div>
         <div class="level3">
-            <img class="level" alt="l" src="../../image/icon/NewTaipei_icon_dark.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=l1&counties=newTaipei';mouseDownText('l');" />
-            <img class="level_text" src="../../image/english_alphabet/L.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=l1&counties=newTaipei';mouseDownText('l');" />
+            <img class="level" alt="l1" src="../../image/icon/NewTaipei_icon_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=l1&counties=newTaipei',800);playABC(this);" />
+            <img class="level_text" alt="l1" src="../../image/english_alphabet/L.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=l1&counties=newTaipei',800);playABC(this);" />
         </div>
 
         <div class="level4">
-            <img class="level" alt="m" src="../../image/icon/NewTaipei_icon.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=m1&counties=newTaipei';mouseDownText('m');" />
-            <img class="level_text" src="../../image/english_alphabet/M.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=m1&counties=newTaipei';mouseDownText('m');" />
+            <img class="level" alt="m1" src="../../image/icon/NewTaipei_icon.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=m1&counties=newTaipei',800);playABC(this);" />
+            <img class="level_text" alt="m1" src="../../image/english_alphabet/M.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=m1&counties=newTaipei',800);playABC(this);" />
         </div>
 
         <div class="level5">
-            <img class="level" alt="n" src="../../image/icon/NewTaipei_icon.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=n1&counties=newTaipei';mouseDownText('n');" />
-            <img class="level_text" src="../../image/english_alphabet/N.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=n1&counties=newTaipei';mouseDownText('n');" />
+            <img class="level" alt="n1" src="../../image/icon/NewTaipei_icon.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=n1&counties=newTaipei',800);playABC(this);" />
+            <img class="level_text" alt="n1" src="../../image/english_alphabet/N.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=n1&counties=newTaipei',800);playABC(this);" />
         </div>
         <div class="level6">
             <img class="level" alt="newTaipei" src="../../image/icon/devil_lock.png" onclick="alert('需要先完成縣市所有關卡！')" />
         </div>
 
     </div>
-    <img class="taiwan" src="../../image/character/Taiwn_small.png"
-        onclick="location.href='../../view/level/taiwan.html'" />
+    <img class="taiwan" src="../../image/character/Taiwn_small.png" onclick="location.href='../../view/level/taiwan.html'" />
     <img class="map_location" src="../../image/map/map.png" />
 
     <div>

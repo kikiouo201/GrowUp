@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="../../CSS/map/counties.css">
     <link rel="stylesheet" href="../../CSS/interface.css">
     <link rel="stylesheet" href="../../CSS/icon.css">
-    <script src="./centralRegionjs/nantou.js"></script>
+    <script src="./centralRegion_JS/nantou.js"></script>
+    <script src="./centralRegion_JS/central.js"></script>
 </head>
 <style>
     .features {
@@ -39,7 +40,7 @@
             <td>資訊介紹</td>
         </tr>
         <tr>
-            <td><img src="../../image/map/Nantou_origin.png" onclick="featuresText('南投地區');playAudio(this)" alt="nantouRegion" /><a style="display: block;">南投地區</a></td>
+            <td><img src="../../image/map/Nantou_origin.png" onclick="featuresText('南投地區');playCentral(this)" alt="nantouRegion" /><a style="display: block;">南投地區</a></td>
             <td id="information" rowspan="3" valign="top" style="font-size:x-large;">
                 <h4 style='margin: auto;'>
                     南投地區，是唯一不靠海的縣市，而南投的地名由來，是因為平埔族阿立昆族的族語「Ramtau」，臺語就是音譯為「南投」。
@@ -47,34 +48,34 @@
             </td>
         </tr>
         <tr>
-            <td><img src="../../image/icon/herbal_tea.png" onclick="featuresText('高山茶');playAudio(this)" alt="nantou_f1" /><a style="display: block;">高山茶</a></td>
+            <td><img src="../../image/icon/herbal_tea.png" onclick="featuresText('高山茶');playCentral(this)" alt="nantou_f1" /><a style="display: block;">高山茶</a></td>
         </tr>
         <tr>
-            <td><img src="../../image/icon/lake.png" onclick="featuresText('日月潭');playAudio(this)" alt="nantou_f2" /><a style="display: block;">日月潭</a></td>
+            <td><img src="../../image/icon/lake.png" onclick="featuresText('日月潭');playCentral(this)" alt="nantou_f2" /><a style="display: block;">日月潭</a></td>
         </tr>
 
     </table>
     <div class="map">
         <img id="county" class="terrain" src="../../image/map/Nantou_small.png" />
-        <img id="zhuyin" alt="ㄅ" class="level1" src="../../image/icon/herbal_tea.png" onclick="location.href='../../view/game/drawzhuyin.html?id=b&counties=nantou';mouseDownText('ㄅ');" />
-        <img class="level1_text" src="../../image/chinese_alphabet/b.png" onclick="location.href='../../view/game/drawzhuyin.html?id=b&counties=nantou';mouseDownText('ㄅ');" />
-        <img id="zhuyin" alt="ㄆ" class="level2" src="../../image/icon/herbal_tea.png" onclick="location.href='../../view/game/drawzhuyin.html?id=p&counties=nantou';mouseDownText('ㄆ');" />
-        <img class="level2_text" src="../../image/chinese_alphabet/p.png" onclick="location.href='../../view/game/drawzhuyin.html?id=p&counties=nantou';mouseDownText('ㄆ');" />
-        <img id="zhuyin" alt="ㄇ" class="level3" src="../../image/icon/herbal_tea.png" onclick="location.href='../../view/game/drawzhuyin.html?id=m&counties=nantou';mouseDownText('ㄇ');" />
-        <img class="level3_text" src="../../image/chinese_alphabet/m.png" onclick="location.href='../../view/game/drawzhuyin.html?id=m&counties=nantou';mouseDownText('ㄇ');" />
-        <img id="zhuyin" alt="ㄈ" class="level4" src="../../image/icon/herbal_tea.png" onclick="location.href='../../view/game/drawzhuyin.html?id=f';mouseDownText('ㄈ');" />
-        <img class="level4_text" src="../../image/chinese_alphabet/f.png" onclick="location.href='../../view/game/drawzhuyin.html?id=f&counties=nantou';mouseDownText('ㄈ');" />
-        <img id="zhuyin" alt="ㄉ" class="level5" src="../../image/icon/herbal_tea_dark.png" onclick="location.href='../../view/game/drawzhuyin.html?id=d&counties=nantou';mouseDownText('ㄉ');" />
-        <img class="level5_text" src="../../image/chinese_alphabet/d.png" onclick="location.href='../../view/game/drawzhuyin.html?id=d&counties=nantou';mouseDownText('ㄉ');" />
-        <img id="zhuyin" alt="ㄊ" class="level6" src="../../image/icon/herbal_tea_dark.png" onclick="location.href='../../view/game/drawzhuyin.html?id=t&counties=nantou';mouseDownText('ㄊ');" />
-        <img class="level6_text" src="../../image/chinese_alphabet/t.png" onclick="location.href='../../view/game/drawzhuyin.html?id=t&counties=nantou';mouseDownText('ㄊ');" />
-        <img id="zhuyin" alt="ㄋ" class="level7" src="../../image/icon/herbal_tea_dark.png" onclick="location.href='../../view/game/drawzhuyin.html?id=n&counties=nantou';mouseDownText('ㄋ');" />
-        <img class="level7_text" src="../../image/chinese_alphabet/n.png" onclick="location.href='../../view/game/drawzhuyin.html?id=n&counties=nantou';mouseDownText('ㄋ');" />
-        <img id="zhuyin" alt="ㄌ" class="level8" src="../../image/icon/herbal_tea_dark.png" onclick="location.href='../../view/game/drawzhuyin.html?id=l&counties=nantou';mouseDownText('ㄌ');" />
-        <img class="level8_text" src="../../image/chinese_alphabet/l.png" onclick="location.href='../../view/game/drawzhuyin.html?id=l&counties=nantou';mouseDownText('ㄌ');" />
-        <img id="zhuyin" alt="ㄍ" class="level9" src="../../image/icon/herbal_tea_dark.png" onclick="location.href='../../view/game/drawzhuyin.html?id=g&counties=nantou';mouseDownText('ㄍ');" />
-        <img class="level9_text" src="../../image/chinese_alphabet/g.png" onclick="location.href='../../view/game/drawzhuyin.html?id=g&counties=nantou';mouseDownText('ㄍ');" />
-        <img class="level10" src="../../image/icon/devil_lock.png" onclick="alert('需要先完成縣市所有關卡！')" />
+        <img id="zhuyin" alt="b" class="level1" src="../../image/icon/herbal_tea.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=b&counties=nantou',800);playBPM(this);" />
+        <img class="level1_text" alt="b" src="../../image/chinese_alphabet/b.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=b&counties=nantou',800);playBPM(this);" />
+        <img id="zhuyin" alt="p" class="level2" src="../../image/icon/herbal_tea.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=p&counties=nantou',800);playBPM(this);" />
+        <img class="level2_text" alt="p" src="../../image/chinese_alphabet/p.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=p&counties=nantou',800);playBPM(this);" />
+        <img id="zhuyin" alt="m" class="level3" src="../../image/icon/herbal_tea.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=m&counties=nantou',800);playBPM(this);" />
+        <img class="level3_text" alt="m" src="../../image/chinese_alphabet/m.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=m&counties=nantou',800);playBPM(this);" />
+        <img id="zhuyin" alt="f" class="level4" src="../../image/icon/herbal_tea.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=f',800);playBPM(this);" />
+        <img class="level4_text" alt="f" src="../../image/chinese_alphabet/f.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=f&counties=nantou',800);playBPM(this);" />
+        <img id="zhuyin" alt="d" class="level5" src="../../image/icon/herbal_tea_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=d&counties=nantou',800);playBPM(this);" />
+        <img class="level5_text" alt="d" src="../../image/chinese_alphabet/d.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=d&counties=nantou',800);playBPM(this);" />
+        <img id="zhuyin" alt="t" class="level6" src="../../image/icon/herbal_tea_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=t&counties=nantou',800);playBPM(this);" />
+        <img class="level6_text" alt="t" src="../../image/chinese_alphabet/t.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=t&counties=nantou',800);playBPM(this);" />
+        <img id="zhuyin" alt="n" class="level7" src="../../image/icon/herbal_tea_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=n&counties=nantou',800);playBPM(this);" />
+        <img class="level7_text" alt="n" src="../../image/chinese_alphabet/n.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=n&counties=nantou',800);playBPM(this);" />
+        <img id="zhuyin" alt="l" class="level8" src="../../image/icon/herbal_tea_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=l&counties=nantou',800);playBPM(this);" />
+        <img class="level8_text" alt="l" src="../../image/chinese_alphabet/l.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=l&counties=nantou',800);playBPM(this);" />
+        <img id="zhuyin" alt="g" class="level9" src="../../image/icon/herbal_tea_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=g&counties=nantou',800);playBPM(this);" />
+        <img class="level9_text" alt="g" src="../../image/chinese_alphabet/g.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=g&counties=nantou',800);playBPM(this);" />
+        <img class="level10" alt="" src="../../image/icon/devil_lock.png" onclick="alert('需要先完成縣市所有關卡！')" />
 
     </div>
     <img class="taiwan" src="../../image/character/Taiwn_small.png" onclick="location.href='../../view/level/taiwan.html'" />

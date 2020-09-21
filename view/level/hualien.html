@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../../CSS/map/hualien.css">
     <link rel="stylesheet" href="../../CSS/interface.css">
     <link rel="stylesheet" href="../../CSS/icon.css">
+    <script src="./eastRegion_JS/east.js"></script>
 </head>
 <style>
     .map_location {
@@ -30,8 +31,7 @@
             <td>資訊介紹</td>
         </tr>
         <tr>
-            <td><img src="../../image/map/Hualien_origin.png" onclick="featuresText('花蓮地區')" /><a
-                    style="display: block;">花蓮地區</a></td>
+            <td><img src="../../image/map/Hualien_origin.png" onclick="featuresText('花蓮地區');playEast(this)" alt="hualienRegion" /><a style="display: block;">花蓮地區</a></td>
             <td id="information" rowspan="4" valign="top" style="font-size:x-large;">
                 <h4 style="margin:auto">
                     花蓮地區，位於臺灣本島東部。是臺灣面積最大的縣級行政區。花蓮地區是台灣原住民最多的區域，其中以第一大族阿美族分布最廣。
@@ -40,31 +40,26 @@
             </td>
         </tr>
         <tr>
-            <td><img src="../../image/icon/watermelon.png" onclick="featuresText('花蓮大西瓜')" /><a
-                    style="display: block;">花蓮大西瓜</a></td>
+            <td><img src="../../image/icon/watermelon.png" onclick="featuresText('花蓮大西瓜');playEast(this)" alt="hualien_f1" /><a style="display: block;">花蓮大西瓜</a></td>
         </tr>
         <tr>
-            <td><img src="../../image/map_icon/Hualien_farglory_ocean_park.png" onclick="featuresText('遠雄海洋公園')" /><a
-                    style="display: block;">遠雄海洋公園</a></td>
+            <td><img src="../../image/map_icon/Hualien_farglory_ocean_park.png" onclick="featuresText('遠雄海洋公園');playEast(this)" alt="hualien_f2" /><a style="display: block;">遠雄海洋公園</a></td>
         </tr>
         <tr>
-            <td><img src="../../image/map_icon/Hualien_farm.png" onclick="featuresText('瑞穗牧場')" /><a
-                    style="display: block;">瑞穗牧場</a></td>
+            <td><img src="../../image/map_icon/Hualien_farm.png" onclick="featuresText('瑞穗牧場');playEast(this)" alt="hualien_f3" /><a style="display: block;">瑞穗牧場</a></td>
         </tr>
 
     </table>
     <div class="map">
         <img class="terrain" src="../../image/map/Hualien1.png" />
         <div class="level1">
-            <img class="level " alt="findBallast" src="../../image/icon/watermelon.png"
-                onclick="location.href='../../view/game/findBallast.html';mouseDownText('找找看');" />
-            <div class="level_text" onclick="location.href='../../view/game/findBallast.html';mouseDownText('找找看');">找找看
+            <img class="level " alt="findBallast" src="../../image/icon/watermelon.png" onclick="setTimeout(()=>location.href='../../view/game/findBallast.html',1100);playGame(this);" />
+            <div class="level_text" onclick="setTimeout(()=>location.href='../../view/game/findBallast.html',1100);playGame(this);">找找看
             </div>
         </div>
         <div class="level2">
-            <img class="level" alt="gophers" src="../../image/icon/watermelon.png"
-                onclick="location.href='../../view/game/gophers.html';mouseDownText('打地鼠');" />
-            <div class="level_text" onclick="location.href='../../view/game/gophers.html';mouseDownText('打地鼠');">打地鼠
+            <img class="level" alt="gophers" src="../../image/icon/watermelon.png" onclick="setTimeout(()=>location.href='../../view/game/gophers.html',1100);playGame(this);" />
+            <div class="level_text" alt="gophers" onclick="setTimeout(()=>location.href='../../view/game/gophers.html',1100);playGame(this);">打地鼠
             </div>
         </div>
 
@@ -75,8 +70,7 @@
 
 
     </div>
-    <img class="taiwan" src="../../image/character/Taiwn_small.png"
-        onclick="location.href='../../view/level/taiwan.html'" />
+    <img class="taiwan" src="../../image/character/Taiwn_small.png" onclick="location.href='../../view/level/taiwan.html'" />
     <img class="map_location" src="../../image/map/map.png" />
 
     <div>
@@ -131,6 +125,7 @@
         }
     </script>
     <script src="../../model/util/voiceOut.js"></script>
+
 </body>
 
 </html>

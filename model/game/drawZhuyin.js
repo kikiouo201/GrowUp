@@ -74,8 +74,8 @@ const score = document.querySelector('.score');
 console.log('score= ' + score);
 
 const levelName = {
-    b:'ㄅ',
-    p:'ㄆ',
+    b: 'ㄅ',
+    p: 'ㄆ',
 }
 
 
@@ -95,14 +95,14 @@ score.addEventListener('click', () => {
     //     status.innerHTML = '<img src="../../image/drawZhuyin/tryAgain.png" width="300px"/>失敗';
     //     props.style.visibility = "hidden";
     // } else {
-        status.innerHTML = '<img src="../../image/drawZhuyin/good.png" width="200px"/>你好棒';
-        props.style.visibility = "visible";
+    status.innerHTML = '<img src="../../image/drawZhuyin/good.png" width="200px"/>你好棒';
+    props.style.visibility = "visible";
 
-        smallCard.innerHTML = '<img src="../../image/magicCard/chineseAlphabet/' + id + '.png" width="50px"/>';
-        //ipcRenderer.send("levelIsPass",levelName[id]);
+    smallCard.innerHTML = '<img src="../../image/magicCard/chineseAlphabet/' + id + '.png" width="50px"/>';
+    //ipcRenderer.send("levelIsPass",levelName[id]);
     // }
     console.log('totalPoint= ' + totalPoint);
-    tool.style.visibility= "hidden"
+    tool.style.visibility = "hidden"
     const black_overlay = document.querySelector('.black_overlay');
     black_overlay.style.visibility = "visible";
 
@@ -252,7 +252,7 @@ function scoreJudgment(id, x, y, points, num) {
     console.log(`x=${x},y=${y}`)
     for (let i = 0; i < criterias.length; i++) {
         let criteria = criterias[i];
-      
+
         if (criteria.y[0] < y && y < criteria.y[1] && criteria.x[0] < x && x < criteria.x[1]) {
             points[i] = 1;
         } else if (points[i] != 1) {
@@ -268,9 +268,16 @@ function scoreJudgment(id, x, y, points, num) {
 
 function playAudio() {
     var audioCreate = document.createElement("AUDIO");
-
+    console.log("length==" + `${id}`.length)
     if (audioCreate.canPlayType("audio/mpeg")) {
-        audioCreate.setAttribute("src", "../../TTS/mp3/bpm/" + `${id}` + ".mp3");
+        if (`${id}`.length == 1 && `${id}` > 0 && `${id}` < 10) { //數字
+            audioCreate.setAttribute("src", "../../TTS/mp3/012/" + `${id}` + ".mp3");
+        } else if (`${id}`.includes = '1' && `${id}`.length == 1) { //英文
+            audioCreate.setAttribute("src", "../../TTS/mp3/ABC/" + `${id}` + ".mp3");
+
+        } else { //注音
+            audioCreate.setAttribute("src", "../../TTS/mp3/bpm/" + `${id}` + ".mp3");
+        }
     }
 
     // x.setAttribute("controls", "controls");

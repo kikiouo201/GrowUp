@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../../CSS/map/counties.css">
     <link rel="stylesheet" href="../../CSS/interface.css">
     <link rel="stylesheet" href="../../CSS/icon.css">
+    <script src="./southRegion_JS/south.js"></script>
 
 </head>
 <style>
@@ -19,7 +20,7 @@
         /* margin-top: -112px; */
         margin-left: 103px;
     }
-
+    
     .map_location {
         width: 16px;
         position: absolute;
@@ -39,23 +40,19 @@
             <td>資訊介紹</td>
         </tr>
         <tr>
-            <td><img src="../../image/map/Kaohsiung_origin.png" onclick="featuresText('高雄地區')" /><a
-                    style="display: block;">高雄地區</a></td>
+            <td><img src="../../image/map/Kaohsiung_origin.png" onclick="featuresText('高雄地區');playSouth(this)" alt="kaohsiungRegion" /><a style="display: block;">高雄地區</a></td>
             <td id="information" rowspan="4" valign="top" style="font-size:x-large;">
                 <h4 style="margin: auto;">昔稱為「打狗」。是臺灣最大工業區。又因有優越的港口，近海漁業發達，亦為重要遠洋漁業基地之一。</h4>
             </td>
         </tr>
         <tr>
-            <td><img style="width: 40px;" src="../../image/icon/85building.png" onclick="featuresText('85大樓')" /><a
-                    style="display: block;">85大樓</a></td>
+            <td><img style="width: 40px;" src="../../image/icon/85building.png" onclick="featuresText('85大樓');playSouth(this)" alt="kaohsiung_f1" /><a style="display: block;">85大樓</a></td>
         </tr>
         <tr>
-            <td><img src="../../image/map_icon/Kaohsiung_E_DA_Theme_Park.png" onclick="featuresText('義大遊樂世界')" /><a
-                    style="display: block;">義大遊樂世界</a></td>
+            <td><img src="../../image/map_icon/Kaohsiung_E_DA_Theme_Park.png" onclick="featuresText('義大遊樂世界');playSouth(this)" alt="kaohsiung_f2" /><a style="display: block;">義大遊樂世界</a></td>
         </tr>
         <tr>
-            <td><img src="../../image/map_icon/Kaohsiung_pu_lao_hot_spring.png" onclick="featuresText('不老溫泉')" /><a
-                    style="display: block;">不老溫泉</a></td>
+            <td><img src="../../image/map_icon/Kaohsiung_pu_lao_hot_spring.png" onclick="featuresText('不老溫泉');playSouth(this)" alt="kaohsiung_f3" /><a style="display: block;">不老溫泉</a></td>
         </tr>
 
     </table>
@@ -63,33 +60,25 @@
         <img class="terrain" src="../../image/map/Kaohsiung1.png" />
 
         <div class="level1">
-            <img class="level" alt="7" src="../../image/icon/85building.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=7&counties=Kaohsiungi';mouseDownText(7);" />
-            <img class="level_text" src="../../image/numbers/7.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=7&counties=Kaohsiung';mouseDownText(7);" />
+            <img class="level" alt="7" src="../../image/icon/85building.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=7&counties=Kaohsiungi',800);play012(this);" />
+            <img class="level_text" alt="7" src="../../image/numbers/7.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=7&counties=Kaohsiung',800);play012(this);" />
         </div>
         <div class="level2">
-            <img class="level" alt="8" src="../../image/icon/85building_dark.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=8&counties=Kaohsiung';mouseDownText(8);" />
-            <img class="level_text" src="../../image/numbers/8.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=8&counties=Kaohsiung';mouseDownText(8);" />
+            <img class="level" alt="8" src="../../image/icon/85building_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=8&counties=Kaohsiung',800);play012(this);" />
+            <img class="level_text" alt="8" src="../../image/numbers/8.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=8&counties=Kaohsiung',800);play012(this);" />
         </div>
 
         <div class="level3">
-            <img class="level" alt="9" src="../../image/icon/85building_dark.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=9&counties=Kaohsiung';mouseDownText(9);" />
-            <img class="level_text" src="../../image/numbers/9.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=9&counties=Kaohsiung';mouseDownText(9);" />
+            <img class="level" alt="9" src="../../image/icon/85building_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=9&counties=Kaohsiung',800);play012(this);" />
+            <img class="level_text" alt="9" src="../../image/numbers/9.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=9&counties=Kaohsiung',800);play012(this);" />
         </div>
         <div class="level4">
-            <img class="level" style="width: 54px;" alt="kaohsiung" src="../../image/icon/devil.png"
-                onclick="alert('需要先完成縣市所有關卡！')" />
+            <img class="level" style="width: 54px;" alt="kaohsiung" src="../../image/icon/devil.png" onclick="alert('需要先完成縣市所有關卡！')" />
 
         </div>
         、
     </div>
-    <img class="taiwan" src="../../image/character/Taiwn_small.png"
-        onclick="location.href='../../view/level/taiwan.html'" />
+    <img class="taiwan" src="../../image/character/Taiwn_small.png" onclick="location.href='../../view/level/taiwan.html'" />
     <img class="map_location" src="../../image/map/map.png" />
 
     <div>

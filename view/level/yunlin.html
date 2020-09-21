@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../../CSS/map/yunlin.css">
     <link rel="stylesheet" href="../../CSS/interface.css">
     <link rel="stylesheet" href="../../CSS/icon.css">
-    <script src="./centralRegionjs/yunlin.js"></script>
+    <script src="./centralRegion_JS/yunlin.js"></script>
     <title>Document</title>
 </head>
 
@@ -20,7 +20,7 @@
         margin-top: 29px;
         margin-left: 100px;
     }
-
+    
     .map_location {
         width: 16px;
         position: absolute;
@@ -40,8 +40,7 @@
             <td>資訊介紹</td>
         </tr>
         <tr>
-            <td><img src="../../image/map/Yunlin_origin.png" onclick="featuresText('雲林地區')" /><a
-                    style="display: block;">雲林地區</a></td>
+            <td><img src="../../image/map/Yunlin_origin.png" onclick="featuresText('雲林地區')" /><a style="display: block;">雲林地區</a></td>
             <td id="information" rowspan="5" valign="top" style="font-size:x-large;">
                 <h4 style='margin: auto;'>
                     雲林地區，位在臺灣西方的中南部，地形平坦，氣候溫和。雲林帶給人們的印象通常為「臺灣的糧倉」。
@@ -50,20 +49,16 @@
             </td>
         </tr>
         <tr>
-            <td><img src="../../image/icon/soy_sauce.png" onclick="featuresText('西螺醬油')" /><a
-                    style="display: block;">西螺醬油</a></td>
+            <td><img src="../../image/icon/soy_sauce.png" onclick="featuresText('西螺醬油')" /><a style="display: block;">西螺醬油</a></td>
         </tr>
         <tr>
-            <td><img src="../../image/map_icon/Yunlin_amusement_park.png" onclick="featuresText('劍湖山世界主題樂園')" /><a
-                    style="display: block;">劍湖山世界主題樂園</a></td>
+            <td><img src="../../image/map_icon/Yunlin_amusement_park.png" onclick="featuresText('劍湖山世界主題樂園')" /><a style="display: block;">劍湖山世界主題樂園</a></td>
         </tr>
         <tr>
-            <td><img src="../../image/map_icon/Yunlin_temple.png" onclick="featuresText('北港朝天宮')" /><a
-                    style="display: block;">北港朝天宮</a></td>
+            <td><img src="../../image/map_icon/Yunlin_temple.png" onclick="featuresText('北港朝天宮')" /><a style="display: block;">北港朝天宮</a></td>
         </tr>
         <tr>
-            <td><img src="../../image/map_icon/Yunlin_mushroom_farm.png" onclick="featuresText('金億陽蘑菇農場')" /><a
-                    style="display: block;">金億陽蘑菇農場</a></td>
+            <td><img src="../../image/map_icon/Yunlin_mushroom_farm.png" onclick="featuresText('金億陽蘑菇農場')" /><a style="display: block;">金億陽蘑菇農場</a></td>
         </tr>
     </table>
 
@@ -73,63 +68,46 @@
     <div class="map">
         <img class="terrain" src="../../image/map/Yunlin1.png" />
         <div class="level1">
-            <img id="zhuyin" alt="ㄎ" class="level" src="../../image/icon/soy_sauce.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=k&counties=yunlin';mouseDownText(ㄎ);" />
-            <img class="level_text" src="../../image/chinese_alphabet/k.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=k&counties=yunlin';mouseDownText(ㄎ);"
-                style="left: -69%;" />
+            <img id="zhuyin" alt="ㄎ" class="level" src="../../image/icon/soy_sauce.png" onclick="location.href='../../view/game/drawzhuyin.html?id=k&counties=yunlin';mouseDownText(ㄎ);" />
+            <img class="level_text" src="../../image/chinese_alphabet/k.png" onclick="location.href='../../view/game/drawzhuyin.html?id=k&counties=yunlin';mouseDownText(ㄎ);" style="left: -69%;" />
         </div>
         <div class="level2">
-            <img id="zhuyin" alt="ㄏ" class="level" src="../../image/icon/soy_sauce.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=h&counties=yunlin';mouseDownText(ㄏ);" />
-            <img class="level_text" src="../../image/chinese_alphabet/h.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=h&counties=yunlin';mouseDownText(ㄏ);" />
+            <img id="zhuyin" alt="ㄏ" class="level" src="../../image/icon/soy_sauce.png" onclick="location.href='../../view/game/drawzhuyin.html?id=h&counties=yunlin';mouseDownText(ㄏ);" />
+            <img class="level_text" src="../../image/chinese_alphabet/h.png" onclick="location.href='../../view/game/drawzhuyin.html?id=h&counties=yunlin';mouseDownText(ㄏ);" />
         </div>
         <div class="level3">
-            <img id="zhuyin" alt="ㄐ" class="level" src="../../image/icon/soy_sauce.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=j&counties=yunlin';mouseDownText(ㄐ);" />
-            <img class="level_text" src="../../image/chinese_alphabet/j.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=j&counties=yunlin';mouseDownText(ㄐ);" />
+            <img id="zhuyin" alt="ㄐ" class="level" src="../../image/icon/soy_sauce.png" onclick="location.href='../../view/game/drawzhuyin.html?id=j&counties=yunlin';mouseDownText(ㄐ);" />
+            <img class="level_text" src="../../image/chinese_alphabet/j.png" onclick="location.href='../../view/game/drawzhuyin.html?id=j&counties=yunlin';mouseDownText(ㄐ);" />
         </div>
 
         <div class="level4">
-            <img id="zhuyin" alt="ㄑ" class="level" src="../../image/icon/soy_sauce.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=q&counties=yunlin';mouseDownText(ㄑ);" />
-            <img class="level_text" src="../../image/chinese_alphabet/q.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=q&counties=yunlin';mouseDownText(ㄑ);" />
+            <img id="zhuyin" alt="ㄑ" class="level" src="../../image/icon/soy_sauce.png" onclick="location.href='../../view/game/drawzhuyin.html?id=q&counties=yunlin';mouseDownText(ㄑ);" />
+            <img class="level_text" src="../../image/chinese_alphabet/q.png" onclick="location.href='../../view/game/drawzhuyin.html?id=q&counties=yunlin';mouseDownText(ㄑ);" />
         </div>
 
         <div class="level5">
-            <img id="zhuyin" alt="ㄒ" class="level" src="../../image/icon/soy_sauce.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=x&counties=yunlin';mouseDownText(ㄒ);" />
-            <img class="level_text" src="../../image/chinese_alphabet/x.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=x&counties=yunlin';mouseDownText(ㄒ);" />
+            <img id="zhuyin" alt="ㄒ" class="level" src="../../image/icon/soy_sauce.png" onclick="location.href='../../view/game/drawzhuyin.html?id=x&counties=yunlin';mouseDownText(ㄒ);" />
+            <img class="level_text" src="../../image/chinese_alphabet/x.png" onclick="location.href='../../view/game/drawzhuyin.html?id=x&counties=yunlin';mouseDownText(ㄒ);" />
         </div>
 
 
         <div class="level6">
-            <img id="zhuyin" alt="ㄓ" class="level" src="../../image/icon/soy_sauce.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=zhi&counties=yunlin';mouseDownText(ㄓ);" />
-            <img class="level_text" src="../../image/chinese_alphabet/zh.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=zhi&counties=yunlin';mouseDownText(ㄓ);" />
+            <img id="zhuyin" alt="ㄓ" class="level" src="../../image/icon/soy_sauce.png" onclick="location.href='../../view/game/drawzhuyin.html?id=zhi&counties=yunlin';mouseDownText(ㄓ);" />
+            <img class="level_text" src="../../image/chinese_alphabet/zh.png" onclick="location.href='../../view/game/drawzhuyin.html?id=zhi&counties=yunlin';mouseDownText(ㄓ);" />
         </div>
 
         <div class="level7">
-            <img id="zhuyin" alt="ㄔ" class="level" src="../../image/icon/soy_sauce.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=chi&counties=yunlin';mouseDownText(ㄔ);" />
-            <img class="level_text" src="../../image/chinese_alphabet/ch.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=chi&counties=yunlin';mouseDownText(ㄔ);" />
+            <img id="zhuyin" alt="ㄔ" class="level" src="../../image/icon/soy_sauce.png" onclick="location.href='../../view/game/drawzhuyin.html?id=chi&counties=yunlin';mouseDownText(ㄔ);" />
+            <img class="level_text" src="../../image/chinese_alphabet/ch.png" onclick="location.href='../../view/game/drawzhuyin.html?id=chi&counties=yunlin';mouseDownText(ㄔ);" />
         </div>
         <div class="level8">
-            <img class="level" style="width:39px;" src="../../image/icon/devil_lock.png"
-                onclick="alert('需要先完成縣市所有關卡！')" />
+            <img class="level" style="width:39px;" src="../../image/icon/devil_lock.png" onclick="alert('需要先完成縣市所有關卡！')" />
 
         </div>
 
         、
     </div>
-    <img class="taiwan" src="../../image/character/Taiwn_small.png"
-        onclick="location.href='../../view/level/taiwan.html'" />
+    <img class="taiwan" src="../../image/character/Taiwn_small.png" onclick="location.href='../../view/level/taiwan.html'" />
     <img class="map_location" src="../../image/map/map.png" />
 
     <div>
