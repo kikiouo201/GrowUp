@@ -1,176 +1,187 @@
-body {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
+.map_location {
+    top: 50px;
+    left: 35px;
 }
 
-.map {
-    text-align: center;
-    position: relative;
-    top: 10px;
-    right: -9px;
+.mainContent {
+    left: 2%;
+    top: 17%;
 }
 
-.terrain {
-    width: 350px;
+.city {
     position: relative;
-    /* top: -85px; */
+    height: 95%;
+    top: 3%;
+    left: 187px;
     z-index: 1;
-    margin-right: -45px;
 }
+
+.city_background {
+    height: 98%;
+    width: 65%;
+    position: absolute;
+    top: 5px;
+    left: 113px;
+    border-radius: 10px 10px 10px 10px;
+background-color: rgb(255, 255, 210);
+}
+
+.informationBox img {
+    margin-top: 5%;
+    width: 60%;
+}
+
 
 .level1 {
     width: 48px;
     position: absolute;
     z-index: 10;
-    top: 316px;
-    left: 182px;
+    top: 331px;
+    left: 371px;
 }
 
 .level1_text {
     width: 50px;
     position: absolute;
     z-index: 10;
-    top: 324px;
-    left: 182px;
+    top: 340px;
+    left: 368px;
 }
 
 .level2 {
     width: 48px;
     position: absolute;
     z-index: 10;
-    top: 256px;
-    left: 109px;
+    top: 269px;
+    left: 297px;
 }
 
 .level2_text {
     width: 50px;
     position: absolute;
     z-index: 10;
-    top: 264px;
-    left: 109px;
+    top: 275px;
+    left: 297px;
 }
 
 .level3 {
     width: 48px;
     position: absolute;
     z-index: 10;
-    top: 210px;
-    left: 37px;
+    top: 222px;
+    left: 224px;
 }
 
 .level3_text {
     width: 54px;
     position: absolute;
     z-index: 10;
-    top: 219px;
-    left: 34px;
+    top: 233px;
+    left: 224px;
 }
 
 .level4 {
     width: 48px;
     position: absolute;
     z-index: 10;
-    top: 116px;
-    left: 35px;
+    top: 127px;
+    left: 221px;
 }
 
 .level4_text {
     width: 54px;
     position: absolute;
     z-index: 10;
-    top: 124px;
-    left: 35px;
+    top: 135px;
+    left: 225px;
 }
 
 .level5 {
     width: 48px;
     position: absolute;
     z-index: 10;
-    top: 78px;
-    left: 121px;
+    top: 89px;
+    left: 309px;
 }
 
 .level5_text {
     width: 50px;
     position: absolute;
     z-index: 10;
-    top: 88px;
-    left: 121px;
+    top: 99px;
+    left: 311px;
 }
 
 .level6 {
     width: 48px;
     position: absolute;
     z-index: 10;
-    top: 35px;
-    left: 199px;
+    top: 46px;
+    left: 389px;
 }
 
 .level6_text {
     width: 50px;
     position: absolute;
     z-index: 10;
-    top: 44px;
-    left: 199px;
+    top: 46px;
+    left: 389px;
 }
 
 .level7 {
     width: 48px;
     position: absolute;
     z-index: 10;
-    top: 67px;
-    left: 272px;
+    top: 79px;
+    left: 461px;
 }
 
 .level7_text {
     width: 50px;
     position: absolute;
     z-index: 10;
-    top: 78px;
-    left: 272px;
+    top: 89px;
+    left: 460px;
 }
 
 .level8 {
     width: 48px;
     position: absolute;
     z-index: 10;
-    top: 150px;
-    left: 244px;
+    top: 163px;
+    left: 433px;
 }
 
 .level8_text {
     width: 50px;
     position: absolute;
     z-index: 10;
-    top: 160px;
-    left: 244px;
+    top: 172px;
+    left: 430px;
 }
 
 .level9 {
     width: 48px;
     position: absolute;
     z-index: 10;
-    top: 237px;
-    left: 209px;
+    top: 251px;
+    left: 398px;
 }
 
 .level9_text {
     width: 50px;
     position: absolute;
     z-index: 10;
-    top: 247px;
-    left: 209px;
+    top: 258px;
+    left: 399px;
 }
 
 .level10 {
     width: 45px;
     position: absolute;
     z-index: 10;
-    top: 159px;
-    left: 166px;
+    top: 170px;
+    left: 354px;
 }
 
 .level10_text {

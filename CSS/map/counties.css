@@ -1,3 +1,90 @@
+body {
+    background: url("../../image/map/kraftPaper5.png");
+}
+
+.map_location {
+    width: 16px;
+    position: absolute;
+    z-index: 15;
+}
+
+.taiwan {
+    position: absolute;
+    width: auto;
+    height: 120px;
+    top: 8px;
+    left: 8px;
+    border-radius: 20px 20px 20px 20px;
+    background: url('../../image/background/sea1.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 5px;
+}
+
+.title {
+    position: fixed;
+    height: 18%;
+    width: 100%;
+    text-align: center;
+
+}
+
+.title h1 {
+    display: inline-block;
+    padding: 1.5% 18% 1.5% 18%;
+    margin-top: 1%;
+    font-size: 37px;
+    color: rgb(32, 32, 32);
+    background-color: rgb(255, 227, 191);
+    /* border: 3px black solid; */
+    border-radius: 10px 10px 10px 10px;
+
+}
+
+.informationBox {
+    position: fixed;
+    text-align: center;
+    height: 83%;
+    width: 15%;
+    right: 8px;
+    top: 8px;
+    border-radius: 20px 20px 20px 20px;
+    background-color: rgb(218, 246, 255);
+    z-index: 2;
+}
+
+.informationBox h2 {
+    /* display: inline-block; */
+    margin: 0 0 10% 0;
+    padding: 6% 0 5% 0;
+    background-color: rgb(255, 254, 191);
+    border-radius: 10px 10px 0px 0px;
+
+}
+
+.informationBox img {
+    margin-top: 5%;
+    width: 60%;
+}
+
+.mainContent {
+    position: fixed;
+    top: 16%;
+    height: 82%;
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
 .features {
     background-color: aliceblue;
     width: 320px;
@@ -32,16 +119,4 @@ td {
     border: 4px dashed black;
     /* width: 40px; */
     text-align: center;
-}
-
-.taiwan {
-    width: auto;
-    height: 160px;
-    position: absolute;
-    top: 8px;
-    left: 8px;
-    /* border-bottom: 5px solid black; */
-    /* border-right: 5px solid black; */
-    border-radius: 20px 20px 20px 20px;
-    background: url('../../image/background/sea1.png');
 }
