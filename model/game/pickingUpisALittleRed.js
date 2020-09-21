@@ -10,8 +10,8 @@ let gap=[1,1];          //用來計算卡牌翻面時間的基準值，最多同
 let frames=[0,0];       //用來計算翻牌期間的幀數，作為條件判斷的值，最多同時兩張牌，所以以陣列方式存放兩個值
 let ani=new Array();    //存放動畫執行時的計時物件
 let shows=new Array();  //存放被翻牌的元素物件
-let cardData=[1,2,3,4,5,6,7,8,9,10,11,12,13]; //原始牌組
-let gameData=new Array(16);   //用來存放要放在遊戲中的牌組內容，八種樣式，十六個元素
+let cardData=[1,2,3,4,5,6,7,8,9]; //原始牌組
+let gameData=new Array(18);   //用來存放要放在遊戲中的牌組內容，八種樣式，十六個元素
 let counterWidth=100;  //計時條長度
 let timer=60000;     //倒數時間(亳秒)
 let counterHandle;      //計時條
@@ -27,10 +27,11 @@ function startGame(){
   shuffle(cardData)  //對原始資料進行洗牌
 
   //從洗牌後的資料陣列取出八筆資料並送入遊戲卡牌陣列
-  for(i=0;i<8;i++){
+  for(i=0;i<9;i++){
     let p=cardData.pop();
     gameData[i*2]=p
     gameData[i*2+1]=p
+
   }
 
   shuffle(gameData)   //對遊戲資料進行洗牌
@@ -71,7 +72,7 @@ function initial(){
   frames=[0,0];    
   ani.length=0;    
   shows.length=0;
-  cardData=[1,2,3,4,5,6,7,8];  
+  cardData=[1,2,3,4,5,6,7,8,9];  
   gameData.length=0;
   counterWidth=100; 
   timer=60000;
@@ -108,7 +109,7 @@ function result(){
   if(com>=16){
     str="遊戲結果\n恭喜完成遊戲\n<button onclick='startGame()'>繼續遊戲</button>";
   }else{
-    str="遊戲結果\n失敗，還有 "+(16-com)+" 張未完成\n<button onclick='startGame()'>繼續遊戲</button>";
+    str="遊戲結果\n失敗，還有 "+(18-com)+" 張未完成\n<button onclick='startGame()'>繼續遊戲</button>";
   }
   ipcRenderer.send("levelIsPass","pickingUpisALittleRed");
   //把結果字串寫入提示顯示區
@@ -123,7 +124,7 @@ function chk(){
     shows[0].style.animation="opa 500ms ease forwards";
     shows[1].style.animation="opa 500ms ease forwards";
     complete+=2;
-    if(complete>=16){
+    if(complete>=18){
       result();
       clearInterval(counterHandle);
     }
