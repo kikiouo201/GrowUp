@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../../CSS/map/changhua.css">
     <link rel="stylesheet" href="../../CSS/interface.css">
     <link rel="stylesheet" href="../../CSS/icon.css">
-    <script src="./centralRegionjs/changhua.js"></script>
+    <script src="./centralRegion_JS/changhua.js"></script>
     <title>Document</title>
 </head>
 
@@ -20,7 +20,7 @@
         /* margin-top: -73px; */
         margin-left: 100px;
     }
-
+    
     .map_location {
         width: 16px;
         position: absolute;
@@ -40,8 +40,7 @@
             <td>資訊介紹</td>
         </tr>
         <tr>
-            <td><img src="../../image/map/Changhua_origin.png" onclick="featuresText('彰化地區')" /><a
-                    style="display: block;">彰化地區</a></td>
+            <td><img src="../../image/map/Changhua_origin.png" onclick="featuresText('彰化地區')" /><a style="display: block;">彰化地區</a></td>
             <td id="information" rowspan="4" valign="top" style="font-size:x-large;">
                 <h4 style="margin: auto;">
                     彰化地區，土地肥沃，物產豐饒，有「臺灣穀倉」之稱。早年鹿港發展成為中部地區最具發展潛力的城鎮。
@@ -49,68 +48,51 @@
             </td>
         </tr>
         <tr>
-            <td><img src="../../image/icon/meat_ball.png" onclick="featuresText('彰化肉圓')" /><a
-                    style="display: block;">彰化肉圓</a></td>
+            <td><img src="../../image/icon/meat_ball.png" onclick="featuresText('彰化肉圓')" /><a style="display: block;">彰化肉圓</a></td>
         </tr>
         <tr>
-            <td><img src="../../image/map_icon/Changhua_mountain_Bagua.png" onclick="featuresText('八卦山')" /><a
-                    style="display: block;">八卦山</a></td>
+            <td><img src="../../image/map_icon/Changhua_mountain_Bagua.png" onclick="featuresText('八卦山')" /><a style="display: block;">八卦山</a></td>
         </tr>
         <tr>
-            <td><img src="../../image/map_icon/Changhua_wind_turbine.png" onclick="featuresText('王功小型風力發電機')" /><a
-                    style="display: block;">王功小型</a><a style="display: block;">風力發電機</a></td>
+            <td><img src="../../image/map_icon/Changhua_wind_turbine.png" onclick="featuresText('王功小型風力發電機')" /><a style="display: block;">王功小型</a><a style="display: block;">風力發電機</a></td>
         </tr>
 
     </table>
     <div class="map">
         <img class="terrain" src="../../image/map/Changhua1.png" />
         <div class="level1">
-            <img id="zhuyin" alt="ㄕ" class="level_basic" src="../../image/icon/meat_ball.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=shi&counties=changhua';mouseDownText(ㄕ);" />
-            <img class="level_text" src="../../image/chinese_alphabet/sh.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=shi&counties=changhua';mouseDownText(ㄕ);" />
+            <img id="zhuyin" alt="ㄕ" class="level_basic" src="../../image/icon/meat_ball.png" onclick="location.href='../../view/game/drawzhuyin.html?id=shi&counties=changhua';mouseDownText(ㄕ);" />
+            <img class="level_text" src="../../image/chinese_alphabet/sh.png" onclick="location.href='../../view/game/drawzhuyin.html?id=shi&counties=changhua';mouseDownText(ㄕ);" />
         </div>
 
         <div class="level2">
-            <img id="zhuyin" alt="ㄖ" class="level_basic" src="../../image/icon/meat_ball.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=ri&counties=changhua';mouseDownText(ㄖ);" />
-            <img class="level_text" src="../../image/chinese_alphabet/r.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=ri&counties=changhua';mouseDownText(ㄖ);" />
+            <img id="zhuyin" alt="ㄖ" class="level_basic" src="../../image/icon/meat_ball.png" onclick="location.href='../../view/game/drawzhuyin.html?id=ri&counties=changhua';mouseDownText(ㄖ);" />
+            <img class="level_text" src="../../image/chinese_alphabet/r.png" onclick="location.href='../../view/game/drawzhuyin.html?id=ri&counties=changhua';mouseDownText(ㄖ);" />
         </div>
         <div class="level3">
-            <img id="zhuyin" alt="ㄗ" class="level_basic" src="../../image/icon/meat_ball.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=zi&counties=changhua';mouseDownText(ㄗ);" />
-            <img class="level_text" src="../../image/chinese_alphabet/z.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=zi&counties=changhua';mouseDownText(ㄗ);" />
+            <img id="zhuyin" alt="ㄗ" class="level_basic" src="../../image/icon/meat_ball.png" onclick="location.href='../../view/game/drawzhuyin.html?id=zi&counties=changhua';mouseDownText(ㄗ);" />
+            <img class="level_text" src="../../image/chinese_alphabet/z.png" onclick="location.href='../../view/game/drawzhuyin.html?id=zi&counties=changhua';mouseDownText(ㄗ);" />
         </div>
 
         <div class="level4">
-            <img id="zhuyin" alt="ㄘ" class="level_basic" src="../../image/icon/meat_ball.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=ci&counties=changhua';mouseDownText(ㄘ);" />
-            <img class="level_text" src="../../image/chinese_alphabet/c.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=ci&counties=changhua';mouseDownText(ㄘ);" />
+            <img id="zhuyin" alt="ㄘ" class="level_basic" src="../../image/icon/meat_ball.png" onclick="location.href='../../view/game/drawzhuyin.html?id=ci&counties=changhua';mouseDownText(ㄘ);" />
+            <img class="level_text" src="../../image/chinese_alphabet/c.png" onclick="location.href='../../view/game/drawzhuyin.html?id=ci&counties=changhua';mouseDownText(ㄘ);" />
         </div>
 
         <div class="level5">
-            <img id="zhuyin" alt="ㄙ" class="level_basic" src="../../image/icon/meat_ball.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=si&counties=changhua';mouseDownText(ㄙ);" />
-            <img class="level_text" src="../../image/chinese_alphabet/s.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=si&counties=changhua';mouseDownText(ㄙ);" />
+            <img id="zhuyin" alt="ㄙ" class="level_basic" src="../../image/icon/meat_ball.png" onclick="location.href='../../view/game/drawzhuyin.html?id=si&counties=changhua';mouseDownText(ㄙ);" />
+            <img class="level_text" src="../../image/chinese_alphabet/s.png" onclick="location.href='../../view/game/drawzhuyin.html?id=si&counties=changhua';mouseDownText(ㄙ);" />
         </div>
 
 
         <div class="level6">
-            <img id="zhuyin" alt="ㄧ" class="level_basic" src="../../image/icon/meat_ball.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=yi&counties=changhua';mouseDownText(ㄧ);" />
-            <img class="level_text" src="../../image/chinese_alphabet/(y)i.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=yi&counties=changhua';mouseDownText(ㄧ);" />
+            <img id="zhuyin" alt="ㄧ" class="level_basic" src="../../image/icon/meat_ball.png" onclick="location.href='../../view/game/drawzhuyin.html?id=yi&counties=changhua';mouseDownText(ㄧ);" />
+            <img class="level_text" src="../../image/chinese_alphabet/(y)i.png" onclick="location.href='../../view/game/drawzhuyin.html?id=yi&counties=changhua';mouseDownText(ㄧ);" />
         </div>
 
         <div class="level7">
-            <img id="zhuyin" alt="ㄨ" class="level_basic" src="../../image/icon/meat_ball.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=wu&counties=changhua';mouseDownText(ㄨ);" />
-            <img class="level_text" src="../../image/chinese_alphabet/u.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=wu&counties=changhua';mouseDownText(ㄨ);" />
+            <img id="zhuyin" alt="ㄨ" class="level_basic" src="../../image/icon/meat_ball.png" onclick="location.href='../../view/game/drawzhuyin.html?id=wu&counties=changhua';mouseDownText(ㄨ);" />
+            <img class="level_text" src="../../image/chinese_alphabet/u.png" onclick="location.href='../../view/game/drawzhuyin.html?id=wu&counties=changhua';mouseDownText(ㄨ);" />
         </div>
         <div class="level8">
             <img class="level" src="../../image/icon/devil_lock.png" onclick="alert('需要先完成縣市所有關卡！')" />
@@ -119,8 +101,7 @@
 
         、
     </div>
-    <img class="taiwan" src="../../image/character/Taiwn_small.png"
-        onclick="location.href='../../view/level/taiwan.html'" />
+    <img class="taiwan" src="../../image/character/Taiwn_small.png" onclick="location.href='../../view/level/taiwan.html'" />
     <img class="map_location" src="../../image/map/map.png" />
 
     <div>
@@ -155,15 +136,15 @@
                     break;
                 case "八卦山":
                     information.innerHTML =
-                    "<img style = 'width:100%; border-radius: 15px;' src = 'https://tourism.chcg.gov.tw/upload/27/2017081612043794500.jpg'/> ";
+                        "<img style = 'width:100%; border-radius: 15px;' src = 'https://tourism.chcg.gov.tw/upload/27/2017081612043794500.jpg'/> ";
                     info.innerHTML = "八卦山位於彰化市東方邊的山。交通部觀光局將獅頭山、梨山、八卦山 3 個風景區合併為「參山國家風景區」。"
                     information.append(info)
                     mouseDownText(info.innerHTML);
                     break;
-                    
+
                 case "王功小型風力發電機":
-                    information.innerHTML = 
-                    "<img style = 'width:100%; border-radius: 15px;' src = 'https://leafyeh.com/wp-content/uploads/flickr/48250627257_98f549c20e_o.jpg'/> ";
+                    information.innerHTML =
+                        "<img style = 'width:100%; border-radius: 15px;' src = 'https://leafyeh.com/wp-content/uploads/flickr/48250627257_98f549c20e_o.jpg'/> ";
                     info.innerHTML = "這些發電機位於臺灣彰化縣芳苑鄉。通過環評審查，運轉後將可為台灣280萬個家庭供電。"
                     information.append(info)
                     mouseDownText(info.innerHTML);
