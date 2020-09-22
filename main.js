@@ -224,6 +224,56 @@ ipcMain.on('crawler', (event, args) => {
 
 })
 
+ipcMain.on('camera-searchPictureBook', async(event, keyword) => {
+    console.log('Catch picturebook');
+    const browser = await puppeteer.launch({
+        // executablePath: '/usr/bin/chromium-browser',
+        executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
+        args: ['--disable-infobars', '--no-default-browser-check' /*, '--start-fullscreen', '--start-maximized' ,'--no-startup-window'*/ ],
+        ignoreDefaultArgs: ['--enable-automation'],
+        headless: true
+    });
+
+    try {
+        const page = await browser.newPage();
+        await page.goto("https://children.moc.gov.tw/index");
+        await page.type('body > header > div > div.search_bar > ul > li:nth-child(5) > form > input[type=text]:nth-child(2)', keyword)
+        await page.click('body > header > div > div.search_bar > ul > li:nth-child(5) > form > input.search_btn')
+            // const findFBook = await page.$('#main > div > div.row > div > div.wood_bg > div > article > div:nth-child(6) > div:nth-child(1) > div > section > h2 > a')
+        await page.waitFor(1000);
+
+        let PBook = { "bookName": "", "bookImg": "", "bookIntro": "", "bNameVoice": "", "bIntroVoice": "" };
+
+
+        // 動畫類的第一本書，之後判斷沒有的話，無書目
+        const findFBookDIV = await page.waitForSelector('#main > div > div.row > div > div.wood_bg > div > article > div:nth-child(4) > div:nth-child(1) > div > section')
+
+        const findFBookName = await page.$('#main > div > div.row > div > div.wood_bg > div > article > div:nth-child(4) > div:nth-child(1) > div > section > h2 > a')
+            // await findFBook.setDefaultNavigationTimeout(10000);
+        await findFBookName.evaluate(node => node.innerText).then((value) => {
+            Answer = value;
+            console.log(value);
+        });
+        const findFBookPic = await page.$('.pic')
+        const picURL = await findFBookPic.$eval('img', src => src.getAttribute('src'))
+        await console.log("picURL:" + picURL)
+
+        // 動畫第一本絕對位置
+        // const findBookIntro = await page.$eval('#main > div > div.row > div > div.wood_bg > div > article > div:nth-child(4) > div:nth-child(1) > div > section > a > p', a => a.textContent.trim())
+        const findBookIntro = await page.$eval('p', al => al.textContent.trim())
+        await console.log("findBookIntro:" + findBookIntro)
+        PBook['bookName'] = Answer;
+        PBook['bookImg'] = picURL;
+        PBook['bookIntro'] = findBookIntro;
+
+
+        event.reply('replyPbook', PBook)
+
+    } catch (e) {
+        console.log('an expection on page.evaluate ', e);
+
+    }
+})
 
 ipcMain.on('addQAtoServer', async(event, arg) => {
     // api.Question.addQa(1, "", arg, "./still-image.jpg", arg, "影像辨識", (event) => {
