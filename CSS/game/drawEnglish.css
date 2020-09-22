@@ -108,3 +108,123 @@
         visibility: hidden;
       }
   }
+
+  /* b1 */
+.fingerb1 {
+  visibility: visible;
+  width: 50px;
+  height: 100px;
+  transform: rotate(300deg);
+  position: absolute;
+  top: 55px;
+  left: 80px;
+  z-index: 30;
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+}
+
+
+.moveFingerb1 {
+  width: 50px;
+  height: 100px;
+  transform: scale(4);
+  transition: all 1s ease-out;
+  transform: rotate(300deg);
+  position: absolute;
+  top: 55px;
+  left: 80px;
+  z-index: 10;
+  /* animation-delay: 1s; */
+  animation-name: drawb1;
+  animation-duration:7s;
+  animation-fill-mode:forwards;
+  animation-timing-function:linear;
+  /* animation-iteration-count:infinite; */
+  /* animation-timing-function:step-start; */
+}
+
+@keyframes drawb1{
+   
+    0%{
+      top: 55px;
+      left: 80px;
+    }
+    15%{
+      top: 185px;
+      left: 80px;
+      visibility: hidden;
+    }
+    15.4%{
+      visibility: visible;
+      top: 55px;
+      left: 80px;
+    }
+    20%{
+      top: 55px;
+      left: 140px; 
+    }
+    25%{
+      top: 85px;
+      left: 155px;
+    }
+    30%{
+      top: 115px;
+      left: 125px;
+    }
+    35%{
+      top: 115px;
+      left: 95px;
+    }
+    40%{
+      top: 115px;
+      left: 125px;
+    }
+    50%{
+      top: 155px;
+      left: 165px;
+    }
+    55%{
+      top: 185px;
+      left: 135px;
+    }
+    60%{
+      top: 185px;
+      left: 95px;
+      visibility: hidden;
+    }
+    60.5%{
+      visibility: visible;
+      top: 105px;
+      left: 215px;
+    }
+    75%{
+      top: 185px;
+      left: 215px;
+      visibility: hidden;
+    }
+    75.5%{
+      visibility: visible;
+      top: 140px;
+      left: 225px;
+    }
+    80%{
+      top: 130px;
+      left: 245px;
+    }
+    85%{
+      top: 150px;
+      left: 265px;
+    }
+    90%{
+      top: 180px;
+      left: 260px;
+    }
+    95%{
+      top: 190px;
+      left: 245px;
+    }
+    100%{
+      top: 180px;
+      left: 225px;
+      visibility: hidden;
+    }
+}
