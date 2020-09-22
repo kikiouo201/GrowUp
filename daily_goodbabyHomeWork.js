@@ -35,18 +35,18 @@ ipcRenderer.on('reply-frequency',(event,data) =>{
     console.log("data =>"+data.Cameratotalfreq)
     if(data['Cameratotalfreq'] >= 3){
         document.querySelector("#camera_success_icon").style.visibility = "visible";
-        document.querySelector("#camerafreq").innerHTML = data.Cameratotalfreq+"/3";
+        document.querySelector("#camerafreq").innerHTML = "完成";
         document.querySelector(".CameracardStatus").style.width = data.CamerapercentColor+"%";
-        document.querySelector("#speechfreq").innerHTML = data.Speechtotalfreq+"/3";
-        document.querySelector(".SpeechcardStatus").style.width = data.SpeechpercentColor+"%";
+        // document.querySelector("#speechfreq").innerHTML = data.Speechtotalfreq+"/3";
+        // document.querySelector(".SpeechcardStatus").style.width = data.SpeechpercentColor+"%";
 
     }
     if(data['Speechtotalfreq'] >= 3){
         document.querySelector("#speech_success_icon").style.visibility = "visible";
-        document.querySelector("#speechfreq").innerHTML = data.Speechtotalfreq+"/3";
+        document.querySelector("#speechfreq").innerHTML = "完成";
         document.querySelector(".SpeechcardStatus").style.width = data.SpeechpercentColor+"%";
-        document.querySelector("#camerafreq").innerHTML = data.Cameratotalfreq+"/3";
-        document.querySelector(".CameracardStatus").style.width = data.CamerapercentColor+"%";
+        // document.querySelector("#camerafreq").innerHTML = data.Cameratotalfreq+"/3";
+        // document.querySelector(".CameracardStatus").style.width = data.CamerapercentColor+"%";
     }
     else{
         document.querySelector("#speechfreq").innerHTML = data.Speechtotalfreq+"/3";

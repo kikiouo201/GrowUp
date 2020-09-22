@@ -483,7 +483,6 @@ ipcMain.on('call-frequency', (event, arg) => {
         var Cameratotalfreq = 0;
         var Speechtotalfreq = 0;
         let dt = new Date();
-        console.log("speechdata =>" + freq.content[33].created_at.substring(9, 10))
         console.log("speechdata =>" + (dt.getDate() - 1))
         console.log("speechdata =>" + (Object.keys(freq.content).length - 1))
 
