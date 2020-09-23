@@ -6,6 +6,11 @@ body {
     align-items: center;
 }
 
+::-webkit-scrollbar {
+    /*隱藏滾輪*/
+    display: none;
+}
+
 video {
     position: absolute;
     top: 45px;
