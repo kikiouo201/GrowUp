@@ -37,11 +37,11 @@ if (voiceBtn) {
         var countCardNum = 0
         countCardNum++
         var CardID_Collect = 'collect_select_' + click_num
-        console.log("collect " + 'collect_select_' + click_num)
+            // console.log("collect " + 'collect_select_' + click_num)
         var CardID_Q = 'speaker_Q_' + click_num
-        console.log("Q= " + 'speaker_Q_' + click_num)
+            // console.log("Q= " + 'speaker_Q_' + click_num)
         var CardID_A = 'speaker_A_' + click_num
-        console.log("A= " + 'speaker_A_' + click_num)
+            // console.log("A= " + 'speaker_A_' + click_num)
 
         var createQA = (question, url, answer) => `<div id="pictureText_` + click_num + `" class="card text-white mb-3" style="background-color: #92337eba;">
                                         
@@ -93,9 +93,9 @@ if (voiceBtn) {
                 }
                 const imgURL = document.querySelector('.img_' + click_num);
                 data['Answer_pic'] = url;
-                console.log("data" + url)
-                console.log("URLLLL:" + imgURL);
-                console.log("data:" + data + " url:" + url);
+                // console.log("data" + url)
+                // console.log("URLLLL:" + imgURL);
+                // console.log("data:" + data + " url:" + url);
                 imgURL.src = url;
 
                 onImageLoaded(url, function(icon) {
@@ -112,9 +112,9 @@ if (voiceBtn) {
                 var ans = document.querySelector('.answer_' + click_num);
                 // var src = ans.textContent.trim();
                 ans.innerText = answer['ansText'];
-                console.log("ans:" + answer['ansText'])
+                // console.log("ans:" + answer['ansText'])
                 data['Answer'] = answer['ansText'];
-                console.log("answer['ansVoice']:" + answer['ansVoice'])
+                // console.log("answer['ansVoice']:" + answer['ansVoice'])
                 voiceA.alt = answer['ansVoice'];
 
             })
@@ -129,7 +129,7 @@ if (voiceBtn) {
                 // newDiv.className = "card-header contentCss";
                 // newDiv.style.background = "#f8f9fa24";
                 // newDiv.style.padding = "12px 20px 40px 20px";
-                console.log("pictureBook" + pictureBook)
+                // console.log("pictureBook" + pictureBook)
 
                 pictureBook.innerHTML += createPBook(pbook['bookName'], pbook['bookImg'], pbook['bookIntro'])
                 let voiceQ = document.getElementById(`speaker_Q_${click_num}`);
@@ -145,7 +145,7 @@ if (voiceBtn) {
 
             QA_card.innerHTML = QA_card.innerHTML + createQA(data['Question'], "./image/character/200.gif", "查詢中...");
 
-            console.log("data=" + JSON.stringify(data))
+            // console.log("data=" + JSON.stringify(data))
             SystemVal.innerHTML = '再問一次問題';
 
             // 設定滾輪置底
@@ -297,7 +297,7 @@ function searchAnswer(keyword) {
         // await console.log("def:" + def[0]);
         const test = await def[0].evaluate(node => node.innerText).then((value) => {
             Answer = value;
-            console.log(value);
+            // console.log(value);
             // expected output: "foo"
             // event.reply('replyAnswer', test)
         });
@@ -330,24 +330,24 @@ function searchPBook(keyword) {
                 // await findFBook.setDefaultNavigationTimeout(10000);
             await findFBookName.evaluate(node => node.innerText).then((value) => {
                 Answer = value;
-                console.log(value);
+                // console.log(value);
             });
 
             let PBook = { "bookName": "獅子1", "bookImg": "獅子2", "bookIntro": "獅子3" };
 
             const findFBookPic = await page.$('.pic')
             const picURL = await findFBookPic.$eval('img', src => src.getAttribute('src'))
-            await console.log("picURL:" + picURL)
+                // await console.log("picURL:" + picURL)
 
             // 動畫第一本絕對位置
             // const findBookIntro = await page.$eval('#main > div > div.row > div > div.wood_bg > div > article > div:nth-child(4) > div:nth-child(1) > div > section > a > p', a => a.textContent.trim())
             const findBookIntro = await page.$eval('p', al => al.textContent.trim())
-            await console.log("findBookIntro:" + findBookIntro)
+                // await console.log("findBookIntro:" + findBookIntro)
 
             PBook['bookName'] = Answer;
             PBook['bookImg'] = picURL;
             PBook['bookIntro'] = findBookIntro;
-            console.log("PBook['bookName']:" + PBook['bookName'] + " PBook['bookImg']:" + PBook['bookImg'] + " PBook['bookIntro']" + PBook['bookIntro'])
+            // console.log("PBook['bookName']:" + PBook['bookName'] + " PBook['bookImg']:" + PBook['bookImg'] + " PBook['bookIntro']" + PBook['bookIntro'])
 
         } catch (e) {
             console.log('an expection on page.evaluate ', e);
@@ -363,11 +363,11 @@ function searchPBook(keyword) {
 
 function playAudio(name) {
     var audioCreate = document.createElement("AUDIO");
-    console.log("name:" + name.alt)
+    // console.log("name:" + name.alt)
     let id = name.alt;
     if (audioCreate.canPlayType("audio/mpeg")) {
         audioCreate.setAttribute("src", `./TTS/mp3/pictureBook/${id}.mp3`);
-        console.log(`id:${id}`)
+        // console.log(`id:${id}`)
     }
 
     // x.setAttribute("controls", "controls");
