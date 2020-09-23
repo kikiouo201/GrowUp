@@ -26,7 +26,7 @@ const encoding = require('encoding');
 const iconv = require('iconv-lite');
 const puppeteer = require('puppeteer');
 // STT
-// const callSTT = require('./TTS_API_test')
+const callSTT = require('./TTS_API_test')
 var player = require('play-sound')(opts = {})
     // const fs = require('fs');
     // const util = require('util');
