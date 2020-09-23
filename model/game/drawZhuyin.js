@@ -16,29 +16,29 @@ myPics.forEach((pics, num) => {
     // event.offsetX, event.offsetY gives the (x,y) offset from the edge of the canvas.
 
     // Add the event listeners for mousedown, mousemove, and mouseup
-    pics.addEventListener('mousedown', e => {
-        x = e.offsetX;
-        y = e.offsetY;
-        isDrawing = true;
-    });
+    // pics.addEventListener('mousedown', e => {
+    //     x = e.offsetX;
+    //     y = e.offsetY;
+    //     isDrawing = true;
+    // });
 
-    pics.addEventListener('mousemove', e => {
-        if (isDrawing === true) {
-            drawLine(context, x, y, e.offsetX, e.offsetY);
-            x = e.offsetX;
-            y = e.offsetY;
-            console.log('scoreJudgment');
-            scoreJudgment(id, x, y, points, num);
-        }
-    });
-    window.addEventListener('mouseup', e => {
-        if (isDrawing === true) {
-            drawLine(context, x, y, e.offsetX, e.offsetY);
-            x = 0;
-            y = 0;
-            isDrawing = false;
-        }
-    });
+    // pics.addEventListener('mousemove', e => {
+    //     if (isDrawing === true) {
+    //         drawLine(context, x, y, e.offsetX, e.offsetY);
+    //         x = e.offsetX;
+    //         y = e.offsetY;
+    //         console.log('scoreJudgment');
+    //         scoreJudgment(id, x, y, points, num);
+    //     }
+    // });
+    // window.addEventListener('mouseup', e => {
+    //     if (isDrawing === true) {
+    //         drawLine(context, x, y, e.offsetX, e.offsetY);
+    //         x = 0;
+    //         y = 0;
+    //         isDrawing = false;
+    //     }
+    // });
     pics.addEventListener('touchstart', e => {
         const rect = e.target.getBoundingClientRect();
         const touch = e.targetToches[0];
