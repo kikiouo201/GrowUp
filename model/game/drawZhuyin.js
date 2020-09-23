@@ -41,7 +41,7 @@ myPics.forEach((pics, num) => {
     // });
     pics.addEventListener('touchstart', e => {
         const rect = e.target.getBoundingClientRect();
-        const touch = e.targetToches[0];
+        const touch = e.targetTouches[0];
         x = touch.pageX - rect.left;
         y = touch.pageY - rect.top;
         isDrawing = true;
@@ -50,7 +50,7 @@ myPics.forEach((pics, num) => {
     pics.addEventListener('touchmove', e => {
         if (isDrawing === true) {
             const rect = e.target.getBoundingClientRect();
-            const touch = e.targetToches[0];
+            const touch = e.targetTouches[0];
             drawLine(context, x, y, touch.pageX - rect.left, touch.pageY - rect.top);
             x = touch.pageX - rect.left;
             y = touch.pageY - rect.top;
@@ -61,7 +61,7 @@ myPics.forEach((pics, num) => {
     window.addEventListener('touchend', e => {
         if (isDrawing === true) {
             const rect = e.target.getBoundingClientRect();
-            const touch = e.targetToches[0];
+            const touch = e.targetTouches[0];
             drawLine(context, x, y, touch.pageX - rect.left, touch.pageY - rect.top);
             x = 0;
             y = 0;
