@@ -228,3 +228,617 @@
       visibility: hidden;
     }
 }
+
+
+  /* c1 */
+  .fingerc1 {
+    visibility: visible;
+    width: 50px;
+    height: 100px;
+    transform: rotate(300deg);
+    position: absolute;
+    top: 70px;
+    left: 160px;
+    z-index: 30;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+  }
+  
+  
+  .moveFingerc1 {
+    width: 50px;
+    height: 100px;
+    transform: scale(4);
+    transition: all 1s ease-out;
+    transform: rotate(300deg);
+    position: absolute;
+    top: 70px;
+    left: 160px;
+    z-index: 10;
+    /* animation-delay: 1s; */
+    animation-name: drawc1;
+    animation-duration:5s;
+    animation-fill-mode:forwards;
+    animation-timing-function:linear;
+    /* animation-iteration-count:infinite; */
+    /* animation-timing-function:step-start; */
+  }
+  
+  @keyframes drawc1{
+     
+      0%{
+        top: 70px;
+        left: 160px;
+      }
+      15%{
+        top: 60px;
+        left: 120px;
+      }
+      30%{
+        top: 80px;
+        left: 90px;
+      }
+      45%{
+        top: 150px;
+        left: 80px;
+      }
+      60%{
+        top: 180px;
+        left: 120px;
+      }
+      75%{
+        top: 165px;
+        left: 160px;
+        visibility: hidden;
+      }
+      75.5%{
+        visibility: visible;
+        top: 135px;
+        left: 250px;
+      }
+      80%{
+        top: 130px;
+        left: 230px;
+      }
+      85%{
+        top: 150px;
+        left: 215px;
+      }
+      90%{
+        top: 180px;
+        left: 215px;
+      }
+      95%{
+        top: 190px;
+        left: 235px;
+      }
+      100%{
+        top: 185px;
+        left: 250px;
+        visibility: hidden;
+      }
+      
+  }
+  
+
+  /* d1 */
+  .fingerd1 {
+    visibility: visible;
+    width: 50px;
+    height: 100px;
+    transform: rotate(300deg);
+    position: absolute;
+    top: 50px;
+    left: 70px;
+    z-index: 30;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+  }
+  
+  
+  .moveFingerd1 {
+    width: 50px;
+    height: 100px;
+    transform: scale(4);
+    transition: all 1s ease-out;
+    transform: rotate(300deg);
+    position: absolute;
+    top: 50px;
+    left: 70px;
+    z-index: 10;
+    /* animation-delay: 1s; */
+    animation-name: drawd1;
+    animation-duration:5s;
+    animation-fill-mode:forwards;
+    animation-timing-function:linear;
+    /* animation-iteration-count:infinite; */
+    /* animation-timing-function:step-start; */
+  }
+  
+  @keyframes drawd1{
+     
+      0%{
+        top: 50px;
+        left: 70px;
+      }
+      15%{
+        top: 185px;
+        left: 70px;
+      }
+      15.5%{
+        top: 50px;
+        left: 70px;
+      }
+      25%{
+        top: 55px;
+        left: 140px;
+      }
+      35%{
+        top: 105px;
+        left: 170px;
+      }
+      40%{
+        top: 165px;
+        left: 160px;
+      }
+      50%{
+        top: 185px;
+        left: 130px;
+      }
+      60%{
+        top: 185px;
+        left: 70px;
+        visibility: hidden;
+      }
+      60.5%{
+        visibility: visible;
+        top: 105px;
+        left: 270px;
+      }
+      70%{
+        top: 185px;
+        left: 270px;
+        visibility: hidden;
+      }
+      70.5%{
+        visibility: visible;
+        top: 140px;
+        left: 256px;
+      }
+      75%{
+        top: 130px;
+        left: 236px;
+      }
+      80%{
+        top: 160px;
+        left: 216px;
+      }
+      87%{
+        top: 160px;
+        left: 216px;
+      }
+      90%{
+        top: 180px;
+        left: 220px;
+      }
+      95%{
+        top: 190px;
+        left: 240px;
+      }
+      100%{
+        top: 180px;
+        left: 260px;
+        visibility: hidden;
+      }
+      
+  }
+
+   /* e1 */
+   .fingere1 {
+    visibility: visible;
+    width: 50px;
+    height: 100px;
+    transform: rotate(300deg);
+    position: absolute;
+    top: 50px;
+    left: 90px;
+    z-index: 30;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+  }
+  
+  
+  .moveFingere1 {
+    width: 50px;
+    height: 100px;
+    transform: scale(4);
+    transition: all 1s ease-out;
+    transform: rotate(300deg);
+    position: absolute;
+    top: 50px;
+    left: 90px;
+    z-index: 10;
+    /* animation-delay: 1s; */
+    animation-name: drawe1;
+    animation-duration:5s;
+    animation-fill-mode:forwards;
+    animation-timing-function:linear;
+    /* animation-iteration-count:infinite; */
+    /* animation-timing-function:step-start; */
+  }
+  
+  @keyframes drawe1{
+     
+      0%{
+        top: 50px;
+        left: 90px;
+      }
+      15%{
+        top: 50px;
+        left: 155px;
+        visibility: hidden;
+      }
+      15.5%{
+        visibility: visible;
+        top: 50px;
+        left: 90px;
+      }
+      35%{
+        top: 185px;
+        left: 90px;
+      }
+      50%{
+        top: 185px;
+        left: 155px;
+        visibility: hidden;
+      }
+      50.5%{
+        visibility: visible;
+        top: 115px;
+        left: 100px;
+      }
+      60%{
+        top: 115px;
+        left: 150px;
+        visibility: hidden;
+      }
+      60.5%{
+        visibility: visible;
+        top: 160px;
+        left: 205px;
+      }
+      70%{
+        top: 160px;
+        left: 250px;
+      }
+      75%{
+        top: 140px;
+        left: 250px;
+      }
+      77%{
+        top: 130px;
+        left: 240px;
+      }
+      80%{
+        top: 130px;
+        left: 220px;
+      }
+      85%{
+        top: 160px;
+        left: 205px;
+      }
+
+      90%{
+        top: 180px;
+        left: 210px;
+      }
+      95%{
+        top: 190px;
+        left: 230px;
+      }
+      100%{
+        top: 180px;
+        left: 260px;
+        visibility: hidden;
+      }
+      
+  }
+
+   /* f1 */
+   .fingerf1 {
+    visibility: visible;
+    width: 50px;
+    height: 100px;
+    transform: rotate(300deg);
+    position: absolute;
+    top: 50px;
+    left: 100px;
+    z-index: 30;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+  }
+  
+  
+  .moveFingerf1 {
+    width: 50px;
+    height: 100px;
+    transform: scale(4);
+    transition: all 1s ease-out;
+    transform: rotate(300deg);
+    position: absolute;
+    top: 50px;
+    left: 100px;
+    z-index: 10;
+    /* animation-delay: 1s; */
+    animation-name: drawf1;
+    animation-duration:4s;
+    animation-fill-mode:forwards;
+    animation-timing-function:linear;
+    /* animation-iteration-count:infinite; */
+    /* animation-timing-function:step-start; */
+  }
+  
+  @keyframes drawf1{
+     
+      0%{
+        top: 50px;
+        left: 100px;
+      }
+      20%{
+        top: 50px;
+        left: 160px;
+        visibility: hidden;
+      }
+      20.5%{
+        visibility: visible;
+        top: 50px;
+        left: 100px;
+      }
+      40%{
+        top: 180px;
+        left: 100px;
+        visibility: hidden;
+      }
+      40.5%{
+        visibility: visible;
+        top: 120px;
+        left: 100px;
+      }
+      60%{
+        top: 115px;
+        left: 150px;
+        visibility: hidden;
+      }
+      60.5%{
+        visibility: visible;
+        top: 90px;
+        left: 250px;
+      }
+      70%{
+        top: 90px;
+        left: 230px;
+      }
+      85%{
+        top: 190px;
+        left: 230px;
+        visibility: hidden;
+      }
+      85.5%{
+        visibility: visible;
+        top: 125px;
+        left: 210px;
+      }
+      100%{
+        top: 125px;
+        left: 245px;
+        visibility: hidden;
+      }
+      
+  }
+
+  /* g1 */
+  .fingerg1 {
+    visibility: visible;
+    width: 50px;
+    height: 100px;
+    transform: rotate(300deg);
+    position: absolute;
+    top: 70px;
+    left: 175px;
+    z-index: 30;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+  }
+  
+  
+  .moveFingerg1 {
+    width: 50px;
+    height: 100px;
+    transform: scale(4);
+    transition: all 1s ease-out;
+    transform: rotate(300deg);
+    position: absolute;
+    top: 70px;
+    left: 175px;
+    z-index: 10;
+    /* animation-delay: 1s; */
+    animation-name: drawg1;
+    animation-duration:4s;
+    animation-fill-mode:forwards;
+    animation-timing-function:linear;
+    /* animation-iteration-count:infinite; */
+    /* animation-timing-function:step-start; */
+  }
+  
+  @keyframes drawg1{
+     
+      0%{
+        top: 70px;
+        left: 175px;
+      }
+      7%{
+        top: 60px;
+        left: 125px;
+      }
+      14%{
+        top: 75px;
+        left: 85px;
+      }
+      21%{
+        top: 130px;
+        left: 65px;
+      }
+      28%{
+        top: 170px;
+        left: 75px;
+      }
+      35%{
+        top: 195px;
+        left: 115px;
+      }
+      42%{
+        top: 190px;
+        left: 165px;
+      }
+      49%{
+        top: 130px;
+        left: 165px;
+      }
+      56%{
+        top: 130px;
+        left: 130px;
+        visibility: hidden;
+      }
+      56.5%{
+        visibility: visible;
+        top: 145px;
+        left: 264px;
+      }
+      60%{
+        top: 130px;
+        left: 234px;
+      }
+      65%{
+        top: 150px;
+        left: 214px;
+      }
+      70%{
+        top: 180px;
+        left: 214px;
+      }
+      75%{
+        top: 195px;
+        left: 244px;
+      }
+      80%{
+        top: 185px;
+        left: 264px;
+        visibility: hidden;
+      }
+      80.5%{
+        visibility: visible;
+        top: 135px;
+        left: 275px;
+      }
+      90%{
+        top: 215px;
+        left: 270px;
+      }
+      100%{
+        top: 220px;
+        left: 220px;
+        visibility: hidden;
+      }
+      
+  }
+
+
+  /* h1 */
+  .fingerh1 {
+    visibility: visible;
+    width: 50px;
+    height: 100px;
+    transform: rotate(300deg);
+    position: absolute;
+    top: 50px;
+    left: 80px;
+    z-index: 30;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+  }
+  
+  
+  .moveFingerh1 {
+    width: 50px;
+    height: 100px;
+    transform: scale(4);
+    transition: all 1s ease-out;
+    transform: rotate(300deg);
+    position: absolute;
+    top: 50px;
+    left: 80px;
+    z-index: 10;
+    /* animation-delay: 1s; */
+    animation-name: drawh1;
+    animation-duration:3s;
+    animation-fill-mode:forwards;
+    animation-timing-function:linear;
+    /* animation-iteration-count:infinite; */
+    /* animation-timing-function:step-start; */
+  }
+  
+  @keyframes drawh1{
+     
+      0%{
+        top: 50px;
+        left: 80px;
+      }
+      25%{
+        top: 185px;
+        left: 80px;
+        visibility: hidden;
+      }
+      25.5%{
+        visibility: visible;
+        top: 115px;
+        left: 90px;
+      }
+      35%{
+        top: 115px;
+        left: 150px;
+        visibility: hidden;
+      }
+      35.5%{
+        visibility: visible;
+        top: 50px;
+        left: 170px;
+      }
+      60%{
+        top: 185px;
+        left: 170px;
+        visibility: hidden;
+      }
+      60.5%{
+        visibility: visible;
+        top: 105px;
+        left: 220px;
+      }
+      70%{
+        top: 185px;
+        left: 220px;
+        visibility: hidden;
+      }
+      70.5%{
+        visibility: visible;
+        top: 140px;
+        left: 230px;
+      }
+      80%{
+        top: 130px;
+        left: 250px;
+      }
+      90%{
+        top: 150px;
+        left: 265px;
+      }
+      100%{
+        top: 190px;
+        left: 265px;
+        visibility: hidden;
+      }
+      
+  }
