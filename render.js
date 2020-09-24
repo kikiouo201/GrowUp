@@ -192,6 +192,23 @@ identifyBtn.addEventListener('click',()=>{
             document.getElementById('AnsImg').src="./still-image.jpg"
             QA_card.innerHTML = createQA(answer,explain,pbook['bookName'],pbook['bookImg'],pbook['bookIntro'])
         }
+        else if(answer=="香蕉"){
+           
+            ShowVisibility.style.display = "block";
+            ImgVisibility.style.display = "block";
+            stream.style.display="none";
+            document.getElementById('leadTxt').innerHTML="辨識成功!!";
+            document.getElementById('AnsImg').src="./still-image.jpg"
+            QA_card.innerHTML = createQA(answer,explain,pbook['bookName'],pbook['bookImg'],pbook['bookIntro'])
+        }
+        else{
+            ShowVisibility.style.display = "block";
+            ImgVisibility.style.display = "block";
+            stream.style.display="none";
+            document.getElementById('leadTxt').innerHTML="辨識成功!!";
+            document.getElementById('AnsImg').src="./still-image.jpg"
+            QA_card.innerHTML = createQA(answer,explain,pbook['bookName'],pbook['bookImg'],pbook['bookIntro'])
+        }
     })
    
 
