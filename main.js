@@ -247,7 +247,9 @@ ipcMain.on('camera-searchPictureBook', async(event, keyword) => {
     try {
         const page = await browser.newPage();
         await page.goto("https://children.moc.gov.tw/index");
+        await page.waitForSelector('body > header > div > div.search_bar > ul > li:nth-child(5) > form > input[type=text]:nth-child(2)')
         await page.type('body > header > div > div.search_bar > ul > li:nth-child(5) > form > input[type=text]:nth-child(2)', keyword)
+        await page.waitForSelector('body > header > div > div.search_bar > ul > li:nth-child(5) > form > input.search_btn')
         await page.click('body > header > div > div.search_bar > ul > li:nth-child(5) > form > input.search_btn')
             // const findFBook = await page.$('#main > div > div.row > div > div.wood_bg > div > article > div:nth-child(6) > div:nth-child(1) > div > section > h2 > a')
         await page.waitFor(1000);
