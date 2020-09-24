@@ -718,7 +718,7 @@ ipcMain.on('searchPictureBook', async(event, keyword) => {
             // const findFBook = await page.$('#main > div > div.row > div > div.wood_bg > div > article > div:nth-child(6) > div:nth-child(1) > div > section > h2 > a')
         await page.waitFor(1000);
 
-        let PBook = await { "bookName": "", "bookImg": "", "bookIntro": "", "bNameVoice": "", "bIntroVoice": "" };
+        let PBook = { "bookName": "", "bookImg": "", "bookIntro": "", "bNameVoice": "", "bIntroVoice": "" };
 
 
         // 動畫類的第一本書，之後判斷沒有的話，無書目
