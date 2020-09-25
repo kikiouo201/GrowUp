@@ -198,42 +198,7 @@ function speakerDemo(index) {
     }
 }
 
-function speakerTest(index) {
-    if (index) {
-        // speechSynthesis.addEventListener('voiceschanged', populateVoices);
 
-        console.log("click =? " + index.parentNode.childNodes[2].nodeName)
-        console.log("click =? " + index.parentNode.childNodes[2].innerHTML)
-        console.log("click =? " + index.parentNode.children[0].childNodes[0].nodeValue)
-
-        SSU.text = index.parentNode.children[0].childNodes[0].nodeValue;
-        toggle();
-    }
-}
-
-function speaker(QA) {
-    SSU.text = QA.parentNode.childNodes[3].childNodes[0].nodeValue;
-    toggle();
-}
-
-function speakerBookName(bookName) {
-    SSU.text = bookName.parentNode.childNodes[3].childNodes[0].nodeValue;
-    toggle();
-}
-
-function speakerBook(book) {
-    SSU.text = book.parentNode.childNodes[9].childNodes[0].nodeValue;
-    console.log(SSU.text)
-    toggle();
-}
-
-function toggle(startOver = true) {
-    speechSynthesis.cancel();
-    if (startOver) {
-        speechSynthesis.voice = "Google 國語（臺灣）";
-        speechSynthesis.speak(SSU);
-    }
-}
 // function populateVoices() {
 //     voices = this.getVoices();
 //     voicesDropdown.innerHTML = voices
