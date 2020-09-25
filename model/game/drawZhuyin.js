@@ -1,4 +1,4 @@
-let {ipcRenderer }= require('electron');
+let { ipcRenderer } = require('electron');
 let isDrawing = false;
 let x = 0;
 let y = 0;
@@ -137,16 +137,16 @@ const levelName = {
     y1: 'y',
     x1: 'x',
     z1: 'z',
-    1:1,
-    2:2,
-    3:3,
-    4:4,
-    5:5,
-    6:6,
-    7:7,
-    8:8,
-    9:9,
-    0:0,
+    1: 1,
+    2: 2,
+    3: 3,
+    4: 4,
+    5: 5,
+    6: 6,
+    7: 7,
+    8: 8,
+    9: 9,
+    0: 0,
 }
 
 
@@ -170,7 +170,7 @@ score.addEventListener('click', () => {
     props.style.visibility = "visible";
 
     smallCard.innerHTML = '<img src="../../image/magicCard/chineseAlphabet/' + id + '.png" width="50px"/>';
-    ipcRenderer.send("levelIsPass",levelName[id]);
+    ipcRenderer.send("levelIsPass", levelName[id]);
     // }
     console.log('totalPoint= ' + totalPoint);
     tool.style.visibility = "hidden"
@@ -343,7 +343,7 @@ function playAudio() {
     if (audioCreate.canPlayType("audio/mpeg")) {
         if (`${id}`.length == 1 && `${id}` > 0 && `${id}` < 10 || `${id}` == 0) { //數字
             audioCreate.setAttribute("src", "../../TTS/mp3/012/" + `${id}` + ".mp3");
-        } else if (`${id}`.includes = '1' && `${id}`.length == 1) { //英文
+        } else if (`${id}`.includes = '1' && `${id}`.length == 2) { //英文
             audioCreate.setAttribute("src", "../../TTS/mp3/ABC/" + `${id}` + ".mp3");
 
         } else { //注音
