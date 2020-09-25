@@ -46,11 +46,12 @@ function people(app){
             router.on('show_child_good_baby_day_value',jsonObject,callback);
             app.use(router);
         },
-        AddChildGoodBabyValue(child_id,add_value,callback){
+        AddChildGoodBabyValue(child_id,add_value,type,callback){
             let today = new Date();
             const jsonObject = {
                 child_id: child_id,
                 add_value: add_value,
+                type: type,
                 date: formatDate(today),
             };
         

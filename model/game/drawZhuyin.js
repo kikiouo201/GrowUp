@@ -1,4 +1,4 @@
-//let {ipcRenderer }= require('electron');
+let {ipcRenderer }= require('electron');
 let isDrawing = false;
 let x = 0;
 let y = 0;
@@ -76,6 +76,77 @@ console.log('score= ' + score);
 const levelName = {
     b: 'ㄅ',
     p: 'ㄆ',
+    m: 'ㄇ',
+    f: 'ㄈ',
+    d: 'ㄉ',
+    t: 'ㄊ',
+    n: 'ㄋ',
+    l: 'ㄌ',
+    g: 'ㄍ',
+    k: 'ㄎ',
+    h: 'ㄏ',
+    j: 'ㄐ',
+    q: 'ㄑ',
+    x: 'ㄒ',
+    zhi: 'ㄓ',
+    chi: 'ㄔ',
+    shi: 'ㄕ',
+    ri: 'ㄖ',
+    zi: 'ㄗ',
+    ci: 'ㄘ',
+    si: 'ㄙ',
+    yi: 'ㄧ',
+    wu: 'ㄨ',
+    yu: 'ㄩ',
+    ra: 'ㄚ',
+    o: 'ㄛ',
+    re: 'ㄜ',
+    ae: 'ㄝ',
+    ai: 'ㄞ',
+    ei: 'ㄟ',
+    ao: 'ㄠ',
+    ou: 'ㄡ',
+    an: 'ㄢ',
+    en: 'ㄣ',
+    ang: 'ㄤ',
+    eng: 'ㄥ',
+    er: 'ㄦ',
+    a1: 'a',
+    b1: 'b',
+    c1: 'c',
+    d1: 'd',
+    e1: 'e',
+    f1: 'f',
+    g1: 'g',
+    h1: 'h',
+    i1: 'i',
+    j1: 'j',
+    k1: 'k',
+    l1: 'l',
+    m1: 'm',
+    n1: 'n',
+    o1: 'o',
+    p1: 'p',
+    q1: 'q',
+    r1: 'r',
+    s1: 's',
+    t1: 't',
+    u1: 'u',
+    v1: 'v',
+    w1: 'w',
+    y1: 'y',
+    x1: 'x',
+    z1: 'z',
+    1:1,
+    2:2,
+    3:3,
+    4:4,
+    5:5,
+    6:6,
+    7:7,
+    8:8,
+    9:9,
+    0:0,
 }
 
 
@@ -99,7 +170,7 @@ score.addEventListener('click', () => {
     props.style.visibility = "visible";
 
     smallCard.innerHTML = '<img src="../../image/magicCard/chineseAlphabet/' + id + '.png" width="50px"/>';
-    //ipcRenderer.send("levelIsPass",levelName[id]);
+    ipcRenderer.send("levelIsPass",levelName[id]);
     // }
     console.log('totalPoint= ' + totalPoint);
     tool.style.visibility = "hidden"

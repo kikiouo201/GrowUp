@@ -604,7 +604,7 @@ ipcMain.on('levelIsPass', (event, arg) => {
         console.log("data = " + JSON.stringify(req))
             //event.sender.send('reply-callZhuyindata', data);
     });
-    api.People.AddChildGoodBabyValue(1, 20, (req) => {
+    api.People.AddChildGoodBabyValue(1, 20,arg, (req) => {
         console.log("data = " + JSON.stringify(req))
             //event.sender.send('reply-callZhuyindata', data);
     });
