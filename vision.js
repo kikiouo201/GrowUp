@@ -1,7 +1,7 @@
 const Translate = require('@google-cloud/translate').v2;
 
 const translate = new Translate.Translate({
-    keyFilename: 'ApiKey.json'
+    keyFilename: 'rasberry-20200203-hw-t1-smjjay-7d8b5bc0c204.json'
 });
 
 async function start(){
@@ -9,7 +9,7 @@ async function start(){
 
   // Creates a client
   const client =  new vision.ImageAnnotatorClient({
-      keyFilename: 'ApiKey.json'
+      keyFilename: 'rasberry-20200203-hw-t1-smjjay-7d8b5bc0c204.json'
   });
 
   // Performs label detection on the image file
