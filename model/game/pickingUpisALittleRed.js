@@ -10,24 +10,49 @@ let gap=[1,1];          //用來計算卡牌翻面時間的基準值，最多同
 let frames=[0,0];       //用來計算翻牌期間的幀數，作為條件判斷的值，最多同時兩張牌，所以以陣列方式存放兩個值
 let ani=new Array();    //存放動畫執行時的計時物件
 let shows=new Array();  //存放被翻牌的元素物件
-let cardData=[1,2,3,4,5,6,7,8,9]; //原始牌組
-let gameData=new Array(18);   //用來存放要放在遊戲中的牌組內容，八種樣式，十六個元素
+let cardData=[1,2,3,4,5,6,7,8]; //原始牌組
+let gameData=new Array((cardData.length*2));   //用來存放要放在遊戲中的牌組內容，八種樣式，十六個元素
 let counterWidth=100;  //計時條長度
 let timer=60000;     //倒數時間(亳秒)
 let counterHandle;      //計時條
 let complete=0;
+let cardDataSize=0;
 //startGame();
+
+const levelName = [
+  // b,p,m,f,d,t,n,l,g,k,h,j,q,x,zhi,
+  // chi,shi,ri,zi,ci,si,yi,wu,yu,ra,
+  // o,re,ae,ai,ei,ao,ou,an,en,ang,eng,er,
+  1,2,3,4,5,6,7,8,9,0,
+  'a1','b1','c1','d1','e1','f1','g1','h1','i1','j1','k1','l1',
+  'm1','n1','o1','p1','q1','r1','s1','t1','u1','v1','w1','y1','x1','z1',
+]
+
 
 //遊戲啟動
 function startGame(){
+
+  cardDataSize = (new URLSearchParams(location.search)).get("cardDataSize");
+  let startId = (new URLSearchParams(location.search)).get("startId");
+  cardData=[];
+  let levelNameStartPlace= levelName.indexOf(startId);
+  for(let i=1;i<=cardDataSize;i++){
+    cardData.push(levelName[levelNameStartPlace+i]);
+  }
+  let cards=document.querySelector('.cards');
+  for(let i=0;i<(cardDataSize*2);i++){
+    cards.innerHTML+='<div class="card"><div class="front"></div><div class="back"></div></div>';
+  }
+  
   document.getElementsByClassName('mask')[0].style.display="none";
 
+  cards=document.getElementsByClassName('card');    //取得所有的卡牌元素
+  fronts=document.getElementsByClassName('front');  //取得所有的卡面元素
   initial();   //初始化全域變數及資料
 
   shuffle(cardData)  //對原始資料進行洗牌
-
   //從洗牌後的資料陣列取出八筆資料並送入遊戲卡牌陣列
-  for(i=0;i<9;i++){
+  for(i=0;i<cardDataSize;i++){
     let p=cardData.pop();
     gameData[i*2]=p
     gameData[i*2+1]=p
@@ -72,13 +97,14 @@ function initial(){
   frames=[0,0];    
   ani.length=0;    
   shows.length=0;
-  cardData=[1,2,3,4,5,6,7,8,9];  
   gameData.length=0;
   counterWidth=100; 
   timer=60000;
   complete=0;
   document.getElementById('counter').style.width="100%";
+  // cardData=[1,2,3,4,5,6,7,8,9];
 
+  
   //將卡牌元素中的style屬性都先移除
   for(i=0;i<cards.length;i++){
     cards[i].removeAttribute('style');
@@ -106,10 +132,10 @@ function result(){
   let str="";
 
   //設定結果字串
-  if(com>=16){
+  if(com>=18){
     str="遊戲結果\n恭喜完成遊戲\n<button onclick='startGame()'>繼續遊戲</button>";
   }else{
-    str="遊戲結果\n失敗，還有 "+(18-com)+" 張未完成\n<button onclick='startGame()'>繼續遊戲</button>";
+    str="遊戲結果\n失敗，還有 "+((cardData.length*2)-com)+" 張未完成\n<button onclick='startGame()'>繼續遊戲</button>";
   }
   ipcRenderer.send("levelIsPass","pickingUpisALittleRed");
   //把結果字串寫入提示顯示區
@@ -124,7 +150,7 @@ function chk(){
     shows[0].style.animation="opa 500ms ease forwards";
     shows[1].style.animation="opa 500ms ease forwards";
     complete+=2;
-    if(complete>=18){
+    if(complete>=(18)){
       result();
       clearInterval(counterHandle);
     }
