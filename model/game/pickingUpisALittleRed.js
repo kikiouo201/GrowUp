@@ -20,9 +20,9 @@ let cardDataSize=0;
 //startGame();
 
 const levelName = [
-  // b,p,m,f,d,t,n,l,g,k,h,j,q,x,zhi,
-  // chi,shi,ri,zi,ci,si,yi,wu,yu,ra,
-  // o,re,ae,ai,ei,ao,ou,an,en,ang,eng,er,
+ 'b','p','m','f','d','t','n','l','g','k','h','j','q','x','zhi',
+  'chi','shi','ri','zi','ci','si','yi','wu','yu','ra',
+  'o','re','ae','ai','ei','ao','ou','an','en','ang','eng','er',
   1,2,3,4,5,6,7,8,9,0,
   'a1','b1','c1','d1','e1','f1','g1','h1','i1','j1','k1','l1',
   'm1','n1','o1','p1','q1','r1','s1','t1','u1','v1','w1','y1','x1','z1',
