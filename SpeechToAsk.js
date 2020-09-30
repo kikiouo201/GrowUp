@@ -76,75 +76,138 @@ if (voiceBtn) {
                                     <img class="speaker_A" onclick="playAudio(this)" id="speaker_pbIntro_` + click_num + `" src="icons/speaker.png" style="margin-top: 131px; display: inline; bottom: 31px;" alt=""/>
                                 </div>`
 
+        var createQAandPBook = (question, url, answer, bookName, bookImg, bookIntro) => `<div id="pictureText_` + click_num + `" class="card text-white mb-3" style="background-color: #92337eba;">
+                                        
+                                <div class="card-body" style="margin-top: 30px;">
+                                    <img class="collect_LeftTop" onclick="collect(this)" id="` + CardID_Collect + `" src="icons/bookmark.png"/>
+                                        <div style="float:left; display: block; text-align: left;">
+                                            <p class="card-title card_Q">問題：</p>
+                                            <p class="card-title card_Q" style="margin-left: 0px;">${question}</p>
+                                            <img class="speaker_Q" onclick="playAudio(this)" id="` + CardID_Q + `" src="icons/speaker.png" onclick=speakerTest(this) alt="">
+                                        </div>
+                                        <br><br><br><br>
+                                        <div>
+                                            <img class="img_` + click_num + `" src="${url}">
+                                        </div>
+                                        <br>
+                                        <div style="float:left; display: block; text-align: left;">
+                                            <p class="card-text card_A" style="float: left;">敘述：</p>
+                                            <p class="answer_` + click_num + ` card-text card_A" style="margin-left: 0px;">${answer}</p>
+                                            <img class="speaker_A" onclick="playAudio(this)" id="` + CardID_A + `" src="icons/speaker.png" alt=""/>
+                                        </div>
+                                </div>
+
+                                <div class="card-header contentCss" id="QA_num_` + click_num + `" style="background-color: #f8f9fa24; padding-bottom: 40px;">
+                                <p class="contentlink">相關繪本連結：</p>
+                                <p class="book_css">${bookName}</p>
+                                <img class="speaker_A" onclick="playAudio(this)" id="speaker_pbName_` + click_num + `" src="icons/speaker.png" style="margin-top: -55px" alt=""/>
+
+                                <img src="${bookImg}" style="margin-left: 20px; display: inline;" width="180" height="153" alt="${bookName}">
+                                <p style="display: inline; margin-left: 20px; margin-top: -5px; position: absolute; margin-right: 40px;">${bookIntro}</p>
+                                <img class="speaker_A" onclick="playAudio(this)" id="speaker_pbIntro_` + click_num + `" src="icons/speaker.png" style="margin-top: 131px; display: inline; bottom: 31px;" alt=""/>
+                            </div>
+                        </div>`;
+
+
+
 
         const messages = document.querySelector('#messages');
         const QA_card = document.querySelector('#QA_card');
-
+        let pictureBook = document.querySelector('#pictureText_' + click_num);
+        let crawler = false;
         ipcRenderer.once('reply-result', (event, data) => {
+            let presetJson = ["獅子", "蘋果"];
+            for (let i = 0; i < presetJson.length; i++) {
+                if (data['keyWord'] == presetJson[i]) {
+                    crawler = true;
+                    ipcRenderer.send('presetAnsPBook', { data, i });
+                    ipcRenderer.once('replyPresetAnsPBook', (event, preset) => {
+                        console.log("preset:" + preset['A_voice'])
+                        QA_card.innerHTML = QA_card.innerHTML + createQAandPBook(preset['Question'], preset['Answer_pic'], preset['Answer'], preset['pbookName'], preset['bookImg'], preset['pbookIntro']);
+                        let voiceQ = document.getElementById(`speaker_Q_${click_num}`);
+                        voiceQ.alt = preset['Q_voice'];
+                        data['qVoice'] = voiceQ.alt;
 
-            ipcRenderer.send('serchImgURL', data['keyWord']);
-            ipcRenderer.once('replyImgURL', (event, url) => {
+                        let voiceA = document.getElementById(`speaker_A_${click_num}`);
+                        voiceA.alt = preset['A_voice'];
+                        data['aVoice'] = voiceA.alt;
 
-                window.onload = () => {
-                    var img = document.querySelector('.img_' + click_num);
-                    var src = img.getAttribute('src');
-                    img.setAttribute('src', '');
-                    img.onload = function() { alert(1); };
+                        let voiceName = document.getElementById(`speaker_pbName_${click_num}`);
+                        let voiceIntro = document.getElementById(`speaker_pbIntro_${click_num}`);
+                        voiceName.alt = preset['pbName_voice'];
+                        voiceIntro.alt = preset['pbIntro_voice'];
+
+                        data['Answer_pic'] = preset['Answer_pic'];
+                        data['Answer'] = preset['Answer'];
+                        ipcRenderer.send('uploadAPI', data);
+                    })
+                    break;
                 }
-                const imgURL = document.querySelector('.img_' + click_num);
-                data['Answer_pic'] = url;
-                // console.log("data" + url)
-                // console.log("URLLLL:" + imgURL);
-                // console.log("data:" + data + " url:" + url);
-                imgURL.src = url;
+            }
+            if (crawler == false) {
+                ipcRenderer.send('serchImgURL', data['keyWord']);
+                ipcRenderer.once('replyImgURL', (event, url) => {
 
-                onImageLoaded(url, function(icon) {
-                    console.log('img載入完成啦！')
+                    window.onload = () => {
+                        var img = document.querySelector('.img_' + click_num);
+                        var src = img.getAttribute('src');
+                        img.setAttribute('src', '');
+                        img.onload = function() { alert(1); };
+                    }
+                    const imgURL = document.querySelector('.img_' + click_num);
                     data['Answer_pic'] = url;
-                    // ipcRenderer.send('uploadAPI', data);
+                    // console.log("data" + url)
+                    // console.log("URLLLL:" + imgURL);
+                    // console.log("data:" + data + " url:" + url);
+                    imgURL.src = url;
+
+                    onImageLoaded(url, function(icon) {
+                        console.log('img載入完成啦！')
+                        data['Answer_pic'] = url;
+                        // ipcRenderer.send('uploadAPI', data);
+                    })
                 })
-            })
 
-            ipcRenderer.send('searchAnswer', data['keyWord']);
-            ipcRenderer.once('replyAnswer', (event, answer) => {
-                let voiceA = document.getElementById(`speaker_A_${click_num}`);
-                // window.onload = () => {
-                var ans = document.querySelector('.answer_' + click_num);
-                // var src = ans.textContent.trim();
-                ans.innerText = answer['ansText'];
-                // console.log("ans:" + answer['ansText'])
-                data['Answer'] = answer['ansText'];
-                // console.log("answer['ansVoice']:" + answer['ansVoice'])
-                voiceA.alt = answer['ansVoice'];
+                ipcRenderer.send('searchAnswer', data['keyWord']);
+                ipcRenderer.once('replyAnswer', (event, answer) => {
+                    let voiceA = document.getElementById(`speaker_A_${click_num}`);
+                    // window.onload = () => {
+                    var ans = document.querySelector('.answer_' + click_num);
+                    // var src = ans.textContent.trim();
+                    ans.innerText = answer['ansText'];
+                    // console.log("ans:" + answer['ansText'])
+                    data['Answer'] = answer['ansText'];
+                    // console.log("answer['ansVoice']:" + answer['ansVoice'])
+                    voiceA.alt = answer['ansVoice'];
 
-            })
+                })
 
-            ipcRenderer.send('searchPictureBook', data['keyWord']);
-            ipcRenderer.once('replyPbook', (event, pbook) => {
-                const pictureBook = document.querySelector('#pictureText_' + click_num);
+                ipcRenderer.send('searchPictureBook', data['keyWord']);
+                ipcRenderer.once('replyPbook', (event, pbook) => {
+                    const pictureBook = document.querySelector('#pictureText_' + click_num);
 
-                // QA_card.innerHTML = QA_card.innerHTML + createQA(data['Question'], data['Answer_pic'], data['Answer'], pbook['bookName'], pbook['bookImg'], pbook['bookIntro']);
+                    // QA_card.innerHTML = QA_card.innerHTML + createQA(data['Question'], data['Answer_pic'], data['Answer'], pbook['bookName'], pbook['bookImg'], pbook['bookIntro']);
 
-                // var newDiv = document.createElement("div");
-                // newDiv.className = "card-header contentCss";
-                // newDiv.style.background = "#f8f9fa24";
-                // newDiv.style.padding = "12px 20px 40px 20px";
-                // console.log("pictureBook" + pictureBook)
+                    // var newDiv = document.createElement("div");
+                    // newDiv.className = "card-header contentCss";
+                    // newDiv.style.background = "#f8f9fa24";
+                    // newDiv.style.padding = "12px 20px 40px 20px";
+                    // console.log("pictureBook" + pictureBook)
 
-                pictureBook.innerHTML += createPBook(pbook['bookName'], pbook['bookImg'], pbook['bookIntro'])
-                let voiceQ = document.getElementById(`speaker_Q_${click_num}`);
-                voiceQ.alt = data['qVoice'];
+                    pictureBook.innerHTML += createPBook(pbook['bookName'], pbook['bookImg'], pbook['bookIntro'])
+                    let voiceQ = document.getElementById(`speaker_Q_${click_num}`);
+                    voiceQ.alt = data['qVoice'];
 
-                let voiceName = document.getElementById(`speaker_pbName_${click_num}`);
-                let voiceIntro = document.getElementById(`speaker_pbIntro_${click_num}`);
-                voiceName.alt = pbook['bNameVoice'];
-                voiceIntro.alt = pbook['bIntroVoice'];
-                ipcRenderer.send('uploadAPI', data);
+                    let voiceName = document.getElementById(`speaker_pbName_${click_num}`);
+                    let voiceIntro = document.getElementById(`speaker_pbIntro_${click_num}`);
+                    voiceName.alt = pbook['bNameVoice'];
+                    voiceIntro.alt = pbook['bIntroVoice'];
+                    ipcRenderer.send('uploadAPI', data);
 
-            })
+                })
 
-            QA_card.innerHTML = QA_card.innerHTML + createQA(data['Question'], "./image/character/200.gif", "查詢中...");
-
+                QA_card.innerHTML = QA_card.innerHTML + createQA(data['Question'], "./image/character/200.gif", "查詢中...");
+            }
             // console.log("data=" + JSON.stringify(data))
             SystemVal.innerHTML = '再問一次問題';
 
