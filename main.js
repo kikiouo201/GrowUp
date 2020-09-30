@@ -604,7 +604,7 @@ ipcMain.on('levelIsPass', (event, arg) => {
         console.log("data = " + JSON.stringify(req))
             //event.sender.send('reply-callZhuyindata', data);
     });
-    api.People.AddChildGoodBabyValue(1, 20,arg, (req) => {
+    api.People.AddChildGoodBabyValue(1, 20, arg, (req) => {
         console.log("data = " + JSON.stringify(req))
             //event.sender.send('reply-callZhuyindata', data);
     });
@@ -663,8 +663,8 @@ ipcMain.on('serchImgURL', async(event, keyword) => {
 
     const ImgSrc = await page.$eval('.rg_i', imgs => imgs.getAttribute('src'));
 
-    await console.log("Imgsrc:" + ImgSrc)
-        // browser.close();
+    // await console.log("Imgsrc:" + ImgSrc)
+    // browser.close();
     event.reply('replyImgURL', ImgSrc)
 
 })
@@ -695,7 +695,7 @@ ipcMain.on('searchAnswer', async(event, keyword) => {
     const def = await page.$$('.def')
         // await console.log("def:" + def[0]);
     const test = await def[0].evaluate(node => node.innerText).then(async(value) => {
-        await console.log(value);
+        // await console.log(value);
         Ans['ansText'] = await value;
         let STT_A = await callSTT.quickStart(value);
         Ans['ansVoice'] = await STT_A;
@@ -763,6 +763,64 @@ ipcMain.on('searchPictureBook', async(event, keyword) => {
     }
 })
 
+ipcMain.on('presetAnswer', async(event, preAns) => {
+    let preQ = await callSTT.quickStart(preAns['Question']);
+    preAns['qVoice'] = preQ;
+    let preA = await callSTT.quickStart(preAns['Answer']);
+    preAns['aVoice'] = preA;
+    event.reply('replyPreQA', preAns);
+
+})
+
+ipcMain.on('presetPicturebook', async(event, prePic) => {
+    let prePicBook = { 'bookName': '', 'bookIntro': '' };
+    let prePicName = await callSTT.quickStart(prePic['bookName']);
+    prePicBook['bookName'] = prePicName;
+    let prePicIntro = await callSTT.quickStart(prePic['bookIntro']);
+    prePicBook['bookIntro'] = prePicIntro;
+    event.reply('replyPrePicBook', prePicBook);
+
+
+})
+
+ipcMain.on('presetAnsPBook', async(event, prePic) => {
+    console.log("prePic[Question]" + prePic['data']['Question'] + ",prePic[i] " + prePic['i'])
+    let preset = [{
+            'Question': prePic['data']['Question'],
+            'Answer': "動物名。哺乳綱食肉目貓科。多分布於印度及非洲一帶。身長約二、三公尺，頭圓肩闊，四肢強健，有鉤爪，尾細長。雄獅頭至頸部有鬣，雌獅體型較小，無鬣。營社會生活。以大型草食性動物為主食。",
+            'pbookName': "小獅子多多",
+            'pbookIntro': "有一天，森林裡突然發生大火，小獅子多多奮不顧身的搶救同伴。但是多多美麗的鬃毛，卻被燒毀…他很難過，很傷心，他覺得自己的樣子變得很醜，一定沒有人會喜歡他。真的會這樣嗎？",
+            'Q_voice': "",
+            'A_voice': "",
+            'pbName_voice': "",
+            'pbIntro_voice': "",
+            'Answer_pic': "data:image/jpeg;base64,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",
+            'bookImg': 'https://children.moc.gov.tw/resource/animate_image/6737.jpg',
+        },
+        {
+            'Question': prePic['data']['Question'],
+            'Answer': "植物名。薔薇科蘋果屬，落葉小喬木。葉卵形或橢圓形，先端尖或短，邊緣有細銳鋸齒。花淡紅色，萼有細毛。果實也稱為「蘋果」，近於圓形，顏色繁多，有黃色、紅色、青綠色等，味略酸甜，果梗常較果徑短。可供食用，亦可造酒等。",
+            'pbookName': "蘋果甜蜜蜜",
+            'pbookIntro': "嫁接的蜜蘋果要先習慣這塊土地，接受泥土的養分之後，才能慢慢慢慢的發芽開花。在這塊土地上接受多元文化洗禮、共同生活的人，不也像蜜蘋果一樣嗎？願藉此，獻上我們最深的祝福",
+            'Q_voice': "",
+            'A_voice': "",
+            'pbName_voice': "",
+            'pbIntro_voice': "",
+            'Answer_pic': "data:image/jpeg;base64,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",
+            'bookImg': 'https://children.moc.gov.tw/resource/animate_image/6892.jpg',
+        },
+    ]
+    let Qvoice = await callSTT.quickStart(preset[prePic['i']]['Question']);
+    preset[prePic['i']]['Q_voice'] = Qvoice;
+    let Avoice = await callSTT.quickStart(preset[prePic['i']]['Answer']);
+    preset[prePic['i']]['A_voice'] = Avoice;
+    let pbNamevoice = await callSTT.quickStart(preset[prePic['i']]['pbookName']);
+    preset[prePic['i']]['pbName_voice'] = pbNamevoice;
+    let pbIntrovoice = await callSTT.quickStart(preset[prePic['i']]['pbookIntro']);
+    preset[prePic['i']]['pbIntro_voice'] = pbIntrovoice;
+
+    event.reply('replyPresetAnsPBook', preset[prePic['i']]);
+})
 ipcMain.on('uploadAPI', async(event, APIdata) => {
     // api.Question.addQa
     api.Question.addQa(1, APIdata['Question'], APIdata['Answer'], APIdata['Answer_pic'], APIdata['keyWord'].trim(), "語音", (event) => {
