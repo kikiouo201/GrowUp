@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../../CSS/interface.css">
     <link rel="stylesheet" href="../../CSS/icon.css">
     <script src="./centralRegion_JS/taichung.js"></script>
+    <script src="./centralRegion_JS/central.js"></script>
     <title>Document</title>
 </head>
 
@@ -42,7 +43,7 @@
             <td>資訊介紹</td>
         </tr>
         <tr>
-            <td><img src="../../image/map/Taichung_origin.png" onclick="featuresText('臺中地區')" /><a style="display: block;">臺中地區</a></td>
+            <td><img src="../../image/map/Taichung_origin.png" onclick="featuresText('臺中地區');playCentral(this)" alt="taichungRegion" /><a style="display: block;">臺中地區</a></td>
             <td id="information" rowspan="4" valign="top" style="font-size:x-large;">
                 <h4 style='margin: auto;'>
                     六都之一，是臺灣西半部的樞紐，四季氣候宜人。日治時期，臺中遂躍身為中臺灣政治、經濟、交通、文化的重鎮。
@@ -50,55 +51,55 @@
             </td>
         </tr>
         <tr>
-            <td><img src="../../image/icon/suncake.png" onclick="featuresText('太陽餅')" /><a style="display: block;">太陽餅</a></td>
+            <td><img src="../../image/icon/suncake.png" onclick="featuresText('太陽餅');playCentral(this)" alt="taichung_f1" /><a style="display: block;">太陽餅</a></td>
         </tr>
         <tr>
-            <td><img src="../../image/map_icon/Taichung_farm.png" onclick="featuresText('武陵農場')" /><a style="display: block;">武陵農場</a></td>
+            <td><img src="../../image/map_icon/Taichung_farm.png" onclick="featuresText('武陵農場');playCentral(this)" alt="taichung_f2" /><a style="display: block;">武陵農場</a></td>
         </tr>
         <tr>
-            <td><img src="../../image/map_icon/Taichung_national_theater.png" onclick="featuresText('臺中國家歌劇院')" /><a style="display: block;">臺中國家歌劇院</a></td>
+            <td><img src="../../image/map_icon/Taichung_national_theater.png" onclick="featuresText('臺中國家歌劇院');playCentral(this)" alt="taichung_f3" /><a style="display: block;">臺中國家歌劇院</a></td>
         </tr>
 
     </table>
     <div class="map">
         <img class="terrain" src="../../image/map/Taichung1.png" />
         <div class="level1">
-            <img id="zhuyin" alt="ㄩ" class="level_basic" src="../../image/icon/suncake_dark.png" onclick="location.href='../../view/game/drawzhuyin.html?id=yu&counties=taichung';mouseDownText(ㄩ);" />
-            <img class="level_text" src="../../image/chinese_alphabet/yu.png" onclick="location.href='../../view/game/drawzhuyin.html?id=yu&counties=taichung';mouseDownText(ㄩ);" />
+            <img id="zhuyin" alt="yu" class="level_basic" src="../../image/icon/suncake_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=yu&counties=taichung',800);playBPM(this);" />
+            <img class="level_text" alt="yu" src="../../image/chinese_alphabet/yu.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=yu&counties=taichung',800);playBPM(this);" />
         </div>
         <div class="level2">
-            <img id="zhuyin" alt="ㄚ" class="level_basic" src="../../image/icon/suncake_dark.png" onclick="location.href='../../view/game/drawzhuyin.html?id=a&counties=taichung';mouseDownText(ㄚ);" />
-            <img class="level_text" src="../../image/chinese_alphabet/a.png" onclick="location.href='../../view/game/drawzhuyin.html?id=a&counties=taichung';mouseDownText(ㄚ);" />
+            <img id="zhuyin" alt="a" class="level_basic" src="../../image/icon/suncake_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=a&counties=taichung',800);playBPM(this);" />
+            <img class="level_text" alt="a" src="../../image/chinese_alphabet/a.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=a&counties=taichung',800);playBPM(this);" />
         </div>
         <div class="level3">
-            <img id="zhuyin" alt="ㄛ" class="level_basic" src="../../image/icon/suncake_dark.png" onclick="location.href='../../view/game/drawzhuyin.html?id=o&counties=taichung';mouseDownText(ㄛ);" />
-            <img class="level_text" src="../../image/chinese_alphabet/o.png" onclick="location.href='../../view/game/drawzhuyin.html?id=o&counties=taichung';mouseDownText(ㄛ);" />
+            <img id="zhuyin" alt="o" class="level_basic" src="../../image/icon/suncake_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=o&counties=taichung',800);playBPM(this);" />
+            <img class="level_text" alt="o" src="../../image/chinese_alphabet/o.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=o&counties=taichung',800);playBPM(this);" />
         </div>
         <div class="level4">
-            <img id="zhuyin" alt="ㄜ" class="level_basic" src="../../image/icon/suncake_dark.png" onclick="location.href='../../view/game/drawzhuyin.html?id=e&counties=taichung';mouseDownText(ㄜ);" />
-            <img class="level_text" src="../../image/chinese_alphabet/e.png" onclick="location.href='../../view/game/drawzhuyin.html?id=e&counties=taichung';mouseDownText(ㄜ);" />
+            <img id="zhuyin" alt="e" class="level_basic" src="../../image/icon/suncake_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=e&counties=taichung',800);playBPM(this);" />
+            <img class="level_text" alt="e" src="../../image/chinese_alphabet/e.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=e&counties=taichung',800);playBPM(this);" />
         </div>
 
         <div class="level5">
-            <img id="zhuyin" alt="ㄝ" class="level_basic" src="../../image/icon/suncake_dark.png" onclick="location.href='../../view/game/drawzhuyin.html?id=ae&counties=taichung';mouseDownText(ㄝ);" />
-            <img class="level_text" src="../../image/chinese_alphabet/ye.png" onclick="location.href='../../view/game/drawzhuyin.html?id=ae&counties=taichung';mouseDownText(ㄝ);" />
+            <img id="zhuyin" alt="ae" class="level_basic" src="../../image/icon/suncake_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=ae&counties=taichung',800);playBPM(this);" />
+            <img class="level_text" alt="ae" src="../../image/chinese_alphabet/ye.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=ae&counties=taichung',800);playBPM(this);" />
         </div>
 
         <div class="level6">
-            <img id="zhuyin" alt="ㄞ" class="level_basic" src="../../image/icon/suncake_dark.png" onclick="location.href='../../view/game/drawzhuyin.html?id=ai&counties=taichung';mouseDownText(ㄞ);" />
-            <img class="level_text" src="../../image/chinese_alphabet/ai.png" onclick="location.href='../../view/game/drawzhuyin.html?id=ai&counties=taichung';mouseDownText(ㄞ);" />
+            <img id="zhuyin" alt="ai" class="level_basic" src="../../image/icon/suncake_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=ai&counties=taichung',800);playBPM(this);" />
+            <img class="level_text" alt="ai" src="../../image/chinese_alphabet/ai.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=ai&counties=taichung',800);playBPM(this);" />
         </div>
 
         <div class="level7">
-            <img id="zhuyin" alt="ㄟ" class="level_basic" src="../../image/icon/suncake_dark.png" onclick="location.href='../../view/game/drawzhuyin.html?id=ei&counties=taichung';mouseDownText(ㄟ);" />
-            <img class="level_text" src="../../image/chinese_alphabet/ei.png" onclick="location.href='../../view/game/drawzhuyin.html?id=ei&counties=taichung';mouseDownText(ㄟ);" />
+            <img id="zhuyin" alt="ei" class="level_basic" src="../../image/icon/suncake_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=ei&counties=taichung',800);playBPM(this);" />
+            <img class="level_text" alt="ei" src="../../image/chinese_alphabet/ei.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=ei&counties=taichung',800);playBPM(this);" />
         </div>
         <div class="level8">
             <img class="level" src="../../image/icon/devil_lock.png" onclick="alert('需要先完成縣市所有關卡！')" />
 
         </div>
 
-        、
+
     </div>
     <img class="taiwan" src="../../image/character/Taiwn_small.png" onclick="location.href='../../view/level/taiwan.html'" />
     <img class="map_location" src="../../image/map/map.png" />
@@ -151,7 +152,7 @@
             }
         }
     </script>
-    <script src="../../model/util/voiceOut.js"></script>
+    <!-- <script src="../../model/util/voiceOut.js"></script> -->
 </body>
 
 </html>
