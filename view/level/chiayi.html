@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../../CSS/map/counties.css">
     <link rel="stylesheet" href="../../CSS/interface.css">
     <link rel="stylesheet" href="../../CSS/icon.css">
+    <script src="./southRegion_JS/south.js"></script>
 </head>
 <style>
     .features {
@@ -18,7 +19,7 @@
         margin-top: 16px;
         margin-left: 105px;
     }
-
+    
     .map_location {
         width: 16px;
         position: absolute;
@@ -29,10 +30,6 @@
 </style>
 
 <body class="style" background="../../image/map/kraftPaper5.png" onload="checkLevelIsPass('meat_rice','chiayi')">
-
-    <iframe id="AllIconIfram" src="./ifram/chiayi_ifram.html" frameborder="0" class="collect_icon"
-        style="z-index: 100;"></iframe>
-
     <table class="features">
         <tr>
             <td colspan="2" style="font-size: 40px;text-align: center;">嘉義地區</td>
@@ -41,31 +38,27 @@
             <td>特色</td>
             <td>資訊介紹</td>
         </tr>
-
         <tr>
-            <td style="height: 365px; width: 82px;">
-            </td>
+            <td><img src="../../image/map/Chiayi_origin.png" onclick="featuresText('嘉義地區');playSouth(this)" alt="chiayiRegion" /><a style="display: block;">嘉義地區</a></td>
             <td id="information" rowspan="5" valign="top" style="font-size:x-large;">
                 <h4 style='margin: auto;'>
                     嘉義地區倚山面海，是臺灣所有縣市中，擁有 阿里山、雲嘉南濱海及西拉雅三大國家風景區，坐擁山色、平原、海景等不同的壯麗與遼闊。
                 </h4>
+
             </td>
         </tr>
-        <tr style="display: none;">
-            <td><img src="../../image/icon/meat_rice.png" onclick="featuresText('嘉義火雞肉飯')" /><a
-                    style="display: block;">嘉義火雞肉飯</a></td>
+
+        <tr>
+            <td><img src="../../image/icon/meat_rice.png" onclick="featuresText('嘉義火雞肉飯');playSouth(this)" alt="chiayi_f1" /><a style="display: block;">嘉義火雞肉飯</a></td>
         </tr>
-        <tr style="display: none;">
-            <td><img src="../../image/map_icon/Chiayi_high_heels.png" onclick="featuresText('高跟鞋教堂')" /><a
-                    style="display: block;">高跟鞋教堂</a></td>
+        <tr>
+            <td><img src="../../image/map_icon/Chiayi_high_heels.png" onclick="featuresText('高跟鞋教堂');playSouth(this)" alt="chiayi_f2" /><a style="display: block;">高跟鞋教堂</a></td>
         </tr>
-        <tr style="display: none;">
-            <td><img src="../../image/map_icon/Chiayi_train.png" onclick="featuresText('阿里山森林鐵路')" /><a
-                    style="display: block;">阿里山森林鐵路</a></td>
+        <tr>
+            <td><img src="../../image/map_icon/Chiayi_train.png" onclick="featuresText('阿里山森林鐵路');playSouth(this)" alt="chiayi_f3" /><a style="display: block;">阿里山森林鐵路</a></td>
         </tr>
-        <tr style="display: none;">
-            <td><img src="../../image/map_icon/Chiayi_tropic_of_cancer.png" style="width: 45%;"
-                    onclick="featuresText('北回歸線')" /><a style="display: block;">北回歸線</a></td>
+        <tr>
+            <td><img src="../../image/map_icon/Chiayi_tropic_of_cancer.png" style="width: 45%;" onclick="featuresText('北回歸線');playSouth(this)" alt="chiayi_f4" /><a style="display: block;">北回歸線</a></td>
         </tr>
 
     </table>
@@ -73,21 +66,17 @@
         <img class="terrain" src="../../image/map/Chiayi1.png" />
 
         <div class="level1">
-            <img class="level" alt="1" src="../../image/icon/meat_rice.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=1&counties=chiayi';mouseDownText(1);" />
-            <img class="level_text" src="../../image/numbers/1.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=1&counties=chiayi';mouseDownText(1);" />
+            <img class="level" alt="1" src="../../image/icon/meat_rice.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=1&counties=chiayi',800);play012(this);" />
+            <img class="level_text" alt="1" src="../../image/numbers/1.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=1&counties=chiayi',800);play012(this);" />
         </div>
-        <div class="level2"><img class="level" alt="2" src="../../image/icon/meat_rice_dark.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=2&counties=chiayi';mouseDownText(2);" />
-            <img class="level_text" src="../../image/numbers/2.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=2&counties=chiayi';mouseDownText(2);" />
+        <div class="level2">
+            <img class="level" alt="2" src="../../image/icon/meat_rice_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=2&counties=chiayi',800);play012(this);" />
+            <img class="level_text" alt="2" src="../../image/numbers/2.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=2&counties=chiayi',800);play012(this);" />
         </div>
 
-        <div class="level3"> <img class="level" alt="3" src="../../image/icon/meat_rice_dark.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=3&counties=chiayi';mouseDownText(3);" />
-            <img class="level_text" src="../../image/numbers/3.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=3&counties=chiayi';mouseDownText(3);" />
+        <div class="level3">
+            <img class="level" alt="3" src="../../image/icon/meat_rice_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=3&counties=chiayi',800);play012(this);" />
+            <img class="level_text" alt="3" src="../../image/numbers/3.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=3&counties=chiayi',800);play012(this);" />
         </div>
         <div class="level4">
             <img class="level" alt="chiayi" src="../../image/icon/devil_lock.png" onclick="alert('需要先完成縣市所有關卡！')" />
@@ -95,8 +84,7 @@
         </div>
         、
     </div>
-    <img class="taiwan" src="../../image/character/Taiwn_small.png"
-        onclick="location.href='../../view/level/taiwan.html'" />
+    <img class="taiwan" src="../../image/character/Taiwn_small.png" onclick="location.href='../../view/level/taiwan.html'" />
     <img class="map_location" src="../../image/map/map.png" />
     <div>
         <a href="./ifram/chiayi_ifram.html" class="sosfloat" id="menu-share">
