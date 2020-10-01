@@ -28,7 +28,6 @@ body {
     width: 100%;
     bottom: 0;
     text-align: center;
-
 }
 
 .bottom_title h1 {
@@ -40,7 +39,6 @@ body {
     background-color: rgb(255, 255, 161);
     /* border: 3px black solid; */
     border-radius: 10px 10px 10px 10px;
-
 }
 
 .informationBox {
@@ -61,7 +59,6 @@ body {
     padding: 6% 0 5% 0;
     background-color: rgb(255, 255, 161);
     border-radius: 10px 10px 0px 0px;
-
 }
 
 .informationBox img {
@@ -82,7 +79,7 @@ body {
     width: 100%;
     background-color: rgba(22, 22, 22, 0.671);
     z-index: 5;
-    display: block;
+    display: none;
 }
 
 .fullContent h1 {
@@ -101,20 +98,11 @@ body {
     z-index: 6;
     background-color: antiquewhite;
     border-radius: 10px 10px 10px 10px;
-
 }
 
 .btnDiv {
     position: fixed;
 }
-
-
-
-
-
-
-
-
 
 .features {
     background-color: aliceblue;
