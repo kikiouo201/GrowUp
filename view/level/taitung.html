@@ -60,11 +60,12 @@
         <img id="county" class="terrain" src="../../image/map/Taitung1.png" />
         <div class="level1">
             <img class="level" alt="pickingUpIsALittleRed" src="../../image/icon/hot_air_balloon.png" onclick="setTimeout(()=>location.href='../../view/game/pickingUpIsALittleRed.html?cardDataSize=9&startId=1',1100);playGame(this);" />
-            <div class="level_text" alt="pickingUpIsALittleRed" onclick="setTimeout(()=>location.href='../../view/game/pickingUpIsALittleRed.html?cardDataSize=9&startId=1',1100);playGame(this);">撿紅點</div>
+            <img class="level_text" alt="pickingUpIsALittleRed" src="../../image/icon/pickingUpIsALittleRed.png" onclick="setTimeout(()=>location.href='../../view/game/pickingUpIsALittleRed.html?cardDataSize=9&startId=1',1100);playGame(this);" style="width: 100px; left: -10%;"
+            />
         </div>
         <div class="level2">
             <img class="level" alt="puzzle" src="../../image/icon/hot_air_balloon.png" onclick="setTimeout(()=>location.href='../../view/game/puzzle.html',1100);playGame(this);" />
-            <div class="level_text" alt="puzzle" onclick="setTimeout(()=>location.href='../../view/game/puzzle.html',1100);playGame(this);">拼圖</div>
+            <img class="level_text" alt="puzzle" src="../../image/icon/puzzle.png" onclick="setTimeout(()=>location.href='../../view/game/puzzle.html',1100);playGame(this);" style="width: 70px; left: 16%;" />
         </div>
 
         <div class="level3">
@@ -94,7 +95,6 @@
                         information.innerHTML = "";
                         info.innerHTML = "擁有豐富的生態資源。海岸、高山、森林、溪谷都保持著自然完整的風貌，處處都是天然美景。";
                         information.append(info)
-                        mouseDownText(category + info.innerHTML);
                         break;
 
                     case "熱氣球":
@@ -102,7 +102,6 @@
                             "<img style = 'width:100%; border-radius: 15px;'  src = 'https://i2.wp.com/www.zztaitung.com/wp-content/uploads/2019/06/2019%E5%8F%B0%E6%9D%B1%E7%86%B1%E6%B0%A3%E7%90%83%E6%97%85%E9%81%8A%E5%98%89%E5%B9%B4%E8%8F%AF-17.jpg?resize=900%2C600'/> "
                         info.innerHTML = "是將氣球內的空氣加熱，使氣球往高空飄浮。每年的6月至8月，台東縣鹿野鄉舉辦的臺灣國際熱氣球嘉年華，可以坐在熱氣球上觀賞花東縱谷的美景。";
                         information.append(info)
-                        mouseDownText(category + info.innerHTML);
                         break;
 
                     case "初鹿牧場":
@@ -110,14 +109,12 @@
                             "<img style = 'width:100%; border-radius: 15px;'  src = 'https://www.erv-nsa.gov.tw/image/10397/1024x768'/> "
                         info.innerHTML = "位於台東縣卑南鄉。是全台灣唯一的坡地牧場。有滾草、餵食黑白相間的乳牛等觀光活動，其中出產的初鹿鮮奶聞名。";
                         information.append(info)
-                        mouseDownText(category + info.innerHTML);
                         break;
                     case "鯉魚山公園":
                         information.innerHTML =
                             "<img style = 'width:100%; border-radius: 15px;'  src = 'https://tour.taitung.gov.tw/image/753/1024x768'/> "
                         info.innerHTML = "位於臺東市西邊，俗稱卑南山。因為外形與鯉魚相似而出名，是臺東市區最明顯的地標和風景區之一";
                         information.append(info)
-                        mouseDownText(category + info.innerHTML);
                         break;
 
                     case "金城武樹":
@@ -125,7 +122,6 @@
                             "<img style = 'width:100%; border-radius: 15px;'  src = 'https://tour.taitung.gov.tw/image/23686/1024x768'/> "
                         info.innerHTML = "位於臺東縣池上鄉。在伯朗大道上的一棵茄苳樹，附近是一望無際的稻田，金城武樹就孤立其中。";
                         information.append(info)
-                        mouseDownText(category + info.innerHTML);
                         break;
                 }
             }
