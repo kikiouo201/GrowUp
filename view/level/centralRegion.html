@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../../CSS/map/counties.css">
     <link rel="stylesheet" href="../../CSS/interface.css">
     <link rel="stylesheet" href="../../CSS/icon.css">
+    <script src="./centralRegion_JS/central.js"></script>
     <style>
         .features {
             margin-top: 55px;
@@ -86,14 +87,14 @@
     </table>
     <div class="map">
         <img class="terrain" src="../../image/map/centralRegion.png" />
-        <img class="nantou" src="../../image/map/Nantou_small.png" onclick="location.href='../../view/level/nantou.html'" />
-        <img class="miaoli" src="../../image/map/Miaoli1.png" onclick="location.href='../../view/level/miaoli.html'" />
-        <img class="taichung" src="../../image/map/Taichung1.png" onclick="location.href='../../view/level/taichung.html'" />
-        <img class="changhua" src="../../image/map/Changhua1.png" onclick="location.href='../../view/level/changhua.html'" />
-        <img class="yunlin" src="../../image/map/Yunlin1.png" onclick="location.href='../../view/level/yunlin.html'" />
+        <img class="nantou" alt="nantou" src="../../image/map/Nantou_small.png" onclick="setTimeout(()=>location.href='../../view/level/nantou.html',1100);playCentral(this);" />
+        <img class="miaoli" alt="miaoli" src="../../image/map/Miaoli1.png" onclick="setTimeout(()=>location.href='../../view/level/miaoli.html',1100);playCentral(this);" />
+        <img class="taichung" alt="taichung" src="../../image/map/Taichung1.png" onclick="setTimeout(()=>location.href='../../view/level/taichung.html',1100);playCentral(this);" />
+        <img class="changhua" alt="changhua" src="../../image/map/Changhua1.png" onclick="setTimeout(()=>location.href='../../view/level/changhua.html',1100);playCentral(this);" />
+        <img class="yunlin" alt="yunlin" src="../../image/map/Yunlin1.png" onclick="setTimeout(()=>location.href='../../view/level/yunlin.html',1100);playCentral(this);" />
     </div>
     <img class="taiwan" src="../../image/character/Taiwn_small.png" onclick="location.href='../../view/level/taiwan.html'" />
-  
+
     <div>
         <a onclick="history.back()" class="returnfloat" id="menu-share">
             <i class="fab fa-share return-float"><img src="../../photo/return.png"></i>
@@ -115,7 +116,7 @@
             }
         }
     </script>
-    <script src="../../model/util/voiceOut.js"></script>
+    <!-- <script src="../../model/util/voiceOut.js"></script> -->
 </body>
 
 </html>
