@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../../CSS/map/taipei.css">
     <link rel="stylesheet" href="../../CSS/interface.css">
     <link rel="stylesheet" href="../../CSS/icon.css">
-
+    <script src="./northRegion_JS/north.js"></script>
 </head>
 <style>
     .map_location {
@@ -31,8 +31,7 @@
             <td>資訊介紹</td>
         </tr>
         <tr>
-            <td><img src="../../image/map/Taipei_origin.png" onclick="featuresText('臺北地區')" /><a
-                    style="display: block;">臺北地區</a></td>
+            <td><img src="../../image/map/Taipei_origin.png" onclick="featuresText('臺北地區');playNorth(this);" alt="taipeiRegion" /><a style="display: block;">臺北地區</a></td>
             <td id="information" rowspan="4" valign="top" style="font-size:x-large;">
                 <h4 style='margin: auto;'>
                     臺北地區位於臺灣北部的臺北盆地。是臺灣的政治、經濟、文化、教育、醫療、學術研究等領域的發展中心。
@@ -40,16 +39,13 @@
             </td>
         </tr>
         <tr>
-            <td><img src="../../image/icon/taipei101.png" onclick="featuresText('臺北101大樓')" /><a
-                    style="display: block;">臺北101大樓</a></td>
+            <td><img src="../../image/icon/taipei101.png" onclick="featuresText('臺北101大樓');playNorth(this)" alt="taipei_f1" /><a style="display: block;">臺北101大樓</a></td>
         </tr>
         <tr>
-            <td><img src="../../image/map_icon/Taipei_Chiang_Kai_shek_Memorial_Hall.png"
-                    onclick="featuresText('中正紀念堂')" /><a style="display: block;">中正紀念堂</a></td>
+            <td><img src="../../image/map_icon/Taipei_Chiang_Kai_shek_Memorial_Hall.png" onclick="featuresText('中正紀念堂');playNorth(this)" alt="taipei_f2" /><a style="display: block;">中正紀念堂</a></td>
         </tr>
         <tr>
-            <td><img src="../../image/map_icon/Taipei_National_Palace_Museum.png" onclick="featuresText('國立故宮博物院')" /><a
-                    style="display: block;">國立故宮博物院</a></td>
+            <td><img src="../../image/map_icon/Taipei_National_Palace_Museum.png" onclick="featuresText('國立故宮博物院');playNorth(this)" alt="taipei_f3" /><a style="display: block;">國立故宮博物院</a></td>
         </tr>
 
 
@@ -57,28 +53,20 @@
     <div class="map">
         <img id="county" class="terrain" src="../../image/map/Taipei1.png" />
         <div class="level1">
-            <img class="level" alt="f" src="../../image/icon/taipei101.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=f1&counties=taipei';mouseDownText('f');" />
-            <img class="level_text" src="../../image/english_alphabet/F.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=f1&counties=taipei';mouseDownText('f');" />
+            <img class="level" alt="f1" src="../../image/icon/taipei101.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=f1&counties=taipei',800);playABC(this);" />
+            <img class="level_text" alt="f1" src="../../image/english_alphabet/F.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=f1&counties=taipei',800);playABC(this);" />
         </div>
         <div class="level2">
-            <img class="level" alt="g" src="../../image/icon/taipei101.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=g1&counties=taipei';mouseDownText('g');" />
-            <img class="level_text" src="../../image/english_alphabet/G.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=g1&counties=taipei';mouseDownText('g');" />
+            <img class="level" alt="g1" src="../../image/icon/taipei101.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=g1&counties=taipei',800);playABC(this);" />
+            <img class="level_text" alt="g1" src="../../image/english_alphabet/G.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=g1&counties=taipei',800);playABC(this);" />
         </div>
         <div class="level3">
-            <img class="level" alt="h" src="../../image/icon/taipei101.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=h1&counties=taipei';mouseDownText('h');" />
-            <img class="level_text" src="../../image/english_alphabet/H.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=h1&counties=taipei';mouseDownText('h');" />
+            <img class="level" alt="h1" src="../../image/icon/taipei101.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=h1&counties=taipei',800);playABC(this);" />
+            <img class="level_text" alt="h1" src="../../image/english_alphabet/H.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=h1&counties=taipei',800);playABC(this);" />
         </div>
         <div class="level4">
-            <img class="level" alt="d" src="../../image/icon/taipei101_dark.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=i1&counties=taipei';mouseDownText('i');" />
-            <img class="level_text" src="../../image/english_alphabet/D.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=i1&counties=taipei';mouseDownText('i');" />
+            <img class="level" alt="i1" src="../../image/icon/taipei101_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=i1&counties=taipei',800);playABC(this);" />
+            <img class="level_text" alt="i1" src="../../image/english_alphabet/I.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=i1&counties=taipei',800);playABC(this);" />
         </div>
         <div class="level5">
             <img class="level" alt="taipei" src="../../image/icon/devil_lock.png" onclick="alert('需要先完成縣市所有關卡！')" />
@@ -86,8 +74,7 @@
 
 
     </div>
-    <img class="taiwan" src="../../image/character/Taiwn_small.png"
-        onclick="location.href='../../view/level/taiwan.html'" />
+    <img class="taiwan" src="../../image/character/Taiwn_small.png" onclick="location.href='../../view/level/taiwan.html'" />
     <img class="map_location" src="../../image/map/map.png" />
 
     <div>
@@ -121,13 +108,14 @@
                 case "中正紀念堂":
                     information.innerHTML =
                         " <img style = 'width:100%; border-radius: 15px;'  src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Chiang_Kai-shek_memorial_amk.jpg/420px-Chiang_Kai-shek_memorial_amk.jpg'/> "
-                    info.innerHTML = "中正紀念堂是為紀念已故前中華民國總統蔣中正的建築，而且眾中正紀念堂也是全台規模最大的，在國際上也是著名的地標之一。"
+                    info.innerHTML = "中正紀念堂，是為紀念已故前中華民國總統蔣中正的建築，也是眾多紀念蔣中正的建築中規模最大者，在國際上也是著名的地標之一。"
                     information.append(info)
-                    break;中正紀念堂
+                    break;
+                    中正紀念堂
                 case "國立故宮博物院":
                     information.innerHTML =
                         " <img style = 'width:100%; border-radius: 15px;'  src = 'https://www.taiwan.net.tw/att/1/big_scenic_spots/pic_74_4.jpg'/> "
-                    info.innerHTML = "故宮博物館，別名中山博物院。為臺灣最具規模的博物館以及臺灣八景之一，也是古代中國藝術史與漢學研究機構。"
+                    info.innerHTML = "國立故宮博物院，別名中山博物院。為臺灣最具規模的博物館以及臺灣八景之一，也是古代中國藝術史與漢學研究機構。"
                     information.append(info)
                     break;
 
