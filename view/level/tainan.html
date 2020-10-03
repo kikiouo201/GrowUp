@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../../CSS/map/tainan.css">
     <link rel="stylesheet" href="../../CSS/interface.css">
     <link rel="stylesheet" href="../../CSS/icon.css">
+    <script src="./southRegion_JS/south.js"></script>
 </head>
 <style>
     .features {
@@ -18,7 +19,7 @@
         margin-top: 8px;
         margin-left: 105px;
     }
-
+    
     .map_location {
         width: 16px;
         position: absolute;
@@ -38,8 +39,7 @@
             <td>資訊介紹</td>
         </tr>
         <tr>
-            <td><img src="../../image/map/Tainan_origin.png" onclick="featuresText('台南地區')" /><a
-                    style="display: block;">台南地區</a></td>
+            <td><img src="../../image/map/Tainan_origin.png" onclick="featuresText('台南地區');playSouth(this)" alt="tainanRegion" /><a style="display: block;">台南地區</a></td>
             <td id="information" rowspan="5" valign="top" style="font-size:x-large;">
                 <h4 style='margin: auto;'>
                     位於臺灣西南部，平原區比例最大、地形最平緩的城市，耕地面積全臺第一，盛產豐富的農產品。
@@ -47,20 +47,16 @@
             </td>
         </tr>
         <tr>
-            <td><img src="../../image/icon/temple.png" onclick="featuresText('赤崁樓')" /><a
-                    style="display: block;">赤崁樓</a></td>
+            <td><img src="../../image/icon/temple.png" onclick="featuresText('赤崁樓');playSouth(this)" alt="tainan_f1" /><a style="display: block;">赤崁樓</a></td>
         </tr>
         <tr>
-            <td><img src="../../image/map_icon/Tainan_Chimei_Museum.png" onclick="featuresText('奇美博物館')" /><a
-                    style="display: block;">奇美</a><a style="display: block;">博物館</a></td>
+            <td><img src="../../image/map_icon/Tainan_Chimei_Museum.png" onclick="featuresText('奇美博物館');playSouth(this)" alt="tainan_f2" /><a style="display: block;">奇美</a><a style="display: block;">博物館</a></td>
         </tr>
         <tr>
-            <td><img src="../../image/map_icon/Tainan_salt_mountion.png" onclick="featuresText('七股鹽山')" /><a
-                    style="display: block;">七股鹽山</a></td>
+            <td><img src="../../image/map_icon/Tainan_salt_mountion.png" onclick="featuresText('七股鹽山');playSouth(this)" alt="tainan_f3" /><a style="display: block;">七股鹽山</a></td>
         </tr>
         <tr>
-            <td><img src="../../image/map_icon/Tainan_Tseng_Wen_Reservoir.png" onclick="featuresText('曾文水庫')" /><a
-                    style="display: block;">曾文水庫</a></td>
+            <td><img src="../../image/map_icon/Tainan_Tseng_Wen_Reservoir.png" onclick="featuresText('曾文水庫');playSouth(this)" alt="tainan_f4" /><a style="display: block;">曾文水庫</a></td>
         </tr>
 
     </table>
@@ -68,33 +64,25 @@
         <img class="terrain" src="../../image/map/Tainan1.png" />
 
         <div class="level1">
-            <img class="level" alt="4" src="../../image/icon/temple.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=4&counties=tainan';mouseDownText(4);" />
-            <img class="level_text" src="../../image/numbers/4.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=4&counties=tainan';mouseDownText(4);" />
+            <img class="level" alt="4" src="../../image/icon/temple.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=4&counties=tainan',800);play012(this);" />
+            <img class="level_text" alt="4" src="../../image/numbers/4.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=4&counties=tainan',800);play012(this);" />
         </div>
         <div class="level2">
-            <img class="level" alt="5" src="../../image/icon/temple.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=5&counties=tainan';mouseDownText(5);" />
-            <img class="level_text" src="../../image/numbers/5.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=5&counties=tainan';mouseDownText(5);" />
+            <img class="level" alt="5" src="../../image/icon/temple.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=5&counties=tainan',800);play012(this);" />
+            <img class="level_text" alt="5" src="../../image/numbers/5.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=5&counties=tainan',800);play012(this);" />
         </div>
 
         <div class="level3">
-            <img class="level" alt="6" src="../../image/icon/temple.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=6&counties=tainan';mouseDownText(6);" />
-            <img class="level_text" src="../../image/numbers/6.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=6&counties=tainan';mouseDownText(6);" />
+            <img class="level" alt="6" src="../../image/icon/temple.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=6&counties=tainan',800);play012(this);" />
+            <img class="level_text" alt="6" src="../../image/numbers/6.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=6&counties=tainan',800);play012(this);" />
         </div>
         <div class="level4">
-            <img class="level level_basic" alt="tainan" src="../../image/icon/devil.png"
-                onclick="alert('需要先完成縣市所有關卡！')" />
+            <img class="level level_basic" alt="tainan" src="../../image/icon/devil.png" onclick="alert('需要先完成縣市所有關卡！')" />
 
         </div>
         、
     </div>
-    <img class="taiwan" src="../../image/character/Taiwn_small.png"
-        onclick="location.href='../../view/level/taiwan.html'" />
+    <img class="taiwan" src="../../image/character/Taiwn_small.png" onclick="location.href='../../view/level/taiwan.html'" />
     <img class="map_location" src="../../image/map/map.png" />
 
     <div>
