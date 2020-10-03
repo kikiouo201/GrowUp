@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../../CSS/interface.css">
     <link rel="stylesheet" href="../../CSS/icon.css">
     <link rel="stylesheet" href="../../CSS/map/counties.css">
+    <script src="./northRegion_JS/north.js"></script>
     <style>
         .features {
             margin-top: 25px;
@@ -96,15 +97,15 @@
 
     <div class="map">
         <img class="terrain" src="../../image/map/NorthRegion.png" />
-        <img class="keelung" src="../../image/map/Keelung1.png" onclick="location.href='../../view/level/keelung.html'" />
-        <img class="newTaipei" src="../../image/map/NewTaipei1.png" onclick="location.href='../../view/level/newTaipei.html'" />
-        <img class="taipei" src="../../image/map/Taipei1.png" onclick="location.href='../../view/level/taipei.html'" />
-        <img class="taoyuan" src="../../image/map/Taoyuan1.png" onclick="location.href='../../view/level/taoyuan.html'" />
-        <img class="hsinchu" src="../../image/map/Hsinchu1.png" onclick="location.href='../../view/level/hsinchu.html'" />
-        <img class="yilan" src="../../image/map/Yilan1.png" onclick="location.href='../../view/level/yilan.html'" />
+        <img class="keelung" alt="keelung" src="../../image/map/Keelung1.png" onclick="setTimeout(()=>location.href='../../view/level/keelung.html',1100);playNorth(this);" />
+        <img class="newTaipei" alt="newTaipei" src="../../image/map/NewTaipei1.png" onclick="setTimeout(()=>location.href='../../view/level/newTaipei.html',1100);playNorth(this);" />
+        <img class="taipei" alt="taipei" src="../../image/map/Taipei1.png" onclick="setTimeout(()=>location.href='../../view/level/taipei.html',1100);playNorth(this);" />
+        <img class="taoyuan" alt="taoyuan" src="../../image/map/Taoyuan1.png" onclick="setTimeout(()=>location.href='../../view/level/taoyuan.html',1100);playNorth(this);" />
+        <img class="hsinchu" alt="hsinchu" src="../../image/map/Hsinchu1.png" onclick="setTimeout(()=>location.href='../../view/level/hsinchu.html',1100);playNorth(this);" />
+        <img class="yilan" alt="yilan" src="../../image/map/Yilan1.png" onclick="setTimeout(()=>location.href='../../view/level/yilan.html',1100);playNorth(this);" />
     </div>
     <img class="taiwan" src="../../image/character/Taiwn_small.png" onclick="location.href='../../view/level/taiwan.html'" />
-   
+
     <div>
         <a onclick="history.back()" class="returnfloat" id="menu-share">
             <i class="fab fa-share return-float"><img src="../../photo/return.png"></i>
