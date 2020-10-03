@@ -9,19 +9,20 @@
     <link rel="stylesheet" href="../../CSS/map/counties.css">
     <link rel="stylesheet" href="../../CSS/interface.css">
     <link rel="stylesheet" href="../../CSS/icon.css">
+    <script src="./southRegion_JS/south.js"></script>
     <style>
         .features {
             background-color: aliceblue;
             width: 250px;
             height: 315px;
         }
-
+        
         .map {
             text-align: center;
             position: relative;
             right: -40px;
         }
-
+        
         .terrain {
             height: 400px;
             margin-top: 20px;
@@ -69,20 +70,20 @@
             <td colspan="2" style="font-size: 40px;text-align: center;">南部地區</td>
         </tr>
         <tr>
-            <td id="information" rowspan="1" valign="top" style="font-size:x-large;"onclick="featuresText('南部地區')">
+            <td id="information" rowspan="1" valign="top" style="font-size:x-large;" onclick="featuresText('南部地區')">
                 &emsp;&emsp;南部地區，簡稱南臺灣。以高雄與臺南兩大城市組成雙核的區域核心。臺灣諺語「頂港有名聲，下港上出名」中的下港指稱臺灣南部地區。
             </td>
         </tr>
     </table>
     <div class="map">
         <img class="terrain" src="../../image/map/SouthRegion.png" />
-        <img class="chiayi" src="../../image/map/Chiayi1.png" onclick="location.href='../../view/level/chiayi.html'" />
-        <img class="tainan" src="../../image/map/Tainan1.png" onclick="location.href='../../view/level/tainan.html'" />
-        <img class="kaohsiung" src="../../image/map/Kaohsiung1.png" onclick="location.href='../../view/level/kaohsiung.html'" />
-        <img class="pingtung" src="../../image/map/Pingtung1.png" onclick="location.href='../../view/level/pingtung.html'" />
+        <img class="chiayi" alt="chiayi" src="../../image/map/Chiayi1.png" onclick="setTimeout(()=>location.href='../../view/level/chiayi.html',1100);playSouth(this);" />
+        <img class="tainan" alt="tainan" src="../../image/map/Tainan1.png" onclick="setTimeout(()=>location.href='../../view/level/tainan.html',1100);playSouth(this);" />
+        <img class="kaohsiung" alt="kaohsiung" src="../../image/map/Kaohsiung1.png" onclick="setTimeout(()=>location.href='../../view/level/kaohsiung.html',1100);playSouth(this);" />
+        <img class="pingtung" alt="pingtung" src="../../image/map/Pingtung1.png" onclick="setTimeout(()=>location.href='../../view/level/pingtung.html',1100);playSouth(this);" />
     </div>
     <img class="taiwan" src="../../image/character/Taiwn_small.png" onclick="location.href='../../view/level/taiwan.html'" />
-   
+
     <div>
         <a onclick="history.back()" class="returnfloat" id="menu-share">
             <i class="fab fa-share return-float"><img src="../../photo/return.png"></i>
