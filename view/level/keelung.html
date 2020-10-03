@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../../CSS/map/counties.css">
     <link rel="stylesheet" href="../../CSS/map/keelung.css">
     <link rel="stylesheet" href="../../CSS/icon.css">
-    <script src="./centralRegion_JS/keelung.js"></script>
+    <script src="./northRegion_JS/keelung.js"></script>
     <script src="./centralRegion_JS/central.js"></script>
 </head>
 <style>
@@ -22,33 +22,28 @@
     </div>
 
     <div class="Map">
-        <img class="taiwan" src="../../image/character/Taiwn_small.png"
-            onclick="location.href='../../view/level/taiwan.html'" />
+        <img class="taiwan" src="../../image/character/Taiwn_small.png" onclick="location.href='../../view/level/taiwan.html'" />
         <img class="map_location" src="../../image/map/map.png" />
     </div>
 
     <div class="informationBox">
         <h2>介紹</h2>
-        <img class="inforbtn" style="margin-top: 0;" src="../../image/map/Keelung_origin.png"
-            onclick="playCentral(this), changeInfor(0)" alt="keelungRegion" />
+        <img class="inforbtn" style="margin-top: 0;" src="../../image/map/Keelung_origin.png" onclick="playCentral(this), changeInfor(0)" alt="keelungRegion" />
         <br>
         <!--  -->
-        <img class="inforbtn" src="../../image/icon/oceanliner.png" onclick="playCentral(this),changeInfor(1)"
-            alt="keelung_f1" />
+        <img class="inforbtn" src="../../image/icon/oceanliner.png" onclick="playCentral(this),changeInfor(1)" alt="keelung_f1" />
         <br>
-        <img class="inforbtn" src="../../image/map_icon/keelung_nightmarket.png" onclick="playCentral(this),changeInfor(2)"
-            alt="keelung_f2" />
+        <img class="inforbtn" src="../../image/map_icon/keelung_nightmarket.png" onclick="playCentral(this),changeInfor(2)" alt="keelung_f2" />
         <br>
-        <img class="inforbtn" src="../../image/map_icon/keelung_Tapurun_Fort.png" onclick="playCentral(this),changeInfor(3)"
-            alt="keelung_f3" />
+        <img class="inforbtn" src="../../image/map_icon/keelung_Tapurun_Fort.png" onclick="playCentral(this),changeInfor(3)" alt="keelung_f3" />
         <br>
-        
+
     </div>
 
     <div class="mainContent">
         <img id="county" class="terrain" src="../../image/map/Keelung1.png" />
         <div class="level1">
-            <img class="level_basic" alt="a"  src="../../image/icon/oceanliner.png" onclick="location.href='../../view/game/drawzhuyin.html?id=a1&counties=Keelung';mouseDownText('a');" />
+            <img class="level_basic" alt="a" src="../../image/icon/oceanliner.png" onclick="location.href='../../view/game/drawzhuyin.html?id=a1&counties=Keelung';mouseDownText('a');" />
             <img class="level_text" src="../../image/english_alphabet/A.png" onclick="location.href='../../view/game/drawzhuyin.html?id=a1&counties=Keelung';mouseDownText('a');" />
         </div>
         <div class="level2">
@@ -71,17 +66,15 @@
         <div class="level6">
             <img class="level" alt="keelung" src="../../image/icon/devil_lock.png" onclick="alert('需要先完成縣市所有關卡！')" />
         </div>
-       
+
 
     </div>
     <div class="fullContent">
         <h1 onclick="document.querySelector('.fullContent').style.display='none'">X</h1>
         <div class="introduce">
             <div style="height: 60%;width: 100%; text-align: center;">
-                <img id="picture" style='height: 90%; border-radius: 15px; margin-top: 2%'
-                    src='https://care-old.org/keelung/wp-content/uploads/2018/05/%E5%9F%BA%E9%9A%86.png' />
-                <img id="speaker" style='position: absolute; top: 20px; right: 20px;  height: 15%'
-                    src="../../icons/speaker.png" onclick="playCentral(this)" alt="keelungRegion" />
+                <img id="picture" style='height: 90%; border-radius: 15px; margin-top: 2%' src='https://care-old.org/keelung/wp-content/uploads/2018/05/%E5%9F%BA%E9%9A%86.png' />
+                <img id="speaker" style='position: absolute; top: 20px; right: 20px;  height: 15%' src="../../icons/speaker.png" onclick="playCentral(this)" alt="keelungRegion" />
             </div>
             <div style="height: 40%;width: 100%;">
                 <h2 id="intro" style='margin: 0 3% 0 3%;'>
