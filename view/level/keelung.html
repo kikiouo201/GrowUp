@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../../CSS/map/keelung.css">
     <link rel="stylesheet" href="../../CSS/icon.css">
     <script src="./northRegion_JS/keelung.js"></script>
-    <script src="./centralRegion_JS/central.js"></script>
+    <script src="./northRegion_JS/north.js"></script>
 </head>
 <style>
 
@@ -28,14 +28,14 @@
 
     <div class="informationBox">
         <h2>介紹</h2>
-        <img class="inforbtn" style="margin-top: 0;" src="../../image/map/Keelung_origin.png" onclick="playCentral(this), changeInfor(0)" alt="keelungRegion" />
+        <img class="inforbtn" style="margin-top: 0;" src="../../image/map/Keelung_origin.png" onclick="playNorth(this), changeInfor(0)" alt="keelungRegion" />
         <br>
         <!--  -->
-        <img class="inforbtn" src="../../image/icon/oceanliner.png" onclick="playCentral(this),changeInfor(1)" alt="keelung_f1" />
+        <img class="inforbtn" src="../../image/icon/oceanliner.png" onclick="playNorth(this),changeInfor(1)" alt="keelung_f1" />
         <br>
-        <img class="inforbtn" src="../../image/map_icon/keelung_nightmarket.png" onclick="playCentral(this),changeInfor(2)" alt="keelung_f2" />
+        <img class="inforbtn" src="../../image/map_icon/keelung_nightmarket.png" onclick="playNorth(this),changeInfor(2)" alt="keelung_f2" />
         <br>
-        <img class="inforbtn" src="../../image/map_icon/keelung_Tapurun_Fort.png" onclick="playCentral(this),changeInfor(3)" alt="keelung_f3" />
+        <img class="inforbtn" src="../../image/map_icon/keelung_Tapurun_Fort.png" onclick="playNorth(this),changeInfor(3)" alt="keelung_f3" />
         <br>
 
     </div>
@@ -43,25 +43,25 @@
     <div class="mainContent">
         <img id="county" class="terrain" src="../../image/map/Keelung1.png" />
         <div class="level1">
-            <img class="level_basic" alt="a" src="../../image/icon/oceanliner.png" onclick="location.href='../../view/game/drawzhuyin.html?id=a1&counties=Keelung';mouseDownText('a');" />
-            <img class="level_text" src="../../image/english_alphabet/A.png" onclick="location.href='../../view/game/drawzhuyin.html?id=a1&counties=Keelung';mouseDownText('a');" />
+            <img class="level_basic" alt="a1" src="../../image/icon/oceanliner.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=a1&counties=Keelung',800);playABC(this);" />
+            <img class="level_text" alt="a1" src="../../image/english_alphabet/A.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=a1&counties=Keelung',800);playABC(this);" />
         </div>
         <div class="level2">
-            <img class="level_basic" alt="b" src="../../image/icon/oceanliner.png" onclick="location.href='../../view/game/drawzhuyin.html?id=b1&counties=Keelung';mouseDownText('b');" />
-            <img class="level_text" src="../../image/english_alphabet/B.png" onclick="location.href='../../view/game/drawzhuyin.html?id=b1&counties=Keelung';mouseDownText('b');" />
+            <img class="level_basic" alt="b1" src="../../image/icon/oceanliner.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=b1&counties=Keelung',800);playABC(this);" />
+            <img class="level_text" alt="b1" src="../../image/english_alphabet/B.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=b1&counties=Keelung',800);playABC(this);" />
         </div>
         <div class="level3">
-            <img class="level_basic" alt="c" src="../../image/icon/oceanliner.png" onclick="location.href='../../view/game/drawzhuyin.html?id=c1&counties=Keelung';mouseDownText('c');" />
-            <img class="level_text" src="../../image/english_alphabet/C.png" onclick="location.href='../../view/game/drawzhuyin.html?id=c1&counties=Keelung';mouseDownText('c');" />
+            <img class="level_basic" alt="c1" src="../../image/icon/oceanliner.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=c1&counties=Keelung',800);playABC(this);" />
+            <img class="level_text" alt="c1" src="../../image/english_alphabet/C.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=c1&counties=Keelung',800);playABC(this);" />
         </div>
         <div class="level4">
-            <img class="level_basic" alt="d" src="../../image/icon/oceanliner.png" onclick="location.href='../../view/game/drawzhuyin.html?id=d1&counties=Keelung';mouseDownText('d');" />
-            <img class="level_text" src="../../image/english_alphabet/D.png" onclick="location.href='../../view/game/drawzhuyin.html?id=d1&counties=Keelung';mouseDownText('d');" />
+            <img class="level_basic" alt="d1" src="../../image/icon/oceanliner.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=d1&counties=Keelung',800);playABC(this);" />
+            <img class="level_text" alt="d1" src="../../image/english_alphabet/D.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=d1&counties=Keelung',800);playABC(this);" />
         </div>
 
         <div class="level5">
-            <img class="level_basic" alt="e" src="../../image/icon/oceanliner.png" onclick="location.href='../../view/game/drawzhuyin.html?id=e1&counties=Keelung';mouseDownText('e');" />
-            <img class="level_text" src="../../image/english_alphabet/E.png" onclick="location.href='../../view/game/drawzhuyin.html?id=e1&counties=Keelung';mouseDownText('e');" />
+            <img class="level_basic" alt="e1" src="../../image/icon/oceanliner.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=e1&counties=Keelung',800);playABC(this);" />
+            <img class="level_text" alt="e1" src="../../image/english_alphabet/E.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=e1&counties=Keelung',800);playABC(this);" />
         </div>
         <div class="level6">
             <img class="level" alt="keelung" src="../../image/icon/devil_lock.png" onclick="alert('需要先完成縣市所有關卡！')" />
@@ -94,7 +94,7 @@
         </a>
     </div>
 
-    <script src="../../model/util/voiceOut.js"></script>
+    <!-- <script src="../../model/util/voiceOut.js"></script> -->
 
 </body>
 
