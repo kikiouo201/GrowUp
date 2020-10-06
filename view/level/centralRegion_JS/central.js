@@ -22,3 +22,9 @@ function playBPM(name) {
 
     centralAudio.play();
 }
+
+function mute() {
+    let centralAudio = document.getElementById("centralAudio");
+    centralAudio.pause();
+    centralAudio.currentTime = 0;
+}

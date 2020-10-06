@@ -20,3 +20,9 @@ function playGame(name) {
     }
     eastAudio.play();
 }
+
+function mute() {
+    let eastAudio = document.getElementById("eastAudio");
+    eastAudio.pause();
+    eastAudio.currentTime = 0;
+}

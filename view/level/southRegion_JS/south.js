@@ -19,3 +19,9 @@ function play012(name) {
     }
     southAudio.play();
 }
+
+function mute() {
+    let southAudio = document.getElementById("southAudio");
+    southAudio.pause();
+    southAudio.currentTime = 0;
+}

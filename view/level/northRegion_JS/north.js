@@ -22,3 +22,9 @@ function playABC(name) {
 
     northAudio.play();
 }
+
+function mute() {
+    let northAudio = document.getElementById("northAudio");
+    northAudio.pause();
+    northAudio.currentTime = 0;
+}
