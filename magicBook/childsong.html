@@ -24,8 +24,13 @@
         <div id="showtime"></div>
     </div>
 
+    <div id="allFull">
+        <img id="loading" src="../image/character/200.gif" />
+        <h2 style="color: aliceblue;">讀取中...</h2>
+    </div>
 
     <div class="maincontent">
+
         <div class="song">
             <div class="songname-div">
                 <h2>一禮拜</h2>
@@ -50,7 +55,7 @@
             </div>
             <div class="activity-div">
                 <img src="https://children.moc.gov.tw/resource/song_image/s_479.jpg">
-                <button onclick='showWeb("https:\/\/children.moc.gov.tw/song/479")'>
+                <button onclick='showWeb("https:\/\/children.moc.gov.tw/song/479", document.querySelector("#allFull"))'>
                     <img src="./image/icon_watchVideo.png" />
                     <h2>觀看兒歌</h2>
                 </button>
@@ -65,7 +70,7 @@
             </div>
             <div class="activity-div">
                 <img src="https://children.moc.gov.tw/resource/song_image/s_478.jpg">
-                <button onclick='showWeb("https:\/\/children.moc.gov.tw/song/478")'>
+                <button onclick='showWeb("https:\/\/children.moc.gov.tw/song/478", document.querySelector("#allFull"))'>
                     <img src="./image/icon_watchVideo.png" />
                     <h2>觀看兒歌</h2>
                 </button>
@@ -80,7 +85,7 @@
             </div>
             <div class="activity-div">
                 <img src="https://children.moc.gov.tw/resource/song_image/s_477.jpg">
-                <button onclick='showWeb("https:\/\/children.moc.gov.tw/song/477")'>
+                <button onclick='showWeb("https:\/\/children.moc.gov.tw/song/477", document.querySelector("#allFull"))'>
                     <img src="./image/icon_watchVideo.png" />
                     <h2>觀看兒歌</h2>
                 </button>
@@ -95,7 +100,7 @@
             </div>
             <div class="activity-div">
                 <img src="https://children.moc.gov.tw/resource/song_image/s_476.jpg">
-                <button onclick='showWeb("https:\/\/children.moc.gov.tw/song/476")'>
+                <button onclick='showWeb("https:\/\/children.moc.gov.tw/song/476", document.querySelector("#allFull"))'>
                     <img src="./image/icon_watchVideo.png" />
                     <h2>觀看兒歌</h2>
                 </button>
@@ -110,7 +115,7 @@
             </div>
             <div class="activity-div">
                 <img src="https://children.moc.gov.tw/resource/song_image/s_475.jpg">
-                <button onclick='showWeb("https:\/\/children.moc.gov.tw/song/475")'>
+                <button onclick='showWeb("https:\/\/children.moc.gov.tw/song/475", document.querySelector("#allFull"))'>
                     <img src="./image/icon_watchVideo.png" />
                     <h2>觀看兒歌</h2>
                 </button>
@@ -125,7 +130,7 @@
             </div>
             <div class="activity-div">
                 <img src="https://children.moc.gov.tw/resource/song_image/s_474.jpg">
-                <button onclick='showWeb("https:\/\/children.moc.gov.tw/song/474")'>
+                <button onclick='showWeb("https:\/\/children.moc.gov.tw/song/474", document.querySelector("#allFull"))'>
                     <img src="./image/icon_watchVideo.png" />
                     <h2>觀看兒歌</h2>
                 </button>
@@ -218,56 +223,6 @@
         }
     </script>
 
-    <script>
-        const puppeteer = require('puppeteer');
-
-        function createSong() {
-            (async () => {
-                let browser = await puppeteer.launch({
-                    executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
-                    headless: false
-                });
-
-                const page = await browser.newPage();
-                await page.goto(`https://children.moc.gov.tw/song_list?page=2&language=0`);
-
-                for (let i = 2; i <= 10; i++) {
-                    const songbox = await page.$$('.songbox')
-                    const next = await page.$('.next')
-                    for (let j = 0; j < songbox.length; j++) {
-                        const href = await (songbox[j].$eval('a', al => al.getAttribute('href')))
-                        const src = await (songbox[j].$eval('img', al => al.getAttribute('src')))
-                        const name = await (songbox[j].$eval('h2', al => al.textContent.trim()))
-                        const main = await document.querySelector('.maincontent');
-
-                        main.innerHTML +=
-                            `
-                        <div class="song">
-                            <div class="songname-div">
-                                <h2>${name}</h2>
-                                <img class="voice" src=" ../icons/speaker.png" />
-                            </div>
-                            <div class="activity-div">
-                                <img src="${src}">
-                                <button onclick='showWeb("https://children.moc.gov.tw${href}")'>
-                                    <img src="./image/icon_watchVideo.png" />
-                                    <h2>觀看兒歌</h2>
-                                </button>
-                            </div>
-                         </div>
-                         `
-                    }
-                    await (next.$eval('a', al => al.click()))
-
-                }
-
-
-
-
-                // await browser.close();
-            })();
-        }
-    </script>
     <script src="./js/childsong.js"></script>
 
 </body>
