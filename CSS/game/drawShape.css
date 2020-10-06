@@ -514,33 +514,42 @@
   @keyframes drawl{
      
       0%{
-        top: 47px;
-        left: 115px;
+        top: 60px;
+        left: 125px;
       }
       20%{
-        top: 42px;
-        left: 175px;
+        top: 120px;
+        left: 105px;
       }
       40%{
-        top: 110px;
-        left: 135px;
+        top: 90px;
+        left: 225px;
       }
-      70%{
-        top: 95px;
+      55%{
+        top: 180px;
         left: 215px;
       }
-      75%{
-        top: 105px;
-        left: 220px;
-      }
-      90%{
+      60%{
         top: 210px;
-        left: 170px;
+        left: 185px;
+      }
+      62%{
+        top: 200px;
+        left: 175px;
+        visibility: hidden;
+      }
+      62.5%{
+        visibility: visible;
+        top: 40px;
+        left: 175px;
+      }
+      80%{
+        top: 150px;
+        left: 145px;
       }
       100%{
-
-        top: 195px;
-        left: 140px;
+        top: 200px;
+        left: 105px;
         visibility: hidden;
       }
 

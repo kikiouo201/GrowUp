@@ -1,4 +1,4 @@
-let { ipcRenderer } = require('electron');
+// let { ipcRenderer } = require('electron');
 let isDrawing = false;
 let x = 0;
 let y = 0;
@@ -16,29 +16,29 @@ myPics.forEach((pics, num) => {
     // event.offsetX, event.offsetY gives the (x,y) offset from the edge of the canvas.
 
     // Add the event listeners for mousedown, mousemove, and mouseup
-    // pics.addEventListener('mousedown', e => {
-    //     x = e.offsetX;
-    //     y = e.offsetY;
-    //     isDrawing = true;
-    // });
+    pics.addEventListener('mousedown', e => {
+        x = e.offsetX;
+        y = e.offsetY;
+        isDrawing = true;
+    });
 
-    // pics.addEventListener('mousemove', e => {
-    //     if (isDrawing === true) {
-    //         drawLine(context, x, y, e.offsetX, e.offsetY);
-    //         x = e.offsetX;
-    //         y = e.offsetY;
-    //         console.log('scoreJudgment');
-    //         scoreJudgment(id, x, y, points, num);
-    //     }
-    // });
-    // window.addEventListener('mouseup', e => {
-    //     if (isDrawing === true) {
-    //         drawLine(context, x, y, e.offsetX, e.offsetY);
-    //         x = 0;
-    //         y = 0;
-    //         isDrawing = false;
-    //     }
-    // });
+    pics.addEventListener('mousemove', e => {
+        if (isDrawing === true) {
+            drawLine(context, x, y, e.offsetX, e.offsetY);
+            x = e.offsetX;
+            y = e.offsetY;
+            console.log('scoreJudgment');
+            scoreJudgment(id, x, y, points, num);
+        }
+    });
+    window.addEventListener('mouseup', e => {
+        if (isDrawing === true) {
+            drawLine(context, x, y, e.offsetX, e.offsetY);
+            x = 0;
+            y = 0;
+            isDrawing = false;
+        }
+    });
     pics.addEventListener('touchstart', e => {
         const rect = e.target.getBoundingClientRect();
         const touch = e.targetTouches[0];
@@ -162,16 +162,17 @@ score.addEventListener('click', () => {
     const props = document.querySelector('.props');
     const smallCard = document.querySelector('.smallCard');
     const tool = document.querySelector('.tool');
-    // if (totalPoint < 3) {
-    //     status.innerHTML = '<img src="../../image/drawZhuyin/tryAgain.png" width="300px"/>失敗';
-    //     props.style.visibility = "hidden";
-    // } else {
+    if (totalPoint < 3) {
+        status.innerHTML = '<img src="../../image/drawZhuyin/tryAgain.png" width="300px"/>失敗';
+        props.style.visibility = "hidden";
+    } else {
     status.innerHTML = '<img src="../../image/drawZhuyin/good.png" width="200px"/>你好棒';
     props.style.visibility = "visible";
-
     smallCard.innerHTML = '<img src="../../image/magicCard/chineseAlphabet/' + id + '.png" width="50px"/>';
-    ipcRenderer.send("levelIsPass", levelName[id]);
-    // }
+    const draw =document.querySelector('.draw');
+    draw.style.visibility = "hidden";
+    //ipcRenderer.send("levelIsPass", levelName[id]);
+    }
     console.log('totalPoint= ' + totalPoint);
     tool.style.visibility = "hidden"
     const black_overlay = document.querySelector('.black_overlay');
@@ -239,53 +240,6 @@ function moveFinger() {
         finger.style.visibility = "hidden";
     }, { once: true });
 
-    // document.querySelector('.finger' + id ).className = 'moveFinger'+ id ;
-
-    // let drawTime = {
-    //     b: [1500, 2500, 3600, 4900, 6100, 7500, 9000, 10000, 11000, 12500, 13500, 14500, 15500, 16500],
-    //     1: [1500, 2500, 3500, 4500, 5500, 6500, 8000, 9000, 10000, 11000, 12000, 12000, 14000, 14500, 15500],
-    //     2: [1500, 2500, 3500, 4500, 5500, 6500, 8000, 9000, 10000, 11000, 12000, 12000, 14000, 14500, 15500],
-    //     3: [1500, 2500, 3500, 4500, 5500, 6500, 8000, 9000, 10000, 11000, 12000, 12000, 14000, 14500, 15500],
-    //     4: [1500, 2500, 3600, 4900, 6100, 7500, 9000, 10000, 11000, 12500, 13500, 14500, 15500, 16500],
-    //     5: [1500, 2500, 3600, 4900, 6100, 7500, 9000, 10000, 11000, 12500, 13500, 14500, 15500, 16500],
-    //     6: [1500, 2500, 3600, 4900, 6100, 7500, 9000, 10000, 11000, 12500, 13500, 14500, 15500, 16500],
-    //     7: [1500, 2500, 3600, 4900, 6100, 7500, 9000, 10000, 11000, 12500, 13500, 14500, 15500, 16500],
-    //     8: [1500, 2500, 3500, 4500, 5500, 6500, 8000, 9000, 10000, 11000, 12000, 12000, 14000, 14500, 15500],
-    //     9: [1500, 2500, 3500, 4500, 5500, 6500, 7500, 8500, 9500, 10500, 11500, 12500, 13500, 14500, 15500],
-    //     0: [1500, 2500, 3500, 4500, 5500, 6500, 7500, 8500, 9500, 10500, 11500, 12500, 13500, 14500, 15500],
-    //     f1: [1500, 2500, 3600, 4900, 6100, 7500, 9000, 10000, 11000, 12500, 13500, 14500, 15500, 16500],
-    // }
-
-    // let strokeNumber = {
-    //     b: 8,
-    //     1: 3,
-    //     2: 7,
-    //     3: 10,
-    //     4: 8,
-    //     5: 8,
-    //     6: 8,
-    //     7: 6,
-    //     8: 13,
-    //     9: 12,
-    //     0: 9,
-    //     f1: 8
-    // }
-    // setTimeout("document.querySelector('.finger" + id + "').className = 'moveFinger" + id + "1';", drawTime[id][0]);
-    // console.log(`strokeNumber[id]=${strokeNumber[id]}`);
-    // for (let i = 1; i < strokeNumber[id]; i++) {
-    //     setTimeout("document.querySelector('.moveFinger" + id + i + "').className = 'moveFinger" + id + (i + 1) + "';", drawTime[id][i]);
-    //     console.log(`moveFinger"+id+(i+1)+=${id+(i+1)}`);
-    // }
-    // setTimeout("document.querySelector('.moveFinger" + id + (strokeNumber[id]) + "').className = 'finger" + id + "';", drawTime[id][strokeNumber[id] + 1]);
-    // console.log(`drawTime[strokeNumber[id]+1]=${drawTime[strokeNumber[id]+1]}`)
-    // setTimeout("document.querySelector('.finger" + id + "').style.visibility='hidden';", (drawTime[id][strokeNumber[id] + 1] + 20));
-
-    // if (id == 4) {
-    //     setTimeout("document.querySelector('.moveFinger" + id + "1').style.visibility='hidden';", 2480);
-    //     setTimeout("document.querySelector('.moveFinger" + id + "3').style.visibility='visible';", 4800);
-    // }
-
-
 
 
 }
@@ -307,13 +261,118 @@ let judgmentCriteria = {
         { x: [145, 175], y: [200, 305] },
         { x: [110, 150], y: [200, 245] }
     ],
-    p: [{ x: [43, 50], y: [19, 22] },
-        { x: [25, 40], y: [45, 48] },
-        { x: [84, 86], y: [37, 48] },
-        { x: [58, 65], y: [98, 105] },
-        { x: [45, 50], y: [93, 100] }
+    p: [{ x: [85, 120], y: [90, 100] },
+        { x: [74, 90], y: [100, 140] },
+        { x: [185, 220], y: [110, 120] },
+        { x: [100, 105], y: [230, 245] },
+        { x: [115, 130], y: [170, 185] }
     ],
-
+    m: [{ x: [70, 90], y: [180, 200] },
+        { x: [70, 90], y: [100, 120] },
+        { x: [140, 145], y: [80, 100] },
+        { x: [195, 220], y: [100, 120] },
+        { x: [195, 220], y: [200, 225] }
+    ], 
+    f:  [{ x: [140, 160], y: [90, 110] },
+        { x: [70, 100], y: [100, 130] },
+        { x: [70, 100], y: [170, 190] },
+        { x: [90, 120], y: [200, 230] },
+        { x: [195, 220], y: [200, 225] }
+    ], 
+    d: [{ x: [80, 120], y: [70, 100] },
+        { x: [70, 100], y: [130, 150] },
+        { x: [210, 230], y: [110, 130] },
+        { x: [150, 190], y: [230, 260] },
+        { x: [105, 190], y: [160, 190] }
+    ], 
+    t: [{ x: [80, 100], y: [130, 160] },
+        { x: [190, 210], y: [130, 160] },
+        { x: [120, 160], y: [90, 120] },
+        { x: [80, 120], y: [220, 250] },
+        { x: [190, 220], y: [210, 230] }
+    ], 
+    n: [{ x: [110, 130], y: [60, 90] },
+        { x: [150, 180], y: [70, 100] },
+        { x: [110, 140], y: [120, 145] },
+        { x: [190, 220], y: [120, 150] },
+        { x: [140, 160], y: [230, 260] }
+    ], 
+    l: [{ x: [80, 110], y: [90, 130] },
+        { x: [150, 180], y: [70, 100] },
+        { x: [110, 140], y: [120, 145] },
+        { x: [190, 220], y: [120, 150] },
+        { x: [140, 160], y: [230, 260] }
+    ], 
+    g: [{ x: [110, 130], y: [90, 120] },
+        { x: [80, 110], y: [150, 175] },
+        { x: [80, 120], y: [160, 190] },
+        { x: [180, 200], y: [80, 110] },
+        { x: [180, 200], y: [210, 240] }
+    ], 
+    k: 'ㄎ',
+    h: 'ㄏ',
+    j: 'ㄐ',
+    q: 'ㄑ',
+    x: 'ㄒ',
+    zhi: 'ㄓ',
+    chi: 'ㄔ',
+    shi: 'ㄕ',
+    ri: 'ㄖ',
+    zi: 'ㄗ',
+    ci: 'ㄘ',
+    si: 'ㄙ',
+    yi: 'ㄧ',
+    wu: 'ㄨ',
+    yu: 'ㄩ',
+    ra: 'ㄚ',
+    o: 'ㄛ',
+    re: 'ㄜ',
+    ae: 'ㄝ',
+    ai: 'ㄞ',
+    ei: 'ㄟ',
+    ao: 'ㄠ',
+    ou: 'ㄡ',
+    an: 'ㄢ',
+    en: 'ㄣ',
+    ang: 'ㄤ',
+    eng: 'ㄥ',
+    er: 'ㄦ',
+    a1: 'a',
+    b1: 'b',
+    c1: 'c',
+    d1: 'd',
+    e1: 'e',
+    f1: 'f',
+    g1: 'g',
+    h1: 'h',
+    i1: 'i',
+    j1: 'j',
+    k1: 'k',
+    l1: 'l',
+    m1: 'm',
+    n1: 'n',
+    o1: 'o',
+    p1: 'p',
+    q1: 'q',
+    r1: 'r',
+    s1: 's',
+    t1: 't',
+    u1: 'u',
+    v1: 'v',
+    w1: 'w',
+    y1: 'y',
+    x1: 'x',
+    z1: 'z',
+    1: 1,
+    2: 2,
+    3: 3,
+    4: 4,
+    5: 5,
+    6: 6,
+    7: 7,
+    8: 8,
+    9: 9,
+    0: 0,
 };
 
 
@@ -335,7 +394,6 @@ function scoreJudgment(id, x, y, points, num) {
 }
 
 
-// var aaauu = document.querySelector(".audio")
 
 function playAudio() {
     var audioCreate = document.createElement("AUDIO");
