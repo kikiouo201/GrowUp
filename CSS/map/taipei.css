@@ -39,6 +39,10 @@ a {
     width: 102px;
 }
 
+#devil{
+    width: 55px;
+}
+
 .level_text {
     width: 120px;
     position: absolute;

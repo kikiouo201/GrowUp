@@ -10,12 +10,13 @@
     <link rel="stylesheet" href="../../CSS/icon.css">
     <script src="./southRegion_JS/pingtung.js"></script>
     <script src="./southRegion_JS/south.js"></script>
+    <script src="../../model/util/checkAllLevelIsPass.js"></script>
 </head>
 <style>
 
 </style>
 
-<body style="width: 100%; height: 100%; margin: auto;" onload="checkZhuyin()">
+<body style="width: 100%; height: 100%; margin: auto;" onload="checkLevelIsPass('black_tuna','pingtung')">
     <audio id="southAudio" src=""></audio>
 
     <div class="bottom_title">
@@ -57,20 +58,20 @@
         <img class="terrain" src="../../image/map/Pingtung1.png" />
 
         <div class="level1">
-            <img class="level_basic" alt="0" src="../../image/icon/black_tuna.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=0&counties=pingtung',800);play012(this);" />
+            <img class="level_basic level" alt="0" src="../../image/icon/black_tuna.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=0&counties=pingtung',800);play012(this);" />
             <img class="level_text" alt="0" src="../../image/numbers/0.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=0&counties=pingtung',800);play012(this);" />
         </div>
         <div class="level2">
-            <img class="level_basic" alt="plus" src="../../image/icon/black_tuna.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=plus&counties=pingtung',800);play012(this);" />
+            <img class="level_basic level" alt="plus" src="../../image/icon/black_tuna.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=plus&counties=pingtung',800);play012(this);" />
             <img class="level_text" alt="plus" src="../../image/numbers/plus.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=plus&counties=pingtung',800);play012(this);" />
         </div>
 
         <div class="level3">
-            <img class="level_basic" alt="minus" src="../../image/icon/black_tuna_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=minus&counties=pingtung',800);play012(this);" />
+            <img class="level_basic level" alt="minus" src="../../image/icon/black_tuna_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=minus&counties=pingtung',800);play012(this);" />
             <img class="level_text" alt="minus" src="../../image/numbers/minus.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=minus&counties=pingtung',800);play012(this);" />
         </div>
         <div class="level4">
-            <img class="level" alt="pingtung" src="../../image/icon/devil_lock.png" onclick="alert('需要先完成縣市所有關卡！')" />
+            <img class="level" width="52px" alt="pingtung" src="../../image/icon/devil_lock.png" onclick="alert('需要先完成縣市所有關卡！')" />
 
         </div>
 

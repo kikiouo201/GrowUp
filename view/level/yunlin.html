@@ -8,14 +8,15 @@
     <link rel="stylesheet" href="../../CSS/map/counties.css">
     <link rel="stylesheet" href="../../CSS/map/yunlin.css">
     <link rel="stylesheet" href="../../CSS/icon.css">
-    <script src="./centralRegion_JS/yunlin.js"></script>
     <script src="./centralRegion_JS/central.js"></script>
+
+    <script src="../../model/util/checkAllLevelIsPass.js"></script>
 </head>
 <style>
 
 </style>
 
-<body style="width: 100%; height: 100%; margin: auto;" onload="checkZhuyin()">
+<body style="width: 100%; height: 100%; margin: auto;" onload="checkLevelIsPass('soy_sauce','yunlin')">
     <audio id="centralAudio" src=""></audio>
     <div class="bottom_title">
         <h1>雲林地區</h1>
@@ -60,36 +61,36 @@
         <img class="terrain" src="../../image/map/Yunlin1.png" />
         <div class="level1">
             <img id="zhuyin" alt="ㄎ" class="level" src="../../image/icon/soy_sauce.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=k&counties=yunlin',800);playBPM(this);" />
-            <img class="level_text" alt="k" src="../../image/chinese_alphabet/k.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=k&counties=yunlin',800);playBPM(this);" style="left: -69%;" />
+            <img class="level_text" alt="ㄎ" src="../../image/chinese_alphabet/k.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=k&counties=yunlin',800);playBPM(this);" style="left: -69%;" />
         </div>
         <div class="level2">
             <img id="zhuyin" alt="ㄏ" class="level" src="../../image/icon/soy_sauce.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=h&counties=yunlin',800);playBPM(this);" />
-            <img class="level_text" alt="h" src="../../image/chinese_alphabet/h.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=h&counties=yunlin',800);playBPM(this);" />
+            <img class="level_text" alt="ㄏ" src="../../image/chinese_alphabet/h.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=h&counties=yunlin',800);playBPM(this);" />
         </div>
         <div class="level3">
             <img id="zhuyin" alt="ㄐ" class="level" src="../../image/icon/soy_sauce.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=j&counties=yunlin',800);playBPM(this);" />
-            <img class="level_text" alt="j" src="../../image/chinese_alphabet/j.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=j&counties=yunlin',800);playBPM(this);" />
+            <img class="level_text" alt="ㄐ" src="../../image/chinese_alphabet/j.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=j&counties=yunlin',800);playBPM(this);" />
         </div>
 
         <div class="level4">
             <img id="zhuyin" alt="ㄑ" class="level" src="../../image/icon/soy_sauce.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=q&counties=yunlin',800);playBPM(this);" />
-            <img class="level_text" alt="q" src="../../image/chinese_alphabet/q.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=q&counties=yunlin',800);playBPM(this);" />
+            <img class="level_text" alt="ㄑ" src="../../image/chinese_alphabet/q.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=q&counties=yunlin',800);playBPM(this);" />
         </div>
 
         <div class="level5">
             <img id="zhuyin" alt="ㄒ" class="level" src="../../image/icon/soy_sauce.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=x&counties=yunlin',800);playBPM(this);" />
-            <img class="level_text" alt="x" src="../../image/chinese_alphabet/x.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=x&counties=yunlin',800);playBPM(this);" />
+            <img class="level_text" alt="ㄒ" src="../../image/chinese_alphabet/x.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=x&counties=yunlin',800);playBPM(this);" />
         </div>
 
 
         <div class="level6">
             <img id="zhuyin" alt="ㄓ" class="level" src="../../image/icon/soy_sauce.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=zhi&counties=yunlin',800);playBPM(this);" />
-            <img class="level_text" alt="zhi" src="../../image/chinese_alphabet/zh.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=zhi&counties=yunlin',800);playBPM(this);" />
+            <img class="level_text" alt="ㄓ" src="../../image/chinese_alphabet/zh.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=zhi&counties=yunlin',800);playBPM(this);" />
         </div>
 
         <div class="level7">
             <img id="zhuyin" alt="ㄔ" class="level" src="../../image/icon/soy_sauce.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=chi&counties=yunlin',800);playBPM(this);" />
-            <img class="level_text" alt="chi" src="../../image/chinese_alphabet/ch.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=chi&counties=yunlin',800);playBPM(this);" />
+            <img class="level_text" alt="ㄔ" src="../../image/chinese_alphabet/ch.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=chi&counties=yunlin',800);playBPM(this);" />
         </div>
         <div class="level8">
             <img class="level" style="width:39px;" src="../../image/icon/devil_lock.png" onclick="alert('需要先完成縣市所有關卡！')" />

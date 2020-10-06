@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="../../CSS/map/changhua.css">
     <link rel="stylesheet" href="../../CSS/interface.css">
     <link rel="stylesheet" href="../../CSS/icon.css">
-    <script src="./centralRegion_JS/changhua.js"></script>
     <script src="./centralRegion_JS/central.js"></script>
+    <script src="../../model/util/checkAllLevelIsPass.js"></script>
     <title>Document</title>
 </head>
 
@@ -31,7 +31,7 @@
     }
 </style>
 
-<body class="style" background="../../image/map/kraftPaper5.png" onload="checkZhuyin()">
+<body class="style" background="../../image/map/kraftPaper5.png" onload="checkLevelIsPass('meat_ball','changhua')">
     <audio id="centralAudio" src=""></audio>
     <table class="features">
         <tr>
@@ -63,41 +63,41 @@
     <div class="map">
         <img class="terrain" src="../../image/map/Changhua1.png" />
         <div class="level1">
-            <img id="zhuyin" alt="ㄕ" class="level_basic" src="../../image/icon/meat_ball.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=shi&counties=changhua',800);playBPM(this);" />
-            <img class="level_text" alt="shi" src="../../image/chinese_alphabet/sh.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=shi&counties=changhua',800);playBPM(this);" />
+            <img id="zhuyin" alt="ㄕ" class="level" src="../../image/icon/meat_ball.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=shi&counties=changhua',800);playBPM(this);" />
+            <img class="level_text" alt="ㄕ" src="../../image/chinese_alphabet/sh.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=shi&counties=changhua',800);playBPM(this);" />
         </div>
 
         <div class="level2">
-            <img id="zhuyin" alt="ㄖ" class="level_basic" src="../../image/icon/meat_ball.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=ri&counties=changhua',800);playBPM(this);" />
-            <img class="level_text" alt="ri" src="../../image/chinese_alphabet/r.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=ri&counties=changhua',800);playBPM(this);" />
+            <img id="zhuyin" alt="ㄖ" class="level" src="../../image/icon/meat_ball.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=ri&counties=changhua',800);playBPM(this);" />
+            <img class="level_text" alt="ㄖ" src="../../image/chinese_alphabet/r.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=ri&counties=changhua',800);playBPM(this);" />
         </div>
         <div class="level3">
-            <img id="zhuyin" alt="ㄗ" class="level_basic" src="../../image/icon/meat_ball.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=zi&counties=changhua',800);playBPM(this);" />
-            <img class="level_text" alt="zi" src="../../image/chinese_alphabet/z.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=zi&counties=changhua',800);playBPM(this);" />
+            <img id="zhuyin" alt="ㄗ" class="level" src="../../image/icon/meat_ball.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=zi&counties=changhua',800);playBPM(this);" />
+            <img class="level_text" alt="ㄗ" src="../../image/chinese_alphabet/z.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=zi&counties=changhua',800);playBPM(this);" />
         </div>
 
         <div class="level4">
-            <img id="zhuyin" alt="ㄘ" class="level_basic" src="../../image/icon/meat_ball.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=ci&counties=changhua',800);playBPM(this);" />
-            <img class="level_text" alt="ci" src="../../image/chinese_alphabet/c.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=ci&counties=changhua',800);playBPM(this);" />
+            <img id="zhuyin" alt="ㄘ" class="level" src="../../image/icon/meat_ball.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=ci&counties=changhua',800);playBPM(this);" />
+            <img class="level_text" alt="ㄘ" src="../../image/chinese_alphabet/c.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=ci&counties=changhua',800);playBPM(this);" />
         </div>
 
         <div class="level5">
-            <img id="zhuyin" alt="ㄙ" class="level_basic" src="../../image/icon/meat_ball.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=si&counties=changhua',800);playBPM(this);" />
-            <img class="level_text" alt="si" src="../../image/chinese_alphabet/s.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=si&counties=changhua',800);playBPM(this);" />
+            <img id="zhuyin" alt="ㄙ" class="level" src="../../image/icon/meat_ball.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=si&counties=changhua',800);playBPM(this);" />
+            <img class="level_text" alt="ㄙ" src="../../image/chinese_alphabet/s.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=si&counties=changhua',800);playBPM(this);" />
         </div>
 
 
         <div class="level6">
-            <img id="zhuyin" alt="ㄧ" class="level_basic" src="../../image/icon/meat_ball.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=yi&counties=changhua',800);playBPM(this);" />
-            <img class="level_text" alt="yi" src="../../image/chinese_alphabet/(y)i.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=yi&counties=changhua',800);playBPM(this);" />
+            <img id="zhuyin" alt="ㄧ" class="level" src="../../image/icon/meat_ball.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=yi&counties=changhua',800);playBPM(this);" />
+            <img class="level_text" alt="ㄧ" src="../../image/chinese_alphabet/(y)i.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=yi&counties=changhua',800);playBPM(this);" />
         </div>
 
         <div class="level7">
-            <img id="zhuyin" alt="ㄨ" class="level_basic" src="../../image/icon/meat_ball.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=wu&counties=changhua',800);playBPM(this);" />
-            <img class="level_text" alt="wu" src="../../image/chinese_alphabet/u.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=wu&counties=changhua',800);playBPM(this);" />
+            <img id="zhuyin" alt="ㄨ" class="level" src="../../image/icon/meat_ball.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=wu&counties=changhua',800);playBPM(this);" />
+            <img class="level_text" alt="ㄨ" src="../../image/chinese_alphabet/u.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=wu&counties=changhua',800);playBPM(this);" />
         </div>
         <div class="level8">
-            <img class="level" src="../../image/icon/devil_lock.png" onclick="alert('需要先完成縣市所有關卡！')" />
+            <img class="level" width="58px" src="../../image/icon/devil_lock.png" onclick="alert('需要先完成縣市所有關卡！')" />
 
         </div>
 

@@ -8,14 +8,14 @@
     <link rel="stylesheet" href="../../CSS/map/counties.css">
     <link rel="stylesheet" href="../../CSS/map/miaoli.css">
     <link rel="stylesheet" href="../../CSS/icon.css">
-    <script src="./centralRegion_JS/miaoli.js"></script>
     <script src="./centralRegion_JS/central.js"></script>
+    <script src="../../model/util/checkAllLevelIsPass.js"></script>
 </head>
 <style>
 
 </style>
 
-<body style="width: 100%; height: 100%; margin: auto;" onload="checkZhuyin()">
+<body style="width: 100%; height: 100%; margin: auto;" onload="checkLevelIsPass('strawberry','miaoli')">
     <audio id="centralAudio" src=""></audio>
 
     <div class="bottom_title">
@@ -44,28 +44,28 @@
     <div class="mainContent">
         <img class="city" src="../../image/map/Miaoli1.png" />
 
-        <img id="zhuyin" alt="ao" class="level1" src="../../image/icon/strawberry_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=ao&counties=miaoli',800);playBPM(this);" />
-        <img class="level1_text" alt="ao" src="../../image/chinese_alphabet/ao.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=ao&counties=miaoli',800);playBPM(this);" />
+        <img id="zhuyin" alt="ㄠ" class="level1 level" src="../../image/icon/strawberry_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=ao&counties=miaoli',800);playBPM(this);" />
+        <img class="level1_text" alt="ㄠ" src="../../image/chinese_alphabet/ao.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=ao&counties=miaoli',800);playBPM(this);" />
 
-        <img id="zhuyin" alt="ou" class="level2" src="../../image/icon/strawberry_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=ou&counties=miaoli',800);playBPM(this);" />
-        <img class="level2_text" alt="ou" src="../../image/chinese_alphabet/ou.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=ou&counties=miaoli',800);playBPM(this);" />
+        <img id="zhuyin" alt="ㄡ" class="level2 level" src="../../image/icon/strawberry.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=ou&counties=miaoli',800);playBPM(this);" />
+        <img class="level2_text" alt="ㄡ" src="../../image/chinese_alphabet/ou.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=ou&counties=miaoli',800);playBPM(this);" />
 
-        <img id="zhuyin" alt="an" class="level3" src="../../image/icon/strawberry_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=an&counties=miaoli',800);playBPM(this);" />
-        <img class="level3_text" alt="an" src="../../image/chinese_alphabet/an.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=an&counties=miaoli',800);playBPM(this);" />
+        <img id="zhuyin" alt="ㄢ" class="level3 level" src="../../image/icon/strawberry.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=an&counties=miaoli',800);playBPM(this);" />
+        <img class="level3_text" alt="ㄢ" src="../../image/chinese_alphabet/an.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=an&counties=miaoli',800);playBPM(this);" />
 
-        <img id="zhuyin" alt="en" class="level4" src="../../image/icon/strawberry_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=en&counties=miaoli',800);playBPM(this);" />
-        <img class="level4_text" alt="en" src="../../image/chinese_alphabet/en.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=en&counties=miaoli',800);playBPM(this);" />
+        <img id="zhuyin" alt="ㄣ" class="level4 level" src="../../image/icon/strawberry.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=en&counties=miaoli',800);playBPM(this);" />
+        <img class="level4_text" alt="ㄣ" src="../../image/chinese_alphabet/en.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=en&counties=miaoli',800);playBPM(this);" />
 
-        <img id="zhuyin" alt="ang" class="level5" src="../../image/icon/strawberry_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=ang&counties=miaoli',800);playBPM(this);" />
-        <img class="level5_text" alt="ang" src="../../image/chinese_alphabet/ang.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=ang&counties=miaoli',800);playBPM(this);" />
+        <img id="zhuyin" alt="ㄤ" class="level5 level" src="../../image/icon/strawberry_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=ang&counties=miaoli',800);playBPM(this);" />
+        <img class="level5_text" alt="ㄤ" src="../../image/chinese_alphabet/ang.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=ang&counties=miaoli',800);playBPM(this);" />
 
-        <img id="zhuyin" alt="eng" class="level6" src="../../image/icon/strawberry_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=eng&counties=miaoli',800);playBPM(this);" />
-        <img class="level6_text" alt="eng" src="../../image/chinese_alphabet/eng.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=eng&counties=miaoli',800);playBPM(this);" />
+        <img id="zhuyin" alt="ㄥ" class="level6 level" src="../../image/icon/strawberry_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=eng&counties=miaoli',800);playBPM(this);" />
+        <img class="level6_text" alt="ㄥ" src="../../image/chinese_alphabet/eng.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=eng&counties=miaoli',800);playBPM(this);" />
 
-        <img id="zhuyin" alt="er" class="level7" src="../../image/icon/strawberry_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=er&counties=miaoli',800);playBPM(this);" />
-        <img class="level7_text" alt="er" src="../../image/chinese_alphabet/er.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=er&counties=miaoli',800);playBPM(this);" />
+        <img id="zhuyin" alt="ㄦ" class="level7 level" src="../../image/icon/strawberry_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=er&counties=miaoli',800);playBPM(this);" />
+        <img class="level7_text" alt="ㄦ" src="../../image/chinese_alphabet/er.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=er&counties=miaoli',800);playBPM(this);" />
 
-        <img class="level8" alt="" src="../../image/icon/devil_lock.png" onclick="alert('需要先完成縣市所有關卡！')" />
+        <img class="level8 level" alt="" src="../../image/icon/devil_lock.png" onclick="alert('需要先完成縣市所有關卡！')" />
 
 
     </div>

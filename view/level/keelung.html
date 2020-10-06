@@ -8,14 +8,14 @@
     <link rel="stylesheet" href="../../CSS/map/counties.css">
     <link rel="stylesheet" href="../../CSS/map/keelung.css">
     <link rel="stylesheet" href="../../CSS/icon.css">
-    <script src="./northRegion_JS/keelung.js"></script>
     <script src="./northRegion_JS/north.js"></script>
+    <script src="../../model/util/checkAllLevelIsPass.js"></script>
 </head>
 <style>
 
 </style>
 
-<body style="width: 100%; height: 100%; margin: auto;" onload="checkZhuyin()">
+<body style="width: 100%; height: 100%; margin: auto;" onload="checkLevelIsPass('oceanliner','keelung')">
     <audio id="northAudio" src=""></audio>
     <div class="bottom_title">
         <h1>基隆地區</h1>
@@ -43,28 +43,28 @@
     <div class="mainContent">
         <img id="county" class="terrain" src="../../image/map/Keelung1.png" />
         <div class="level1">
-            <img class="level_basic" alt="a1" src="../../image/icon/oceanliner.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=a1&counties=Keelung',800);playABC(this);" />
-            <img class="level_text" alt="a1" src="../../image/english_alphabet/A.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=a1&counties=Keelung',800);playABC(this);" />
+            <img class="level_basic level" alt="a" src="../../image/icon/oceanliner.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=a1&counties=Keelung',800);playABC(this);" />
+            <img class="level_text" alt="a" src="../../image/english_alphabet/A.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=a1&counties=Keelung',800);playABC(this);" />
         </div>
         <div class="level2">
-            <img class="level_basic" alt="b1" src="../../image/icon/oceanliner.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=b1&counties=Keelung',800);playABC(this);" />
-            <img class="level_text" alt="b1" src="../../image/english_alphabet/B.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=b1&counties=Keelung',800);playABC(this);" />
+            <img class="level_basic level" alt="b" src="../../image/icon/oceanliner.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=b1&counties=Keelung',800);playABC(this);" />
+            <img class="level_text" alt="b" src="../../image/english_alphabet/B.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=b1&counties=Keelung',800);playABC(this);" />
         </div>
         <div class="level3">
-            <img class="level_basic" alt="c1" src="../../image/icon/oceanliner.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=c1&counties=Keelung',800);playABC(this);" />
-            <img class="level_text" alt="c1" src="../../image/english_alphabet/C.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=c1&counties=Keelung',800);playABC(this);" />
+            <img class="level_basic level" alt="c" src="../../image/icon/oceanliner.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=c1&counties=Keelung',800);playABC(this);" />
+            <img class="level_text" alt="c" src="../../image/english_alphabet/C.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=c1&counties=Keelung',800);playABC(this);" />
         </div>
         <div class="level4">
-            <img class="level_basic" alt="d1" src="../../image/icon/oceanliner.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=d1&counties=Keelung',800);playABC(this);" />
-            <img class="level_text" alt="d1" src="../../image/english_alphabet/D.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=d1&counties=Keelung',800);playABC(this);" />
+            <img class="level_basic level" alt="d" src="../../image/icon/oceanliner.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=d1&counties=Keelung',800);playABC(this);" />
+            <img class="level_text" alt="d" src="../../image/english_alphabet/D.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=d1&counties=Keelung',800);playABC(this);" />
         </div>
 
         <div class="level5">
-            <img class="level_basic" alt="e1" src="../../image/icon/oceanliner.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=e1&counties=Keelung',800);playABC(this);" />
-            <img class="level_text" alt="e1" src="../../image/english_alphabet/E.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=e1&counties=Keelung',800);playABC(this);" />
+            <img class="level_basic level" alt="e" src="../../image/icon/oceanliner.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=e1&counties=Keelung',800);playABC(this);" />
+            <img class="level_text" alt="e" src="../../image/english_alphabet/E.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=e1&counties=Keelung',800);playABC(this);" />
         </div>
         <div class="level6">
-            <img class="level" alt="keelung" src="../../image/icon/devil_lock.png" onclick="alert('需要先完成縣市所有關卡！')" />
+            <img class="level" width="43px" alt="keelung" src="../../image/icon/devil_lock.png" onclick="alert('需要先完成縣市所有關卡！')" />
         </div>
 
 

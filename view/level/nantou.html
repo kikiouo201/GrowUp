@@ -8,14 +8,14 @@
     <link rel="stylesheet" href="../../CSS/map/counties.css">
     <link rel="stylesheet" href="../../CSS/map/nantou.css">
     <link rel="stylesheet" href="../../CSS/icon.css">
-    <script src="./centralRegion_JS/nantou.js"></script>
     <script src="./centralRegion_JS/central.js"></script>
+    <script src="../../model/util/checkAllLevelIsPass.js"></script>
 </head>
 <style>
 
 </style>
 
-<body style="width: 100%; height: 100%; margin: auto;" onload="checkZhuyin()">
+<body style="width: 100%; height: 100%; margin: auto;" onload="checkLevelIsPass('herbal_tea','nantou')">
     <audio id="centralAudio" src=""></audio>
 
     <div class="bottom_title">
@@ -42,34 +42,34 @@
     <div class="mainContent">
         <img class="city" src="../../image/map/Nantou_small.png" />
 
-        <img id="zhuyin" alt="b" class="level1" src="../../image/icon/herbal_tea.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=b&counties=nantou',800);playBPM(this);" />
-        <img class="level1_text" alt="b" src="../../image/chinese_alphabet/b.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=b&counties=nantou',800);playBPM(this);" />
+        <img id="zhuyin" alt="ㄅ" class="level1 level" src="../../image/icon/herbal_tea.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=b&counties=nantou',800);playBPM(this);" />
+        <img class="level1_text" alt="ㄅ" src="../../image/chinese_alphabet/b.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=b&counties=nantou',800);playBPM(this);" />
 
-        <img id="zhuyin" alt="p" class="level2" src="../../image/icon/herbal_tea.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=p&counties=nantou',800);playBPM(this);" />
-        <img class="level2_text" alt="p" src="../../image/chinese_alphabet/p.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=p&counties=nantou',800);playBPM(this);" />
+        <img id="zhuyin" alt="ㄆ" class="level2 level" src="../../image/icon/herbal_tea.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=p&counties=nantou',800);playBPM(this);" />
+        <img class="level2_text" alt="ㄆ" src="../../image/chinese_alphabet/p.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=p&counties=nantou',800);playBPM(this);" />
 
-        <img id="zhuyin" alt="m" class="level3" src="../../image/icon/herbal_tea.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=m&counties=nantou',800);playBPM(this);" />
-        <img class="level3_text" alt="m" src="../../image/chinese_alphabet/m.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=m&counties=nantou',800);playBPM(this);" />
+        <img id="zhuyin" alt="ㄇ" class="level3 level" src="../../image/icon/herbal_tea.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=m&counties=nantou',800);playBPM(this);" />
+        <img class="level3_text" alt="ㄇ" src="../../image/chinese_alphabet/m.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=m&counties=nantou',800);playBPM(this);" />
 
-        <img id="zhuyin" alt="f" class="level4" src="../../image/icon/herbal_tea.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=f',800);playBPM(this);" />
-        <img class="level4_text" alt="f" src="../../image/chinese_alphabet/f.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=f&counties=nantou',800);playBPM(this);" />
+        <img id="zhuyin" alt="ㄈ" class="level4 level" src="../../image/icon/herbal_tea.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=f',800);playBPM(this);" />
+        <img class="level4_text" alt="ㄈ" src="../../image/chinese_alphabet/f.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=f&counties=nantou',800);playBPM(this);" />
 
-        <img id="zhuyin" alt="d" class="level5" src="../../image/icon/herbal_tea_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=d&counties=nantou',800);playBPM(this);" />
-        <img class="level5_text" alt="d" src="../../image/chinese_alphabet/d.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=d&counties=nantou',800);playBPM(this);" />
+        <img id="zhuyin" alt="ㄉ" class="level5 level" src="../../image/icon/herbal_tea_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=d&counties=nantou',800);playBPM(this);" />
+        <img class="level5_text" alt="ㄉ" src="../../image/chinese_alphabet/d.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=d&counties=nantou',800);playBPM(this);" />
 
-        <img id="zhuyin" alt="t" class="level6" src="../../image/icon/herbal_tea_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=t&counties=nantou',800);playBPM(this);" />
-        <img class="level6_text" alt="t" src="../../image/chinese_alphabet/t.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=t&counties=nantou',800);playBPM(this);" />
+        <img id="zhuyin" alt="ㄊ" class="level6 level" src="../../image/icon/herbal_tea_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=t&counties=nantou',800);playBPM(this);" />
+        <img class="level6_text" alt="ㄊ" src="../../image/chinese_alphabet/t.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=t&counties=nantou',800);playBPM(this);" />
 
-        <img id="zhuyin" alt="n" class="level7" src="../../image/icon/herbal_tea_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=n&counties=nantou',800);playBPM(this);" />
-        <img class="level7_text" alt="n" src="../../image/chinese_alphabet/n.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=n&counties=nantou',800);playBPM(this);" />
+        <img id="zhuyin" alt="ㄋ" class="level7 level" src="../../image/icon/herbal_tea_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=n&counties=nantou',800);playBPM(this);" />
+        <img class="level7_text" alt="ㄋ" src="../../image/chinese_alphabet/n.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=n&counties=nantou',800);playBPM(this);" />
 
-        <img id="zhuyin" alt="l" class="level8" src="../../image/icon/herbal_tea_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=l&counties=nantou',800);playBPM(this);" />
-        <img class="level8_text" alt="l" src="../../image/chinese_alphabet/l.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=l&counties=nantou',800);playBPM(this);" />
+        <img id="zhuyin" alt="ㄌ" class="level8 level" src="../../image/icon/herbal_tea_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=l&counties=nantou',800);playBPM(this);" />
+        <img class="level8_text" alt="ㄌ" src="../../image/chinese_alphabet/l.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=l&counties=nantou',800);playBPM(this);" />
 
-        <img id="zhuyin" alt="g" class="level9" src="../../image/icon/herbal_tea_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=g&counties=nantou',800);playBPM(this);" />
-        <img class="level9_text" alt="g" src="../../image/chinese_alphabet/g.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=g&counties=nantou',800);playBPM(this);" />
+        <img id="zhuyin" alt="ㄍ" class="level9 level" src="../../image/icon/herbal_tea_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=g&counties=nantou',800);playBPM(this);" />
+        <img class="level9_text" alt="ㄍ" src="../../image/chinese_alphabet/g.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=g&counties=nantou',800);playBPM(this);" />
 
-        <img class="level10" alt="" src="../../image/icon/devil_lock.png" onclick="alert('需要先完成縣市所有關卡！')" />
+        <img class="level10 level" alt="nantou" src="../../image/icon/devil_lock.png" onclick="alert('需要先完成縣市所有關卡！')" />
 
 
     </div>
