@@ -33,49 +33,85 @@ if (toggle() != null) {
 }
 
 function playBPM(name) {
-    var audioCreate = document.createElement("AUDIO");
+    let centralAudio = document.getElementById("Audio");
+
     console.log("name:" + name.alt)
     let id = name.alt;
-    if (audioCreate.canPlayType("audio/mpeg")) {
-        audioCreate.setAttribute("src", `./TTS/mp3/bpm/${id}.mp3`);
+    if (centralAudio.canPlayType("audio/mpeg")) {
+        centralAudio.setAttribute("src", `./TTS/mp3/bpm/${id}.mp3`);
         console.log(`id:${id}`)
     }
 
-    // x.setAttribute("controls", "controls");
-    document.body.appendChild(audioCreate);
-    // console.log("OK " + `${id} ` + aaauu.children[0].src)
-    // aaauu.children[0].src = "../../TTS/mp3/bpm/" + `${id}` + ".mp3"
-    audioCreate.play();
+    centralAudio.play();
 }
 
 function playABC(name) {
-    var audioCreate = document.createElement("AUDIO");
+    let northAudio = document.getElementById("Audio");
+    // var audioCreate = document.createElement("AUDIO");
     console.log("name:" + name.alt)
     let id = name.alt;
-    if (audioCreate.canPlayType("audio/mpeg")) {
-        audioCreate.setAttribute("src", `./TTS/mp3/ABC/${id}.mp3`);
+    if (northAudio.canPlayType("audio/mpeg")) {
+        northAudio.setAttribute("src", `./TTS/mp3/ABC/${id}.mp3`);
         console.log(`id:${id}`)
     }
 
-    // x.setAttribute("controls", "controls");
-    document.body.appendChild(audioCreate);
-    // console.log("OK " + `${id} ` + aaauu.children[0].src)
-    // aaauu.children[0].src = "../../TTS/mp3/bpm/" + `${id}` + ".mp3"
-    audioCreate.play();
+    northAudio.play();
 }
 
 function play012(name) {
-    var audioCreate = document.createElement("AUDIO");
+    let southAudio = document.getElementById("Audio");
     console.log("name:" + name.alt)
     let id = name.alt;
-    if (audioCreate.canPlayType("audio/mpeg")) {
-        audioCreate.setAttribute("src", `./TTS/mp3/ABC/${id}.mp3`);
+    if (southAudio.canPlayType("audio/mpeg")) {
+        southAudio.setAttribute("src", `./TTS/mp3/012/${id}.mp3`);
+        console.log(`id:${id}`)
+    }
+    southAudio.play();
+}
+
+function playCentral(name) {
+    let centralAudio = document.getElementById("Audio");
+    console.log("name:" + name.alt)
+    let id = name.alt;
+    if (centralAudio.canPlayType("audio/mpeg")) {
+        centralAudio.src = `./TTS/mp3/map/central/${id}.mp3`
         console.log(`id:${id}`)
     }
 
-    // x.setAttribute("controls", "controls");
-    document.body.appendChild(audioCreate);
-    // console.log("OK " + `${id} ` + aaauu.children[0].src)
-    // aaauu.children[0].src = "../../TTS/mp3/bpm/" + `${id}` + ".mp3"
-    audioCreate.play();
+    centralAudio.play();
+}
+
+function playEast(name) {
+    let eastAudio = document.getElementById("Audio");
+    console.log("name:" + name.alt)
+    let id = name.alt;
+    if (eastAudio.canPlayType("audio/mpeg")) {
+        eastAudio.setAttribute("src", `./TTS/mp3/map/east/${id}.mp3`);
+        console.log(`id:${id}`)
+    }
+
+    eastAudio.play();
+}
+
+function playNorth(name) {
+    let northAudio = document.getElementById("Audio");
+    console.log("name:" + name.alt)
+    let id = name.alt;
+    if (northAudio.canPlayType("audio/mpeg")) {
+        northAudio.src = `./TTS/mp3/map/north/${id}.mp3`;
+        console.log(`id:${id}`)
+    }
+
+    northAudio.play();
+}
+
+function playSouth(name) {
+    let southAudio = document.getElementById("Audio");
+    console.log("name:" + name.alt)
+    let id = name.alt;
+    if (southAudio.canPlayType("audio/mpeg")) {
+        southAudio.setAttribute("src", `./TTS/mp3/map/south/${id}.mp3`);
+        console.log(`id:${id}`)
+    }
+    southAudio.play();
 }
