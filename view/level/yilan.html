@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../../CSS/map/yilan.css">
     <link rel="stylesheet" href="../../CSS/interface.css">
     <link rel="stylesheet" href="../../CSS/icon.css">
-
+    <script src="./northRegion_JS/north.js"></script>
 </head>
 <style>
     .map_location {
@@ -21,8 +21,8 @@
     }
 </style>
 
-<body class="style" background="../../image/map/kraftPaper5.png"
-    onload="checkLevelIsPass('Sanxing_green_onion','yilan')">
+<body class="style" background="../../image/map/kraftPaper5.png" onload="checkLevelIsPass('Sanxing_green_onion','yilan')">
+    <audio id="northAudio" src=""></audio>
     <table class="features" style="margin-top: 30px; margin-left: 86px;">
         <tr>
             <td colspan="2" style="font-size: 40px;text-align: center;">宜蘭地區</td>
@@ -32,8 +32,7 @@
             <td>資訊介紹</td>
         </tr>
         <tr>
-            <td><img src="../../image/map/Yilan_origin.png" onclick="featuresText('宜蘭地區')" /><a
-                    style="display: block;">宜蘭地區</a></td>
+            <td><img src="../../image/map/Yilan_origin.png" onclick="featuresText('宜蘭地區');playNorth(this);" alt="yilanRegion" /><a style="display: block;">宜蘭地區</a></td>
             <td id="information" rowspan="4" valign="top" style="font-size:x-large;">
                 <h4>
                     宜蘭地區囿於三面背山、一面向海特殊地形，孕育獨特文化與人情味，呈現以三生共構的世外桃源。
@@ -41,16 +40,13 @@
             </td>
         </tr>
         <tr>
-            <td><img src="../../image/icon/Sanxing_green_onion.png" onclick="featuresText('三星蔥')" /><a
-                    style="display: block;">三星蔥</a></td>
+            <td><img src="../../image/icon/Sanxing_green_onion.png" onclick="featuresText('三星蔥');playNorth(this);" alt="yilan_f1" /><a style="display: block;">三星蔥</a></td>
         </tr>
         <tr>
-            <td><img src="../../image/map_icon/Yilan_bubble_tea_museum.png" onclick="featuresText('奇麗灣珍奶文化館')" /><a
-                    style="display: block;">奇麗灣珍奶文化館</a></td>
+            <td><img src="../../image/map_icon/Yilan_bubble_tea_museum.png" onclick="featuresText('奇麗灣珍奶文化館');playNorth(this);" alt="yilan_f2" /><a style="display: block;">奇麗灣珍奶文化館</a></td>
         </tr>
         <tr>
-            <td><img src="../../image/map_icon/Yilan_hot_spring.png" onclick="featuresText('礁溪溫泉')" /><a
-                    style="display: block;">礁溪溫泉</a></td>
+            <td><img src="../../image/map_icon/Yilan_hot_spring.png" onclick="featuresText('礁溪溫泉');playNorth(this);" alt="yilan_f3" /><a style="display: block;">礁溪溫泉</a></td>
         </tr>
 
 
@@ -58,28 +54,20 @@
     <div class="map">
         <img id="county" class="terrain" src="../../image/map/Yilan1.png" />
         <div class="level1">
-            <img class="level" alt="w" src="../../image/icon/Sanxing_green_onion_dark.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=w1&counties=yilan';mouseDownText('w');" />
-            <img class="level_text" src="../../image/english_alphabet/W.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=w1&counties=yilan';mouseDownText('w');" />
+            <img class="level" alt="w1" src="../../image/icon/Sanxing_green_onion_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=w1&counties=yilan',800);playABC(this);" />
+            <img class="level_text" alt="w1" src="../../image/english_alphabet/W.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=w1&counties=yilan',800);playABC(this);" />
         </div>
         <div class="level2">
-            <img class="level" alt="x" src="../../image/icon/Sanxing_green_onion_dark.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=x1&counties=yilan';mouseDownText('x');" />
-            <img class="level_text" src="../../image/english_alphabet/X.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=x1&counties=yilan';mouseDownText('x');" />
+            <img class="level" alt="x1" src="../../image/icon/Sanxing_green_onion_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=x1&counties=yilan',800);playABC(this);" />
+            <img class="level_text" alt="x1" src="../../image/english_alphabet/X.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=x1&counties=yilan',800);playABC(this);" />
         </div>
         <div class="level3">
-            <img class="level" alt="y" src="../../image/icon/Sanxing_green_onion_dark.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=y1&counties=yilan';mouseDownText('y');" />
-            <img class="level_text" src="../../image/english_alphabet/Y.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=y1&counties=yilan';mouseDownText('y');" />
+            <img class="level" alt="y1" src="../../image/icon/Sanxing_green_onion_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=y1&counties=yilan',800);playABC(this);" />
+            <img class="level_text" alt="y1" src="../../image/english_alphabet/Y.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=y1&counties=yilan',800);playABC(this);" />
         </div>
         <div class="level4">
-            <img class="level" alt="z" src="../../image/icon/Sanxing_green_onion_dark.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=z1&counties=yilan';mouseDownText('z');" />
-            <img class="level_text" src="../../image/english_alphabet/Z.png"
-                onclick="location.href='../../view/game/drawzhuyin.html?id=z1&counties=yilan';mouseDownText('z');" />
+            <img class="level" alt="z1" src="../../image/icon/Sanxing_green_onion_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=z1&counties=yilan',800);playABC(this);" />
+            <img class="level_text" alt="z1" src="../../image/english_alphabet/Z.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=z1&counties=yilan',800);playABC(this);" />
         </div>
         <div class="level5">
             <img class="level" alt="yilan" src="../../image/icon/devil_lock.png" onclick="alert('需要先完成縣市所有關卡！')" />
@@ -87,8 +75,7 @@
 
 
     </div>
-    <img class="taiwan" src="../../image/character/Taiwn_small.png"
-        onclick="location.href='../../view/level/taiwan.html'" />
+    <img class="taiwan" src="../../image/character/Taiwn_small.png" onclick="location.href='../../view/level/taiwan.html'" />
     <img class="map_location" src="../../image/map/map.png" />
 
     <div>
@@ -120,7 +107,7 @@
                     information.append(info)
                     break;
                 case "奇麗灣珍奶文化館":
-                        information.innerHTML =
+                    information.innerHTML =
                         " <img style = 'width:100%; border-radius: 15px;'  src = 'http://www.sunspring-resort.com.tw/image/tour/1000x500/%E5%A5%87%E9%BA%97%E7%81%A3%E7%8F%8D%E5%A5%B6%E6%96%87%E5%8C%96%E9%A4%A8.jpg'/> "
                     info.innerHTML = "奇麗灣珍奶文化館是一間以台灣珍珠奶茶為主題的觀光工廠，並且首創「燈泡珍珠奶茶」。";
                     information.append(info)
@@ -135,7 +122,9 @@
             }
         }
     </script>
-    <script src="../../model/util/voiceOut.js"></script>
+    <!-- <script src="../../model/util/voiceOut.js"></script> -->
+    <script src="../level/centralRegion_JS/levelIsPass.js"></script>
+
 </body>
 
 </html>

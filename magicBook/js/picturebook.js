@@ -6,6 +6,8 @@ const parent_tab = document.querySelector("#parent_tab");
 const machine_tab = document.querySelector("#machine_tab");
 const else_tab = document.querySelector("#else_tab");
 
+
+const fullscr = document.querySelector("#allFull");
 let par_book;
 
 function tabClick(temp) {
@@ -91,7 +93,7 @@ ipcRenderer.once('retruePictureData', (event, data) => {
 
     let web_url = data['content'][i]['introduction']
     watch_btn.onclick = () => {
-      showWeb( web_url);
+      showWeb( web_url, fullscr);
     }
 
     let watch_ic = document.createElement('img');
@@ -199,7 +201,7 @@ ipcRenderer.once('retrueMachineData', (event, data) => {
 
         let watch_btn = document.createElement('button');
         watch_btn.onclick = () => {
-          showWeb(url);
+          showWeb(url,fullscr);
         }
         let watch_ic = document.createElement('img');
         watch_ic.src = "./image/icon_watchVideo.png";

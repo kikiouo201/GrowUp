@@ -337,6 +337,7 @@ ipcMain.on('getMachineData', (event, arg) => {
 ipcMain.on('crawlerShowWeb', async(event, args) => {
     console.log('Catch ShowWeb');
 
+
     const browser = await puppeteer.launch({
         executablePath: '/usr/bin/chromium-browser',
         // executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
@@ -346,7 +347,8 @@ ipcMain.on('crawlerShowWeb', async(event, args) => {
         headless: false
     });
     const page = await browser.newPage();
-
+    event.reply('colseLoading');
+    
     page.on('colse', async() => {
         await browser.close();
     });

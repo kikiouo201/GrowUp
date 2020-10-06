@@ -1,31 +1,24 @@
 function playNorth(name) {
-    var audioCreate = document.createElement("AUDIO");
+    let northAudio = document.getElementById("northAudio");
     console.log("name:" + name.alt)
     let id = name.alt;
-    if (audioCreate.canPlayType("audio/mpeg")) {
-        audioCreate.setAttribute("src", `../../TTS/mp3/map/north/${id}.mp3`);
+    if (northAudio.canPlayType("audio/mpeg")) {
+        northAudio.src = `../../TTS/mp3/map/north/${id}.mp3`;
         console.log(`id:${id}`)
     }
 
-    // x.setAttribute("controls", "controls");
-    document.body.appendChild(audioCreate);
-    // console.log("OK " + `${id} ` + aaauu.children[0].src)
-    // aaauu.children[0].src = "../../TTS/mp3/bpm/" + `${id}` + ".mp3"
-    audioCreate.play();
+    northAudio.play();
 }
 
 function playABC(name) {
-    var audioCreate = document.createElement("AUDIO");
+    let northAudio = document.getElementById("northAudio");
+    // var audioCreate = document.createElement("AUDIO");
     console.log("name:" + name.alt)
     let id = name.alt;
-    if (audioCreate.canPlayType("audio/mpeg")) {
-        audioCreate.setAttribute("src", `../../TTS/mp3/ABC/${id}.mp3`);
+    if (northAudio.canPlayType("audio/mpeg")) {
+        northAudio.setAttribute("src", `../../TTS/mp3/ABC/${id}.mp3`);
         console.log(`id:${id}`)
     }
 
-    // x.setAttribute("controls", "controls");
-    document.body.appendChild(audioCreate);
-    // console.log("OK " + `${id} ` + aaauu.children[0].src)
-    // aaauu.children[0].src = "../../TTS/mp3/bpm/" + `${id}` + ".mp3"
-    audioCreate.play();
+    northAudio.play();
 }

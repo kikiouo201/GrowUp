@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="width: 100%; height: 100%;">
 
 <head>
     <meta charset="UTF-8">
@@ -7,122 +7,95 @@
     <title>GrowUp學習趣</title>
     <link rel="stylesheet" href="../../CSS/map/counties.css">
     <link rel="stylesheet" href="../../CSS/map/keelung.css">
-    <link rel="stylesheet" href="../../CSS/interface.css">
     <link rel="stylesheet" href="../../CSS/icon.css">
-
+    <script src="./northRegion_JS/keelung.js"></script>
+    <script src="./northRegion_JS/north.js"></script>
 </head>
 <style>
-.map_location{
-    width: 16px;
-    position: absolute;
-    top: 0px;
-    z-index: 15;
-    left: 73px;
-}
+
 </style>
-<body class="style" background="../../image/map/kraftPaper5.png" onload="checkLevelIsPass('oceanliner','keelung')">
-    <table class="features" style="margin-top: 30px; margin-left: 65px;">
-        <tr>
-            <td colspan="2" style="font-size: 40px;text-align: center;">基隆地區</td>
-        </tr>
-        <tr style="display: none;">
-            <td>特色</td>
-            <td>資訊介紹</td>
-        </tr>
-        <tr>
-            <td><img src="../../image/map/Keelung_origin.png" onclick="featuresText('基隆地區')" /><a style="display: block;">基隆地區</a></td>
-            <td id="information" rowspan="4" valign="top" style="font-size:x-large;">
-                <h4 style='margin: auto;'>
-                    基隆地區位於臺灣北部。三面環山，只有北邊有一些些平原迎向大海，即為基隆港。
-                </h4>
-            </td>
-        </tr>
-        <tr>
-            <td><img src="../../image/icon/oceanliner.png" onclick="featuresText('遊輪')" /><a style="display: block;">遊輪</a></td>
-        </tr>
-        <tr>
-            <td><img src="../../image/map_icon/keelung_nightmarket.png" onclick="featuresText('基隆廟口')" /><a style="display: block;">基隆廟口</a></td>
-        </tr>
-        <tr>
-            <td><img src="../../image/map_icon/keelung_Tapurun_Fort.png" onclick="featuresText('二沙灣砲臺(海門天險)')" /><a style="display: block;">二沙灣砲臺(海門天險)</a></td>
-        </tr>
 
+<body style="width: 100%; height: 100%; margin: auto;" onload="checkZhuyin()">
+    <audio id="northAudio" src=""></audio>
+    <div class="bottom_title">
+        <h1>基隆地區</h1>
+    </div>
 
-    </table>
-    <div class="map">
+    <div class="Map">
+        <img class="taiwan" src="../../image/character/Taiwn_small.png" onclick="location.href='../../view/level/taiwan.html'" />
+        <img class="map_location" src="../../image/map/map.png" />
+    </div>
+
+    <div class="informationBox">
+        <h2>介紹</h2>
+        <img class="inforbtn" style="margin-top: 0;" src="../../image/map/Keelung_origin.png" onclick="playNorth(this), changeInfor(0)" alt="keelungRegion" />
+        <br>
+        <!--  -->
+        <img class="inforbtn" src="../../image/icon/oceanliner.png" onclick="playNorth(this),changeInfor(1)" alt="keelung_f1" />
+        <br>
+        <img class="inforbtn" src="../../image/map_icon/keelung_nightmarket.png" onclick="playNorth(this),changeInfor(2)" alt="keelung_f2" />
+        <br>
+        <img class="inforbtn" src="../../image/map_icon/keelung_Tapurun_Fort.png" onclick="playNorth(this),changeInfor(3)" alt="keelung_f3" />
+        <br>
+
+    </div>
+
+    <div class="mainContent">
         <img id="county" class="terrain" src="../../image/map/Keelung1.png" />
         <div class="level1">
-            <img class="level" alt="a"  src="../../image/icon/oceanliner.png" onclick="location.href='../../view/game/drawzhuyin.html?id=a1&counties=Keelung';mouseDownText('a');" />
-            <img class="level_text" src="../../image/english_alphabet/A.png" onclick="location.href='../../view/game/drawzhuyin.html?id=a1&counties=Keelung';mouseDownText('a');" />
+            <img class="level_basic" alt="a1" src="../../image/icon/oceanliner.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=a1&counties=Keelung',800);playABC(this);" />
+            <img class="level_text" alt="a1" src="../../image/english_alphabet/A.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=a1&counties=Keelung',800);playABC(this);" />
         </div>
         <div class="level2">
-            <img class="level" alt="b" src="../../image/icon/oceanliner.png" onclick="location.href='../../view/game/drawzhuyin.html?id=b1&counties=Keelung';mouseDownText('b');" />
-            <img class="level_text" src="../../image/english_alphabet/B.png" onclick="location.href='../../view/game/drawzhuyin.html?id=b1&counties=Keelung';mouseDownText('b');" />
+            <img class="level_basic" alt="b1" src="../../image/icon/oceanliner.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=b1&counties=Keelung',800);playABC(this);" />
+            <img class="level_text" alt="b1" src="../../image/english_alphabet/B.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=b1&counties=Keelung',800);playABC(this);" />
         </div>
         <div class="level3">
-            <img class="level" alt="c" src="../../image/icon/oceanliner.png" onclick="location.href='../../view/game/drawzhuyin.html?id=c1&counties=Keelung';mouseDownText('c');" />
-            <img class="level_text" src="../../image/english_alphabet/C.png" onclick="location.href='../../view/game/drawzhuyin.html?id=c1&counties=Keelung';mouseDownText('c');" />
+            <img class="level_basic" alt="c1" src="../../image/icon/oceanliner.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=c1&counties=Keelung',800);playABC(this);" />
+            <img class="level_text" alt="c1" src="../../image/english_alphabet/C.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=c1&counties=Keelung',800);playABC(this);" />
         </div>
         <div class="level4">
-            <img class="level" alt="d" src="../../image/icon/oceanliner.png" onclick="location.href='../../view/game/drawzhuyin.html?id=d1&counties=Keelung';mouseDownText('d');" />
-            <img class="level_text" src="../../image/english_alphabet/D.png" onclick="location.href='../../view/game/drawzhuyin.html?id=d1&counties=Keelung';mouseDownText('d');" />
+            <img class="level_basic" alt="d1" src="../../image/icon/oceanliner.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=d1&counties=Keelung',800);playABC(this);" />
+            <img class="level_text" alt="d1" src="../../image/english_alphabet/D.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=d1&counties=Keelung',800);playABC(this);" />
         </div>
 
         <div class="level5">
-            <img class="level" alt="e" src="../../image/icon/oceanliner.png" onclick="location.href='../../view/game/drawzhuyin.html?id=e1&counties=Keelung';mouseDownText('e');" />
-            <img class="level_text" src="../../image/english_alphabet/E.png" onclick="location.href='../../view/game/drawzhuyin.html?id=e1&counties=Keelung';mouseDownText('e');" />
+            <img class="level_basic" alt="e1" src="../../image/icon/oceanliner.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=e1&counties=Keelung',800);playABC(this);" />
+            <img class="level_text" alt="e1" src="../../image/english_alphabet/E.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=e1&counties=Keelung',800);playABC(this);" />
         </div>
         <div class="level6">
             <img class="level" alt="keelung" src="../../image/icon/devil_lock.png" onclick="alert('需要先完成縣市所有關卡！')" />
         </div>
-       
+
 
     </div>
-    <img class="taiwan" src="../../image/character/Taiwn_small.png" onclick="location.href='../../view/level/taiwan.html'" />
-    <img class="map_location" src="../../image/map/map.png" />
+    <div class="fullContent">
+        <h1 onclick="document.querySelector('.fullContent').style.display='none'">X</h1>
+        <div class="introduce">
+            <div style="height: 60%;width: 100%; text-align: center;">
+                <img id="picture" style='height: 90%; border-radius: 15px; margin-top: 2%' src='https://care-old.org/keelung/wp-content/uploads/2018/05/%E5%9F%BA%E9%9A%86.png' />
+                <img id="speaker" style='position: absolute; top: 20px; right: 20px;  height: 15%' src="../../icons/speaker.png" onclick="playCentral(this)" alt="keelungRegion" />
+            </div>
+            <div style="height: 40%;width: 100%;">
+                <h2 id="intro" style='margin: 0 3% 0 3%;'>
+                    基隆地區位於臺灣北部。三面環山，只有北邊有一些些平原迎向大海，即為基隆港。
+                </h2>
+            </div>
+        </div>
+    </div>
 
-    <div>
+    <div class="btnDiv">
         <a onclick="history.back()" class="returnfloat" id="menu-share">
             <i class="fab fa-share return-float"><img src="../../photo/return.png"></i>
         </a>
-    </div>
-    <div>
+
         <a href="../../game_home.html" class="homefloat" id="menu-share">
             <i class="fab fa-share my-float"><img src="../../photo/gobackhome.png" width="70%"></i>
         </a>
     </div>
-    <script>
-        function featuresText(category) {
-            const information = document.querySelector('#information')
-            let info = document.createElement("h4");
-            info.style = 'margin: auto;';
 
-            switch (category) {
-                case "基隆地區":
-                    information.innerHTML = "";
-                    info.innerHTML = "基隆地區位於臺灣北部。三面環山，只有北邊有一些些平原迎向大海，即為基隆港。";
-                    information.append(info)
-                    break;
-                case "遊輪":
-                information.innerHTML = " <img style = 'width:100%; border-radius: 15px;'  src ='https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Explorer_of_the_Seas%2C_Fremantle%2C_2015_%2803%29.JPG/1920px-Explorer_of_the_Seas%2C_Fremantle%2C_2015_%2803%29.JPG'/>";
-                    info.innerHTML = "又稱郵輪，特色在於悠閒浪漫，且提供旅遊及娛樂，像是一艘航行在海上的五星級大型度假飯店。";
-                    information.append(info)
-                    break;
-                case "基隆廟口":
-                information.innerHTML = " <img style = 'width:100%; border-radius: 15px;'  src ='https://d2j3coy501s4ze.cloudfront.net/images/23079/700/db884329acc7422db0d5866c8683fbc82ef462b2_58c174855f6cc.jpeg'/>";
-                    info.innerHTML = "基隆廟口位於基隆市仁三路旁的奠濟宮周圍。是全臺灣最著名的夜市之一。尤其到晚間時段時更為熱鬧，所以也稱為廟口夜市。";
-                    information.append(info)
-                    break;
-                case "二沙灣砲臺(海門天險)":
-                information.innerHTML = " <img style = 'width:100%; border-radius: 15px;'  src ='https://tour.klcg.gov.tw/media/1012/%E4%BA%8C%E6%B2%99%E7%81%A3%E7%A0%B2%E5%8F%B01.jpg?anchor=center&mode=crop&width=600&height=350&rnd=131909152500000000'/>";
-                    info.innerHTML = "於戰爭時，為防止敵人入侵而建立的，名稱由來是因為處於二沙灣一帶的山路上，因此有「二沙灣砲臺」的別稱。";
-                    information.append(info)
-                    break;
+    <!-- <script src="../../model/util/voiceOut.js"></script> -->
 
-            }
-        }
-    </script>
-    <script src="../../model/util/voiceOut.js"></script>
 </body>
 
 </html>

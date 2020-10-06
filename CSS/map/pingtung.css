@@ -5,6 +5,10 @@ body {
     justify-content: center;
     align-items: center;
 }
+.mainContent {
+    left: 32%;
+    top: 3%;
+}
 
 .map {
     text-align: center;
@@ -14,13 +18,18 @@ body {
     right: -30px;
 }
 
+.map_location {
+    top: 95px;
+    left: 27px;
+}
+
 table,
 a {
     width: 103px;
 }
 
 .terrain {
-    width: 240px;
+    width: 220px;
     position: relative;
     /* top: -25px; */
     z-index: 1;
@@ -31,16 +40,16 @@ a {
     width: 75px;
     position: absolute;
     z-index: 10;
-    top: -2px;
-    left: 133px;
+    top: 0px;
+    left: 127px;
 }
 
 .level_basic {
-    width: 66px;
+    width: 57px;
 }
 
 .level {
-    width: 66px;
+    width: 52px;
 }
 
 .level_text {
@@ -48,29 +57,29 @@ a {
     position: absolute;
     z-index: 10;
     top: 16px;
-    left: 30%;
+    left: 15%;
 }
 
 .level2 {
     width: 100px;
     position: absolute;
     z-index: 10;
-    top: 52px;
-    left: 41px;
+    top: 49px;
+    left: 54px;
 }
 
 .level3 {
     width: 100px;
     position: absolute;
     z-index: 10;
-    top: 164px;
-    left: 56px;
+    top: 153px;
+    left: 67px;
 }
 
 .level4 {
     width: 100px;
     position: absolute;
     z-index: 10;
-    top: 330px;
-    left: 150px;
+    top: 303px;
+    left: 157px;
 }

@@ -5,7 +5,15 @@ body {
     justify-content: center;
     align-items: center;
 }
+.map_location {
+    top: 52px;
+    left: 17px;
+}
 
+.mainContent {
+    left: 17%;
+    top: 11%;
+}
 .map {
     text-align: center;
     position: relative;
@@ -18,7 +26,7 @@ a {
 }
 
 .terrain {
-    width: 400px;
+    width: 500px;
     overflow: hidden;
     position: relative;
     z-index: 1;
@@ -32,6 +40,10 @@ a {
     z-index: 10;
     top: 89px;
     left: 360px;
+}
+
+.level_basic {
+    width: 37px;
 }
 
 .level {

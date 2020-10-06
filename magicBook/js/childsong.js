@@ -1,4 +1,8 @@
 const main = document.querySelector('.maincontent');
+
+const fullscr = document.querySelector("#allFull");
+console.log('ShowWeb&Ele =>' +fullscr);
+
 ipcRenderer.on('songCreating', (event, data) => {
 
   console.log("Success catch Picturebook Data")
@@ -12,7 +16,7 @@ ipcRenderer.on('songCreating', (event, data) => {
       </div>
       <div class="activity-div">
           <img src="${data.src}">
-          <button onclick='showWeb("https://children.moc.gov.tw${data.href}")'>
+          <button onclick='showWeb("https://children.moc.gov.tw${data.href},${fullscr}")'>
               <img src="./image/icon_watchVideo.png" />
               <h2>觀看兒歌</h2>
           </button>

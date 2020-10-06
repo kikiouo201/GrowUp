@@ -95,6 +95,21 @@ body::-webkit-scrollbar {
     background-color: rgb(206, 255, 160);
 }
 
+#loading {
+    margin-top: 150px;
+    border-radius: 15px;
+}
+
+#allFull {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    z-index: 2;
+    background-color: #3d3d3dc4;
+    display: none;
+}
+
 .maincontent {
     position: relative;
     top: 22%;
