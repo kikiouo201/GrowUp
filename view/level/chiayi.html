@@ -1,147 +1,99 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="width: 100%; height: 100%;">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GrowUp學習趣</title>
-    <link rel="stylesheet" href="../../CSS/map/chiayi.css">
     <link rel="stylesheet" href="../../CSS/map/counties.css">
-    <link rel="stylesheet" href="../../CSS/interface.css">
+    <link rel="stylesheet" href="../../CSS/map/chiayi.css">
     <link rel="stylesheet" href="../../CSS/icon.css">
     <script src="./southRegion_JS/south.js"></script>
     <script src="../../model/util/checkAllLevelIsPass.js"></script>
 </head>
 <style>
-    .features {
-        background-color: aliceblue;
-        width: 320px;
-        height: 400px;
-        margin-top: 16px;
-        margin-left: 105px;
-    }
-    
-    .map_location {
-        width: 16px;
-        position: absolute;
-        top: 82px;
-        z-index: 15;
-        left: 26px;
-    }
+
 </style>
 
-<body class="style" background="../../image/map/kraftPaper5.png" onload="checkLevelIsPass('meat_rice','chiayi')">
+<body style="width: 100%; height: 100%; margin: auto;" onload="checkLevelIsPass('meat_rice','chiayi')">
     <audio id="southAudio" src=""></audio>
-    <table class="features">
-        <tr>
-            <td colspan="2" style="font-size: 40px;text-align: center;">嘉義地區</td>
-        </tr>
-        <tr style="display: none;">
-            <td>特色</td>
-            <td>資訊介紹</td>
-        </tr>
-        <tr>
-            <td><img src="../../image/map/Chiayi_origin.png" onclick="featuresText('嘉義地區');playSouth(this)" alt="chiayiRegion" /><a style="display: block;">嘉義地區</a></td>
-            <td id="information" rowspan="5" valign="top" style="font-size:x-large;">
-                <h4 style='margin: auto;'>
+
+    <div class="bottom_title">
+        <h1>嘉義地區</h1>
+    </div>
+
+    <div class="Map">
+        <img class="taiwan" src="../../image/character/Taiwn_small.png" onclick="location.href='../../view/level/taiwan.html'" />
+        <img class="map_location" src="../../image/map/map.png" />
+    </div>
+
+    <div class="informationBox">
+        <h2>介紹</h2>
+        <img class="inforbtn" style="margin-top: 0;" src="../../image/map/Chiayi_origin.png" onclick="playCentral(this), changeInfor(0)" alt="chiayiRegion" />
+        <br>
+        <!--  -->
+        <img class="inforbtn" src="../../image/icon/meat_rice.png" onclick="playCentral(this),changeInfor(1)" alt="chiayi_f1" />
+        <br>
+        <img class="inforbtn" src="../../image/map_icon/Chiayi_high_heels.png" onclick="playCentral(this),changeInfor(2)" alt="chiayi_f2" />
+        <br>
+        <img class="inforbtn" src="../../image/map_icon/Chiayi_train.png" onclick="playCentral(this),changeInfor(3)" alt="chiayi_f3" />
+        <br>
+        <img class="inforbtn" src="../../image/map_icon/Chiayi_tropic_of_cancer.png" onclick="playCentral(this),changeInfor(4)" alt="chiayi_f4" style="width: 35%;" />
+        <br>
+    </div>
+
+    <div class="fullContent">
+        <h1 onclick="document.querySelector('.fullContent').style.display='none'">X</h1>
+        <div class="introduce">
+            <div style="height: 60%;width: 100%; text-align: center;">
+                <img id="picture" style='height: 90%; border-radius: 15px; margin-top: 2%' src='https://s.yimg.com/os/zh-Hant-TW/homerun/tw-travel.travelweb.com.tw/71e4ae358ca78944aaec7b6a4320bd07' />
+                <img id="speaker" style='position: absolute; top: 20px; right: 20px;  height: 15%' src="../../icons/speaker.png" onclick="playCentral(this)" alt="chiayiRegion" />
+                <img id="muted" style='position: absolute; top: 20px; left: 20px;  height: 15%' src="../../image/character/muted.png" onclick="mute()" alt="chiayiRegion" />
+            </div>
+            <div style="height: 40%;width: 100%;">
+                <h2 id="intro" style='margin: 0 3% 0 3%;'>
                     嘉義地區倚山面海，是臺灣所有縣市中，擁有 阿里山、雲嘉南濱海及西拉雅三大國家風景區，坐擁山色、平原、海景等不同的壯麗與遼闊。
-                </h4>
+                </h2>
+            </div>
+        </div>
+    </div>
 
-            </td>
-        </tr>
-
-        <tr>
-            <td><img src="../../image/icon/meat_rice.png" onclick="featuresText('嘉義火雞肉飯');playSouth(this)" alt="chiayi_f1" /><a style="display: block;">嘉義火雞肉飯</a></td>
-        </tr>
-        <tr>
-            <td><img src="../../image/map_icon/Chiayi_high_heels.png" onclick="featuresText('高跟鞋教堂');playSouth(this)" alt="chiayi_f2" /><a style="display: block;">高跟鞋教堂</a></td>
-        </tr>
-        <tr>
-            <td><img src="../../image/map_icon/Chiayi_train.png" onclick="featuresText('阿里山森林鐵路');playSouth(this)" alt="chiayi_f3" /><a style="display: block;">阿里山森林鐵路</a></td>
-        </tr>
-        <tr>
-            <td><img src="../../image/map_icon/Chiayi_tropic_of_cancer.png" style="width: 45%;" onclick="featuresText('北回歸線');playSouth(this)" alt="chiayi_f4" /><a style="display: block;">北回歸線</a></td>
-        </tr>
-
-    </table>
-    <div class="map">
+    <div class="mainContent">
+        <!--<img class="city" src="../../image/map/Nantou_small.png" />-->
         <img class="terrain" src="../../image/map/Chiayi1.png" />
 
         <div class="level1">
-            <img class="level" alt="1" src="../../image/icon/meat_rice.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=1&counties=chiayi',800);play012(this);" />
-            <img class="level_text" alt="1" src="../../image/numbers/1.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=1&counties=chiayi',800);play012(this);" />
+            <img class="level_basic" alt="1" src="../../image/icon/meat_rice.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=1&counties=chiayi',800);play012(this);" />
+            <img class="level_text" alt="1" src="../../image/numbers/1.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=1&counties=chiayi',800);play012(this);" style="left: 43%;" />
         </div>
         <div class="level2">
-            <img class="level" alt="2" src="../../image/icon/meat_rice_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=2&counties=chiayi',800);play012(this);" />
+            <img class="level_basic" alt="2" src="../../image/icon/meat_rice_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=2&counties=chiayi',800);play012(this);" />
             <img class="level_text" alt="2" src="../../image/numbers/2.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=2&counties=chiayi',800);play012(this);" />
         </div>
 
         <div class="level3">
-            <img class="level" alt="3" src="../../image/icon/meat_rice_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=3&counties=chiayi',800);play012(this);" />
+            <img class="level_basic" alt="3" src="../../image/icon/meat_rice_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=3&counties=chiayi',800);play012(this);" />
             <img class="level_text" alt="3" src="../../image/numbers/3.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=3&counties=chiayi',800);play012(this);" />
         </div>
         <div class="level4">
             <img class="level" alt="chiayi" src="../../image/icon/devil_lock.png" onclick="alert('需要先完成縣市所有關卡！')" />
 
         </div>
-        、
-    </div>
-    <img class="taiwan" src="../../image/character/Taiwn_small.png" onclick="location.href='../../view/level/taiwan.html'" />
-    <img class="map_location" src="../../image/map/map.png" />
-    <div>
-        <a href="./ifram/chiayi_ifram.html" class="sosfloat" id="menu-share">
-            <i class="fab fa-share my-float"><img src="../../photo/help.png" width="70%"></i>
-        </a>
-    </div>
-    <div>
+
+
+
+    <div class="btnDiv">
         <a onclick="history.back()" class="returnfloat" id="menu-share">
             <i class="fab fa-share return-float"><img src="../../photo/return.png"></i>
         </a>
-    </div>
-    <div>
+
         <a href="../../game_home.html" class="homefloat" id="menu-share">
             <i class="fab fa-share my-float"><img src="../../photo/gobackhome.png" width="70%"></i>
         </a>
     </div>
-    <script>
-        function featuresText(category) {
-            const information = document.querySelector('#information')
-            let info = document.createElement("h4");
-            info.style = 'margin: auto;';
-            switch (category) {
-                case "嘉義地區":
-                    information.innerHTML = "";
-                    info.innerHTML = "嘉義地區倚山面海，是臺灣所有縣市中，擁有 阿里山、雲嘉南濱海及西拉雅三大國家風景區，坐擁山色、平原、海景等不同的壯麗與遼闊。";
-                    information.append(info)
-                    break;
-                case "嘉義火雞肉飯":
-                    information.innerHTML =
-                        " <img style = 'width:100%; border-radius: 15px;'  src ='https://margaret.tw/wp-content/uploads/nEO_IMG_DSC00343-4.jpg'/>";
-                    info.innerHTML = "是嘉義地區知名小吃之一。選用火雞肉當作素材，而雞汁是以全雞蒸煮所熬成的醬汁，加上酥炸過紅蔥頭的豬油，混合雞肉和白飯攪拌。";
-                    information.append(info)
-                    break;
-                case "高跟鞋教堂":
-                    information.innerHTML =
-                        " <img style = 'width:100%; border-radius: 15px;'  src ='https://www.tbocc.gov.tw/SightLib/Files/d1cd2c0b-51be-e511-80c8-0894ef01c9ca/Title/Title201806050927401.jpg'/>";
-                    info.innerHTML = "外觀為藍色透明玻璃高跟鞋造型，造型亮麗美觀，象徵著「每個小女孩都曾夢想有雙漂亮的高跟鞋，伴著自己走出美麗優雅的人生。」";
-                    information.append(info)
-                    break;
-                case "阿里山森林鐵路":
-                    information.innerHTML =
-                        " <img style = 'width:100%; border-radius: 15px;'  src ='https://afrch.forest.gov.tw/Attachments/ArticleBanner/13/202001/20200106164842455023.jpg'/>";
-                    info.innerHTML = "阿里山森林鐵路，是臺灣仍在營運的高山林業鐵路系統，亦是臺灣第一個國家級重要文化景觀。";
-                    information.append(info)
-                    break;
-                case "北回歸線":
-                    information.innerHTML =
-                        " <img style = 'width:100%; border-radius: 15px;'  src ='https://www.eastcoast-nsa.gov.tw/image/28952/1024x768'/>";
-                    info.innerHTML = "北回歸線標誌位於嘉義縣水上機場附近的一系列北回歸線標誌物。是世界首座於回歸線上設置的標誌物。";
-                    information.append(info)
-                    break;
-            }
-        }
-    </script>
-    <script src="../../model/util/voiceOut.js"></script>
+
+    <!-- <script src="../../model/util/voiceOut.js"></script> -->
+    <script src="./southRegion_JS/chiayi.js"></script>
 </body>
 
 </html>

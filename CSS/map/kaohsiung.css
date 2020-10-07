@@ -12,58 +12,64 @@ body {
     /* height: 700px; */
 }
 
+.map_location {
+    top: 77px;
+    left: 26px;
+}  
+
 .terrain {
-    width: 350px;
+    width: 330px;
     position: relative;
-    top: 28px;
+    top: -66px;
     z-index: 1;
-    right: -4px;
+    left: 195px;
 }
 
 .level1 {
     width: 75px;
     position: absolute;
     z-index: 10;
-    top: 26px;
-    left: 276px;
+    top: -72px;
+    left: 469px;
 }
 
 .level_basic {
-    width: 54px;
+    width: 35px;
 }
 
 .level {
-    width: 35px;
+    width: 54px;
 }
 
 .level_text {
     width: 40px;
     position: absolute;
     z-index: 10;
-    top: 41px;
-    left: 34%;
+    top: 33px;
+    left: -2%;
 }
 
 .level2 {
     width: 100px;
     position: absolute;
     z-index: 10;
-    top: 187px;
-    left: 212px;
+    top: 80px;
+    left: 421px;
 }
 
 .level3 {
     width: 100px;
     position: absolute;
     z-index: 10;
-    top: 212px;
-    left: 86px;
+    top: 105px;
+    left: 302px;
+
 }
 
 .level4 {
     width: 100px;
     position: absolute;
     z-index: 10;
-    top: 333px;
-    left: 49px;
+    top: 221px;
+    left: 256px;
 }
