@@ -1,4 +1,107 @@
 <!DOCTYPE html>
+<html lang="en" style="width: 100%; height: 100%;">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GrowUp學習趣</title>
+    <link rel="stylesheet" href="../../CSS/map/counties.css">
+    <link rel="stylesheet" href="../../CSS/map/changhua.css">
+    <link rel="stylesheet" href="../../CSS/icon.css">
+    <script src="./centralRegion_JS/changhua.js"></script>
+    <script src="./centralRegion_JS/central.js"></script>
+</head>
+<style>
+
+</style>
+
+<body style="width: 100%; height: 100%; margin: auto;" onload="checkZhuyin()">
+    <audio id="centralAudio" src=""></audio>
+
+    <div class="bottom_title">
+        <h1>彰化地區</h1>
+    </div>
+
+    <div class="Map">
+        <img class="taiwan" src="../../image/character/Taiwn_small.png" onclick="location.href='../../view/level/taiwan.html'" />
+        <img class="map_location" src="../../image/map/map.png" />
+    </div>
+
+    <div class="informationBox">
+        <h2>介紹</h2>
+        <img class="inforbtn" style="margin-top: 0;" src="../../image/map/Changhua_origin.png" onclick="playCentral(this);changeInfor(0);" alt="changhuaRegion" />
+        <br>
+        <!--  -->
+        <img class="inforbtn" src="../../image/icon/meat_ball.png" onclick="playCentral(this);changeInfor(1)" alt="changhua_f1" />
+        <br>
+        <img class="inforbtn" src="../../image/map_icon/Changhua_mountain_Bagua.png" onclick="playCentral(this);changeInfor(2);" alt="changhua_f2" />
+        <br>
+        <img class="inforbtn" src="../../image/map_icon/Changhua_wind_turbine.png" onclick="playCentral(this);changeInfor(3);" alt="changhua_f3" />
+        <br>
+
+    </div>
+
+    <div class="mainContent">
+        <img class="city" src="../../image/map/Changhua1.png" />
+
+        <img id="zhuyin" alt="ㄕ" class="level1" src="../../image/icon/meat_ball_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=ao&counties=miaoli',800);playBPM(this);" />
+        <img class="level1_text" alt="ㄕ" src="../../image/chinese_alphabet/sh.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=ao&counties=miaoli',800);playBPM(this);" />
+
+        <img id="zhuyin" alt="ㄖ" class="level2" src="../../image/icon/meat_ball_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=ou&counties=miaoli',800);playBPM(this);" />
+        <img class="level2_text" alt="ㄖ" src="../../image/chinese_alphabet/r.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=ou&counties=miaoli',800);playBPM(this);" />
+
+        <img id="zhuyin" alt="ㄗ" class="level3" src="../../image/icon/meat_ball_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=an&counties=miaoli',800);playBPM(this);" />
+        <img class="level3_text" alt="ㄗ" src="../../image/chinese_alphabet/z.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=an&counties=miaoli',800);playBPM(this);" />
+
+        <img id="zhuyin" alt="ㄘ" class="level4" src="../../image/icon/meat_ball_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=en&counties=miaoli',800);playBPM(this);" />
+        <img class="level4_text" alt="ㄘ" src="../../image/chinese_alphabet/c.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=en&counties=miaoli',800);playBPM(this);" />
+
+        <img id="zhuyin" alt="ㄙ" class="level5" src="../../image/icon/meat_ball_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=ang&counties=miaoli',800);playBPM(this);" />
+        <img class="level5_text" alt="ㄙ" src="../../image/chinese_alphabet/s.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=ang&counties=miaoli',800);playBPM(this);" />
+
+        <img id="zhuyin" alt="ㄧ" class="level6" src="../../image/icon/meat_ball_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=eng&counties=miaoli',800);playBPM(this);" />
+        <img class="level6_text" alt="ㄧ" src="../../image/chinese_alphabet/(y)i.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=eng&counties=miaoli',800);playBPM(this);" />
+
+        <img id="zhuyin" alt="ㄨ" class="level7" src="../../image/icon/meat_ball_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=er&counties=miaoli',800);playBPM(this);" />
+        <img class="level7_text" alt="ㄨ" src="../../image/chinese_alphabet/u.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=er&counties=miaoli',800);playBPM(this);" />
+
+        <img class="level8" alt="" src="../../image/icon/devil_lock.png" onclick="alert('需要先完成縣市所有關卡！')" />
+
+
+    </div>
+
+    <div class="fullContent">
+        <h1 onclick="document.querySelector('.fullContent').style.display='none'">X</h1>
+        <div class="introduce">
+            <div style="height: 60%;width: 100%; text-align: center;">
+                <img id="picture" style='height: 90%; border-radius: 15px; margin-top: 2%' src='https://www.taiwan.net.tw/pic.ashx?qp=1/big_scenic_spots/pic_C100_342_7.jpg&sizetype=2' />
+                <img id="speaker" style='position: absolute; top: 20px; right: 20px;  height: 15%' src="../../icons/speaker.png" onclick="playCentral(this)" alt="miaoliRegion" />
+            </div>
+            <div style="height: 40%;width: 100%;">
+                <h2 id="intro" style='margin: 0 3% 0 3%;'>
+                    彰化地區，土地肥沃，物產豐饒，有「臺灣穀倉」之稱。早年鹿港發展成為中部地區最具發展潛力的城鎮。
+                </h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="btnDiv">
+        <a onclick="history.back()" class="returnfloat" id="menu-share">
+            <i class="fab fa-share return-float"><img src="../../photo/return.png"></i>
+        </a>
+
+        <a href="../../game_home.html" class="homefloat" id="menu-share">
+            <i class="fab fa-share my-float"><img src="../../photo/gobackhome.png" width="70%"></i>
+        </a>
+    </div>
+    <script src="./centralRegion_JS/levelIsPass.js"></script>
+
+    <!-- <script src="../../model/util/voiceOut.js"></script> -->
+
+</body>
+
+</html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -154,7 +257,7 @@
             }
         }
     </script>
-    <!-- <script src="../../model/util/voiceOut.js"></script> -->
+    
 </body>
 
-</html>
+</html> -->

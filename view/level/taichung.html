@@ -1,4 +1,119 @@
 <!DOCTYPE html>
+<html lang="en" style="width: 100%; height: 100%;">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GrowUp學習趣</title>
+    <link rel="stylesheet" href="../../CSS/map/counties.css">
+    <link rel="stylesheet" href="../../CSS/map/taichung.css">
+    <link rel="stylesheet" href="../../CSS/icon.css">
+    <script src="./centralRegion_JS/central.js"></script>
+    <script src="../../model/util/checkAllLevelIsPass.js"></script>
+</head>
+<style>
+
+</style>
+
+<body style="width: 100%; height: 100%; margin: auto;" onload="checkLevelIsPass('suncake','taichung')">
+    <audio id="centralAudio" src=""></audio>
+
+    <div class="bottom_title">
+        <h1>台中地區</h1>
+    </div>
+
+    <div class="Map">
+        <img class="taiwan" src="../../image/character/Taiwn_small.png" onclick="location.href='../../view/level/taiwan.html'" />
+        <img class="map_location" src="../../image/map/map.png" />
+    </div>
+
+    <div class="informationBox">
+        <h2>介紹</h2>
+        <img class="inforbtn" style="margin-top: 0;" src="../../image/map/Taichung_origin.png" onclick="playCentral(this);changeInfor(0);" alt="miaoliRegion" />
+        <br>
+        <!--  -->
+        <img class="inforbtn" src="../../image/icon/suncake.png" onclick="playCentral(this);changeInfor(1)" alt="taichung_f1" />
+        <br>
+        <img class="inforbtn" src="../../image/map_icon/Taichung_farm.png" onclick="playCentral(this);changeInfor(2);" alt="taichung_f2" />
+        <br>
+        <img class="inforbtn" src="../../image/map_icon/Taichung_national_theater.png" onclick="playCentral(this);changeInfor(3);" alt="taichung_f3" />
+        <br>
+
+    </div>
+
+    <div class="mainContent">
+    <img class="city" src="../../image/map/Taichung1.png" />
+        <div class="level1">
+            <img id="zhuyin" alt="ㄩ" class="level_basic level" src="../../image/icon/suncake_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=yu&counties=taichung',800);playBPM(this);" />
+            <img class="level_text" alt="ㄩ" src="../../image/chinese_alphabet/yu.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=yu&counties=taichung',800);playBPM(this);" />
+        </div>
+        <div class="level2">
+            <img id="zhuyin" alt="ㄚ" class="level_basic level" src="../../image/icon/suncake_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=a&counties=taichung',800);playBPM(this);" />
+            <img class="level_text" alt="ㄚ" src="../../image/chinese_alphabet/a.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=a&counties=taichung',800);playBPM(this);" />
+        </div>
+        <div class="level3">
+            <img id="zhuyin" alt="ㄛ" class="level_basic level" src="../../image/icon/suncake_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=o&counties=taichung',800);playBPM(this);" />
+            <img class="level_text" alt="ㄛ" src="../../image/chinese_alphabet/o.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=o&counties=taichung',800);playBPM(this);" />
+        </div>
+        <div class="level4">
+            <img id="zhuyin" alt="ㄜ" class="level_basic level" src="../../image/icon/suncake_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=e&counties=taichung',800);playBPM(this);" />
+            <img class="level_text" alt="ㄜ" src="../../image/chinese_alphabet/e.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=e&counties=taichung',800);playBPM(this);" />
+        </div>
+
+        <div class="level5">
+            <img id="zhuyin" alt="ㄝ" class="level_basic level" src="../../image/icon/suncake_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=ae&counties=taichung',800);playBPM(this);" />
+            <img class="level_text" alt="ㄝ" src="../../image/chinese_alphabet/ye.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=ae&counties=taichung',800);playBPM(this);" />
+        </div>
+
+        <div class="level6">
+            <img id="zhuyin" alt="ㄞ" class="level_basic level" src="../../image/icon/suncake_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=ai&counties=taichung',800);playBPM(this);" />
+            <img class="level_text" alt="ㄞ" src="../../image/chinese_alphabet/ai.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=ai&counties=taichung',800);playBPM(this);" />
+        </div>
+
+        <div class="level7">
+            <img id="zhuyin" alt="ㄟ" class="level_basic level" src="../../image/icon/suncake_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=ei&counties=taichung',800);playBPM(this);" />
+            <img class="level_text" alt="ㄟ" src="../../image/chinese_alphabet/ei.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=ei&counties=taichung',800);playBPM(this);" />
+        </div>
+        <div class="level8">
+            <img class="level" width="50px" src="../../image/icon/devil_lock.png" onclick="alert('需要先完成縣市所有關卡！')" />
+
+        </div>
+
+
+    </div>
+
+    <div class="fullContent">
+        <h1 onclick="document.querySelector('.fullContent').style.display='none'">X</h1>
+        <div class="introduce">
+            <div style="height: 60%;width: 100%; text-align: center;">
+                <img id="picture" style='height: 90%; border-radius: 15px; margin-top: 2%' src='https://www.taiwan.net.tw/pic.ashx?qp=1/big_scenic_spots/pic_C100_342_7.jpg&sizetype=2' />
+                <img id="speaker" style='position: absolute; top: 20px; right: 20px;  height: 15%' src="../../icons/speaker.png" onclick="playCentral(this)" alt="miaoliRegion" />
+            </div>
+            <div style="height: 40%;width: 100%;">
+                <h2 id="intro" style='margin: 0 3% 0 3%;'>
+                    苗栗地區，是臺灣西部最適合旅遊及渡假的旅遊勝地。不僅氣候宜人、鮮少天災；交通也是相當便利，每年都吸引數百萬的國內、外旅客來苗觀光旅遊。
+                </h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="btnDiv">
+        <a onclick="history.back()" class="returnfloat" id="menu-share">
+            <i class="fab fa-share return-float"><img src="../../photo/return.png"></i>
+        </a>
+
+        <a href="../../game_home.html" class="homefloat" id="menu-share">
+            <i class="fab fa-share my-float"><img src="../../photo/gobackhome.png" width="70%"></i>
+        </a>
+    </div>
+    <script src="./centralRegion_JS/levelIsPass.js"></script>
+
+    <!-- <script src="../../model/util/voiceOut.js"></script> -->
+
+</body>
+
+</html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -153,7 +268,7 @@
             }
         }
     </script>
-    <!-- <script src="../../model/util/voiceOut.js"></script> -->
+    <script src="../../model/util/voiceOut.js"></script>
 </body>
 
-</html>
+</html> -->

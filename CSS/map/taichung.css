@@ -1,99 +1,93 @@
-body {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-    background: "../../image/map/kraftPaper5.png";
+.map_location {
+    top: 50px;
+    left: 35px;
 }
 
-.map {
-    text-align: center;
-    position: relative;
-    /* height: 700px; */
+.mainContent {
+    left: 2%;
+    top: 0%;
 }
 
-.terrain {
-    width: 400px;
-    overflow: hidden;
+.city {
     position: relative;
+    height: 69%;
+    top: 25%;
+    left: 102px;
     z-index: 1;
-    filter: drop-shadow(10px 10px 5px rgba(0, 0, 0, 0.3));
-    /* top: 150px; */
 }
 
 .level1 {
     width: 75px;
     position: absolute;
     z-index: 10;
-    top: 85px;
-    left: 313px;
+    top: 218px;
+    left: 578px;
 }
 
 .level_basic {
-    width: 38px;
+    width: 53px;
 }
 
 .level_text {
     width: 40px;
     position: absolute;
     z-index: 10;
-    top: 2px;
-    left: 32%;
+    top: 17px;
+    left: 14%;
 }
 
 .level2 {
     width: 100px;
     position: absolute;
     z-index: 10;
-    top: 20px;
-    left: 317px;
+    top: 128px;
+    left: 602px;
 }
 
 .level3 {
     width: 100px;
     position: absolute;
     z-index: 10;
-    top: 45px;
-    left: 240px;
+    top: 160px;
+    left: 488px;
 }
 
 .level4 {
     width: 100px;
     position: absolute;
     z-index: 10;
-    top: 80px;
-    left: 195px;
+    top: 214px;
+    left: 428px;
 }
 
 .level5 {
     width: 100px;
     position: absolute;
     z-index: 10;
-    top: 69px;
-    left: 75px;
+    top: 198px;
+    left: 254px;
 }
 
 .level6 {
     width: 100px;
     position: absolute;
     z-index: 10;
-    top: 42px;
-    left: 12px;
+    top: 156px;
+    left: 163px;
 }
 
 .level7 {
     width: 100px;
     position: absolute;
     z-index: 10;
-    top: 106px;
-    left: 45px;
+    top: 251px;
+    left: 213px;
 }
 
 .level8 {
     width: 100px;
     position: absolute;
     z-index: 10;
-    top: 157px;
-    left: 67px;
+    top: 320px;
+    left: 245px;
 }
