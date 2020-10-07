@@ -52,13 +52,13 @@ function changeInfor(type) {
             speaker.alt = "kaohsiung_f1"
             break;
         case 2:
-            picture.src = "https://www.dacin.com.tw/upload/catalog_b/e2276642a23c6c4a88740ec84c76f2eb.jpg";
+            picture.src = "https://static01-ipass.cdn.hinet.net/ipassweb/iPassWebV2/Preferential/1255/edaevengpage_1.png";
             intro.textContent = "義大遊樂世界位於高雄市大樹區。是南臺灣規模最大的主題遊樂園區，也是台灣首創古希臘情境主題的主題樂園。"
             speaker.alt = "kaohsiung_f2"
             break;
         case 3:
-            picture.src = "https://www.taiwan.net.tw/pic.ashx?qp=1/big_scenic_spots/pic_10352_12.jpg&sizetype=3";
-            intro.textContent = "早先在荖濃溪上有一條支流小溪，由於終年冒出自地層內的熱水，對皮膚病有神奇的功效，村民稱此為「熱水溪」。現在改名為 「不老溪」。"
+            picture.src = "http://www.pu-lao.com.tw/assets/img/services/1.jpg";
+            intro.textContent = "不老溫泉早先在荖濃溪上有一條支流小溪，由於終年冒出自地層內的熱水，對皮膚病有神奇的功效，村民稱此為「熱水溪」。現在改名為 「不老溪」。"
             speaker.alt = "kaohsiung_f3"
             break;
     }
