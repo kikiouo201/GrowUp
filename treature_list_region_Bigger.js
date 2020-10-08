@@ -50,9 +50,10 @@ function RegionIcon(featureIcon) {
             if (picNTP.indexOf('dark.png') === -1) { //找不到dark
                 console.log("picNTP 1 -> " + picNTP)
                 iconRegion.style.visibility = "visible";
+                iconDiv.style.height = '310px';
                 iconDiv.innerHTML = `<img onclick="returnBMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
                 <img src="./image/icon/NewTaipei_icon.png" alt="newTaipei_f1" onclick="playNorth(this)" style="width: 120px;height: auto;margin: 8% 36%;/* margin-right: 10px; */cursor: pointer;">
-                <a style="/* display: inline-block; */position: absolute;font-size: 20px;font-weight: bold;bottom: 0;margin: 12px 20px;right: 0;">陶瓷，是新北市鶯歌區最著名的特產。相傳清朝嘉慶年間發現鄰近的尖山地區盛產黏土，遂於此設窯製陶。現多已轉向觀光化發展。</a>
+                <a style="/* display: inline-block; */position: absolute;font-size: 20px;font-weight: bold;bottom: 0;margin: 12px 20px;right: 0;">陶瓷，是新北市鶯歌區最著名的特產。相傳清朝嘉慶年間發現尖山地區盛產黏土，於是就設窯製陶。現多已轉向觀光化發展。</a>
                 <a style="position: absolute;font-size: 20px;font-weight: bold;top: 0;margin: 24px 29px;right: 0;z-index: 10;background-color: #f90b898f;border-radius: 20px;padding-left: 20px;padding-right: 20px;padding-bottom: 5px;padding-top: 5px;">新北地區</a>
                 <br><br>`
             } else {
@@ -191,9 +192,10 @@ function RegionIcon(featureIcon) {
             if (picNanT.indexOf('dark.png') === -1) { //找不到dark
                 console.log("picNanT 1 -> " + picNanT)
                 iconRegion.style.visibility = "visible";
+                iconDiv.style.height = '240px';
                 iconDiv.innerHTML = `<img onclick="returnBMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
                 <img src="./image/icon/herbal_tea.png" alt="nantou_f1" onclick="playCentral(this)" style="width: 114px;height: auto;margin: 13% 38%;/* margin-right: 10px; */cursor: pointer;">
-                <a style="/* display: inline-block; */position: absolute;font-size: 20px;font-weight: bold;bottom: 0;margin: 12px 20px;right: 0;">高山茶，是指在海拔1000公尺以上茶園，所摘取製作的茶葉。高山茶由於生長高度高、採收慢，因此茶葉苦澀度較低。近年來成為台灣最具知名度茶品，可見其品質優良。</a>
+                <a style="/* display: inline-block; */position: absolute;font-size: 20px;font-weight: bold;bottom: 0;margin: 12px 20px;right: 0;">高山茶，是指在海拔1000公尺以上茶園，所摘取製作的茶葉。</a>
                 <a style="position: absolute;font-size: 20px;font-weight: bold;top: 0;margin: 24px 29px;right: 0;z-index: 10;background-color: #3fcd96c2;border-radius: 20px;padding-left: 20px;padding-right: 20px;padding-bottom: 5px;padding-top: 5px;">南投地區</a>
                 <br><br>`
             } else {
@@ -231,9 +233,10 @@ function RegionIcon(featureIcon) {
             if (picTaiN.indexOf('dark.png') === -1) { //找不到dark
                 console.log("picTaiN 1 -> " + picTaiN)
                 iconRegion.style.visibility = "visible";
+                iconDiv.style.height = '265px';
                 iconDiv.innerHTML = `<img onclick="returnBMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
                 <img src="./image/icon/temple.png" alt="tainan_f1" onclick="playSouth(this)" style="width: 114px;height: auto;margin: 10% 38%;/* margin-right: 10px; */cursor: pointer;">
-                <a style="/* display: inline-block; */position: absolute;font-size: 20px;font-weight: bold;bottom: 0;margin: 12px 20px;right: 0;">赤崁樓又作赤崁樓，位於臺南市的中西區。前身為1653年荷治時期於赤崁行省興建之歐式城塞，又稱「普羅民遮城」，在地人稱為「番仔樓」，曾為全台灣島的商業中心。</a>
+                <a style="/* display: inline-block; */position: absolute;font-size: 20px;font-weight: bold;bottom: 0;margin: 12px 20px;right: 0;">赤崁樓，位於臺南市的中西區，又作赤崁樓，又稱「普羅民遮城」，在地人稱為「番仔樓」，曾為全台灣島的商業中心。</a>
                 <a style="position: absolute;font-size: 20px;font-weight: bold;top: 0;margin: 24px 29px;right: 0;z-index: 10;background-color: #f9530bc2;border-radius: 20px;padding-left: 20px;padding-right: 20px;padding-bottom: 5px;padding-top: 5px;">台南地區</a>
                 <br><br>`
             } else {
@@ -328,10 +331,10 @@ function RegionIcon(featureIcon) {
                 // 改iconDiv變寬
                 iconDiv.style.width = "450px"
                 iconDiv.style.margin = "10% 25%"
-
+                iconDiv.style.height = '310px';
                 iconDiv.innerHTML = `<img onclick="returnBMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
                 <img src="./image/icon/hot_air_balloon.png" alt="taitung_f1" onclick="playEast(this)" style="width: 145px;height: auto;margin: 7% 35%;/* margin-right: 10px; */cursor: pointer;">
-                <a style="/* display: inline-block; */position: absolute;font-size: 20px;font-weight: bold;bottom: 0;margin: 12px 20px;right: 0;">熱氣球，是將氣球內的氣體用瓦斯加熱，使氣球往高空飄浮。每年6月至8月，台東縣鹿野鄉所舉辦的臺灣國際熱氣球嘉年華，可以坐在熱氣球上觀賞花東縱谷的美景。</a>
+                <a style="/* display: inline-block; */position: absolute;font-size: 20px;font-weight: bold;bottom: 0;margin: 12px 20px;right: 0;">熱氣球，是將氣球內的空氣用加熱，使氣球往高空飄浮。每年6月至8月，台東縣鹿野鄉舉辦的臺灣國際熱氣球嘉年華，可以坐在熱氣球上觀賞花東縱谷的美景。</a>
                 <a style="position: absolute;font-size: 20px;font-weight: bold;top: 0;margin: 24px 29px;right: 0;z-index: 10;background-color: #00c9ffad;border-radius: 20px;padding-left: 20px;padding-right: 20px;padding-bottom: 5px;padding-top: 5px;">台東地區</a>
                 <br><br>`
             } else {
