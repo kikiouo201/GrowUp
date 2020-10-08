@@ -115,9 +115,10 @@ function RegionIcon(featureIcon) {
                 console.log("picMiaoL 1 -> " + picMiaoL)
                     // mapIcon.style.visibility = "hidden";
                 iconRegion.style.visibility = "visible";
+                iconDiv.style.height = '300px';
                 iconDiv.innerHTML = `<img onclick="returnBMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
-                <img src="./image/icon/strawberry.png" onclick="featuresText(this)" style="width: 127px;height: auto;margin: 50px 34%;/* margin-right: 10px; */cursor: pointer;">
-                <a style="/* display: inline-block; */position: absolute;font-size: 20px;font-weight: bold;bottom: 0;margin: 20px 20px;right: 0;">草莓，是苗栗縣大湖鄉的特產，氣候溫和多雨，以草莓聞名全國，素有臺灣草莓王國雅號。</a>
+                <img src="./image/icon/strawberry.png" alt="miaoli_f1" onclick="playCentral(this)" style="width: 127px;height: auto;margin: 55px 34%;/* margin-right: 10px; */cursor: pointer;">
+                <a style="/* display: inline-block; */position: absolute;font-size: 20px;font-weight: bold;bottom: 0;margin: 20px 20px;right: 0;">大湖草莓，是苗栗縣大湖鄉的特產，氣候溫和多雨，以草莓聞名全國，具有臺灣草莓王國雅號。</a>
                 <a style="position: absolute;font-size: 20px;font-weight: bold;top: 0;margin: 24px 29px;right: 0;z-index: 10;background-color: #3fcd96c2;border-radius: 20px;padding-left: 20px;padding-right: 20px;padding-bottom: 5px;padding-top: 5px;">苗栗地區</a>
                 <br><br>`
 
@@ -135,9 +136,10 @@ function RegionIcon(featureIcon) {
             if (picTaiC.indexOf('dark.png') === -1) { //找不到dark
                 console.log("picTaiC 1 -> " + picTaiC)
                 iconRegion.style.visibility = "visible";
+                iconDiv.style.height = '280px'
                 iconDiv.innerHTML = `<img onclick="returnBMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
-                <img src="./image/icon/suncake.png" onclick="featuresText(this)" style="width: 180px;height: auto;margin: 14% 28%;/* margin-right: 10px; */cursor: pointer;">
-                <a style="/* display: inline-block; */position: absolute;font-size: 20px;font-weight: bold;bottom: 0;margin: 20px 20px;right: 0;">太陽餅，是一種甜餡薄餅，一般內餡是麥芽糖，源起於台中市神岡區社口一帶林家崑派的麥芽餅，為中臺灣的名產之一。</a>
+                <img src="./image/icon/suncake.png" alt="taichung_f1" onclick="playCentral(this)" style="width: 180px;height: auto;margin: 14% 28%;/* margin-right: 10px; */cursor: pointer;">
+                <a style="/* display: inline-block; */position: absolute;font-size: 20px;font-weight: bold;bottom: 0;margin: 20px 20px;right: 0;">太陽餅，一種甜餡薄餅，通常內餡是麥芽糖，為中臺灣的名產之一。</a>
                 <a style="position: absolute;font-size: 20px;font-weight: bold;top: 0;margin: 24px 29px;right: 0;z-index: 10;background-color: #3fcd96c2;border-radius: 20px;padding-left: 20px;padding-right: 20px;padding-bottom: 5px;padding-top: 5px;">台中地區</a>
                 <br><br>`
             } else {
@@ -155,9 +157,11 @@ function RegionIcon(featureIcon) {
             if (picChangH.indexOf('dark.png') === -1) { //找不到dark
                 console.log("picChangH 1 -> " + picChangH)
                 iconRegion.style.visibility = "visible";
+                iconDiv.style.width = '420px';
+                iconDiv.style.height = '290px';
                 iconDiv.innerHTML = `<img onclick="returnBMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
-                <img src="./image/icon/meat_ball_B.png" onclick="featuresText(this)" style="width: 180px;height: auto;margin: 20% 29%;/* margin-right: 10px; */cursor: pointer;">
-                <a style="/* display: inline-block; */position: absolute;font-size: 20px;font-weight: bold;bottom: 0;margin: 20px 20px;right: 0;">彰化肉圓，台灣特色小吃。當地特色為涼式的吃法，將蒸好的肉圓放冷後，再放到冰涼的湯水內，夏天吃極為清爽。</a>
+                <img src="./image/icon/meat_ball_B.png" alt="changhua_f1" onclick="playCentral(this)" style="width: 180px;height: auto;margin: 17% 29%;/* margin-right: 10px; */cursor: pointer;">
+                <a style="/* display: inline-block; */position: absolute;font-size: 20px;font-weight: bold;bottom: 0;margin: 20px 20px;right: 0;">彰化肉圓，彰化特色小吃。當地特色為涼式的吃法，將蒸好的肉圓放冷後，再放到冰涼的湯水裡面，夏天吃的時候極為清爽。</a>
                 <a style="position: absolute;font-size: 20px;font-weight: bold;top: 0;margin: 24px 29px;right: 0;z-index: 10;background-color: #3fcd96c2;border-radius: 20px;padding-left: 20px;padding-right: 20px;padding-bottom: 5px;padding-top: 5px;">彰化地區</a>
                 <br><br>`
             } else {
@@ -177,8 +181,8 @@ function RegionIcon(featureIcon) {
                 console.log("picYuLin 1 -> " + picYuLin)
                 iconRegion.style.visibility = "visible";
                 iconDiv.innerHTML = `<img onclick="returnBMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
-                <img src="./image/icon/soy_sauce.png" onclick="featuresText(this)" style="width: 98px;height: auto;margin: 13% 42%;/* margin-right: 10px; */cursor: pointer;">
-                <a style="/* display: inline-block; */position: absolute;font-size: 20px;font-weight: bold;bottom: 0;margin: 20px 20px;right: 0;">西螺醬油，台灣雲林地區重要一級產業特產，因為水質、溫度和濕度的合宜，雲林西螺號稱臺灣的「醬油王國」。</a>
+                <img src="./image/icon/soy_sauce.png" alt="yunlin_f1" onclick="playCentral(this)" style="width: 98px;height: auto;margin: 13% 42%;/* margin-right: 10px; */cursor: pointer;">
+                <a style="/* display: inline-block; */position: absolute;font-size: 20px;font-weight: bold;bottom: 0;margin: 20px 20px;right: 0;">西螺醬油，是雲林重要的特產，因為水質、溫度和濕度的合適，雲林西螺號稱臺灣的「醬油王國」。</a>
                 <a style="position: absolute;font-size: 20px;font-weight: bold;top: 0;margin: 24px 29px;right: 0;z-index: 10;background-color: #3fcd96c2;border-radius: 20px;padding-left: 20px;padding-right: 20px;padding-bottom: 5px;padding-top: 5px;">雲林地區</a>
                 <br><br>`
             } else {
@@ -218,8 +222,8 @@ function RegionIcon(featureIcon) {
                 console.log("picChiaY 1 -> " + picChiaY)
                 iconRegion.style.visibility = "visible";
                 iconDiv.innerHTML = `<img onclick="returnBMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
-                <img src="./image/icon/meat_rice.png" onclick="featuresText(this)" style="width: 114px;height: auto;margin: 13% 38%;/* margin-right: 10px; */cursor: pointer;">
-                <a style="/* display: inline-block; */position: absolute;font-size: 20px;font-weight: bold;bottom: 0;margin: 12px 20px;right: 0;">嘉義火雞肉飯，是嘉義地區知名小吃之一。選用火雞肉當作素材，而雞汁是以全雞蒸煮所熬成的醬汁，加上酥炸過紅蔥頭的豬油，混合雞肉和白飯攪拌，味道香而不膩。</a>
+                <img src="./image/icon/meat_rice.png" alt="chiayi_f1" onclick="playSouth(this)" style="width: 114px;height: auto;margin: 17% 38%;/* margin-right: 10px; */cursor: pointer;">
+                <a style="/* display: inline-block; */position: absolute;font-size: 20px;font-weight: bold;bottom: 0;margin: 12px 20px;right: 0;">嘉義火雞肉飯，是嘉義地區知名小吃之一。選用火雞肉當作素材，而雞汁是以全雞蒸煮所熬成的醬汁，加上酥炸過紅蔥頭的豬油，混合雞肉和白飯攪拌。</a>
                 <a style="position: absolute;font-size: 20px;font-weight: bold;top: 0;margin: 24px 29px;right: 0;z-index: 10;background-color: #f9530bc2;border-radius: 20px;padding-left: 20px;padding-right: 20px;padding-bottom: 5px;padding-top: 5px;">嘉義地區</a>
                 <br><br>`
             } else {
@@ -257,8 +261,9 @@ function RegionIcon(featureIcon) {
             if (picKaoS.indexOf('dark.png') === -1) { //找不到dark
                 console.log("picKaoS 1 -> " + picKaoS)
                 iconRegion.style.visibility = "visible";
+                iconDiv.style.height = '300px'
                 iconDiv.innerHTML = `<img onclick="returnBMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
-                <img src="./image/icon/85building.png" onclick="featuresText(this)" style="width: 77px;height: auto;margin: 9% 43%;/* margin-right: 10px; */cursor: pointer;">
+                <img src="./image/icon/85building.png" alt="kaohsiung_f1" onclick="playSouth(this)" style="width: 77px;height: auto;margin: 9% 43%;/* margin-right: 10px; */cursor: pointer;">
                 <a style="/* display: inline-block; */position: absolute;font-size: 20px;font-weight: bold;bottom: 0;margin: 12px 20px;right: 0;">85大樓，位於高雄市苓雅區，外觀如同高字，為高雄第一高樓，且有世界第三的高速電梯，為台灣第二高的摩天大樓。</a>
                 <a style="position: absolute;font-size: 20px;font-weight: bold;top: 0;margin: 24px 29px;right: 0;z-index: 10;background-color: #f9530bc2;border-radius: 20px;padding-left: 20px;padding-right: 20px;padding-bottom: 5px;padding-top: 5px;">高雄地區</a>
                 <br><br>`
@@ -275,8 +280,10 @@ function RegionIcon(featureIcon) {
             if (picPingT.indexOf('dark.png') === -1) { //找不到dark
                 console.log("picPingT 1 -> " + picPingT)
                 iconRegion.style.visibility = "visible";
+                // iconDiv.style.margin = "10% 34%";
+                iconDiv.style.height = '260px';
                 iconDiv.innerHTML = `<img onclick="returnBMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
-                <img src="./image/icon/black_tuna.png" onclick="featuresText(this)" style="width: 131px;height: auto;margin: 17% 34%;/* margin-right: 10px; */cursor: pointer;">
+                <img src="./image/icon/black_tuna.png" alt="pingtung_f1" onclick="playSouth(this)" style="width: 131px;height: auto;margin: 13% 34%;/* margin-right: 10px; */cursor: pointer;">
                 <a style="/* display: inline-block; */position: absolute;font-size: 20px;font-weight: bold;bottom: 0;margin: 12px 20px;right: 0;">黑鮪魚因其體背色黑如墨，身型大如甕，所以一向俗稱『黑甕串』，再因其經濟價值極高，亦有『海中黑金』之稱謂。</a>
                 <a style="position: absolute;font-size: 20px;font-weight: bold;top: 0;margin: 24px 29px;right: 0;z-index: 10;background-color: #f9530bc2;border-radius: 20px;padding-left: 20px;padding-right: 20px;padding-bottom: 5px;padding-top: 5px;">屏東地區</a>
                 <br><br>`
@@ -314,9 +321,10 @@ function RegionIcon(featureIcon) {
             if (picHuaL.indexOf('dark.png') === -1) { //找不到dark
                 console.log("picHuaL 1 -> " + picHuaL)
                 iconRegion.style.visibility = "visible";
+                iconDiv.style.height = '260px';
                 iconDiv.innerHTML = `<img onclick="returnBMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
-                <img src="./image/icon/watermelon.png" onclick="featuresText(this)" style="width: 109px;height: auto;margin: 15% 38%;/* margin-right: 10px; */cursor: pointer;">
-                <a style="/* display: inline-block; */position: absolute;font-size: 20px;font-weight: bold;bottom: 0;margin: 12px 20px;right: 0;">大西瓜，主要分布種植在秀姑巒溪、萬里溪、壽豐溪等流域河床地區，環境自然潔淨，並富含養分，讓西瓜的口感「沙甜」且「清脆」!</a>
+                <img src="./image/icon/watermelon.png" alt="hualien_f1" onclick="playEast(this)" style="width: 109px;height: auto;margin: 15% 38%;/* margin-right: 10px; */cursor: pointer;">
+                <a style="/* display: inline-block; */position: absolute;font-size: 20px;font-weight: bold;bottom: 0;margin: 12px 20px;right: 0;">花蓮大西瓜，讓西瓜的口感「沙甜」且「清脆」!</a>
                 <a style="position: absolute;font-size: 20px;font-weight: bold;top: 0;margin: 24px 29px;right: 0;z-index: 10;background-color: #00c9ffad;border-radius: 20px;padding-left: 20px;padding-right: 20px;padding-bottom: 5px;padding-top: 5px;">花蓮地區</a>
                 <br><br>`
             } else {
