@@ -1,22 +1,18 @@
-body {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
+.map_location {
+    top: 50px;
+    left: 35px;
 }
 
-.map {
-    text-align: center;
-    position: relative;
-    /* height: 700px; */
-    /* right: -30px; */
+.mainContent {
+    left: 2%;
+    top: 0%;
 }
 
-.terrain {
-    width: 335px;
+.city {
     position: relative;
-    /* top: 45px; */
+    height: 93%;
+    top: 3%;
+    left: 223px;
     z-index: 1;
 }
 
@@ -24,50 +20,51 @@ body {
     width: 75px;
     position: absolute;
     z-index: 10;
-    top: 276px;
-    left: 244px;
+    top: 290px;
+    left: 471px;
 }
 
-.level {
-    width: 65px;
+.level_basic {
+    width: 71px;
 }
 
 .level_text {
-    width: 120px;
+    width: 60px;
     position: absolute;
     z-index: 10;
-    top: -12px;
-    left: -2%;
+    top: 17px;
+    left: 14%;
 }
 
 .level2 {
     width: 100px;
     position: absolute;
     z-index: 10;
-    top: 188px;
-    left: 181px;
+    top: 201px;
+    left: 419px;
 }
 
 .level3 {
     width: 100px;
     position: absolute;
     z-index: 10;
-    top: 124px;
-    left: 121px;
+    top: 132px;
+    left: 360px;
 }
 
 .level4 {
     width: 100px;
     position: absolute;
     z-index: 10;
-    top: 91px;
-    left: 3px;
+    top: 102px;
+    left: 241px;
 }
 
 .level5 {
-    width: 44px;
+    width: 100px;
     position: absolute;
     z-index: 10;
-    top: 32px;
-    left: 187px;
+    top: 44px;
+    left: 410px;
 }
+

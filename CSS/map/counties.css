@@ -7,7 +7,9 @@ body {
     position: absolute;
     z-index: 4;
 }
-
+div::-webkit-scrollbar {
+    display: none;
+}
 .taiwan {
     position: absolute;
     width: auto;

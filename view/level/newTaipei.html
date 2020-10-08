@@ -1,4 +1,114 @@
 <!DOCTYPE html>
+<html lang="en" style="width: 100%; height: 100%;">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GrowUp學習趣</title>
+    <link rel="stylesheet" href="../../CSS/map/counties.css">
+    <link rel="stylesheet" href="../../CSS/map/newTaipei.css">
+    <link rel="stylesheet" href="../../CSS/icon.css">
+    <script src="./northRegion_JS/north.js"></script>
+    <script src="../../model/util/checkAllLevelIsPass.js"></script>
+</head>
+<style>
+
+</style>
+
+<body style="width: 100%; height: 100%; margin: auto;" onload="checkLevelIsPass('NewTaipei_icon','newTaipei')">
+    <audio id="northAudio" src=""></audio>
+
+    <div class="bottom_title">
+        <h1>新北地區</h1>
+    </div>
+
+    <div class="Map">
+        <img class="taiwan" src="../../image/character/Taiwn_small.png" onclick="location.href='../../view/level/taiwan.html'" />
+        <img class="map_location" src="../../image/map/map.png" />
+    </div>
+
+    <div class="informationBox" style="overflow: auto;">
+        <h2>介紹</h2>
+        <img class="inforbtn" style="margin-top: 0;" src="../../image/map/NewTaipei_origin.png" onclick="playNorth(this);changeInfor(0);" alt="newTaipeiRegion" />
+        <br>
+        <!--  -->
+        <img class="inforbtn" src="../../image/icon/NewTaipei_icon.png" onclick="playNorth(this);changeInfor(1)" alt="newTaipei_f1" />
+        <br>
+        <img class="inforbtn" src="../../image/map_icon/NewTaipei_queen_head.png" onclick="playNorth(this);changeInfor(2);" alt="newTaipei_f2" />
+        <br>
+        <img class="inforbtn" src="../../image/map_icon/NewTaipei_golden_waterfall.png" onclick="playNorth(this);changeInfor(3);" alt="newTaipei_f3" />
+        <br>
+        <img class="inforbtn" src="../../image/map_icon/NewTaipei_christmas_tree.png" onclick="playNorth(this);changeInfor(4);" alt="newTaipei_f4" />
+        <br>
+        <img class="inforbtn" src="../../image/map_icon/NewTaipei_small_train.png" onclick="playNorth(this);changeInfor(5);" alt="newTaipei_f5" />
+        <br>
+    </div>
+
+    <div class="mainContent">
+    <img class="city" src="../../image/map/NewTaipei1.png" />
+        <div class="level1">
+            <img class="level_basic" alt="j" src="../../image/icon/NewTaipei_icon.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=j1&counties=newTaipei',800);playABC(this);" />
+            <img class="level_text" alt="j" src="../../image/english_alphabet/J.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=j1&counties=newTaipei',800);playABC(this);" />
+        </div>
+
+        <div class="level2">
+            <img class="level_basic" alt="k" src="../../image/icon/NewTaipei_icon.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=k1&counties=newTaipei',800);playABC(this);" />
+            <img class="level_text" alt="k" src="../../image/english_alphabet/K.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=k1&counties=newTaipei',800);playABC(this);" />
+        </div>
+        <div class="level3">
+            <img class="level_basic" alt="l" src="../../image/icon/NewTaipei_icon_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=l1&counties=newTaipei',800);playABC(this);" />
+            <img class="level_text" alt="l" src="../../image/english_alphabet/L.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=l1&counties=newTaipei',800);playABC(this);" />
+        </div>
+
+        <div class="level4">
+            <img class="level_basic" alt="m" src="../../image/icon/NewTaipei_icon.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=m1&counties=newTaipei',800);playABC(this);" />
+            <img class="level_text" alt="m" src="../../image/english_alphabet/M.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=m1&counties=newTaipei',800);playABC(this);" />
+        </div>
+
+        <div class="level5">
+            <img class="level_basic" alt="n" src="../../image/icon/NewTaipei_icon.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=n1&counties=newTaipei',800);playABC(this);" />
+            <img class="level_text" alt="n" src="../../image/english_alphabet/N.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=n1&counties=newTaipei',800);playABC(this);" />
+        </div>
+        <div class="level6">
+            <img class="level" width="45px" alt="newTaipei" src="../../image/icon/devil_lock.png" onclick="alert('需要先完成縣市所有關卡！')" />
+        </div>
+
+
+
+    </div>
+
+    <div class="fullContent">
+        <h1 onclick="document.querySelector('.fullContent').style.display='none'">X</h1>
+        <div class="introduce">
+            <div style="height: 60%;width: 100%; text-align: center;">
+                <img id="picture" style='height: 90%; border-radius: 15px; margin-top: 2%' src='https://www.taiwan.net.tw/pic.ashx?qp=1/big_scenic_spots/pic_C100_342_7.jpg&sizetype=2' />
+                <img id="speaker" style='position: absolute; top: 20px; right: 20px;  height: 15%' src="../../icons/speaker.png" onclick="playCentral(this)" alt="miaoliRegion" />
+            </div>
+            <div style="height: 40%;width: 100%;">
+                <h2 id="intro" style='margin: 0 3% 0 3%;'>
+                    是全臺人口最多的市。全境環繞臺北市，而新北地區三面環繞基隆市、蘭縣、桃園市；同時也是臺灣本島最北端與最東端。
+                </h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="btnDiv">
+        <a onclick="history.back()" class="returnfloat" id="menu-share">
+            <i class="fab fa-share return-float"><img src="../../photo/return.png"></i>
+        </a>
+
+        <a href="../../game_home.html" class="homefloat" id="menu-share">
+            <i class="fab fa-share my-float"><img src="../../photo/gobackhome.png" width="70%"></i>
+        </a>
+    </div>
+    <script src="./centralRegion_JS/levelIsPass.js"></script>
+    <script src="northRegion_JS/new_Taipei.js"></script>
+    <!-- <script src="../../model/util/voiceOut.js"></script> -->
+
+</body>
+
+
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -146,7 +256,7 @@
             }
         }
     </script>
-    <!-- <script src="../../model/util/voiceOut.js"></script> -->
+    <script src="../../model/util/voiceOut.js"></script>
 </body>
 
-</html>
+</html> -->
