@@ -11,9 +11,10 @@ function RegionIcon(featureIcon) {
             if (picKL.indexOf('dark.png') === -1) { //找不到dark
                 console.log("picKL 1 -> " + picKL)
                 iconRegion.style.visibility = "visible";
+                iconDiv.style.height = '260px';
                 iconDiv.innerHTML = `<img onclick="returnBMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
-                    <img src="./image/icon/oceanliner.png" onclick="featuresText(this)" style="width: 147px;height: auto;margin: 8% 33%;/* margin-right: 10px; */cursor: pointer;">
-                    <a style="/* display: inline-block; */position: absolute;font-size: 20px;font-weight: bold;bottom: 0;margin: 12px 20px;right: 0;">遊輪，又稱郵輪，特色在於悠閒浪漫，且提供旅遊及娛樂，像是一艘航行在海上的五星級大型度假飯店，兼具交通工具與住宿、餐廳的性質。</a>
+                    <img src="./image/icon/oceanliner.png" alt="keelung_f1" onclick="playNorth(this)" style="width: 147px;height: auto;margin: 8% 33%;/* margin-right: 10px; */cursor: pointer;">
+                    <a style="/* display: inline-block; */position: absolute;font-size: 20px;font-weight: bold;bottom: 0;margin: 12px 20px;right: 0;">遊輪，又稱郵輪，特色在於悠閒浪漫，且提供旅遊及娛樂，像是一艘航行在海上的五星級大型度假飯店。</a>
                     <a style="position: absolute;font-size: 20px;font-weight: bold;top: 0;margin: 24px 29px;right: 0;z-index: 10;background-color: #f90b898f;border-radius: 20px;padding-left: 20px;padding-right: 20px;padding-bottom: 5px;padding-top: 5px;">基隆地區</a>
                     <br><br>`
 
@@ -31,9 +32,10 @@ function RegionIcon(featureIcon) {
             if (picTP.indexOf('dark.png') === -1) { //找不到dark
                 console.log("picTP 1 -> " + picTP)
                 iconRegion.style.visibility = "visible";
+                iconDiv.style.height = '280px';
                 iconDiv.innerHTML = `<img onclick="returnBMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
                 <img src="./image/icon/taipei101.png" alt="taipei_f1" onclick="playNorth(this)" style="width: 147px;height: auto;margin: 8% 33%;/* margin-right: 10px; */cursor: pointer;">
-                <a style="/* display: inline-block; */position: absolute;font-size: 20px;font-weight: bold;bottom: 0;margin: 12px 20px;right: 0;">台北101，位於臺北市信義區，為台灣第一高樓以及唯一樓層超過100層的建築物，目前為世界第十二高樓，是臺北重要地標之一。</a>
+                <a style="/* display: inline-block; */position: absolute;font-size: 20px;font-weight: bold;bottom: 0;margin: 12px 20px;right: 0;">台北101大樓，位於臺北市信義區，是台灣第一高樓以及唯一樓層超過100層的建築物，是臺北重要地標之一。</a>
                 <a style="position: absolute;font-size: 20px;font-weight: bold;top: 0;margin: 24px 29px;right: 0;z-index: 10;background-color: #f90b898f;border-radius: 20px;padding-left: 20px;padding-right: 20px;padding-bottom: 5px;padding-top: 5px;">台北地區</a>
                 <br><br>`
             } else {
@@ -70,9 +72,10 @@ function RegionIcon(featureIcon) {
             if (picTao.indexOf('dark.png') === -1) { //找不到dark
                 console.log("picTao 1 -> " + picTao)
                 iconRegion.style.visibility = "visible";
+                iconDiv.style.height = '285px';
                 iconDiv.innerHTML = `<img onclick="returnBMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
-                <img src="./image/icon/togan.png" onclick="featuresText(this)" style="width: 155px;height: auto;margin: 7% 32%;/* margin-right: 10px; */cursor: pointer;">
-                <a style="/* display: inline-block; */position: absolute;font-size: 20px;font-weight: bold;bottom: 0;margin: 12px 20px;right: 0;">大溪豆乾，是桃園市大溪區知名的地方特產。大溪豆乾的特色是黑豆干，外皮厚而黑，整體口感較白豆乾更加硬實，味道也更加重。</a>
+                <img src="./image/icon/togan.png" alt="taoyuan_f1" onclick="playNorth(this)" style="width: 155px;height: auto;margin: 7% 32%;/* margin-right: 10px; */cursor: pointer;">
+                <a style="/* display: inline-block; */position: absolute;font-size: 20px;font-weight: bold;bottom: 0;margin: 12px 20px;right: 0;">大溪豆乾，是桃園市大溪區知名的地方特產。特色是黑豆干，外皮厚而黑，整體口感較白豆乾更加硬實，味道也更加重。</a>
                 <a style="position: absolute;font-size: 20px;font-weight: bold;top: 0;margin: 24px 29px;right: 0;z-index: 10;background-color: #f90b898f;border-radius: 20px;padding-left: 20px;padding-right: 20px;padding-bottom: 5px;padding-top: 5px;">桃園地區</a>
                 <br><br>`
             } else {
@@ -90,9 +93,10 @@ function RegionIcon(featureIcon) {
             if (picHsinC.indexOf('dark.png') === -1) { //找不到dark
                 console.log("picHsinC 1 -> " + picHsinC)
                 iconRegion.style.visibility = "visible";
+                iconDiv.style.height = '285px';
                 iconDiv.innerHTML = `<img onclick="returnBMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
-                <img src="./image/icon/pork_ball.png" onclick="featuresText(this)" style="width: 131px;height: auto;margin: 17% 34%;/* margin-right: 10px; */cursor: pointer;">
-                <a style="/* display: inline-block; */position: absolute;font-size: 20px;font-weight: bold;bottom: 0;margin: 12px 20px;right: 0;">貢丸，為豬肉製作的一種肉丸。新竹的貢丸特別有名，主要科技上的貢獻是運用機器，令貢丸可大量生產。而新竹貢丸的材料必須用新鮮溫體豬肉製作。</a>
+                <img src="./image/icon/pork_ball.png" alt="hsinchu_f1" onclick="playNorth(this)" style="width: 131px;height: auto;margin: 17% 34%;/* margin-right: 10px; */cursor: pointer;">
+                <a style="/* display: inline-block; */position: absolute;font-size: 20px;font-weight: bold;bottom: 0;margin: 12px 20px;right: 0;">貢丸，為豬肉製作的種肉丸。新竹的貢丸特別有名，而新竹貢丸的材料必須用新鮮溫體豬肉製作。</a>
                 <a style="position: absolute;font-size: 20px;font-weight: bold;top: 0;margin: 24px 29px;right: 0;z-index: 10;background-color: #f90b898f;border-radius: 20px;padding-left: 20px;padding-right: 20px;padding-bottom: 5px;padding-top: 5px;">新竹地區</a>
                 <br><br>`
 
@@ -290,9 +294,10 @@ function RegionIcon(featureIcon) {
             if (picYiL.indexOf('dark.png') === -1) { //找不到dark
                 console.log("picYiL 1 -> " + picYiL)
                 iconRegion.style.visibility = "visible";
+                iconDiv.style.height = '300px';
                 iconDiv.innerHTML = `<img onclick="returnBMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
-                <img src="./image/icon/Sanxing_green_onion.png" onclick="featuresText(this)" style="width: 131px;height: auto;margin: 17% 34%;/* margin-right: 10px; */cursor: pointer;">
-                <a style="/* display: inline-block; */position: absolute;font-size: 20px;font-weight: bold;bottom: 0;margin: 12px 20px;right: 0;">三星蔥，也稱青蔥。蔥白長、質地細緻、蔥味香濃，名列『三星四寶』之一，品質更是全台之冠。</a>
+                <img src="./image/icon/Sanxing_green_onion.png" alt="yilan_f1" onclick="playNorth(this)" style="width: 131px;height: auto;margin: 17% 34%;/* margin-right: 10px; */cursor: pointer;">
+                <a style="/* display: inline-block; */position: absolute;font-size: 20px;font-weight: bold;bottom: 0;margin: 12px 20px;right: 0;">三星蔥，白又長、質地細緻、蔥味香濃，名列『三星四寶』之一，品質更是全台之冠。</a>
                 <a style="position: absolute;font-size: 20px;font-weight: bold;top: 0;margin: 24px 29px;right: 0;z-index: 10;background-color: #f90b898f;border-radius: 20px;padding-left: 20px;padding-right: 20px;padding-bottom: 5px;padding-top: 5px;">宜蘭地區</a>
                 <br><br>`
             } else {
