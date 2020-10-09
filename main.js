@@ -147,14 +147,14 @@ ipcMain.on('close-main-window', () => {
     app.quit();
 });
 ipcMain.on('open-mjpg-streamer', async(event, arg) => {
-    // shell.cd('mjpg-streamer');
-    // let command = './mjpg_streamer -i "./input_uvc.so -y -n" -o "./output_http.so -w ./www"';
-    // // let command = 'killall mjpg_streamer'
-    // shell.exec(command, (code, std, err) => {
-    //     console.log('Exit code:', code);
-    //     console.log('Program output:', std);
-    //     console.log('Program stderr:', err);
-    // })
+    shell.cd('mjpg-streamer');
+    let command = './mjpg_streamer -i "./input_uvc.so -y -n" -o "./output_http.so -w ./www"';
+    // let command = 'killall mjpg_streamer'
+    shell.exec(command, (code, std, err) => {
+        console.log('Exit code:', code);
+        console.log('Program output:', std);
+        console.log('Program stderr:', err);
+    })
 })
 ipcMain.on('close-mjpg-streamer', async(event, arg) => {
     // let command = './mjpg_streamer -i "./input_uvc.so -y -n" -o "./output_http.so -w ./www"';
@@ -164,6 +164,7 @@ ipcMain.on('close-mjpg-streamer', async(event, arg) => {
         console.log('Program output:', std);
         console.log('Program stderr:', err);
     })
+    shell.cd('..');
     event.sender.send('reply-close-mjpg-streamer')
 })
 
