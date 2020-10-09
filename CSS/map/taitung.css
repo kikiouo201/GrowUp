@@ -1,70 +1,54 @@
-body {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
+.map_location {
+    top: 50px;
+    left: 35px;
 }
 
-.features {
-    background-color: aliceblue;
-    width: 320px;
-    height: 400px;
-    margin-top: 15px;
+.mainContent {
+    left: 2%;
+    top: 0%;
 }
 
-.map {
-    text-align: center;
+.city {
     position: relative;
-    /* height: 700px; */
-    /* top: 100px; */
-    right: -40px;
-}
-
-.terrain {
-    width: 240px;
-    position: relative;
-    /* top: -100px; */
+    height: 93%;
+    top: 3%;
+    left: 301px;
     z-index: 1;
-    margin-right: -45px;
 }
 
 .level1 {
     width: 75px;
     position: absolute;
     z-index: 10;
-    top: 227px;
-    left: 52px;
+    top: 210px;
+    left: 355px;
 }
 
 .level_basic {
     width: 52px;
 }
 
-.level {
-    width: 52px;
-}
-
 .level_text {
-    width: 120px;
+    width: 60px;
     position: absolute;
     z-index: 10;
-    top: 11px;
-    left: -19%;
+    top: 17px;
+    left: 14%;
 }
 
 .level2 {
     width: 100px;
     position: absolute;
     z-index: 10;
-    top: 99px;
-    left: 21px
+    top: 92px;
+    left: 337px;
 }
 
 .level3 {
     width: 100px;
     position: absolute;
     z-index: 10;
-    top: 7px;
-    left: 167px;
+    top: 15px;
+    left: 468px;
 }
+
