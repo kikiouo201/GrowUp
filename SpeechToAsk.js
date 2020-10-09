@@ -179,7 +179,8 @@ if (voiceBtn) {
                     data['Answer'] = answer['ansText'];
                     // console.log("answer['ansVoice']:" + answer['ansVoice'])
                     voiceA.alt = answer['ansVoice'];
-
+                    // setTimeout(() => ipcRenderer.send('uploadAPI', data), 10000);
+                    ipcRenderer.send('uploadAPI', data)
                 })
 
                 ipcRenderer.send('searchPictureBook', data['keyWord']);
@@ -202,8 +203,6 @@ if (voiceBtn) {
                     let voiceIntro = document.getElementById(`speaker_pbIntro_${click_num}`);
                     voiceName.alt = pbook['bNameVoice'];
                     voiceIntro.alt = pbook['bIntroVoice'];
-                    ipcRenderer.send('uploadAPI', data);
-
                 })
 
                 QA_card.innerHTML = QA_card.innerHTML + createQA(data['Question'], "./image/character/200.gif", "查詢中...");
