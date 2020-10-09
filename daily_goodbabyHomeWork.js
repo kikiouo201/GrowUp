@@ -5,7 +5,7 @@ const currentEx = document.getElementById("currentEx");
 
 
 ipcRenderer.send('call-frequency')
-// ipcRenderer.send('call-speechfrequency')
+    // ipcRenderer.send('call-speechfrequency')
 ipcRenderer.send('callGoodRegard');
 
 ipcRenderer.on('replyGoodregardTot', (event, data) => {
@@ -31,32 +31,40 @@ ipcRenderer.on('replyGoodregardTot', (event, data) => {
 });
 
 
-ipcRenderer.on('reply-frequency',(event,data) =>{
-    console.log("data =>"+data.Cameratotalfreq)
-    if(data['Cameratotalfreq'] >= 3){
+ipcRenderer.on('reply-frequency', (event, data) => {
+    console.log("data =>" + data.Cameratotalfreq)
+    if (data['Cameratotalfreq'] >= 3) {
         document.querySelector("#camera_success_icon").style.visibility = "visible";
         document.querySelector("#camerafreq").innerHTML = "完成";
-        document.querySelector(".CameracardStatus").style.width = data.CamerapercentColor+"%";
+        document.querySelector(".CameracardStatus").style.width = data.CamerapercentColor + "%";
         // document.querySelector("#speechfreq").innerHTML = data.Speechtotalfreq+"/3";
         // document.querySelector(".SpeechcardStatus").style.width = data.SpeechpercentColor+"%";
 
     }
-    if(data['Speechtotalfreq'] >= 3){
+    if (data['Speechtotalfreq'] >= 3) {
         document.querySelector("#speech_success_icon").style.visibility = "visible";
         document.querySelector("#speechfreq").innerHTML = "完成";
-        document.querySelector(".SpeechcardStatus").style.width = data.SpeechpercentColor+"%";
+        document.querySelector(".SpeechcardStatus").style.width = data.SpeechpercentColor + "%";
         // document.querySelector("#camerafreq").innerHTML = data.Cameratotalfreq+"/3";
         // document.querySelector(".CameracardStatus").style.width = data.CamerapercentColor+"%";
-    }
-    else{
-        document.querySelector("#speechfreq").innerHTML = data.Speechtotalfreq+"/3";
-        document.querySelector(".SpeechcardStatus").style.width = data.SpeechpercentColor+"%";
-        document.querySelector("#camerafreq").innerHTML = data.Cameratotalfreq+"/3";
-        document.querySelector(".CameracardStatus").style.width = data.CamerapercentColor+"%";
+    } else {
+        document.querySelector("#speechfreq").innerHTML = data.Speechtotalfreq + "/3";
+        document.querySelector(".SpeechcardStatus").style.width = data.SpeechpercentColor + "%";
+        document.querySelector("#camerafreq").innerHTML = data.Cameratotalfreq + "/3";
+        document.querySelector(".CameracardStatus").style.width = data.CamerapercentColor + "%";
     }
 
 })
 
+function playVoiceAndCapture(name) {
+    var audioCreate = document.getElementById("AUDIO");
+    // console.log("name:" + name.alt)
+    if (audioCreate.canPlayType("audio/mpeg")) {
+        audioCreate.setAttribute("src", `./TTS/mp3/questionMW/${name}.mp3`);
+        // console.log(`id:${id}`)
+    }
+    audioCreate.play();
+}
 
 // ipcRenderer.on('reply-camerafrequency',(event,data) =>{
 
@@ -68,5 +76,5 @@ ipcRenderer.on('reply-frequency',(event,data) =>{
 //         document.querySelector("#camerafreq").innerHTML = data['totalfreq']+"/3";
 //         document.querySelector(".CameracardStatus").style.width = data['percentColor']+"%";
 //     }
-   
+
 // })

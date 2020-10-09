@@ -16,7 +16,7 @@
 </head>
 
 <body background="photo/background.png" onload="ShowTime()">
-
+    <audio id="AUDIO" src=""></audio>
     <div class="header_div">
 
         <a class="home_title" style="text-decoration: unset; color:black">乖寶寶作業</a>
@@ -53,7 +53,7 @@
         <table class="cardTable">
             <tr>
                 <td>
-                    <a href="./SpeechToAsk.html">
+                    <a onclick="setTimeout(()=>document.location.href='./SpeechToAsk.html',800); playVoiceAndCapture('magicWord')">
                         <div class="card">
                             <img id="speech_success_icon" class="speech_success_icon" src="./image/character/mission_success.png"></img>
                             <div style="width: auto; height: 60%;">
@@ -70,7 +70,7 @@
                     </a>
                 </td>
                 <td>
-                    <a href="./camera.html">
+                    <a onclick="setTimeout(()=>document.location.href='./camera.html',800); playVoiceAndCapture('detector')">
                         <img id="camera_success_icon" class="camera_success_icon" src="./image/character/mission_success.png"></img>
                         <div class="card">
                             <div style="width: 100%;  height: 60%;">
