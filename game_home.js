@@ -7,17 +7,17 @@ const SSU = new SpeechSynthesisUtterance();
 
 ipcRenderer.send('callGoodRegard');
 ipcRenderer.send('call-frequency')
-// ipcRenderer.on('replyGoodregardValue', (event, data) => {
-//     console.log("data = " + JSON.stringify(data))
+    // ipcRenderer.on('replyGoodregardValue', (event, data) => {
+    //     console.log("data = " + JSON.stringify(data))
 
 // });
 
-ipcRenderer.on('reply-frequency',(event,data)=>{
+ipcRenderer.on('reply-frequency', (event, data) => {
     console.log("reply-freqency success")
     let alertIcon = document.querySelector("#alertIcon")
-    if(data['Cameratotalfreq'] > 3 && data['Speechtotalfreq'] > 3){
+    if (data['Cameratotalfreq'] > 3 && data['Speechtotalfreq'] > 3) {
         alertIcon.style.display = "none"
-    }else{
+    } else {
         alertIcon.style.display = "block"
     }
 })
@@ -95,17 +95,12 @@ const stopDOM = document.body;
 stopDOM.addEventListener('dblclick', toggle.bind(null, false));
 
 function playAudio(name) {
-    var audioCreate = document.createElement("AUDIO");
+    var audioCreate = document.getElementById("AUDIO");
     console.log("name:" + name.alt)
     let id = name.alt;
     if (audioCreate.canPlayType("audio/mpeg")) {
         audioCreate.setAttribute("src", `./TTS/mp3/${id}.mp3`);
         console.log(`id:${id}`)
     }
-
-    // x.setAttribute("controls", "controls");
-    document.body.appendChild(audioCreate);
-    // console.log("OK " + `${id} ` + aaauu.children[0].src)
-    // aaauu.children[0].src = "../../TTS/mp3/bpm/" + `${id}` + ".mp3"
     audioCreate.play();
 }
