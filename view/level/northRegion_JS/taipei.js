@@ -7,22 +7,22 @@ function changeInfor(type) {
   switch (type) {
       case 0:
           picture.src= "https://care-old.org/keelung/wp-content/uploads/2018/05/%E5%9F%BA%E9%9A%86.png";
-          intro.textContent = "臺北地區位於臺灣北部的臺北盆地。是臺灣的政治、經濟、文化、教育、醫療、學術研究等領域的發展中心。"
+          intro.textContent = "位於臺灣北部，為六都之一。交通四通八達，無論陸、空皆十分方便，是臺灣區最大的都市和政治、經濟、交通、文化中心。"
           speaker.alt = "taipeiRegion"
           break;
       case 1:
           picture.src = "http://www.egc.com.tw/_upload/image/masterpiece/large/9675791c51d2f0a5.jpg";
-          intro.textContent = "臺北101大樓位於臺北市信義區。是台灣第一高樓以及唯一樓層超過100層的建築物，是臺北重要地標之一。"
+          intro.textContent = "是台灣第一高樓以及唯一樓層超過100層的建築物，是世界第一座超過500公尺的大樓，目前為世界第十二高樓，是臺北重要地標之一。"
           speaker.alt = "taipei_f1"
           break;
       case 2:
           picture.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Chiang_Kai-shek_memorial_amk.jpg/420px-Chiang_Kai-shek_memorial_amk.jpg";
-          intro.textContent = "中正紀念堂，是為紀念已故前中華民國總統蔣中正的建築，也是眾多紀念蔣中正的建築中規模最大者，在國際上也是著名的地標之一。"
+          intro.textContent = "是紀念已故前中華民國總統蔣中正而興建的建築，落成以來成為臺北市及臺灣在國際上最著名地標與觀光景點之一。"
           speaker.alt = "taipei_f2"
           break;
       case 3:
           picture.src = "https://www.taiwan.net.tw/att/1/big_scenic_spots/pic_74_4.jpg";
-          intro.textContent = "國立故宮博物院，別名中山博物院。為臺灣最具規模的博物館以及臺灣八景之一，也是古代中國藝術史與漢學研究機構。"
+          intro.textContent = "別名中山博物院。收藏舊日清宮原有的各種古代文物，為臺灣最具規模的博物館以及臺灣八景之一。"
           speaker.alt = "taipei_f3"
           break; 
   }
