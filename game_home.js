@@ -104,3 +104,14 @@ function playAudio(name) {
     }
     audioCreate.play();
 }
+
+function playMap(name) {
+    var audioCreate = document.getElementById("AUDIO");
+    console.log("name:" + name.alt)
+    let id = name.alt;
+    if (audioCreate.canPlayType("audio/mpeg")) {
+        audioCreate.setAttribute("src", `./TTS/mp3/map/${id}.mp3`);
+        console.log(`id:${id}`)
+    }
+    audioCreate.play();
+}
