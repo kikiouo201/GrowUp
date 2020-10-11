@@ -107,7 +107,7 @@
 
 
         <!-- All icon ifram -->
-        <iframe id="AllIconIfram" src="./alreadyCollect_icon.html" frameborder="0" class="collect_icon" style="visibility: hidden;"></iframe>
+        <iframe style="display: none;" id="AllIconIfram" src="./alreadyCollect_icon.html" frameborder="0" class="collect_icon" style="visibility: hidden;"></iframe>
 
         <div id="collect_iconMap" class="collect_icon">
             <div id="MapIcon" style="position: absolute; width: 100%;">
@@ -118,7 +118,7 @@
 
             </div>
         </div>
-        <img src="./image/character/btn.png" class="left_button" onclick="leftIframChage()">
+        <img style="display: none;" src="./image/character/btn.png" class="left_button" onclick="leftIframChage()">
 
 
         <div class="right_main_area">
@@ -140,19 +140,19 @@
                     <ul>
                         <li style="padding: 6px 3px;">
                             <a href="#bpm_card" style="color: white;">
-                                <img src="./image/character/zhuyin.png" style="width: 46px;"></a>
+                                <img src="./image/character/zhuyin.png" style="width: 46px;" onclick="playTagName('zhuyin')"></a>
                         </li>
                     </ul>
                     <ul>
                         <li>
                             <a href="#abc_card" style="color: white;">
-                                <img src="./image/character/child.png" style="width: 40px;"></a>
+                                <img src="./image/character/child.png" style="width: 40px;" onclick="playTagName('abc')"></a>
                         </li>
                     </ul>
                     <ul>
                         <li>
                             <a href="#012_card" style="color: white; ">
-                                <img src="./image/character/numbers.png" style="width: 40px;"></a>
+                                <img src="./image/character/numbers.png" style="width: 40px;" onclick="playTagName('numbers')"></a>
                         </li>
                     </ul>
                 </div>
@@ -170,261 +170,261 @@
             <table id="bpm_card">
                 <tr>
                     <td>
-                        <a href="./view/game/drawzhuyin.html?id=b" alt="b"><img src="./image/magicCard/chineseAlphabet/b.png" class="bpm" alt="ㄅ" style="width :100%;"></a>
+                        <a><img src="./image/magicCard/chineseAlphabet/b.png" onclick="setTimeout(()=>document.location.href='./view/game/drawzhuyin.html?id=b',800);playBPM(this);" class="bpm" alt="ㄅ" style="width :100%;"></a>
                         <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="playBPM(this);" class="leftZhuyin" alt="b">
+                            <img src="./icons/speaker.png" onclick="playBPM(this);" class="leftZhuyin" alt="ㄅ">
                         </div>
                     </td>
                     <td>
-                        <a href="./view/game/drawzhuyin.html?id=p" alt="p"><img src="./image/magicCard/chineseAlphabet/p.png" class="bpm" alt="ㄆ" style="width :100%;"></a>
+                        <a><img src="./image/magicCard/chineseAlphabet/p.png" onclick="setTimeout(()=>document.location.href='./view/game/drawzhuyin.html?id=p',800);playBPM(this);" class="bpm" alt="ㄆ" style="width :100%;"></a>
                         <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="playBPM(this);" class="midZhuyin" alt="p">
+                            <img src="./icons/speaker.png" onclick="playBPM(this);" class="midZhuyin" alt="ㄆ">
                         </div>
                     </td>
                     <td>
-                        <a href="./view/game/drawzhuyin.html?id=m" alt="m"><img src="./image/magicCard/chineseAlphabet/m.png" class="bpm" alt="ㄇ" style="width :100%;"></a>
+                        <a><img src="./image/magicCard/chineseAlphabet/m.png" onclick="setTimeout(()=>document.location.href='./view/game/drawzhuyin.html?id=m',800);playBPM(this);" class="bpm" alt="ㄇ" style="width :100%;"></a>
                         <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="playBPM(this);" class="rightZhuyin" alt="m">
-                        </div>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <a href="./view/game/drawzhuyin.html?id=f" alt="f"><img src="./image/magicCard/chineseAlphabet/f.png" class="bpm" alt="ㄈ" style="width :100%;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="playBPM(this);" class="leftZhuyin" alt="f">
-                        </div>
-                    </td>
-                    <td>
-                        <a href="./view/game/drawzhuyin.html?id=d" alt="d"><img src="./image/magicCard/chineseAlphabet/d.png" class="bpm" alt="ㄉ" style="width :100%;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="playBPM(this);" class="midZhuyin" alt="d">
-                        </div>
-                    </td>
-                    <td>
-                        <a href="./view/game/drawzhuyin.html?id=t" alt="t"><img src="./image/magicCard/chineseAlphabet/t.png" class="bpm" alt="ㄊ" style="width :100%;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="playBPM(this);" class="rightZhuyin" alt="t">
+                            <img src="./icons/speaker.png" onclick="playBPM(this);" class="rightZhuyin" alt="ㄇ">
                         </div>
                     </td>
                 </tr>
 
                 <tr>
                     <td>
-                        <a href="./view/game/drawzhuyin.html?id=n" alt="n"><img src="./image/magicCard/chineseAlphabet/n.png" class="bpm" alt="ㄋ" style="width :100%;"></a>
+                        <a><img src="./image/magicCard/chineseAlphabet/f.png" onclick="setTimeout(()=>document.location.href='./view/game/drawzhuyin.html?id=f',800);playBPM(this);" class="bpm" alt="ㄈ" style="width :100%;"></a>
                         <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="playBPM(this);" class="leftZhuyin" alt="n">
+                            <img src="./icons/speaker.png" onclick="playBPM(this);" class="leftZhuyin" alt="ㄈ">
                         </div>
                     </td>
                     <td>
-                        <a href="./view/game/drawzhuyin.html?id=l" alt="l"><img src="./image/magicCard/chineseAlphabet/l.png" class="bpm" alt="ㄌ" style="width :100%;"></a>
+                        <a><img src="./image/magicCard/chineseAlphabet/d.png" onclick="setTimeout(()=>document.location.href='./view/game/drawzhuyin.html?id=d',800);playBPM(this);" class="bpm" alt="ㄉ" style="width :100%;"></a>
                         <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="playBPM(this);" class="midZhuyin" alt="l">
+                            <img src="./icons/speaker.png" onclick="playBPM(this);" class="midZhuyin" alt="ㄉ">
                         </div>
                     </td>
                     <td>
-                        <a href="./view/game/drawzhuyin.html?id=g" alt="g"><img src="./image/magicCard/chineseAlphabet/g.png" class="bpm" alt="ㄍ" style="width :100%;"></a>
+                        <a><img src="./image/magicCard/chineseAlphabet/t.png" onclick="setTimeout(()=>document.location.href='./view/game/drawzhuyin.html?id=t',800);playBPM(this);" class="bpm" alt="ㄊ" style="width :100%;"></a>
                         <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="playBPM(this);" class="rightZhuyin" alt="g">
-                        </div>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <a href="./view/game/drawzhuyin.html?id=k" alt="k"><img src="./image/magicCard/chineseAlphabet/k.png" class="bpm" alt="ㄎ" style="width :100%;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="playBPM(this);" class="leftZhuyin" alt="k">
-                        </div>
-                    </td>
-                    <td>
-                        <a href="./view/game/drawzhuyin.html?id=h" alt="h"><img src="./image/magicCard/chineseAlphabet/h.png" class="bpm" alt="ㄏ" style="width :100%;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="playBPM(this);" class="midZhuyin" alt="h">
-                        </div>
-                    </td>
-                    <td>
-                        <a href="./view/game/drawzhuyin.html?id=j" alt="j"><img src="./image/magicCard/chineseAlphabet/j.png" class="bpm" alt="ㄐ" style="width :100%;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="playBPM(this);" class="rightZhuyin" alt="j">
+                            <img src="./icons/speaker.png" onclick="playBPM(this);" class="rightZhuyin" alt="ㄊ">
                         </div>
                     </td>
                 </tr>
 
                 <tr>
                     <td>
-                        <a href="./view/game/drawzhuyin.html?id=q" alt="q"><img src="./image/magicCard/chineseAlphabet/q.png" class="bpm" alt="ㄑ" style="width :100%;"></a>
+                        <a><img src="./image/magicCard/chineseAlphabet/n.png" onclick="setTimeout(()=>document.location.href='./view/game/drawzhuyin.html?id=n',800);playBPM(this);" class="bpm" alt="ㄋ" style="width :100%;"></a>
                         <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="playBPM(this);" class="leftZhuyin" alt="q">
+                            <img src="./icons/speaker.png" onclick="playBPM(this);" class="leftZhuyin" alt="ㄋ">
                         </div>
                     </td>
                     <td>
-                        <a href="./view/game/drawzhuyin.html?id=x" alt="x"><img src="./image/magicCard/chineseAlphabet/x.png" class="bpm" alt="ㄒ" style="width :100%;"></a>
+                        <a><img src="./image/magicCard/chineseAlphabet/l.png" onclick="setTimeout(()=>document.location.href='./view/game/drawzhuyin.html?id=l',800);playBPM(this);" class="bpm" alt="ㄌ" style="width :100%;"></a>
                         <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="playBPM(this);" class="midZhuyin" alt="x">
+                            <img src="./icons/speaker.png" onclick="playBPM(this);" class="midZhuyin" alt="ㄌ">
                         </div>
                     </td>
                     <td>
-                        <a href="./view/game/drawzhuyin.html?id=zhi" alt="zhi"><img src="./image/magicCard/chineseAlphabet/zhi.png" class="bpm" alt="ㄓ" style="width :100%;"></a>
+                        <a><img src="./image/magicCard/chineseAlphabet/g.png" onclick="setTimeout(()=>document.location.href='./view/game/drawzhuyin.html?id=g',800);playBPM(this);" class="bpm" alt="ㄍ" style="width :100%;"></a>
                         <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="playBPM(this);" class="rightZhuyin" alt="zhi">
-                        </div>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <a href="./view/game/drawzhuyin.html?id=chi" alt="chi"><img src="./image/magicCard/chineseAlphabet/chi.png" class="bpm" alt="ㄔ" style="width :100%;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="playBPM(this);" class="leftZhuyin" alt="chi">
-                        </div>
-                    </td>
-                    <td>
-                        <a href="./view/game/drawzhuyin.html?id=shi" alt="shi"><img src="./image/magicCard/chineseAlphabet/shi.png" class="bpm" alt="ㄕ" style="width :100%;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="playBPM(this);" class="midZhuyin" alt="shi">
-                        </div>
-                    </td>
-                    <td>
-                        <a href="./view/game/drawzhuyin.html?id=ri" alt="ri"><img src="./image/magicCard/chineseAlphabet/ri.png" class="bpm" alt="ㄖ" style="width :100%;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="playBPM(this);" class="rightZhuyin" alt="ri">
+                            <img src="./icons/speaker.png" onclick="playBPM(this);" class="rightZhuyin" alt="ㄍ">
                         </div>
                     </td>
                 </tr>
 
                 <tr>
                     <td>
-                        <a href="./view/game/drawzhuyin.html?id=zi" alt="zi"><img src="./image/magicCard/chineseAlphabet/zi.png" class="bpm" alt="ㄗ" style="width :100%;"></a>
+                        <a><img src="./image/magicCard/chineseAlphabet/k.png" onclick="setTimeout(()=>document.location.href='./view/game/drawzhuyin.html?id=k',800);playBPM(this);" class="bpm" alt="ㄎ" style="width :100%;"></a>
                         <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="playBPM(this);" class="leftZhuyin" alt="zi">
+                            <img src="./icons/speaker.png" onclick="playBPM(this);" class="leftZhuyin" alt="ㄎ">
                         </div>
                     </td>
                     <td>
-                        <a href="./view/game/drawzhuyin.html?id=ci" alt="ci"><img src="./image/magicCard/chineseAlphabet/ci.png" class="bpm" alt="ㄘ" style="width :100%;"></a>
+                        <a><img src="./image/magicCard/chineseAlphabet/h.png" onclick="setTimeout(()=>document.location.href='./view/game/drawzhuyin.html?id=h',800);playBPM(this);" class="bpm" alt="ㄏ" style="width :100%;"></a>
                         <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="playBPM(this);" class="midZhuyin" alt="ci">
+                            <img src="./icons/speaker.png" onclick="playBPM(this);" class="midZhuyin" alt="ㄏ">
                         </div>
                     </td>
                     <td>
-                        <a href="./view/game/drawzhuyin.html?id=s" alt="s"><img src="./image/magicCard/chineseAlphabet/s.png" class="bpm" alt="ㄙ" style="width :100%;"></a>
+                        <a><img src="./image/magicCard/chineseAlphabet/j.png" onclick="setTimeout(()=>document.location.href='./view/game/drawzhuyin.html?id=j',800);playBPM(this);" class="bpm" alt="ㄐ" style="width :100%;"></a>
                         <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="playBPM(this);" class="rightZhuyin" alt="s">
-                        </div>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <a href="./view/game/drawzhuyin.html?id=yi" alt="yi"><img src="./image/magicCard/chineseAlphabet/yi.png" class="bpm" alt="ㄧ" style="width :100%;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="playBPM(this);" class="leftZhuyin" alt="yi">
-                        </div>
-                    </td>
-                    <td>
-                        <a href="./view/game/drawzhuyin.html?id=wu" alt="wu"><img src="./image/magicCard/chineseAlphabet/wu.png" class="bpm" alt="ㄨ" style="width :100%;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="playBPM(this);" class="midZhuyin" alt="wu">
-                        </div>
-                    </td>
-                    <td>
-                        <a href="./view/game/drawzhuyin.html?id=yu" alt="yu"><img src="./image/magicCard/chineseAlphabet/yu.png" class="bpm" alt="ㄩ" style="width :100%;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="playBPM(this);" class="rightZhuyin" alt="yu">
+                            <img src="./icons/speaker.png" onclick="playBPM(this);" class="rightZhuyin" alt="ㄐ">
                         </div>
                     </td>
                 </tr>
 
                 <tr>
                     <td>
-                        <a href="./view/game/drawzhuyin.html?id=a" alt="a"><img src="./image/magicCard/chineseAlphabet/a.png" class="bpm" alt="ㄚ" style="width :100%;"></a>
+                        <a><img src="./image/magicCard/chineseAlphabet/q.png" onclick="setTimeout(()=>document.location.href='./view/game/drawzhuyin.html?id=q',800);playBPM(this);" class="bpm" alt="ㄑ" style="width :100%;"></a>
                         <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="playBPM(this);" class="leftZhuyin" alt="a">
+                            <img src="./icons/speaker.png" onclick="playBPM(this);" class="leftZhuyin" alt="ㄑ">
                         </div>
                     </td>
                     <td>
-                        <a href="./view/game/drawzhuyin.html?id=o" alt="o"><img src="./image/magicCard/chineseAlphabet/o.png" class="bpm" alt="ㄛ" style="width :100%;"></a>
+                        <a><img src="./image/magicCard/chineseAlphabet/x.png" onclick="setTimeout(()=>document.location.href='./view/game/drawzhuyin.html?id=x',800);playBPM(this);" class="bpm" alt="ㄒ" style="width :100%;"></a>
                         <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="playBPM(this);" class="midZhuyin" alt="o">
+                            <img src="./icons/speaker.png" onclick="playBPM(this);" class="midZhuyin" alt="ㄒ">
                         </div>
                     </td>
                     <td>
-                        <a href="./view/game/drawzhuyin.html?id=e" alt="e"><img src="./image/magicCard/chineseAlphabet/e.png" class="bpm" alt="ㄜ" style="width :100%;"></a>
+                        <a><img src="./image/magicCard/chineseAlphabet/zhi.png" onclick="setTimeout(()=>document.location.href='./view/game/drawzhuyin.html?id=zhi',800);playBPM(this);" class="bpm" alt="ㄓ" style="width :100%;"></a>
                         <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="playBPM(this);" class="rightZhuyin" alt="e">
-                        </div>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <a href="./view/game/drawzhuyin.html?id=ae" alt="ae"><img src="./image/magicCard/chineseAlphabet/ae.png" class="bpm" alt="ㄝ" style="width :100%;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="playBPM(this);" class="leftZhuyin" alt="ae">
-                        </div>
-                    </td>
-                    <td>
-                        <a href="./view/game/drawzhuyin.html?id=ai" alt="ai"><img src="./image/magicCard/chineseAlphabet/ai.png" class="bpm" alt="ㄞ" style="width :100%;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="playBPM(this);" class="midZhuyin" alt="ai">
-                        </div>
-                    </td>
-                    <td>
-                        <a href="./view/game/drawzhuyin.html?id=ei" alt="ei"><img src="./image/magicCard/chineseAlphabet/ei.png" class="bpm" alt="ㄟ" style="width :100%;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="playBPM(this);" class="rightZhuyin" alt="ei">
+                            <img src="./icons/speaker.png" onclick="playBPM(this);" class="rightZhuyin" alt="ㄓ">
                         </div>
                     </td>
                 </tr>
 
                 <tr>
                     <td>
-                        <a href="./view/game/drawzhuyin.html?id=ao" alt="ao"><img src="./image/magicCard/chineseAlphabet/ao.png" class="bpm" alt="ㄠ" style="width :100%;"></a>
+                        <a><img src="./image/magicCard/chineseAlphabet/chi.png" onclick="setTimeout(()=>document.location.href='./view/game/drawzhuyin.html?id=chi',800);playBPM(this);" class="bpm" alt="ㄔ" style="width :100%;"></a>
                         <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="playBPM(this);" class="leftZhuyin" alt="ao">
+                            <img src="./icons/speaker.png" onclick="playBPM(this);" class="leftZhuyin" alt="ㄔ">
                         </div>
                     </td>
                     <td>
-                        <a href="./view/game/drawzhuyin.html?id=ou" alt="ou"><img src="./image/magicCard/chineseAlphabet/ou.png" class="bpm" alt="ㄡ" style="width :100%;"></a>
+                        <a><img src="./image/magicCard/chineseAlphabet/shi.png" onclick="setTimeout(()=>document.location.href='./view/game/drawzhuyin.html?id=shi',800);playBPM(this);" class="bpm" alt="ㄕ" style="width :100%;"></a>
                         <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="playBPM(this);" class="midZhuyin" alt="ou">
+                            <img src="./icons/speaker.png" onclick="playBPM(this);" class="midZhuyin" alt="ㄕ">
                         </div>
                     </td>
                     <td>
-                        <a href="./view/game/drawzhuyin.html?id=an" alt="an"><img src="./image/magicCard/chineseAlphabet/an.png" class="bpm" alt="ㄢ" style="width :100%;"></a>
+                        <a><img src="./image/magicCard/chineseAlphabet/ri.png" onclick="setTimeout(()=>document.location.href='./view/game/drawzhuyin.html?id=ri',800);playBPM(this);" class="bpm" alt="ㄖ" style="width :100%;"></a>
                         <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="playBPM(this);" class="rightZhuyin" alt="an">
-                        </div>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <a href="./view/game/drawzhuyin.html?id=en" alt="en"><img src="./image/magicCard/chineseAlphabet/en.png" class="bpm" alt="ㄣ" style="width :100%;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="playBPM(this);" class="leftZhuyin" alt="en">
-                        </div>
-                    </td>
-                    <td>
-                        <a href="./view/game/drawzhuyin.html?id=ang" alt="ang"><img src="./image/magicCard/chineseAlphabet/ang.png" class="bpm" alt="ㄤ" style="width :100%;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="playBPM(this);" class="midZhuyin" alt="ang">
-                        </div>
-                    </td>
-                    <td>
-                        <a href="./view/game/drawzhuyin.html?id=eng" alt="eng"><img src="./image/magicCard/chineseAlphabet/eng.png" class="bpm" alt="ㄥ" style="width :100%;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="playBPM(this);" class="rightZhuyin" alt="eng">
+                            <img src="./icons/speaker.png" onclick="playBPM(this);" class="rightZhuyin" alt="ㄖ">
                         </div>
                     </td>
                 </tr>
 
                 <tr>
                     <td>
-                        <a href="./view/game/drawzhuyin.html?id=er" alt="er"><img src="./image/magicCard/chineseAlphabet/er.png" class="bpm" alt="ㄦ" style="width :100%;"></a>
+                        <a><img src="./image/magicCard/chineseAlphabet/zi.png" onclick="setTimeout(()=>document.location.href='./view/game/drawzhuyin.html?id=zi',800);playBPM(this);" class="bpm" alt="ㄗ" style="width :100%;"></a>
                         <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="playBPM(this);" class="leftZhuyin" alt="er">
+                            <img src="./icons/speaker.png" onclick="playBPM(this);" class="leftZhuyin" alt="ㄗ">
+                        </div>
+                    </td>
+                    <td>
+                        <a><img src="./image/magicCard/chineseAlphabet/ci.png" onclick="setTimeout(()=>document.location.href='./view/game/drawzhuyin.html?id=ci',800);playBPM(this);" class="bpm" alt="ㄘ" style="width :100%;"></a>
+                        <div style="display: initial;">
+                            <img src="./icons/speaker.png" onclick="playBPM(this);" class="midZhuyin" alt="ㄘ">
+                        </div>
+                    </td>
+                    <td>
+                        <a><img src="./image/magicCard/chineseAlphabet/si.png" onclick="setTimeout(()=>document.location.href='./view/game/drawzhuyin.html?id=si',800);playBPM(this);" class="bpm" alt="ㄙ" style="width :100%;"></a>
+                        <div style="display: initial;">
+                            <img src="./icons/speaker.png" onclick="playBPM(this);" class="rightZhuyin" alt="ㄙ">
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <a><img src="./image/magicCard/chineseAlphabet/yi.png" onclick="setTimeout(()=>document.location.href='./view/game/drawzhuyin.html?id=yi',800);playBPM(this);" class="bpm" alt="ㄧ" style="width :100%;"></a>
+                        <div style="display: initial;">
+                            <img src="./icons/speaker.png" onclick="playBPM(this);" class="leftZhuyin" alt="ㄧ">
+                        </div>
+                    </td>
+                    <td>
+                        <a><img src="./image/magicCard/chineseAlphabet/wu.png" onclick="setTimeout(()=>document.location.href='./view/game/drawzhuyin.html?id=wu',800);playBPM(this);" class="bpm" alt="ㄨ" style="width :100%;"></a>
+                        <div style="display: initial;">
+                            <img src="./icons/speaker.png" onclick="playBPM(this);" class="midZhuyin" alt="ㄨ">
+                        </div>
+                    </td>
+                    <td>
+                        <a><img src="./image/magicCard/chineseAlphabet/yu.png" onclick="setTimeout(()=>document.location.href='./view/game/drawzhuyin.html?id=yu',800);playBPM(this);" class="bpm" alt="ㄩ" style="width :100%;"></a>
+                        <div style="display: initial;">
+                            <img src="./icons/speaker.png" onclick="playBPM(this);" class="rightZhuyin" alt="ㄩ">
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <a><img src="./image/magicCard/chineseAlphabet/a.png" onclick="setTimeout(()=>document.location.href='./view/game/drawzhuyin.html?id=a',800);playBPM(this);" class="bpm" alt="ㄚ" style="width :100%;"></a>
+                        <div style="display: initial;">
+                            <img src="./icons/speaker.png" onclick="playBPM(this);" class="leftZhuyin" alt="ㄚ">
+                        </div>
+                    </td>
+                    <td>
+                        <a><img src="./image/magicCard/chineseAlphabet/o.png" onclick="setTimeout(()=>document.location.href='./view/game/drawzhuyin.html?id=o',800);playBPM(this);" class="bpm" alt="ㄛ" style="width :100%;"></a>
+                        <div style="display: initial;">
+                            <img src="./icons/speaker.png" onclick="playBPM(this);" class="midZhuyin" alt="ㄛ">
+                        </div>
+                    </td>
+                    <td>
+                        <a><img src="./image/magicCard/chineseAlphabet/e.png" onclick="setTimeout(()=>document.location.href='./view/game/drawzhuyin.html?id=e',800);playBPM(this);" class="bpm" alt="ㄜ" style="width :100%;"></a>
+                        <div style="display: initial;">
+                            <img src="./icons/speaker.png" onclick="playBPM(this);" class="rightZhuyin" alt="ㄜ">
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <a><img src="./image/magicCard/chineseAlphabet/ae.png" onclick="setTimeout(()=>document.location.href='./view/game/drawzhuyin.html?id=ae',800);playBPM(this);" class="bpm" alt="ㄝ" style="width :100%;"></a>
+                        <div style="display: initial;">
+                            <img src="./icons/speaker.png" onclick="playBPM(this);" class="leftZhuyin" alt="ㄝ">
+                        </div>
+                    </td>
+                    <td>
+                        <a><img src="./image/magicCard/chineseAlphabet/ai.png" onclick="setTimeout(()=>document.location.href='./view/game/drawzhuyin.html?id=ai',800);playBPM(this);" class="bpm" alt="ㄞ" style="width :100%;"></a>
+                        <div style="display: initial;">
+                            <img src="./icons/speaker.png" onclick="playBPM(this);" class="midZhuyin" alt="ㄞ">
+                        </div>
+                    </td>
+                    <td>
+                        <a><img src="./image/magicCard/chineseAlphabet/ei.png" onclick="setTimeout(()=>document.location.href='./view/game/drawzhuyin.html?id=ei',800);playBPM(this);" class="bpm" alt="ㄟ" style="width :100%;"></a>
+                        <div style="display: initial;">
+                            <img src="./icons/speaker.png" onclick="playBPM(this);" class="rightZhuyin" alt="ㄟ">
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <a><img src="./image/magicCard/chineseAlphabet/ao.png" onclick="setTimeout(()=>document.location.href='./view/game/drawzhuyin.html?id=ao',800);playBPM(this);" class="bpm" alt="ㄠ" style="width :100%;"></a>
+                        <div style="display: initial;">
+                            <img src="./icons/speaker.png" onclick="playBPM(this);" class="leftZhuyin" alt="ㄠ">
+                        </div>
+                    </td>
+                    <td>
+                        <a><img src="./image/magicCard/chineseAlphabet/ou.png" onclick="setTimeout(()=>document.location.href='./view/game/drawzhuyin.html?id=ou',800);playBPM(this);" class="bpm" alt="ㄡ" style="width :100%;"></a>
+                        <div style="display: initial;">
+                            <img src="./icons/speaker.png" onclick="playBPM(this);" class="midZhuyin" alt="ㄡ">
+                        </div>
+                    </td>
+                    <td>
+                        <a><img src="./image/magicCard/chineseAlphabet/an.png" onclick="setTimeout(()=>document.location.href='./view/game/drawzhuyin.html?id=an',800);playBPM(this);" class="bpm" alt="ㄢ" style="width :100%;"></a>
+                        <div style="display: initial;">
+                            <img src="./icons/speaker.png" onclick="playBPM(this);" class="rightZhuyin" alt="ㄢ">
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <a><img src="./image/magicCard/chineseAlphabet/en.png" onclick="setTimeout(()=>document.location.href='./view/game/drawzhuyin.html?id=en',800);playBPM(this);" class="bpm" alt="ㄣ" style="width :100%;"></a>
+                        <div style="display: initial;">
+                            <img src="./icons/speaker.png" onclick="playBPM(this);" class="leftZhuyin" alt="ㄣ">
+                        </div>
+                    </td>
+                    <td>
+                        <a><img src="./image/magicCard/chineseAlphabet/ang.png" onclick="setTimeout(()=>document.location.href='./view/game/drawzhuyin.html?id=ang',800);playBPM(this);" class="bpm" alt="ㄤ" style="width :100%;"></a>
+                        <div style="display: initial;">
+                            <img src="./icons/speaker.png" onclick="playBPM(this);" class="midZhuyin" alt="ㄤ">
+                        </div>
+                    </td>
+                    <td>
+                        <a><img src="./image/magicCard/chineseAlphabet/eng.png" onclick="setTimeout(()=>document.location.href='./view/game/drawzhuyin.html?id=eng',800);playBPM(this);" class="bpm" alt="ㄥ" style="width :100%;"></a>
+                        <div style="display: initial;">
+                            <img src="./icons/speaker.png" onclick="playBPM(this);" class="rightZhuyin" alt="ㄥ">
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <a><img src="./image/magicCard/chineseAlphabet/er.png" onclick="setTimeout(()=>document.location.href='./view/game/drawzhuyin.html?id=er',800);playBPM(this);" class="bpm" alt="ㄦ" style="width :100%;"></a>
+                        <div style="display: initial;">
+                            <img src="./icons/speaker.png" onclick="playBPM(this);" class="leftZhuyin" alt="ㄦ">
                         </div>
                     </td>
                 </tr>
@@ -435,157 +435,157 @@
             <table id="abc_card">
                 <tr>
                     <td>
-                        <a href="./view/game/drawzhuyin.html?id=A1" alt="a1"><img src="./image/magicCard/mixABC/a1.png" class="abc" alt="a" style="height: 115px;"></a>
+                        <a><img src="./image/magicCard/mixABC/a1.png" onclick="setTimeout(()=>location.href='./view/game/drawzhuyin.html?id=a1',800);playABC(this);" class="abc" alt="a" style="height: 115px;"></a>
                         <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="playABC(this);" class="leftEng" alt="a1">
+                            <img src="./icons/speaker.png" onclick="playABC(this);" class="leftEng" alt="a">
                         </div>
                     </td>
                     <td>
-                        <a href="./view/game/drawzhuyin.html?id=B1" alt="b1"><img src="./image/magicCard/mixABC/b1.png" class="abc" alt="b" style="height: 115px;"></a>
+                        <a><img src="./image/magicCard/mixABC/b1.png" onclick="setTimeout(()=>location.href='./view/game/drawzhuyin.html?id=b1',800);playABC(this);" class="abc" alt="b" style="height: 115px;"></a>
                         <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="playABC(this)" class="midEng" alt="b1">
+                            <img src="./icons/speaker.png" onclick="playABC(this)" class="midEng" alt="b">
                         </div>
                     </td>
                     <td>
-                        <a href="./view/game/drawzhuyin.html?id=C1" alt="c1"><img src="./image/magicCard/mixABC/c1.png" class="abc" alt="c" style="height: 115px; margin-left: -4px;"></a>
+                        <a><img src="./image/magicCard/mixABC/c1.png" onclick="setTimeout(()=>location.href='./view/game/drawzhuyin.html?id=c1',800);playABC(this);" class="abc" alt="c" style="height: 115px; margin-left: -4px;"></a>
                         <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="playABC(this)" class="rightEng" alt="c1">
-                        </div>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <a href="./view/game/drawzhuyin.html?id=D1" alt="d1"><img src="./image/magicCard/mixABC/d1.png" class="abc" alt="d" style="height: 115px;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="playABC(this)" class="leftEng" alt="d1">
-                        </div>
-                    </td>
-
-                    <td>
-                        <a href="./view/game/drawzhuyin.html?id=E1" alt="e1"><img src="./image/magicCard/mixABC/e1.png" class="abc" alt="e" style="height: 115px; margin-left: -1px;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="playABC(this)" class="midEng" alt="e1">
-                        </div>
-                    </td>
-
-                    <td>
-                        <a href="./view/game/drawzhuyin.html?id=F1" alt="f1"><img src="./image/magicCard/mixABC/f1.png" class="abc" alt="f" style="height: 115px; margin-left: -6px;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="playABC(this)" class="rightEng" alt="f1">
+                            <img src="./icons/speaker.png" onclick="playABC(this)" class="rightEng" alt="c">
                         </div>
                     </td>
                 </tr>
 
                 <tr>
                     <td>
-                        <a href="./view/game/drawzhuyin.html?id=G1" alt="g1"><img src="./image/magicCard/mixABC/g1.png" class="abc" alt="g" style="height: 115px;"></a>
+                        <a><img src="./image/magicCard/mixABC/d1.png" onclick="setTimeout(()=>location.href='./view/game/drawzhuyin.html?id=d1',800);playABC(this);" class="abc" alt="d" style="height: 115px;"></a>
                         <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="playABC(this)" class="leftEng" alt="g1">
+                            <img src="./icons/speaker.png" onclick="playABC(this)" class="leftEng" alt="d">
                         </div>
                     </td>
 
                     <td>
-                        <a href="./view/game/drawzhuyin.html?id=H1" alt="h1"><img src="./image/magicCard/mixABC/h1.png" class="abc" alt="h" style="height: 115px; margin-left: -4px;"></a>
+                        <a><img src="./image/magicCard/mixABC/e1.png" onclick="setTimeout(()=>location.href='./view/game/drawzhuyin.html?id=e1',800);playABC(this);" class="abc" alt="e" style="height: 115px; margin-left: -1px;"></a>
                         <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="playABC(this)" class="midEng" alt="h1">
+                            <img src="./icons/speaker.png" onclick="playABC(this)" class="midEng" alt="e">
                         </div>
                     </td>
 
                     <td>
-                        <a href="./view/game/drawzhuyin.html?id=I1" alt="i1"><img src="./image/magicCard/mixABC/i1.png" class="abc" alt="i" style="height: 115px; margin-left: -4px;"></a>
+                        <a><img src="./image/magicCard/mixABC/f1.png" onclick="setTimeout(()=>location.href='./view/game/drawzhuyin.html?id=f1',800);playABC(this);" class="abc" alt="f" style="height: 115px; margin-left: -6px;"></a>
                         <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="playABC(this)" class="rightEng" alt="i1">
-                        </div>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <a href="./view/game/drawzhuyin.html?id=J1" alt="j1"><img src="./image/magicCard/mixABC/j1.png" class="abc" alt="j" style="height: 115px; margin-left: 4px;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="playABC(this)" class="leftEng" alt="j1">
-                        </div>
-                    </td>
-
-                    <td>
-                        <a href="./view/game/drawzhuyin.html?id=K1" alt="k1"><img src="./image/magicCard/mixABC/k1.png" class="abc" alt="k" style="height: 115px; margin-left: -3px;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="playABC(this)" class="midEng" alt="k1">
-                        </div>
-                    </td>
-
-                    <td>
-                        <a href="./view/game/drawzhuyin.html?id=L1" alt="l1"><img src="./image/magicCard/mixABC/l1.png" class="abc" alt="l" style="height: 115px; margin-left: -6px;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="playABC(this)" class="rightEng" alt="l1">
+                            <img src="./icons/speaker.png" onclick="playABC(this)" class="rightEng" alt="f">
                         </div>
                     </td>
                 </tr>
 
                 <tr>
                     <td>
-                        <a href="./view/game/drawzhuyin.html?id=M1" alt="m1"><img src="./image/magicCard/mixABC/m1.png" class="abc" alt="m" style="height: 115px;"></a>
+                        <a><img src="./image/magicCard/mixABC/g1.png" onclick="setTimeout(()=>location.href='./view/game/drawzhuyin.html?id=g1',800);playABC(this);"class="abc" alt="g" style="height: 115px;"></a>
                         <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="playABC(this)" class="leftEng" alt="m1">
+                            <img src="./icons/speaker.png" onclick="playABC(this)" class="leftEng" alt="g">
                         </div>
                     </td>
 
                     <td>
-                        <a href="./view/game/drawzhuyin.html?id=N1" alt="n1"><img src="./image/magicCard/mixABC/n1.png" class="abc" alt="n" style="height: 115px; margin-left: -3px;"></a>
+                        <a><img src="./image/magicCard/mixABC/h1.png" onclick="setTimeout(()=>location.href='./view/game/drawzhuyin.html?id=h1',800);playABC(this);" class="abc" alt="h" style="height: 115px; margin-left: -4px;"></a>
                         <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="playABC(this)" class="midEng" alt="n1">
+                            <img src="./icons/speaker.png" onclick="playABC(this)" class="midEng" alt="h">
                         </div>
                     </td>
 
                     <td>
-                        <a href="./view/game/drawzhuyin.html?id=O1" alt="o1"><img src="./image/magicCard/mixABC/o1.png" class="abc" alt="o" style="height: 115px; margin-left: -9px;"></a>
+                        <a><img src="./image/magicCard/mixABC/i1.png" onclick="setTimeout(()=>location.href='./view/game/drawzhuyin.html?id=i1',800);playABC(this);" class="abc" alt="i" style="height: 115px; margin-left: -4px;"></a>
                         <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="playABC(this)" class="rightEng" alt="o1">
-                        </div>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <a href="./view/game/drawzhuyin.html?id=P1" alt="p1"><img src="./image/magicCard/mixABC/p1.png" class="abc" alt="p" style="height: 115px;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="playABC(this)" class="leftEng" alt="p1">
-                        </div>
-                    </td>
-
-                    <td>
-                        <a href="./view/game/drawzhuyin.html?id=Q1" alt="q1"><img src="./image/magicCard/mixABC/q1.png" class="abc" alt="q" style="height: 115px; margin-left: -6px;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="playABC(this)" class="midEng" alt="q1">
-                        </div>
-                    </td>
-
-                    <td>
-                        <a href="./view/game/drawzhuyin.html?id=R1" alt="r1"><img src="./image/magicCard/mixABC/r1.png" class="abc" alt="r" style="height: 115px; margin-left: -9px;"></a>
-                        <div style="display: initial;">
-                            <img src="./icons/speaker.png" onclick="playABC(this)" class="rightEng" alt="r1">
+                            <img src="./icons/speaker.png" onclick="playABC(this)" class="rightEng" alt="i">
                         </div>
                     </td>
                 </tr>
 
                 <tr>
                     <td>
-                        <a href="./view/game/drawzhuyin.html?id=S1" alt="s1"><img src="./image/magicCard/mixABC/s1.png" class="abc" alt="s" style="height: 115px;"></a>
+                        <a><img src="./image/magicCard/mixABC/j1.png" onclick="setTimeout(()=>location.href='./view/game/drawzhuyin.html?id=j1',800);playABC(this);" class="abc" alt="j" style="height: 115px; margin-left: 4px;"></a>
+                        <div style="display: initial;">
+                            <img src="./icons/speaker.png" onclick="playABC(this)" class="leftEng" alt="j">
+                        </div>
+                    </td>
+
+                    <td>
+                        <a><img src="./image/magicCard/mixABC/k1.png" onclick="setTimeout(()=>location.href='./view/game/drawzhuyin.html?id=k1',800);playABC(this);" class="abc" alt="k" style="height: 115px; margin-left: -3px;"></a>
+                        <div style="display: initial;">
+                            <img src="./icons/speaker.png" onclick="playABC(this)" class="midEng" alt="k">
+                        </div>
+                    </td>
+
+                    <td>
+                        <a><img src="./image/magicCard/mixABC/l1.png" onclick="setTimeout(()=>location.href='./view/game/drawzhuyin.html?id=l1',800);playABC(this);" class="abc" alt="l" style="height: 115px; margin-left: -6px;"></a>
+                        <div style="display: initial;">
+                            <img src="./icons/speaker.png" onclick="playABC(this)" class="rightEng" alt="l">
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <a><img src="./image/magicCard/mixABC/m1.png" onclick="setTimeout(()=>location.href='./view/game/drawzhuyin.html?id=m1',800);playABC(this);" class="abc" alt="m" style="height: 115px;"></a>
+                        <div style="display: initial;">
+                            <img src="./icons/speaker.png" onclick="playABC(this)" class="leftEng" alt="m">
+                        </div>
+                    </td>
+
+                    <td>
+                        <a><img src="./image/magicCard/mixABC/n1.png" onclick="setTimeout(()=>location.href='./view/game/drawzhuyin.html?id=n1',800);playABC(this);" class="abc" alt="n" style="height: 115px; margin-left: -3px;"></a>
+                        <div style="display: initial;">
+                            <img src="./icons/speaker.png" onclick="playABC(this)" class="midEng" alt="n">
+                        </div>
+                    </td>
+
+                    <td>
+                        <a><img src="./image/magicCard/mixABC/o1.png" onclick="setTimeout(()=>location.href='./view/game/drawzhuyin.html?id=o1',800);playABC(this);" class="abc" alt="o" style="height: 115px; margin-left: -9px;"></a>
+                        <div style="display: initial;">
+                            <img src="./icons/speaker.png" onclick="playABC(this)" class="rightEng" alt="o">
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <a><img src="./image/magicCard/mixABC/p1.png" onclick="setTimeout(()=>location.href='./view/game/drawzhuyin.html?id=p1',800);playABC(this);" class="abc" alt="p" style="height: 115px;"></a>
+                        <div style="display: initial;">
+                            <img src="./icons/speaker.png" onclick="playABC(this)" class="leftEng" alt="p">
+                        </div>
+                    </td>
+
+                    <td>
+                        <a><img src="./image/magicCard/mixABC/q1.png" onclick="setTimeout(()=>location.href='./view/game/drawzhuyin.html?id=q1',800);playABC(this);" class="abc" alt="q" style="height: 115px; margin-left: -6px;"></a>
+                        <div style="display: initial;">
+                            <img src="./icons/speaker.png" onclick="playABC(this)" class="midEng" alt="q">
+                        </div>
+                    </td>
+
+                    <td>
+                        <a><img src="./image/magicCard/mixABC/r1.png" onclick="setTimeout(()=>location.href='./view/game/drawzhuyin.html?id=r1',800);playABC(this);" class="abc" alt="r" style="height: 115px; margin-left: -9px;"></a>
+                        <div style="display: initial;">
+                            <img src="./icons/speaker.png" onclick="playABC(this)" class="rightEng" alt="r">
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <a><img src="./image/magicCard/mixABC/s1.png" onclick="setTimeout(()=>location.href='./view/game/drawzhuyin.html?id=s1',800);playABC(this);" class="abc" alt="s" style="height: 115px;"></a>
                         <div style="display: initial;">
                             <img src="./icons/speaker.png" onclick="playABC(this)" class="leftEng" alt="s1">
                         </div>
                     </td>
 
                     <td>
-                        <a href="./view/game/drawzhuyin.html?id=T1" alt="t1"><img src="./image/magicCard/mixABC/t1.png" class="abc" alt="t" style="height: 115px; margin-left: -4px;"></a>
+                        <a><img src="./image/magicCard/mixABC/t1.png" onclick="setTimeout(()=>location.href='./view/game/drawzhuyin.html?id=t1',800);playABC(this);" class="abc" alt="t" style="height: 115px; margin-left: -4px;"></a>
                         <div style="display: initial;">
                             <img src="./icons/speaker.png" onclick="playABC(this)" class="midEng" alt="t1">
                         </div>
                     </td>
 
                     <td>
-                        <a href="./view/game/drawzhuyin.html?id=U1" alt="u1"><img src="./image/magicCard/mixABC/u1.png" class="abc" alt="u" style="height: 115px; margin-left: -12px;"></a>
+                        <a><img src="./image/magicCard/mixABC/u1.png" onclick="setTimeout(()=>location.href='./view/game/drawzhuyin.html?id=u1',800);playABC(this);" class="abc" alt="u" style="height: 115px; margin-left: -12px;"></a>
                         <div style="display: initial;">
                             <img src="./icons/speaker.png" onclick="playABC(this)" class="rightEng" alt="u1">
                         </div>
@@ -594,21 +594,21 @@
 
                 <tr>
                     <td>
-                        <a href="./view/game/drawzhuyin.html?id=V1" alt="v1"><img src="./image/magicCard/mixABC/v1.png" class="abc" alt="v" style="height: 115px;"></a>
+                        <a><img src="./image/magicCard/mixABC/v1.png" onclick="setTimeout(()=>location.href='./view/game/drawzhuyin.html?id=v1',800);playABC(this);" class="abc" alt="v" style="height: 115px;"></a>
                         <div style="display: initial;">
                             <img src="./icons/speaker.png" onclick="playABC(this)" class="leftEng" alt="v1">
                         </div>
                     </td>
 
                     <td>
-                        <a href="./view/game/drawzhuyin.html?id=W1" alt="w1"><img src="./image/magicCard/mixABC/w1.png" class="abc" alt="w" style="height: 115px; margin-left: -8px;"></a>
+                        <a><img src="./image/magicCard/mixABC/w1.png" onclick="setTimeout(()=>location.href='./view/game/drawzhuyin.html?id=w1',800);playABC(this);" class="abc" alt="w" style="height: 115px; margin-left: -8px;"></a>
                         <div style="display: initial;">
                             <img src="./icons/speaker.png" onclick="playABC(this)" class="midEng" alt="w1">
                         </div>
                     </td>
 
                     <td>
-                        <a href="./view/game/drawzhuyin.html?id=X1" alt="x1"><img src="./image/magicCard/mixABC/x1.png" class="abc" alt="x" style="height: 115px; margin-left: -9px;"></a>
+                        <a><img src="./image/magicCard/mixABC/x1.png" onclick="setTimeout(()=>location.href='./view/game/drawzhuyin.html?id=x1',800);playABC(this);" class="abc" alt="x" style="height: 115px; margin-left: -9px;"></a>
                         <div style="display: initial;">
                             <img src="./icons/speaker.png" onclick="playABC(this)" class="rightEng" alt="x1">
                         </div>
@@ -617,14 +617,14 @@
 
                 <tr>
                     <td>
-                        <a href="./view/game/drawzhuyin.html?id=Y1" alt="y1"><img src="./image/magicCard/mixABC/y1.png" class="abc" alt="y" style="height: 115px;"></a>
+                        <a><img src="./image/magicCard/mixABC/y1.png" onclick="setTimeout(()=>location.href='./view/game/drawzhuyin.html?id=y1',800);playABC(this);" class="abc" alt="y" style="height: 115px;"></a>
                         <div style="display: initial;">
                             <img src="./icons/speaker.png" onclick="playABC(this)" class="leftEng" alt="y1">
                         </div>
                     </td>
 
                     <td>
-                        <a href="./view/game/drawzhuyin.html?id=Z1" alt="z1"><img src="./image/magicCard/mixABC/z1.png" class="abc" alt="z" style="height: 115px; margin-left: -5px;"></a>
+                        <a><img src="./image/magicCard/mixABC/z1.png" onclick="setTimeout(()=>location.href='./view/game/drawzhuyin.html?id=z1',800);playABC(this);" class="abc" alt="z" style="height: 115px; margin-left: -5px;"></a>
                         <div style="display: initial;">
                             <img src="./icons/speaker.png" onclick="playABC(this)" class="midEng" alt="z1">
                         </div>
@@ -636,19 +636,19 @@
             <table id="012_card">
                 <tr>
                     <td>
-                        <a href="./view/game/drawzhuyin.html?id=0" alt="0"><img src="./image/magicCard/012/0.png" class="num" alt="0" style="width :100%;"></a>
+                        <a><img src="./image/magicCard/012/0.png" onclick="setTimeout(()=>location.href='./view/game/drawzhuyin.html?id=0',800);play012(this);" class="num" alt="0" style="width :100%;"></a>
                         <div style="display: initial;">
                             <img src="./icons/speaker.png" onclick="play012(this)" class="leftNumber" alt="0">
                         </div>
                     </td>
                     <td>
-                        <a href="./view/game/drawzhuyin.html?id=1" alt="1"><img src="./image/magicCard/012/1.png" class="num" alt="1" style="width :100%;"></a>
+                        <a><img src="./image/magicCard/012/1.png" onclick="setTimeout(()=>location.href='./view/game/drawzhuyin.html?id=1',800);play012(this);" class="num" alt="1" style="width :100%;"></a>
                         <div style="display: initial;">
                             <img src="./icons/speaker.png" onclick="play012(this)" class="midNumber" alt="1">
                         </div>
                     </td>
                     <td>
-                        <a href="./view/game/drawzhuyin.html?id=2" alt="2"><img src="./image/magicCard/012/2.png" class="num" alt="2" style="width :100%;"></a>
+                        <a><img src="./image/magicCard/012/2.png" onclick="setTimeout(()=>location.href='./view/game/drawzhuyin.html?id=2',800);play012(this);" class="num" alt="2" style="width :100%;"></a>
                         <div style="display: initial;">
                             <img src="./icons/speaker.png" onclick="play012(this)" class="rightNumber" alt="2">
                         </div>
@@ -657,19 +657,19 @@
 
                 <tr>
                     <td>
-                        <a href="./view/game/drawzhuyin.html?id=3" alt="3"><img src="./image/magicCard/012/3.png" class="num" alt="3" style="width :100%;"></a>
+                        <a><img src="./image/magicCard/012/3.png" onclick="setTimeout(()=>location.href='./view/game/drawzhuyin.html?id=3',800);play012(this);" class="num" alt="3" style="width :100%;"></a>
                         <div style="display: initial;">
                             <img src="./icons/speaker.png" onclick="play012(this)" class="leftNumber" alt="3">
                         </div>
                     </td>
                     <td>
-                        <a href="./view/game/drawzhuyin.html?id=4" alt="4"><img src="./image/magicCard/012/4.png" class="num" alt="4" style="width :100%;"></a>
+                        <a><img src="./image/magicCard/012/4.png" onclick="setTimeout(()=>location.href='./view/game/drawzhuyin.html?id=4',800);play012(this);" class="num" alt="4" style="width :100%;"></a>
                         <div style="display: initial;">
                             <img src="./icons/speaker.png" onclick="play012(this)" class="midNumber" alt="4">
                         </div>
                     </td>
                     <td>
-                        <a href="./view/game/drawzhuyin.html?id=5" alt="5"><img src="./image/magicCard/012/5.png" class="num" alt="5" style="width :100%;"></a>
+                        <a><img src="./image/magicCard/012/5.png" onclick="setTimeout(()=>location.href='./view/game/drawzhuyin.html?id=5',800);play012(this);" class="num" alt="5" style="width :100%;"></a>
                         <div style="display: initial;">
                             <img src="./icons/speaker.png" onclick="play012(this)" class="rightNumber" alt="5">
                         </div>
@@ -678,19 +678,19 @@
 
                 <tr>
                     <td>
-                        <a href="./view/game/drawzhuyin.html?id=6" alt="6"><img src="./image/magicCard/012/6.png" class="num" alt="6" style="width :100%;"></a>
+                        <a><img src="./image/magicCard/012/6.png" onclick="setTimeout(()=>location.href='./view/game/drawzhuyin.html?id=6',800);play012(this);" class="num" alt="6" style="width :100%;"></a>
                         <div style="display: initial;">
                             <img src="./icons/speaker.png" onclick="play012(this)" class="leftNumber" alt="6">
                         </div>
                     </td>
                     <td>
-                        <a href="./view/game/drawzhuyin.html?id=7" alt="7"><img src="./image/magicCard/012/7.png" class="num" alt="7" style="width :100%;"></a>
+                        <a><img src="./image/magicCard/012/7.png" onclick="setTimeout(()=>location.href='./view/game/drawzhuyin.html?id=7',800);play012(this);" class="num" alt="7" style="width :100%;"></a>
                         <div style="display: initial;">
                             <img src="./icons/speaker.png" onclick="play012(this)" class="midNumber" alt="7">
                         </div>
                     </td>
                     <td>
-                        <a href="./view/game/drawzhuyin.html?id=8" alt="8"><img src="./image/magicCard/012/8.png" class="num" alt="8" style="width :100%;"></a>
+                        <a><img src="./image/magicCard/012/8.png" onclick="setTimeout(()=>location.href='./view/game/drawzhuyin.html?id=8',800);play012(this);" class="num" alt="8" style="width :100%;"></a>
                         <div style="display: initial;">
                             <img src="./icons/speaker.png" onclick="play012(this)" class="rightNumber" alt="8">
                         </div>
@@ -699,7 +699,7 @@
 
                 <tr>
                     <td>
-                        <a href="./view/game/drawzhuyin.html?id=9" alt="9"><img src="./image/magicCard/012/9.png" class="num" alt="9" style="width :100%;"></a>
+                        <a><img src="./image/magicCard/012/9.png" onclick="setTimeout(()=>location.href='./view/game/drawzhuyin.html?id=9',800);play012(this);" class="num" alt="9" style="width :100%;"></a>
                         <div style="display: initial;">
                             <img src="./icons/speaker.png" onclick="play012(this)" class="leftNumber" alt="9">
                         </div>
@@ -1147,34 +1147,6 @@
 
             // if(FeatureValue != "hidden")
             // console.log("value = " + FeatureValue)
-        }
-
-        function zhuyin(zhuyinMark) {
-            console.log("index = " + zhuyinMark)
-                // console.log("click =? " + zhuyinMark.parentNode.children[2].childNodes[0].nodeValue)
-                // const voiceText = zhuyinMark.parentNode.children[2].childNodes[0].nodeValue
-                // const zhuyinValue = zhuyinMark.parentNode.children[2].style.visibility
-                // console.log("value = " + zhuyinValue)
-
-
-            // if (FeatureValue == "hidden")
-            //     console.log("value = " + FeatureValue)
-
-            // else {
-            //     mouseDown(voiceText)
-            //     console.log("voiceText=" + mouseDown(voiceText))
-            // switch (zhuyinMark) {
-            //     case 'ㄅ':
-            console.log("zhuyin=" + zhuyinMark)
-            SSU.text = zhuyinMark;
-            toggle();
-            // }
-
-
-        }
-
-        function enlargeMap() {
-
         }
     </script>
     <!-- 聲音js -->

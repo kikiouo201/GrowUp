@@ -43,7 +43,7 @@ function changeInfor(type) {
     switch (type) {
         case 0:
             picture.src= "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/%E9%AB%98%E9%9B%84%E5%B8%82%E8%A1%8C%E6%94%BF%E5%8D%80%E5%8A%83_%282015%29.png/600px-%E9%AB%98%E9%9B%84%E5%B8%82%E8%A1%8C%E6%94%BF%E5%8D%80%E5%8A%83_%282015%29.png";
-            intro.textContent = "高雄地區昔稱為「打狗」。是臺灣最大工業區。又因有優越的港口，近海漁業發達，亦為重要遠洋漁業基地之一。"
+            intro.textContent = "昔稱為「打狗」。是臺灣最大工業區。又因有優越的港口，近海漁業發達，亦為重要遠洋漁業基地之一。"
             speaker.alt = "kaohsiungRegion"
             break;
         case 1:
