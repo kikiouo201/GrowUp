@@ -17,7 +17,7 @@ function changeInfor(type) {
           break;
       case 2:
           picture.src = "https://images.chinatimes.com/newsphoto/2020-03-21/900/20200321002361.jpg";
-          intro.textContent = "位於新竹縣關西鎮，簡稱六福村。園內有四大主題村：魔幻神奇的「阿拉伯皇宮」、狂野飆悍的「美國大西部」、熱帶島嶼風情的「南太平洋」以及近距離觀察原始動物的「非洲部落」。"
+          intro.textContent = "簡稱六福村。園內有四大主題村：魔幻神奇的「阿拉伯皇宮」、狂野飆悍的「美國大西部」、熱帶島嶼風情的「南太平洋」以及近距離觀察原始動物的「非洲部落」。"
           speaker.alt = "hsinchu_f2"
           break;
       case 3:
