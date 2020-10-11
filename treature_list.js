@@ -5,6 +5,7 @@ const abc = document.querySelectorAll('.abc');
 const number = document.querySelectorAll('.num');
 const city = document.querySelectorAll('.city');
 const cityBG = document.querySelectorAll('.cityBG');
+
 // var n = 0;
 ipcRenderer.send('callMagicCard');
 ipcRenderer.on('replyMagicCard', (event, data) => {
@@ -19,7 +20,9 @@ ipcRenderer.on('replyMagicCard', (event, data) => {
                 // console.log("log:" + bpm[i].alt)
                 // bpm[i].parentNode = "file:///C:/Users/mcuim/Desktop/Raspberry/2020_07_06/GrowUp/view/game/drawzhuyin.html?id=t"
                 // console.log("img:" + bpm[i].parentNode.getAttribute('alt'))
-                bpm[i].src = "./image/magicCard/chineseAlphabet/" + bpm[i].parentNode.getAttribute('alt') + "_lock.png";
+                let lockBPM = bpm[i].alt;
+                let bpmAlt = levelName[lockBPM];
+                bpm[i].src = `./image/magicCard/chineseAlphabet/${bpmAlt}_lock.png`;
                 // console.log("src:" + bpm[i].src)
             }
         }
@@ -31,7 +34,9 @@ ipcRenderer.on('replyMagicCard', (event, data) => {
                 // console.log("n:" + number[n].alt)
                 if (data.content[i].level_name == number[n].alt) {
                     // console.log("number level : " + data.content[i].level_name + " card " + number[n].alt);
-                    number[n].src = "./image/magicCard/012/" + number[n].parentNode.getAttribute('alt') + "_lock.png"
+                    let lock012 = number[n].alt;
+                    let numAlt = levelName[lock012];
+                    number[n].src = `./image/magicCard/012/${lock012}_lock.png`
                         // console.log("src:" + number[n].src)
                 }
             }
@@ -44,8 +49,11 @@ ipcRenderer.on('replyMagicCard', (event, data) => {
                 // console.log("n:" + abc[n].alt)
                 if (data.content[i].level_name == abc[n].alt) {
                     // console.log("abc level : " + data.content[i].level_name + " card " + abc[n].alt);
-                    abc[n].src = "./image/magicCard/mixABC/" + abc[n].parentNode.getAttribute('alt') + "_lock.png"
-                        // console.log("src:" + abc[n].src)
+                    let lockABC = abc[n].alt;
+                    // console.log("abc[n].parentNode.getAttribute('alt')=" + lockABC);
+                    let abcAlt = levelName[lockABC];
+                    abc[n].src = `./image/magicCard/mixABC/${abcAlt}_lock.png`;
+                    // console.log("src:" + abc[n].src)
                 }
             }
         }
