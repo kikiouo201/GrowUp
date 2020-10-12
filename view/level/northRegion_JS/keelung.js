@@ -43,22 +43,22 @@ function changeInfor(type) {
     switch (type) {
         case 0:
             picture.src= "https://care-old.org/keelung/wp-content/uploads/2018/05/%E5%9F%BA%E9%9A%86.png";
-            intro.textContent = "基隆地區位於臺灣北部。三面環山，只有北邊有一些些平原迎向大海，即為基隆港。"
+            intro.textContent = "位於臺灣東北部，為臺灣北部第一大港，全臺第二大港，水產產業發達，以多雨著名，故有「雨港」之稱。"
             speaker.alt = "keelungRegion"
             break;
         case 1:
             picture.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Explorer_of_the_Seas%2C_Fremantle%2C_2015_%2803%29.JPG/1920px-Explorer_of_the_Seas%2C_Fremantle%2C_2015_%2803%29.JPG";
-            intro.textContent = "遊輪又稱郵輪，特色在於悠閒浪漫，且提供旅遊及娛樂，像是一艘航行在海上的五星級大型度假飯店。"
+            intro.textContent = "又稱郵輪，特色在於悠閒浪漫，且提供旅遊及娛樂，像是一艘航行在海上的五星級大型度假飯店。"
             speaker.alt = "keelung_f1"
             break;
         case 2:
             picture.src = "https://d2j3coy501s4ze.cloudfront.net/images/23079/700/db884329acc7422db0d5866c8683fbc82ef462b2_58c174855f6cc.jpeg";
-            intro.textContent = "基隆廟口位於基隆市仁三路旁的奠濟宮周圍。是全臺灣最著名的夜市之一。尤其到晚間時段時更為熱鬧，所以也稱為廟口夜市。"
+            intro.textContent = "是全臺灣最著名的夜市之一。小吃種類眾多，全天24小時皆有店家在此營業，每到晚間夜市時段時更為熱鬧，所以也稱為廟口夜市。"
             speaker.alt = "keelung_f2"
             break;
         case 3:
             picture.src = "https://tour.klcg.gov.tw/media/1012/%E4%BA%8C%E6%B2%99%E7%81%A3%E7%A0%B2%E5%8F%B01.jpg?anchor=center&mode=crop&width=600&height=350&rnd=131909152500000000";
-            intro.textContent = "二沙灣砲臺(海門天險)，於戰爭時，為防止敵人入侵而建立的，名稱由來是因為處於二沙灣一帶的山路上，因此有「二沙灣砲臺」的別稱。"
+            intro.textContent = "又稱為海門天險，於戰爭時，為防止敵人入侵而建立，因位處於二沙灣一帶的山路上，也有「二沙灣砲臺」的別稱。"
             speaker.alt = "keelung_f3"
             break;
     }
