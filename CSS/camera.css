@@ -9,12 +9,6 @@ body {
     margin-top: auto;
 }
 
-.imgSize {
-    position: absolute;
-    top: 30%;
-    left: 10%;
-}
-
 .home_page {
     top: 0px;
     width: 100%;
@@ -86,12 +80,8 @@ body {
 
 img#AnsImg {
     display: none;
-    position: absolute;
-    border-style: double;
-    padding: 5px;
-    border-width: 10px;
-    top: 26%;
-    left: 3%;
+    width: 200px;
+    height: 200px;
 }
 
 #show_page::-webkit-scrollbar {
@@ -100,8 +90,6 @@ img#AnsImg {
 
 #show_page {
     position: absolute;
-    top: 0;
-    left: 20%;
     z-index: 1;
     width: 100%;
     height: calc(100% - 62px);
@@ -253,9 +241,21 @@ img#AnsImg {
     width: auto;
     height: auto;
     margin: 0px 20% 60px 20%;
-    padding-top: 80px;
+    padding-top: 50px;
     text-align: center;
     display: none;
+}
+
+.card_Que {
+    font-size: 30px;
+    display: inline;
+    margin-right: 0px;
+}
+
+.card_Ans {
+    font-size: 30px;
+    display: inline;
+    margin-right: 0px;
 }
 
 

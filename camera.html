@@ -35,31 +35,31 @@
     <div style="text-align: center;">
         <img id="stream" src="http://192.168.1.111:8080/?action=stream" style="width: 400px; height: 300px; ">
     </div>
-    <div>
-        <img id="AnsImg" src="" style="width: 300px; height: 300px; ">
-    </div>
+    
     <div id="show_page">
         <div class="QA_card_area" id="QA_card">
             <div class="card text-white  mb-3" style="background-color: #92337eba;">
-
                 <div class="card-body" style="margin-top: 30px;">
+                <div style="margin-left: 105px;">
+                    <img id="AnsImg" src="" >
+                </div>
                     <div style="float:left; display: block; text-align: left;">
-                        <p id="Ans" class="card-text card_A" style="float: left;">答案：</p>
-                        <p id="AnsTxt" class="card-text card_A" style="margin-left: 0px;">蘋果</p>
+                        <p id="Ans" class="card-text card_Que" style="float: left;">答案：</p>
+                        <p id="AnsTxt" class="card-text card_Que" style="margin-left: 0px;">蘋果</p>
                         <img class="speaker_A" onclick="speaker(this)" id="speaker_A" src="icons/speaker.png" />
                     </div>
 
                     <div style="float:left; display: block; text-align: left;">
-                        <p id="explain" class="card-text card_A" style="float: left;">敘述：</p>
-                        <p id="explainTxt" class="card-text card_A" style="margin-left: 0px;">落業喬木。葉軟形，邊緣有細尖鋸齒。果實球形，味美，可食，也可製酒。</p>
+                        <p id="explain" class="card-text card_Ans" style="float: left; margin-bottom: 0px;">敘述：</p>
+                        <p id="explainTxt" class="card-text card_Ans">落業喬木。葉軟形，邊緣有細尖鋸齒。果實球形，味美，可食，也可製酒。</p>
                         <img class="speaker_A" onclick="speaker(this)" id="speaker_A" src="icons/speaker.png" />
                     </div>
                 </div>
                 <div class="card-header contentCss" id="QA_num_" style="background-color: #f8f9fa24; height: auto">
                     <p class="contentlink">相關繪本連結：</p>
                     <p class="book_css"></p>
-                    <img id="bookImg" src="" style="margin-left: 25%; padding: 10px;" width="180" height="153" alt="蘋果甜蜜蜜">
-                    <p id="bookExplain" style="display: inline-block; margin-left: 20px; margin-right: 40px; font-size: 18pt;"></p>
+                    <img id="bookImg" src="https://children.moc.gov.tw/resource/animate_image/6850.jpg" style="margin-left: 25%; padding: 10px;" width="180" height="153" alt="蘋果甜蜜蜜">
+                    <p id="bookExplain" style="display: inline-block; margin-left: 20px; margin-right: 40px; font-size: 18pt;">要怎樣認識「國家」呢？每一個國家總有不同的、具代表性的文物、景物、建築或美食，在環遊世界一周後，可以帶回的東西，會是不同的明信片、紀念品，還有好吃特產呢</p>
                 </div>
                 
 
@@ -73,8 +73,8 @@
       <h2 id="leadTxt"style="font-family: Microsoft JhengHei; display:inline-block; margin-top: 8px; margin-bottom: 0px;">請先拍下你想知道的事物</h2>
     
       <span   class="mh1 voice-btn w3-btn w3-ripple" style="width: auto; height: 50px; margin-top: 2px;" >
-        <img id="identify-js"  src="./photo/camera.png"style="height: 80%; width: 50px; margin-top: 5px; cursor: pointer; " onclick="changecss()">
-
+        <!-- <img id="identify-js"  src="./photo/camera.png"style="height: 80%; width: 50px; margin-top: 5px; cursor: pointer; " onclick="changecss()"> -->
+        <img  src="./photo/camera.png"style="height: 80%; width: 50px; margin-top: 5px; cursor: pointer; " onclick="changecss()">
       </span>
         </span>
     </div>
@@ -159,21 +159,21 @@
 
     <script>
         function changecss() {
-            // var ShowVisibility = document.querySelector('.QA_card_area');
-            // var ImgVisibility = document.querySelector('img#AnsImg');
-            // var stream = document.querySelector('#stream');
-            // if(stream.style.display=="block"){
-            //     ImgVisibility.src = "./still-image.jpg"
-            //     stream.style.display="none";
-            //     ShowVisibility.style.display = "block";
-            //     ImgVisibility.style.display = "block";
-            //     document.getElementById('leadTxt').innerHTML="辨識成功!!";
-            // }else{
-            //     stream.src = "http://172.20.10.2:8080/?action=stream"
-            //     stream.style.display="block";
-            //     ShowVisibility.style.display = "none";
-            //     ImgVisibility.style.display = "none";
-            // }
+            var ShowVisibility = document.querySelector('.QA_card_area');
+            var ImgVisibility = document.querySelector('img#AnsImg');
+            var stream = document.querySelector('#stream');
+            if(stream.style.display=="block"){
+                ImgVisibility.src = "./still-image.jpg"
+                stream.style.display="none";
+                ShowVisibility.style.display = "block";
+                ImgVisibility.style.display = "block";
+                document.getElementById('leadTxt').innerHTML="辨識成功!!";
+            }else{
+                stream.src = "http://172.20.10.2:8080/?action=stream"
+                stream.style.display="block";
+                ShowVisibility.style.display = "none";
+                ImgVisibility.style.display = "none";
+            }
 
         }
     </script>
