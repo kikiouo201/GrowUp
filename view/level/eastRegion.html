@@ -1,4 +1,94 @@
 <!DOCTYPE html>
+<html lang="en" style="width: 100%; height: 100%;">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GrowUp學習趣</title>
+    <link rel="stylesheet" href="../../CSS/map/eastRegion.css">
+    <link rel="stylesheet" href="../../CSS/map/counties.css">
+    <link rel="stylesheet" href="../../CSS/interface.css">
+    <link rel="stylesheet" href="../../CSS/icon.css">
+    <script src="./eastRegion_JS/east.js"></script>
+
+        <style>
+        
+        .map {
+            text-align: center;
+            position: relative;
+            top: -48px;
+            right: -28px;
+        }
+        
+        .terrain {
+            height: 400px;
+            margin-top: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hualien {
+            position: absolute;
+            top: 21px;
+            right: 1px;
+            width: 137px;
+            z-index: 1;
+        }
+        
+        .taitung {
+            position: absolute;
+            bottom: 6px;
+            left: 2px;
+            width: 135px;
+            z-index: 1;
+        }
+    </style>
+</head>
+<style>
+
+</style>
+
+<body style="width: 100%; height: 100%; margin: auto;">
+    <audio id="centralAudio" src=""></audio>
+
+    <div class="bottom_title">
+        <h1>東部地區</h1>
+    </div>
+
+    <div class="Map">
+        <img class="taiwan" src="../../image/character/Taiwn_small.png" onclick="location.href='../../view/level/taiwan.html'" />
+    </div>
+    <audio id="eastAudio" src=""></audio>
+
+    <div class="map">
+        <img class="terrain" src="../../image/map/EastRegion.png" />
+        <img class="hualien" alt="hualien" src="../../image/map/Hualien1.png" onclick="setTimeout(()=>location.href='../../view/level/hualien.html',1100);playEast(this);" />
+        <img class="taitung" alt="taitung" src="../../image/map/Taitung1.png" onclick="setTimeout(()=>location.href='../../view/level/taitung.html',1100);playEast(this);" />
+    </div>
+
+    
+
+    <div class="btnDiv">
+        <a onclick="history.back()" class="returnfloat" id="menu-share">
+            <i class="fab fa-share return-float"><img src="../../photo/return.png"></i>
+        </a>
+
+        <a href="../../game_home.html" class="homefloat" id="menu-share">
+            <i class="fab fa-share my-float"><img src="../../photo/gobackhome.png" width="70%"></i>
+        </a>
+    </div>
+    <!-- <script src="../../model/util/voiceOut.js"></script> -->
+
+</body>
+
+</html>
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -46,25 +136,11 @@
 
 <body class="style" background="../../image/map/kraftPaper5.png">
     <audio id="eastAudio" src=""></audio>
-    <table class="features">
-        <tr>
-            <td colspan="2" style="font-size: 40px;text-align: center;">東部地區</td>
-        </tr>
 
-        <tr>
-
-            <td id="information" rowspan="1" valign="top" style="font-size:x-large;" onclick="featuresText('東部地區')">
-                &emsp;&emsp;東部地區，簡稱東臺灣，又有「臺灣最後一塊淨土」之稱。這種依山傍海的地理環境，造就了無數的山水美景。但經濟較不發達，人口密度也較低，是臺灣最晚開發的地區。
-            </td>
-        </tr>
-
-    </table>
     <div class="map">
         <img class="terrain" src="../../image/map/EastRegion.png" />
         <img class="hualien" alt="hualien" src="../../image/map/Hualien1.png" onclick="setTimeout(()=>location.href='../../view/level/hualien.html',1100);playEast(this);" />
         <img class="taitung" alt="taitung" src="../../image/map/Taitung1.png" onclick="setTimeout(()=>location.href='../../view/level/taitung.html',1100);playEast(this);" />
-
-
     </div>
     <img class="taiwan" src="../../image/character/Taiwn_small.png" onclick="location.href='../../view/level/taiwan.html'" />
 
@@ -89,7 +165,7 @@
             }
         }
     </script>
-    <!-- <script src="../../model/util/voiceOut.js"></script> -->
+    <script src="../../model/util/voiceOut.js"></script>
 </body>
 
-</html>
+</html> -->
