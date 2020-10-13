@@ -31,12 +31,16 @@
   
   
   
-  
-  .forest{
-    background: url('../../image/countingNumbers/true-2.jpeg') no-repeat;
-    background-size:cover;
-    text-align: center;
-  
+  body {
+      background: url("../../image/countingNumbers/true-2.jpeg") no-repeat;
+      background-size: cover;
+      text-align: center;
+      margin: 0px;
+  }
+
+  .forest {
+      position: relative;
+      height: 459px;
   }
   .counting{
     display: flex;
@@ -46,20 +50,18 @@
   .number{
     width: 100px;
     height: 100px;
-    border-radius: 50%;
     background-size: contain;
   }
   #drag-drop-basic {
     display: flex;
     flex-direction: column;
     justify-content:center;
+    
   }
   #drag-drop-basic #source-container {
-    height: 400px;
-    width: 92%;
-    padding: 40px;
+    height: 70px;
+    padding: 20px;
     border: 2px solid #CCC;
-    margin: 10px;
     display: flex;
     flex-direction: row;
     justify-content:center;
@@ -193,7 +195,7 @@
    
     <div class="counting">
         <div id="target-container" data-role="drag-drop-container"></div>
-        <img src="../../image/numbers/plus.png" class="number" />
+        <img id="symbol" src="../../image/numbers/plus.png" class="number" />
         <div id="target2-container" data-role="drag-drop-container"></div>
         <img src="../../image/numbers/equal.png" class="number" />
         <img src="../../image/numbers/5.png" class="number" />
@@ -237,6 +239,10 @@
   
   let sourceContainerId = '';
   let number=0;
+  let levelId = (new URLSearchParams(location.search)).get("id");
+  let symbol = document.querySelector('#symbol');
+  symbol.src=`../../image/numbers/${levelId}.png`;
+
   // Allow multiple draggable items
   let dragSources = document.querySelectorAll('[draggable="true"]');
   dragSources.forEach(dragSource => {
@@ -272,20 +278,27 @@
       cancelDefault(e);
       let id = e.dataTransfer.getData('text/plain');
       let num = parseInt(id.substring(11,12));
-      if(sourceContainerId == "source-container"){
-       
-       number+=num;
+      if(sourceContainerId == "source-container" && levelId == 'plus'){
+        number += num;
+      }else if(levelId == 'plus'){
+        number -= num;
+      }else if(sourceContainerId == "source-container"&& levelId == 'minus' && e.target.id == 'target-container'){
+        number += num;
+      }else if(sourceContainerId == "source-container"&& levelId == 'minus' && e.target.id == 'target2-container'){
+        number -= num;
+      }else if(levelId == 'minus'&& sourceContainerId == 'target-container'){
+        number -= num;
+      }else if(levelId == 'minus'){
+        number += num;
+        number=Math.abs(number);
+      }
       
-    }else{
-        number-=num;
-    }
-      
-    document.querySelector('#num').innerHTML="目前是"+number;
+      document.querySelector('#num').innerHTML="目前是"+number;
        
       e.target.appendChild(document.querySelector('#' + id));
     }
     
-    console.log('sourceContainerId', sourceContainerId);
+  //  console.log('sourceContainerId', sourceContainerId);
   
   }
   
