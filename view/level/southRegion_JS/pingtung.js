@@ -43,22 +43,22 @@ function changeInfor(type) {
     switch (type) {
         case 0:
             picture.src= "https://upload.wikimedia.org/wikipedia/commons/e/ea/Pingtung_labelled_map2.png";
-            intro.textContent = "屏東地區位於臺灣西南部最南端，也是臺灣西部南北最狹長的縣份，地處熱帶地區，富有熱帶風情。"
+            intro.textContent = "位於臺灣西南部最南端，也是臺灣西部南北最狹長的縣份，地處熱帶地區，富有熱帶風情，農漁業發達。"
             speaker.alt = "pingtungRegion"
             break;
         case 1:
             picture.src = "https://pic.17qq.com/uploads/dlcpdkldpv.jpeg";
-            intro.textContent = "黑鮪魚因其體背色黑如墨，身型大如甕，所以一向俗稱『黑甕串』，再因其經濟價值極高，亦有『海中黑金』之稱謂。"
+            intro.textContent = "運動量大，肉質結實鮮美，營養豐富，經濟價值極高，有『海中黑金』之稱謂。背部顏色黑如墨，身型大如甕，也俗稱『黑甕串』。"
             speaker.alt = "pingtung_f1"
             break;
         case 2:
             picture.src = "https://thcdc.hakka.gov.tw/wSite/public/Data/f1504074653401.jpg";
-            intro.textContent = "國立海洋生物博物館位於屏東縣車城鄉，簡稱海生館。是全台灣規模最大的，館內魚類種類豐富。"
+            intro.textContent = "簡稱海生館。是全台灣規模最大的，館內魚類種類豐富，分成台灣水域館、珊瑚王國館和世界水域館。"
             speaker.alt = "pingtung_f2"
             break;
         case 3:
             picture.src = "https://www.dbnsa.gov.tw/att/pic/b_11005457.JPG";
-            intro.textContent = "大鵬灣跨海大橋，位於屏東縣的大鵬灣灣口。全長約195公尺，為台灣唯一的開啟橋"
+            intro.textContent = "全長約195公尺，是台灣唯一的開啟橋。每週六、日和國定假日有開橋秀可觀賞，共約耗時五分鐘。"
             speaker.alt = "pingtung_f3"
             break;
     }
