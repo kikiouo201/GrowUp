@@ -13,16 +13,14 @@
     <link rel="stylesheet" href="CSS/interface.css">
     <link rel="stylesheet" href="CSS/every_four_button.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    
+
     <script src="https://apis.google.com/js/client.js"></script>
 
 
 </head>
 
 <body style="width: auto; height: auto;" background="photo/background.png" onload="ShowTime()">
-
-
-
+    <audio id="AUDIO" src=""></audio>
     <div class="home_page">
         <a class="home_title">你拍我答</a>
 
@@ -31,18 +29,18 @@
         <div id="showtime"></div>
 
     </div>
-    
+
     <div style="text-align: center;">
         <img id="stream" src="http://192.168.1.111:8080/?action=stream" style="width: 400px; height: 300px; ">
     </div>
-    
+
     <div id="show_page">
         <div class="QA_card_area" id="QA_card">
             <div class="card text-white  mb-3" style="background-color: #92337eba;">
                 <div class="card-body" style="margin-top: 30px;">
-                <div style="margin-left: 105px;">
-                    <img id="AnsImg" src="" >
-                </div>
+                    <div style="margin-left: 105px;">
+                        <img id="AnsImg" src="">
+                    </div>
                     <div style="float:left; display: block; text-align: left;">
                         <p id="Ans" class="card-text card_Que" style="float: left;">答案：</p>
                         <p id="AnsTxt" class="card-text card_Que" style="margin-left: 0px;">蘋果</p>
@@ -61,7 +59,7 @@
                     <img id="bookImg" src="https://children.moc.gov.tw/resource/animate_image/6850.jpg" style="margin-left: 25%; padding: 10px;" width="180" height="153" alt="蘋果甜蜜蜜">
                     <p id="bookExplain" style="display: inline-block; margin-left: 20px; margin-right: 40px; font-size: 18pt;">要怎樣認識「國家」呢？每一個國家總有不同的、具代表性的文物、景物、建築或美食，在環遊世界一周後，可以帶回的東西，會是不同的明信片、紀念品，還有好吃特產呢</p>
                 </div>
-                
+
 
 
             </div>
@@ -81,7 +79,7 @@
 
 
 
-   
+
     <div class="return_mark">
         <a onclick="history.back()" class="returnfloat" id="menu-share">
             <i class="fab fa-share return-float"><img src="photo/return.png"></i>
@@ -89,7 +87,7 @@
     </div>
 
     <div class="home_mark">
-        <a href="game_home.html" class="homefloat" id="menu-share">
+        <a onclick="setTimeout(()=>location.href='./game_home.html',800);goHome('home');" class="homefloat" id="menu-share">
             <i class="fab fa-share my-float"><img src="photo/gobackhome.png" width="70%"></i>
         </a>
     </div>
@@ -162,15 +160,15 @@
             var ShowVisibility = document.querySelector('.QA_card_area');
             var ImgVisibility = document.querySelector('img#AnsImg');
             var stream = document.querySelector('#stream');
-            if(stream.style.display=="block"){
+            if (stream.style.display == "block") {
                 ImgVisibility.src = "./still-image.jpg"
-                stream.style.display="none";
+                stream.style.display = "none";
                 ShowVisibility.style.display = "block";
                 ImgVisibility.style.display = "block";
-                document.getElementById('leadTxt').innerHTML="辨識成功!!";
-            }else{
+                document.getElementById('leadTxt').innerHTML = "辨識成功!!";
+            } else {
                 stream.src = "http://172.20.10.2:8080/?action=stream"
-                stream.style.display="block";
+                stream.style.display = "block";
                 ShowVisibility.style.display = "none";
                 ImgVisibility.style.display = "none";
             }

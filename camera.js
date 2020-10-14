@@ -14,3 +14,9 @@ function playVoiceAndCapture(name) {
     }
     audioCreate.play();
 }
+
+function goHome(name) {
+    var audioCreate = document.getElementById("AUDIO");
+    audioCreate.setAttribute("src", `./TTS/mp3/${name}.mp3`);
+    audioCreate.play();
+}

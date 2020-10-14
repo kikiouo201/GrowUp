@@ -191,3 +191,9 @@ function playTagName(name) {
     }
     TagName.play();
 }
+
+function goHome(name) {
+    var audioCreate = document.getElementById("Audio");
+    audioCreate.setAttribute("src", `./TTS/mp3/${name}.mp3`);
+    audioCreate.play();
+}

@@ -1,4 +1,4 @@
-let {ipcRenderer }= require('electron');
+let { ipcRenderer } = require('electron');
 const api = require('./node/model/api');
 const request = require('request')
 const cheerio = require('cheerio')
@@ -9,8 +9,8 @@ let ShowVisibility = document.querySelector('.QA_card_area');
 let ImgVisibility = document.querySelector('img#AnsImg');
 let stream = document.querySelector('#stream');
 let QA_card = document.getElementById("QA_card")
-let book_name,bookImg,bookExplain =""
-const createQA = (text1,text2,bookName,bookImg,bookExplain) =>`
+let book_name, bookImg, bookExplain = ""
+const createQA = (text1, text2, bookName, bookImg, bookExplain) => `
                                             <div class="card text-white  mb-3" style="background-color: #92337eba;">
 
                                                 <div class="card-body" style="margin-top: 30px;">
@@ -39,179 +39,172 @@ const createQA = (text1,text2,bookName,bookImg,bookExplain) =>`
 
 let identifyBtn = document.querySelector('#identify-js');
 let reset = document.querySelector('#reset');
-if(reset){
-    reset.addEventListener('click',()=>{
+if (reset) {
+    reset.addEventListener('click', () => {
         ipcRenderer.send('call-reset')
     })
 }
-var answer,explain;
-if(identifyBtn){
-identifyBtn.addEventListener('click',()=>{   
-    ipcRenderer.send('close-mjpg-streamer')
-    // ipcRenderer.send('vision')
-    ipcRenderer.on('reply-close-mjpg-streamer',(event,data)=>{
-        document.getElementById('leadTxt').innerHTML="拍照中。。。";
-        ipcRenderer.send('captrue');
+var answer, explain;
+if (identifyBtn) {
+    identifyBtn.addEventListener('click', () => {
+        ipcRenderer.send('close-mjpg-streamer')
+            // ipcRenderer.send('vision')
+        ipcRenderer.on('reply-close-mjpg-streamer', (event, data) => {
+            document.getElementById('leadTxt').innerHTML = "拍照中。。。";
+            ipcRenderer.send('captrue');
 
-        // ShowVisibility.style.display = "none";
-        // ImgVisibility.style.display = "none";
-        // stream.style.display="block";
-        console.log('ready');
-    })
+            // ShowVisibility.style.display = "none";
+            // ImgVisibility.style.display = "none";
+            // stream.style.display="block";
+            console.log('ready');
+        })
 
-    ipcRenderer.on('reply-mainjsfunction-captrue',(event,data)=>{
-        console.log("hihi");
-        stream.style.display="none";
-        document.getElementById('leadTxt').innerHTML="讀取照片。。。";
-        ipcRenderer.send('vision');
-    })
-    
+        ipcRenderer.on('reply-mainjsfunction-captrue', (event, data) => {
+            console.log("hihi");
+            stream.style.display = "none";
+            document.getElementById('leadTxt').innerHTML = "讀取照片。。。";
+            ipcRenderer.send('vision');
+        })
 
-    ipcRenderer.on('reply-visionready',(event,data)=>{
-        document.getElementById('leadTxt').innerHTML="辨識中。。。";
-        ipcRenderer.send('vision-start');
-    })
 
-    ipcRenderer.on('reply-mainjsfunction',(event,data)=>{
-        ipcRenderer.send('crawler',data)
-        ipcRenderer.send('camera-searchPictureBook',data)
-        answer = data;
-        // data.forEach(label => all+="\nyo="+label);
-    })
+        ipcRenderer.on('reply-visionready', (event, data) => {
+            document.getElementById('leadTxt').innerHTML = "辨識中。。。";
+            ipcRenderer.send('vision-start');
+        })
 
-    ipcRenderer.on('reply-webcrawlerfunction',(event,data) =>{
-        console.log("addQAtoServer",answer);
-        explain = data;
-    })
+        ipcRenderer.on('reply-mainjsfunction', (event, data) => {
+            ipcRenderer.send('crawler', data)
+            ipcRenderer.send('camera-searchPictureBook', data)
+            answer = data;
+            // data.forEach(label => all+="\nyo="+label);
+        })
 
-     ipcRenderer.on('replyPbook',(event,pbook) =>{
-        // ipcRenderer.send('addQAtoServer')
-        if(answer==undefined){
-            document.getElementById('leadTxt').innerHTML="辨識失敗!!";
-            document.getElementById('explainTxt').innerHTML="";
-        }
-        else if(answer=="蘋果"){
-            ShowVisibility.style.display = "block";
-            ImgVisibility.style.display = "block";
-            stream.style.display="none";
-            
-            document.getElementById('leadTxt').innerHTML="辨識成功!!";
-            document.getElementById('AnsImg').src="./still-image.jpg"
-            QA_card.innerHTML = createQA(answer,explain,pbook['bookName'],pbook['bookImg'],pbook['bookIntro'])
-            
-        }else if(answer=="西瓜"){
-            ShowVisibility.style.display = "block";
-            ImgVisibility.style.display = "block";
-            stream.style.display="none";
-            document.getElementById('leadTxt').innerHTML="辨識成功!!";
-            document.getElementById('AnsImg').src="./still-image.jpg"
-            QA_card.innerHTML = createQA(answer,explain,pbook['bookName'],pbook['bookImg'],pbook['bookIntro'])
-            
-        }
-        else if(answer=="螢幕"){
-            ShowVisibility.style.display = "block";
-            ImgVisibility.style.display = "block";
-            stream.style.display="none";
-            document.getElementById('leadTxt').innerHTML="辨識成功!!";
-            document.getElementById('AnsImg').src="./still-image.jpg"
-            QA_card.innerHTML = createQA(answer,explain,pbook['bookName'],pbook['bookImg'],pbook['bookIntro'])
-            
-        }
-        else if(answer=="椅子"){
-           
-            ShowVisibility.style.display = "block";
-            ImgVisibility.style.display = "block";
-            stream.style.display="none";
-            document.getElementById('leadTxt').innerHTML="辨識成功!!";
-            document.getElementById('AnsImg').src="./still-image.jpg"
-            QA_card.innerHTML = createQA(answer,explain,pbook['bookName'],pbook['bookImg'],pbook['bookIntro'])
-            
-        }
-        else if(answer=="水壺"){
-           
-            ShowVisibility.style.display = "block";
-            ImgVisibility.style.display = "block";
-            stream.style.display="none";
-            document.getElementById('leadTxt').innerHTML="辨識成功!!";
-            document.getElementById('AnsImg').src="./still-image.jpg"
-            QA_card.innerHTML = createQA(answer,explain,pbook['bookName'],pbook['bookImg'],pbook['bookIntro'])
-            
-        }
-        else if(answer=="剛筆"){
-           
-            ShowVisibility.style.display = "block";
-            ImgVisibility.style.display = "block";
-            stream.style.display="none";
-            document.getElementById('leadTxt').innerHTML="辨識成功!!";
-            document.getElementById('AnsImg').src="./still-image.jpg"
-            QA_card.innerHTML = createQA(answer,explain,pbook['bookName'],pbook['bookImg'],pbook['bookIntro'])
-            
-        }
-        else if(answer=="筆記本"){
-           
-            ShowVisibility.style.display = "block";
-            ImgVisibility.style.display = "block";
-            stream.style.display="none";
-            document.getElementById('leadTxt').innerHTML="辨識成功!!";
-            document.getElementById('AnsImg').src="./still-image.jpg"
-            QA_card.innerHTML = createQA(answer,explain,pbook['bookName'],pbook['bookImg'],pbook['bookIntro'])
-        }
-        else if(answer=="滑鼠"){
-           
-            ShowVisibility.style.display = "block";
-            ImgVisibility.style.display = "block";
-            stream.style.display="none";
-            document.getElementById('leadTxt').innerHTML="辨識成功!!";
-            document.getElementById('AnsImg').src="./still-image.jpg"
-            QA_card.innerHTML = createQA(answer,explain,pbook['bookName'],pbook['bookImg'],pbook['bookIntro'])
-        }
-        else if(answer=="手機"){
-           
-            ShowVisibility.style.display = "block";
-            ImgVisibility.style.display = "block";
-            stream.style.display="none";
-            document.getElementById('leadTxt').innerHTML="辨識成功!!";
-            document.getElementById('AnsImg').src="./still-image.jpg"
-            QA_card.innerHTML = createQA(answer,explain,pbook['bookName'],pbook['bookImg'],pbook['bookIntro'])
-        }
-        else if(answer=="筆記本電腦"){
-           
-            ShowVisibility.style.display = "block";
-            ImgVisibility.style.display = "block";
-            stream.style.display="none";
-            document.getElementById('leadTxt').innerHTML="辨識成功!!";
-            document.getElementById('AnsImg').src="./still-image.jpg"
-            QA_card.innerHTML = createQA(answer,explain,pbook['bookName'],pbook['bookImg'],pbook['bookIntro'])
-        }
-        else if(answer=="眼鏡"){
-           
-            ShowVisibility.style.display = "block";
-            ImgVisibility.style.display = "block";
-            stream.style.display="none";
-            document.getElementById('leadTxt').innerHTML="辨識成功!!";
-            document.getElementById('AnsImg').src="./still-image.jpg"
-            QA_card.innerHTML = createQA(answer,explain,pbook['bookName'],pbook['bookImg'],pbook['bookIntro'])
-        }
-        else if(answer=="香蕉"){
-           
-            ShowVisibility.style.display = "block";
-            ImgVisibility.style.display = "block";
-            stream.style.display="none";
-            document.getElementById('leadTxt').innerHTML="辨識成功!!";
-            document.getElementById('AnsImg').src="./still-image.jpg"
-            QA_card.innerHTML = createQA(answer,explain,pbook['bookName'],pbook['bookImg'],pbook['bookIntro'])
-        }
-        else{
-            ShowVisibility.style.display = "block";
-            ImgVisibility.style.display = "block";
-            stream.style.display="none";
-            document.getElementById('leadTxt').innerHTML="辨識成功!!";
-            document.getElementById('AnsImg').src="./still-image.jpg"
-            QA_card.innerHTML = createQA(answer,explain,pbook['bookName'],pbook['bookImg'],pbook['bookIntro'])
-        }
-    })
-   
+        ipcRenderer.on('reply-webcrawlerfunction', (event, data) => {
+            console.log("addQAtoServer", answer);
+            explain = data;
+        })
+
+        ipcRenderer.on('replyPbook', (event, pbook) => {
+            // ipcRenderer.send('addQAtoServer')
+            if (answer == undefined) {
+                document.getElementById('leadTxt').innerHTML = "辨識失敗!!";
+                document.getElementById('explainTxt').innerHTML = "";
+            } else if (answer == "蘋果") {
+                ShowVisibility.style.display = "block";
+                ImgVisibility.style.display = "block";
+                stream.style.display = "none";
+
+                document.getElementById('leadTxt').innerHTML = "辨識成功!!";
+                document.getElementById('AnsImg').src = "./still-image.jpg"
+                QA_card.innerHTML = createQA(answer, explain, pbook['bookName'], pbook['bookImg'], pbook['bookIntro'])
+
+            } else if (answer == "西瓜") {
+                ShowVisibility.style.display = "block";
+                ImgVisibility.style.display = "block";
+                stream.style.display = "none";
+                document.getElementById('leadTxt').innerHTML = "辨識成功!!";
+                document.getElementById('AnsImg').src = "./still-image.jpg"
+                QA_card.innerHTML = createQA(answer, explain, pbook['bookName'], pbook['bookImg'], pbook['bookIntro'])
+
+            } else if (answer == "螢幕") {
+                ShowVisibility.style.display = "block";
+                ImgVisibility.style.display = "block";
+                stream.style.display = "none";
+                document.getElementById('leadTxt').innerHTML = "辨識成功!!";
+                document.getElementById('AnsImg').src = "./still-image.jpg"
+                QA_card.innerHTML = createQA(answer, explain, pbook['bookName'], pbook['bookImg'], pbook['bookIntro'])
+
+            } else if (answer == "椅子") {
+
+                ShowVisibility.style.display = "block";
+                ImgVisibility.style.display = "block";
+                stream.style.display = "none";
+                document.getElementById('leadTxt').innerHTML = "辨識成功!!";
+                document.getElementById('AnsImg').src = "./still-image.jpg"
+                QA_card.innerHTML = createQA(answer, explain, pbook['bookName'], pbook['bookImg'], pbook['bookIntro'])
+
+            } else if (answer == "水壺") {
+
+                ShowVisibility.style.display = "block";
+                ImgVisibility.style.display = "block";
+                stream.style.display = "none";
+                document.getElementById('leadTxt').innerHTML = "辨識成功!!";
+                document.getElementById('AnsImg').src = "./still-image.jpg"
+                QA_card.innerHTML = createQA(answer, explain, pbook['bookName'], pbook['bookImg'], pbook['bookIntro'])
+
+            } else if (answer == "剛筆") {
+
+                ShowVisibility.style.display = "block";
+                ImgVisibility.style.display = "block";
+                stream.style.display = "none";
+                document.getElementById('leadTxt').innerHTML = "辨識成功!!";
+                document.getElementById('AnsImg').src = "./still-image.jpg"
+                QA_card.innerHTML = createQA(answer, explain, pbook['bookName'], pbook['bookImg'], pbook['bookIntro'])
+
+            } else if (answer == "筆記本") {
+
+                ShowVisibility.style.display = "block";
+                ImgVisibility.style.display = "block";
+                stream.style.display = "none";
+                document.getElementById('leadTxt').innerHTML = "辨識成功!!";
+                document.getElementById('AnsImg').src = "./still-image.jpg"
+                QA_card.innerHTML = createQA(answer, explain, pbook['bookName'], pbook['bookImg'], pbook['bookIntro'])
+            } else if (answer == "滑鼠") {
+
+                ShowVisibility.style.display = "block";
+                ImgVisibility.style.display = "block";
+                stream.style.display = "none";
+                document.getElementById('leadTxt').innerHTML = "辨識成功!!";
+                document.getElementById('AnsImg').src = "./still-image.jpg"
+                QA_card.innerHTML = createQA(answer, explain, pbook['bookName'], pbook['bookImg'], pbook['bookIntro'])
+            } else if (answer == "手機") {
+
+                ShowVisibility.style.display = "block";
+                ImgVisibility.style.display = "block";
+                stream.style.display = "none";
+                document.getElementById('leadTxt').innerHTML = "辨識成功!!";
+                document.getElementById('AnsImg').src = "./still-image.jpg"
+                QA_card.innerHTML = createQA(answer, explain, pbook['bookName'], pbook['bookImg'], pbook['bookIntro'])
+            } else if (answer == "筆記本電腦") {
+
+                ShowVisibility.style.display = "block";
+                ImgVisibility.style.display = "block";
+                stream.style.display = "none";
+                document.getElementById('leadTxt').innerHTML = "辨識成功!!";
+                document.getElementById('AnsImg').src = "./still-image.jpg"
+                QA_card.innerHTML = createQA(answer, explain, pbook['bookName'], pbook['bookImg'], pbook['bookIntro'])
+            } else if (answer == "眼鏡") {
+
+                ShowVisibility.style.display = "block";
+                ImgVisibility.style.display = "block";
+                stream.style.display = "none";
+                document.getElementById('leadTxt').innerHTML = "辨識成功!!";
+                document.getElementById('AnsImg').src = "./still-image.jpg"
+                QA_card.innerHTML = createQA(answer, explain, pbook['bookName'], pbook['bookImg'], pbook['bookIntro'])
+            } else if (answer == "香蕉") {
+
+                ShowVisibility.style.display = "block";
+                ImgVisibility.style.display = "block";
+                stream.style.display = "none";
+                document.getElementById('leadTxt').innerHTML = "辨識成功!!";
+                document.getElementById('AnsImg').src = "./still-image.jpg"
+                QA_card.innerHTML = createQA(answer, explain, pbook['bookName'], pbook['bookImg'], pbook['bookIntro'])
+            } else {
+                ShowVisibility.style.display = "block";
+                ImgVisibility.style.display = "block";
+                stream.style.display = "none";
+                document.getElementById('leadTxt').innerHTML = "辨識成功!!";
+                document.getElementById('AnsImg').src = "./still-image.jpg"
+                QA_card.innerHTML = createQA(answer, explain, pbook['bookName'], pbook['bookImg'], pbook['bookIntro'])
+            }
+        })
+
 
     })
 }
 
+function goHome(name) {
+    var audioCreate = document.getElementById("AUDIO");
+    audioCreate.setAttribute("src", `./TTS/mp3/${name}.mp3`);
+    audioCreate.play();
+}
