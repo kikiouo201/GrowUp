@@ -354,7 +354,10 @@ ipcMain.on('crawlerShowWeb', async(event, args) => {
     page.on('colse', async() => {
         await browser.close();
     });
+    await page.exposeFunction('colseBrowser', () => {
+        page.emit('colse');
 
+    });
     page.on('dialog', async dialog => {
         console.log(dialog.message());
         await dialog.dismiss();
