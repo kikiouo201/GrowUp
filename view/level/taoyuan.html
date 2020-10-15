@@ -43,23 +43,23 @@
     <div class="mainContent">
         <img class="city" src="../../image/map/Taoyuan1.png" />
         <div class="level1">
-            <img class="level_basic" alt="o" src="../../image/icon/togan_dark.png" onclick="setTimeout(()=>ocation.href='../../view/game/drawzhuyin.html?id=o1&counties=taoyuan',800);playABC(this);" />
+            <img class="level_basic level" alt="o" src="../../image/icon/togan_dark.png" onclick="setTimeout(()=>ocation.href='../../view/game/drawzhuyin.html?id=o1&counties=taoyuan',800);playABC(this);" />
             <img class="level_text" alt="o" src="../../image/english_alphabet/O.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=o1&counties=taoyuan',800);playABC(this);" />
         </div>
         <div class="level2">
-            <img class="level_basic" alt="p" src="../../image/icon/togan_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=p1&counties=taoyuan',800);playABC(this);" />
+            <img class="level_basic level" alt="p" src="../../image/icon/togan_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=p1&counties=taoyuan',800);playABC(this);" />
             <img class="level_text" alt="p" src="../../image/english_alphabet/P.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=p1&counties=taoyuan',800);playABC(this);" />
         </div>
         <div class="level3">
-            <img class="level_basic" alt="q" src="../../image/icon/togan_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=q1&counties=taoyuan',800);playABC(this);" />
+            <img class="level_basic level" alt="q" src="../../image/icon/togan_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=q1&counties=taoyuan',800);playABC(this);" />
             <img class="level_text" alt="q" src="../../image/english_alphabet/Q.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=q1&counties=taoyuan',800);playABC(this);" />
         </div>
         <div class="level4">
-            <img class="level_basic" alt="r" src="../../image/icon/togan_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=r1&counties=taoyuan',800);playABC(this);" />
+            <img class="level_basic level" alt="r" src="../../image/icon/togan_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=r1&counties=taoyuan',800);playABC(this);" />
             <img class="level_text" alt="r" src="../../image/english_alphabet/R.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=r1&counties=taoyuan',800);playABC(this);" />
         </div>
         <div class="level5">
-            <img class="level" width="45px" alt="taoyuan" src="../../image/icon/devil_lock.png" onclick="alert('需要先完成縣市所有關卡！')" />
+            <img class="level" width="45px" alt="taoyuan" src="../../image/icon/devil_lock.png"  />
         </div>
 
 
@@ -92,139 +92,7 @@
             <i class="fab fa-share my-float"><img src="../../photo/gobackhome.png" width="70%"></i>
         </a>
     </div>
-    <script src="./centralRegion_JS/levelIsPass.js"></script>
     <script src="northRegion_JS/taoyuan.js"></script>
     <!-- <script src="../../model/util/voiceOut.js"></script> -->
 
 </body>
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GrowUp學習趣</title>
-    <link rel="stylesheet" href="../../CSS/map/taoyuan.css">
-    <link rel="stylesheet" href="../../CSS/map/counties.css">
-    <link rel="stylesheet" href="../../CSS/interface.css">
-    <link rel="stylesheet" href="../../CSS/icon.css">
-    <script src="./northRegion_JS/north.js"></script>
-    <script src="../../model/util/checkAllLevelIsPass.js"></script>
-</head>
-<style>
-    .map_location {
-        width: 16px;
-        position: absolute;
-        top: 12px;
-        z-index: 15;
-        left: 52px;
-    }
-</style>
-
-<body class="style" background="../../image/map/kraftPaper5.png" onload="checkLevelIsPass('togan','taoyuan')">
-    <audio id="northAudio" src=""></audio>
-    <table class="features" style="margin-left: 70px;">
-        <tr>
-            <td colspan="2" style="font-size: 40px;text-align: center;">桃園地區</td>
-        </tr>
-        <tr style="display: none;">
-            <td>特色</td>
-            <td>資訊介紹</td>
-        </tr>
-        <tr>
-            <td><img src="../../image/map/Taoyuan_origin.png" onclick="featuresText('桃園地區');playNorth(this);" alt="taoyuanRegion" /><a style="display: block;">桃園地區</a></td>
-            <td id="information" rowspan="4" valign="top" style="font-size:x-large;">
-                <h4 style="margin: auto;">
-                    桃園地區擁有多元的文化，加上北橫豐富的山水景觀，具有「千塘之鄉」的美名，成就桃園為觀光大市。
-                </h4>
-            </td>
-        </tr>
-        <tr>
-            <td><img src="../../image/icon/togan.png" onclick="featuresText('大溪豆乾');playNorth(this);" alt="taoyuan_f1" /><a style="display: block;">大溪豆乾</a></td>
-        </tr>
-        <tr>
-            <td><img src="../../image/map_icon/Taoyuan_aquarium.png" onclick="featuresText('X park海生館');playNorth(this);" alt="taoyuan_f2" /><a style="display: block;">X park海生館</a></td>
-        </tr>
-        <tr>
-            <td><img src="../../image/map_icon/Taoyuan_national_airport.png" onclick="featuresText('桃園國際機場');playNorth(this);" alt="taoyuan_f3" /><a style="display: block;">桃園國際機場</a></td>
-        </tr>
-
-
-    </table>
-    <div class="map">
-        <img id="county" class="terrain" src="../../image/map/Taoyuan1.png" />
-        <div class="level1">
-            <img class="level" alt="o" src="../../image/icon/togan_dark.png" onclick="setTimeout(()=>ocation.href='../../view/game/drawzhuyin.html?id=o1&counties=taoyuan',800);playABC(this);" />
-            <img class="level_text" alt="o" src="../../image/english_alphabet/O.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=o1&counties=taoyuan',800);playABC(this);" />
-        </div>
-        <div class="level2">
-            <img class="level" alt="p" src="../../image/icon/togan_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=p1&counties=taoyuan',800);playABC(this);" />
-            <img class="level_text" alt="p" src="../../image/english_alphabet/P.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=p1&counties=taoyuan',800);playABC(this);" />
-        </div>
-        <div class="level3">
-            <img class="level" alt="q" src="../../image/icon/togan_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=q1&counties=taoyuan',800);playABC(this);" />
-            <img class="level_text" alt="q" src="../../image/english_alphabet/Q.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=q1&counties=taoyuan',800);playABC(this);" />
-        </div>
-        <div class="level4">
-            <img class="level" alt="r" src="../../image/icon/togan_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=r1&counties=taoyuan',800);playABC(this);" />
-            <img class="level_text" alt="r" src="../../image/english_alphabet/R.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=r1&counties=taoyuan',800);playABC(this);" />
-        </div>
-        <div class="level5">
-            <img class="level" alt="taoyuan" src="../../image/icon/devil_lock.png" onclick="alert('需要先完成縣市所有關卡！')" />
-        </div>
-
-
-    </div>
-    <img class="taiwan" src="../../image/character/Taiwn_small.png" onclick="location.href='../../view/level/taiwan.html'" />
-    <img class="map_location" src="../../image/map/map.png" />
-
-    <div>
-        <a onclick="history.back()" class="returnfloat" id="menu-share">
-            <i class="fab fa-share return-float"><img src="../../photo/return.png"></i>
-        </a>
-    </div>
-    <div>
-        <a href="../../game_home.html" class="homefloat" id="menu-share">
-            <i class="fab fa-share my-float"><img src="../../photo/gobackhome.png" width="70%"></i>
-        </a>
-    </div>
-    <script>
-        function featuresText(category) {
-            const information = document.querySelector('#information')
-            let info = document.createElement("h4");
-            info.style = 'margin: auto;';
-            switch (category) {
-                case "桃園地區":
-                    information.innerHTML = "";
-                    info.innerHTML = "桃園地區擁有多元的文化，加上北橫豐富的山水景觀，具有「千塘之鄉」的美名，成就桃園為觀光大市。";
-                    information.append(info)
-                    break;
-                case "大溪豆乾":
-                    information.innerHTML =
-                        " <img style = 'width:100%; border-radius: 15px;'  src = 'https://pic.pimg.tw/linpapahu2012/1435070271-421504407_n.jpg'/> "
-                    info.innerHTML = "大溪豆乾是桃園市大溪區知名的地方特產。特色是黑豆干，外皮厚而黑，整體口感比白豆乾更加硬實，味道也更加重。";
-                    information.append(info)
-                    break;
-                case "X park海生館":
-                    information.innerHTML =
-                        " <img style = 'width:100%; border-radius: 15px;'  src = 'https://attach.setn.com/newsimages/2020/06/30/2635413-XXL.jpg'/> "
-                    info.innerHTML = "X park水族館是台灣與日本耗時5年規劃打造，是台灣第一座新都會型的水生公園，顛覆傳統水族館樣貌。";
-                    information.append(info)
-                    break;
-                case "桃園國際機場":
-                    information.innerHTML =
-                        " <img style = 'width:100%; border-radius: 15px;'  src = 'https://www.taoyuanairport.com.tw/assets/images/kv2.jpg'/> "
-                    info.innerHTML = "桃園國際機場，起初命名為「中正國際機場」，到2006年才改為桃園國際機場。是台灣最大的國際機場。";
-                    information.append(info)
-                    break;
-
-            }
-        }
-    </script>
-    <script src="../../model/util/voiceOut.js"></script>
-    <script src="../level/centralRegion_JS/levelIsPass.js"></script>
-
-</body>
-
-</html> -->

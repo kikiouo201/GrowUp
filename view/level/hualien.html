@@ -44,16 +44,16 @@
     <div class="mainContent">
         <img class="city" src="../../image/map/Hualien1.png" />
         <div class="level1">
-            <img class="level_basic " alt="findBallast" src="../../image/icon/watermelon.png" onclick="setTimeout(()=>location.href='../../view/game/findBallast.html',1100);playGame(this);" />
+            <img class="level_basic level" alt="findBallast" src="../../image/icon/watermelon.png" onclick="setTimeout(()=>location.href='../../view/game/findBallast.html',1100);playGame(this);" />
             <img class="level_text" alt="findBallast" src="../../image/icon/findBallast.png" onclick="setTimeout(()=>location.href='../../view/game/findBallast.html',1100);playGame(this);">
         </div>
         <div class="level2">
-            <img class="level_basic" alt="gophers" src="../../image/icon/watermelon.png" onclick="setTimeout(()=>location.href='../../view/game/gophers.html',1100);playGame(this);" />
+            <img class="level_basic level" alt="gophers" src="../../image/icon/watermelon.png" onclick="setTimeout(()=>location.href='../../view/game/gophers.html',1100);playGame(this);" />
             <img class="level_text" alt="gophers" src="../../image/icon/gophers.png" onclick="setTimeout(()=>location.href='../../view/game/gophers.html',1100);playGame(this);">
         </div>
 
         <div class="level3">
-            <img class="level" width="45px" alt="hualien" src="../../image/icon/devil_lock.png" onclick="alert('需要先完成縣市所有關卡！')" />
+            <img class="level" width="45px" alt="hualien" src="../../image/icon/devil_lock.png"  />
         </div>
 
 
@@ -86,135 +86,8 @@
             <i class="fab fa-share my-float"><img src="../../photo/gobackhome.png" width="70%"></i>
         </a>
     </div>
-    <script src="./centralRegion_JS/levelIsPass.js"></script>
+   
     <script src="./eastRegion_JS/hualien.js"></script>
     <!-- <script src="../../model/util/voiceOut.js"></script> -->
 
 </body>
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GrowUp學習趣</title>
-    <link rel="stylesheet" href="../../CSS/map/counties.css">
-    <link rel="stylesheet" href="../../CSS/map/hualien.css">
-    <link rel="stylesheet" href="../../CSS/interface.css">
-    <link rel="stylesheet" href="../../CSS/icon.css">
-    <script src="./eastRegion_JS/east.js"></script>
-    <script src="../../model/util/checkAllLevelIsPass.js"></script>
-</head>
-<style>
-    .map_location {
-        width: 16px;
-        position: absolute;
-        top: 62px;
-        z-index: 15;
-        left: 62px;
-    }
-</style>
-
-<body class="style" background="../../image/map/kraftPaper5.png" onload="checkLevelIsPass('watermelon','hualien')">
-    <audio id="eastAudio" src=""></audio>
-    <table class="features">
-        <tr>
-            <td colspan="2" style="font-size: 40px;text-align: center;">花蓮地區</td>
-        </tr>
-        <tr style="display: none;">
-            <td>特色</td>
-            <td>資訊介紹</td>
-        </tr>
-        <tr>
-            <td><img src="../../image/map/Hualien_origin.png" onclick="featuresText('花蓮地區');playEast(this)" alt="hualienRegion" /><a style="display: block;">花蓮地區</a></td>
-            <td id="information" rowspan="4" valign="top" style="font-size:x-large;">
-                <h4 style="margin:auto">
-                    花蓮地區，位於臺灣本島東部。是臺灣面積最大的縣級行政區。花蓮地區是台灣原住民最多的區域，其中以第一大族阿美族分布最廣。
-
-                </h4>
-            </td>
-        </tr>
-        <tr>
-            <td><img src="../../image/icon/watermelon.png" onclick="featuresText('花蓮大西瓜');playEast(this)" alt="hualien_f1" /><a style="display: block;">花蓮大西瓜</a></td>
-        </tr>
-        <tr>
-            <td><img src="../../image/map_icon/Hualien_farglory_ocean_park.png" onclick="featuresText('遠雄海洋公園');playEast(this)" alt="hualien_f2" /><a style="display: block;">遠雄海洋公園</a></td>
-        </tr>
-        <tr>
-            <td><img src="../../image/map_icon/Hualien_farm.png" onclick="featuresText('瑞穗牧場');playEast(this)" alt="hualien_f3" /><a style="display: block;">瑞穗牧場</a></td>
-        </tr>
-
-    </table>
-    <div class="map">
-        <img class="terrain" src="../../image/map/Hualien1.png" />
-        <div class="level1">
-            <img class="level " alt="findBallast" src="../../image/icon/watermelon.png" onclick="setTimeout(()=>location.href='../../view/game/findBallast.html',1100);playGame(this);" />
-            <img class="level_text" alt="findBallast" src="../../image/icon/findBallast.png" onclick="setTimeout(()=>location.href='../../view/game/findBallast.html',1100);playGame(this);">
-        </div>
-        <div class="level2">
-            <img class="level" alt="gophers" src="../../image/icon/watermelon.png" onclick="setTimeout(()=>location.href='../../view/game/gophers.html',1100);playGame(this);" />
-            <img class="level_text" alt="gophers" src="../../image/icon/gophers.png" onclick="setTimeout(()=>location.href='../../view/game/gophers.html',1100);playGame(this);">
-        </div>
-
-        <div class="level3">
-            <img class="level" alt="hualien" src="../../image/icon/devil_lock.png" onclick="alert('需要先完成縣市所有關卡！')" />
-        </div>
-
-
-
-    </div>
-    <img class="taiwan" src="../../image/character/Taiwn_small.png" onclick="location.href='../../view/level/taiwan.html'" />
-    <img class="map_location" src="../../image/map/map.png" />
-
-    <div>
-        <a onclick="history.back()" class="returnfloat" id="menu-share">
-            <i class="fab fa-share return-float"><img src="../../photo/return.png"></i>
-        </a>
-    </div>
-    <div>
-        <a href="../../game_home.html" class="homefloat" id="menu-share">
-            <i class="fab fa-share my-float"><img src="../../photo/gobackhome.png" width="70%"></i>
-        </a>
-    </div>
-    <script>
-        function featuresText(category) {
-            const information = document.querySelector('#information')
-            let info = document.createElement("h4");
-            info.style = 'margin: auto;';
-            switch (category) {
-                case "花蓮地區":
-                    information.innerHTML =
-                        "";
-                    info.innerHTML = "花蓮地區，位於臺灣本島東部。是臺灣面積最大的縣級行政區。花蓮地區是台灣原住民最多的區域，其中以第一大族阿美族分布最廣。"
-                    information.append(info)
-                    break;
-                case "花蓮大西瓜":
-                    information.innerHTML =
-                        " <img style = 'width:100%; border-radius: 15px;' src = 'https://www.ner.gov.tw/api/images/5affbec7581023000596746f/2400/jpeg'/> "
-                    info.innerHTML = "花蓮大西瓜富含養分，讓西瓜的口感「沙甜」且「清脆」!"
-                    information.append(info)
-                    break;
-                case "遠雄海洋公園":
-                    information.innerHTML =
-                        " <img style = 'width:100%; border-radius: 15px;'  src = 'https://s.yimg.com/zp/MerchandiseSpec/99DE9C85C0-SP-6215750.jpg' />"
-
-                    info.innerHTML = "遠雄海洋公園俗稱花蓮海洋公園。是臺灣第一座以海洋為主題，結合了自然公園與休閒飯店的主題樂園。"
-                    information.append(info)
-                    break;
-
-                case "瑞穗牧場":
-                    information.innerHTML =
-                        " <img style = 'width:100%; border-radius: 15px;'  src = 'https://www.erv-nsa.gov.tw/image/10343/1024x768'/> "
-                    info.innerHTML = "瑞穗牧場是一座開放式的休閒牧場，以放牧乳牛、生產乳製品而聞名。"
-                    information.append(info)
-                    break;
-
-            }
-        }
-    </script>
-    <script src="../../model/util/voiceOut.js"></script>
-
-</body>
-
-</html> -->
