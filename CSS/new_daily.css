@@ -25,6 +25,7 @@ table tr td p {
 }
 
 tbody tr td {
+    width: 50%;
     vertical-align: top;
 }
 
