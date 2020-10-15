@@ -9,11 +9,13 @@ let ShowVisibility = document.querySelector('.QA_card_area');
 let ImgVisibility = document.querySelector('img#AnsImg');
 let stream = document.querySelector('#stream');
 let QA_card = document.getElementById("QA_card")
-let book_name, bookImg, bookExplain = ""
+
 const createQA = (text1, text2, bookName, bookImg, bookExplain) => `
                                             <div class="card text-white  mb-3" style="background-color: #92337eba;">
-
                                                 <div class="card-body" style="margin-top: 30px;">
+                                                    <div style="margin-left: 105px;">
+                                                        <img id="AnsImg" src="">
+                                                    </div>
                                                     <div style="float:left; display: block; text-align: left;">
                                                         <p id="Ans" class="card-text card_A" style="float: left;">答案：</p>
                                                         <p id="AnsTxt" class="card-text card_A" style="margin-left: 0px;">${text1}</p>
@@ -52,11 +54,7 @@ if (identifyBtn) {
             ipcRenderer.send('captrue');
         ipcRenderer.on('reply-close-mjpg-streamer', (event, data) => {
             document.getElementById('leadTxt').innerHTML = "拍照中。。。";
-            
 
-            // ShowVisibility.style.display = "none";
-            // ImgVisibility.style.display = "none";
-            // stream.style.display="block";
             console.log('ready');
         })
 
@@ -90,6 +88,8 @@ if (identifyBtn) {
             document.getElementById('AnsImg').src = "./still-image.jpg"
             QA_card.innerHTML = createQA("蘋果","落業喬木。葉軟形，邊緣有細尖鋸齒。果實球形，味美，可食，也可製酒。","環遊世界做蘋果派", "https://children.moc.gov.tw/resource/animate_image/6850.jpg", "要怎樣認識「國家」呢？每一個國家總有不同的、具代表性的文物、景物、建築或美食，在環遊世界一周後，可以帶回的東西，會是不同的明信片、紀念品，還有好吃特產呢")
         })
+
+
         ipcRenderer.on('reply-webcrawlerfunction', (event, data) => {
             console.log("addQAtoServer", answer);
             explain = data;
