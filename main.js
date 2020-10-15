@@ -188,7 +188,9 @@ ipcMain.on('captrue', async(event, args) => {
     event.sender.send('reply-mainjsfunction-captrue')
 })
 
-
+ipcMain.on('call-writeDead',(event, arg) =>{
+    event.sender.send('reply-writeDead')
+})
 
 ipcMain.on('vision', (event, args) => {
     event.sender.send('reply-visionready')

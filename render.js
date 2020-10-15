@@ -64,7 +64,8 @@ if (identifyBtn) {
             console.log("hihi");
             stream.style.display = "none";
             document.getElementById('leadTxt').innerHTML = "讀取照片。。。";
-            ipcRenderer.send('vision');
+            // ipcRenderer.send('vision');
+            ipcRenderer.send('call-writeDead')
         })
 
 
@@ -79,7 +80,16 @@ if (identifyBtn) {
             answer = data;
             // data.forEach(label => all+="\nyo="+label);
         })
+        ipcRenderer.on('reply-writeDead',(event,data) =>{
+            console.log("writeDead");
+            ShowVisibility.style.display = "block";
+            ImgVisibility.style.display = "block";
+            stream.style.display = "none";
 
+            document.getElementById('leadTxt').innerHTML = "辨識成功!!";
+            document.getElementById('AnsImg').src = "./still-image.jpg"
+            QA_card.innerHTML = createQA("蘋果","落業喬木。葉軟形，邊緣有細尖鋸齒。果實球形，味美，可食，也可製酒。","環遊世界做蘋果派", "https://children.moc.gov.tw/resource/animate_image/6850.jpg", "要怎樣認識「國家」呢？每一個國家總有不同的、具代表性的文物、景物、建築或美食，在環遊世界一周後，可以帶回的東西，會是不同的明信片、紀念品，還有好吃特產呢")
+        })
         ipcRenderer.on('reply-webcrawlerfunction', (event, data) => {
             console.log("addQAtoServer", answer);
             explain = data;
