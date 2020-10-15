@@ -12,7 +12,7 @@ function changeInfor(type) {
           break;
       case 1:
           picture.src = "https://ct.yimg.com/xd/api/res/1.2/KyT.rvoptDb9QVMw6InfmQ--/YXBwaWQ9eXR3YXVjdGlvbnNlcnZpY2U7aD00NjU7cT04NTtyb3RhdGU9YXV0bzt3PTcwMA--/https://s.yimg.com/ob/image/71dfbea5-5960-4d84-a6dc-3f5f64156839.jpg";
-          intro.textContent = "是豬肉製作的種肉丸。新竹的貢丸特別有名，材料必須用新鮮溫體豬肉製作。"
+          intro.textContent = "是豬肉製作的一種肉丸。新竹的貢丸特別有名，材料必須用新鮮溫體豬肉製作。"
           speaker.alt = "hsinchu_f1"
           break;
       case 2:
