@@ -1,4 +1,4 @@
-let { ipcRenderer } = require('electron');
+let { ipcRenderer:ipcRenderer2 } = require('electron');
 let isDrawing = false;
 let x = 0;
 let y = 0;
