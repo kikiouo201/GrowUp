@@ -12,6 +12,7 @@
 </head>
 
 <body background="../image/map/kraftPaper5.png" onload="ShowTime()">
+    <audio id="AUDIO" src=""></audio>
     <div class="home_page">
         <a class="home_title">動物寶典</a>
 
@@ -46,12 +47,12 @@
                 </div>
 
                 <img id="animalImg" style="width:100px; height:100px;" src="">
-                <img onclick="mouseDownText(explain.innerHTML.substring(4,200));" src="../icons/speaker.png" class="speaker" />
+                <img onclick="playAnimal('kinkajou');" src="../icons/speaker.png" class="speaker" />
                 <div id="text_page" style="display: inline-block; text-align: left; padding: 7px;">
-                    <span id="animalname" class="animalName" ></span><br>
-                    <span id="explain" class="animalExplain" ></span>
+                    <span id="animalname" class="animalName"></span><br>
+                    <span id="explain" class="animalExplain"></span>
                     <span id="animalclassName" class="animalclassName"></span>
-                    <span id="animalclassExplain"  class="animalclassExplain"></span>
+                    <span id="animalclassExplain" class="animalclassExplain"></span>
                 </div>
             </div>
         </div>
@@ -73,7 +74,7 @@
         <img class="Black_and_white_ruffed_Lemur" src="../image/animal/Black_and_white_ruffed_Lemur.png" onclick="mouseDownText('白頸狐猴');">
     </div>
     <div>
-        <img class="Kinkajou" src="../image/animal/Kinkajou.png" onclick="mouseDownText('蜜熊');">
+        <img class="Kinkajou" src="../image/animal/Kinkajou.png" onclick="playAnimal('kinkajou');">
     </div>
     <div>
         <img class="Brown_Lemur" src="../image/animal/Brown_Lemur.png" onclick="mouseDownText('褐狐猴');">
@@ -173,7 +174,7 @@
             animalname.innerHTML = "動物名: 蜜熊"
             animalclass.innerHTML = "獸類"
             explain.innerHTML = "敘述: 蜜熊，重量:1.8至4.6公斤，頭身長：41至57公分，尾長跟體長相似，蜜熊是浣熊的同類，但身材像猴子。"
-            mouseDownText('蜜熊，重量:1.8至4.6公斤，頭身長：41至57公分，尾長跟體長相似，蜜熊是浣熊的同類，但身材像猴子。');
+            playAnimal('kinkajou');
         })
 
         document.querySelector(".Brown_Lemur").addEventListener('click', () => {
@@ -249,6 +250,9 @@
             explain.style.display = 'none';
             animalclassName.style.display = 'none';
             animalclassExplain.style.display = 'none';
+            let audio = document.getElementById("AUDIO");
+            audio.pause();
+            audio.currentTime = 0;
         })
 
         // speaker.onclick = function () {
@@ -257,7 +261,7 @@
         //         mouseDownText(explain.innerHTML);
         //         console.log("explain: "+explain.innerHTML)
         //     }
-            
+
         //     else
         //     {
         //         mouseDownText(animalclassExplain.innerHTML);
@@ -267,30 +271,31 @@
     </script>
     <script>
         function changeTxt() {
-            if(document.getElementById("animalclass").innerHTML=="獸類"){
+            if (document.getElementById("animalclass").innerHTML == "獸類") {
                 document.getElementById("animalname").style.display = 'none';
                 document.getElementById("explain").style.display = 'none';
                 document.getElementById("animalclassName").style.display = 'inline-block';
                 document.getElementById("animalclassExplain").style.display = 'inline-block';
-                document.getElementById("animalclass").innerHTML="動物名稱"
-                document.getElementById("animalclassName").innerHTML="動物類: 獸類"
-                document.getElementById("animalclassExplain").innerHTML="敘述: 獸類，是脊椎動物哺乳綱動物的泛稱。從象、虎、豹等大型動物，到老鼠、蝙蝠等小型動物，到海洋中的鯨豚等海獸，都是獸類的一員。"
-            }else if(document.getElementById("animalclass").innerHTML=="鳥類"){
+                document.getElementById("animalclass").innerHTML = "動物名稱"
+                document.getElementById("animalclassName").innerHTML = "動物類: 獸類"
+                document.getElementById("animalclassExplain").innerHTML = "敘述: 獸類，是脊椎動物哺乳綱動物的泛稱。從象、虎、豹等大型動物，到老鼠、蝙蝠等小型動物，到海洋中的鯨豚等海獸，都是獸類的一員。"
+                playAnimal('typeBeasts');
+            } else if (document.getElementById("animalclass").innerHTML == "鳥類") {
                 document.getElementById("animalname").style.display = 'none';
                 document.getElementById("explain").style.display = 'none';
                 document.getElementById("animalclassName").style.display = 'inline-block';
                 document.getElementById("animalclassExplain").style.display = 'inline-block';
-                document.getElementById("animalclass").innerHTML="動物名稱"
-                document.getElementById("animalclassName").innerHTML="動物類: 鳥類"
-                document.getElementById("animalclassExplain").innerHTML="敘述: 鳥類，是爬行動物演化而成的脊椎動物，也是現今世界上唯一有羽毛的動物。大多具有飛行能力，但還是有不具飛翔能力的鳥類，像企鵝、雞、鴕鳥就屬這一類。"
-            }else if(document.getElementById("animalclassName").innerHTML=="動物類: 獸類"){
-                document.getElementById("animalclass").innerHTML="獸類"
+                document.getElementById("animalclass").innerHTML = "動物名稱"
+                document.getElementById("animalclassName").innerHTML = "動物類: 鳥類"
+                document.getElementById("animalclassExplain").innerHTML = "敘述: 鳥類，是爬行動物演化而成的脊椎動物，也是現今世界上唯一有羽毛的動物。大多具有飛行能力，但還是有不具飛翔能力的鳥類，像企鵝、雞、鴕鳥就屬這一類。"
+            } else if (document.getElementById("animalclassName").innerHTML == "動物類: 獸類") {
+                document.getElementById("animalclass").innerHTML = "獸類"
                 document.getElementById("animalclassName").style.display = 'none';
                 document.getElementById("animalclassExplain").style.display = 'none';
                 document.getElementById("animalname").style.display = 'inline-block';
                 document.getElementById("explain").style.display = 'inline-block';
-            }else{
-                document.getElementById("animalclass").innerHTML="鳥類"
+            } else {
+                document.getElementById("animalclass").innerHTML = "鳥類"
                 document.getElementById("animalclassName").style.display = 'none';
                 document.getElementById("animalclassExplain").style.display = 'none';
                 document.getElementById("animalname").style.display = 'inline-block';
@@ -298,7 +303,8 @@
             }
         }
     </script>
-    <script src="../model/util/voiceOut.js"></script>
+    <script src="../model/util/animalbook.js"></script>
+    <!-- <script src="../model/util/voiceOut.js"></script> -->
 </body>
 
 </html>
