@@ -1,5 +1,5 @@
-let { ipcRenderer:ipcRenderer2 } = require('electron');
-let voiceOut =require('../../view/level/centralRegion_JS/central.js');
+let { ipcRenderer: ipcRenderer2 } = require('electron');
+let voiceOut = require('../../view/level/centralRegion_JS/central.js');
 
 let levelNameConversion = {
     'ㄅ': 'b',
@@ -77,53 +77,54 @@ let levelNameConversion = {
     0: 0,
 }
 
-function checkLevelIsPass(level_icon,counties) {
+function checkLevelIsPass(level_icon, counties) {
     const level_name = document.querySelectorAll(".level")
     ipcRenderer2.send("callZhuyinCondition")
-  
-    ipcRenderer2.on("reply-callZhuyindata",(event,data) =>{
-      // console.log("zhuyin = >"+zhuyin[0])
-      console.log("success call reply-callZhuyindata Condition ~~~~ ")
-      let levelSize = data.content.length;
-      let levelIsPassSize=0;
-      
-      data.content.forEach((level) => {
-          for(let i=0;i<level_name.length;i++){
-              if(level.level_name == level_name[i].getAttribute('alt') ){
-                  if(level.level_name !== counties){
-                      if(level.ispass == 1 ){
-                          level_name[i].src ="../../image/icon/"+level_icon+".png";
-                          levelIsPassSize++;
-                      }else{
-                          level_name[i].src ="../../image/icon/"+level_icon+"_dark.png";
-                      }
-                  }else{
-                      console.log(`levelIsPassSize=${levelIsPassSize},level_name.length=${level_name.length}`);
-                      if(level.ispass == 1 && levelIsPassSize == (level_name.length-1) ){
-                          level_name[i].src ="../../image/icon/devil.png";
-                          level_name[i].addEventListener('click',() => {
-                            const centralAudio = document.querySelector("#centralAudio");
-                            setTimeout(()=>location.href=`../../view/game/pickingUpIsALittleRed.html?cardDataSize=${level_name.length-1}&startId=${levelNameConversion[level_name[0].getAttribute('alt')]}&counties=${counties}`,800);voiceOut.playDevilBPM(centralAudio);
-                        })
-                      }else if(levelIsPassSize == (level_name.length-1)){
-                        level_name[i].src ="../../image/icon/devil.png";
-                          level_name[i].addEventListener('click',() => {
-                            const centralAudio = document.querySelector("#centralAudio");
-                            setTimeout(()=>location.href=`../../view/game/pickingUpIsALittleRed.html?cardDataSize=${level_name.length-1}&startId=${levelNameConversion[level_name[0].getAttribute('alt')]}&counties=${counties}`,800);voiceOut.playDevilBPM(centralAudio);
-                           
-                        })
-                      }else {
-                        level_name[i].src ="../../image/icon/devil_lock.png";
-                        level_name[i].addEventListener('click',() => {
-                          alert('需要先完成縣市所有關卡！');
-                      })
+
+    ipcRenderer2.on("reply-callZhuyindata", (event, data) => {
+        // console.log("zhuyin = >"+zhuyin[0])
+        console.log("success call reply-callZhuyindata Condition ~~~~ ")
+        let levelSize = data.content.length;
+        let levelIsPassSize = 0;
+
+        data.content.forEach((level) => {
+            for (let i = 0; i < level_name.length; i++) {
+                if (level.level_name == level_name[i].getAttribute('alt')) {
+                    if (level.level_name !== counties) {
+                        if (level.ispass == 1) {
+                            level_name[i].src = "../../image/icon/" + level_icon + ".png";
+                            levelIsPassSize++;
+                        } else {
+                            level_name[i].src = "../../image/icon/" + level_icon + "_dark.png";
+                        }
+                    } else {
+                        console.log(`levelIsPassSize=${levelIsPassSize},level_name.length=${level_name.length}`);
+                        if (level.ispass == 1 && levelIsPassSize == (level_name.length - 1)) {
+                            level_name[i].src = "../../image/icon/devil.png";
+                            level_name[i].addEventListener('click', () => {
+                                const centralAudio = document.querySelector("#centralAudio");
+                                setTimeout(() => location.href = `../../view/game/pickingUpIsALittleRed.html?cardDataSize=${level_name.length-1}&startId=${levelNameConversion[level_name[0].getAttribute('alt')]}&counties=${counties}`, 800);
+                                voiceOut.playDevilBPM();
+                            })
+                        } else if (levelIsPassSize == (level_name.length - 1)) {
+                            level_name[i].src = "../../image/icon/devil.png";
+                            level_name[i].addEventListener('click', () => {
+                                const centralAudio = document.querySelector("#centralAudio");
+                                setTimeout(() => location.href = `../../view/game/pickingUpIsALittleRed.html?cardDataSize=${level_name.length-1}&startId=${levelNameConversion[level_name[0].getAttribute('alt')]}&counties=${counties}`, 800);
+                                voiceOut.playDevilBPM();
+
+                            })
+                        } else {
+                            level_name[i].src = "../../image/icon/devil_lock.png";
+                            level_name[i].addEventListener('click', () => {
+                                alert('需要先完成縣市所有關卡！');
+                            })
+                        }
                     }
-                  }
-                  
-               }
-          }     
-      });
-   
-      });
-  }
-  
+
+                }
+            }
+        });
+
+    });
+}

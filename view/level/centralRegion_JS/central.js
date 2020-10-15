@@ -105,16 +105,12 @@ function mute() {
     centralAudio.currentTime = 0;
 }
 
-function playDevilBPM(centralAudio) {
-
-    if (centralAudio.canPlayType("audio/mpeg")) {
-        centralAudio.setAttribute("src", `../../TTS/mp3/bpm/b.mp3`);
-       
-    }
-
-    centralAudio.play();
+function playDevilBPM() {
+    let devil = document.getElementById("AUDIO");
+    devil.setAttribute("src", `../../TTS/mp3/devil.mp3`);
+    devil.play();
 }
 
-module.exports={
+module.exports = {
     playDevilBPM
 }
