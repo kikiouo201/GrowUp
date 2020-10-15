@@ -12,6 +12,7 @@ function RegionIcon(featureIcon) {
                 console.log("picKL 1 -> " + picKL)
                 iconRegion.style.visibility = "visible";
                 iconDiv.style.height = '260px';
+                playNorth(Klung);
                 iconDiv.innerHTML = `<img onclick="returnBMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
                     <img src="./image/icon/oceanliner.png" style="width: 147px;height: auto;margin: 8% 33%;/* margin-right: 10px; */cursor: pointer;">
                     <img style='position: absolute; top: 70px; left: 20px;  height: 50px' src="./image/character/muted.png" onclick="mute()" />
@@ -22,8 +23,10 @@ function RegionIcon(featureIcon) {
 
             } else {
                 console.log("picKL 2 -> " + picKL)
-                document.location.href = './view/level/keelung.html'
                 playNorth(Klung);
+                setTimeout(() => {
+                    document.location.href = './view/level/keelung.html'
+                }, 1000)
             }
             // if(newTp.src)
             break;
@@ -36,6 +39,7 @@ function RegionIcon(featureIcon) {
                 console.log("picTP 1 -> " + picTP)
                 iconRegion.style.visibility = "visible";
                 iconDiv.style.height = '280px';
+                playNorth(TP101);
                 iconDiv.innerHTML = `<img onclick="returnBMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
                 <img src="./image/icon/taipei101.png" style="width: 147px;height: auto;margin: 8% 33%;/* margin-right: 10px; */cursor: pointer;">
                 <img style='position: absolute; top: 70px; left: 20px;  height: 50px' src="./image/character/muted.png" onclick="mute()" />
@@ -45,10 +49,12 @@ function RegionIcon(featureIcon) {
                 <br><br>`
             } else {
                 console.log("picTP 2 -> " + picTP)
-                document.location.href = './view/level/taipei.html'
                 playNorth(TP101);
+                setTimeout(() => {
+                    document.location.href = './view/level/taipei.html'
+                }, 1000)
             }
-            // if(newTp.src)
+
             break;
 
         case "新北鶯歌陶瓷":
@@ -59,6 +65,7 @@ function RegionIcon(featureIcon) {
                 console.log("picNTP 1 -> " + picNTP)
                 iconRegion.style.visibility = "visible";
                 iconDiv.style.height = '310px';
+                playNorth(newTp);
                 iconDiv.innerHTML = `<img onclick="returnBMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
                 <img src="./image/icon/NewTaipei_icon.png" style="width: 120px;height: auto;margin: 8% 36%;/* margin-right: 10px; */cursor: pointer;">
                 <img style='position: absolute; top: 70px; left: 20px;  height: 50px' src="./image/character/muted.png" onclick="mute()" />
@@ -68,8 +75,10 @@ function RegionIcon(featureIcon) {
                 <br><br>`
             } else {
                 console.log("picNTP 2 -> " + picNTP)
-                document.location.href = './view/level/newTaipei.html'
                 playNorth(newTp);
+                setTimeout(() => {
+                    document.location.href = './view/level/newTaipei.html'
+                }, 1000)
             }
             // if(newTp.src)
             break;
@@ -82,6 +91,7 @@ function RegionIcon(featureIcon) {
                 console.log("picTao 1 -> " + picTao)
                 iconRegion.style.visibility = "visible";
                 iconDiv.style.height = '285px';
+                playNorth(taoY);
                 iconDiv.innerHTML = `<img onclick="returnBMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
                 <img src="./image/icon/togan.png" style="width: 155px;height: auto;margin: 7% 32%;/* margin-right: 10px; */cursor: pointer;">
                 <img style='position: absolute; top: 70px; left: 20px;  height: 50px' src="./image/character/muted.png" onclick="mute()" />
@@ -91,8 +101,11 @@ function RegionIcon(featureIcon) {
                 <br><br>`
             } else {
                 console.log("picTao 2 -> " + picTao)
-                document.location.href = './view/level/taoyuan.html'
                 playNorth(taoY);
+                setTimeout(() => {
+                    document.location.href = './view/level/taoyuan.html'
+                }, 1000)
+
             }
             // if(newTp.src)
             break;
@@ -105,6 +118,7 @@ function RegionIcon(featureIcon) {
                 console.log("picHsinC 1 -> " + picHsinC)
                 iconRegion.style.visibility = "visible";
                 iconDiv.style.height = '285px';
+                playNorth(HsinC);
                 iconDiv.innerHTML = `<img onclick="returnBMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
                 <img src="./image/icon/pork_ball.png" style="width: 131px;height: auto;margin: 17% 34%;/* margin-right: 10px; */cursor: pointer;">
                 <img style='position: absolute; top: 70px; left: 20px;  height: 50px' src="./image/character/muted.png" onclick="mute()" />
@@ -115,9 +129,7 @@ function RegionIcon(featureIcon) {
 
             } else {
                 console.log("picHsinC 2 -> " + picHsinC)
-
                 playNorth(HsinC);
-
                 setTimeout(() => {
                     document.location.href = './view/level/hsinchu.html'
                 }, 1000)
@@ -134,6 +146,7 @@ function RegionIcon(featureIcon) {
                     // mapIcon.style.visibility = "hidden";
                 iconRegion.style.visibility = "visible";
                 iconDiv.style.height = '300px';
+                playCentral(MiaoL);
                 iconDiv.innerHTML = `<img onclick="returnBMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
                 <img src="./image/icon/strawberry.png" style="width: 127px;height: auto;margin: 55px 34%;/* margin-right: 10px; */cursor: pointer;">
                 <img style='position: absolute; top: 70px; left: 20px;  height: 50px' src="./image/character/muted.png" onclick="mute()" />
@@ -144,8 +157,11 @@ function RegionIcon(featureIcon) {
 
             } else {
                 console.log("picMiaoL 2 -> " + picMiaoL)
-                document.location.href = './view/level/miaoli.html'
                 playCentral(MiaoL);
+                setTimeout(() => {
+                    document.location.href = './view/level/miaoli.html'
+                }, 1000)
+
             }
             break;
 
@@ -157,6 +173,7 @@ function RegionIcon(featureIcon) {
                 console.log("picTaiC 1 -> " + picTaiC)
                 iconRegion.style.visibility = "visible";
                 iconDiv.style.height = '280px'
+                playCentral(TaiC);
                 iconDiv.innerHTML = `<img onclick="returnBMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
                 <img src="./image/icon/suncake.png" style="width: 180px;height: auto;margin: 14% 28%;/* margin-right: 10px; */cursor: pointer;">
                 <img style='position: absolute; top: 70px; left: 20px;  height: 50px' src="./image/character/muted.png" onclick="mute()" />
@@ -166,8 +183,10 @@ function RegionIcon(featureIcon) {
                 <br><br>`
             } else {
                 console.log("picTaiC 2 -> " + picTaiC)
-                document.location.href = './view/level/taichung.html'
                 playCentral(TaiC);
+                setTimeout(() => {
+                    document.location.href = './view/level/taichung.html'
+                }, 1000)
             }
             break;
 
@@ -181,6 +200,7 @@ function RegionIcon(featureIcon) {
                 iconRegion.style.visibility = "visible";
                 iconDiv.style.width = '420px';
                 iconDiv.style.height = '290px';
+                playCentral(ChangH);
                 iconDiv.innerHTML = `<img onclick="returnBMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
                 <img src="./image/icon/meat_ball_B.png" style="width: 180px;height: auto;margin: 17% 29%;/* margin-right: 10px; */cursor: pointer;">
                 <img style='position: absolute; top: 70px; left: 20px;  height: 50px' src="./image/character/muted.png" onclick="mute()" />
@@ -190,8 +210,11 @@ function RegionIcon(featureIcon) {
                 <br><br>`
             } else {
                 console.log("picChangH 2 -> " + picChangH)
-                document.location.href = './view/level/changhua.html'
                 playCentral(ChangH);
+                setTimeout(() => {
+                    document.location.href = './view/level/changhua.html'
+                }, 1000)
+
             }
             break;
 
@@ -204,6 +227,7 @@ function RegionIcon(featureIcon) {
             if (picYuLin.indexOf('dark.png') === -1) { //找不到dark
                 console.log("picYuLin 1 -> " + picYuLin)
                 iconRegion.style.visibility = "visible";
+                playCentral(YuLin);
                 iconDiv.innerHTML = `<img onclick="returnBMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
                 <img src="./image/icon/soy_sauce.png" style="width: 98px;height: auto;margin: 13% 42%;/* margin-right: 10px; */cursor: pointer;">
                 <img style='position: absolute; top: 70px; left: 20px;  height: 50px' src="./image/character/muted.png" onclick="mute()" />
@@ -213,8 +237,11 @@ function RegionIcon(featureIcon) {
                 <br><br>`
             } else {
                 console.log("picYuLin 2 -> " + picYuLin)
-                document.location.href = './view/level/yunlin.html'
                 playCentral(YuLin);
+                setTimeout(() => {
+                    document.location.href = './view/level/yunlin.html'
+                }, 1000)
+
             }
             break;
 
@@ -227,6 +254,7 @@ function RegionIcon(featureIcon) {
                 console.log("picNanT 1 -> " + picNanT)
                 iconRegion.style.visibility = "visible";
                 iconDiv.style.height = '240px';
+                playCentral(NanT);
                 iconDiv.innerHTML = `<img onclick="returnBMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
                 <img src="./image/icon/herbal_tea.png" style="width: 114px;height: auto;margin: 13% 38%;/* margin-right: 10px; */cursor: pointer;">
                 <img style='position: absolute; top: 70px; left: 20px;  height: 50px' src="./image/character/muted.png" onclick="mute()" />
@@ -236,8 +264,11 @@ function RegionIcon(featureIcon) {
                 <br><br>`
             } else {
                 console.log("picNanT 2 -> " + picNanT)
-                document.location.href = './view/level/nantou.html'
                 playCentral(NanT);
+                setTimeout(() => {
+                    document.location.href = './view/level/nantou.html'
+                }, 1000)
+
             }
             break;
 
@@ -249,6 +280,7 @@ function RegionIcon(featureIcon) {
             if (picChiaY.indexOf('dark.png') === -1) { //找不到dark
                 console.log("picChiaY 1 -> " + picChiaY)
                 iconRegion.style.visibility = "visible";
+                playSouth(ChiaY);
                 iconDiv.innerHTML = `<img onclick="returnBMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
                 <img src="./image/icon/meat_rice.png" style="width: 114px;height: auto;margin: 17% 38%;/* margin-right: 10px; */cursor: pointer;">
                 <img style='position: absolute; top: 70px; left: 20px;  height: 50px' src="./image/character/muted.png" onclick="mute()" />
@@ -258,8 +290,11 @@ function RegionIcon(featureIcon) {
                 <br><br>`
             } else {
                 console.log("picChiaY 2 -> " + picChiaY)
-                document.location.href = './view/level/chiayi.html'
                 playSouth(ChiaY);
+                setTimeout(() => {
+                    document.location.href = './view/level/chiayi.html'
+                }, 1000)
+
             }
             break;
 
@@ -272,6 +307,7 @@ function RegionIcon(featureIcon) {
                 console.log("picTaiN 1 -> " + picTaiN)
                 iconRegion.style.visibility = "visible";
                 iconDiv.style.height = '265px';
+                playSouth(TaiN);
                 iconDiv.innerHTML = `<img onclick="returnBMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
                 <img src="./image/icon/temple.png" style="width: 114px;height: auto;margin: 10% 38%;/* margin-right: 10px; */cursor: pointer;">
                 <img style='position: absolute; top: 70px; left: 20px;  height: 50px' src="./image/character/muted.png" onclick="mute()" />
@@ -281,8 +317,11 @@ function RegionIcon(featureIcon) {
                 <br><br>`
             } else {
                 console.log("picTaiN 2 -> " + picTaiN)
-                document.location.href = './view/level/tainan.html'
                 playSouth(TaiN);
+                setTimeout(() => {
+                    document.location.href = './view/level/tainan.html'
+                }, 1000)
+
             }
             break;
 
@@ -294,6 +333,7 @@ function RegionIcon(featureIcon) {
                 console.log("picKaoS 1 -> " + picKaoS)
                 iconRegion.style.visibility = "visible";
                 iconDiv.style.height = '300px'
+                playSouth(KaoS);
                 iconDiv.innerHTML = `<img onclick="returnBMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
                 <img src="./image/icon/85building.png" style="width: 77px;height: auto;margin: 9% 43%;/* margin-right: 10px; */cursor: pointer;">
                 <img style='position: absolute; top: 70px; left: 20px;  height: 50px' src="./image/character/muted.png" onclick="mute()" />
@@ -303,8 +343,11 @@ function RegionIcon(featureIcon) {
                 <br><br>`
             } else {
                 console.log("picKaoS 2 -> " + picKaoS)
-                document.location.href = './view/level/kaohsiung.html'
                 playSouth(KaoS);
+                setTimeout(() => {
+                    document.location.href = './view/level/kaohsiung.html'
+                }, 1000)
+
             }
             break;
 
@@ -317,6 +360,7 @@ function RegionIcon(featureIcon) {
                 iconRegion.style.visibility = "visible";
                 // iconDiv.style.margin = "10% 34%";
                 iconDiv.style.height = '260px';
+                playSouth(PingT);
                 iconDiv.innerHTML = `<img onclick="returnBMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
                 <img src="./image/icon/black_tuna.png" style="width: 131px;height: auto;margin: 13% 34%;/* margin-right: 10px; */cursor: pointer;">
                 <img style='position: absolute; top: 70px; left: 20px;  height: 50px' src="./image/character/muted.png" onclick="mute()" />
@@ -326,8 +370,11 @@ function RegionIcon(featureIcon) {
                 <br><br>`
             } else {
                 console.log("picPingT 2 -> " + picPingT)
-                document.location.href = './view/level/pingtung.html'
                 playSouth(PingT);
+                setTimeout(() => {
+                    document.location.href = './view/level/pingtung.html'
+                }, 1000)
+
             }
             break;
 
@@ -339,6 +386,7 @@ function RegionIcon(featureIcon) {
                 console.log("picYiL 1 -> " + picYiL)
                 iconRegion.style.visibility = "visible";
                 iconDiv.style.height = '300px';
+                playNorth(YiL);
                 iconDiv.innerHTML = `<img onclick="returnBMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
                 <img src="./image/icon/Sanxing_green_onion.png" style="width: 131px;height: auto;margin: 17% 34%;/* margin-right: 10px; */cursor: pointer;">
                 <img style='position: absolute; top: 70px; left: 20px;  height: 50px' src="./image/character/muted.png" onclick="mute()" />
@@ -348,9 +396,11 @@ function RegionIcon(featureIcon) {
                 <br><br>`
             } else {
                 console.log("picYiL 2 -> " + picYiL)
-                document.location.href = './view/level/yilan.html'
+                playNorth(YiL);
+                setTimeout(() => {
+                    document.location.href = './view/level/yilan.html'
+                }, 1000)
 
-                setTimeout(() => playNorth(YiL), 1000);
             }
             break;
 
@@ -362,6 +412,7 @@ function RegionIcon(featureIcon) {
                 console.log("picHuaL 1 -> " + picHuaL)
                 iconRegion.style.visibility = "visible";
                 iconDiv.style.height = '260px';
+                playEast(HuaL);
                 iconDiv.innerHTML = `<img onclick="returnBMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
                 <img src="./image/icon/watermelon.png" style="width: 109px;height: auto;margin: 15% 38%;/* margin-right: 10px; */cursor: pointer;">
                 <img style='position: absolute; top: 70px; left: 20px;  height: 50px' src="./image/character/muted.png" onclick="mute()" />
@@ -371,8 +422,11 @@ function RegionIcon(featureIcon) {
                 <br><br>`
             } else {
                 console.log("picHuaL 2 -> " + picHuaL)
-                document.location.href = './view/level/hualien.html'
                 playEast(HuaL);
+                setTimeout(() => {
+                    document.location.href = './view/level/hualien.html'
+                }, 1000)
+
             }
             break;
 
@@ -387,6 +441,7 @@ function RegionIcon(featureIcon) {
                 iconDiv.style.width = "450px"
                 iconDiv.style.margin = "10% 25%"
                 iconDiv.style.height = '310px';
+                playEast(TaiT);
                 iconDiv.innerHTML = `<img onclick="returnBMap()" src="./icons/return.png" style="width: 40px; position: absolute; top: 0px; padding-top: 20px; padding-left: 20px; cursor:pointer;">
                 <img src="./image/icon/hot_air_balloon.png" style="width: 145px;height: auto;margin: 7% 35%;/* margin-right: 10px; */cursor: pointer;">
                 <img style='position: absolute; top: 70px; left: 20px;  height: 50px' src="./image/character/muted.png" onclick="mute()" />
@@ -396,8 +451,11 @@ function RegionIcon(featureIcon) {
                 <br><br>`
             } else {
                 console.log("picTaiT 2 -> " + picTaiT)
-                document.location.href = './view/level/taitung.html'
                 playEast(TaiT);
+                setTimeout(() => {
+                    document.location.href = './view/level/taitung.html'
+                }, 1000)
+
             }
             break;
 
