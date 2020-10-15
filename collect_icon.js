@@ -197,3 +197,9 @@ function goHome(name) {
     audioCreate.setAttribute("src", `./TTS/mp3/${name}.mp3`);
     audioCreate.play();
 }
+
+function mute() {
+    let mute = document.getElementById("Audio");
+    mute.pause();
+    mute.currentTime = 0;
+}
