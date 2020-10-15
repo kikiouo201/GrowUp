@@ -75,7 +75,7 @@ const levelName = {
 }
 
 function playCentral(name) {
-    let centralAudio = document.getElementById("centralAudio");
+    let centralAudio = document.getElementById("AUDIO");
     console.log("name:" + name.alt)
     let id = name.alt;
     if (centralAudio.canPlayType("audio/mpeg")) {
@@ -87,7 +87,7 @@ function playCentral(name) {
 }
 
 function playBPM(name) {
-    let centralAudio = document.getElementById("centralAudio");
+    let centralAudio = document.getElementById("AUDIO");
 
     let nameAlt = name.alt;
     let id = levelName[nameAlt];
@@ -100,7 +100,7 @@ function playBPM(name) {
 }
 
 function mute() {
-    let centralAudio = document.getElementById("centralAudio");
+    let centralAudio = document.getElementById("AUDIO");
     centralAudio.pause();
     centralAudio.currentTime = 0;
 }
