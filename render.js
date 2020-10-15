@@ -47,11 +47,12 @@ if (reset) {
 var answer, explain;
 if (identifyBtn) {
     identifyBtn.addEventListener('click', () => {
-        ipcRenderer.send('close-mjpg-streamer')
+        // ipcRenderer.send('close-mjpg-streamer')
             // ipcRenderer.send('vision')
+            ipcRenderer.send('captrue');
         ipcRenderer.on('reply-close-mjpg-streamer', (event, data) => {
             document.getElementById('leadTxt').innerHTML = "拍照中。。。";
-            ipcRenderer.send('captrue');
+            
 
             // ShowVisibility.style.display = "none";
             // ImgVisibility.style.display = "none";
