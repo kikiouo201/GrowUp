@@ -35,8 +35,11 @@ function startGame(){
   cardDataSize = (new URLSearchParams(location.search)).get("cardDataSize");
   let startId = (new URLSearchParams(location.search)).get("startId");
   cardData=[];
+  console.log(`cardDataSize =${cardDataSize } , startId= ${startId.toString()}`)
   let levelNameStartPlace= levelName.indexOf(startId);
-  for(let i=1;i<=cardDataSize;i++){
+  console.log(`levelNameStartPlace=${levelNameStartPlace}`)
+  for(let i=0;i<cardDataSize;i++){
+    console.log(levelName[levelNameStartPlace+i])
     cardData.push(levelName[levelNameStartPlace+i]);
   }
   let cards=document.querySelector('.cards');
@@ -56,7 +59,7 @@ function startGame(){
     let p=cardData.pop();
     gameData[i*2]=p
     gameData[i*2+1]=p
-
+    console.log(`gameData=${gameData.toString()}`)
   }
 
   shuffle(gameData)   //對遊戲資料進行洗牌
