@@ -70,9 +70,9 @@
         <span class="mh0 system-show w3-btn w3-ripple">
       <h2 id="leadTxt"style="font-family: Microsoft JhengHei; display:inline-block; margin-top: 8px; margin-bottom: 0px;">請先拍下你想知道的事物</h2>
     
-      <span   class="mh1 voice-btn w3-btn w3-ripple" style="width: auto; height: 50px; margin-top: 2px;" onclick="changecss()">
-        <!-- <img id="identify-js"  src="./photo/camera.png"style="height: 80%; width: 50px; margin-top: 5px; cursor: pointer; " onclick="changecss()"> -->
-        <img  src="./photo/camera.png"style="height: 80%; width: 50px; margin-top: 5px; cursor: pointer; " >
+      <span   class="mh1 voice-btn w3-btn w3-ripple" style="width: auto; height: 50px; margin-top: 2px;" >
+        <img id="identify-js"  src="./photo/camera.png"style="height: 80%; width: 50px; margin-top: 5px; cursor: pointer; " >
+        <!-- <img  src="./photo/camera.png"style="height: 80%; width: 50px; margin-top: 5px; cursor: pointer; " > -->
       </span>
         </span>
     </div>
@@ -158,21 +158,21 @@
     <script>
         function changecss() {
             // console.log("call capture")
-            var ShowVisibility = document.querySelector('.QA_card_area');
-            var ImgVisibility = document.querySelector('img#AnsImg');
-            var stream = document.querySelector('#stream');
-            if (stream.style.display == "block") {
-                 console.log("call capture")
-                ImgVisibility.src = "./still-image.jpg"
-                stream.style.display = "none";
-                ShowVisibility.style.display = "block";
-                ImgVisibility.style.display = "block";
-                document.getElementById('leadTxt').innerHTML = "辨識成功!!";
-            } else {
-                stream.style.display = "block";
-                ShowVisibility.style.display = "none";
-                ImgVisibility.style.display = "none";
-            }
+            // var ShowVisibility = document.querySelector('.QA_card_area');
+            // var ImgVisibility = document.querySelector('img#AnsImg');
+            // var stream = document.querySelector('#stream');
+            // if (stream.style.display == "block") {
+            //      console.log("call capture")
+            //     ImgVisibility.src = "./still-image.jpg"
+            //     stream.style.display = "none";
+            //     ShowVisibility.style.display = "block";
+            //     ImgVisibility.style.display = "block";
+            //     document.getElementById('leadTxt').innerHTML = "辨識成功!!";
+            // } else {
+            //     stream.style.display = "block";
+            //     ShowVisibility.style.display = "none";
+            //     ImgVisibility.style.display = "none";
+            // }
 
         }
     </script>
