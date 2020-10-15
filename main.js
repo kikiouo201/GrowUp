@@ -364,8 +364,7 @@ ipcMain.on('crawlerShowWeb', async(event, args) => {
             full.onclick = null;
 
             setTimeout(() => {
-                document.querySele
-                ctor('.fp-ui').click()
+                document.querySelector('.fp-ui').click()
             }, 2000);
             setTimeout(() => {
                 full.click()

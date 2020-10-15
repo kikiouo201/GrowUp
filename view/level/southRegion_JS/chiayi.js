@@ -63,7 +63,7 @@ function changeInfor(type) {
             break;
         case 4:
             picture.src = "https://www.eastcoast-nsa.gov.tw/image/28952/1024x768";
-            intro.textContent = "首座標誌碑設立於1908年，是世界首座於回歸線上設置的標誌物；1995年興建科學教育設施「北回歸線太陽館」。"
+            intro.textContent = "是世界首座於回歸線上設置的標誌物；1995年興建科學教育設施「北回歸線太陽館」。"
             speaker.alt = "chiayi_f4"
             break;
     }
