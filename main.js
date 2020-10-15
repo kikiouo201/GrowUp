@@ -354,23 +354,26 @@ ipcMain.on('crawlerShowWeb', async(event, args) => {
     page.on('colse', async() => {
         await browser.close();
     });
+    await page.exposeFunction('colseBrowser', () => {
+        page.emit('colse');
 
+    });
     page.on('dialog', async dialog => {
         console.log(dialog.message());
         await dialog.dismiss();
         await page.evaluate(() => {
             const full = document.querySelector('.fp-fullscreen');
 
-            full.onclick = null;
+            // full.onclick = null;
 
-            setTimeout(() => {
-                document.querySelector('.fp-ui').click()
-            }, 2000);
-            setTimeout(() => {
-                full.click()
-            }, 1000);
+            // setTimeout(() => {
+            //     document.querySelector('.fp-ui').click()
+            // }, 2000);
+            // setTimeout(() => {
+            //     full.click()
+            // }, 1000);
 
-            full.onclick = () => window.colseBrowser();
+            // full.onclick = () => window.colseBrowser();
 
         })
     });
