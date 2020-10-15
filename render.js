@@ -84,7 +84,7 @@ if (identifyBtn) {
             explain = data;
         })
 
-        ipcRenderer.on('replyPbook', (event, pbook) => {
+        ipcRenderer.on('cameraReplyPbook', (event, pbook) => {
             // ipcRenderer.send('addQAtoServer')
             if (answer == undefined) {
                 document.getElementById('leadTxt').innerHTML = "辨識失敗!!";

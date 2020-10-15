@@ -165,7 +165,7 @@ ipcMain.on('close-mjpg-streamer', async(event, arg) => {
         console.log('Program output:', std);
         console.log('Program stderr:', err);
     })
-    
+
     event.sender.send('reply-close-mjpg-streamer')
 })
 
@@ -281,7 +281,7 @@ ipcMain.on('camera-searchPictureBook', async(event, keyword) => {
         PBook['bookIntro'] = findBookIntro;
 
 
-        event.reply('replyPbook', PBook)
+        event.reply('cameraReplyPbook', PBook)
 
     } catch (e) {
         console.log('an expection on page.evaluate ', e);
@@ -350,7 +350,7 @@ ipcMain.on('crawlerShowWeb', async(event, args) => {
     });
     const page = await browser.newPage();
     event.reply('colseLoading');
-    
+
     page.on('colse', async() => {
         await browser.close();
     });
@@ -549,7 +549,7 @@ ipcMain.on('call-frequency', (event, arg) => {
         var Speechtotalfreq = 0;
         let dt = new Date();
         console.log("speechdata =>" + dt.getDate())
-        // console.log("speechdata =>" + JSON.stringify(req))
+            // console.log("speechdata =>" + JSON.stringify(req))
 
         for (i = (Object.keys(freq.content).length - 1); i >= 0; i--) {
 
