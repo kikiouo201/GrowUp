@@ -1,4 +1,5 @@
 let { ipcRenderer:ipcRenderer2 } = require('electron');
+let voiceOut =require('../../view/level/centralRegion_JS/central.js');
 
 let levelNameConversion = {
     'ㄅ': 'b',
@@ -101,12 +102,15 @@ function checkLevelIsPass(level_icon,counties) {
                       if(level.ispass == 1 && levelIsPassSize == (level_name.length-1) ){
                           level_name[i].src ="../../image/icon/devil.png";
                           level_name[i].addEventListener('click',() => {
-                            window.location.href = `../../view/game/pickingUpIsALittleRed.html?cardDataSize=${level_name.length-1}&startId=${levelNameConversion[level_name[0].getAttribute('alt')]}&counties=${counties}`;
+                            const centralAudio = document.querySelector("#centralAudio");
+                            setTimeout(()=>location.href=`../../view/game/pickingUpIsALittleRed.html?cardDataSize=${level_name.length-1}&startId=${levelNameConversion[level_name[0].getAttribute('alt')]}&counties=${counties}`,800);voiceOut.playDevilBPM(centralAudio);
                         })
                       }else if(levelIsPassSize == (level_name.length-1)){
                         level_name[i].src ="../../image/icon/devil.png";
                           level_name[i].addEventListener('click',() => {
-                            window.location.href = `../../view/game/pickingUpIsALittleRed.html?cardDataSize=${level_name.length-1}&startId=${levelNameConversion[level_name[0].getAttribute('alt')]}&counties=${counties}`;
+                            const centralAudio = document.querySelector("#centralAudio");
+                            setTimeout(()=>location.href=`../../view/game/pickingUpIsALittleRed.html?cardDataSize=${level_name.length-1}&startId=${levelNameConversion[level_name[0].getAttribute('alt')]}&counties=${counties}`,800);voiceOut.playDevilBPM(centralAudio);
+                           
                         })
                       }else {
                         level_name[i].src ="../../image/icon/devil_lock.png";
