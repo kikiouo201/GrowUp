@@ -53,12 +53,12 @@ function changeInfor(type) {
       case 2:
           picture.src = "https://www.taiwan.net.tw/pic.ashx?qp=1/big_scenic_spots/pic_A12-00261.jpg&sizetype=3";
           intro.textContent = "彰顯苗栗在地客家文化特質外，更結合親水廊道的美麗景觀，打造苗栗亮麗的門面，呈現在地藝文特色。"
-          speaker.alt = "miaoli_f3"
+          speaker.alt = "miaoli_f2"
           break; 
       case 3:
           picture.src = "https://www.taiwan.net.tw/pic.ashx?qp=1/big_scenic_spots/pic_C100_342_8.jpg&sizetype=3";
           intro.textContent = "舊稱「魚藤坪」。相傳於開墾初時，有鯉魚精危害。因此鄉民在龍騰山區遍植魚藤，將東面的高山稱為關刀山，以克制魚怪。"
-          speaker.alt = "miaoli_f2"
+          speaker.alt = "miaoli_f3"
           break;         
   }
 }
