@@ -27,24 +27,28 @@
                 page.on('colse', async () => {
                     await browser.close();
                 });
+                
+                await page.exposeFunction('colseBrowser', () => {
+                    page.emit('colse');
 
+                });
                 page.on('dialog', async dialog => {
                     console.log(dialog.message());
                     await dialog.dismiss();
                     await page.evaluate(() => {
-                        const full = document.querySelector('.fp-fullscreen');
+                        // const full = document.querySelector('.fp-fullscreen');
 
-                        full.onclick = ()=>{return true};
+                        // full.onclick = ()=>{return true};
 
-                        setTimeout(() => {
-                            document.querySele
-                            ctor('.fp-ui').click()
-                        }, 2000);
-                        setTimeout(() => {
-                            full.click()
-                        }, 1000);
+                        // setTimeout(() => {
+                        //     document.querySele
+                        //     ctor('.fp-ui').click()
+                        // }, 2000);
+                        // setTimeout(() => {
+                        //     full.click()
+                        // }, 1000);
 
-                        full.onclick = () => window.colseBrowser();
+                        // full.onclick = () => window.colseBrowser();
 
                     })
                 });
@@ -109,8 +113,8 @@
     <div class="maincontent">
 
         <div id="parent_recommend">
-
-            <!-- <div class="book">
+<!-- 
+            <div class="book">
 
                 <div class="bookname-div">
                     <h2>測試用bookList</h2>

@@ -364,16 +364,16 @@ ipcMain.on('crawlerShowWeb', async(event, args) => {
         await page.evaluate(() => {
             const full = document.querySelector('.fp-fullscreen');
 
-            full.onclick = null;
+            // full.onclick = null;
 
-            setTimeout(() => {
-                document.querySelector('.fp-ui').click()
-            }, 2000);
-            setTimeout(() => {
-                full.click()
-            }, 1000);
+            // setTimeout(() => {
+            //     document.querySelector('.fp-ui').click()
+            // }, 2000);
+            // setTimeout(() => {
+            //     full.click()
+            // }, 1000);
 
-            full.onclick = () => window.colseBrowser();
+            // full.onclick = () => window.colseBrowser();
 
         })
     });
