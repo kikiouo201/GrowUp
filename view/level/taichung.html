@@ -75,7 +75,7 @@
             <img class="level_text" alt="ㄟ" src="../../image/chinese_alphabet/ei.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=ei&counties=taichung',800);playBPM(this);" />
         </div>
         <div class="level8">
-            <img class="level" width="50px" src="../../image/icon/devil_lock.png" onclick="alert('需要先完成縣市所有關卡！')" />
+            <img class="level" width="50px" alt="taichung" src="../../image/icon/devil_lock.png"  />
 
         </div>
 
@@ -106,169 +106,9 @@
             <i class="fab fa-share my-float"><img src="../../photo/gobackhome.png" width="70%"></i>
         </a>
     </div>
-    <script src="./centralRegion_JS/levelIsPass.js"></script>
     <script src="centralRegion_JS/taichung.js"></script>
     <!-- <script src="../../model/util/voiceOut.js"></script> -->
 
 </body>
 
 </html>
-<!-- <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../CSS/map/taichung.css">
-    <link rel="stylesheet" href="../../CSS/map/counties.css">
-    <link rel="stylesheet" href="../../CSS/interface.css">
-    <link rel="stylesheet" href="../../CSS/icon.css">
-    <script src="./centralRegion_JS/central.js"></script>
-    <script src="../../model/util/checkAllLevelIsPass.js"></script>
-    <title>Document</title>
-</head>
-
-<style>
-    .features {
-        background-color: aliceblue;
-        /* width: 320px; */
-        width: 275px;
-        height: 400px;
-        /* margin-top: -140px; */
-        margin-left: 100px;
-        margin-top: 22px;
-    }
-    
-    .map_location {
-        width: 16px;
-        position: absolute;
-        top: 44px;
-        z-index: 15;
-        left: 28px;
-    }
-</style>
-
-<body class="style" background="../../image/map/kraftPaper5.png" onload="checkLevelIsPass('suncake','taichung')">
-    <audio id="centralAudio" src=""></audio>
-    <table class="features">
-        <tr>
-            <td colspan="2" style="font-size: 40px;text-align: center;">臺中地區</td>
-        </tr>
-        <tr style="display: none;">
-            <td>特色</td>
-            <td>資訊介紹</td>
-        </tr>
-        <tr>
-            <td><img src="../../image/map/Taichung_origin.png" onclick="featuresText('臺中地區');playCentral(this)" alt="taichungRegion" /><a style="display: block;">臺中地區</a></td>
-            <td id="information" rowspan="4" valign="top" style="font-size:x-large;">
-                <h4 style='margin: auto;'>
-                    六都之一，是臺灣西半部的樞紐，四季氣候宜人。日治時期，臺中遂躍身為中臺灣政治、經濟、交通、文化的重鎮。
-                </h4>
-            </td>
-        </tr>
-        <tr>
-            <td><img src="../../image/icon/suncake.png" onclick="featuresText('太陽餅');playCentral(this)" alt="taichung_f1" /><a style="display: block;">太陽餅</a></td>
-        </tr>
-        <tr>
-            <td><img src="../../image/map_icon/Taichung_farm.png" onclick="featuresText('武陵農場');playCentral(this)" alt="taichung_f2" /><a style="display: block;">武陵農場</a></td>
-        </tr>
-        <tr>
-            <td><img src="../../image/map_icon/Taichung_national_theater.png" onclick="featuresText('臺中國家歌劇院');playCentral(this)" alt="taichung_f3" /><a style="display: block;">臺中國家歌劇院</a></td>
-        </tr>
-
-    </table>
-    <div class="map">
-        <img class="terrain" src="../../image/map/Taichung1.png" />
-        <div class="level1">
-            <img id="zhuyin" alt="ㄩ" class="level_basic level" src="../../image/icon/suncake_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=yu&counties=taichung',800);playBPM(this);" />
-            <img class="level_text" alt="ㄩ" src="../../image/chinese_alphabet/yu.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=yu&counties=taichung',800);playBPM(this);" />
-        </div>
-        <div class="level2">
-            <img id="zhuyin" alt="ㄚ" class="level_basic level" src="../../image/icon/suncake_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=a&counties=taichung',800);playBPM(this);" />
-            <img class="level_text" alt="ㄚ" src="../../image/chinese_alphabet/a.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=a&counties=taichung',800);playBPM(this);" />
-        </div>
-        <div class="level3">
-            <img id="zhuyin" alt="ㄛ" class="level_basic level" src="../../image/icon/suncake_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=o&counties=taichung',800);playBPM(this);" />
-            <img class="level_text" alt="ㄛ" src="../../image/chinese_alphabet/o.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=o&counties=taichung',800);playBPM(this);" />
-        </div>
-        <div class="level4">
-            <img id="zhuyin" alt="ㄜ" class="level_basic level" src="../../image/icon/suncake_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=e&counties=taichung',800);playBPM(this);" />
-            <img class="level_text" alt="ㄜ" src="../../image/chinese_alphabet/e.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=e&counties=taichung',800);playBPM(this);" />
-        </div>
-
-        <div class="level5">
-            <img id="zhuyin" alt="ㄝ" class="level_basic level" src="../../image/icon/suncake_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=ae&counties=taichung',800);playBPM(this);" />
-            <img class="level_text" alt="ㄝ" src="../../image/chinese_alphabet/ye.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=ae&counties=taichung',800);playBPM(this);" />
-        </div>
-
-        <div class="level6">
-            <img id="zhuyin" alt="ㄞ" class="level_basic level" src="../../image/icon/suncake_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=ai&counties=taichung',800);playBPM(this);" />
-            <img class="level_text" alt="ㄞ" src="../../image/chinese_alphabet/ai.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=ai&counties=taichung',800);playBPM(this);" />
-        </div>
-
-        <div class="level7">
-            <img id="zhuyin" alt="ㄟ" class="level_basic level" src="../../image/icon/suncake_dark.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=ei&counties=taichung',800);playBPM(this);" />
-            <img class="level_text" alt="ㄟ" src="../../image/chinese_alphabet/ei.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=ei&counties=taichung',800);playBPM(this);" />
-        </div>
-        <div class="level8">
-            <img class="level" width="30px" src="../../image/icon/devil_lock.png" onclick="alert('需要先完成縣市所有關卡！')" />
-
-        </div>
-
-
-    </div>
-    <img class="taiwan" src="../../image/character/Taiwn_small.png" onclick="location.href='../../view/level/taiwan.html'" />
-    <img class="map_location" src="../../image/map/map.png" />
-
-    <div>
-        <a onclick="history.back()" class="returnfloat" id="menu-share">
-            <i class="fab fa-share return-float"><img src="../../photo/return.png"></i>
-        </a>
-    </div>
-    <div>
-        <a href="../../game_home.html" class="homefloat" id="menu-share">
-            <i class="fab fa-share my-float"><img src="../../photo/gobackhome.png" width="70%"></i>
-        </a>
-    </div>
-    <script>
-        function featuresText(category) {
-            const information = document.querySelector('#information')
-            let info = document.createElement("h4");
-            info.style = 'margin: auto;';
-
-            switch (category) {
-                case "臺中地區":
-                    information.innerHTML = "";
-                    info.innerHTML = "六都之一，是臺灣西半部的樞紐，四季氣候宜人。日治時期，臺中遂躍身為中臺灣政治、經濟、交通、文化的重鎮。";
-                    information.append(info)
-                    break;
-
-                case "太陽餅":
-                    information.innerHTML =
-                        " <img style = 'width:100%; border-radius: 15px;'  src = 'http://www.ifhouse.com.tw/upload_file/ifhouse/901/15299979011.jpg'/> "
-                    info.innerHTML = "一種甜餡薄餅，通常內餡是麥芽糖，中臺灣的名產之一。";
-                    information.append(info)
-
-                    break;
-                case "武陵農場":
-                    information.innerHTML =
-                        " <img style = 'width:100%; border-radius: 15px;'  src = 'https://www.taiwan.net.tw/pic.ashx?qp=1/big_scenic_spots/pic_9547_18.jpg&sizetype=3'/> "
-                    info.innerHTML = "武陵農場位於臺中市北橫宜蘭支線。農場內阡陌縱橫，種植高山蔬果與茶葉，四季風情不同。";
-                    information.append(info)
-
-                    break;
-                case "臺中國家歌劇院":
-                    information.innerHTML =
-                        " <img style = 'width:100%; border-radius: 15px;'  src = 'https://travel.taichung.gov.tw/Utility/DisplayImage?id=24379'/> "
-                    info.innerHTML = "日本建築師伊東豊雄設計，以「美聲涵洞」為概念，採用曲牆、孔洞與管狀等等設計，建構一棟沒有樑柱支撐。";
-                    information.append(info)
-
-                    break;
-
-            }
-        }
-    </script>
-    <script src="../../model/util/voiceOut.js"></script>
-</body>
-
-</html> -->

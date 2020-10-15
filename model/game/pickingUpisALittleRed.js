@@ -1,5 +1,4 @@
-// require('../../image/pickingUpisALittleRed')
-let {ipcRenderer }= require('electron');
+let {ipcRenderer:ipcRenderer2 }= require('electron');
 
 
 //變數設定
@@ -16,14 +15,14 @@ let counterWidth=100;  //計時條長度
 let timer=60000;     //倒數時間(亳秒)
 let counterHandle;      //計時條
 let complete=0;
-let cardDataSize=0;
+let cardDataSize=8;
 //startGame();
 
 const levelName = [
  'b','p','m','f','d','t','n','l','g','k','h','j','q','x','zhi',
   'chi','shi','ri','zi','ci','si','yi','wu','yu','ra',
   'o','re','ae','ai','ei','ao','ou','an','en','ang','eng','er',
-  1,2,3,4,5,6,7,8,9,0,
+  '1','2','3','4','5','6','7','8','9','0',
   'a1','b1','c1','d1','e1','f1','g1','h1','i1','j1','k1','l1',
   'm1','n1','o1','p1','q1','r1','s1','t1','u1','v1','w1','y1','x1','z1',
 ]
@@ -34,11 +33,19 @@ function startGame(){
 
   cardDataSize = (new URLSearchParams(location.search)).get("cardDataSize");
   let startId = (new URLSearchParams(location.search)).get("startId");
-  cardData=[];
-  let levelNameStartPlace= levelName.indexOf(startId);
-  for(let i=1;i<=cardDataSize;i++){
-    cardData.push(levelName[levelNameStartPlace+i]);
+  if(cardDataSize != null){
+    cardData=[];
+    console.log(`cardDataSize =${cardDataSize } , startId= ${startId.toString()}`)
+    let levelNameStartPlace= levelName.indexOf(startId);
+    console.log(`levelNameStartPlace=${levelNameStartPlace}`)
+    for(let i=0;i<cardDataSize;i++){
+      console.log(levelName[levelNameStartPlace+i])
+      cardData.push(levelName[levelNameStartPlace+i]);
+    }
+  }else{
+    cardDataSize=8;
   }
+
   let cards=document.querySelector('.cards');
   for(let i=0;i<(cardDataSize*2);i++){
     cards.innerHTML+='<div class="card"><div class="front"></div><div class="back"></div></div>';
@@ -56,7 +63,7 @@ function startGame(){
     let p=cardData.pop();
     gameData[i*2]=p
     gameData[i*2+1]=p
-
+    console.log(`gameData=${gameData.toString()}`)
   }
 
   shuffle(gameData)   //對遊戲資料進行洗牌
@@ -132,12 +139,19 @@ function result(){
   let str="";
 
   //設定結果字串
-  if(com>=18){
+  if(com>=(cardDataSize*2)){
     str="遊戲結果\n恭喜完成遊戲\n<button onclick='startGame()'>繼續遊戲</button>";
+    let counties = (new URLSearchParams(location.search)).get("counties");
+    if(counties!=null){
+      ipcRenderer2.send("levelIsPass", counties);
+    }else{
+      ipcRenderer2.send("levelIsPass", 'pickingUpisALittleRed');
+    }
+    
   }else{
-    str="遊戲結果\n失敗，還有 "+((cardData.length*2)-com)+" 張未完成\n<button onclick='startGame()'>繼續遊戲</button>";
+    str="遊戲結果\n失敗，還有 "+((cardDataSize*2)-com)+" 張未完成\n<button onclick='startGame()'>繼續遊戲</button>";
   }
-  ipcRenderer.send("levelIsPass","pickingUpisALittleRed");
+  
   //把結果字串寫入提示顯示區
   document.getElementsByClassName('intro')[0].innerHTML=str;
   document.getElementsByClassName('mask')[0].style.display="block";
@@ -150,7 +164,8 @@ function chk(){
     shows[0].style.animation="opa 500ms ease forwards";
     shows[1].style.animation="opa 500ms ease forwards";
     complete+=2;
-    if(complete>=(18)){
+    if(complete>=((cardDataSize*2))){
+      console.log(complete,(cardDataSize*2));
       result();
       clearInterval(counterHandle);
     }

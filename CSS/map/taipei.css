@@ -1,6 +1,6 @@
 .map_location {
-    top: 50px;
-    left: 35px;
+    top: 5px;
+    left: 54px;
 }
 
 .mainContent {
@@ -29,11 +29,11 @@
 }
 
 .level_text {
-    width: 40px;
+    width: 80px;
     position: absolute;
     z-index: 10;
     top: 17px;
-    left: 14%;
+    left: 21%;
 }
 
 .level2 {

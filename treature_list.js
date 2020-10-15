@@ -70,7 +70,7 @@ minMap.addEventListener('click', () => {
     ipcRenderer.on('selectJsonOnTL', (event, data) => {
         console.log("sucess reply on TL")
             // console.log("data = " + dataID)
-        for (i = 73; i < 90; i++) {
+        for (i = 73; i < 97; i++) {
             // console.log(data.content[i].id + " city name : " + data.content[i].level_name);
             for (k = 0; k < 17; k++) {
                 if (data.content[i].ispass == 1 && data.content[i].level_name == city[k].alt) {

@@ -43,6 +43,7 @@ if (voiceBtn) {
         var CardID_A = 'speaker_A_' + click_num
             // console.log("A= " + 'speaker_A_' + click_num)
 
+        // 解釋爬蟲
         var createQA = (question, url, answer) => `<div id="pictureText_` + click_num + `" class="card text-white mb-3" style="background-color: #92337eba;">
                                         
                                             <div class="card-body" style="margin-top: 30px;">
@@ -57,15 +58,16 @@ if (voiceBtn) {
                                                         <img class="img_` + click_num + `" src="${url}">
                                                     </div>
                                                     <br>
-                                                    <div style="float:left; display: block; text-align: left;">
-                                                        <p class="card-text card_A" style="float: left;">敘述：</p>
+                                                    <div style="float:left; display: block; text-align: left; width: 100%">
+                                                        <p class="card-text card_A" style="float: left; position: relative;">敘述：</p>
                                                         <p class="answer_` + click_num + ` card-text card_A" style="margin-left: 0px;">${answer}</p>
-                                                        <img class="speaker_A" onclick="playAudio(this)" id="` + CardID_A + `" src="icons/speaker.png" alt=""/>
+                                                        <img class="speaker_A" onclick="playAudio(this)" style="position: relative" id="` + CardID_A + `" src="icons/speaker.png" alt=""/>
                                                     </div>
                                             </div>
 
                                     </div>`;
 
+        // 繪本爬繪本
         var createPBook = (bookName, bookImg, bookIntro) => `<div class="card-header contentCss" id="QA_num_` + click_num + `" style="background-color: #f8f9fa24; padding-bottom: 40px;">
                                     <p class="contentlink">相關繪本連結：</p>
                                     <p class="book_css">${bookName}</p>
@@ -73,9 +75,9 @@ if (voiceBtn) {
 
                                     <img src="${bookImg}" style="margin-left: 20px; display: inline;" width="180" height="153" alt="${bookName}">
                                     <p style="display: inline; margin-left: 20px; margin-top: -5px; position: absolute; margin-right: 40px;">${bookIntro}</p>
-                                    <img class="speaker_A" onclick="playAudio(this)" id="speaker_pbIntro_` + click_num + `" src="icons/speaker.png" style="margin-top: 131px; display: inline; bottom: 31px;" alt=""/>
+                                    <img class="speaker_A" onclick="playAudio(this)" id="speaker_pbIntro_` + click_num + `" src="icons/speaker.png" style="position: absolute; bottom: 5px;" alt=""/>
                                 </div>`
-
+            // 寫死繪本
         var createQAandPBook = (question, url, answer, bookName, bookImg, bookIntro) => `<div id="pictureText_` + click_num + `" class="card text-white mb-3" style="background-color: #92337eba;">
                                         
                                 <div class="card-body" style="margin-top: 30px;">
@@ -90,10 +92,10 @@ if (voiceBtn) {
                                             <img class="img_` + click_num + `" src="${url}">
                                         </div>
                                         <br>
-                                        <div style="float:left; display: block; text-align: left;">
-                                            <p class="card-text card_A" style="float: left;">敘述：</p>
+                                        <div style="float:left; display: block; text-align: left; width: 100%">
+                                            <p class="card-text card_A" style="float: left; position: relative;">敘述：</p>
                                             <p class="answer_` + click_num + ` card-text card_A" style="margin-left: 0px;">${answer}</p>
-                                            <img class="speaker_A" onclick="playAudio(this)" id="` + CardID_A + `" src="icons/speaker.png" alt=""/>
+                                            <img class="speaker_A" onclick="playAudio(this)" style="position: relative;" id="` + CardID_A + `" src="icons/speaker.png" alt=""/>
                                         </div>
                                 </div>
 
@@ -210,12 +212,20 @@ if (voiceBtn) {
             // console.log("data=" + JSON.stringify(data))
             SystemVal.innerHTML = '再問一次問題';
 
-            // 設定滾輪置底
-            // $(document).ready(
-            //     function() {
-            //         $("html").scrollTop($(document).height() + 100);
-            //     }
-            // );
+            // 設定滾輪到特定div
+            $(document).ready(
+
+                setTimeout(() => {
+                    let target = document.querySelector("#pictureText_" + click_num)
+                    console.log("ta:" + target)
+                    target.scrollIntoView();
+                    target.scrollTop += 50;
+
+                }, 1000)
+                // 設定滾輪置底
+                // $("html").scrollTop($(document).height() + 100);
+
+            );
         });
 
     });
