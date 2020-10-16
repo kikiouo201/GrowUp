@@ -37,7 +37,7 @@ var player = require('play-sound')(opts = {})
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let win = null;
-let IsNetwork=false;
+let IsNetwork=true;
 //true 有網路
 //false 無網路，資料寫死
 let childGoodBabyValue=100;
