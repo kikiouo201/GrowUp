@@ -28,7 +28,7 @@ const levelName = {
 }
 
 function playNorth(name) {
-    let northAudio = document.getElementById("northAudio");
+    let northAudio = document.getElementById("AUDIO");
     console.log("name:" + name.alt)
     let id = name.alt;
     if (northAudio.canPlayType("audio/mpeg")) {
@@ -40,7 +40,7 @@ function playNorth(name) {
 }
 
 function playABC(name) {
-    let northAudio = document.getElementById("northAudio");
+    let northAudio = document.getElementById("AUDIO");
     // var audioCreate = document.createElement("AUDIO");
     console.log("name:" + name.alt)
     let nameAlt = name.alt;
@@ -54,7 +54,7 @@ function playABC(name) {
 }
 
 function mute() {
-    let northAudio = document.getElementById("northAudio");
+    let northAudio = document.getElementById("AUDIO");
     northAudio.pause();
     northAudio.currentTime = 0;
 }
