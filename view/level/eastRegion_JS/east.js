@@ -1,5 +1,5 @@
 function playEast(name) {
-    let eastAudio = document.getElementById("eastAudio");
+    let eastAudio = document.getElementById("AUDIO");
     console.log("name:" + name.alt)
     let id = name.alt;
     if (eastAudio.canPlayType("audio/mpeg")) {
@@ -11,7 +11,7 @@ function playEast(name) {
 }
 
 function playGame(name) {
-    let eastAudio = document.getElementById("eastAudio");
+    let eastAudio = document.getElementById("AUDIO");
     console.log("name:" + name.alt)
     let id = name.alt;
     if (eastAudio.canPlayType("audio/mpeg")) {
@@ -22,7 +22,7 @@ function playGame(name) {
 }
 
 function mute() {
-    let eastAudio = document.getElementById("eastAudio");
+    let eastAudio = document.getElementById("AUDIO");
     eastAudio.pause();
     eastAudio.currentTime = 0;
 }
