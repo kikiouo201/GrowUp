@@ -64,7 +64,7 @@ minMap.addEventListener('click', () => {
     // console.log('minMap onclick');
 
     const black_overlay = document.querySelector('.black_overlay');
-    black_overlay.style.visibility = "visible";
+    black_overlay.style.display = "block";
 
     ipcRenderer.send('callMapCondition');
     ipcRenderer.on('selectJsonOnTL', (event, data) => {
@@ -93,5 +93,7 @@ minMap.addEventListener('click', () => {
 const close = document.querySelector('.closeMap');
 close.addEventListener('click', () => {
     const black_overlay = document.querySelector('.black_overlay');
-    black_overlay.style.visibility = "hidden";
+    black_overlay.style.display = "none";
+
+    // black_overlay.style.visibility = "hidden";
 });
