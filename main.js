@@ -37,6 +37,11 @@ var player = require('play-sound')(opts = {})
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let win = null;
+let IsNetwork=true;
+//true 有網路
+//false 無網路，資料寫死
+let childGoodBabyValue=100;
+//乖寶寶值
 
 
 
@@ -609,15 +614,18 @@ ipcMain.on('call-frequency', (event, arg) => {
 })
 
 ipcMain.on('levelIsPass', (event, arg) => {
-    api.Level.alterLevel(1, arg, (req) => {
-        console.log("data = " + JSON.stringify(req))
-            //event.sender.send('reply-callZhuyindata', data);
-    });
-    api.People.AddChildGoodBabyValue(1, 20, arg, (req) => {
-        console.log("data = " + JSON.stringify(req))
-            //event.sender.send('reply-callZhuyindata', data);
-    });
-
+    if(IsNetwork){
+        api.Level.alterLevel(1, arg, (req) => {
+            console.log("data = " + JSON.stringify(req))
+                //event.sender.send('reply-callZhuyindata', data);
+        });
+        api.People.AddChildGoodBabyValue(1, 20, arg, (req) => {
+            console.log("data = " + JSON.stringify(req))
+                //event.sender.send('reply-callZhuyindata', data);
+        });
+    }else{
+        childGoodBabyValue+=20;
+    }
 })
 
 // ipcMain.on('call-speechfrequency',(event,arg) =>{
