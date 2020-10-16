@@ -1,5 +1,5 @@
 function playSouth(name) {
-    let southAudio = document.getElementById("southAudio");
+    let southAudio = document.getElementById("AUDIO");
     console.log("name:" + name.alt)
     let id = name.alt;
     if (southAudio.canPlayType("audio/mpeg")) {
@@ -10,7 +10,7 @@ function playSouth(name) {
 }
 
 function play012(name) {
-    let southAudio = document.getElementById("southAudio");
+    let southAudio = document.getElementById("AUDIO");
     console.log("name:" + name.alt)
     let id = name.alt;
     if (southAudio.canPlayType("audio/mpeg")) {
@@ -21,7 +21,7 @@ function play012(name) {
 }
 
 function mute() {
-    let southAudio = document.getElementById("southAudio");
+    let southAudio = document.getElementById("AUDIO");
     southAudio.pause();
     southAudio.currentTime = 0;
 }

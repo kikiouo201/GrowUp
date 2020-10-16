@@ -16,7 +16,7 @@
 </style>
 
 <body style="width: 100%; height: 100%; margin: auto;" onload="checkLevelIsPass('temple','tainan')">
-    <audio id="southAudio" src=""></audio>
+    <audio id="AUDIO" src=""></audio>
 
     <div class="bottom_title">
         <h1>台南地區</h1>
@@ -27,7 +27,7 @@
         <img class="map_location" src="../../image/map/map.png" />
     </div>
 
-    <div class="informationBox"  >
+    <div class="informationBox">
         <h2>介紹</h2>
         <img class="inforbtn" style="margin-top: 0;" src="../../image/map/Tainan_origin.png" onclick="playSouth(this), changeInfor(0)" alt="tainanRegion" />
         <br>
@@ -75,22 +75,22 @@
             <img class="level_text" alt="6" src="../../image/numbers/6.png" onclick="setTimeout(()=>location.href='../../view/game/drawzhuyin.html?id=6&counties=tainan',800);play012(this);" />
         </div>
         <div class="level4">
-            <img class="level level_basic" alt="tainan" src="../../image/icon/devil.png"  />
+            <img class="level level_basic" alt="tainan" src="../../image/icon/devil.png" />
 
         </div>
 
-    <div class="btnDiv">
-        <a onclick="history.back()" class="returnfloat" id="menu-share">
-            <i class="fab fa-share return-float"><img src="../../photo/return.png"></i>
-        </a>
+        <div class="btnDiv">
+            <a onclick="history.back()" class="returnfloat" id="menu-share">
+                <i class="fab fa-share return-float"><img src="../../photo/return.png"></i>
+            </a>
 
-        <a href="../../game_home.html" class="homefloat" id="menu-share">
-            <i class="fab fa-share my-float"><img src="../../photo/gobackhome.png" width="70%"></i>
-        </a>
-    </div>
+            <a href="../../game_home.html" class="homefloat" id="menu-share">
+                <i class="fab fa-share my-float"><img src="../../photo/gobackhome.png" width="70%"></i>
+            </a>
+        </div>
 
-    <!-- <script src="../../model/util/voiceOut.js"></script> -->
-    <script src="./southRegion_JS/tainan.js"></script>
+        <!-- <script src="../../model/util/voiceOut.js"></script> -->
+        <script src="./southRegion_JS/tainan.js"></script>
 </body>
 
 </html>
