@@ -7,9 +7,11 @@ body {
     position: absolute;
     z-index: 4;
 }
+
 div::-webkit-scrollbar {
     display: none;
 }
+
 .taiwan {
     position: absolute;
     width: auto;
@@ -22,6 +24,7 @@ div::-webkit-scrollbar {
     background-repeat: no-repeat;
     background-size: cover;
     padding: 5px;
+    z-index: 3;
 }
 
 .bottom_title {
