@@ -201,8 +201,8 @@ function reset() {
 }
 
 function challengeAgain() {
-
-    window.location.href = "../../view/game/drawzhuyin.html?id=" + id;
+    let counties = (new URLSearchParams(location.search)).get("counties");
+    window.location.href = `../../view/game/drawzhuyin.html?id=${id}&counties=${counties}`;
 }
 
 function goNextLevel() {
