@@ -32,10 +32,11 @@
   
   
   body {
-      background: url("../../image/countingNumbers/true-2.jpeg") no-repeat;
+      background: url("../../image/background/Almost-100-Vertices.jpeg") no-repeat;
       background-size: cover;
       text-align: center;
       margin: 0px;
+      
   }
 
   .forest {
@@ -46,12 +47,39 @@
     display: flex;
     flex-direction: row;
     justify-content:center;
+    
   }
+
+  .sign{
+    width: 50px;
+    height: 50px;
+    margin-top: 40px;
+    background-size: contain;
+  }
+
   .number{
     width: 100px;
     height: 100px;
+    margin-top: 10px;
     background-size: contain;
   }
+
+  .selectNumber{
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+  }
+
+  .end{
+    width: 100px;
+    height: 30px;
+    background-color: #fdfded;
+  }
+
   #drag-drop-basic {
     display: flex;
     flex-direction: column;
@@ -59,26 +87,40 @@
     
   }
   #drag-drop-basic #source-container {
-    height: 70px;
+    height: 200px;
+    width: 70%;
     padding: 20px;
-    border: 2px solid #CCC;
+    border-radius: 30px;
+    /* background-color: #faface; */
+    border: 1px solid brown;
+    opacity: 0.8;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
     display: flex;
     flex-direction: row;
     justify-content:center;
+    flex-wrap: wrap;
   }
   #drag-drop-basic #target-container {
     height: 100px;
     width: 15%; 
     border-bottom: 2px solid #CCC;
+    background-color: #fdfded;
+    border-radius: 10px;
+    margin: 10px;
+    opacity: 0.7;
     display: flex;
     flex-direction: row;
-    flex-wrap:  wrap;
+    flex-wrap: wrap;
   }
   #drag-drop-basic #target2-container {
     height: 100px;
     width: 15%; 
     margin-left: 20px;
     border-bottom: 2px solid #CCC;
+    background-color:  #fdfded;
+    border-radius: 10px;
+    margin: 10px;
+    opacity: 0.7;
     display: flex;
     flex-direction: row;
     flex-wrap:  wrap; 
@@ -185,7 +227,7 @@
   <body translate="no" class="forest">
     <div>
       <div >
-        <h1>請幫助居民解決問題</h1>
+        <div>請幫助居民解決問題</div>
         <div id='num' >目前是0</div>
       </div>
     
@@ -195,14 +237,14 @@
    
     <div class="counting">
         <div id="target-container" data-role="drag-drop-container"></div>
-        <img id="symbol" src="../../image/numbers/plus.png" class="number" />
+        <img id="symbol" src="../../image/numbers/plus.png" class="sign" />
         <div id="target2-container" data-role="drag-drop-container"></div>
-        <img src="../../image/numbers/equal.png" class="number" />
+        <img src="../../image/numbers/equal.png" class="sign" />
         <img src="../../image/numbers/5.png" class="number" />
     </div>
    
-
-    <div id="source-container" data-role="drag-drop-container">
+    <div class="selectNumber">
+      <div id="source-container" data-role="drag-drop-container">
         <div id="drag-source0" draggable="true"></div>
         <div id="drag-source1" draggable="true"></div>
         <div id="drag-source2" draggable="true"></div>
@@ -214,9 +256,11 @@
         <div id="drag-source8" draggable="true"></div>
         <div id="drag-source9" draggable="true"></div>
       </div>
+    </div>
+   
   </div>
   
-  <button onclick="end()">完成</button>
+  <button onclick="end()" class="end">完成</button>
  
   <div>
     <a onclick="history.back()" class="returnfloat" id="menu-share">
