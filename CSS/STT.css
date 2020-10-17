@@ -166,13 +166,13 @@ a:-webkit-any-link {
 }
 
 .collect_LeftTop {
-    /*新的收藏本本位置 左上*/
+    /*靜音按鈕 左上*/
     top: 0px;
     left: 0px;
     width: 42px;
     height: 42px;
     position: absolute;
-    margin-top: 8px;
+    margin-top: 20px;
     margin-left: 20px;
     cursor: pointer;
 }

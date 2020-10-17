@@ -5,6 +5,7 @@ let dialog = remote.dialog;
 const { text } = require('express');
 const messageSystem = document.getElementById('messageSystem')
 const SSU = new SpeechSynthesisUtterance();
+let voiceOut = require('./model/util/voiceOut.js');
 let click_num = 0;
 
 //> voice button
@@ -47,7 +48,7 @@ if (voiceBtn) {
         var createQA = (question, url, answer) => `<div id="pictureText_` + click_num + `" class="card text-white mb-3" style="background-color: #92337eba;">
                                         
                                             <div class="card-body" style="margin-top: 30px;">
-                                                <img class="collect_LeftTop" onclick="collect(this)" id="` + CardID_Collect + `" src="icons/bookmark.png"/>
+                                                <img class="collect_LeftTop" onclick="mute()" id="` + CardID_Collect + `" src="image/character/muted.png"/>
                                                     <div style="float:left; display: block; text-align: left;">
                                                         <p class="card-title card_Q">問題：</p>
                                                         <p class="card-title card_Q" style="margin-left: 0px;">${question}</p>
@@ -81,7 +82,7 @@ if (voiceBtn) {
         var createQAandPBook = (question, url, answer, bookName, bookImg, bookIntro) => `<div id="pictureText_` + click_num + `" class="card text-white mb-3" style="background-color: #92337eba;">
                                         
                                 <div class="card-body" style="margin-top: 30px;">
-                                    <img class="collect_LeftTop" onclick="collect(this)" id="` + CardID_Collect + `" src="icons/bookmark.png"/>
+                                    <img class="collect_LeftTop" onclick="mute()" id="` + CardID_Collect + `" src="image/character/muted.png"/>
                                         <div style="float:left; display: block; text-align: left;">
                                             <p class="card-title card_Q">問題：</p>
                                             <p class="card-title card_Q" style="margin-left: 0px;">${question}</p>
@@ -435,3 +436,13 @@ function onImageLoaded(url, cb) {
         }
     }
 }
+
+// function mute() {
+//     let mute = document.getElementById("AUDIO");
+//     mute.pause();
+//     mute.currentTime = 0;
+// }
+
+// module.exports = {
+//     mute
+// }
