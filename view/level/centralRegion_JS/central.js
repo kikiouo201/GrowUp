@@ -98,19 +98,3 @@ function playBPM(name) {
 
     centralAudio.play();
 }
-
-function mute() {
-    let centralAudio = document.getElementById("AUDIO");
-    centralAudio.pause();
-    centralAudio.currentTime = 0;
-}
-
-function playDevilBPM() {
-    let devil = document.getElementById("AUDIO");
-    devil.setAttribute("src", `../../TTS/mp3/devil.mp3`);
-    devil.play();
-}
-
-module.exports = {
-    playDevilBPM
-}
