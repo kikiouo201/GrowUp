@@ -75,7 +75,7 @@
     </div>
 
     <div class="fullContent">
-        <h1 onclick="document.querySelector('.fullContent').style.display='none'">X</h1>
+        <h1 onclick="document.querySelector('.fullContent').style.display='none';voiceOut.mute();">X</h1>
         <div class="introduce">
             <div style="height: 60%;width: 100%; text-align: center;">
                 <img id="picture" style='height: 90%; border-radius: 15px; margin-top: 2%' src='https://s.yimg.com/os/zh-Hant-TW/homerun/tw-travel.travelweb.com.tw/71e4ae358ca78944aaec7b6a4320bd07' />
@@ -95,7 +95,7 @@
             <i class="fab fa-share return-float"><img src="../../photo/return.png"></i>
         </a>
 
-        <a href="../../game_home.html" class="homefloat" id="menu-share">
+        <a onclick="setTimeout(()=>location.href='../../game_home.html',800);voiceOut.goHome();" class="homefloat" id="menu-share">
             <i class="fab fa-share my-float"><img src="../../photo/gobackhome.png" width="70%"></i>
         </a>
     </div>

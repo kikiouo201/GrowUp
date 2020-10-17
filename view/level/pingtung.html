@@ -40,11 +40,12 @@
         <img class="inforbtn" src="../../image/map_icon/Pingtung_bridge.png" onclick="playSouth(this),changeInfor(3)" alt="pingtung_f3" />
     </div>
     <div class="fullContent">
-        <h1 onclick="document.querySelector('.fullContent').style.display='none'">X</h1>
+        <h1 onclick="document.querySelector('.fullContent').style.display='none';voiceOut.mute();">X</h1>
         <div class="introduce">
             <div style="height: 60%;width: 100%; text-align: center;">
                 <img id="picture" style='height: 90%; border-radius: 15px; margin-top: 2%' src='https://upload.wikimedia.org/wikipedia/commons/e/ea/Pingtung_labelled_map2.png' />
                 <img id="speaker" style='position: absolute; top: 20px; right: 20px;  height: 15%' src="../../icons/speaker.png" onclick="playSouth(this)" alt="pingtungRegion" />
+                <img id="muted" style='position: absolute; top: 20px; left: 20px;  height: 15%' src="../../image/character/muted.png" onclick="voiceOut.mute()" alt="nantouRegion" />
             </div>
             <div style="height: 40%;width: 100%;">
                 <h2 id="intro" style='margin: 0 3% 0 3%;'>
@@ -81,12 +82,12 @@
                 <i class="fab fa-share return-float"><img src="../../photo/return.png"></i>
             </a>
 
-            <a href="../../game_home.html" class="homefloat" id="menu-share">
+            <a onclick="setTimeout(()=>location.href='../../game_home.html',800);voiceOut.goHome();" class="homefloat" id="menu-share">
                 <i class="fab fa-share my-float"><img src="../../photo/gobackhome.png" width="70%"></i>
             </a>
         </div>
 
-        <script src="../../model/util/voiceOut.js"></script>
+        <!-- <script src="../../model/util/voiceOut.js"></script> -->
 
 </body>
 
