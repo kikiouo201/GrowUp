@@ -19,7 +19,7 @@ function mute() {
 function magicBook(mainId) {
     var audioCreate = document.getElementById("AUDIO");
     var mb = mainId.id;
-    audioCreate.setAttribute("src", `../TTS/mp3/${mb}.mp3`);
+    audioCreate.setAttribute("src", `../TTS/mp3/magicBook/${mb}.mp3`);
     audioCreate.play();
 }
 
