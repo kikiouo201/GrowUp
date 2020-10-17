@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../../CSS/map/nantou.css">
     <link rel="stylesheet" href="../../CSS/icon.css">
     <script src="./centralRegion_JS/central.js"></script>
-    <script src="../../model/util/checkAllLevelIsPass.js"></script>
+
 </head>
 <style>
 
@@ -80,7 +80,7 @@
             <div style="height: 60%;width: 100%; text-align: center;">
                 <img id="picture" style='height: 90%; border-radius: 15px; margin-top: 2%' src='https://s.yimg.com/os/zh-Hant-TW/homerun/tw-travel.travelweb.com.tw/71e4ae358ca78944aaec7b6a4320bd07' />
                 <img id="speaker" style='position: absolute; top: 20px; right: 20px;  height: 15%' src="../../icons/speaker.png" onclick="playCentral(this)" alt="nantouRegion" />
-                <img id="muted" style='position: absolute; top: 20px; left: 20px;  height: 15%' src="../../image/character/muted.png" onclick="mute()" alt="nantouRegion" />
+                <img id="muted" style='position: absolute; top: 20px; left: 20px;  height: 15%' src="../../image/character/muted.png" onclick="voiceOut.mute()" alt="nantouRegion" />
             </div>
             <div style="height: 40%;width: 100%;">
                 <h2 id="intro" style='margin: 0 3% 0 3%;'>
@@ -101,6 +101,8 @@
     </div>
 
     <!-- <script src="../../model/util/voiceOut.js"></script> -->
+    <script src="../../model/util/checkAllLevelIsPass.js"></script>
+
     <script src="./centralRegion_JS/nantou.js"></script>
 </body>
 
