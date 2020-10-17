@@ -16,8 +16,16 @@ function mute() {
     mute.currentTime = 0;
 }
 
+function magicBook(mainId) {
+    var audioCreate = document.getElementById("AUDIO");
+    var mb = mainId.id;
+    audioCreate.setAttribute("src", `../TTS/mp3/${mb}.mp3`);
+    audioCreate.play();
+}
+
 module.exports = {
     mute,
     goHome,
-    playDevilBPM
+    playDevilBPM,
+    magicBook
 }

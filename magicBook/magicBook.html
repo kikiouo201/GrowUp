@@ -13,6 +13,7 @@
 <!-- onload="ShowTime()" -->
 
 <body background="../image/background/desk.png">
+    <audio id="AUDIO" src=""></audio>
     <div class="home_page">
         <a class="home_title">魔法寶典</a>
 
@@ -32,19 +33,19 @@
     <img onclick="scrolls(this)" class="Arrow" style="left:15px; transform:rotate(180deg)" src="../magicBook/image/ArrowIcon.png" alt="left">
  -->
     <div id="bookContent" class="bookContent">
-        <div class="books picturebook" onclick="document.location.href='./picturebook.html'">
+        <div id="pictureBook" class="books picturebook" onclick="setTimeout(()=>location.href='./picturebook.html',800);magicBook(this)">
             <div class="bookCover Picture">
                 <h1>繪本</h1>
                 <!-- <img src="../image/background/picturebook.png"> -->
             </div>
         </div>
-        <div class="books animalbook" onclick="document.location.href='./animalbook.html'">
+        <div id="animalBook" class="books animalbook" onclick="setTimeout(()=>location.href='./animalbook.html',1000);magicBook(this)">
             <div class="bookCover Animals">
                 <h1>動物寶典</h1>
                 <!-- <img src="../image/background/animalbook.png"> -->
             </div>
         </div>
-        <div class="books songbook" onclick="document.location.href='./childsong.html'">
+        <div id="childsongBook" class="books songbook" onclick="setTimeout(()=>location.href='./childsong.html',1000);magicBook(this)">
             <div class="bookCover Child">
                 <h1>兒歌寶典</h1>
                 <!-- <img src="../image/background/song.png"> -->
@@ -61,7 +62,7 @@
 
 
 
-   <!--<div>
+    <!--<div>
         <a href="../../test1.html" class="sosfloat" id="menu-share">
             <i class="fab fa-share my-float"><img src="../photo/help.png" width="70%"></i>
         </a>
@@ -151,6 +152,7 @@
         }
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="../model/util/voiceOut.js"></script>
 </body>
 
 </html>
