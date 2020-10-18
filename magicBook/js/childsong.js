@@ -1,14 +1,14 @@
 const main = document.querySelector('.maincontent');
 
 const fullscr = document.querySelector("#allFull");
-console.log('ShowWeb&Ele =>' +fullscr);
+console.log('ShowWeb&Ele =>' + fullscr);
 
 ipcRenderer.on('songCreating', (event, data) => {
 
-  console.log("Success catch Picturebook Data")
+    console.log("Success catch Picturebook Data")
 
-  main.innerHTML +=
-  `
+    main.innerHTML +=
+        `
     <div class="song">
       <div class="songname-div">
           <h2>${data.name}</h2>
@@ -23,6 +23,12 @@ ipcRenderer.on('songCreating', (event, data) => {
       </div>
     </div>
   `
-  console.log("Success catch Picturebook Data")
+    console.log("Success catch Picturebook Data")
 
 })
+
+function selectSong(num) {
+    var audioCreate = document.getElementById("AUDIO");
+    audioCreate.setAttribute("src", `../TTS/mp3/magicBook/childsongBook/song_${num}.mp3`);
+    audioCreate.play();
+}
