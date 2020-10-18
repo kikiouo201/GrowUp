@@ -15,7 +15,7 @@
         const puppeteer = require('puppeteer');
 
         function Nooo(web) {
-            (async () => {
+            (async() => {
                 let browser = await puppeteer.launch({
                     executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
                     // args: ['--start-fullscreen'],
@@ -24,10 +24,10 @@
                 const page = await browser.newPage();
                 await page.goto(web);
 
-                page.on('colse', async () => {
+                page.on('colse', async() => {
                     await browser.close();
                 });
-                
+
                 await page.exposeFunction('colseBrowser', () => {
                     page.emit('colse');
 
@@ -80,6 +80,7 @@
 </head>
 
 <body style="width: 100%; height: 100%;" onload="ShowTime(),OpenDataList(),tabClick(1)">
+    <audio id="AUDIO" src=""></audio>
     <div class="home_page">
         <a class="home_title">繪本</a>
 
@@ -89,7 +90,7 @@
 
     </div>
     <div id="allFull">
-        <img id="loading" src="../image/character/200.gif"/>  
+        <img id="loading" src="../image/character/200.gif" />
         <h2 style="position: relative; bottom: 14%; left: 0.5%;">讀取中...</h2>
     </div>
 
@@ -113,7 +114,7 @@
     <div class="maincontent">
 
         <div id="parent_recommend">
-<!-- 
+            <!-- 
             <div class="book">
 
                 <div class="bookname-div">
@@ -205,163 +206,163 @@
 
     </div>
 
-        <div class="return_mark">
-            <a href="./magicBook.html" class="returnfloat" id="menu-share">
-                <i class="fab fa-share return-float"><img src="../photo/return.png"></i>
-            </a>
-        </div>
+    <div class="return_mark">
+        <a href="./magicBook.html" class="returnfloat" id="menu-share">
+            <i class="fab fa-share return-float"><img src="../photo/return.png"></i>
+        </a>
+    </div>
 
-        <div class="home_mark">
-            <a href="../game_home.html" class="homefloat" id="menu-share">
-                <i class="fab fa-share my-float"><img src="../photo/gobackhome.png" width="70%"></i>
-            </a>
-        </div>
+    <div class="home_mark">
+        <a href="../game_home.html" class="homefloat" id="menu-share">
+            <i class="fab fa-share my-float"><img src="../photo/gobackhome.png" width="70%"></i>
+        </a>
+    </div>
 
-        <script>
-            function ShowTime() {
+    <script>
+        function ShowTime() {
 
-                var fullDate = new Date();
-                var yyyy = fullDate.getFullYear();
-                var MM = (fullDate.getMonth() + 1) >= 10 ? (fullDate.getMonth() + 1) : ("0" + (fullDate.getMonth() +
+            var fullDate = new Date();
+            var yyyy = fullDate.getFullYear();
+            var MM = (fullDate.getMonth() + 1) >= 10 ? (fullDate.getMonth() + 1) : ("0" + (fullDate.getMonth() +
                 1));
-                var dd = fullDate.getDate() < 10 ? ("0" + fullDate.getDate()) : fullDate.getDate();
-                document.getElementById('today').innerHTML = yyyy + "/" + MM + "/" + dd;
+            var dd = fullDate.getDate() < 10 ? ("0" + fullDate.getDate()) : fullDate.getDate();
+            document.getElementById('today').innerHTML = yyyy + "/" + MM + "/" + dd;
 
-                var NowDate = new Date();
-                var h = NowDate.getHours();
-                var m = NowDate.getMinutes();
-                document.getElementById('showtime').innerHTML = h + ':' + m;
-                setTimeout('ShowTime()', 1000);
+            var NowDate = new Date();
+            var h = NowDate.getHours();
+            var m = NowDate.getMinutes();
+            document.getElementById('showtime').innerHTML = h + ':' + m;
+            setTimeout('ShowTime()', 1000);
+        }
+
+        function toggleBtn() {
+            const Btns = document.querySelector(".btns");
+            const add = document.getElementById("add");
+            const remove = document.getElementById("remove");
+            const btn = document.querySelector(".btns").querySelectorAll("a");
+            Btns.classList.toggle("open");
+            if (Btns.classList.contains("open")) {
+                remove.style.display = "block";
+                add.style.display = "none";
+                btn.forEach((e, i) => {
+                    setTimeout(() => {
+                        bottom = 65 * i;
+                        e.style.bottom = bottom + "px";
+                        console.log(e);
+                    }, 100 * i);
+                });
+            } else {
+                add.style.display = "block";
+                remove.style.display = "none";
+                btn.forEach((e, i) => {
+                    e.style.bottom = "0px";
+                });
             }
+        }
+    </script>
 
-            function toggleBtn() {
-                const Btns = document.querySelector(".btns");
-                const add = document.getElementById("add");
-                const remove = document.getElementById("remove");
-                const btn = document.querySelector(".btns").querySelectorAll("a");
-                Btns.classList.toggle("open");
-                if (Btns.classList.contains("open")) {
-                    remove.style.display = "block";
-                    add.style.display = "none";
-                    btn.forEach((e, i) => {
-                        setTimeout(() => {
-                            bottom = 65 * i;
-                            e.style.bottom = bottom + "px";
-                            console.log(e);
-                        }, 100 * i);
-                    });
+    <script>
+        function OpenDataList() {
+            const dataurl = "https://children.moc.gov.tw/opendata/2";
+            const request = new XMLHttpRequest();
+            request.open('GET', dataurl);
+            request.responseType = 'json';
+            request.send();
+            // let jsontext;
+            request.onreadystatechange = function(evt) {
+                if (request.readyState !== 4) {
+                    return;
+                }
+                // console.log("waited for it to finish")
+                console.log(request.response);
+                recommendListbook(request.response);
+            }
+        }
+
+        function recommendListbook(jsons) {
+            let request = new XMLHttpRequest();
+            let imgurltemp = 6806;
+            let imgurl;
+            for (let i = 2; i < jsons.length; i++) {
+                if (imgurltemp >= 6966)
+                    imgurl = 'https://children.moc.gov.tw/resource/animate_image/' + imgurltemp + '.png';
+                else
+                    imgurl = 'https://children.moc.gov.tw/resource/animate_image/' + imgurltemp + '.jpg';
+
+                let bookdiv = document.createElement("div");
+                bookdiv.className = 'book';
+
+                let bookname = document.createElement("div");
+                bookname.className = 'bookname-div'
+
+                let name = document.createElement("h2");
+                name.append(document.createTextNode(jsons[i]['name']));
+
+                let voice_ic = document.createElement('img');
+                voice_ic.src = "../icons/speaker.png";
+                voice_ic.className = "voice"
+
+                bookname.append(name);
+                bookname.append(voice_ic);
+
+                bookdiv.append(bookname);
+
+                imgurltemp = getimg(imgurltemp, bookdiv, jsons[i]['url']);
+                imgurltemp++;
+                if (imgurltemp == 6909)
+                    imgurltemp = 6910
+            }
+        }
+
+        function getimg(imgurltemp, bookdiv, url) {
+            const list = document.querySelector("#else_book");
+            let request = new XMLHttpRequest();
+            let imgurl = 'https://children.moc.gov.tw/resource/animate_image/' + imgurltemp + '.jpg';
+            request.open('GET', imgurl);
+            request.send()
+            request.onreadystatechange = function(evt) {
+                if (request.readyState !== 4)
+                    return;
+                if (request.status != 404) {
+                    let activity_div = document.createElement("div");
+                    activity_div.className = 'activity-div';
+
+                    let bookimg = document.createElement('img');
+                    bookimg.src = imgurl
+                    activity_div.append(bookimg);
+
+                    let watch_btn = document.createElement('button');
+                    watch_btn.onclick = () => {
+                        showWeb(url, document.querySelector("#allFull"));
+                    }
+                    let watch_ic = document.createElement('img');
+                    watch_ic.src = "./image/icon_watchVideo.png";
+                    let watch_h2 = document.createElement('h2');
+                    watch_h2.append("觀看繪本");
+                    watch_btn.append(watch_ic, watch_h2);
+
+                    activity_div.append(watch_btn);
+                    bookdiv.append(activity_div);
+                    list.append(bookdiv);
+
                 } else {
-                    add.style.display = "block";
-                    remove.style.display = "none";
-                    btn.forEach((e, i) => {
-                        e.style.bottom = "0px";
-                    });
-                }
-            }
-        </script>
+                    // console.log(imgurltemp);
+                    let activity_div = document.createElement("div");
+                    activity_div.className = 'image-div';
+                    let bookimg = document.createElement('img');
+                    bookimg.src = 'https://children.moc.gov.tw/resource/animate_image/6805.jpg';
 
-        <script>
-            function OpenDataList() {
-                const dataurl = "https://children.moc.gov.tw/opendata/2";
-                const request = new XMLHttpRequest();
-                request.open('GET', dataurl);
-                request.responseType = 'json';
-                request.send();
-                // let jsontext;
-                request.onreadystatechange = function (evt) {
-                    if (request.readyState !== 4) {
-                        return;
-                    }
-                    // console.log("waited for it to finish")
-                    console.log(request.response);
-                    recommendListbook(request.response);
-                }
-            }
-
-            function recommendListbook(jsons) {
-                let request = new XMLHttpRequest();
-                let imgurltemp = 6806;
-                let imgurl;
-                for (let i = 2; i < jsons.length; i++) {
-                    if (imgurltemp >= 6966)
-                        imgurl = 'https://children.moc.gov.tw/resource/animate_image/' + imgurltemp + '.png';
-                    else
-                        imgurl = 'https://children.moc.gov.tw/resource/animate_image/' + imgurltemp + '.jpg';
-
-                    let bookdiv = document.createElement("div");
-                    bookdiv.className = 'book';
-
-                    let bookname = document.createElement("div");
-                    bookname.className = 'bookname-div'
-
-                    let name = document.createElement("h2");
-                    name.append(document.createTextNode(jsons[i]['name']));
-
-                    let voice_ic = document.createElement('img');
-                    voice_ic.src = "../icons/speaker.png";
-                    voice_ic.className = "voice"
-
-                    bookname.append(name);
-                    bookname.append(voice_ic);
-
-                    bookdiv.append(bookname);
-
-                    imgurltemp = getimg(imgurltemp, bookdiv, jsons[i]['url']);
-                    imgurltemp++;
-                    if (imgurltemp == 6909)
-                        imgurltemp = 6910
-                }
-            }
-
-            function getimg(imgurltemp, bookdiv, url) {
-                const list = document.querySelector("#else_book");
-                let request = new XMLHttpRequest();
-                let imgurl = 'https://children.moc.gov.tw/resource/animate_image/' + imgurltemp + '.jpg';
-                request.open('GET', imgurl);
-                request.send()
-                request.onreadystatechange = function (evt) {
-                    if (request.readyState !== 4)
-                        return;
-                    if (request.status != 404) {
-                        let activity_div = document.createElement("div");
-                        activity_div.className = 'activity-div';
-
-                        let bookimg = document.createElement('img');
-                        bookimg.src = imgurl
-                        activity_div.append(bookimg);
-
-                        let watch_btn = document.createElement('button');
-                        watch_btn.onclick = () => {
-                            showWeb(url, document.querySelector("#allFull"));
-                        }
-                        let watch_ic = document.createElement('img');
-                        watch_ic.src = "./image/icon_watchVideo.png";
-                        let watch_h2 = document.createElement('h2');
-                        watch_h2.append("觀看繪本");
-                        watch_btn.append(watch_ic, watch_h2);
-
-                        activity_div.append(watch_btn);
-                        bookdiv.append(activity_div);
-                        list.append(bookdiv);
-
-                    } else {
-                        // console.log(imgurltemp);
-                        let activity_div = document.createElement("div");
-                        activity_div.className = 'image-div';
-                        let bookimg = document.createElement('img');
-                        bookimg.src = 'https://children.moc.gov.tw/resource/animate_image/6805.jpg';
-
-                        activity_div.append(bookimg);
-                        bookdiv.append(activity_div);
-                        list.append(bookdiv);
-                    }
-                    return imgurltemp;
+                    activity_div.append(bookimg);
+                    bookdiv.append(activity_div);
+                    list.append(bookdiv);
                 }
                 return imgurltemp;
             }
-        </script>
+            return imgurltemp;
+        }
+    </script>
 
-        <script src="./js/picturebook.js"></script>
+    <script src="./js/picturebook.js"></script>
 
 </body>
 
