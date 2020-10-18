@@ -37,12 +37,12 @@ var player = require('play-sound')(opts = {})
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let win = null;
-let IsNetwork=true;
+let IsNetwork = true;
 //true 有網路
 //false 無網路，資料寫死
-let childGoodBabyValue=100;
+let childGoodBabyValue = 100;
 //乖寶寶值
-let allLevelIsPass=JSON.parse('{"event":"show_level","content":[{"id":1,"child_id":1,"level_name":"ㄅ","ispass":1,"created_at":"2020-08-17 00:59:16","updated_at":"2020-10-15 19:37:38"},{"id":2,"child_id":1,"level_name":"ㄆ","ispass":1,"created_at":"2020-08-17 01:00:46","updated_at":"2020-10-14 01:00:46"},{"id":3,"child_id":1,"level_name":"ㄇ","ispass":1,"created_at":"2020-08-17 01:00:46","updated_at":"2020-10-15 01:00:46"},{"id":4,"child_id":1,"level_name":"ㄈ","ispass":1,"created_at":"2020-08-17 01:01:26","updated_at":"2020-09-25 15:42:19"},{"id":5,"child_id":1,"level_name":"ㄉ","ispass":1,"created_at":"2020-08-17 01:01:26","updated_at":"2020-09-08 19:54:04"},{"id":6,"child_id":1,"level_name":"ㄊ","ispass":1,"created_at":"2020-08-17 01:01:54","updated_at":"2020-09-01 22:32:04"},{"id":7,"child_id":1,"level_name":"ㄋ","ispass":1,"created_at":"2020-08-17 01:01:54","updated_at":"2020-09-01 22:31:59"},{"id":8,"child_id":1,"level_name":"ㄌ","ispass":1,"created_at":"2020-08-17 01:02:36","updated_at":"2020-10-06 22:47:27"},{"id":9,"child_id":1,"level_name":"ㄍ","ispass":1,"created_at":"2020-08-17 01:02:36","updated_at":"2020-10-16 02:47:39"},{"id":10,"child_id":1,"level_name":"ㄎ","ispass":0,"created_at":"2020-08-23 12:20:10","updated_at":"2020-10-16 17:50:48"},{"id":11,"child_id":1,"level_name":"ㄏ","ispass":0,"created_at":"2020-08-24 09:41:00","updated_at":"2020-10-16 17:50:54"},{"id":12,"child_id":1,"level_name":"ㄐ","ispass":0,"created_at":"2020-08-24 09:41:11","updated_at":"2020-10-16 17:50:59"},{"id":13,"child_id":1,"level_name":"ㄑ","ispass":0,"created_at":"2020-08-24 09:41:20","updated_at":"2020-10-16 17:51:05"},{"id":14,"child_id":1,"level_name":"ㄒ","ispass":0,"created_at":"2020-08-24 09:42:33","updated_at":"2020-10-15 19:37:56"},{"id":15,"child_id":1,"level_name":"ㄓ","ispass":0,"created_at":"2020-08-24 09:42:45","updated_at":"2020-10-15 19:37:59"},{"id":16,"child_id":1,"level_name":"ㄔ","ispass":0,"created_at":"2020-08-24 09:42:56","updated_at":"2020-10-15 19:38:03"},{"id":17,"child_id":1,"level_name":"ㄕ","ispass":0,"created_at":"2020-08-24 09:43:05","updated_at":"2020-10-15 19:38:05"},{"id":18,"child_id":1,"level_name":"ㄖ","ispass":0,"created_at":"2020-08-24 09:44:06","updated_at":"2020-10-15 19:38:07"},{"id":19,"child_id":1,"level_name":"ㄗ","ispass":0,"created_at":"2020-08-24 09:44:34","updated_at":"2020-10-15 19:38:14"},{"id":20,"child_id":1,"level_name":"ㄘ","ispass":0,"created_at":"2020-08-24 09:44:46","updated_at":"2020-10-15 20:26:04"},{"id":21,"child_id":1,"level_name":"ㄙ","ispass":0,"created_at":"2020-08-24 09:44:54","updated_at":"2020-10-15 20:26:07"},{"id":22,"child_id":1,"level_name":"ㄧ","ispass":0,"created_at":"2020-08-24 09:45:03","updated_at":"2020-10-15 20:26:10"},{"id":23,"child_id":1,"level_name":"ㄨ","ispass":0,"created_at":"2020-08-24 09:45:34","updated_at":"2020-10-15 20:26:12"},{"id":24,"child_id":1,"level_name":"ㄩ","ispass":0,"created_at":"2020-08-24 09:45:46","updated_at":"2020-10-15 20:26:13"},{"id":25,"child_id":1,"level_name":"ㄚ","ispass":0,"created_at":"2020-08-24 09:45:53","updated_at":"2020-10-16 17:51:22"},{"id":26,"child_id":1,"level_name":"ㄛ","ispass":0,"created_at":"2020-08-24 09:46:06","updated_at":"2020-10-16 17:51:27"},{"id":27,"child_id":1,"level_name":"ㄜ","ispass":0,"created_at":"2020-08-24 09:46:51","updated_at":"2020-10-15 20:26:18"},{"id":28,"child_id":1,"level_name":"ㄝ","ispass":0,"created_at":"2020-08-24 09:47:00","updated_at":"2020-10-15 20:26:16"},{"id":29,"child_id":1,"level_name":"ㄞ","ispass":0,"created_at":"2020-08-24 09:47:07","updated_at":"2020-10-15 20:26:20"},{"id":30,"child_id":1,"level_name":"ㄟ","ispass":0,"created_at":"2020-08-24 09:47:28","updated_at":"2020-10-15 20:26:22"},{"id":31,"child_id":1,"level_name":"ㄠ","ispass":1,"created_at":"2020-08-24 09:47:45","updated_at":"2020-10-16 17:52:01"},{"id":32,"child_id":1,"level_name":"ㄡ","ispass":1,"created_at":"2020-08-24 09:47:54","updated_at":"2020-10-16 17:52:13"},{"id":33,"child_id":1,"level_name":"ㄢ","ispass":1,"created_at":"2020-08-24 09:48:13","updated_at":"2020-10-16 17:52:25"},{"id":34,"child_id":1,"level_name":"ㄣ","ispass":1,"created_at":"2020-08-24 09:54:42","updated_at":"2020-10-16 17:52:39"},{"id":35,"child_id":1,"level_name":"ㄤ","ispass":1,"created_at":"2020-08-24 09:55:19","updated_at":"2020-10-16 17:52:46"},{"id":36,"child_id":1,"level_name":"ㄥ","ispass":1,"created_at":"2020-08-24 09:55:26","updated_at":"2020-10-16 17:51:48"},{"id":37,"child_id":1,"level_name":"ㄦ","ispass":0,"created_at":"2020-08-24 10:00:34","updated_at":"2020-10-16 17:53:12"},{"id":38,"child_id":1,"level_name":"1","ispass":0,"created_at":"2020-08-24 10:00:41","updated_at":"2020-10-16 17:56:12"},{"id":39,"child_id":1,"level_name":"2","ispass":0,"created_at":"2020-08-24 10:00:49","updated_at":"2020-10-15 20:26:36"},{"id":40,"child_id":1,"level_name":"3","ispass":0,"created_at":"2020-08-24 10:00:56","updated_at":"2020-10-15 20:26:38"},{"id":41,"child_id":1,"level_name":"4","ispass":1,"created_at":"2020-08-24 10:01:04","updated_at":"2020-10-16 17:56:24"},{"id":42,"child_id":1,"level_name":"5","ispass":1,"created_at":"2020-08-24 10:01:11","updated_at":"2020-10-16 17:56:34"},{"id":43,"child_id":1,"level_name":"6","ispass":1,"created_at":"2020-08-24 10:01:19","updated_at":"2020-10-16 17:56:51"},{"id":44,"child_id":1,"level_name":"7","ispass":1,"created_at":"2020-08-24 10:01:31","updated_at":"2020-10-16 17:57:14"},{"id":45,"child_id":1,"level_name":"8","ispass":1,"created_at":"2020-08-24 10:01:37","updated_at":"2020-10-16 17:57:24"},{"id":46,"child_id":1,"level_name":"9","ispass":1,"created_at":"2020-08-24 10:01:43","updated_at":"2020-10-16 17:57:34"},{"id":47,"child_id":1,"level_name":"0","ispass":0,"created_at":"2020-08-24 10:02:29","updated_at":"2020-10-15 20:26:50"},{"id":48,"child_id":1,"level_name":"a","ispass":0,"created_at":"2020-08-24 10:16:42","updated_at":"2020-10-15 20:25:49"},{"id":49,"child_id":1,"level_name":"b","ispass":0,"created_at":"2020-08-24 10:16:56","updated_at":"2020-10-16 17:53:47"},{"id":50,"child_id":1,"level_name":"c","ispass":0,"created_at":"2020-08-24 10:17:05","updated_at":"2020-10-15 20:25:52"},{"id":51,"child_id":1,"level_name":"d","ispass":0,"created_at":"2020-08-24 10:17:36","updated_at":"2020-10-16 17:53:57"},{"id":52,"child_id":1,"level_name":"e","ispass":0,"created_at":"2020-08-24 10:17:44","updated_at":"2020-10-15 20:27:04"},{"id":53,"child_id":1,"level_name":"f","ispass":0,"created_at":"2020-08-24 10:18:45","updated_at":"2020-10-15 20:27:02"},{"id":54,"child_id":1,"level_name":"g","ispass":0,"created_at":"2020-08-24 10:18:55","updated_at":"2020-10-15 20:27:07"},{"id":55,"child_id":1,"level_name":"h","ispass":0,"created_at":"2020-08-24 10:19:03","updated_at":"2020-10-15 20:27:06"},{"id":56,"child_id":1,"level_name":"i","ispass":0,"created_at":"2020-08-24 10:19:17","updated_at":"2020-10-16 17:54:44"},{"id":57,"child_id":1,"level_name":"j","ispass":1,"created_at":"2020-08-24 10:19:27","updated_at":"2020-10-16 17:54:17"},{"id":58,"child_id":1,"level_name":"k","ispass":1,"created_at":"2020-08-24 10:19:41","updated_at":"2020-10-16 17:54:31"},{"id":59,"child_id":1,"level_name":"l","ispass":1,"created_at":"2020-08-24 10:20:53","updated_at":"2020-10-15 13:47:35"},{"id":60,"child_id":1,"level_name":"m","ispass":1,"created_at":"2020-08-24 10:21:01","updated_at":"2020-10-16 17:55:17"},{"id":61,"child_id":1,"level_name":"n","ispass":1,"created_at":"2020-08-24 10:21:08","updated_at":"2020-10-16 17:55:05"},{"id":62,"child_id":1,"level_name":"o","ispass":0,"created_at":"2020-08-24 10:21:20","updated_at":"2020-10-15 20:27:20"},{"id":63,"child_id":1,"level_name":"p","ispass":0,"created_at":"2020-08-24 10:21:28","updated_at":"2020-10-15 20:27:18"},{"id":64,"child_id":1,"level_name":"q","ispass":0,"created_at":"2020-08-24 10:21:39","updated_at":"2020-10-16 17:55:31"},{"id":65,"child_id":1,"level_name":"r","ispass":0,"created_at":"2020-08-24 10:21:46","updated_at":"2020-10-16 17:55:39"},{"id":66,"child_id":1,"level_name":"s","ispass":0,"created_at":"2020-08-24 10:21:53","updated_at":"2020-10-15 20:27:29"},{"id":67,"child_id":1,"level_name":"t","ispass":0,"created_at":"2020-08-24 10:22:01","updated_at":"2020-10-15 20:27:27"},{"id":68,"child_id":1,"level_name":"u","ispass":0,"created_at":"2020-08-24 10:22:09","updated_at":"2020-10-15 20:27:26"},{"id":69,"child_id":1,"level_name":"v","ispass":0,"created_at":"2020-08-24 10:22:18","updated_at":"2020-10-15 20:27:22"},{"id":70,"child_id":1,"level_name":"w","ispass":0,"created_at":"2020-08-24 10:22:25","updated_at":"2020-10-15 20:27:24"},{"id":71,"child_id":1,"level_name":"x","ispass":0,"created_at":"2020-08-24 10:22:33","updated_at":"2020-10-15 20:27:31"},{"id":72,"child_id":1,"level_name":"y","ispass":0,"created_at":"2020-08-24 10:22:40","updated_at":"2020-10-15 20:27:32"},{"id":73,"child_id":1,"level_name":"z","ispass":0,"created_at":"2020-08-24 10:22:47","updated_at":"2020-10-15 20:27:34"},{"id":74,"child_id":1,"level_name":"changhua","ispass":0,"created_at":"2020-08-27 16:45:35","updated_at":"2020-10-15 13:48:30"},{"id":75,"child_id":1,"level_name":"chiayi","ispass":0,"created_at":"2020-08-27 16:45:59","updated_at":"2020-10-15 13:48:39"},{"id":76,"child_id":1,"level_name":"hsinchu","ispass":0,"created_at":"2020-08-27 16:46:26","updated_at":"2020-10-15 13:48:55"},{"id":77,"child_id":1,"level_name":"plus","ispass":0,"created_at":"2020-08-27 16:46:40","updated_at":"2020-10-16 17:57:58"},{"id":78,"child_id":1,"level_name":"kaohsiung","ispass":0,"created_at":"2020-08-27 16:47:18","updated_at":"2020-10-15 13:49:03"},{"id":79,"child_id":1,"level_name":"keelung","ispass":0,"created_at":"2020-08-27 16:47:30","updated_at":"2020-10-16 17:58:07"},{"id":80,"child_id":1,"level_name":"miaoli","ispass":0,"created_at":"2020-08-27 16:47:43","updated_at":"2020-10-16 17:58:19"},{"id":81,"child_id":1,"level_name":"nantou","ispass":0,"created_at":"2020-08-27 16:47:57","updated_at":"2020-10-16 17:59:10"},{"id":82,"child_id":1,"level_name":"newTaipei","ispass":0,"created_at":"2020-08-27 16:48:09","updated_at":"2020-10-16 17:59:10"},{"id":83,"child_id":1,"level_name":"minus","ispass":0,"created_at":"2020-08-27 16:48:23","updated_at":"2020-10-16 17:59:10"},{"id":84,"child_id":1,"level_name":"taichung","ispass":0,"created_at":"2020-08-27 16:48:39","updated_at":"2020-10-16 17:59:10"},{"id":85,"child_id":1,"level_name":"tainan","ispass":0,"created_at":"2020-08-27 16:48:53","updated_at":"2020-10-16 17:59:10"},{"id":86,"child_id":1,"level_name":"taipei","ispass":0,"created_at":"2020-08-27 16:50:40","updated_at":"2020-10-16 17:59:10"},{"id":87,"child_id":1,"level_name":"yo","ispass":0,"created_at":"2020-10-15 21:23:07","updated_at":"2020-10-15 21:23:07"},{"id":88,"child_id":1,"level_name":"taoyuan","ispass":0,"created_at":"2020-08-27 16:52:05","updated_at":"2020-10-16 17:59:10"},{"id":89,"child_id":1,"level_name":"yilan","ispass":0,"created_at":"2020-08-27 16:52:18","updated_at":"2020-10-16 17:59:10"},{"id":90,"child_id":1,"level_name":"yunlin","ispass":0,"created_at":"2020-08-27 16:52:34","updated_at":"2020-10-16 17:59:10"},{"id":91,"child_id":1,"level_name":"findBallast","ispass":1,"created_at":"2020-09-03 10:59:05","updated_at":"2020-10-16 17:59:51"},{"id":92,"child_id":1,"level_name":"gophers","ispass":1,"created_at":"2020-09-03 10:59:17","updated_at":"2020-10-16 17:59:44"},{"id":93,"child_id":1,"level_name":"pickingUpIsALittleRed","ispass":1,"created_at":"2020-09-03 10:59:39","updated_at":"2020-10-16 17:59:38"},{"id":94,"child_id":1,"level_name":"puzzle","ispass":1,"created_at":"2020-09-03 10:59:51","updated_at":"2020-10-16 17:59:57"},{"id":95,"child_id":1,"level_name":"hualien","ispass":0,"created_at":"2020-09-05 23:57:38","updated_at":"2020-10-16 17:59:10"},{"id":96,"child_id":1,"level_name":"pingtung","ispass":0,"created_at":"2020-09-05 23:57:50","updated_at":"2020-10-16 17:59:10"},{"id":97,"child_id":1,"level_name":"taitung","ispass":0,"created_at":"2020-10-15 14:50:40","updated_at":"2020-10-16 17:59:10"}]}');
+let allLevelIsPass = JSON.parse('{"event":"show_level","content":[{"id":1,"child_id":1,"level_name":"ㄅ","ispass":1,"created_at":"2020-08-17 00:59:16","updated_at":"2020-10-15 19:37:38"},{"id":2,"child_id":1,"level_name":"ㄆ","ispass":1,"created_at":"2020-08-17 01:00:46","updated_at":"2020-10-14 01:00:46"},{"id":3,"child_id":1,"level_name":"ㄇ","ispass":1,"created_at":"2020-08-17 01:00:46","updated_at":"2020-10-15 01:00:46"},{"id":4,"child_id":1,"level_name":"ㄈ","ispass":1,"created_at":"2020-08-17 01:01:26","updated_at":"2020-09-25 15:42:19"},{"id":5,"child_id":1,"level_name":"ㄉ","ispass":1,"created_at":"2020-08-17 01:01:26","updated_at":"2020-09-08 19:54:04"},{"id":6,"child_id":1,"level_name":"ㄊ","ispass":1,"created_at":"2020-08-17 01:01:54","updated_at":"2020-09-01 22:32:04"},{"id":7,"child_id":1,"level_name":"ㄋ","ispass":1,"created_at":"2020-08-17 01:01:54","updated_at":"2020-09-01 22:31:59"},{"id":8,"child_id":1,"level_name":"ㄌ","ispass":1,"created_at":"2020-08-17 01:02:36","updated_at":"2020-10-06 22:47:27"},{"id":9,"child_id":1,"level_name":"ㄍ","ispass":1,"created_at":"2020-08-17 01:02:36","updated_at":"2020-10-16 02:47:39"},{"id":10,"child_id":1,"level_name":"ㄎ","ispass":0,"created_at":"2020-08-23 12:20:10","updated_at":"2020-10-16 17:50:48"},{"id":11,"child_id":1,"level_name":"ㄏ","ispass":0,"created_at":"2020-08-24 09:41:00","updated_at":"2020-10-16 17:50:54"},{"id":12,"child_id":1,"level_name":"ㄐ","ispass":0,"created_at":"2020-08-24 09:41:11","updated_at":"2020-10-16 17:50:59"},{"id":13,"child_id":1,"level_name":"ㄑ","ispass":0,"created_at":"2020-08-24 09:41:20","updated_at":"2020-10-16 17:51:05"},{"id":14,"child_id":1,"level_name":"ㄒ","ispass":0,"created_at":"2020-08-24 09:42:33","updated_at":"2020-10-15 19:37:56"},{"id":15,"child_id":1,"level_name":"ㄓ","ispass":0,"created_at":"2020-08-24 09:42:45","updated_at":"2020-10-15 19:37:59"},{"id":16,"child_id":1,"level_name":"ㄔ","ispass":0,"created_at":"2020-08-24 09:42:56","updated_at":"2020-10-15 19:38:03"},{"id":17,"child_id":1,"level_name":"ㄕ","ispass":0,"created_at":"2020-08-24 09:43:05","updated_at":"2020-10-15 19:38:05"},{"id":18,"child_id":1,"level_name":"ㄖ","ispass":0,"created_at":"2020-08-24 09:44:06","updated_at":"2020-10-15 19:38:07"},{"id":19,"child_id":1,"level_name":"ㄗ","ispass":0,"created_at":"2020-08-24 09:44:34","updated_at":"2020-10-15 19:38:14"},{"id":20,"child_id":1,"level_name":"ㄘ","ispass":0,"created_at":"2020-08-24 09:44:46","updated_at":"2020-10-15 20:26:04"},{"id":21,"child_id":1,"level_name":"ㄙ","ispass":0,"created_at":"2020-08-24 09:44:54","updated_at":"2020-10-15 20:26:07"},{"id":22,"child_id":1,"level_name":"ㄧ","ispass":0,"created_at":"2020-08-24 09:45:03","updated_at":"2020-10-15 20:26:10"},{"id":23,"child_id":1,"level_name":"ㄨ","ispass":0,"created_at":"2020-08-24 09:45:34","updated_at":"2020-10-15 20:26:12"},{"id":24,"child_id":1,"level_name":"ㄩ","ispass":0,"created_at":"2020-08-24 09:45:46","updated_at":"2020-10-15 20:26:13"},{"id":25,"child_id":1,"level_name":"ㄚ","ispass":0,"created_at":"2020-08-24 09:45:53","updated_at":"2020-10-16 17:51:22"},{"id":26,"child_id":1,"level_name":"ㄛ","ispass":0,"created_at":"2020-08-24 09:46:06","updated_at":"2020-10-16 17:51:27"},{"id":27,"child_id":1,"level_name":"ㄜ","ispass":0,"created_at":"2020-08-24 09:46:51","updated_at":"2020-10-15 20:26:18"},{"id":28,"child_id":1,"level_name":"ㄝ","ispass":0,"created_at":"2020-08-24 09:47:00","updated_at":"2020-10-15 20:26:16"},{"id":29,"child_id":1,"level_name":"ㄞ","ispass":0,"created_at":"2020-08-24 09:47:07","updated_at":"2020-10-15 20:26:20"},{"id":30,"child_id":1,"level_name":"ㄟ","ispass":0,"created_at":"2020-08-24 09:47:28","updated_at":"2020-10-15 20:26:22"},{"id":31,"child_id":1,"level_name":"ㄠ","ispass":1,"created_at":"2020-08-24 09:47:45","updated_at":"2020-10-16 17:52:01"},{"id":32,"child_id":1,"level_name":"ㄡ","ispass":1,"created_at":"2020-08-24 09:47:54","updated_at":"2020-10-16 17:52:13"},{"id":33,"child_id":1,"level_name":"ㄢ","ispass":1,"created_at":"2020-08-24 09:48:13","updated_at":"2020-10-16 17:52:25"},{"id":34,"child_id":1,"level_name":"ㄣ","ispass":1,"created_at":"2020-08-24 09:54:42","updated_at":"2020-10-16 17:52:39"},{"id":35,"child_id":1,"level_name":"ㄤ","ispass":1,"created_at":"2020-08-24 09:55:19","updated_at":"2020-10-16 17:52:46"},{"id":36,"child_id":1,"level_name":"ㄥ","ispass":1,"created_at":"2020-08-24 09:55:26","updated_at":"2020-10-16 17:51:48"},{"id":37,"child_id":1,"level_name":"ㄦ","ispass":0,"created_at":"2020-08-24 10:00:34","updated_at":"2020-10-16 17:53:12"},{"id":38,"child_id":1,"level_name":"1","ispass":0,"created_at":"2020-08-24 10:00:41","updated_at":"2020-10-16 17:56:12"},{"id":39,"child_id":1,"level_name":"2","ispass":0,"created_at":"2020-08-24 10:00:49","updated_at":"2020-10-15 20:26:36"},{"id":40,"child_id":1,"level_name":"3","ispass":0,"created_at":"2020-08-24 10:00:56","updated_at":"2020-10-15 20:26:38"},{"id":41,"child_id":1,"level_name":"4","ispass":1,"created_at":"2020-08-24 10:01:04","updated_at":"2020-10-16 17:56:24"},{"id":42,"child_id":1,"level_name":"5","ispass":1,"created_at":"2020-08-24 10:01:11","updated_at":"2020-10-16 17:56:34"},{"id":43,"child_id":1,"level_name":"6","ispass":1,"created_at":"2020-08-24 10:01:19","updated_at":"2020-10-16 17:56:51"},{"id":44,"child_id":1,"level_name":"7","ispass":1,"created_at":"2020-08-24 10:01:31","updated_at":"2020-10-16 17:57:14"},{"id":45,"child_id":1,"level_name":"8","ispass":1,"created_at":"2020-08-24 10:01:37","updated_at":"2020-10-16 17:57:24"},{"id":46,"child_id":1,"level_name":"9","ispass":1,"created_at":"2020-08-24 10:01:43","updated_at":"2020-10-16 17:57:34"},{"id":47,"child_id":1,"level_name":"0","ispass":0,"created_at":"2020-08-24 10:02:29","updated_at":"2020-10-15 20:26:50"},{"id":48,"child_id":1,"level_name":"a","ispass":0,"created_at":"2020-08-24 10:16:42","updated_at":"2020-10-15 20:25:49"},{"id":49,"child_id":1,"level_name":"b","ispass":0,"created_at":"2020-08-24 10:16:56","updated_at":"2020-10-16 17:53:47"},{"id":50,"child_id":1,"level_name":"c","ispass":0,"created_at":"2020-08-24 10:17:05","updated_at":"2020-10-15 20:25:52"},{"id":51,"child_id":1,"level_name":"d","ispass":0,"created_at":"2020-08-24 10:17:36","updated_at":"2020-10-16 17:53:57"},{"id":52,"child_id":1,"level_name":"e","ispass":0,"created_at":"2020-08-24 10:17:44","updated_at":"2020-10-15 20:27:04"},{"id":53,"child_id":1,"level_name":"f","ispass":0,"created_at":"2020-08-24 10:18:45","updated_at":"2020-10-15 20:27:02"},{"id":54,"child_id":1,"level_name":"g","ispass":0,"created_at":"2020-08-24 10:18:55","updated_at":"2020-10-15 20:27:07"},{"id":55,"child_id":1,"level_name":"h","ispass":0,"created_at":"2020-08-24 10:19:03","updated_at":"2020-10-15 20:27:06"},{"id":56,"child_id":1,"level_name":"i","ispass":0,"created_at":"2020-08-24 10:19:17","updated_at":"2020-10-16 17:54:44"},{"id":57,"child_id":1,"level_name":"j","ispass":1,"created_at":"2020-08-24 10:19:27","updated_at":"2020-10-16 17:54:17"},{"id":58,"child_id":1,"level_name":"k","ispass":1,"created_at":"2020-08-24 10:19:41","updated_at":"2020-10-16 17:54:31"},{"id":59,"child_id":1,"level_name":"l","ispass":1,"created_at":"2020-08-24 10:20:53","updated_at":"2020-10-15 13:47:35"},{"id":60,"child_id":1,"level_name":"m","ispass":1,"created_at":"2020-08-24 10:21:01","updated_at":"2020-10-16 17:55:17"},{"id":61,"child_id":1,"level_name":"n","ispass":1,"created_at":"2020-08-24 10:21:08","updated_at":"2020-10-16 17:55:05"},{"id":62,"child_id":1,"level_name":"o","ispass":0,"created_at":"2020-08-24 10:21:20","updated_at":"2020-10-15 20:27:20"},{"id":63,"child_id":1,"level_name":"p","ispass":0,"created_at":"2020-08-24 10:21:28","updated_at":"2020-10-15 20:27:18"},{"id":64,"child_id":1,"level_name":"q","ispass":0,"created_at":"2020-08-24 10:21:39","updated_at":"2020-10-16 17:55:31"},{"id":65,"child_id":1,"level_name":"r","ispass":0,"created_at":"2020-08-24 10:21:46","updated_at":"2020-10-16 17:55:39"},{"id":66,"child_id":1,"level_name":"s","ispass":0,"created_at":"2020-08-24 10:21:53","updated_at":"2020-10-15 20:27:29"},{"id":67,"child_id":1,"level_name":"t","ispass":0,"created_at":"2020-08-24 10:22:01","updated_at":"2020-10-15 20:27:27"},{"id":68,"child_id":1,"level_name":"u","ispass":0,"created_at":"2020-08-24 10:22:09","updated_at":"2020-10-15 20:27:26"},{"id":69,"child_id":1,"level_name":"v","ispass":0,"created_at":"2020-08-24 10:22:18","updated_at":"2020-10-15 20:27:22"},{"id":70,"child_id":1,"level_name":"w","ispass":0,"created_at":"2020-08-24 10:22:25","updated_at":"2020-10-15 20:27:24"},{"id":71,"child_id":1,"level_name":"x","ispass":0,"created_at":"2020-08-24 10:22:33","updated_at":"2020-10-15 20:27:31"},{"id":72,"child_id":1,"level_name":"y","ispass":0,"created_at":"2020-08-24 10:22:40","updated_at":"2020-10-15 20:27:32"},{"id":73,"child_id":1,"level_name":"z","ispass":0,"created_at":"2020-08-24 10:22:47","updated_at":"2020-10-15 20:27:34"},{"id":74,"child_id":1,"level_name":"changhua","ispass":0,"created_at":"2020-08-27 16:45:35","updated_at":"2020-10-15 13:48:30"},{"id":75,"child_id":1,"level_name":"chiayi","ispass":0,"created_at":"2020-08-27 16:45:59","updated_at":"2020-10-15 13:48:39"},{"id":76,"child_id":1,"level_name":"hsinchu","ispass":0,"created_at":"2020-08-27 16:46:26","updated_at":"2020-10-15 13:48:55"},{"id":77,"child_id":1,"level_name":"plus","ispass":0,"created_at":"2020-08-27 16:46:40","updated_at":"2020-10-16 17:57:58"},{"id":78,"child_id":1,"level_name":"kaohsiung","ispass":0,"created_at":"2020-08-27 16:47:18","updated_at":"2020-10-15 13:49:03"},{"id":79,"child_id":1,"level_name":"keelung","ispass":0,"created_at":"2020-08-27 16:47:30","updated_at":"2020-10-16 17:58:07"},{"id":80,"child_id":1,"level_name":"miaoli","ispass":0,"created_at":"2020-08-27 16:47:43","updated_at":"2020-10-16 17:58:19"},{"id":81,"child_id":1,"level_name":"nantou","ispass":0,"created_at":"2020-08-27 16:47:57","updated_at":"2020-10-16 17:59:10"},{"id":82,"child_id":1,"level_name":"newTaipei","ispass":0,"created_at":"2020-08-27 16:48:09","updated_at":"2020-10-16 17:59:10"},{"id":83,"child_id":1,"level_name":"minus","ispass":0,"created_at":"2020-08-27 16:48:23","updated_at":"2020-10-16 17:59:10"},{"id":84,"child_id":1,"level_name":"taichung","ispass":0,"created_at":"2020-08-27 16:48:39","updated_at":"2020-10-16 17:59:10"},{"id":85,"child_id":1,"level_name":"tainan","ispass":0,"created_at":"2020-08-27 16:48:53","updated_at":"2020-10-16 17:59:10"},{"id":86,"child_id":1,"level_name":"taipei","ispass":0,"created_at":"2020-08-27 16:50:40","updated_at":"2020-10-16 17:59:10"},{"id":87,"child_id":1,"level_name":"yo","ispass":0,"created_at":"2020-10-15 21:23:07","updated_at":"2020-10-15 21:23:07"},{"id":88,"child_id":1,"level_name":"taoyuan","ispass":0,"created_at":"2020-08-27 16:52:05","updated_at":"2020-10-16 17:59:10"},{"id":89,"child_id":1,"level_name":"yilan","ispass":0,"created_at":"2020-08-27 16:52:18","updated_at":"2020-10-16 17:59:10"},{"id":90,"child_id":1,"level_name":"yunlin","ispass":0,"created_at":"2020-08-27 16:52:34","updated_at":"2020-10-16 17:59:10"},{"id":91,"child_id":1,"level_name":"findBallast","ispass":1,"created_at":"2020-09-03 10:59:05","updated_at":"2020-10-16 17:59:51"},{"id":92,"child_id":1,"level_name":"gophers","ispass":1,"created_at":"2020-09-03 10:59:17","updated_at":"2020-10-16 17:59:44"},{"id":93,"child_id":1,"level_name":"pickingUpIsALittleRed","ispass":1,"created_at":"2020-09-03 10:59:39","updated_at":"2020-10-16 17:59:38"},{"id":94,"child_id":1,"level_name":"puzzle","ispass":1,"created_at":"2020-09-03 10:59:51","updated_at":"2020-10-16 17:59:57"},{"id":95,"child_id":1,"level_name":"hualien","ispass":0,"created_at":"2020-09-05 23:57:38","updated_at":"2020-10-16 17:59:10"},{"id":96,"child_id":1,"level_name":"pingtung","ispass":0,"created_at":"2020-09-05 23:57:50","updated_at":"2020-10-16 17:59:10"},{"id":97,"child_id":1,"level_name":"taitung","ispass":0,"created_at":"2020-10-15 14:50:40","updated_at":"2020-10-16 17:59:10"}]}');
 
 function createWindow() {
 
@@ -131,8 +131,8 @@ ipcMain.on('voice-require-to-py', (event, arg) => {
 
         // callbackWhenSuccess
         async(result) => {
-            let STT_Q = await callSTT.quickStart(result['Question']);
-            result['qVoice'] = await STT_Q;
+            // let STT_Q = await callSTT.quickStart('crawler', 1, result['Question']);
+            // result['qVoice'] = await STT_Q;
             event.reply('reply-result', result);
 
             // api.Question.addQa
@@ -150,24 +150,24 @@ ipcMain.on('close-main-window', () => {
     app.quit();
 });
 ipcMain.on('open-mjpg-streamer', async(event, arg) => {
-    shell.cd('mjpg-streamer');
-    let command = './mjpg_streamer -i "./input_uvc.so -y -n" -o "./output_http.so -w ./www"';
-    // let command = 'killall mjpg_streamer'
-    shell.exec(command, (code, std, err) => {
-        console.log('Exit code:', code);
-        console.log('Program output:', std);
-        console.log('Program stderr:', err);
+        shell.cd('mjpg-streamer');
+        let command = './mjpg_streamer -i "./input_uvc.so -y -n" -o "./output_http.so -w ./www"';
+        // let command = 'killall mjpg_streamer'
+        shell.exec(command, (code, std, err) => {
+            console.log('Exit code:', code);
+            console.log('Program output:', std);
+            console.log('Program stderr:', err);
+        })
+        shell.cd('..');
     })
-    shell.cd('..');
-})
-// ipcMain.on('close-mjpg-streamer', async(event, arg) => {
-//     // let command = './mjpg_streamer -i "./input_uvc.so -y -n" -o "./output_http.so -w ./www"';
-//     let command = 'killall mjpg_streamer'
-//     shell.exec(command, (code, std, err) => {
-//         console.log('Exit code:', code);
-//         console.log('Program output:', std);
-//         console.log('Program stderr:', err);
-//     })
+    // ipcMain.on('close-mjpg-streamer', async(event, arg) => {
+    //     // let command = './mjpg_streamer -i "./input_uvc.so -y -n" -o "./output_http.so -w ./www"';
+    //     let command = 'killall mjpg_streamer'
+    //     shell.exec(command, (code, std, err) => {
+    //         console.log('Exit code:', code);
+    //         console.log('Program output:', std);
+    //         console.log('Program stderr:', err);
+    //     })
 
 //     event.sender.send('reply-close-mjpg-streamer')
 // })
@@ -191,7 +191,7 @@ ipcMain.on('captrue', async(event, args) => {
     event.sender.send('reply-mainjsfunction-captrue')
 })
 
-ipcMain.on('call-writeDead',(event, arg) =>{
+ipcMain.on('call-writeDead', (event, arg) => {
     event.sender.send('reply-writeDead')
 })
 
@@ -477,16 +477,16 @@ ipcMain.on('callMagicCard', (event, arg) => {
 
 ipcMain.on('callZhuyinCondition', (event, arg) => {
     console.log("success call Zhuyin Condition ~~~~ ")
-    if(IsNetwork){
+    if (IsNetwork) {
         api.Level.showLevel(1, (req) => {
             const data = JSON.parse(JSON.stringify(req));
             console.log("data = " + JSON.stringify(data))
             event.sender.send('reply-callZhuyindata', data);
         })
-    }else{
+    } else {
         event.sender.send('reply-callZhuyindata', allLevelIsPass);
     }
-    
+
 })
 
 
@@ -562,12 +562,12 @@ ipcMain.on('call-frequency', (event, arg) => {
         var Speechtotalfreq = 0;
         let dt = new Date();
         console.log("Date =>" + dt.getDate())
-        console.log("month =>"+ dt.getMonth()+1)
+        console.log("month =>" + dt.getMonth() + 1)
         console.log("speechlength =>" + (Object.keys(freq.content).length - 1))
-        // console.log("speechmonth =>" + freq.content[90].created_at.substring(5, 7))
+            // console.log("speechmonth =>" + freq.content[90].created_at.substring(5, 7))
         for (i = (Object.keys(freq.content).length - 1); i >= 0; i--) {
 
-            if (freq.content[i].created_at.substring(6, 7) == (dt.getMonth()+1)||freq.content[i].created_at.substring(5, 7) == (dt.getMonth()+1) & freq.content[i].created_at.substring(8, 10) == dt.getDate() || freq.content[i].created_at.substring(9, 10) == dt.getDate()) {
+            if (freq.content[i].created_at.substring(6, 7) == (dt.getMonth() + 1) || freq.content[i].created_at.substring(5, 7) == (dt.getMonth() + 1) & freq.content[i].created_at.substring(8, 10) == dt.getDate() || freq.content[i].created_at.substring(9, 10) == dt.getDate()) {
 
                 if (freq.content[i].category == "語音") {
                     // console.log("speechdata =>"+freq.content[i].created_at.substring(9, 10))
@@ -617,7 +617,7 @@ ipcMain.on('call-frequency', (event, arg) => {
 })
 
 ipcMain.on('levelIsPass', (event, arg) => {
-    if(IsNetwork){
+    if (IsNetwork) {
         api.Level.alterLevel(1, arg, (req) => {
             console.log("data = " + JSON.stringify(req))
                 //event.sender.send('reply-callZhuyindata', data);
@@ -626,8 +626,8 @@ ipcMain.on('levelIsPass', (event, arg) => {
             console.log("data = " + JSON.stringify(req))
                 //event.sender.send('reply-callZhuyindata', data);
         });
-    }else{
-        childGoodBabyValue+=20;
+    } else {
+        childGoodBabyValue += 20;
     }
 })
 
@@ -665,7 +665,12 @@ ipcMain.on('levelIsPass', (event, arg) => {
 //         // console.log("data =>"+ Object.keys(freq.content).length)
 //     })
 // })
+ipcMain.on('STT_Question', async(event, q_text, click_num) => {
+    let STT_Q = await callSTT.quickStart('crawler', 1, q_text, click_num);
 
+    // let QueVoice = STT_Q
+    event.reply('replySTT_Q', STT_Q)
+})
 
 ipcMain.on('serchImgURL', async(event, keyword) => {
     console.log('Catch ImgURL');
@@ -690,7 +695,7 @@ ipcMain.on('serchImgURL', async(event, keyword) => {
 })
 
 
-ipcMain.on('searchAnswer', async(event, keyword) => {
+ipcMain.on('searchAnswer', async(event, keyword, click_num) => {
     console.log('Catch Answer');
     const browser = await puppeteer.launch({
         executablePath: '/usr/bin/chromium-browser',
@@ -717,14 +722,14 @@ ipcMain.on('searchAnswer', async(event, keyword) => {
     const test = await def[0].evaluate(node => node.innerText).then(async(value) => {
         // await console.log(value);
         Ans['ansText'] = await value;
-        let STT_A = await callSTT.quickStart(value);
+        let STT_A = await callSTT.quickStart('crawler', 2, value, click_num);
         Ans['ansVoice'] = await STT_A;
 
         await event.reply('replyAnswer', Ans)
     });
 })
 
-ipcMain.on('searchPictureBook', async(event, keyword) => {
+ipcMain.on('searchPictureBook', async(event, keyword, click_num) => {
     console.log('Catch picturebook');
     const browser = await puppeteer.launch({
         executablePath: '/usr/bin/chromium-browser',
@@ -767,10 +772,10 @@ ipcMain.on('searchPictureBook', async(event, keyword) => {
         PBook['bookName'] = Answer;
         PBook['bookImg'] = picURL;
         PBook['bookIntro'] = findBookIntro;
-        let STTbName = await callSTT.quickStart(PBook['bookName']);
+        let STTbName = await callSTT.quickStart('crawler', 3, PBook['bookName'], click_num);
         PBook['bNameVoice'] = STTbName;
 
-        let STTbIntro = await callSTT.quickStart(PBook['bookIntro']);
+        let STTbIntro = await callSTT.quickStart('crawler', 4, PBook['bookIntro'], click_num);
         PBook['bIntroVoice'] = STTbIntro;
 
         // console.log("PBook['bookName']:" + PBook['bookName'] + " PBook['bookImg']:" + PBook['bookImg'] + " PBook['bookIntro']" + PBook['bookIntro'])
@@ -783,25 +788,25 @@ ipcMain.on('searchPictureBook', async(event, keyword) => {
     }
 })
 
-ipcMain.on('presetAnswer', async(event, preAns) => {
-    let preQ = await callSTT.quickStart(preAns['Question']);
-    preAns['qVoice'] = preQ;
-    let preA = await callSTT.quickStart(preAns['Answer']);
-    preAns['aVoice'] = preA;
-    event.reply('replyPreQA', preAns);
+// ipcMain.on('presetAnswer', async(event, preAns) => {
+//     let preQ = await callSTT.quickStart(5, preAns['Question']);
+//     preAns['qVoice'] = preQ;
+//     let preA = await callSTT.quickStart(6, preAns['Answer']);
+//     preAns['aVoice'] = preA;
+//     event.reply('replyPreQA', preAns);
 
-})
+// })
 
-ipcMain.on('presetPicturebook', async(event, prePic) => {
-    let prePicBook = { 'bookName': '', 'bookIntro': '' };
-    let prePicName = await callSTT.quickStart(prePic['bookName']);
-    prePicBook['bookName'] = prePicName;
-    let prePicIntro = await callSTT.quickStart(prePic['bookIntro']);
-    prePicBook['bookIntro'] = prePicIntro;
-    event.reply('replyPrePicBook', prePicBook);
+// ipcMain.on('presetPicturebook', async(event, prePic) => {
+//     let prePicBook = { 'bookName': '', 'bookIntro': '' };
+//     let prePicName = await callSTT.quickStart(7, prePic['bookName']);
+//     prePicBook['bookName'] = prePicName;
+//     let prePicIntro = await callSTT.quickStart(8, prePic['bookIntro']);
+//     prePicBook['bookIntro'] = prePicIntro;
+//     event.reply('replyPrePicBook', prePicBook);
 
 
-})
+// })
 
 ipcMain.on('presetAnsPBook', async(event, prePic) => {
     console.log("prePic[Question]" + prePic['data']['Question'] + ",prePic[i] " + prePic['i'])
@@ -830,13 +835,13 @@ ipcMain.on('presetAnsPBook', async(event, prePic) => {
             'bookImg': 'https://children.moc.gov.tw/resource/animate_image/6892.jpg',
         },
     ]
-    let Qvoice = await callSTT.quickStart(preset[prePic['i']]['Question']);
+    let Qvoice = await callSTT.quickStart('pre', 1, preset[prePic['i']]['Question'], prePic['click_num']);
     preset[prePic['i']]['Q_voice'] = Qvoice;
-    let Avoice = await callSTT.quickStart(preset[prePic['i']]['Answer']);
+    let Avoice = await callSTT.quickStart('pre', 2, preset[prePic['i']]['Answer'], prePic['click_num']);
     preset[prePic['i']]['A_voice'] = Avoice;
-    let pbNamevoice = await callSTT.quickStart(preset[prePic['i']]['pbookName']);
+    let pbNamevoice = await callSTT.quickStart('pre', 3, preset[prePic['i']]['pbookName'], prePic['click_num']);
     preset[prePic['i']]['pbName_voice'] = pbNamevoice;
-    let pbIntrovoice = await callSTT.quickStart(preset[prePic['i']]['pbookIntro']);
+    let pbIntrovoice = await callSTT.quickStart('pre', 4, preset[prePic['i']]['pbookIntro'], prePic['click_num']);
     preset[prePic['i']]['pbIntro_voice'] = pbIntrovoice;
 
     event.reply('replyPresetAnsPBook', preset[prePic['i']]);

@@ -123,7 +123,7 @@ if (voiceBtn) {
             for (let i = 0; i < presetJson.length; i++) {
                 if (data['keyWord'] == presetJson[i]) {
                     crawler = true;
-                    ipcRenderer.send('presetAnsPBook', { data, i });
+                    ipcRenderer.send('presetAnsPBook', { data, i, click_num });
                     ipcRenderer.once('replyPresetAnsPBook', (event, preset) => {
                         console.log("preset:" + preset['A_voice'])
                         QA_card.innerHTML = QA_card.innerHTML + createQAandPBook(preset['Question'], preset['Answer_pic'], preset['Answer'], preset['pbookName'], preset['bookImg'], preset['pbookIntro']);
@@ -148,6 +148,16 @@ if (voiceBtn) {
                 }
             }
             if (crawler == false) {
+                // 問題STT
+                ipcRenderer.send('STT_Question', data['Question'], click_num);
+                ipcRenderer.on('replySTT_Q', (event, q) => {
+                    let voiceQ = document.getElementById(`speaker_Q_${click_num}`);
+                    voiceQ.alt = q;
+                    console.log('q is what:' + q)
+                    console.log('voiceQ is what:' + voiceQ.alt)
+
+                })
+
                 ipcRenderer.send('serchImgURL', data['keyWord']);
                 ipcRenderer.once('replyImgURL', (event, url) => {
 
@@ -171,7 +181,7 @@ if (voiceBtn) {
                     })
                 })
 
-                ipcRenderer.send('searchAnswer', data['keyWord']);
+                ipcRenderer.send('searchAnswer', data['keyWord'], click_num);
                 ipcRenderer.once('replyAnswer', (event, answer) => {
                     let voiceA = document.getElementById(`speaker_A_${click_num}`);
                     // window.onload = () => {
@@ -186,7 +196,7 @@ if (voiceBtn) {
                     ipcRenderer.send('uploadAPI', data)
                 })
 
-                ipcRenderer.send('searchPictureBook', data['keyWord']);
+                ipcRenderer.send('searchPictureBook', data['keyWord'], click_num);
                 ipcRenderer.once('replyPbook', (event, pbook) => {
                     const pictureBook = document.querySelector('#pictureText_' + click_num);
 
@@ -199,8 +209,6 @@ if (voiceBtn) {
                     // console.log("pictureBook" + pictureBook)
 
                     pictureBook.innerHTML += createPBook(pbook['bookName'], pbook['bookImg'], pbook['bookIntro'])
-                    let voiceQ = document.getElementById(`speaker_Q_${click_num}`);
-                    voiceQ.alt = data['qVoice'];
 
                     let voiceName = document.getElementById(`speaker_pbName_${click_num}`);
                     let voiceIntro = document.getElementById(`speaker_pbIntro_${click_num}`);
@@ -404,7 +412,7 @@ function playAudio(name) {
     // console.log("name:" + name.alt)
     let id = name.alt;
     if (audioCreate.canPlayType("audio/mpeg")) {
-        audioCreate.setAttribute("src", `./TTS/mp3/pictureBook/${id}.mp3`);
+        audioCreate.setAttribute("src", `./TTS/mp3/STTpictureBook/${id}.mp3`);
         // console.log(`id:${id}`)
     }
 
