@@ -1,5 +1,5 @@
 let { ipcRenderer: ipcRenderer2 } = require('electron');
-let voiceOut = require('../../../GrowUp/model/util/voiceOut.js');
+let voiceOut = require('../../model/util/voiceOut.js');
 
 let levelNameConversion = {
     'ㄅ': 'b',
