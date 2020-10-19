@@ -300,6 +300,13 @@ ipcMain.on('addQAtoServer', async(event, arg) => {
     });
 })
 
+ipcMain.on('writeDead-addQAtoServer', async(event, arg) => {
+    api.Question.addQa(1, "蘋果", "落業喬木。葉軟形，邊緣有細尖鋸齒。果實球形，味美，可食，也可製酒。", "./still-image.jpg", "蘋果", "影像辨識", (event) => {
+        console.log("callback=" + JSON.stringify(event));
+    });
+})
+
+
 // ipcMain.on('invokeAction', function(event, data){
 //   var result = processData(data);
 //   event.sender.send('actionReply', result);

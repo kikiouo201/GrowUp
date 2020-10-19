@@ -6,15 +6,15 @@ const encoding = require('encoding');
 const iconv = require('iconv-lite');
 
 let ShowVisibility = document.querySelector('.QA_card_area');
-let ImgVisibility = document.querySelector('img#AnsImg');
+let ImgVisibility = document.querySelector('#AnsImg');
 let stream = document.querySelector('#stream');
 let QA_card = document.getElementById("QA_card")
 
 const createQA = (text1, text2, bookName, bookImg, bookExplain) => `
                                             <div class="card text-white  mb-3" style="background-color: #92337eba;">
                                                 <div class="card-body" style="margin-top: 30px;">
-                                                    <div style="margin-left: 105px;">
-                                                        <img id="AnsImg" src="">
+                                                    <div style="margin-left: 5px;">
+                                                        <img id="AnsImg" src="./still-image.jpg">
                                                     </div>
                                                     <div style="float:left; display: block; text-align: left;">
                                                         <p id="Ans" class="card-text card_A" style="float: left;">答案：</p>
@@ -40,18 +40,15 @@ const createQA = (text1, text2, bookName, bookImg, bookExplain) => `
 
 
 let identifyBtn = document.querySelector('#identify-js');
-let reset = document.querySelector('#reset');
-if (reset) {
-    reset.addEventListener('click', () => {
-        ipcRenderer.send('call-reset')
-    })
-}
+
+
 var answer, explain;
 if (identifyBtn) {
     identifyBtn.addEventListener('click', () => {
         // ipcRenderer.send('close-mjpg-streamer')
-            // ipcRenderer.send('vision')
-            ipcRenderer.send('captrue');
+        // ipcRenderer.send('vision')
+        // ipcRenderer.send('captrue');
+        ipcRenderer.send('call-writeDead')
         ipcRenderer.on('reply-close-mjpg-streamer', (event, data) => {
             document.getElementById('leadTxt').innerHTML = "拍照中。。。";
 
@@ -80,6 +77,7 @@ if (identifyBtn) {
         })
         ipcRenderer.on('reply-writeDead',(event,data) =>{
             console.log("writeDead");
+            ipcRenderer.send('writeDead-addQAtoServer')
             ShowVisibility.style.display = "block";
             ImgVisibility.style.display = "block";
             stream.style.display = "none";
