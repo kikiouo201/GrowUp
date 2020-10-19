@@ -169,10 +169,10 @@ a {
 }
 
 .CameracardStatus {
-    width: 0%;
+    width: 33%;
     /* position: absolute; */
     height: 100%;
-    border-radius: 40px 40px 40px 40px;
+    border-radius: 40px 0px 0px 40px;
     /* border-color: darkred; */
     /* border-style: solid; */
     background-color: #6c8eff;
@@ -182,10 +182,10 @@ a {
 }
 
 .SpeechcardStatus {
-    width: 0%;
+    width: 33%;
     /* position: absolute; */
     height: 100%;
-    border-radius: 40px 40px 40px 40px;
+    border-radius: 40px 0px 0px 40px;
     /* border-color: darkred; */
     /* border-style: solid; */
     background-color: #6c8eff;
