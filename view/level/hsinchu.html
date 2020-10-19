@@ -66,7 +66,7 @@
     </div>
 
     <div class="fullContent">
-        <h1 onclick="document.querySelector('.fullContent').style.display='none'">X</h1>
+        <h1 onclick="document.querySelector('.fullContent').style.display='none';voiceOut.mute();">X</h1>
         <div class="introduce">
             <div style="height: 60%;width: 100%; text-align: center;">
                 <img id="picture" style='height: 90%; border-radius: 15px; margin-top: 2%' src='https://upload.wikimedia.org/wikipedia/commons/f/f8/Hsinchu_labelled_map2.png' />
@@ -86,7 +86,7 @@
             <i class="fab fa-share return-float"><img src="../../photo/return.png"></i>
         </a>
 
-        <a href="../../game_home.html" class="homefloat" id="menu-share">
+        <a onclick="setTimeout(()=>location.href='../../game_home.html',800);voiceOut.goHome();" class="homefloat" id="menu-share">
             <i class="fab fa-share my-float"><img src="../../photo/gobackhome.png" width="70%"></i>
         </a>
     </div>
