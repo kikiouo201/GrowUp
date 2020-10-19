@@ -14,7 +14,7 @@
 </head>
 
 <body class="style" background="../../photo/background.png" onload="load()">
-    <audio id="drawAudio" src=""></audio>
+    <audio id="AUDIO" src=""></audio>
     <source src="../../TTS/mp3/bpm/b.mp3" type="audio/ogg">
     </audio>
     <div class="black_overlay">
@@ -78,7 +78,7 @@
         </a>
     </div>
     <div>
-        <a href="../../game_home.html" class="homefloat" id="menu-share">
+        <a onclick="setTimeout(()=>location.href='../../game_home.html',800);goHome();" class="homefloat" id="menu-share">
             <i class="fab fa-share my-float"><img src="../../photo/gobackhome.png" width="70%"></i>
         </a>
     </div>
