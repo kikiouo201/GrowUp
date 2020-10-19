@@ -78,6 +78,13 @@ if (voiceBtn) {
                                     <p style="display: inline; margin-left: 20px; margin-top: -5px; position: absolute; margin-right: 40px;">${bookIntro}</p>
                                     <img class="speaker_A" onclick="playAudio(this)" id="speaker_pbIntro_` + click_num + `" src="icons/speaker.png" style="position: absolute; bottom: 5px;" alt=""/>
                                 </div>`
+            // 查無繪本                     
+        var noPBook = (bookName) => `<div class="card-header contentCss" id="QA_num_` + click_num + `" style="background-color: #f8f9fa24; padding-bottom: 0px;">
+                                    <p class="contentlink">相關繪本連結：</p>
+                                    <p style="padding-left: 42px; font-size: 22px;">${bookName}</p>
+                                    <img class="speaker_A" onclick="playAudio(this)" id="speaker_pbName_` + click_num + `" src="icons/speaker.png" style="margin-top: -55px" alt=""/>
+
+                                </div>`
             // 寫死繪本
         var createQAandPBook = (question, url, answer, bookName, bookImg, bookIntro) => `<div id="pictureText_` + click_num + `" class="card text-white mb-3" style="background-color: #92337eba;">
                                         
@@ -197,16 +204,10 @@ if (voiceBtn) {
                 })
 
                 ipcRenderer.send('searchPictureBook', data['keyWord'], click_num);
+                // 有繪本
                 ipcRenderer.once('replyPbook', (event, pbook) => {
+
                     const pictureBook = document.querySelector('#pictureText_' + click_num);
-
-                    // QA_card.innerHTML = QA_card.innerHTML + createQA(data['Question'], data['Answer_pic'], data['Answer'], pbook['bookName'], pbook['bookImg'], pbook['bookIntro']);
-
-                    // var newDiv = document.createElement("div");
-                    // newDiv.className = "card-header contentCss";
-                    // newDiv.style.background = "#f8f9fa24";
-                    // newDiv.style.padding = "12px 20px 40px 20px";
-                    // console.log("pictureBook" + pictureBook)
 
                     pictureBook.innerHTML += createPBook(pbook['bookName'], pbook['bookImg'], pbook['bookIntro'])
 
@@ -214,6 +215,21 @@ if (voiceBtn) {
                     let voiceIntro = document.getElementById(`speaker_pbIntro_${click_num}`);
                     voiceName.alt = pbook['bNameVoice'];
                     voiceIntro.alt = pbook['bIntroVoice'];
+
+                })
+
+                // 沒繪本
+                ipcRenderer.once('replyNoPbook', (event, error, pbook) => {
+                    console.log("error no p book:" + error)
+                    const pictureBook = document.querySelector('#pictureText_' + click_num);
+
+                    pictureBook.innerHTML += noPBook('查無此書目')
+
+                    let voiceName = document.getElementById(`speaker_pbName_${click_num}`);
+                    voiceName.alt = pbook['bNameVoice'];
+
+                    // console.log('voiceIntro.parentNode' + voiceIntro.parentNode);
+
                 })
 
                 QA_card.innerHTML = QA_card.innerHTML + createQA(data['Question'], "./image/character/200.gif", "查詢中...");
@@ -397,7 +413,7 @@ function searchPBook(keyword) {
 
         } catch (e) {
             console.log('an expection on page.evaluate ', e);
-
+            PBook['bookName'] = '查無此繪本'
         }
         // throw {
 

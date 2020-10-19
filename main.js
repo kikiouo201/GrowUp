@@ -502,20 +502,20 @@ ipcMain.on('callMapCondition', (event, arg) => {
 
 ipcMain.on('callGoodRegard', (event, arg) => {
     console.log("success call GoodRegard value =) ")
-    if(IsNetwork){
+    if (IsNetwork) {
         api.People.showChildGoodBabyTotalValue(1, (req) => {
             const tot = JSON.parse(JSON.stringify(req));
             // console.log("data = " + JSON.stringify(data))
             var totValue = tot.content[0]["SUM(add_value)"];
             // 目前總值
             // console.log("data event=" + tot.content[0]["SUM(add_value)"]);
-            goodConvert(event,totValue);
+            goodConvert(event, totValue);
         });
-    
-    }else{
-        goodConvert(event,childGoodBabyValue);
+
+    } else {
+        goodConvert(event, childGoodBabyValue);
     }
-    
+
     // api.People.showChildGoodBabyDayValue(1, (req) => {
     //     const data = JSON.parse(JSON.stringify(req));
     //     // console.log("data = " + JSON.stringify(data))
@@ -525,7 +525,7 @@ ipcMain.on('callGoodRegard', (event, arg) => {
 });
 
 
-function goodConvert(event,totValue){
+function goodConvert(event, totValue) {
     for (i = 1; i < 100; i++) {
         var RangeMax = (1 + i) * i * 10;
         var RangeMin = i * (i - 1) * 10;
@@ -747,21 +747,24 @@ ipcMain.on('searchPictureBook', async(event, keyword, click_num) => {
         headless: true
     });
 
+    let PBook = { "bookName": "", "bookImg": "", "bookIntro": "", "bNameVoice": "", "bIntroVoice": "" };
+
     try {
+        // 每進入頁面reload
+        // const navigationPromise = page.waitForNavigation({ waitUntil: "domcontentloaded" });
+
         const page = await browser.newPage();
         await page.goto("https://children.moc.gov.tw/index");
+        // await navigationPromise;
         await page.waitForSelector('body > header > div > div.search_bar > ul > li:nth-child(5) > form > input[type=text]:nth-child(2)')
         await page.type('body > header > div > div.search_bar > ul > li:nth-child(5) > form > input[type=text]:nth-child(2)', keyword)
         await page.waitForSelector('body > header > div > div.search_bar > ul > li:nth-child(5) > form > input.search_btn')
         await page.click('body > header > div > div.search_bar > ul > li:nth-child(5) > form > input.search_btn')
             // const findFBook = await page.$('#main > div > div.row > div > div.wood_bg > div > article > div:nth-child(6) > div:nth-child(1) > div > section > h2 > a')
-        await page.waitFor(1000);
-
-        let PBook = { "bookName": "", "bookImg": "", "bookIntro": "", "bNameVoice": "", "bIntroVoice": "" };
 
 
         // 動畫類的第一本書，之後判斷沒有的話，無書目
-        const findFBookDIV = await page.waitForSelector('#main > div > div.row > div > div.wood_bg > div > article > div:nth-child(4) > div:nth-child(1) > div > section')
+        const findFBookDIV = await page.waitForSelector('#main > div > div.row > div > div.wood_bg > div > article > div:nth-child(4) > div:nth-child(1) > div > section', { timeout: 1000 })
 
         const findFBookName = await page.$('#main > div > div.row > div > div.wood_bg > div > article > div:nth-child(4) > div:nth-child(1) > div > section > h2 > a')
             // await findFBook.setDefaultNavigationTimeout(10000);
@@ -792,7 +795,11 @@ ipcMain.on('searchPictureBook', async(event, keyword, click_num) => {
 
     } catch (e) {
         console.log('an expection on page.evaluate ', e);
+        PBook['bookName'] = '查無此書目';
+        let STTbName = await callSTT.quickStart('crawlerNoBook', 3, PBook['bookName'], click_num);
+        PBook['bNameVoice'] = STTbName;
 
+        event.reply('replyNoPbook', 'error', PBook)
     }
 })
 
