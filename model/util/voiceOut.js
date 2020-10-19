@@ -10,6 +10,12 @@ function goHome() {
     audioCreate.play();
 }
 
+function magicBookGoHome() {
+    var audioCreate = document.getElementById("AUDIO");
+    audioCreate.setAttribute("src", `../TTS/mp3/home.mp3`);
+    audioCreate.play();
+}
+
 function mute() {
     let mute = document.getElementById("AUDIO");
     mute.pause();
@@ -27,5 +33,6 @@ module.exports = {
     mute,
     goHome,
     playDevilBPM,
-    magicBook
+    magicBook,
+    magicBookGoHome
 }
