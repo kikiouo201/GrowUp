@@ -37,6 +37,7 @@ ipcRenderer.on('reply-frequency', (event, data) => {
         document.querySelector("#camera_success_icon").style.visibility = "visible";
         document.querySelector("#camerafreq").innerHTML = "完成";
         document.querySelector(".CameracardStatus").style.width = data.CamerapercentColor + "%";
+        document.querySelector(".CameracardStatus").style.borderRadius = "40px 40px 40px 40px";
         // document.querySelector("#speechfreq").innerHTML = data.Speechtotalfreq+"/3";
         // document.querySelector(".SpeechcardStatus").style.width = data.SpeechpercentColor+"%";
 
@@ -45,6 +46,7 @@ ipcRenderer.on('reply-frequency', (event, data) => {
         document.querySelector("#speech_success_icon").style.visibility = "visible";
         document.querySelector("#speechfreq").innerHTML = "完成";
         document.querySelector(".SpeechcardStatus").style.width = data.SpeechpercentColor + "%";
+        document.querySelector(".SpeechcardStatus").style.borderRadius = "40px 40px 40px 40px";
         // document.querySelector("#camerafreq").innerHTML = data.Cameratotalfreq+"/3";
         // document.querySelector(".CameracardStatus").style.width = data.CamerapercentColor+"%";
     } else {

@@ -295,9 +295,9 @@ ipcMain.on('camera-searchPictureBook', async(event, keyword) => {
 })
 
 ipcMain.on('addQAtoServer', async(event, arg) => {
-    // api.Question.addQa(1, "", arg, "./still-image.jpg", arg, "影像辨識", (event) => {
-    //     console.log("callback=" + JSON.stringify(event));
-    // });
+    api.Question.addQa(1, "", arg, "./still-image.jpg", arg, "影像辨識", (event) => {
+        console.log("callback=" + JSON.stringify(event));
+    });
 })
 
 // ipcMain.on('invokeAction', function(event, data){
@@ -480,7 +480,7 @@ ipcMain.on('callZhuyinCondition', (event, arg) => {
     if (IsNetwork) {
         api.Level.showLevel(1, (req) => {
             const data = JSON.parse(JSON.stringify(req));
-            console.log("data = " + JSON.stringify(data))
+            // console.log("data = " + JSON.stringify(data))
             event.sender.send('reply-callZhuyindata', data);
         })
     } else {
