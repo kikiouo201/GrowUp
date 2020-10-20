@@ -39,7 +39,7 @@ const createQA = (text1, text2, bookName, bookImg, bookExplain) => `
                                             </div>`
 
 
-let identifyBtn = document.querySelector('#identify-js');
+let identifyBtn = document.querySelector('#identify');
 
 
 var answer, explain;
@@ -77,7 +77,7 @@ if (identifyBtn) {
         })
         ipcRenderer.on('reply-writeDead',(event,data) =>{
             console.log("writeDead");
-            ipcRenderer.send('writeDead-addQAtoServer')
+            ipcRenderer.send('sendWriteDeadtoServer')
             ShowVisibility.style.display = "block";
             ImgVisibility.style.display = "block";
             stream.style.display = "none";

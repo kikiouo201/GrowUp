@@ -300,10 +300,11 @@ ipcMain.on('addQAtoServer', async(event, arg) => {
     });
 })
 
-ipcMain.on('writeDead-addQAtoServer', async(event, arg) => {
-    api.Question.addQa(1, "蘋果", "落業喬木。葉軟形，邊緣有細尖鋸齒。果實球形，味美，可食，也可製酒。", "./still-image.jpg", "蘋果", "影像辨識", (event) => {
-        console.log("callback=" + JSON.stringify(event));
-    });
+ipcMain.on('sendWriteDeadtoServer', async(event, arg) => {
+    console.log("no!!!!!!")
+    // api.Question.addQa(1, "蘋果", "落業喬木。葉軟形，邊緣有細尖鋸齒。果實球形，味美，可食，也可製酒。", "./still-image.jpg", "蘋果", "影像辨識", (event) => {
+    //     console.log("callback=" + JSON.stringify(event));
+    // });
 })
 
 
@@ -588,16 +589,7 @@ ipcMain.on('call-frequency', (event, arg) => {
                     // console.log("speechdata =>"+freq.content[i].created_at.substring(9, 10))
                     Speechtotalfreq++
                 }
-
-            }
-
-        }
-
-        for (i = (Object.keys(freq.content).length - 1); i >= 0; i--) {
-
-            if (freq.content[i].created_at.substring(6, 7) == (dt.getMonth() + 1) & freq.content[i].created_at.substring(8, 10) == (dt.getDate() - 1) || freq.content[i].created_at.substring(9, 10) == (dt.getDate() - 1)) {
-
-                if (freq.content[i].category == "影像辨識") {
+                else {
 
                     Cameratotalfreq++
                 }
@@ -605,6 +597,8 @@ ipcMain.on('call-frequency', (event, arg) => {
             }
 
         }
+
+        
 
         var CamerapercentColor = Math.round(Cameratotalfreq / 3 * 100);
         if (CamerapercentColor > 100) {
