@@ -882,6 +882,25 @@ ipcMain.on('cameraPreset', async(event, cameraPreset) => {
     event.reply('replyPresetCamera', cameraPreset);
 })
 
+
+ipcMain.on('cameraWebcrawler', async(event, cameraWebC) => {
+    // console.log("cameraWebC['ans']:" + cameraWebC['ans'] + ",cameraWebC['content'] " + cameraWebC['picName_camera'])
+
+    let C_voiceAns = await callSTT.cameraTTS('crawler', 1, cameraWebC['ans']);
+    cameraWebC['ansV'] = C_voiceAns;
+
+    let C_voiceContent = await callSTT.cameraTTS('crawler', 2, cameraWebC['content']);
+    cameraWebC['contentV'] = C_voiceContent;
+
+    // let C_voicePicName = await callSTT.cameraTTS('pre', 3, cameraWebC['picName_camera']);
+    // cameraWebC['picName_cameraV'] = C_voicePicName;
+
+    // let C_voicePicIntro = await callSTT.cameraTTS('pre', 4, cameraWebC['picIntro_camera']);
+    // cameraWebC['picIntro_cameraV'] = C_voicePicIntro;
+
+    event.reply('replyCameraWebC', cameraWebC);
+})
+
 ipcMain.on('uploadAPI', async(event, APIdata) => {
     // api.Question.addQa
     api.Question.addQa(1, APIdata['Question'], APIdata['Answer'], APIdata['Answer_pic'], APIdata['keyWord'].trim(), "語音", (event) => {

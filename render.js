@@ -1,5 +1,5 @@
 let { ipcRenderer } = require('electron');
-const api = require('./node/model/api');
+// const api = require('./node/model/api');
 const request = require('request')
 const cheerio = require('cheerio')
 const encoding = require('encoding');
@@ -113,6 +113,16 @@ if (identifyBtn) {
         ipcRenderer.on('reply-webcrawlerfunction', (event, data) => {
             console.log("addQAtoServer", answer);
             explain = data;
+            let cameraWebcrawler = {
+                'ans': answer,
+                'content': data,
+                'picName_camera': '',
+                'picIntro_camera': '',
+                'ansV': '',
+                'contentV': '',
+                'picName_cameraV': '',
+                'picIntro_cameraV': '',
+            }
             if (answer == undefined) {
                 document.getElementById('leadTxt').innerHTML = "辨識失敗!!";
                 document.getElementById('explainTxt').innerHTML = "";
@@ -124,6 +134,16 @@ if (identifyBtn) {
                 document.getElementById('leadTxt').innerHTML = "辨識成功!!";
                 document.getElementById('AnsImg').src = "./still-image.jpg"
                 QA_card.innerHTML = createQA(answer, explain, "環遊世界做蘋果派", "https://children.moc.gov.tw/resource/animate_image/6850.jpg", "要怎樣認識「國家」呢？每一個國家總有不同的、具代表性的文物、景物、建築或美食，在環遊世界一周後，可以帶回的東西，會是不同的明信片、紀念品，還有好吃特產呢")
+
+
+                ipcRenderer.send('cameraWebcrawler', cameraWebcrawler);
+                ipcRenderer.once('replyCameraWebC', (event, cameraCraw) => {
+                    console.log('cameraCraw:' + cameraCraw['ans'])
+                    let voiceAns = document.getElementById('AnsVoice');
+                    voiceAns.alt = cameraCraw['ansV'];
+                    let voiceCon = document.getElementById('ContentVoice');
+                    voiceCon.alt = cameraCraw['contentV'];
+                })
 
             } else if (answer == "西瓜") {
                 ShowVisibility.style.display = "block";
@@ -221,6 +241,15 @@ if (identifyBtn) {
                 document.getElementById('leadTxt').innerHTML = "辨識成功!!";
                 document.getElementById('AnsImg').src = "./still-image.jpg"
                 QA_card.innerHTML = createQA(answer, explain, pbook['bookName'], pbook['bookImg'], pbook['bookIntro'])
+
+                ipcRenderer.send('cameraWebcrawler', cameraWebcrawler);
+                ipcRenderer.once('replyCameraWebC', (event, cameraCraw) => {
+                    console.log('cameraCraw:' + cameraCraw['ans'])
+                    let voiceAns = document.getElementById('AnsVoice');
+                    voiceAns.alt = cameraCraw['ansV'];
+                    let voiceCon = document.getElementById('ContentVoice');
+                    voiceCon.alt = cameraCraw['contentV'];
+                })
             }
         })
 
