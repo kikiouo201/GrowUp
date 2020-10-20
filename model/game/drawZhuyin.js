@@ -1,4 +1,4 @@
-let { ipcRenderer:ipcRenderer2 } = require('electron');
+let { ipcRenderer: ipcRenderer2 } = require('electron');
 let isDrawing = false;
 let x = 0;
 let y = 0;
@@ -481,7 +481,7 @@ function scoreJudgment(id, x, y, points, num) {
 
 
 function playAudio() {
-    let drawAudio = document.getElementById("drawAudio");
+    let drawAudio = document.getElementById("AUDIO");
     console.log("length==" + `${id}`.length)
     if (drawAudio.canPlayType("audio/mpeg")) {
         if (`${id}`.length == 1 && `${id}` > 0 && `${id}` < 10 || `${id}` == 0) { //數字
