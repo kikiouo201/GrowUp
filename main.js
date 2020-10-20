@@ -863,6 +863,25 @@ ipcMain.on('presetAnsPBook', async(event, prePic) => {
 
     event.reply('replyPresetAnsPBook', preset[prePic['i']]);
 })
+
+ipcMain.on('cameraPreset', async(event, cameraPreset) => {
+    console.log("cameraPreset['ans']:" + cameraPreset['ans'] + ",cameraPreset['content'] " + cameraPreset['picName_camera'])
+
+    let C_voiceAns = await callSTT.cameraTTS('pre', 1, cameraPreset['ans']);
+    cameraPreset['ansV'] = C_voiceAns;
+
+    let C_voiceContent = await callSTT.cameraTTS('pre', 2, cameraPreset['content']);
+    cameraPreset['contentV'] = C_voiceContent;
+
+    let C_voicePicName = await callSTT.cameraTTS('pre', 3, cameraPreset['picName_camera']);
+    cameraPreset['picName_cameraV'] = C_voicePicName;
+
+    let C_voicePicIntro = await callSTT.cameraTTS('pre', 4, cameraPreset['picIntro_camera']);
+    cameraPreset['picIntro_cameraV'] = C_voicePicIntro;
+
+    event.reply('replyPresetCamera', cameraPreset);
+})
+
 ipcMain.on('uploadAPI', async(event, APIdata) => {
     // api.Question.addQa
     api.Question.addQa(1, APIdata['Question'], APIdata['Answer'], APIdata['Answer_pic'], APIdata['keyWord'].trim(), "語音", (event) => {

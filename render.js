@@ -19,13 +19,13 @@ const createQA = (text1, text2, bookName, bookImg, bookExplain) => `
                                                     <div style="float:left; display: block; text-align: left;">
                                                         <p id="Ans" class="card-text card_A" style="float: left;">答案：</p>
                                                         <p id="AnsTxt" class="card-text card_A" style="margin-left: 0px;margin-bottom: 0px;">${text1}</p>
-                                                        <img class="speaker_Que" onclick="speaker(this)" id="speaker_A" src="icons/speaker.png" />
+                                                        <img class="speaker_Que" onclick="cameraPlay(this)" id="AnsVoice" src="icons/speaker.png" />
                                                     </div>
 
                                                     <div style="float:left; display: block; text-align: left;">
                                                         <p id="explain" class="card-text card_A" style="float: left;">敘述：</p>
                                                         <p id="explainTxt" class="card-text card_A" style="margin-left: 0px;">${text2}</p>
-                                                        <img class="speaker_Ans" onclick="speaker(this)" id="speaker_A" src="icons/speaker.png" />
+                                                        <img class="speaker_Ans" onclick="cameraPlay(this)" id="ContentVoice" src="icons/speaker.png" />
                                                     </div>
                                                 </div>
                                                 <div class="card-header contentCss" id="QA_num_" style="background-color: #f8f9fa24; height: auto">
@@ -47,8 +47,8 @@ if (identifyBtn) {
     identifyBtn.addEventListener('click', () => {
         // ipcRenderer.send('close-mjpg-streamer')
         ipcRenderer.send('vision')
-        // ipcRenderer.send('captrue');
-        // ipcRenderer.send('call-writeDead')
+            // ipcRenderer.send('captrue');
+            // ipcRenderer.send('call-writeDead')
         ipcRenderer.on('reply-close-mjpg-streamer', (event, data) => {
             document.getElementById('leadTxt').innerHTML = "拍照中。。。";
 
@@ -89,6 +89,24 @@ if (identifyBtn) {
             document.getElementById('leadTxt').innerHTML = "辨識成功!!";
             document.getElementById('AnsImg').src = "./still-image.jpg"
             QA_card.innerHTML = createQA("蘋果", "落業喬木。葉軟形，邊緣有細尖鋸齒。果實球形，味美，可食，也可製酒。", "環遊世界做蘋果派", "https://children.moc.gov.tw/resource/animate_image/6850.jpg", "要怎樣認識「國家」呢？每一個國家總有不同的、具代表性的文物、景物、建築或美食，在環遊世界一周後，可以帶回的東西，會是不同的明信片、紀念品，還有好吃特產呢")
+            let cameraPreset = {
+                'ans': '蘋果',
+                'content': '落業喬木。葉軟形，邊緣有細尖鋸齒。果實球形，味美，可食，也可製酒。',
+                'picName_camera': '環遊世界做蘋果派',
+                'picIntro_camera': '要怎樣認識「國家」呢？每一個國家總有不同的、具代表性的文物、景物、建築或美食，在環遊世界一周後，可以帶回的東西，會是不同的明信片、紀念品，還有好吃特產呢',
+                'ansV': '',
+                'contentV': '',
+                'picName_cameraV': '',
+                'picIntro_cameraV': '',
+            }
+            ipcRenderer.send('cameraPreset', cameraPreset);
+            ipcRenderer.once('replyPresetCamera', (event, cameraPre) => {
+                console.log('cameraPre:' + cameraPre['ans'])
+                let voiceAns = document.getElementById('AnsVoice');
+                voiceAns.alt = cameraPre['ansV'];
+                let voiceCon = document.getElementById('ContentVoice');
+                voiceCon.alt = cameraPre['contentV'];
+            })
         })
 
 
@@ -218,5 +236,12 @@ if (identifyBtn) {
 function goHome(name) {
     var audioCreate = document.getElementById("AUDIO");
     audioCreate.setAttribute("src", `./TTS/mp3/${name}.mp3`);
+    audioCreate.play();
+}
+
+function cameraPlay(cAlt) {
+    var audioCreate = document.getElementById("AUDIO");
+    let name = cAlt.alt
+    audioCreate.setAttribute("src", `./TTS/mp3/STTpictureBook/${name}.mp3`);
     audioCreate.play();
 }
