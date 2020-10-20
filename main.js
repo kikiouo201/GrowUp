@@ -201,9 +201,11 @@ ipcMain.on('vision', (event, args) => {
 let visionAnswer;
 ipcMain.on('vision-start', async(event, args) => {
     let array = await callVis.start();
+    let cameraSTT_Ans = await callSTT.cameraTTS('crawler', 1, array);
+
     visionAnswer = array
         //array.forEach(label => console.log("vis="+label.description));
-    event.sender.send('reply-mainjsfunction', array)
+    event.sender.send('reply-mainjsfunction', array, cameraSTT_Ans)
 })
 
 
@@ -302,9 +304,9 @@ ipcMain.on('addQAtoServer', async(event, arg) => {
 
 ipcMain.on('sendWriteDeadtoServer', async(event, arg) => {
     console.log("no!!!!!!")
-    // api.Question.addQa(1, "蘋果", "落業喬木。葉軟形，邊緣有細尖鋸齒。果實球形，味美，可食，也可製酒。", "./still-image.jpg", "蘋果", "影像辨識", (event) => {
-    //     console.log("callback=" + JSON.stringify(event));
-    // });
+        // api.Question.addQa(1, "蘋果", "落業喬木。葉軟形，邊緣有細尖鋸齒。果實球形，味美，可食，也可製酒。", "./still-image.jpg", "蘋果", "影像辨識", (event) => {
+        //     console.log("callback=" + JSON.stringify(event));
+        // });
 })
 
 
@@ -588,8 +590,7 @@ ipcMain.on('call-frequency', (event, arg) => {
                 if (freq.content[i].category == "語音") {
                     // console.log("speechdata =>"+freq.content[i].created_at.substring(9, 10))
                     Speechtotalfreq++
-                }
-                else {
+                } else {
 
                     Cameratotalfreq++
                 }
@@ -598,7 +599,7 @@ ipcMain.on('call-frequency', (event, arg) => {
 
         }
 
-        
+
 
         var CamerapercentColor = Math.round(Cameratotalfreq / 3 * 100);
         if (CamerapercentColor > 100) {

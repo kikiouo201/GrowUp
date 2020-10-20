@@ -45,6 +45,41 @@ async function quickStart(type, num, kword, click_num) {
 
 }
 
+async function cameraTTS(type, num, kword) {
+
+    const request = {
+        input: { text: kword },
+        // Select the language and SSML voice gender (optional)
+        voice: { languageCode: 'zh-TW', ssmlGender: 'FEMALE' },
+        // select the type of audio encoding
+        audioConfig: { audioEncoding: 'MP3' },
+    };
+
+    // Performs the text-to-speech request
+    const [response] = await client.synthesizeSpeech(request);
+    // Write the binary audio content to a local file
+    const writeFile = util.promisify(fs.writeFile);
+
+    if (type == 'pre') {
+        await writeFile(`./TTS/mp3/STTpictureBook/${type}_cameraSTT${num}.mp3`, response.audioContent, 'binary');
+        console.log(`Audio content written to file: ${type}_cameraSTT${num}.mp3`);
+        let cameraTTS = `${type}_cameraSTT${num}`;
+        return cameraTTS;
+    } else if (type == 'crawler') {
+        await writeFile(`./TTS/mp3/STTpictureBook/${type}_cameraSTT${num}.mp3`, response.audioContent, 'binary');
+        console.log(`Audio content written to file: ${type}_cameraSTT${num}.mp3`);
+        let cameraTTS = `${type}_cameraSTT${num}`;
+        return cameraTTS;
+    } else {
+        await writeFile(`./TTS/mp3/STTpictureBook/${type}_cameraSTT${num}.mp3`, response.audioContent, 'binary');
+        console.log(`Audio content written to file: ${type}_cameraSTT${num}.mp3`);
+        let cameraTTS = `${type}_cameraSTT${num}`;
+        return cameraTTS;
+
+    }
+
+}
+
 function randomid(imgLength) {
     let picName = '';
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
@@ -65,5 +100,6 @@ function randomid(imgLength) {
 quickStart().catch(console.error);
 
 module.exports = {
-    quickStart
+    quickStart,
+    cameraTTS
 }
