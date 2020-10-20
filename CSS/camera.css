@@ -245,6 +245,37 @@ body {
     display: none;
 }
 
+/* 念問題 */
+
+.speaker_Que {
+    width: 36px;
+    height: 36px;
+    position: absolute;
+    right: 0px;
+    top: 23%;
+    cursor: pointer;
+    float: right;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 20px;
+}
+
+
+/* 念答案 */
+
+.speaker_Ans {
+    width: 36px;
+    height: 36px;
+    position: absolute;
+    right: 0px;
+    top: 46%;
+    cursor: pointer;
+    float: right;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 20px;
+}
+
 .card_Que {
     font-size: 30px;
     display: inline;

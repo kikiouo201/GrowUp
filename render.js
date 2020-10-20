@@ -18,14 +18,14 @@ const createQA = (text1, text2, bookName, bookImg, bookExplain) => `
                                                     </div>
                                                     <div style="float:left; display: block; text-align: left;">
                                                         <p id="Ans" class="card-text card_A" style="float: left;">答案：</p>
-                                                        <p id="AnsTxt" class="card-text card_A" style="margin-left: 0px;">${text1}</p>
-                                                        <img class="speaker_A" onclick="speaker(this)" id="speaker_A" src="icons/speaker.png" />
+                                                        <p id="AnsTxt" class="card-text card_A" style="margin-left: 0px;margin-bottom: 0px;">${text1}</p>
+                                                        <img class="speaker_Que" onclick="speaker(this)" id="speaker_A" src="icons/speaker.png" />
                                                     </div>
 
                                                     <div style="float:left; display: block; text-align: left;">
                                                         <p id="explain" class="card-text card_A" style="float: left;">敘述：</p>
                                                         <p id="explainTxt" class="card-text card_A" style="margin-left: 0px;">${text2}</p>
-                                                        <img class="speaker_A" onclick="speaker(this)" id="speaker_A" src="icons/speaker.png" />
+                                                        <img class="speaker_Ans" onclick="speaker(this)" id="speaker_A" src="icons/speaker.png" />
                                                     </div>
                                                 </div>
                                                 <div class="card-header contentCss" id="QA_num_" style="background-color: #f8f9fa24; height: auto">
@@ -46,9 +46,9 @@ var answer, explain;
 if (identifyBtn) {
     identifyBtn.addEventListener('click', () => {
         // ipcRenderer.send('close-mjpg-streamer')
-        // ipcRenderer.send('vision')
+        ipcRenderer.send('vision')
         // ipcRenderer.send('captrue');
-        ipcRenderer.send('call-writeDead')
+        // ipcRenderer.send('call-writeDead')
         ipcRenderer.on('reply-close-mjpg-streamer', (event, data) => {
             document.getElementById('leadTxt').innerHTML = "拍照中。。。";
 
@@ -165,7 +165,7 @@ if (identifyBtn) {
                 stream.style.display = "none";
                 document.getElementById('leadTxt').innerHTML = "辨識成功!!";
                 document.getElementById('AnsImg').src = "./still-image.jpg"
-                QA_card.innerHTML = createQA(answer, explain, pbook['bookName'], pbook['bookImg'], pbook['bookIntro'])
+                QA_card.innerHTML = createQA(answer, explain, "查無此書目", "查無此書目", "查無此書目")
             } else if (answer == "手機") {
 
                 ShowVisibility.style.display = "block";
@@ -183,21 +183,19 @@ if (identifyBtn) {
                 document.getElementById('AnsImg').src = "./still-image.jpg"
                 QA_card.innerHTML = createQA(answer, explain, "查無此書目", "查無此書目", "查無此書目")
             } else if (answer == "眼鏡") {
-
                 ShowVisibility.style.display = "block";
                 ImgVisibility.style.display = "block";
                 stream.style.display = "none";
                 document.getElementById('leadTxt').innerHTML = "辨識成功!!";
                 document.getElementById('AnsImg').src = "./still-image.jpg"
-                QA_card.innerHTML = createQA(answer, explain, pbook['bookName'], pbook['bookImg'], pbook['bookIntro'])
+                QA_card.innerHTML = createQA(answer, explain, "查無此書目", "查無此書目", "查無此書目")
             } else if (answer == "香蕉") {
-
                 ShowVisibility.style.display = "block";
                 ImgVisibility.style.display = "block";
                 stream.style.display = "none";
                 document.getElementById('leadTxt').innerHTML = "辨識成功!!";
                 document.getElementById('AnsImg').src = "./still-image.jpg"
-                QA_card.innerHTML = createQA(answer, explain, pbook['bookName'], pbook['bookImg'], pbook['bookIntro'])
+                QA_card.innerHTML = createQA(answer, explain, "香蕉的秘密", "https://children.moc.gov.tw/resource/animate_image/6924.jpg", "從日本回到台灣的小表妹，第一次吃到不用沾蜂蜜就又香又甜的香蕉。但是過了幾天，香蕉皮上長出了黑點，是已經壞掉不能吃了嗎？這你就搞錯囉，香蕉皮上的黑點可是香蕉成熟的暗號呢！內容介紹香蕉的生長過程、香蕉的...")
             } else {
                 ShowVisibility.style.display = "block";
                 ImgVisibility.style.display = "block";
