@@ -13,6 +13,7 @@ let QA_card = document.getElementById("QA_card")
 const createQA = (text1, text2, bookName, bookImg, bookExplain) => `
                                             <div class="card text-white  mb-3" style="background-color: #92337eba;">
                                                 <div class="card-body" style="margin-top: 30px;">
+                                                <img class="collect_LeftTop" onclick="mute()" src="image/character/muted.png">
                                                     <div style="margin-left: 5px;">
                                                         <img id="AnsImg" src="./still-image.jpg">
                                                     </div>
@@ -31,10 +32,10 @@ const createQA = (text1, text2, bookName, bookImg, bookExplain) => `
                                                 <div class="card-header contentCss" id="QA_num_" style="background-color: #f8f9fa24; height: auto">
                                                     <p class="contentlink">相關繪本連結：</p>
                                                     <p class="book_css">${bookName}</p>
-                                                    <img class="picture_Name" onclick="speaker(this)" id="speaker_A" src="icons/speaker.png" />
+                                                    <img class="picture_Name" onclick="cameraPlay(this)" id="picture_Name" src="icons/speaker.png" />
                                                     <img id="bookImg" src="${bookImg}" style="margin-left: 25%; padding: 10px;" width="180" height="153" alt="蘋果甜蜜蜜">
                                                     <p id="bookExplain" style="display: inline-block; margin-left: 20px; margin-right: 40px; font-size: 18pt;">${bookExplain}</p>
-                                                    <img class="picture_Explain" onclick="speaker(this)" id="speaker_A" src="icons/speaker.png" />
+                                                    <img class="picture_Explain" onclick="cameraPlay(this)" id="picture_Explain" src="icons/speaker.png" />
                                                 </div>
                                             
 
@@ -276,4 +277,10 @@ function cameraPlay(cAlt) {
     let name = cAlt.alt
     audioCreate.setAttribute("src", `./TTS/mp3/STTpictureBook/${name}.mp3`);
     audioCreate.play();
+}
+
+function mute() {
+    let mute = document.getElementById("AUDIO");
+    mute.pause();
+    mute.currentTime = 0;
 }
