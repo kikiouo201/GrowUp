@@ -276,6 +276,32 @@ body {
     margin-right: 20px;
 }
 
+.picture_Name {
+    width: 36px;
+    height: 36px;
+    position: absolute;
+    right: 0px;
+    top: 58%;
+    cursor: pointer;
+    float: right;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 20px;
+}
+
+.picture_Explain {
+    width: 36px;
+    height: 36px;
+    position: absolute;
+    right: 0px;
+    top: 94%;
+    cursor: pointer;
+    float: right;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 20px;
+}
+
 .card_Que {
     font-size: 30px;
     display: inline;

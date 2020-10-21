@@ -31,8 +31,10 @@ const createQA = (text1, text2, bookName, bookImg, bookExplain) => `
                                                 <div class="card-header contentCss" id="QA_num_" style="background-color: #f8f9fa24; height: auto">
                                                     <p class="contentlink">相關繪本連結：</p>
                                                     <p class="book_css">${bookName}</p>
+                                                    <img class="picture_Name" onclick="speaker(this)" id="speaker_A" src="icons/speaker.png" />
                                                     <img id="bookImg" src="${bookImg}" style="margin-left: 25%; padding: 10px;" width="180" height="153" alt="蘋果甜蜜蜜">
                                                     <p id="bookExplain" style="display: inline-block; margin-left: 20px; margin-right: 40px; font-size: 18pt;">${bookExplain}</p>
+                                                    <img class="picture_Explain" onclick="speaker(this)" id="speaker_A" src="icons/speaker.png" />
                                                 </div>
                                             
 
