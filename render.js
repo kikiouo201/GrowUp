@@ -110,6 +110,10 @@ if (identifyBtn) {
                 voiceAns.alt = cameraPre['ansV'];
                 let voiceCon = document.getElementById('ContentVoice');
                 voiceCon.alt = cameraPre['contentV'];
+                let voicePicName = document.getElementById('picture_Name');
+                voicePicName.alt = cameraPre['picName_cameraV'];
+                let voicePicExplain = document.getElementById('picture_Explain');
+                voicePicExplain.alt = cameraPre['picIntro_cameraV'];
             })
         })
 
