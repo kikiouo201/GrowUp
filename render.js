@@ -55,6 +55,7 @@ if (identifyBtn) {
             document.getElementById('leadTxt').innerHTML = "拍照中。。。";
 
             console.log('ready');
+            ipcRenderer.send('captrue');
         })
 
         ipcRenderer.on('reply-mainjsfunction-captrue', (event, data) => {
