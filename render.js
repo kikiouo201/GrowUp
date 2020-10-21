@@ -62,8 +62,8 @@ if (identifyBtn) {
             console.log("hihi");
             stream.style.display = "none";
             document.getElementById('leadTxt').innerHTML = "讀取照片。。。";
-            // ipcRenderer.send('vision');
-            ipcRenderer.send('call-writeDead')
+            ipcRenderer.send('vision');
+            // ipcRenderer.send('call-writeDead')
         })
 
 
