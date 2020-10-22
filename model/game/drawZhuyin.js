@@ -1,9 +1,9 @@
-let { ipcRenderer: ipcRenderer2 } = require('electron');
+// let { ipcRenderer: ipcRenderer2 } = require('electron');
 let isDrawing = false;
 let x = 0;
 let y = 0;
 let points = [];
-let level = ['b', 'p', 'm', 'f', ''];
+// let level = ['b', 'p', 'm', 'f', ''];
 let nextLevel = 'no';
 let id = (new URLSearchParams(location.search)).get("id");
 
@@ -149,6 +149,82 @@ const levelName = {
     0: 0,
 }
 
+const levelCardImg = {
+    b: 'chineseAlphabet/b',
+    p: 'chineseAlphabet/p',
+    m: 'chineseAlphabet/m',
+    f: 'chineseAlphabet/f',
+    d: 'chineseAlphabet/d',
+    t: 'chineseAlphabet/t',
+    n: 'chineseAlphabet/n',
+    l: 'chineseAlphabet/l',
+    g: 'chineseAlphabet/g',
+    k: 'chineseAlphabet/k',
+    h: 'chineseAlphabet/h',
+    j: 'chineseAlphabet/j',
+    q: 'chineseAlphabet/q',
+    x: 'chineseAlphabet/x',
+    zhi: 'chineseAlphabet/zhi',
+    chi: 'chineseAlphabet/chi',
+    shi: 'chineseAlphabet/shi',
+    ri: 'chineseAlphabet/ri',
+    zi: 'chineseAlphabet/zi',
+    ci: 'chineseAlphabet/ci',
+    si: 'chineseAlphabet/si',
+    yi: 'chineseAlphabet/yi',
+    wu: 'chineseAlphabet/wu',
+    yu: 'chineseAlphabet/yu',
+    ra: 'chineseAlphabet/ra',
+    o: 'chineseAlphabet/o',
+    re: 'chineseAlphabet/re',
+    ae: 'chineseAlphabet/ae',
+    ai: 'chineseAlphabet/ai',
+    ei: 'chineseAlphabet/ei',
+    ao: 'chineseAlphabet/ao',
+    ou: 'chineseAlphabet/ou',
+    an: 'chineseAlphabet/an',
+    en: 'chineseAlphabet/en',
+    ang: 'chineseAlphabet/ang',
+    eng: 'chineseAlphabet/eng',
+    er: 'chineseAlphabet/er',
+    a1: 'ABC/A',
+    b1: 'ABC/B',
+    c1: 'ABC/C',
+    d1: 'ABC/D',
+    e1: 'ABC/E',
+    f1: 'ABC/F',
+    g1: 'ABC/G',
+    h1: 'ABC/H',
+    i1: 'ABC/I',
+    j1: 'ABC/J',
+    k1: 'ABC/K',
+    l1: 'ABC/L',
+    m1: 'ABC/M',
+    n1: 'ABC/N',
+    o1: 'ABC/O',
+    p1: 'ABC/P',
+    q1: 'ABC/Q',
+    r1: 'ABC/R',
+    s1: 'ABC/S',
+    t1: 'ABC/T',
+    u1: 'ABC/U',
+    v1: 'ABC/V',
+    w1: 'ABC/W',
+    y1: 'ABC/Y',
+    x1: 'ABC/X',
+    z1: 'ABC/Z',
+    1: '012/1',
+    2: '012/2',
+    3: '012/3',
+    4: '012/4',
+    5: '012/5',
+    6: '012/6',
+    7: '012/7',
+    8: '012/8',
+    9: '012/9',
+    0: '012/0',
+}
+
 
 score.addEventListener('click', () => {
     console.log('score onclick');
@@ -162,16 +238,17 @@ score.addEventListener('click', () => {
     const props = document.querySelector('.props');
     const smallCard = document.querySelector('.smallCard');
     const tool = document.querySelector('.tool');
-    if (totalPoint < 3) {
+    let criterias = judgmentCriteria[id];
+    if (totalPoint < (criterias.length/2)) {
         status.innerHTML = '<img src="../../image/drawZhuyin/tryAgain.png" width="300px"/>失敗';
         props.style.visibility = "hidden";
     } else {
         status.innerHTML = '<img src="../../image/drawZhuyin/good.png" width="200px"/>你好棒';
         props.style.visibility = "visible";
-        smallCard.innerHTML = '<img src="../../image/magicCard/chineseAlphabet/' + id + '.png" width="50px"/>';
+        smallCard.innerHTML = '<img src="../../image/magicCard/' + levelCardImg[id] + '.png" width="50px"/>';
         const draw = document.querySelector('.draw');
         draw.style.visibility = "hidden";
-        ipcRenderer2.send("levelIsPass", levelName[id]);
+       // ipcRenderer2.send("levelIsPass", levelName[id]);
     }
     console.log('totalPoint= ' + totalPoint);
     tool.style.visibility = "hidden"
@@ -446,18 +523,84 @@ let judgmentCriteria = {
     v1: 'v',
     w1: 'w',
     y1: 'y',
-    x1: 'x',
-    z1: 'z',
-    1: 1,
-    2: 2,
-    3: 3,
-    4: 4,
-    5: 5,
-    6: 6,
-    7: 7,
-    8: 8,
-    9: 9,
-    0: 0,
+    x1:   [{ x: [65, 80], y: [110, 125] },
+        { x: [120, 145], y: [180, 215] },
+        { x: [120, 145], y: [90, 115] },
+        { x: [50, 70], y: [190, 215] },
+        { x: [200, 220], y: [165, 185] }, 
+        { x: [240, 265], y: [200, 225] },
+        { x: [225, 245], y: [165, 185] },
+        { x: [200, 225], y: [190, 215] },
+    ],
+    z1:   [{ x: [75, 90], y: [70, 95] },
+        { x: [130, 155], y: [80, 105] },
+        { x: [90, 115], y: [130, 155] },
+        { x: [50, 70], y: [200, 225] },
+        { x: [140, 160], y: [200, 225] }, 
+        { x: [220, 245], y: [145, 165] },
+        { x: [210, 235], y: [185, 215] },
+        { x: [235, 255], y: [210, 225] },
+    ],
+    1:  [{ x: [100, 130], y: [100, 125] },
+        { x: [140, 160], y: [80, 100] },
+        { x: [140, 155], y: [120, 155] },
+        { x: [140, 155], y: [160, 185] },
+        { x: [140, 155], y: [210, 235] }
+    ],
+    2: [{ x: [120, 140], y: [85, 105] },
+        { x: [170, 190], y: [110, 135] },
+        { x: [135, 155], y: [165, 185] },
+        { x: [120, 145], y: [200, 225] },
+        { x: [180, 190], y: [200, 225] }
+    ],
+    3: [{ x: [150, 170], y: [85, 105] },
+        { x: [170, 190], y: [115, 135] },
+        { x: [145, 165], y: [145, 165] },
+        { x: [175, 195], y: [185, 215] },
+        { x: [140, 160], y: [200, 225] }
+    ],
+    4: [{ x: [125, 145], y: [85, 105] },
+        { x: [85, 130], y: [175, 195] },
+        { x: [155, 175], y: [175, 195] },
+        { x: [155, 175], y: [85, 105] },
+        { x: [160, 180], y: [210, 235] }
+    ],
+    5: [{ x: [150, 170], y: [85, 105] },
+        { x: [110, 130], y: [110, 135] },
+        { x: [150, 170], y: [135, 155] },
+        { x: [175, 195], y: [175, 195] },
+        { x: [140, 160], y: [200, 225] }
+    ],
+    6: [{ x: [150, 170], y: [85, 105] },
+        { x: [110, 130], y: [155, 175] },
+        { x: [120, 150], y: [200, 220] },
+        { x: [170, 195], y: [200, 215] },
+        { x: [170, 195], y: [155, 175] }
+    ],
+    7:  [{ x: [120, 140], y: [85, 105] },
+        { x: [180, 200], y: [85, 105] },
+        { x: [160, 180], y: [140, 160] },
+        { x: [140, 165], y: [180, 210] },
+        { x: [130, 150], y: [200, 220] }
+    ],
+    8: [{ x: [170, 200], y: [105, 125] },
+        { x: [110, 130], y: [105, 125] },
+        { x: [140, 160], y: [140, 160] },
+        { x: [180, 195], y: [180, 210] },
+        { x: [110, 130], y: [190, 210] }
+    ],
+    9: [{ x: [170, 200], y: [95, 115] },
+        { x: [110, 130], y: [90, 110] },
+        { x: [110, 130], y: [140, 160] },
+        { x: [170, 195], y: [140, 160] },
+        { x: [140, 165], y: [200, 220] }
+    ],
+    0: [{ x: [180, 200], y: [145, 165] },
+        { x: [170, 190], y: [190, 210] },
+        { x: [110, 130], y: [190, 210] },
+        { x: [110, 130], y: [110, 140] },
+        { x: [150, 175], y: [70, 100] }
+    ],
 };
 
 
