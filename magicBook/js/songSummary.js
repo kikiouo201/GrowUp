@@ -1,4 +1,5 @@
 let songsrc = (new URLSearchParams(location.search)).get("src");
+let songsrc = (new URLSearchParams(location.search)).get("id");
 
 
 function onload(){

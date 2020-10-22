@@ -16,8 +16,10 @@
     z-index: 1;
 }
 
+
+
 .level1 {
-    width: 75px;
+    width: 60px;
     position: absolute;
     z-index: 10;
     top: 339px;
@@ -36,16 +38,16 @@
     left: 14%;
 }
 
-.level2 {
-    width: 100px;
+.level3 {
+    width: 60px;
     position: absolute;
     z-index: 10;
     top: 319px;
     left: 352px;
 }
 
-.level3 {
-    width: 100px;
+.level3_text {
+    width: 54px;
     position: absolute;
     z-index: 10;
     top: 319px;
@@ -53,7 +55,7 @@
 }
 
 .level4 {
-    width: 100px;
+    width: 60px;
     position: absolute;
     z-index: 10;
     top: 235px;

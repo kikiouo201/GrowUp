@@ -248,7 +248,7 @@ score.addEventListener('click', () => {
         smallCard.innerHTML = '<img src="../../image/magicCard/' + levelCardImg[id] + '.png" width="50px"/>';
         const draw = document.querySelector('.draw');
         draw.style.visibility = "hidden";
-       // ipcRenderer2.send("levelIsPass", levelName[id]);
+        //  ipcRenderer2.send("levelIsPass", levelName[id]);
     }
     console.log('totalPoint= ' + totalPoint);
     tool.style.visibility = "hidden"
@@ -488,7 +488,15 @@ let judgmentCriteria = {
         { x: [100, 120], y: [200, 220] },
         { x: [180, 195], y: [200, 220] }
     ],
-    re: 'ㄜ',
+    re: [{ x: [70, 90], y: [120, 130] },
+        { x: [100, 160], y: [105, 120] },
+        { x: [200, 225], y: [100, 120] },
+        { x: [145, 160], y: [55, 75] },
+        { x: [140, 160], y: [150, 170] },
+        { x: [90, 110], y: [185, 215] },
+        { x: [135, 150], y: [225, 245] },
+        { x: [190, 215], y: [200, 210] }
+    ],
     ae: 'ㄝ',
     ai: 'ㄞ',
     ei: 'ㄟ',
