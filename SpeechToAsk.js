@@ -2,9 +2,7 @@
 let { ipcRenderer } = require('electron');
 let remote = require('electron').remote;
 let dialog = remote.dialog;
-const { text } = require('express');
 const messageSystem = document.getElementById('messageSystem')
-const SSU = new SpeechSynthesisUtterance();
 let voiceOut = require('./model/util/voiceOut.js');
 let click_num = 0;
 
@@ -253,6 +251,39 @@ if (voiceBtn) {
             );
         });
 
+        ipcRenderer.once('reply-noNetwork-result', (event, data) => {
+            const QA_card = document.querySelector('#QA_card');
+            QA_card.innerHTML = QA_card.innerHTML + createQAandPBook(data['Question'], data['Answer_pic'], data['Answer'], data['pbookName'], data['bookImg'], data['pbookIntro']);
+
+            let voiceQ = document.getElementById(`speaker_Q_${click_num}`);
+            voiceQ.alt = 'lion_1';
+
+            let voiceA = document.getElementById(`speaker_A_${click_num}`);
+            voiceA.alt = 'lion_2';
+
+            let voiceName = document.getElementById(`speaker_pbName_${click_num}`);
+            voiceName.alt = 'lion_3';
+
+            let voiceIntro = document.getElementById(`speaker_pbIntro_${click_num}`);
+            voiceIntro.alt = 'lion_4';
+
+            SystemVal.innerHTML = '再問一次問題';
+
+            // 設定滾輪到特定div
+            $(document).ready(
+
+                setTimeout(() => {
+                    let target = document.querySelector("#pictureText_" + click_num)
+                    console.log("ta:" + target)
+                    target.scrollIntoView();
+                    target.scrollTop += 50;
+
+                }, 1000)
+                // 設定滾輪置底
+                // $("html").scrollTop($(document).height() + 100);
+
+            );
+        })
     });
 }
 
@@ -276,24 +307,6 @@ function isJsonString(str) {
 //語音唸出來
 let voices = [];
 // const speaker_Q_btn = document.querySelector('.speaker_Q');
-
-// Demo
-function speakerDemo(index) {
-    if (index) {
-        // speechSynthesis.addEventListener('voiceschanged', populateVoices);
-
-        console.log("text =? " + index)
-        SSU.text = index;
-        toggle();
-
-        // console.log("click =? " + index.parentNode.childNodes[2].nodeName)
-        // console.log("click =? " + index.parentNode.childNodes[2].innerHTML)
-        // console.log("click =? " + index.parentNode.children[0].childNodes[0].nodeValue)
-
-        // SSU.text = index.parentNode.children[0].childNodes[0].nodeValue;
-        // toggle();
-    }
-}
 
 
 // function populateVoices() {
