@@ -83,7 +83,11 @@ ipcRenderer.once('retruePictureData', (event, data) => {
 
             let voice_ic = document.createElement('img');
             voice_ic.src = "../icons/speaker.png";
-            voice_ic.className = "voice"
+            voice_ic.className = "crawlerPic voice"
+                // voice_ic.addEventListener('click', () => crawlerParent(this));
+            voice_ic.onclick = () => {
+                crawlerParent();
+            }
 
             bookname.append(name);
             bookname.append(voice_ic);
@@ -143,7 +147,7 @@ ipcRenderer.once('retrueMachineData', (event, data) => {
         for (let i = 1; i < jsons.length; i++) {
             for (let k = data['content'].length - 1; k > data['content'].length - 3; k--) {
 
-                console.log(data['content'][k])
+                // console.log(data['content'][k])
 
                 if (jsons[i]['name'].includes(data['content'][k]['keyword']) || jsons[i]['intro'].includes(data['content'][k]['keyword']) || jsons[i]['name'].includes('水果')) {
                     let imgurl = 'https://children.moc.gov.tw/resource/animate_image/' + imgurltemp + '.jpg';
@@ -153,6 +157,10 @@ ipcRenderer.once('retrueMachineData', (event, data) => {
                         if (jsons[i]['name'].includes(par_book[j])) {
                             break;
                         } else if (j == par_book.length - 1 && Pushing) {
+                            // if (i > 0 && i < 6) {
+                            //     ipcRenderer.send('pictureBookTTS', jsons[i]['name']);
+                            //     ipcRenderer.on('replyPbTTS', (event, TTS) => {
+
                             Pushing = false;
                             console.log(jsons[i]['name'] + "&&" + par_book[j] + "&&" + j + "&&" + k)
                             let bookdiv = document.createElement("div");
@@ -165,9 +173,11 @@ ipcRenderer.once('retrueMachineData', (event, data) => {
 
                             name.append(document.createTextNode(jsons[i]['name']));
 
+
                             let voice_ic = document.createElement('img');
                             voice_ic.src = "../icons/speaker.png";
                             voice_ic.className = "voice"
+                                // voice_ic.alt = TTS;
 
                             bookname.append(name);
                             bookname.append(voice_ic);
@@ -177,6 +187,9 @@ ipcRenderer.once('retrueMachineData', (event, data) => {
                                 getimg(7008, bookdiv, jsons[i]['url']);
                             else
                                 getimg(imgurltemp, bookdiv, jsons[i]['url']);
+
+                            //     })
+                            // }
                         }
                     }
                 }
@@ -235,3 +248,36 @@ ipcRenderer.once('retrueMachineData', (event, data) => {
         return imgurltemp;
     }
 })
+
+
+let bookNum = document.querySelectorAll('.bookname-div')
+let crawNum = document.querySelectorAll('.crawlerPic voice')
+
+function selectParent() {
+    var audioCreate = document.getElementById("AUDIO");
+    for (let j = 0; j < 6; j++)
+        bookNum[j].onclick = () => {
+            audioCreate.setAttribute("src", `../TTS/mp3/magicBook/pictureBook/parent_${j}.mp3`);
+            audioCreate.play();
+        }
+}
+
+function crawlerParent() {
+    var audioCreate = document.getElementById("AUDIO");
+    // console.log('data.parentNode:' + data['src'])
+    for (let j = 0; j < 6; j++)
+        crawNum[j].onclick = () => {
+            audioCreate.setAttribute("src", `../TTS/mp3/magicBook/pictureBook/parent_${j}.mp3`);
+            audioCreate.play();
+        }
+}
+
+function selectElse() {
+    let elseNum = document.querySelectorAll('#else_book > div > div.bookname-div > img')
+    var audioCreate = document.getElementById("AUDIO");
+    for (let j = 0; j < 6; j++)
+        elseNum[j].onclick = () => {
+            audioCreate.setAttribute("src", `../TTS/mp3/magicBook/pictureBook/parent_${j}.mp3`);
+            audioCreate.play();
+        }
+}
