@@ -115,33 +115,51 @@ app.on('activate', () => {
 //> ipcMain listen to voice-require-to-py channel here 是否有被按下去
 ipcMain.on('voice-require-to-py', (event, arg) => {
 
-    appCallPython.startSpeak(
-        // callbackWhenCanSpeak
-        () => {
-            event.reply('reply-start')
-            console.log('reply-start')
-        },
+    if (IsNetwork == true) {
+        appCallPython.startSpeak(
+            // callbackWhenCanSpeak
+            () => {
+                event.reply('reply-start')
+                console.log('reply-start')
+            },
 
-        // callbackWhenAnaysisVoice
-        () => {
-            event.reply('anaysis-voice')
-            console.log('anaysis-voice')
+            // callbackWhenAnaysisVoice
+            () => {
+                event.reply('anaysis-voice')
+                console.log('anaysis-voice')
 
-        },
+            },
 
-        // callbackWhenSuccess
-        async(result) => {
-            // let STT_Q = await callSTT.quickStart('crawler', 1, result['Question']);
-            // result['qVoice'] = await STT_Q;
-            event.reply('reply-result', result);
+            // callbackWhenSuccess
+            async(result) => {
+                // let STT_Q = await callSTT.quickStart('crawler', 1, result['Question']);
+                // result['qVoice'] = await STT_Q;
+                event.reply('reply-result', result);
 
-            // api.Question.addQa
-            // api.Question.addQa(1, result['Question'], result['Answer'], "https:" + "//upload.wikimedia.org/wikipedia/commons/thumb/9/99/Apples_in_basket_2018_G2.jpg/250px-Apples_in_basket_2018_G2.jpg", result['keyWord'].trim(), "語音", (event) => {
-            //     console.log("callback=" + JSON.stringify(event));
-            // });
-
+            });
+    } else {
+        result = {
+            "Question": '獅子是什麼',
+            "Answer": '動物名。哺乳綱食肉目貓科。多分布於印度及非洲一帶。身長約二、三公尺，頭圓肩闊，四肢強健，有鉤爪，尾細長。雄獅頭至頸部有鬣，雌獅體型較小，無鬣。營社會生活。以大型草食性動物為主食。',
+            "Answer_pic": "data:image/jpeg;base64,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",
+            "keyWord": '獅子',
+            "pbookName": "小獅子多多",
+            "bookImg": "https://children.moc.gov.tw/resource/animate_image/6737.jpg",
+            "pbookIntro": "有一天，森林裡突然發生大火，小獅子多多奮不顧身的搶救同伴。但是多多美麗的鬃毛，卻被燒毀…他很難過，很傷心，他覺得自己的樣子變得很醜，一定沒有人會喜歡他。真的會這樣嗎？",
         }
-    )
+
+        setTimeout(async() => {
+            await event.reply('reply-start')
+        }, 8000);
+
+        setTimeout(async() => {
+            await event.reply('anaysis-voice')
+        }, 11000);
+
+        setTimeout(async() => {
+            await event.reply('reply-noNetwork-result', result);
+        }, 14000);
+    }
 });
 
 
@@ -150,33 +168,33 @@ ipcMain.on('close-main-window', () => {
     app.quit();
 });
 ipcMain.on('open-mjpg-streamer', async(event, arg) => {
-        shell.cd('mjpg-streamer');
-        let command = './mjpg_streamer -i "./input_uvc.so -y -n" -o "./output_http.so -w ./www"';
-        // let command = 'killall mjpg_streamer'
+    shell.cd('mjpg-streamer');
+    let command = './mjpg_streamer -i "./input_uvc.so -y -n" -o "./output_http.so -w ./www"';
+    // let command = 'killall mjpg_streamer'
+    shell.exec(command, (code, std, err) => {
+        console.log('Exit code:', code);
+        console.log('Program output:', std);
+        console.log('Program stderr:', err);
+    })
+    shell.cd('..');
+})
+ipcMain.on('close-mjpg-streamer', async(event, arg) => {
+    // let command = './mjpg_streamer -i "./input_uvc.so -y -n" -o "./output_http.so -w ./www"';
+    if (IsNetwork == true) {
+        let command = 'killall mjpg_streamer'
         shell.exec(command, (code, std, err) => {
             console.log('Exit code:', code);
             console.log('Program output:', std);
             console.log('Program stderr:', err);
         })
-        shell.cd('..');
-    })
-    ipcMain.on('close-mjpg-streamer', async(event, arg) => {
-        // let command = './mjpg_streamer -i "./input_uvc.so -y -n" -o "./output_http.so -w ./www"';
-        if(IsNetwork==true){
-            let command = 'killall mjpg_streamer'
-            shell.exec(command, (code, std, err) => {
-                console.log('Exit code:', code);
-                console.log('Program output:', std);
-                console.log('Program stderr:', err);
-            })
-            setTimeout(() => {
-                event.sender.send('reply-close-mjpg-streamer')
-            }, 2000);
-        }else{
-            event.sender.send('reply-writeDead')
-        }
-        
-    
+        setTimeout(() => {
+            event.sender.send('reply-close-mjpg-streamer')
+        }, 2000);
+    } else {
+        event.sender.send('reply-writeDead')
+    }
+
+
 })
 
 ipcMain.on('captrue', async(event, args) => {
