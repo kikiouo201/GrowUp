@@ -283,7 +283,6 @@ ipcRenderer.once('retruePictureData', (event, data) => {
         name.append(data['content'][i]['name']);
         par_book[i] = data['content'][i]['name'];
 
-<<<<<<< Updated upstream
             let voice_ic = document.createElement('img');
             voice_ic.src = "../icons/speaker.png";
             voice_ic.className = "crawlerPic voice"
@@ -291,11 +290,6 @@ ipcRenderer.once('retruePictureData', (event, data) => {
             voice_ic.onclick = () => {
                 crawlerParent();
             }
-=======
-        let voice_ic = document.createElement('img');
-        voice_ic.src = "../icons/speaker.png";
-        voice_ic.className = "voice"
->>>>>>> Stashed changes
 
         bookname.append(name);
         bookname.append(voice_ic);
