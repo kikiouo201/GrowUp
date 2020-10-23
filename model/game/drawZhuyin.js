@@ -1,4 +1,4 @@
-// let { ipcRenderer: ipcRenderer2 } = require('electron');
+let { ipcRenderer: ipcRenderer2 } = require('electron');
 let isDrawing = false;
 let x = 0;
 let y = 0;
@@ -248,7 +248,7 @@ score.addEventListener('click', () => {
         smallCard.innerHTML = '<img src="../../image/magicCard/' + levelCardImg[id] + '.png" width="50px"/>';
         const draw = document.querySelector('.draw');
         draw.style.visibility = "hidden";
-        //  ipcRenderer2.send("levelIsPass", levelName[id]);
+        ipcRenderer2.send("levelIsPass", levelName[id]);
     }
     console.log('totalPoint= ' + totalPoint);
     tool.style.visibility = "hidden"
