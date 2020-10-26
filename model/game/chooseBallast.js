@@ -1,4 +1,4 @@
-// let {ipcRenderer }= require('electron');
+let {ipcRenderer:ipcRenderer2 }= require('electron');
 let nowScore = 0;
 
 let animal=[{name:'South_American_Coati',chineseName:'長鼻浣熊'},
@@ -19,7 +19,7 @@ function startGame(){
     shuffle(animal);
     for(let i=1;i<5;i++){
         const target = document.querySelector('.target' + i);
-        target.src=`../../image/animal/${animal[i].name}.png`
+        target.src=`../../image/animal/${animal[i].name}.png`;
     }
     answerIndex = getAnswer(1,4);
     console.log(`answerIndex=${answerIndex}`)
@@ -40,29 +40,44 @@ function shuffle(array){
     return array;
   }
 
-function toBig(id) {
-    const target = document.querySelector('.target' + id);
-    target.className = 'getTarget';
-    nowScore++;
-    setTimeout(toBackgroundBlack, 1000);
-}
-function toBackgroundBlack() {
+function checkAnswer(id){
+    const status = document.querySelector('.status');
+    const props = document.querySelector('.props');
+    if(id == answerIndex){
+        status.innerHTML = '<img src="../../image/drawZhuyin/good.png" width="200px"/>你好棒';
+        props.style.visibility = "visible";
+        ipcRenderer2.send("levelIsPass", levelId);
+    }else{
+        status.innerHTML = '<img src="../../image/drawZhuyin/tryAgain.png" width="200px"/>失敗';
+        props.style.visibility = "hidden";
+    }
     const black_overlay = document.querySelector('.black_overlay');
     black_overlay.style.visibility = "visible";
 }
-function next() {
-    const targets = document.querySelectorAll('.getTarget');
-    targets.forEach((target) => {
-        target.style.visibility = "hidden";
-    });
+  
+// function toBig(id) {
+//     const target = document.querySelector('.target' + id);
+//     target.className = 'getTarget';
+//     nowScore++;
+//     setTimeout(toBackgroundBlack, 1000);
+// }
+// function toBackgroundBlack() {
+//     const black_overlay = document.querySelector('.black_overlay');
+//     black_overlay.style.visibility = "visible";
+// }
+// function next() {
+//     const targets = document.querySelectorAll('.getTarget');
+//     targets.forEach((target) => {
+//         target.style.visibility = "hidden";
+//     });
 
-    setTimeout('document.querySelector(".score").innerHTML=' + nowScore + '+"分"', 1000);
-    if (targets.length == 5) {
-        setTimeout(end, 1000);
-    } else {
-        setTimeout('document.querySelector(".black_overlay").style.visibility = "hidden";', 1000);
-    }
-}
+//     setTimeout('document.querySelector(".score").innerHTML=' + nowScore + '+"分"', 1000);
+//     if (targets.length == 5) {
+//         setTimeout(end, 1000);
+//     } else {
+//         setTimeout('document.querySelector(".black_overlay").style.visibility = "hidden";', 1000);
+//     }
+// }
 function end(){
     const next = document.querySelector('.next');
     const result = document.querySelector('.result');
@@ -74,8 +89,7 @@ function end(){
 
 
 function challengeAgain() {
-   
-    window.location.href = "../../view/game/findBallast.html";
+    window.location.href = "../../view/game/chooseBallast.html";
 }
 
 function goNextLevel() {

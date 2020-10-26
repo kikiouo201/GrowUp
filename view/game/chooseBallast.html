@@ -121,17 +121,18 @@
         }
 
         .result {
-            visibility: hidden;
-            width: 300px;
-            height: 200px;
+            width: 500px;
+            height: 480px;
             position: relative;
-            z-index: 25;
+            z-index: 205;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             background-color: aliceblue;
+            /* opacity: .90; */
         }
+        
 
         .challengeAgain {
             position: absolute;
@@ -160,28 +161,28 @@
             font-size: 40px;
         }
 
-        .close {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            font-size: xx-large;
 
-        }
 
         .props {
             display: flex;
             justify-content: center;
             flex-direction: row;
-
         }
 
         .props div {
-
             background-color: darkcyan;
-            text-align: center;
+            display: flex;
+            align-items: center;
             border-radius:  10px;
             margin: 10px;
+            padding: 10px;
         }
+  
+
+   
+       
+
+     
     </style>
    
 </head>
@@ -189,14 +190,11 @@
 <body onload="startGame()">
   
     <div class="black_overlay">
-        <div class="next" onclick="next()">確認</div>
         <div class="result">
-            <div class="close">X</div>
             <div class="status"><img src="../../image/drawZhuyin/good.png" /></div>
             <div class="props">
-                <div class="smallCard">小卡</div>
                 <div><img src="../../image/drawZhuyin/obedient.png" width='50px' />+20</div>
-
+  
             </div>
             <div class="challengeAgain" onclick="challengeAgain()">再次挑戰</div>
             <div class="nextLevel" onclick="history.back()">確認</div>
@@ -205,10 +203,10 @@
     <div id='topic' style="font-size: 50px;">找找看水果在哪裡</div>
     <div class="forest"> 
         <div class="score">0分</div>
-        <img  class="target1" onclick="toBig('1');">
-        <img  class="target2" onclick="toBig('2');">
-        <img  class="target3" onclick="toBig('3');">
-        <img  class="target4" onclick="toBig('4');">
+        <img  class="target1" onclick="checkAnswer('1');">
+        <img  class="target2" onclick="checkAnswer('2');">
+        <img  class="target3" onclick="checkAnswer('3');">
+        <img  class="target4" onclick="checkAnswer('4');">
         <!-- <img src="../../image/animal/South_American_Coati.png" class="target5" onclick="toBig('5');"> -->
     </div>
     <div>
