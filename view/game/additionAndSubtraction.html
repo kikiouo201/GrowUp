@@ -36,12 +36,12 @@
       background-size: cover;
       text-align: center;
       margin: 0px;
-      
+      overflow: hidden;
   }
 
   .forest {
       position: relative;
-      height: 459px;
+      height: 100%;
   }
   .counting{
     display: flex;
@@ -205,7 +205,105 @@
     background:url('../../image/numbers/9.png') no-repeat;
     background-size: contain;
   }
+  .black_overlay {
+            visibility: hidden;
+            position: fixed;
+            z-index: 100;
+            top: 0%;
+            left: 0%;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            -moz-opacity: 0.8;
+            opacity: .90;
+            filter: alpha(opacity=80);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* overflow: hidden; */
+            
+        }
 
+        .next {
+            position: absolute;
+            bottom: 12%;
+            left: 43%;
+            right: 40%;
+            padding: 10px;
+            background-color: burlywood;
+            text-align: center;
+            border-radius: 10px;
+            z-index: 120;
+        }
+
+        .score {
+            position: absolute;
+            top: 10%;
+            right: 10%;
+            padding: 10px;
+            font-size: xx-large;
+            background-color: antiquewhite;
+            border-radius: 30%;
+            border: 5px solid sandybrown;
+        }
+
+        .result {
+            width: 500px;
+            height: 480px;
+            position: relative;
+            z-index: 205;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: aliceblue;
+            /* opacity: .90; */
+        }
+        
+
+        .challengeAgain {
+            position: absolute;
+            left: 20px;
+            bottom: 20px;
+            padding: 10px;
+            background-color: burlywood;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .nextLevel {
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+            padding: 10px;
+            background-color: burlywood;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .status {
+            text-align: center;
+            width: 200px;
+            height: 300px;
+            font-size: 40px;
+        }
+
+
+
+        .props {
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+        }
+
+        .props div {
+            background-color: darkcyan;
+            display: flex;
+            align-items: center;
+            border-radius:  10px;
+            margin: 10px;
+            padding: 10px;
+        }
   
   </style>
   
@@ -225,6 +323,17 @@
   </head>
   
   <body translate="no" class="forest">
+    <div class="black_overlay">
+      <div class="result">
+          <div class="status"><img src="../../image/drawZhuyin/good.png" /></div>
+          <div class="props">
+              <div><img src="../../image/drawZhuyin/obedient.png" width='50px' />+20</div>
+
+          </div>
+          <div class="challengeAgain" onclick="challengeAgain()">再次挑戰</div>
+          <div class="nextLevel" onclick="history.back()">確認</div>
+      </div>
+  </div>
     <div>
       <div >
         <div>請幫助居民解決問題</div>
