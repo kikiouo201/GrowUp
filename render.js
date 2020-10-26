@@ -48,8 +48,8 @@ let identifyBtn = document.querySelector('#identify');
 var answer, explain;
 if (identifyBtn) {
     identifyBtn.addEventListener('click', () => {
-        ipcRenderer.send('close-mjpg-streamer')
-        // ipcRenderer.send('vision')
+        // ipcRenderer.send('close-mjpg-streamer')
+        ipcRenderer.send('vision')
             // ipcRenderer.send('captrue');
             // ipcRenderer.send('call-writeDead')
         ipcRenderer.on('reply-close-mjpg-streamer', (event, data) => {
@@ -80,7 +80,7 @@ if (identifyBtn) {
             console.log('ans voice name:' + TTS);
 
             ipcRenderer.send('crawler', data)
-                // ipcRenderer.send('camera-searchPictureBook', data)
+            ipcRenderer.send('camera-searchPictureBook', data)
             answer = data;
             // data.forEach(label => all+="\nyo="+label);
         })
@@ -120,8 +120,12 @@ if (identifyBtn) {
 
 
         ipcRenderer.on('reply-webcrawlerfunction', (event, data) => {
-            console.log("addQAtoServer", answer);
+            console.log("webcrawlerfunction", data);
             explain = data;
+        })
+
+        ipcRenderer.on('cameraReplyPbook', (event, data) => {
+            ipcRenderer.send('cameraReplyPbook',data)
             let cameraWebcrawler = {
                 'ans': answer,
                 'content': data,
@@ -142,7 +146,7 @@ if (identifyBtn) {
 
                 document.getElementById('leadTxt').innerHTML = "辨識成功!!";
                 document.getElementById('AnsImg').src = "./still-image.jpg"
-                QA_card.innerHTML = createQA(answer, explain, "環遊世界做蘋果派", "https://children.moc.gov.tw/resource/animate_image/6850.jpg", "要怎樣認識「國家」呢？每一個國家總有不同的、具代表性的文物、景物、建築或美食，在環遊世界一周後，可以帶回的東西，會是不同的明信片、紀念品，還有好吃特產呢")
+                QA_card.innerHTML = createQA(answer, explain, data['bookName'], data['bookImg'], data['bookIntro'])
 
 
                 ipcRenderer.send('cameraWebcrawler', cameraWebcrawler);
@@ -260,11 +264,6 @@ if (identifyBtn) {
                     voiceCon.alt = cameraCraw['contentV'];
                 })
             }
-        })
-
-        ipcRenderer.on('cameraReplyPbook', (event, pbook) => {
-            // ipcRenderer.send('addQAtoServer')
-
         })
 
 
