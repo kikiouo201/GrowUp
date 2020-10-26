@@ -8,9 +8,7 @@ function judgment(number,levelId){
         
       status.innerHTML = '<img src="../../image/drawZhuyin/good.png" width="200px"/>你好棒';
       props.style.visibility = "visible";
-      
-
-        ipcRenderer2.send("levelIsPass", levelId);
+      ipcRenderer2.send("levelIsPass", levelId);
     }
     else{
       status.innerHTML = '<img src="../../image/drawZhuyin/tryAgain.png" width="200px"/>失敗';
