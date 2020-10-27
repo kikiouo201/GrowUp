@@ -62,37 +62,37 @@
         <img class="mapsize" src="../image/map/animal_map.png">
     </div>
     <div>
-        <img class="South_American_Coati" src="../image/animal/South_American_Coati.png" onclick="mouseDownText('長鼻浣熊');">
+        <img class="South_American_Coati" src="../image/animal/South_American_Coati.png" onclick="playAnimal('south_american_coati');">
     </div>
     <div>
-        <img class="Ring_tailed_Lemur" src="../image/animal/Ring_tailed_Lemur.png" onclick="mouseDownText('環尾狐猴');">
+        <img class="Ring_tailed_Lemur" src="../image/animal/Ring_tailed_Lemur.png" onclick="playAnimal('ring_tailed_lemur');">
     </div>
     <div>
-        <img class="White_handed_Gibbon" src="../image/animal/White_handed_Gibbon.png" onclick="mouseDownText('白手長臂猿');">
+        <img class="White_handed_Gibbon" src="../image/animal/White_handed_Gibbon.png" onclick="playAnimal('white_handed_gibbon');">
     </div>
     <div>
-        <img class="Black_and_white_ruffed_Lemur" src="../image/animal/Black_and_white_ruffed_Lemur.png" onclick="mouseDownText('白頸狐猴');">
+        <img class="Black_and_white_ruffed_Lemur" src="../image/animal/Black_and_white_ruffed_Lemur.png" onclick="playAnimal('black_and_white_ruffed_Lemur');">
     </div>
     <div>
         <img class="Kinkajou" src="../image/animal/Kinkajou.png" onclick="playAnimal('kinkajou');">
     </div>
     <div>
-        <img class="Brown_Lemur" src="../image/animal/Brown_Lemur.png" onclick="mouseDownText('褐狐猴');">
+        <img class="Brown_Lemur" src="../image/animal/Brown_Lemur.png" onclick="playAnimal('brown_Lemur');">
     </div>
     <div>
-        <img class="Alpaca" src="../image/animal/Alpaca.png" onclick="mouseDownText('羊駝');">
+        <img class="Alpaca" src="../image/animal/Alpaca.png" onclick="playAnimal('alpaca');">
     </div>
     <div>
-        <img class="Greater_Flamingo" src="../image/animal/Greater_Flamingo.png" onclick="mouseDownText('大紅鶴');">
+        <img class="Greater_Flamingo" src="../image/animal/Greater_Flamingo.png" onclick="playAnimal('greater_flamingo');">
     </div>
     <div>
-        <img class="Donkey" src="../image/animal/Donkey.png" onclick="mouseDownText('家驢');">
+        <img class="Donkey" src="../image/animal/Donkey.png" onclick="playAnimal('donkey');">
     </div>
     <div>
-        <img class="Pony" src="../image/animal/Pony.png" onclick="mouseDownText('迷你馬');">
+        <img class="Pony" src="../image/animal/Pony.png" onclick="playAnimal('pony');">
     </div>
     <div>
-        <img class="Chinchilla" src="../image/animal/Chinchilla.png" onclick="mouseDownText('絨鼠');">
+        <img class="Chinchilla" src="../image/animal/Chinchilla.png" onclick="playAnimal('chinchilla');">
     </div>
 
     <!--<div>
@@ -130,7 +130,10 @@
             animalname.innerHTML = "動物名: 長鼻浣熊"
             explain.innerHTML = "敘述: 長鼻浣熊，上半身為褐色或灰色，腹部白色。細長的尾巴大約32~69公分，棕黑色並有一圈圈黃色環，具有平衡的功能。腳爪和前肢十分強壯，便於爬樹和挖掘朽木下的食物。"
             animalclass.innerHTML = "獸類"
-            mouseDownText('長鼻浣熊，上半身為褐色或灰色，腹部白色。細長的尾巴大約32~69公分，棕黑色並有一圈圈黃色環，具有平衡的功能。腳爪和前肢十分強壯，便於爬樹和挖掘朽木下的食物。');
+            speaker.onclick = function(){
+                playAnimal('south_american_coati');
+            }
+            playAnimal('south_american_coati');
         })
 
         document.querySelector(".Ring_tailed_Lemur").addEventListener('click', () => {
@@ -141,7 +144,10 @@
             animalname.innerHTML = "動物名: 環尾狐猴"
             animalclass.innerHTML = "獸類"
             explain.innerHTML = "敘述: 環尾狐猴，背側的毛色為棕灰色，腹側是白色，有一條黑白相間的尾巴，非常醒目。"
-            mouseDownText('環尾狐猴，背側的毛色為棕灰色，腹側是白色，有一條黑白相間的尾巴，非常醒目。');
+            speaker.onclick = function(){
+                playAnimal('ring_tailed_lemur');
+            }
+            playAnimal('ring_tailed_lemur');
         })
 
         document.querySelector(".White_handed_Gibbon").addEventListener('click', () => {
@@ -152,7 +158,10 @@
             animalname.innerHTML = "動物名: 白手長臂猿"
             animalclass.innerHTML = "獸類"
             explain.innerHTML = "敘述: 白手長臂猿，全身長有濃密的毛，毛色變化很多。最大特徵為臉的周圍和手、腳呈白色。"
-            mouseDownText('白手長臂猿，全身長有濃密的毛，毛色變化很多。最大特徵為臉的周圍和手、腳呈白色。');
+            speaker.onclick = function(){
+                playAnimal('white_handed_gibbon');
+            }
+            playAnimal('white_handed_gibbon');
         })
 
         document.querySelector(".Black_and_white_ruffed_Lemur").addEventListener('click', () => {
@@ -163,7 +172,10 @@
             animalname.innerHTML = "動物名: 白頸狐猴"
             animalclass.innerHTML = "獸類"
             explain.innerHTML = "敘述: 白頸狐猴，皮毛長而柔軟，耳朵被毛髮遮蓋著，毛的顏色變化很大，以黑色為主，四肢、背部及頭部有白色的斑紋，具有三對乳房。"
-            mouseDownText('白頸狐猴，皮毛長而柔軟，耳朵被毛髮遮蓋著，毛的顏色變化很大，以黑色為主，四肢、背部及頭部有白色的斑紋，具有三對乳房。');
+            speaker.onclick = function(){
+                playAnimal('black_and_white_ruffed_Lemur');
+            }
+            playAnimal('black_and_white_ruffed_Lemur');
         })
 
         document.querySelector(".Kinkajou").addEventListener('click', () => {
@@ -174,6 +186,9 @@
             animalname.innerHTML = "動物名: 蜜熊"
             animalclass.innerHTML = "獸類"
             explain.innerHTML = "敘述: 蜜熊，重量:1.8至4.6公斤，頭身長：41至57公分，尾長跟體長相似，蜜熊是浣熊的同類，但身材像猴子。"
+            speaker.onclick = function(){
+                playAnimal('kinkajou');
+            }
             playAnimal('kinkajou');
         })
 
@@ -185,7 +200,10 @@
             animalname.innerHTML = "動物名: 褐狐猴"
             animalclass.innerHTML = "獸類"
             explain.innerHTML = "敘述: 褐狐猴，背側的毛色為棕灰色，腹側則是灰白色，尾巴的顏色比較深，臉部略黑，眼睛的上方有較淡的斑紋，臉部周圍均有毛鬚。"
-            mouseDownText('褐狐猴，背側的毛色為棕灰色，腹側則是灰白色，尾巴的顏色比較深，臉部略黑，眼睛的上方有較淡的斑紋，臉部周圍均有毛鬚。');
+            speaker.onclick = function(){
+                playAnimal('brown_Lemur');
+            }
+            playAnimal('brown_Lemur');
         })
 
         document.querySelector(".Alpaca").addEventListener('click', () => {
@@ -196,7 +214,10 @@
             animalname.innerHTML = "動物名: 羊駝"
             animalclass.innerHTML = "獸類"
             explain.innerHTML = "敘述: 羊駝，成年雄獸肩高約90-100公分，體長約200公分，重70-90公斤。外型像綿羊頸部較長。"
-            mouseDownText('羊駝，成年雄獸肩高約90-100公分，體長約200公分，重70-90公斤。外型像綿羊頸部較長。');
+            speaker.onclick = function(){
+                playAnimal('alpaca');
+            }
+            playAnimal('alpaca');
         })
 
         document.querySelector(".Greater_Flamingo").addEventListener('click', () => {
@@ -207,7 +228,10 @@
             animalname.innerHTML = "動物名: 大紅鶴"
             animalclass.innerHTML = "鳥類"
             explain.innerHTML = "敘述: 大紅鶴，是最大型的紅鶴。雌鳥體型及腿較雄鳥小達到20﹪。幼鳥灰褐色，在身體下面、翼及尾帶有一些粉紅色，嘴、腿及足褐色。在前3年的亞成鳥，羽色有相當的變異。"
-            mouseDownText('大紅鶴，大紅鶴是最大型的紅鶴。雌鳥體型及腿較雄鳥小達到20﹪。幼鳥灰褐色，在身體下面、翼及尾帶有一些粉紅色，嘴、腿及足褐色。在前3年的亞成鳥，羽色有相當的變異。');
+            speaker.onclick = function(){
+                playAnimal('greater_flamingo');
+            }
+            playAnimal('greater_flamingo');
         })
 
         document.querySelector(".Donkey").addEventListener('click', () => {
@@ -218,7 +242,10 @@
             animalname.innerHTML = "動物名: 家驢"
             animalclass.innerHTML = "獸類"
             explain.innerHTML = "敘述: 家驢，背部毛色為灰色或棕色，夏季會比較偏紅，腹部為白色，背部有時會有一條較深的條紋，豎立的鬃毛長而細，尾巴末端蓬鬆，蹄長且窄。"
-            mouseDownText('家驢，背部毛色為灰色或棕色，夏季會比較偏紅，腹部為白色，背部有時會有一條較深的條紋，豎立的鬃毛長而細，尾巴末端蓬鬆，蹄長且窄。');
+            speaker.onclick = function(){
+                playAnimal('donkey');
+            }
+            playAnimal('donkey');
         })
 
         document.querySelector(".Pony").addEventListener('click', () => {
@@ -229,7 +256,10 @@
             animalname.innerHTML = "動物名: 迷你馬"
             animalclass.innerHTML = "獸類"
             explain.innerHTML = "敘述: 迷你馬，其實就是所謂的小型馬，體型比一般馬矮小，肩高約100至150公分，肩高矮於86公分。"
-            mouseDownText('迷你馬，其實就是所謂的小型馬，體型比一般馬矮小，肩高約100至150公分，肩高矮於86公分。');
+            speaker.onclick = function(){
+                playAnimal('pony');
+            }
+            playAnimal('pony');
         })
 
         document.querySelector(".Chinchilla").addEventListener('click', () => {
@@ -240,7 +270,10 @@
             animalname.innerHTML = "動物名: 絨鼠"
             animalclass.innerHTML = "獸類"
             explain.innerHTML = "敘述: 絨鼠，進食時，牠們會用臀部坐著，且以手拿食物。雖然生活環境中的水很少，但草葉上的露水就足夠牠們生活了。"
-            mouseDownText('絨鼠，進食時，牠們會用臀部坐著，且以手拿食物。雖然生活環境中的水很少，但草葉上的露水就足夠牠們生活了。');
+            speaker.onclick = function(){
+                playAnimal('chinchilla');
+            }
+            playAnimal('chinchilla');
         })
 
 
@@ -288,6 +321,7 @@
                 document.getElementById("animalclass").innerHTML = "動物名稱"
                 document.getElementById("animalclassName").innerHTML = "動物類: 鳥類"
                 document.getElementById("animalclassExplain").innerHTML = "敘述: 鳥類，是爬行動物演化而成的脊椎動物，也是現今世界上唯一有羽毛的動物。大多具有飛行能力，但還是有不具飛翔能力的鳥類，像企鵝、雞、鴕鳥就屬這一類。"
+                playAnimal('typeBirds');
             } else if (document.getElementById("animalclassName").innerHTML == "動物類: 獸類") {
                 document.getElementById("animalclass").innerHTML = "獸類"
                 document.getElementById("animalclassName").style.display = 'none';
