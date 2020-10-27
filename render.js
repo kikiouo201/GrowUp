@@ -64,7 +64,7 @@ if (identifyBtn) {
             stream.style.display = "none";
             document.getElementById('leadTxt').innerHTML = "讀取照片。。。";
             ipcRenderer.send('vision');
-            
+
             // ipcRenderer.send('call-writeDead')
         })
 
@@ -124,18 +124,23 @@ if (identifyBtn) {
             explain = data;
         })
 
-        ipcRenderer.on('cameraReplyPbook', (event, data) => {
-            ipcRenderer.send('cameraReplyPbook',data)
+        ipcRenderer.on('cameraReplyPbook', (event, cameraPB) => {
             let cameraWebcrawler = {
                 'ans': answer,
-                'content': data,
-                'picName_camera': '',
-                'picIntro_camera': '',
+                'content': '',
+                'picName_camera': cameraPB['bookName'],
+                'picIntro_camera': cameraPB['bookIntro'],
                 'ansV': '',
                 'contentV': '',
-                'picName_cameraV': '',
-                'picIntro_cameraV': '',
+                'picName_cameraV': cameraPB['bNameVoice'],
+                'picIntro_cameraV': cameraPB['bIntroVoice'],
             }
+            let voicePicName = document.getElementById('picture_Name');
+            voicePicName.alt = cameraWebcrawler['picName_cameraV'];
+            let voicePicExplain = document.getElementById('picture_Explain');
+            voicePicExplain.alt = cameraWebcrawler['picIntro_cameraV'];
+
+
             if (answer == undefined) {
                 document.getElementById('leadTxt').innerHTML = "辨識失敗!!";
                 document.getElementById('explainTxt').innerHTML = "";
@@ -146,7 +151,7 @@ if (identifyBtn) {
 
                 document.getElementById('leadTxt').innerHTML = "辨識成功!!";
                 document.getElementById('AnsImg').src = "./still-image.jpg"
-                QA_card.innerHTML = createQA(answer, explain, data['bookName'], data['bookImg'], data['bookIntro'])
+                QA_card.innerHTML = createQA(answer, explain, cameraPB['bookName'], cameraPB['bookImg'], cameraPB['bookIntro'])
 
 
                 ipcRenderer.send('cameraWebcrawler', cameraWebcrawler);

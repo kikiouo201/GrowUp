@@ -28,8 +28,8 @@ const puppeteer = require('puppeteer');
 // STT
 const callSTT = require('./TTS_API_test')
 var player = require('play-sound')(opts = {})
-// const fs = require('fs');
-// const util = require('util');
+    // const fs = require('fs');
+    // const util = require('util');
 
 // const api = require('./model/api');  //伺服器測試暫關
 
@@ -87,7 +87,7 @@ function createWindow() {
 // 部分 API 在 ready 事件触发后才能使用。
 app.on('ready', createWindow)
 app.commandLine.appendSwitch('--enable-touch-events')
-// 当全部窗口关闭时退出。
+    // 当全部窗口关闭时退出。
 app.on('window-all-closed', () => {
     // 在 macOS 上，除非用户用 Cmd + Q 确定地退出，
     // 否则绝大部分应用及其菜单栏会保持激活。
@@ -167,7 +167,7 @@ ipcMain.on('close-main-window', () => {
     console.log('closed by ipc');
     app.quit();
 });
-ipcMain.on('open-mjpg-streamer', async (event, arg) => {
+ipcMain.on('open-mjpg-streamer', async(event, arg) => {
     shell.cd('mjpg-streamer');
     let command = './mjpg_streamer -i "./input_uvc.so -y -n" -o "./output_http.so -w ./www"';
     // let command = 'killall mjpg_streamer'
@@ -180,20 +180,20 @@ ipcMain.on('open-mjpg-streamer', async (event, arg) => {
 })
 ipcMain.on('close-mjpg-streamer', async(event, arg) => {
     // let command = './mjpg_streamer -i "./input_uvc.so -y -n" -o "./output_http.so -w ./www"';
-    
-         let command = 'killall mjpg_streamer'
+
+    let command = 'killall mjpg_streamer'
     shell.exec(command, (code, std, err) => {
         console.log('Exit code:', code);
         console.log('Program output:', std);
         console.log('Program stderr:', err);
     })
     setTimeout(() => {
-    event.sender.send('reply-close-mjpg-streamer')
+        event.sender.send('reply-close-mjpg-streamer')
     }, 2000);
-   
+
 })
 
-ipcMain.on('captrue', async (event, args) => {
+ipcMain.on('captrue', async(event, args) => {
     // shell.cd('..');
     // let command = 'raspistill -t 1000 -o still-image.jpg'
     // shell.exec(command, (code, std, err) => {
@@ -218,12 +218,12 @@ ipcMain.on('vision', (event, args) => {
     event.sender.send('reply-visionready')
 })
 let visionAnswer;
-ipcMain.on('vision-start', async (event, args) => {
+ipcMain.on('vision-start', async(event, args) => {
     let array = await callVis.start();
-    let cameraSTT_Ans = await callSTT.cameraTTS('crawler', 1, array);
+    // let cameraSTT_Ans = await callSTT.cameraTTS('crawlerR', 1, array);
 
     visionAnswer = array
-    //array.forEach(label => console.log("vis="+label.description));
+        //array.forEach(label => console.log("vis="+label.description));
     event.sender.send('reply-mainjsfunction', array)
 })
 
@@ -262,7 +262,7 @@ ipcMain.on('crawler', (event, args) => {
 
 })
 
-ipcMain.on('camera-searchPictureBook', async (event, keyword) => {
+ipcMain.on('camera-searchPictureBook', async(event, keyword) => {
     console.log('Catch picturebook');
     const browser = await puppeteer.launch({
         // executablePath: '/usr/bin/chromium-browser',
@@ -279,7 +279,7 @@ ipcMain.on('camera-searchPictureBook', async (event, keyword) => {
         await page.type('body > header > div > div.search_bar > ul > li:nth-child(5) > form > input[type=text]:nth-child(2)', keyword)
         await page.waitForSelector('body > header > div > div.search_bar > ul > li:nth-child(5) > form > input.search_btn')
         await page.click('body > header > div > div.search_bar > ul > li:nth-child(5) > form > input.search_btn')
-        // const findFBook = await page.$('#main > div > div.row > div > div.wood_bg > div > article > div:nth-child(6) > div:nth-child(1) > div > section > h2 > a')
+            // const findFBook = await page.$('#main > div > div.row > div > div.wood_bg > div > article > div:nth-child(6) > div:nth-child(1) > div > section > h2 > a')
         await page.waitFor(1000);
 
         let PBook = {
@@ -295,7 +295,7 @@ ipcMain.on('camera-searchPictureBook', async (event, keyword) => {
         const findFBookDIV = await page.waitForSelector('#main > div > div.row > div > div.wood_bg > div > article > div:nth-child(4) > div:nth-child(1) > div > section')
 
         const findFBookName = await page.$('#main > div > div.row > div > div.wood_bg > div > article > div:nth-child(4) > div:nth-child(1) > div > section > h2 > a')
-        // await findFBook.setDefaultNavigationTimeout(10000);
+            // await findFBook.setDefaultNavigationTimeout(10000);
         await findFBookName.evaluate(node => node.innerText).then((value) => {
             Answer = value;
             console.log(value);
@@ -311,23 +311,32 @@ ipcMain.on('camera-searchPictureBook', async (event, keyword) => {
         PBook['bookName'] = Answer;
         PBook['bookImg'] = picURL;
         PBook['bookIntro'] = findBookIntro;
+        let C_voicePicName = await callSTT.cameraTTS('crawler', 3, PBook['bookName']);
+        PBook['bNameVoice'] = C_voicePicName;
+
+        let C_voicePicIntro = await callSTT.cameraTTS('crawler', 4, PBook['bookIntro']);
+        PBook['bIntroVoice'] = C_voicePicIntro;
+
 
 
         event.reply('cameraReplyPbook', PBook)
 
     } catch (e) {
         console.log('an expection on page.evaluate ', e);
-
+        // PBook['bookName'] = '查無此書目';
+        // let STTbName = await callSTT.quickStart('crawlerNoBook', 3, PBook['bookName'], click_num);
+        // PBook['bNameVoice'] = STTbName;
+        // event.reply('cameraReplyNoPbook', 'error', PBook)
     }
 })
 
-ipcMain.on('addQAtoServer', async (event, arg) => {
+ipcMain.on('addQAtoServer', async(event, arg) => {
     api.Question.addQa(1, "", arg, "./still-image.jpg", arg, "影像辨識", (event) => {
         console.log("callback=" + JSON.stringify(event));
     });
 })
 
-ipcMain.on('sendWriteDeadtoServer', async (event, arg) => {
+ipcMain.on('sendWriteDeadtoServer', async(event, arg) => {
     console.log("no!!!!!!")
         // api.Question.addQa(1, "蘋果", "落業喬木。葉軟形，邊緣有細尖鋸齒。果實球形，味美，可食，也可製酒。", "./still-image.jpg", "蘋果", "影像辨識", (event) => {
         //     console.log("callback=" + JSON.stringify(event));
@@ -341,7 +350,7 @@ ipcMain.on('sendWriteDeadtoServer', async (event, arg) => {
 // });
 
 //addQA
-ipcMain.on('getApi-addQuiz', async (event, args) => {
+ipcMain.on('getApi-addQuiz', async(event, args) => {
     api.Question.addQuiz(5, (req) => {
         // console.log("addQuiz=" + JSON.stringify(event));
         const data = JSON.parse(JSON.stringify(req));
@@ -376,7 +385,7 @@ ipcMain.on('getMachineData', (event, arg) => {
 
 });
 
-ipcMain.on('crawlerShowWeb', async (event, args) => {
+ipcMain.on('crawlerShowWeb', async(event, args) => {
     console.log('Catch ShowWeb');
 
 
@@ -391,7 +400,7 @@ ipcMain.on('crawlerShowWeb', async (event, args) => {
     const page = await browser.newPage();
     event.reply('colseLoading');
 
-    page.on('colse', async () => {
+    page.on('colse', async() => {
         await browser.close();
     });
     await page.exposeFunction('colseBrowser', () => {
@@ -447,7 +456,7 @@ ipcMain.on('crawlerShowWeb', async (event, args) => {
     });
 })
 
-ipcMain.on('crawlerGetDate', async (event, args) => {
+ipcMain.on('crawlerGetDate', async(event, args) => {
     let browser = await puppeteer.launch({
         executablePath: '/usr/bin/chromium-browser',
         // executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
@@ -484,19 +493,19 @@ ipcMain.on('crawlerGetDate', async (event, args) => {
 
 
 
-ipcMain.on('callSTT-start', async (event, args) => {
+ipcMain.on('callSTT-start', async(event, args) => {
     // let STTtext = await callSTT.quickStart();
     if (args.toString().trim() == 'ㄅ') {
         console.log("ㄅ")
-        var audio = player.play('./TTS/mp3/bpm/b.mp3', function (err) {
+        var audio = player.play('./TTS/mp3/bpm/b.mp3', function(err) {
             if (err) throw err;
             console.log("Audio finished");
         })
         audio.kill()
     }
     console.log("success call STT-API =) " + args.toString())
-    //array.forEach(label => console.log("vis="+label.description));
-    // event.sender.send('reply-mainjsfunction', array)
+        //array.forEach(label => console.log("vis="+label.description));
+        // event.sender.send('reply-mainjsfunction', array)
 })
 
 
@@ -607,7 +616,7 @@ ipcMain.on('call-frequency', (event, arg) => {
         console.log("Date =>" + dt.getDate())
         console.log("month =>" + dt.getMonth() + 1)
         console.log("speechlength =>" + (Object.keys(freq.content).length - 1))
-        // console.log("speechmonth =>" + freq.content[90].created_at.substring(5, 7))
+            // console.log("speechmonth =>" + freq.content[90].created_at.substring(5, 7))
         for (i = (Object.keys(freq.content).length - 1); i >= 0; i--) {
 
             if (freq.content[i].created_at.substring(6, 7) == (dt.getMonth() + 1) || freq.content[i].created_at.substring(5, 7) == (dt.getMonth() + 1) & freq.content[i].created_at.substring(8, 10) == dt.getDate() || freq.content[i].created_at.substring(9, 10) == dt.getDate()) {
@@ -655,11 +664,11 @@ ipcMain.on('levelIsPass', (event, arg) => {
     if (IsNetwork) {
         api.Level.alterLevel(1, arg, (req) => {
             console.log("data = " + JSON.stringify(req))
-            //event.sender.send('reply-callZhuyindata', data);
+                //event.sender.send('reply-callZhuyindata', data);
         });
         api.People.AddChildGoodBabyValue(1, 20, arg, (req) => {
             console.log("data = " + JSON.stringify(req))
-            //event.sender.send('reply-callZhuyindata', data);
+                //event.sender.send('reply-callZhuyindata', data);
         });
     } else {
         childGoodBabyValue += 20;
@@ -700,14 +709,14 @@ ipcMain.on('levelIsPass', (event, arg) => {
 //         // console.log("data =>"+ Object.keys(freq.content).length)
 //     })
 // })
-ipcMain.on('STT_Question', async (event, q_text, click_num) => {
+ipcMain.on('STT_Question', async(event, q_text, click_num) => {
     let STT_Q = await callSTT.quickStart('crawler', 1, q_text, click_num);
 
     // let QueVoice = STT_Q
     event.reply('replySTT_Q', STT_Q)
 })
 
-ipcMain.on('serchImgURL', async (event, keyword) => {
+ipcMain.on('serchImgURL', async(event, keyword) => {
     console.log('Catch ImgURL');
 
     const browser = await puppeteer.launch({
@@ -730,7 +739,7 @@ ipcMain.on('serchImgURL', async (event, keyword) => {
 })
 
 
-ipcMain.on('searchAnswer', async (event, keyword, click_num) => {
+ipcMain.on('searchAnswer', async(event, keyword, click_num) => {
     console.log('Catch Answer');
     const browser = await puppeteer.launch({
         executablePath: '/usr/bin/chromium-browser',
@@ -756,8 +765,8 @@ ipcMain.on('searchAnswer', async (event, keyword, click_num) => {
         "ansVoice": ""
     };
     const def = await page.$$('.def')
-    // await console.log("def:" + def[0]);
-    const test = await def[0].evaluate(node => node.innerText).then(async (value) => {
+        // await console.log("def:" + def[0]);
+    const test = await def[0].evaluate(node => node.innerText).then(async(value) => {
         // await console.log(value);
         Ans['ansText'] = await value;
         let STT_A = await callSTT.quickStart('crawler', 2, value, click_num);
@@ -767,7 +776,7 @@ ipcMain.on('searchAnswer', async (event, keyword, click_num) => {
     });
 })
 
-ipcMain.on('searchPictureBook', async (event, keyword, click_num) => {
+ipcMain.on('searchPictureBook', async(event, keyword, click_num) => {
     console.log('Catch picturebook');
     const browser = await puppeteer.launch({
         executablePath: '/usr/bin/chromium-browser',
@@ -796,7 +805,7 @@ ipcMain.on('searchPictureBook', async (event, keyword, click_num) => {
         await page.type('body > header > div > div.search_bar > ul > li:nth-child(5) > form > input[type=text]:nth-child(2)', keyword)
         await page.waitForSelector('body > header > div > div.search_bar > ul > li:nth-child(5) > form > input.search_btn')
         await page.click('body > header > div > div.search_bar > ul > li:nth-child(5) > form > input.search_btn')
-        // const findFBook = await page.$('#main > div > div.row > div > div.wood_bg > div > article > div:nth-child(6) > div:nth-child(1) > div > section > h2 > a')
+            // const findFBook = await page.$('#main > div > div.row > div > div.wood_bg > div > article > div:nth-child(6) > div:nth-child(1) > div > section > h2 > a')
 
 
         // 動畫類的第一本書，之後判斷沒有的話，無書目
@@ -805,7 +814,7 @@ ipcMain.on('searchPictureBook', async (event, keyword, click_num) => {
         })
 
         const findFBookName = await page.$('#main > div > div.row > div > div.wood_bg > div > article > div:nth-child(4) > div:nth-child(1) > div > section > h2 > a')
-        // await findFBook.setDefaultNavigationTimeout(10000);
+            // await findFBook.setDefaultNavigationTimeout(10000);
         await findFBookName.evaluate(node => node.innerText).then((value) => {
             Answer = value;
             console.log(value);
@@ -861,7 +870,7 @@ ipcMain.on('searchPictureBook', async (event, keyword, click_num) => {
 
 // })
 
-ipcMain.on('presetAnsPBook', async (event, prePic) => {
+ipcMain.on('presetAnsPBook', async(event, prePic) => {
     console.log("prePic[Question]" + prePic['data']['Question'] + ",prePic[i] " + prePic['i'])
     let preset = [{
             'Question': prePic['data']['Question'],
@@ -928,14 +937,17 @@ ipcMain.on('cameraWebcrawler', async(event, cameraWebC) => {
     let C_voiceContent = await callSTT.cameraTTS('crawler', 2, cameraWebC['content']);
     cameraWebC['contentV'] = C_voiceContent;
 
-    // let C_voicePicName = await callSTT.cameraTTS('pre', 3, cameraWebC['picName_camera']);
-    // cameraWebC['picName_cameraV'] = C_voicePicName;
-
-    // let C_voicePicIntro = await callSTT.cameraTTS('pre', 4, cameraWebC['picIntro_camera']);
-    // cameraWebC['picIntro_cameraV'] = C_voicePicIntro;
 
     event.reply('replyCameraWebC', cameraWebC);
 })
+
+
+ipcMain.on('pictureBookTTS', async(event, picBookTTS) => {
+
+    let pbTTS = await callSTT.pictureBookTTS(picBookTTS);
+    event.reply('replyPbTTS', pbTTS);
+})
+
 
 ipcMain.on('uploadAPI', async(event, APIdata) => {
     // api.Question.addQa
@@ -945,6 +957,6 @@ ipcMain.on('uploadAPI', async(event, APIdata) => {
 
 })
 
-ipcMain.on('picturebook_IsNetwork', async (event, args) => {
+ipcMain.on('picturebook_IsNetwork', async(event, args) => {
     event.sender.send('picturebook_IsNetworkStatus', IsNetwork);
 })
