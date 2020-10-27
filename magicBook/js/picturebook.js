@@ -9,6 +9,15 @@ const else_tab = document.querySelector("#else_tab");
 
 const fullscr = document.querySelector("#allFull");
 let par_book;
+let CrawMachineVoice = {
+    0: '',
+    1: '',
+    2: '',
+    3: '',
+    4: '',
+    5: ''
+}
+let addNum = 0;
 
 ipcRenderer.send('picturebook_IsNetwork');
 
@@ -114,7 +123,7 @@ ipcRenderer.once('picturebook_IsNetworkStatus', (event, data) => {
 
 `
 
-machine_recommend.innerHTML=`
+        machine_recommend.innerHTML = `
 <div class="book">
 
     <div class="bookname-div">
@@ -265,23 +274,23 @@ function tabClick(temp) {
 }
 
 ipcRenderer.once('retruePictureData', (event, data) => {
-    console.log("Success catch Picturebook Data")
-    console.log("Success catch Picturebook Data" + data.toString())
+        console.log("Success catch Picturebook Data")
+        console.log("Success catch Picturebook Data" + data.toString())
 
-    par_book = new Array(data['content'].length);
+        par_book = new Array(data['content'].length);
 
-    for (i = 0; i < data['content'].length; i++) {
-        // console.log(data['content'].length + data['content'][i]['name']);
+        for (i = 0; i < data['content'].length; i++) {
+            // console.log(data['content'].length + data['content'][i]['name']);
 
-        let bookdiv = document.createElement("div");
-        bookdiv.className = 'book';
+            let bookdiv = document.createElement("div");
+            bookdiv.className = 'book';
 
-        let bookname = document.createElement("div");
-        bookname.className = 'bookname-div'
+            let bookname = document.createElement("div");
+            bookname.className = 'bookname-div'
 
-        let name = document.createElement("h2");
-        name.append(data['content'][i]['name']);
-        par_book[i] = data['content'][i]['name'];
+            let name = document.createElement("h2");
+            name.append(data['content'][i]['name']);
+            par_book[i] = data['content'][i]['name'];
 
             let voice_ic = document.createElement('img');
             voice_ic.src = "../icons/speaker.png";
@@ -291,39 +300,39 @@ ipcRenderer.once('retruePictureData', (event, data) => {
                 crawlerParent();
             }
 
-        bookname.append(name);
-        bookname.append(voice_ic);
-        bookdiv.append(bookname);
+            bookname.append(name);
+            bookname.append(voice_ic);
+            bookdiv.append(bookname);
 
-        let activity_div = document.createElement("div");
-        activity_div.className = 'activity-div';
+            let activity_div = document.createElement("div");
+            activity_div.className = 'activity-div';
 
-        let bookimg = document.createElement('img');
-        bookimg.src = data['content'][i]['image']
-        activity_div.append(bookimg);
+            let bookimg = document.createElement('img');
+            bookimg.src = data['content'][i]['image']
+            activity_div.append(bookimg);
 
-        let watch_btn = document.createElement('button');
+            let watch_btn = document.createElement('button');
 
-        let web_url = data['content'][i]['introduction']
-        watch_btn.onclick = () => {
-            showWeb(web_url, fullscr);
+            let web_url = data['content'][i]['introduction']
+            watch_btn.onclick = () => {
+                showWeb(web_url, fullscr);
+            }
+
+            let watch_ic = document.createElement('img');
+            watch_ic.src = "./image/icon_watchVideo.png";
+            let watch_h2 = document.createElement('h2');
+            watch_h2.append("觀看繪本");
+
+            watch_btn.append(watch_ic, watch_h2);
+
+            activity_div.append(watch_btn);
+            bookdiv.append(activity_div);
+
+            parent_recommend.append(bookdiv);
+
         }
-
-        let watch_ic = document.createElement('img');
-        watch_ic.src = "./image/icon_watchVideo.png";
-        let watch_h2 = document.createElement('h2');
-        watch_h2.append("觀看繪本");
-
-        watch_btn.append(watch_ic, watch_h2);
-
-        activity_div.append(watch_btn);
-        bookdiv.append(activity_div);
-
-        parent_recommend.append(bookdiv);
-
-    }
-})
-// onclick="window.location.hash = '#else_book'"
+    })
+    // onclick="window.location.hash = '#else_book'"
 ipcRenderer.once('retrueMachineData', (event, data) => {
     // console.log(par_book);
 
@@ -334,7 +343,7 @@ ipcRenderer.once('retrueMachineData', (event, data) => {
     request.send();
     // let jsontext;
 
-    request.onreadystatechange = function (evt) {
+    request.onreadystatechange = function(evt) {
         if (request.readyState !== 4) {
             return;
         }
@@ -359,13 +368,16 @@ ipcRenderer.once('retrueMachineData', (event, data) => {
                             break;
                         } else if (j == par_book.length - 1 && Pushing) {
                             // if (i > 0 && i < 6) {
-                            //     ipcRenderer.send('pictureBookTTS', jsons[i]['name']);
-                            //     ipcRenderer.on('replyPbTTS', (event, TTS) => {
+                            // ipcRenderer.send('pictureBookTTS', jsons[i]['name']);
+                            // ipcRenderer.on('replyPbTTS', (event, TTS) => {
 
                             Pushing = false;
-                            console.log(jsons[i]['name'] + "&&" + par_book[j] + "&&" + j + "&&" + k)
+                            console.log(`${i},addnum${addNum}:` + jsons[i]['name'])
+                            CrawMachineVoice[addNum] = jsons[i]['name'];
+                            addNum++;
+                            // CrawMachineVoice
                             let bookdiv = document.createElement("div");
-                            bookdiv.className = 'book';
+                            bookdiv.className = 'book machineB';
 
                             let bookname = document.createElement("div");
                             bookname.className = 'bookname-div'
@@ -379,6 +391,10 @@ ipcRenderer.once('retrueMachineData', (event, data) => {
                             voice_ic.src = "../icons/speaker.png";
                             voice_ic.className = "voice"
                                 // voice_ic.alt = TTS;
+                                // voice_ic.onclick = () => {
+                                //     selectMachine(voice_ic.alt)
+                                // }
+                                // callPicName(jsons[i]['name'], voice_ic);
 
                             bookname.append(name);
                             bookname.append(voice_ic);
@@ -409,7 +425,7 @@ ipcRenderer.once('retrueMachineData', (event, data) => {
             imgurl = 'https://children.moc.gov.tw/resource/animate_image/' + imgurltemp + '.png';
         request.open('GET', imgurl);
         request.send()
-        request.onreadystatechange = function (evt) {
+        request.onreadystatechange = function(evt) {
             if (request.readyState !== 4)
                 return;
             if (request.status != 404) {
@@ -453,6 +469,7 @@ ipcRenderer.once('retrueMachineData', (event, data) => {
 
 let bookNum = document.querySelectorAll('.bookname-div')
 let crawNum = document.querySelectorAll('.crawlerPic voice')
+let machineB = document.querySelectorAll('.machineB')
 
 function selectParent() {
     var audioCreate = document.getElementById("AUDIO");
@@ -481,4 +498,10 @@ function selectElse() {
             audioCreate.setAttribute("src", `../TTS/mp3/magicBook/pictureBook/parent_${j}.mp3`);
             audioCreate.play();
         }
+}
+
+function selectMachine(name) {
+    var audioCreate = document.getElementById("AUDIO");
+    audioCreate.setAttribute("src", `../TTS/mp3/magicBook/pictureBook/${name}.mp3`);
+    audioCreate.play();
 }

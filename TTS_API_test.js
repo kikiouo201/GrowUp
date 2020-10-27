@@ -80,6 +80,35 @@ async function cameraTTS(type, num, kword) {
 
 }
 
+
+async function pictureBookTTS(kword) {
+    // The text to synthesize
+    const text = kword;
+    let kwLength = 0;
+    kwLength = kword.length
+    const result = await randomid(kwLength);
+
+    // Construct the request
+    const request = {
+        input: { text: text },
+        // Select the language and SSML voice gender (optional)
+        voice: { languageCode: 'zh-TW', ssmlGender: 'FEMALE' },
+        // select the type of audio encoding
+        audioConfig: { audioEncoding: 'MP3' },
+    };
+
+
+
+    // Performs the text-to-speech request
+    const [response] = await client.synthesizeSpeech(request);
+    // Write the binary audio content to a local file
+    const writeFile = util.promisify(fs.writeFile);
+    await writeFile(`./TTS/mp3/magicBook/pictureBook/${result}.mp3`, response.audioContent, 'binary');
+    console.log(`Audio content written to file: ${result}.mp3`);
+    return result;
+
+}
+
 function randomid(imgLength) {
     let picName = '';
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
@@ -101,5 +130,6 @@ quickStart().catch(console.error);
 
 module.exports = {
     quickStart,
-    cameraTTS
+    cameraTTS,
+    pictureBookTTS
 }
