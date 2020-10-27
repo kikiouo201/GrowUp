@@ -81,12 +81,13 @@ async function cameraTTS(type, num, kword) {
 }
 
 
-async function pictureBookTTS(kword) {
+async function pictureBookTTS(kword, num) {
     // The text to synthesize
     const text = kword;
     let kwLength = 0;
     kwLength = kword.length
-    const result = await randomid(kwLength);
+        // const result = await randomid(kwLength);
+    const result = num;
 
     // Construct the request
     const request = {
@@ -105,7 +106,7 @@ async function pictureBookTTS(kword) {
     const writeFile = util.promisify(fs.writeFile);
     await writeFile(`./TTS/mp3/magicBook/pictureBook/${result}.mp3`, response.audioContent, 'binary');
     console.log(`Audio content written to file: ${result}.mp3`);
-    return result;
+    return await result;
 
 }
 
