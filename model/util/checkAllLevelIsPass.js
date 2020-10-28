@@ -99,18 +99,23 @@ function checkLevelIsPass(level_icon, counties) {
                         }
                     } else {
                         console.log(`levelIsPassSize=${levelIsPassSize},level_name.length=${level_name.length}`);
+                        let cardDataSize=level_name.length - 1
+
+                        if(3<cardDataSize&&cardDataSize<9){
+                            cardDataSize=3;
+                        }
                         if (level.ispass == 1 && levelIsPassSize == (level_name.length - 1)) {
                             level_name[i].src = "../../image/icon/devil.png";
                             level_name[i].addEventListener('click', () => {
                                 const centralAudio = document.querySelector("#AUDIO");
-                                setTimeout(() => location.href = `../../view/game/pickingUpIsALittleRed.html?cardDataSize=${level_name.length-1}&startId=${levelNameConversion[level_name[0].getAttribute('alt')]}&counties=${counties}`, 800);
+                                setTimeout(() => location.href = `../../view/game/pickingUpIsALittleRed.html?cardDataSize=${cardDataSize}&startId=${levelNameConversion[level_name[0].getAttribute('alt')]}&counties=${counties}`, 800);
                                 voiceOut.playDevilBPM();
                             })
                         } else if (levelIsPassSize == (level_name.length - 1)) {
                             level_name[i].src = "../../image/icon/devil.png";
                             level_name[i].addEventListener('click', () => {
                                 const centralAudio = document.querySelector("#AUDIO");
-                                setTimeout(() => location.href = `../../view/game/pickingUpIsALittleRed.html?cardDataSize=${level_name.length-1}&startId=${levelNameConversion[level_name[0].getAttribute('alt')]}&counties=${counties}`, 800);
+                                setTimeout(() => location.href = `../../view/game/pickingUpIsALittleRed.html?cardDataSize=${cardDataSize}&startId=${levelNameConversion[level_name[0].getAttribute('alt')]}&counties=${counties}`, 800);
                                 voiceOut.playDevilBPM();
 
                             })
