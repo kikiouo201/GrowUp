@@ -43,7 +43,7 @@
         <div style="text-align: center;">
             <div id="explain_page">
                 <div style="text-align: left;">
-                    <button id="animalclass" onclick="changeTxt()"></button>
+                    <button id="animalclass" onclick="changeTxt()" alt=""></button>
                 </div>
 
                 <img id="animalImg" style="width:100px; height:100px;" src="">
@@ -62,37 +62,37 @@
         <img class="mapsize" src="../image/map/animal_map.png">
     </div>
     <div>
-        <img class="South_American_Coati" src="../image/animal/South_American_Coati.png" onclick="playAnimal('south_american_coati');">
+        <img id="south_american_coati" class="South_American_Coati" src="../image/animal/South_American_Coati.png" onclick="playAnimal('south_american_coati');">
     </div>
     <div>
-        <img class="Ring_tailed_Lemur" src="../image/animal/Ring_tailed_Lemur.png" onclick="playAnimal('ring_tailed_lemur');">
+        <img id="ring_tailed_lemur" class="Ring_tailed_Lemur" src="../image/animal/Ring_tailed_Lemur.png" onclick="playAnimal('ring_tailed_lemur');">
     </div>
     <div>
-        <img class="White_handed_Gibbon" src="../image/animal/White_handed_Gibbon.png" onclick="playAnimal('white_handed_gibbon');">
+        <img id="white_handed_gibbon" class="White_handed_Gibbon" src="../image/animal/White_handed_Gibbon.png" onclick="playAnimal('white_handed_gibbon');">
     </div>
     <div>
-        <img class="Black_and_white_ruffed_Lemur" src="../image/animal/Black_and_white_ruffed_Lemur.png" onclick="playAnimal('black_and_white_ruffed_Lemur');">
+        <img id="black_and_white_ruffed_Lemur" class="Black_and_white_ruffed_Lemur" src="../image/animal/Black_and_white_ruffed_Lemur.png" onclick="playAnimal('black_and_white_ruffed_Lemur');">
     </div>
     <div>
-        <img class="Kinkajou" src="../image/animal/Kinkajou.png" onclick="playAnimal('kinkajou');">
+        <img id="kinkajou" class="Kinkajou" src="../image/animal/Kinkajou.png" onclick="playAnimal('kinkajou');">
     </div>
     <div>
-        <img class="Brown_Lemur" src="../image/animal/Brown_Lemur.png" onclick="playAnimal('brown_Lemur');">
+        <img id="brown_Lemur" class="Brown_Lemur" src="../image/animal/Brown_Lemur.png" onclick="playAnimal('brown_Lemur');">
     </div>
     <div>
-        <img class="Alpaca" src="../image/animal/Alpaca.png" onclick="playAnimal('alpaca');">
+        <img id="alpaca" class="Alpaca" src="../image/animal/Alpaca.png" onclick="playAnimal('alpaca');">
     </div>
     <div>
-        <img class="Greater_Flamingo" src="../image/animal/Greater_Flamingo.png" onclick="playAnimal('greater_flamingo');">
+        <img id="greater_flamingo" class="Greater_Flamingo" src="../image/animal/Greater_Flamingo.png" onclick="playAnimal('greater_flamingo');">
     </div>
     <div>
-        <img class="Donkey" src="../image/animal/Donkey.png" onclick="playAnimal('donkey');">
+        <img id="donkey" class="Donkey" src="../image/animal/Donkey.png" onclick="playAnimal('donkey');">
     </div>
     <div>
-        <img class="Pony" src="../image/animal/Pony.png" onclick="playAnimal('pony');">
+        <img id="pony" class="Pony" src="../image/animal/Pony.png" onclick="playAnimal('pony');">
     </div>
     <div>
-        <img class="Chinchilla" src="../image/animal/Chinchilla.png" onclick="playAnimal('chinchilla');">
+        <img id="chinchilla" class="Chinchilla" src="../image/animal/Chinchilla.png" onclick="playAnimal('chinchilla');">
     </div>
 
     <!--<div>
@@ -130,6 +130,7 @@
             animalname.innerHTML = "動物名: 長鼻浣熊"
             explain.innerHTML = "敘述: 長鼻浣熊，上半身為褐色或灰色，腹部白色。細長的尾巴大約32~69公分，棕黑色並有一圈圈黃色環，具有平衡的功能。腳爪和前肢十分強壯，便於爬樹和挖掘朽木下的食物。"
             animalclass.innerHTML = "獸類"
+            animalclass.setAttribute("alt","south_american_coati");
             speaker.onclick = function(){
                 playAnimal('south_american_coati');
             }
@@ -143,6 +144,7 @@
             animalImg.src = "../image/animal/Ring_tailed_Lemur.png"
             animalname.innerHTML = "動物名: 環尾狐猴"
             animalclass.innerHTML = "獸類"
+            animalclass.setAttribute("alt","ring_tailed_lemur");
             explain.innerHTML = "敘述: 環尾狐猴，背側的毛色為棕灰色，腹側是白色，有一條黑白相間的尾巴，非常醒目。"
             speaker.onclick = function(){
                 playAnimal('ring_tailed_lemur');
@@ -157,6 +159,7 @@
             animalImg.src = "../image/animal/White_handed_Gibbon.png"
             animalname.innerHTML = "動物名: 白手長臂猿"
             animalclass.innerHTML = "獸類"
+            animalclass.setAttribute("alt","white_handed_gibbon");
             explain.innerHTML = "敘述: 白手長臂猿，全身長有濃密的毛，毛色變化很多。最大特徵為臉的周圍和手、腳呈白色。"
             speaker.onclick = function(){
                 playAnimal('white_handed_gibbon');
@@ -171,6 +174,7 @@
             animalImg.src = "../image/animal/Black_and_white_ruffed_Lemur.png"
             animalname.innerHTML = "動物名: 白頸狐猴"
             animalclass.innerHTML = "獸類"
+            animalclass.setAttribute("alt","black_and_white_ruffed_Lemur");
             explain.innerHTML = "敘述: 白頸狐猴，皮毛長而柔軟，耳朵被毛髮遮蓋著，毛的顏色變化很大，以黑色為主，四肢、背部及頭部有白色的斑紋，具有三對乳房。"
             speaker.onclick = function(){
                 playAnimal('black_and_white_ruffed_Lemur');
@@ -185,6 +189,7 @@
             animalImg.src = "../image/animal/Kinkajou.png"
             animalname.innerHTML = "動物名: 蜜熊"
             animalclass.innerHTML = "獸類"
+            animalclass.setAttribute("alt","kinkajou");
             explain.innerHTML = "敘述: 蜜熊，重量:1.8至4.6公斤，頭身長：41至57公分，尾長跟體長相似，蜜熊是浣熊的同類，但身材像猴子。"
             speaker.onclick = function(){
                 playAnimal('kinkajou');
@@ -199,6 +204,7 @@
             animalImg.src = "../image/animal/Brown_Lemur.png"
             animalname.innerHTML = "動物名: 褐狐猴"
             animalclass.innerHTML = "獸類"
+            animalclass.setAttribute("alt","brown_Lemur");
             explain.innerHTML = "敘述: 褐狐猴，背側的毛色為棕灰色，腹側則是灰白色，尾巴的顏色比較深，臉部略黑，眼睛的上方有較淡的斑紋，臉部周圍均有毛鬚。"
             speaker.onclick = function(){
                 playAnimal('brown_Lemur');
@@ -213,6 +219,7 @@
             animalImg.src = "../image/animal/Alpaca.png"
             animalname.innerHTML = "動物名: 羊駝"
             animalclass.innerHTML = "獸類"
+            animalclass.setAttribute("alt","alpaca");
             explain.innerHTML = "敘述: 羊駝，成年雄獸肩高約90-100公分，體長約200公分，重70-90公斤。外型像綿羊頸部較長。"
             speaker.onclick = function(){
                 playAnimal('alpaca');
@@ -227,6 +234,7 @@
             animalImg.src = "../image/animal/Greater_Flamingo.png"
             animalname.innerHTML = "動物名: 大紅鶴"
             animalclass.innerHTML = "鳥類"
+            animalclass.setAttribute("alt","greater_flamingo");
             explain.innerHTML = "敘述: 大紅鶴，是最大型的紅鶴。雌鳥體型及腿較雄鳥小達到20﹪。幼鳥灰褐色，在身體下面、翼及尾帶有一些粉紅色，嘴、腿及足褐色。在前3年的亞成鳥，羽色有相當的變異。"
             speaker.onclick = function(){
                 playAnimal('greater_flamingo');
@@ -241,6 +249,7 @@
             animalImg.src = "../image/animal/Donkey.png"
             animalname.innerHTML = "動物名: 家驢"
             animalclass.innerHTML = "獸類"
+            animalclass.setAttribute("alt","donkey");
             explain.innerHTML = "敘述: 家驢，背部毛色為灰色或棕色，夏季會比較偏紅，腹部為白色，背部有時會有一條較深的條紋，豎立的鬃毛長而細，尾巴末端蓬鬆，蹄長且窄。"
             speaker.onclick = function(){
                 playAnimal('donkey');
@@ -255,6 +264,7 @@
             animalImg.src = "../image/animal/Pony.png"
             animalname.innerHTML = "動物名: 迷你馬"
             animalclass.innerHTML = "獸類"
+            animalclass.setAttribute("alt","pony");
             explain.innerHTML = "敘述: 迷你馬，其實就是所謂的小型馬，體型比一般馬矮小，肩高約100至150公分，肩高矮於86公分。"
             speaker.onclick = function(){
                 playAnimal('pony');
@@ -269,6 +279,7 @@
             animalImg.src = "../image/animal/Chinchilla.png"
             animalname.innerHTML = "動物名: 絨鼠"
             animalclass.innerHTML = "獸類"
+            animalclass.setAttribute("alt","chinchilla");
             explain.innerHTML = "敘述: 絨鼠，進食時，牠們會用臀部坐著，且以手拿食物。雖然生活環境中的水很少，但草葉上的露水就足夠牠們生活了。"
             speaker.onclick = function(){
                 playAnimal('chinchilla');
@@ -312,6 +323,9 @@
                 document.getElementById("animalclass").innerHTML = "動物名稱"
                 document.getElementById("animalclassName").innerHTML = "動物類: 獸類"
                 document.getElementById("animalclassExplain").innerHTML = "敘述: 獸類，是脊椎動物哺乳綱動物的泛稱。從象、虎、豹等大型動物，到老鼠、蝙蝠等小型動物，到海洋中的鯨豚等海獸，都是獸類的一員。"
+                speaker.onclick = function(){
+                playAnimal('typeBeasts');
+                }
                 playAnimal('typeBeasts');
             } else if (document.getElementById("animalclass").innerHTML == "鳥類") {
                 document.getElementById("animalname").style.display = 'none';
@@ -321,6 +335,9 @@
                 document.getElementById("animalclass").innerHTML = "動物名稱"
                 document.getElementById("animalclassName").innerHTML = "動物類: 鳥類"
                 document.getElementById("animalclassExplain").innerHTML = "敘述: 鳥類，是爬行動物演化而成的脊椎動物，也是現今世界上唯一有羽毛的動物。大多具有飛行能力，但還是有不具飛翔能力的鳥類，像企鵝、雞、鴕鳥就屬這一類。"
+                speaker.onclick = function(){
+                playAnimal('typeBirds');
+                }
                 playAnimal('typeBirds');
             } else if (document.getElementById("animalclassName").innerHTML == "動物類: 獸類") {
                 document.getElementById("animalclass").innerHTML = "獸類"
@@ -328,12 +345,21 @@
                 document.getElementById("animalclassExplain").style.display = 'none';
                 document.getElementById("animalname").style.display = 'inline-block';
                 document.getElementById("explain").style.display = 'inline-block';
+                let animalname = document.getElementById("animalclass").getAttribute("alt")
+                speaker.onclick = function(){
+                playAnimal(animalname);
+                }
+                playAnimal(animalname);
             } else {
                 document.getElementById("animalclass").innerHTML = "鳥類"
                 document.getElementById("animalclassName").style.display = 'none';
                 document.getElementById("animalclassExplain").style.display = 'none';
                 document.getElementById("animalname").style.display = 'inline-block';
                 document.getElementById("explain").style.display = 'inline-block';
+                speaker.onclick = function(){
+                playAnimal(animalname);
+                }
+                playAnimal(animalname);
             }
         }
     </script>
