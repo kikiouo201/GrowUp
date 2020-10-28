@@ -70,6 +70,7 @@ if (identifyBtn) {
 
 
         ipcRenderer.on('reply-visionready', (event, data) => {
+            stream.style.display = "none";
             document.getElementById('leadTxt').innerHTML = "辨識中。。。";
             ipcRenderer.send('vision-start');
         })
