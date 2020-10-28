@@ -104,18 +104,24 @@ function checkLevelIsPass(level_icon, counties) {
                         if(3<cardDataSize&&cardDataSize<9){
                             cardDataSize=3;
                         }
+                        let purposeHref=`../../view/game/pickingUpIsALittleRed.html?cardDataSize=${cardDataSize}&startId=${levelNameConversion[level_name[0].getAttribute('alt')]}&counties=${counties}`;
+                        if(counties=='hualien'){
+                            purposeHref='../../view/game/gophers.html';
+                        }else if(counties=='taitung'){
+                            purposeHref='../../view/game/puzzle.html';
+                        }
                         if (level.ispass == 1 && levelIsPassSize == (level_name.length - 1)) {
                             level_name[i].src = "../../image/icon/devil.png";
                             level_name[i].addEventListener('click', () => {
                                 const centralAudio = document.querySelector("#AUDIO");
-                                setTimeout(() => location.href = `../../view/game/pickingUpIsALittleRed.html?cardDataSize=${cardDataSize}&startId=${levelNameConversion[level_name[0].getAttribute('alt')]}&counties=${counties}`, 800);
+                                setTimeout(() => location.href =purposeHref , 800);
                                 voiceOut.playDevilBPM();
                             })
                         } else if (levelIsPassSize == (level_name.length - 1)) {
                             level_name[i].src = "../../image/icon/devil.png";
                             level_name[i].addEventListener('click', () => {
                                 const centralAudio = document.querySelector("#AUDIO");
-                                setTimeout(() => location.href = `../../view/game/pickingUpIsALittleRed.html?cardDataSize=${cardDataSize}&startId=${levelNameConversion[level_name[0].getAttribute('alt')]}&counties=${counties}`, 800);
+                                setTimeout(() => location.href = purposeHref, 800);
                                 voiceOut.playDevilBPM();
 
                             })
