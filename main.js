@@ -937,6 +937,11 @@ ipcMain.on('cameraWebcrawler', async(event, cameraWebC) => {
     let C_voiceContent = await callSTT.cameraTTS('crawler', 2, cameraWebC['content']);
     cameraWebC['contentV'] = C_voiceContent;
 
+    let C_voicePicName = await callSTT.cameraTTS('pre', 3, cameraWebC['picName_camera']);
+    cameraPreset['picName_cameraV'] = C_voicePicName;
+
+    let C_voicePicIntro = await callSTT.cameraTTS('pre', 4, cameraWebC['picIntro_camera']);
+    cameraPreset['picIntro_cameraV'] = C_voicePicIntro;
 
     event.reply('replyCameraWebC', cameraWebC);
 })
