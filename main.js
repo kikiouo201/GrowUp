@@ -193,6 +193,12 @@ ipcMain.on('close-mjpg-streamer', async(event, arg) => {
     }, 2000);
     }
     else{
+        let command = 'killall mjpg_streamer'
+        shell.exec(command, (code, std, err) => {
+        console.log('Exit code:', code);
+        console.log('Program output:', std);
+        console.log('Program stderr:', err);
+    })
         event.sender.send('reply-writeDead')
     }
     
