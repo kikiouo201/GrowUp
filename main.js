@@ -37,7 +37,7 @@ var player = require('play-sound')(opts = {})
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let win = null;
-let IsNetwork = true;
+let IsNetwork = false;
 //true 有網路
 //false 無網路，資料寫死
 let childGoodBabyValue = 220;
@@ -181,8 +181,9 @@ ipcMain.on('open-mjpg-streamer', async(event, arg) => {
 ipcMain.on('close-mjpg-streamer', async(event, arg) => {
     // let command = './mjpg_streamer -i "./input_uvc.so -y -n" -o "./output_http.so -w ./www"';
 
-    let command = 'killall mjpg_streamer'
-    shell.exec(command, (code, std, err) => {
+    if(IsNetwork == true){
+        let command = 'killall mjpg_streamer'
+        shell.exec(command, (code, std, err) => {
         console.log('Exit code:', code);
         console.log('Program output:', std);
         console.log('Program stderr:', err);
@@ -190,6 +191,11 @@ ipcMain.on('close-mjpg-streamer', async(event, arg) => {
     setTimeout(() => {
         event.sender.send('reply-close-mjpg-streamer')
     }, 2000);
+    }
+    else{
+        event.sender.send('reply-writeDead')
+    }
+    
 
 })
 

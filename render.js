@@ -49,7 +49,7 @@ var answer, explain;
 if (identifyBtn) {
     identifyBtn.addEventListener('click', () => {
         ipcRenderer.send('close-mjpg-streamer')
-        // ipcRenderer.send('vision')
+            // ipcRenderer.send('vision')
             // ipcRenderer.send('captrue');
             // ipcRenderer.send('call-writeDead')
         ipcRenderer.on('reply-close-mjpg-streamer', (event, data) => {
