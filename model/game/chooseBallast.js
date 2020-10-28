@@ -43,16 +43,17 @@ function shuffle(array){
 function checkAnswer(id){
     const status = document.querySelector('.status');
     const props = document.querySelector('.props');
+    const black_overlay = document.querySelector('.black_overlay');
+    black_overlay.style.visibility = "visible";
     if(id == answerIndex){
         status.innerHTML = '<img src="../../image/drawZhuyin/good.png" width="200px"/>你好棒';
         props.style.visibility = "visible";
-        ipcRenderer2.send("levelIsPass", levelId);
+        ipcRenderer2.send("levelIsPass", 'chooseBallast');
     }else{
         status.innerHTML = '<img src="../../image/drawZhuyin/tryAgain.png" width="200px"/>失敗';
         props.style.visibility = "hidden";
     }
-    const black_overlay = document.querySelector('.black_overlay');
-    black_overlay.style.visibility = "visible";
+   
 }
   
 // function toBig(id) {
