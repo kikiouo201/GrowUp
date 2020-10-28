@@ -7,25 +7,28 @@
   
  }
  .wrap{
-   width:100%;
-   height: 450px;
-   margin:0px auto;
-   background:brown;
-   padding:20px;
-   position: relative;
+  width: 100%;
+  height: 430px;
+  margin: 0px auto;
+  background: brown;
+  padding: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
  }
  .cards{
   margin: 0px auto;
-  width: 730px;
-  height: 90%;
+  width: 100%;
+  height: 100%;
   display: flex;
-  flex-direction: row;
-  flex-wrap:wrap;
+  flex-direction: column;
+  flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
  }
  .card{
    width: 100px;
-   height: 141px;
+   height: 121px;
    position:relative;
    margin: 3px;
  }
@@ -44,12 +47,11 @@
    position:absolute;
  }
  .front{
-   width:100%;
-   height: 100%;
-   background-size: contain;
-   position:absolute;
-   display:none;
-   margin:auto;
+  background-size: contain;
+  width:100%;
+  height: 100%;
+  position:absolute;
+  background-color: aqua;
  }
 
  #wall{
@@ -92,7 +94,7 @@
 }
 .intro{
  width: 400px;
- height:400px;
+ height: 290px;
  background: rgba(255,255,255,0.9);
  white-space: pre-line;
  margin:100px auto 0px auto;
