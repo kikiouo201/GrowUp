@@ -19,11 +19,11 @@ ipcRenderer.on('colseLoading', (event, url) => {
     full.style.display = 'none'
 })
 
-function callPicName(name, replyTTS) {
-    ipcRenderer.send('pictureBookTTS', name);
-    ipcRenderer.once('replyPbTTS', (event, TTS) => {
+function callPicName(name, replyTTS, num) {
+    ipcRenderer.send('pictureBookTTS', name, num);
+    ipcRenderer.on('replyPbTTS', (event, TTS) => {
 
-        console.log("TTS==>" + TTS)
         replyTTS.alt = TTS;
+        crawlerMachine(replyTTS.alt);
     })
 }

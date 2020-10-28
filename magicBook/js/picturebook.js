@@ -372,7 +372,9 @@ ipcRenderer.once('retrueMachineData', (event, data) => {
                             // ipcRenderer.on('replyPbTTS', (event, TTS) => {
 
                             Pushing = false;
-                            console.log(`${i},addnum${addNum}:` + jsons[i]['name'])
+
+                            // Machine Recommend number
+                            // console.log(`${i},addnum${addNum}:` + jsons[i]['name'])
                             CrawMachineVoice[addNum] = jsons[i]['name'];
                             addNum++;
                             // CrawMachineVoice
@@ -391,10 +393,14 @@ ipcRenderer.once('retrueMachineData', (event, data) => {
                             voice_ic.src = "../icons/speaker.png";
                             voice_ic.className = "voice"
                                 // voice_ic.alt = TTS;
-                                // voice_ic.onclick = () => {
-                                //     selectMachine(voice_ic.alt)
-                                // }
-                                // callPicName(jsons[i]['name'], voice_ic);
+                            let num = 0;
+                            voice_ic.onclick = () => {
+                                // crawlerMachine(voice_ic.alt)
+                                // 呼叫TTS
+                                callPicName(jsons[i]['name'], voice_ic, i);
+                                voice_ic.alt = i
+                                num++;
+                            }
 
                             bookname.append(name);
                             bookname.append(voice_ic);
@@ -467,15 +473,17 @@ ipcRenderer.once('retrueMachineData', (event, data) => {
 })
 
 
-let bookNum = document.querySelectorAll('.bookname-div')
+let bookNum = document.querySelectorAll('.preset')
 let crawNum = document.querySelectorAll('.crawlerPic voice')
 let machineB = document.querySelectorAll('.machineB')
+let machinepreNum = document.querySelectorAll('.M_preset')
 
+// 家長推薦
 function selectParent() {
     var audioCreate = document.getElementById("AUDIO");
-    for (let j = 0; j < 6; j++)
+    for (let j = 0; j < 5; j++)
         bookNum[j].onclick = () => {
-            audioCreate.setAttribute("src", `../TTS/mp3/magicBook/pictureBook/parent_${j}.mp3`);
+            audioCreate.setAttribute("src", `../TTS/mp3/magicBook/pictureBook/parent_${j+1}.mp3`);
             audioCreate.play();
         }
 }
@@ -483,13 +491,35 @@ function selectParent() {
 function crawlerParent() {
     var audioCreate = document.getElementById("AUDIO");
     // console.log('data.parentNode:' + data['src'])
-    for (let j = 0; j < 6; j++)
+    for (let j = 0; j < 5; j++) {
+        console.log('crawNum==>' + crawNum[0])
         crawNum[j].onclick = () => {
             audioCreate.setAttribute("src", `../TTS/mp3/magicBook/pictureBook/parent_${j}.mp3`);
             audioCreate.play();
         }
+    }
 }
 
+// 學習機推薦
+function selectMachine() {
+    var audioCreate = document.getElementById("AUDIO");
+    for (let j = 0; j < 4; j++) {
+
+        machinepreNum[j].onclick = () => {
+            audioCreate.setAttribute("src", `../TTS/mp3/magicBook/pictureBook/machine_${j}.mp3`);
+            audioCreate.play();
+            // console.log(machinepreNum.length)
+        }
+    }
+}
+
+function crawlerMachine(name) {
+    var audioCreate = document.getElementById("AUDIO");
+    audioCreate.src = `../TTS/mp3/magicBook/pictureBook/${name}.mp3`
+    audioCreate.play();
+}
+
+// 其他推薦
 function selectElse() {
     let elseNum = document.querySelectorAll('#else_book > div > div.bookname-div > img')
     var audioCreate = document.getElementById("AUDIO");
@@ -498,10 +528,4 @@ function selectElse() {
             audioCreate.setAttribute("src", `../TTS/mp3/magicBook/pictureBook/parent_${j}.mp3`);
             audioCreate.play();
         }
-}
-
-function selectMachine(name) {
-    var audioCreate = document.getElementById("AUDIO");
-    audioCreate.setAttribute("src", `../TTS/mp3/magicBook/pictureBook/${name}.mp3`);
-    audioCreate.play();
 }

@@ -947,9 +947,9 @@ ipcMain.on('cameraWebcrawler', async(event, cameraWebC) => {
 })
 
 
-ipcMain.on('pictureBookTTS', async(event, picBookTTS) => {
+ipcMain.on('pictureBookTTS', async(event, picBookTTS, num) => {
 
-    let pbTTS = await callSTT.pictureBookTTS(picBookTTS);
+    let pbTTS = await callSTT.pictureBookTTS(picBookTTS, num);
     await event.reply('replyPbTTS', pbTTS);
 })
 

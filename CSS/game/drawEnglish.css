@@ -1256,6 +1256,121 @@
       
   }
 
+  /* m1 */
+  .fingerm1 {
+    visibility: visible;
+    width: 50px;
+    height: 100px;
+    transform: rotate(300deg);
+    position: absolute;
+    top: 55px;
+    left: 45px;
+    z-index: 30;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+  }
+  
+  
+  .moveFingerm1 {
+    width: 50px;
+    height: 100px;
+    transform: scale(4);
+    transition: all 1s ease-out;
+    transform: rotate(300deg);
+    position: absolute;
+    top: 55px;
+    left: 45px;
+    z-index: 10;
+    /* animation-delay: 1s; */
+    animation-name: drawm1;
+    animation-duration:5s;
+    animation-fill-mode:forwards;
+    animation-timing-function:linear;
+    /* animation-iteration-count:infinite; */
+    /* animation-timing-function:step-start; */
+  }
+  
+  @keyframes drawm1{
+     
+      0%{
+        top: 55px;
+        left: 45px;
+      }
+      15%{
+        top: 185px;
+        left: 45px;
+        visibility: hidden;
+      }
+      15.5%{
+        visibility: visible;
+        top: 55px;
+        left: 70px;
+      }
+      30%{
+        top: 185px;
+        left: 105px;
+      }
+      45%{
+        top: 55px;
+        left: 156px;
+      }
+      46%{
+        top: 55px;
+        left: 165px;
+      }
+      60%{
+        top: 185px;
+        left: 165px;
+        visibility: hidden;
+      }
+      60.5%{
+        visibility: visible;
+        top: 135px;
+        left: 210px;
+      }
+      70%{
+        top: 185px;
+        left: 210px;
+        visibility: hidden;
+      }
+      70.5%{
+        visibility: visible;
+        top: 140px;
+        left: 215px;
+      }
+      75%{
+        top: 130px;
+        left: 235px;
+      }
+      80%{
+        top: 145px;
+        left: 250px;
+      }
+      85%{
+        top: 185px;
+        left: 250px;
+        visibility: hidden;
+      }
+      85.5%{
+        visibility: visible;
+        top: 145px;
+        left: 250px;
+      }
+      90%{
+        top: 130px;
+        left: 280px;
+      }
+      95%{
+        top: 140px;
+        left: 295px;
+      }
+      100%{
+        top: 185px;
+        left: 295px;
+        visibility: hidden;
+      }
+      
+  }
+
 
   /* o1 */
   .fingero1 {
