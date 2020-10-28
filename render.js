@@ -48,8 +48,8 @@ let identifyBtn = document.querySelector('#identify');
 var answer, explain;
 if (identifyBtn) {
     identifyBtn.addEventListener('click', () => {
-        // ipcRenderer.send('close-mjpg-streamer')
-        ipcRenderer.send('vision')
+        ipcRenderer.send('close-mjpg-streamer')
+        // ipcRenderer.send('vision')
             // ipcRenderer.send('captrue');
             // ipcRenderer.send('call-writeDead')
         ipcRenderer.on('reply-close-mjpg-streamer', (event, data) => {
@@ -70,7 +70,7 @@ if (identifyBtn) {
 
 
         ipcRenderer.on('reply-visionready', (event, data) => {
-            stream.style.display = "none";
+            // stream.style.display = "none";
             document.getElementById('leadTxt').innerHTML = "辨識中。。。";
             ipcRenderer.send('vision-start');
         })
