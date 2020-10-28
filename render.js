@@ -32,10 +32,10 @@ const createQA = (text1, text2, bookName, bookImg, bookExplain) => `
                                                 <div class="card-header contentCss" id="QA_num_" style="background-color: #f8f9fa24; height: auto">
                                                     <p class="contentlink">相關繪本連結：</p>
                                                     <p class="book_css">${bookName}</p>
-                                                    <img class="picture_Name" onclick="cameraPlay(this)" id="picture_Name" src="icons/speaker.png" />
+                                                    <img class="picture_Name" onclick="cameraPlay(this)" id="picName" src="icons/speaker.png"/>
                                                     <img id="bookImg" src="${bookImg}" style="margin-left: 25%; padding: 10px;" width="180" height="153" alt="蘋果甜蜜蜜">
                                                     <p id="bookExplain" style="display: inline-block; margin-left: 20px; margin-right: 40px; font-size: 18pt;">${bookExplain}</p>
-                                                    <img class="picture_Explain" onclick="cameraPlay(this)" id="picture_Explain" src="icons/speaker.png" />
+                                                    <img class="picture_Explain" onclick="cameraPlay(this)" id="picExplain" src="icons/speaker.png" />
                                                 </div>
                                             
 
@@ -111,9 +111,9 @@ if (identifyBtn) {
                 voiceAns.alt = cameraPre['ansV'];
                 let voiceCon = document.getElementById('ContentVoice');
                 voiceCon.alt = cameraPre['contentV'];
-                let voicePicName = document.getElementById('picture_Name');
+                let voicePicName = document.getElementById('picName');
                 voicePicName.alt = cameraPre['picName_cameraV'];
-                let voicePicExplain = document.getElementById('picture_Explain');
+                let voicePicExplain = document.getElementById('picExplain');
                 voicePicExplain.alt = cameraPre['picIntro_cameraV'];
             })
         })
@@ -125,9 +125,11 @@ if (identifyBtn) {
         })
 
         ipcRenderer.on('cameraReplyPbook', (event, cameraPB) => {
+            let voicePicName = document.getElementById('picName');
+            let voicePicExplain = document.getElementById('picExplain');
             let cameraWebcrawler = {
                 'ans': answer,
-                'content': '',
+                'content': explain,
                 'picName_camera': cameraPB['bookName'],
                 'picIntro_camera': cameraPB['bookIntro'],
                 'ansV': '',
@@ -135,10 +137,9 @@ if (identifyBtn) {
                 'picName_cameraV': cameraPB['bNameVoice'],
                 'picIntro_cameraV': cameraPB['bIntroVoice'],
             }
-            let voicePicName = document.getElementById('picture_Name');
-            voicePicName.alt = cameraWebcrawler['picName_cameraV'];
-            let voicePicExplain = document.getElementById('picture_Explain');
-            voicePicExplain.alt = cameraWebcrawler['picIntro_cameraV'];
+            console.log("picName_cameraV =>"+cameraWebcrawler['picName_cameraV'])
+            console.log("picIntro_cameraV =>"+cameraWebcrawler['picIntro_cameraV'])
+            
 
 
             if (answer == undefined) {
@@ -162,7 +163,10 @@ if (identifyBtn) {
                     let voiceCon = document.getElementById('ContentVoice');
                     voiceCon.alt = cameraCraw['contentV'];
                 })
-
+               
+                voicePicName.alt = "crawler_cameraSTT3"
+                voicePicExplain.alt = "crawler_cameraSTT4";  
+                console.log('cameraCraw:' + voicePicName.getAttribute("alt")) 
             } else if (answer == "西瓜") {
                 ShowVisibility.style.display = "block";
                 ImgVisibility.style.display = "block";

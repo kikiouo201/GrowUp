@@ -262,6 +262,39 @@ ipcMain.on('crawler', (event, args) => {
 
 })
 
+
+ipcMain.on('cameraPreset', async(event, cameraPreset) => {
+    console.log("cameraPreset['ans']:" + cameraPreset['ans'] + ",cameraPreset['content'] " + cameraPreset['picName_camera'])
+
+    let C_voiceAns = await callSTT.cameraTTS('pre', 1, cameraPreset['ans']);
+    cameraPreset['ansV'] = C_voiceAns;
+
+    let C_voiceContent = await callSTT.cameraTTS('pre', 2, cameraPreset['content']);
+    cameraPreset['contentV'] = C_voiceContent;
+
+    let C_voicePicName = await callSTT.cameraTTS('pre', 3, cameraPreset['picName_camera']);
+    cameraPreset['picName_cameraV'] = C_voicePicName;
+
+    let C_voicePicIntro = await callSTT.cameraTTS('pre', 4, cameraPreset['picIntro_camera']);
+    cameraPreset['picIntro_cameraV'] = C_voicePicIntro;
+
+    event.reply('replyPresetCamera', cameraPreset);
+})
+
+
+ipcMain.on('cameraWebcrawler', async(event, cameraWebC) => {
+    // console.log("cameraWebC['ans']:" + cameraWebC['ans'] + ",cameraWebC['content'] " + cameraWebC['picName_camera'])
+
+    let C_voiceAns = await callSTT.cameraTTS('crawler', 1, cameraWebC['ans']);
+    cameraWebC['ansV'] = C_voiceAns;
+
+    let C_voiceContent = await callSTT.cameraTTS('crawler', 2, cameraWebC['content']);
+    cameraWebC['contentV'] = C_voiceContent;
+
+    event.reply('replyCameraWebC', cameraWebC);
+})
+
+
 ipcMain.on('camera-searchPictureBook', async(event, keyword) => {
     console.log('Catch picturebook');
     const browser = await puppeteer.launch({
@@ -907,43 +940,6 @@ ipcMain.on('presetAnsPBook', async(event, prePic) => {
     preset[prePic['i']]['pbIntro_voice'] = pbIntrovoice;
 
     event.reply('replyPresetAnsPBook', preset[prePic['i']]);
-})
-
-ipcMain.on('cameraPreset', async(event, cameraPreset) => {
-    console.log("cameraPreset['ans']:" + cameraPreset['ans'] + ",cameraPreset['content'] " + cameraPreset['picName_camera'])
-
-    let C_voiceAns = await callSTT.cameraTTS('pre', 1, cameraPreset['ans']);
-    cameraPreset['ansV'] = C_voiceAns;
-
-    let C_voiceContent = await callSTT.cameraTTS('pre', 2, cameraPreset['content']);
-    cameraPreset['contentV'] = C_voiceContent;
-
-    let C_voicePicName = await callSTT.cameraTTS('pre', 3, cameraPreset['picName_camera']);
-    cameraPreset['picName_cameraV'] = C_voicePicName;
-
-    let C_voicePicIntro = await callSTT.cameraTTS('pre', 4, cameraPreset['picIntro_camera']);
-    cameraPreset['picIntro_cameraV'] = C_voicePicIntro;
-
-    event.reply('replyPresetCamera', cameraPreset);
-})
-
-
-ipcMain.on('cameraWebcrawler', async(event, cameraWebC) => {
-    // console.log("cameraWebC['ans']:" + cameraWebC['ans'] + ",cameraWebC['content'] " + cameraWebC['picName_camera'])
-
-    let C_voiceAns = await callSTT.cameraTTS('crawler', 1, cameraWebC['ans']);
-    cameraWebC['ansV'] = C_voiceAns;
-
-    let C_voiceContent = await callSTT.cameraTTS('crawler', 2, cameraWebC['content']);
-    cameraWebC['contentV'] = C_voiceContent;
-
-    let C_voicePicName = await callSTT.cameraTTS('pre', 3, cameraWebC['picName_camera']);
-    cameraPreset['picName_cameraV'] = C_voicePicName;
-
-    let C_voicePicIntro = await callSTT.cameraTTS('pre', 4, cameraWebC['picIntro_camera']);
-    cameraPreset['picIntro_cameraV'] = C_voicePicIntro;
-
-    event.reply('replyCameraWebC', cameraWebC);
 })
 
 
