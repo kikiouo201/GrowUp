@@ -29,12 +29,10 @@ ipcRenderer.once('picturebook_IsNetworkStatus', (event, data) => {
 
         parent_recommend.innerHTML =
             ` 
-<div class="book">
-
+<div class="book presetD">
     <div class="bookname-div">
         <h2>環遊世界做蘋果派</h2>
-        <img class="voice" src=" ../icons/speaker.png" />
-
+        <img class="voice" src=" ../icons/speaker.png" onclick="selectDeadParent(this)" alt="parent_D_1"/>
     </div>
     <div class="activity-div">
         <img src="https://children.moc.gov.tw/resource/animate_image/6850.jpg">
@@ -45,12 +43,10 @@ ipcRenderer.once('picturebook_IsNetworkStatus', (event, data) => {
     </div>
 </div> 
 
-<div class="book">
-
+<div class="book presetD">
     <div class="bookname-div">
         <h2>蘋果甜蜜蜜</h2>
-        <img class="voice" src=" ../icons/speaker.png" />
-
+        <img class="voice" src=" ../icons/speaker.png" onclick="selectDeadParent(this)" alt="parent_D_2"/>
     </div>
     <div class="activity-div">
         <img src="https://children.moc.gov.tw/resource/animate_image/6892.jpg">
@@ -59,13 +55,12 @@ ipcRenderer.once('picturebook_IsNetworkStatus', (event, data) => {
             <h2>觀看繪本</h2>
         </button>
     </div>
-</div> 
-<div class="book">
+</div>
 
+<div class="book presetD">
     <div class="bookname-div">
         <h2>小獅子多多</h2>
-        <img class="voice" src=" ../icons/speaker.png" />
-
+        <img class="voice" src=" ../icons/speaker.png" onclick="selectDeadParent(this)" alt="parent_D_3"/>
     </div>
     <div class="activity-div">
         <img src="https://children.moc.gov.tw/resource/animate_image/6737.jpg">
@@ -75,27 +70,25 @@ ipcRenderer.once('picturebook_IsNetworkStatus', (event, data) => {
         </button>
     </div>
 </div> 
-<div class="book">
 
+<div class="book presetD">
     <div class="bookname-div">
         <h2>獅子燙頭髮</h2>
-        <img class="voice" src=" ../icons/speaker.png" />
-
+        <img class="voice" src=" ../icons/speaker.png" onclick="selectDeadParent(this)" alt="parent_D_4"/>
     </div>
     <div class="activity-div">
     <img src="https://children.moc.gov.tw/resource/animate_image/6666.jpg">
     <button onclick='showWeb("https://children.moc.gov.tw/book/214778", fullscr)'>
-
             <img src="./image/icon_watchVideo.png" />
             <h2>觀看繪本</h2>
         </button>
     </div>
 </div> 
-<div class="book">
+
+<div class="book presetD">
     <div class="bookname-div">
         <h2>想讀書的熊</h2>
-        <img class="voice" src=" ../icons/speaker.png" />
-
+        <img class="voice" src=" ../icons/speaker.png" onclick="selectDeadParent(this)" alt="parent_D_5"/>
     </div>
     <div class="activity-div">
         <img src="https://children.moc.gov.tw/resource/animate_image/6961.png">
@@ -105,12 +98,11 @@ ipcRenderer.once('picturebook_IsNetworkStatus', (event, data) => {
         </button>
     </div>
 </div> 
-<div class="book">
 
+<div class="book presetD">
     <div class="bookname-div">
         <h2>小熊包力刷牙記</h2>
-        <img class="voice" src=" ../icons/speaker.png" />
-
+        <img class="voice" src=" ../icons/speaker.png" onclick="selectDeadParent(this)" alt="parent_D_6"/>
     </div>
     <div class="activity-div">
         <img src="https://children.moc.gov.tw/resource/animate_image/6624.jpg">
@@ -474,6 +466,7 @@ ipcRenderer.once('retrueMachineData', (event, data) => {
 
 
 let bookNum = document.querySelectorAll('.preset')
+let DbookNum = document.querySelectorAll('.presetD')
 let crawNum = document.querySelectorAll('.crawlerPic voice')
 let machineB = document.querySelectorAll('.machineB')
 let machinepreNum = document.querySelectorAll('.M_preset')
@@ -500,6 +493,13 @@ function crawlerParent() {
     }
 }
 
+// 沒網路語音
+function selectDeadParent(Dnum) {
+    var audioCreate = document.getElementById("AUDIO");
+    audioCreate.setAttribute("src", `../TTS/mp3/magicBook/pictureBook/${Dnum.alt}.mp3`);
+    audioCreate.play();
+}
+
 // 學習機推薦
 function selectMachine() {
     var audioCreate = document.getElementById("AUDIO");
@@ -516,7 +516,21 @@ function selectMachine() {
 function crawlerMachine(name) {
     var audioCreate = document.getElementById("AUDIO");
     audioCreate.src = `../TTS/mp3/magicBook/pictureBook/${name}.mp3`
-    audioCreate.play();
+        // audioCreate.play();
+        // Show loading animation.
+    var playPromise = audioCreate.play();
+
+    if (playPromise !== undefined) {
+        playPromise.then(_ => {
+                // Automatic playback started!
+                // Show playing UI.
+            })
+            .catch(error => {
+                // Auto-play was prevented
+                // Show paused UI.
+                console.log('error:' + error)
+            });
+    }
 }
 
 // 其他推薦
