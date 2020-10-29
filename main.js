@@ -309,8 +309,8 @@ ipcMain.on('cameraWebcrawler', async(event, cameraWebC) => {
 ipcMain.on('camera-searchPictureBook', async(event, keyword) => {
     console.log('Catch picturebook');
     const browser = await puppeteer.launch({
-        // executablePath: '/usr/bin/chromium-browser',
-        executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
+        executablePath: '/usr/bin/chromium-browser',
+        // executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
         args: ['--disable-infobars', '--no-default-browser-check' /*, '--start-fullscreen', '--start-maximized' ,'--no-startup-window'*/ ],
         ignoreDefaultArgs: ['--enable-automation'],
         headless: true
@@ -434,8 +434,8 @@ ipcMain.on('crawlerShowWeb', async(event, args) => {
 
 
     const browser = await puppeteer.launch({
-        // executablePath: '/usr/bin/chromium-browser',
-        executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
+        executablePath: '/usr/bin/chromium-browser',
+        // executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
 
         args: ['--disable-infobars', '--no-default-browser-check', '--start-fullscreen', '--start-maximized' /*,'--no-startup-window'*/ ],
         ignoreDefaultArgs: ['--enable-automation'],
