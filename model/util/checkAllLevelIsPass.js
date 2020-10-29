@@ -128,7 +128,24 @@ function checkLevelIsPass(level_icon, counties) {
                         } else {
                             level_name[i].src = "../../image/icon/devil_lock.png";
                             level_name[i].addEventListener('click', () => {
-                                alert('需要先完成縣市所有關卡！');
+                                let black_overlay = document.createElement('div');
+                                black_overlay.setAttribute('class','black_overlay_counties');
+
+                                let result = document.createElement('div');
+                                result.setAttribute('class','result');
+                                result.innerHTML='需要先完成縣市所有關卡！';
+                                let nextLevel = document.createElement('div');
+                                nextLevel.setAttribute('class','nextLevel');
+                                nextLevel.innerHTML='確認'
+                                nextLevel.onclick=function () {
+                                   
+                                    document.querySelector('body').removeChild(black_overlay);
+                                };
+                                
+                                result.appendChild(nextLevel);
+                                black_overlay.appendChild(result);
+                                document.querySelector('body').appendChild(black_overlay);
+                               // alert('需要先完成縣市所有關卡！');
                             })
                         }
                     }
