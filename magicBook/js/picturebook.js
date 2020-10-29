@@ -472,6 +472,7 @@ let machineB = document.querySelectorAll('.machineB')
 let machinepreNum = document.querySelectorAll('.M_preset')
 
 // 家長推薦
+////有網路上半部語音
 function selectParent() {
     var audioCreate = document.getElementById("AUDIO");
     for (let j = 0; j < 5; j++)
@@ -493,7 +494,7 @@ function crawlerParent() {
     }
 }
 
-// 沒網路語音
+////有沒網路語音
 function selectDeadParent(Dnum) {
     var audioCreate = document.getElementById("AUDIO");
     audioCreate.setAttribute("src", `../TTS/mp3/magicBook/pictureBook/${Dnum.alt}.mp3`);
@@ -501,6 +502,7 @@ function selectDeadParent(Dnum) {
 }
 
 // 學習機推薦
+////有網路上半部語音
 function selectMachine() {
     var audioCreate = document.getElementById("AUDIO");
     for (let j = 0; j < 4; j++) {

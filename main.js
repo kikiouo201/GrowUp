@@ -37,7 +37,7 @@ var player = require('play-sound')(opts = {})
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let win = null;
-let IsNetwork = true;
+let IsNetwork = false;
 //true 有網路
 //false 無網路，資料寫死
 let childGoodBabyValue = 220;
@@ -309,8 +309,8 @@ ipcMain.on('cameraWebcrawler', async(event, cameraWebC) => {
 ipcMain.on('camera-searchPictureBook', async(event, keyword) => {
     console.log('Catch picturebook');
     const browser = await puppeteer.launch({
-        executablePath: '/usr/bin/chromium-browser',
-        // executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
+        // executablePath: '/usr/bin/chromium-browser',
+        executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
         args: ['--disable-infobars', '--no-default-browser-check' /*, '--start-fullscreen', '--start-maximized' ,'--no-startup-window'*/ ],
         ignoreDefaultArgs: ['--enable-automation'],
         headless: true
