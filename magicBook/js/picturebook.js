@@ -120,7 +120,7 @@ ipcRenderer.once('picturebook_IsNetworkStatus', (event, data) => {
 
     <div class="bookname-div">
         <h2>獅子大開口</h2>
-        <img class="voice" src=" ../icons/speaker.png" />
+        <img class="voice" src=" ../icons/speaker.png" onclick="selectDeadMachine(this)" alt="machine_D_1"/>
 
     </div>
     <div class="activity-div">
@@ -136,7 +136,7 @@ ipcRenderer.once('picturebook_IsNetworkStatus', (event, data) => {
 
     <div class="bookname-div">
         <h2>不會寫字的獅子</h2>
-        <img class="voice" src=" ../icons/speaker.png" />
+        <img class="voice" src=" ../icons/speaker.png" onclick="selectDeadMachine(this)" alt="machine_D_2"/>
 
     </div>
     <div class="activity-div">
@@ -151,7 +151,7 @@ ipcRenderer.once('picturebook_IsNetworkStatus', (event, data) => {
 
     <div class="bookname-div">
         <h2>拉奇和小獅子</h2>
-        <img class="voice" src=" ../icons/speaker.png" />
+        <img class="voice" src=" ../icons/speaker.png" onclick="selectDeadMachine(this)" alt="machine_D_3"/>
 
     </div>
     <div class="activity-div">
@@ -166,7 +166,7 @@ ipcRenderer.once('picturebook_IsNetworkStatus', (event, data) => {
 
     <div class="bookname-div">
         <h2>三隻熊</h2>
-        <img class="voice" src=" ../icons/speaker.png" />
+        <img class="voice" src=" ../icons/speaker.png" onclick="selectDeadMachine(this)" alt="machine_D_4"/>
 
     </div>
     <div class="activity-div">
@@ -181,7 +181,7 @@ ipcRenderer.once('picturebook_IsNetworkStatus', (event, data) => {
 <div class="book">
     <div class="bookname-div">
         <h2>浮冰上的小熊</h2>
-        <img class="voice" src=" ../icons/speaker.png" />
+        <img class="voice" src=" ../icons/speaker.png" onclick="selectDeadMachine(this)" alt="machine_D_5"/>
 
     </div>
     <div class="activity-div">
@@ -196,7 +196,7 @@ ipcRenderer.once('picturebook_IsNetworkStatus', (event, data) => {
 
     <div class="bookname-div">
         <h2>雲豹與黑熊</h2>
-        <img class="voice" src=" ../icons/speaker.png" />
+        <img class="voice" src=" ../icons/speaker.png" onclick="selectDeadMachine(this)" alt="machine_D_6"/>
 
     </div>
     <div class="activity-div">
@@ -513,6 +513,13 @@ function selectMachine() {
             // console.log(machinepreNum.length)
         }
     }
+}
+
+////有沒網路語音
+function selectDeadMachine(Dnum) {
+    var audioCreate = document.getElementById("AUDIO");
+    audioCreate.setAttribute("src", `../TTS/mp3/magicBook/pictureBook/${Dnum.alt}.mp3`);
+    audioCreate.play();
 }
 
 function crawlerMachine(name) {
