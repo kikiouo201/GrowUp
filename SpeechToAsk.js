@@ -124,7 +124,7 @@ if (voiceBtn) {
         let pictureBook = document.querySelector('#pictureText_' + click_num);
         let crawler = false;
         ipcRenderer.once('reply-result', (event, data) => {
-            let presetJson = ["獅子", "蘋果"];
+            let presetJson = ["獅子", "蘋果", "熊", "柿子"];
             for (let i = 0; i < presetJson.length; i++) {
                 if (data['keyWord'] == presetJson[i]) {
                     crawler = true;
