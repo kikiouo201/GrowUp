@@ -375,7 +375,7 @@ ipcMain.on('camera-searchPictureBook', async(event, keyword) => {
 })
 
 ipcMain.on('addQAtoServer', async(event, arg) => {
-    api.Question.addQa(1,arg['ans'],arg['content'], "./still-image.jpg", arg, "影像辨識", (event) => {
+    api.Question.addQa(1,arg['ans'],arg['content'], "./still-image.jpg", arg['ans'], "影像辨識", (event) => {
         console.log("callback=" + JSON.stringify(event));
     });
 })
