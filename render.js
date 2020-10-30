@@ -48,8 +48,8 @@ let identifyBtn = document.querySelector('#identify');
 var answer, explain;
 if (identifyBtn) {
     identifyBtn.addEventListener('click', () => {
-        ipcRenderer.send('close-mjpg-streamer')
-            // ipcRenderer.send('vision')
+        // ipcRenderer.send('close-mjpg-streamer')
+            ipcRenderer.send('vision')
             // ipcRenderer.send('captrue');
             // ipcRenderer.send('call-writeDead')
         ipcRenderer.on('reply-close-mjpg-streamer', (event, data) => {
@@ -126,8 +126,7 @@ if (identifyBtn) {
         })
 
         ipcRenderer.on('cameraReplyPbook', (event, cameraPB) => {
-            let voicePicName = document.getElementById('picName');
-            let voicePicExplain = document.getElementById('picExplain');
+              
             let cameraWebcrawler = {
                 'ans': answer,
                 'content': explain,
@@ -135,11 +134,11 @@ if (identifyBtn) {
                 'picIntro_camera': cameraPB['bookIntro'],
                 'ansV': '',
                 'contentV': '',
-                'picName_cameraV': cameraPB['bNameVoice'],
-                'picIntro_cameraV': cameraPB['bIntroVoice'],
+                'picName_cameraV': '',
+                'picIntro_cameraV': '',
             }
-            console.log("picName_cameraV =>"+cameraWebcrawler['picName_cameraV'])
-            console.log("picIntro_cameraV =>"+cameraWebcrawler['picIntro_cameraV'])
+            console.log("picName_camera =>"+cameraWebcrawler['picName_camera'])
+            console.log("picIntro_camera =>"+cameraWebcrawler['picIntro_camera'])
             
 
 
@@ -158,16 +157,19 @@ if (identifyBtn) {
 
                 ipcRenderer.send('cameraWebcrawler', cameraWebcrawler);
                 ipcRenderer.once('replyCameraWebC', (event, cameraCraw) => {
-                    console.log('cameraCraw:' + cameraCraw['ans'])
+                    console.log('cameraCraw:' + cameraCraw['picName_cameraV'])
                     let voiceAns = document.getElementById('AnsVoice');
                     voiceAns.alt = cameraCraw['ansV'];
                     let voiceCon = document.getElementById('ContentVoice');
                     voiceCon.alt = cameraCraw['contentV'];
+                    let voicePicName = document.getElementById('picName');
+                    voicePicName.alt = cameraCraw['picName_cameraV']
+                    let voicePicExplain = document.getElementById('picExplain');
+                    voicePicExplain.alt = cameraCraw['picIntro_cameraV'];
                 })
                
-                voicePicName.alt = "crawler_cameraSTT3"
-                voicePicExplain.alt = "crawler_cameraSTT4";  
-                console.log('cameraCraw:' + voicePicName.getAttribute("alt")) 
+                  
+                
             } else if (answer == "西瓜") {
                 ShowVisibility.style.display = "block";
                 ImgVisibility.style.display = "block";

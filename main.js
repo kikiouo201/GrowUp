@@ -37,7 +37,7 @@ var player = require('play-sound')(opts = {})
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let win = null;
-let IsNetwork = false;
+let IsNetwork = true;
 //true 有網路
 //false 無網路，資料寫死
 let childGoodBabyValue = 220;
@@ -302,6 +302,12 @@ ipcMain.on('cameraWebcrawler', async(event, cameraWebC) => {
     let C_voiceContent = await callSTT.cameraTTS('crawler', 2, cameraWebC['content']);
     cameraWebC['contentV'] = C_voiceContent;
 
+    let C_voicePicName = await callSTT.cameraTTS('crawler', 3, cameraWebC['picName_camera']);
+    cameraWebC['bNameVoice'] = C_voicePicName;
+
+    let C_voicePicIntro = await callSTT.cameraTTS('crawler', 4, cameraWebC['picIntro_camera']);
+    cameraWebC['bIntroVoice'] = C_voicePicIntro;
+
     event.reply('replyCameraWebC', cameraWebC);
 })
 
@@ -355,11 +361,7 @@ ipcMain.on('camera-searchPictureBook', async(event, keyword) => {
         PBook['bookName'] = Answer;
         PBook['bookImg'] = picURL;
         PBook['bookIntro'] = findBookIntro;
-        let C_voicePicName = await callSTT.cameraTTS('crawler', 3, PBook['bookName']);
-        PBook['bNameVoice'] = C_voicePicName;
-
-        let C_voicePicIntro = await callSTT.cameraTTS('crawler', 4, PBook['bookIntro']);
-        PBook['bIntroVoice'] = C_voicePicIntro;
+       
 
 
 
