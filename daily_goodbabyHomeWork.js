@@ -30,7 +30,13 @@ ipcRenderer.on('replyGoodregardTot', (event, data) => {
 
 });
 
-
+ipcRenderer.on('reply-deadfrequency',(event,data) =>{
+    console.log('reply-deadfrequency');
+        document.querySelector("#speechfreq").innerHTML ="1/3";
+        document.querySelector(".SpeechcardStatus").style.width ="33.3%";
+        document.querySelector("#camerafreq").innerHTML ="1/3";
+        document.querySelector(".CameracardStatus").style.width ="33.3%";
+})
 ipcRenderer.on('reply-frequency', (event, data) => {
     console.log("data =>" + data.Cameratotalfreq)
     if (data['Cameratotalfreq'] >= 3) {

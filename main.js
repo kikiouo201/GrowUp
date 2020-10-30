@@ -654,55 +654,60 @@ function goodConvert(event, totValue) {
 
 ipcMain.on('call-frequency', (event, arg) => {
     console.log("success call call-frequency")
-    api.Question.showPastQuestion(1, (req) => {
-        const freq = JSON.parse(JSON.stringify(req));
-        var Cameratotalfreq = 0;
-        var Speechtotalfreq = 0;
-        let dt = new Date();
-        console.log("Date =>" + dt.getDate())
-        console.log("month =>" + dt.getMonth() + 1)
-        console.log("speechlength =>" + (Object.keys(freq.content).length - 1))
-            // console.log("speechmonth =>" + freq.content[90].created_at.substring(5, 7))
-        for (i = (Object.keys(freq.content).length - 1); i >= 0; i--) {
-
-            if (freq.content[i].created_at.substring(6, 7) == (dt.getMonth() + 1) || freq.content[i].created_at.substring(5, 7) == (dt.getMonth() + 1) & freq.content[i].created_at.substring(8, 10) == dt.getDate() || freq.content[i].created_at.substring(9, 10) == dt.getDate()) {
-
-                if (freq.content[i].category == "語音") {
-                    // console.log("speechdata =>"+freq.content[i].created_at.substring(9, 10))
-                    Speechtotalfreq++
-                } else {
-
-                    Cameratotalfreq++
+    if(IsNetwork == true){
+        api.Question.showPastQuestion(1, (req) => {
+            const freq = JSON.parse(JSON.stringify(req));
+            var Cameratotalfreq = 0;
+            var Speechtotalfreq = 0;
+            let dt = new Date();
+            console.log("Date =>" + dt.getDate())
+            console.log("month =>" + dt.getMonth() + 1)
+            console.log("speechlength =>" + (Object.keys(freq.content).length - 1))
+                // console.log("speechmonth =>" + freq.content[90].created_at.substring(5, 7))
+            for (i = (Object.keys(freq.content).length - 1); i >= 0; i--) {
+    
+                if (freq.content[i].created_at.substring(6, 7) == (dt.getMonth() + 1) || freq.content[i].created_at.substring(5, 7) == (dt.getMonth() + 1) & freq.content[i].created_at.substring(8, 10) == dt.getDate() || freq.content[i].created_at.substring(9, 10) == dt.getDate()) {
+    
+                    if (freq.content[i].category == "語音") {
+                        // console.log("speechdata =>"+freq.content[i].created_at.substring(9, 10))
+                        Speechtotalfreq++
+                    } else {
+    
+                        Cameratotalfreq++
+                    }
+    
                 }
-
+    
             }
-
-        }
-
-
-
-        var CamerapercentColor = Math.round(Cameratotalfreq / 3 * 100);
-        if (CamerapercentColor > 100) {
-            CamerapercentColor = 100;
-        }
-
-
-        var SpeechpercentColor = Math.round(Speechtotalfreq / 3 * 100);
-        if (SpeechpercentColor > 100) {
-            SpeechpercentColor = 100;
-        }
-
-        console.log("Speechtotalfreq =>" + Speechtotalfreq)
-        console.log("Cameratotalfreq =>" + Cameratotalfreq)
-        let AllData = {
-            "Cameratotalfreq": Cameratotalfreq,
-            "CamerapercentColor": CamerapercentColor,
-            "Speechtotalfreq": Speechtotalfreq,
-            "SpeechpercentColor": SpeechpercentColor,
-        }
-        event.sender.send('reply-frequency', AllData);
-        // console.log("data =>"+ Object.keys(freq.content).length)
-    })
+    
+    
+    
+            var CamerapercentColor = Math.round(Cameratotalfreq / 3 * 100);
+            if (CamerapercentColor > 100) {
+                CamerapercentColor = 100;
+            }
+    
+    
+            var SpeechpercentColor = Math.round(Speechtotalfreq / 3 * 100);
+            if (SpeechpercentColor > 100) {
+                SpeechpercentColor = 100;
+            }
+    
+            console.log("Speechtotalfreq =>" + Speechtotalfreq)
+            console.log("Cameratotalfreq =>" + Cameratotalfreq)
+            let AllData = {
+                "Cameratotalfreq": Cameratotalfreq,
+                "CamerapercentColor": CamerapercentColor,
+                "Speechtotalfreq": Speechtotalfreq,
+                "SpeechpercentColor": SpeechpercentColor,
+            }
+            event.sender.send('reply-frequency', AllData);
+            // console.log("data =>"+ Object.keys(freq.content).length)
+        })
+    }else{
+        event.sender.send('reply-deadfrequency');
+    }
+    
 
 })
 
