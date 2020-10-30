@@ -289,7 +289,7 @@ ipcMain.on('cameraPreset', async(event, cameraPreset) => {
     let C_voicePicIntro = await callSTT.cameraTTS('pre', 4, cameraPreset['picIntro_camera']);
     cameraPreset['picIntro_cameraV'] = C_voicePicIntro;
 
-    event.reply('replyPresetCamera', cameraPreset);
+    event.sender.send('replyPresetCamera', cameraPreset);
 })
 
 
@@ -308,7 +308,7 @@ ipcMain.on('cameraWebcrawler', async(event, cameraWebC) => {
     let C_voicePicIntro = await callSTT.cameraTTS('crawler', 4, cameraWebC['picIntro_camera']);
     cameraWebC['bIntroVoice'] = C_voicePicIntro;
 
-    event.reply.sender('replyCameraWebC', cameraWebC);
+    event.sender.send('replyCameraWebC', cameraWebC);
 })
 
 
@@ -365,7 +365,7 @@ ipcMain.on('camera-searchPictureBook', async(event, keyword) => {
 
 
 
-        event.reply('cameraReplyPbook', PBook)
+        event.sender.send('cameraReplyPbook', PBook)
 
     } catch (e) {
         console.log('an expection on page.evaluate ', e);
