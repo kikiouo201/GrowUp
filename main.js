@@ -180,8 +180,6 @@ ipcMain.on('open-mjpg-streamer', async(event, arg) => {
 })
 ipcMain.on('close-mjpg-streamer', async(event, arg) => {
     // let command = './mjpg_streamer -i "./input_uvc.so -y -n" -o "./output_http.so -w ./www"';
-
-    if (IsNetwork == true) {
         let command = 'killall mjpg_streamer'
         shell.exec(command, (code, std, err) => {
             console.log('Exit code:', code);
@@ -191,16 +189,6 @@ ipcMain.on('close-mjpg-streamer', async(event, arg) => {
         setTimeout(() => {
             event.sender.send('reply-close-mjpg-streamer')
         }, 2000);
-    } else {
-        let command = 'killall mjpg_streamer'
-        shell.exec(command, (code, std, err) => {
-            console.log('Exit code:', code);
-            console.log('Program output:', std);
-            console.log('Program stderr:', err);
-        })
-        event.sender.send('reply-writeDead')
-    }
-
 
 })
 
@@ -219,8 +207,18 @@ ipcMain.on('captrue', async(event, args) => {
     const image = await stillCamera.takeImage();
 
     fs.writeFileSync("still-image.jpg", image);
-
-    event.sender.send('reply-mainjsfunction-captrue')
+    if(IsNetwork == true){
+        setTimeout(() => {
+            event.sender.send('reply-mainjsfunction-captrue')
+        }, 2000);
+        
+    }else{
+        setTimeout(() => {
+            event.sender.send('reply-writeDead')
+        }, 2000);
+       
+    }
+    
 })
 
 
