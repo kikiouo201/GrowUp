@@ -48,8 +48,8 @@ let identifyBtn = document.querySelector('#identify');
 var answer, explain;
 if (identifyBtn) {
     identifyBtn.addEventListener('click', () => {
-        ipcRenderer.send('close-mjpg-streamer')
-            // ipcRenderer.send('vision')
+        // ipcRenderer.send('close-mjpg-streamer')
+            ipcRenderer.send('vision')
             // ipcRenderer.send('captrue');
             // ipcRenderer.send('call-writeDead')
         ipcRenderer.on('reply-close-mjpg-streamer', (event, data) => {
@@ -139,7 +139,7 @@ if (identifyBtn) {
             }
             console.log("picName_camera =>"+cameraWebcrawler['picName_camera'])
             console.log("picIntro_camera =>"+cameraWebcrawler['picIntro_camera'])
-            
+            ipcRenderer.send('addQAtoServer',cameraWebcrawler)
 
 
             if (answer == undefined) {
