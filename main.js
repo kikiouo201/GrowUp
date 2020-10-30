@@ -308,7 +308,7 @@ ipcMain.on('cameraWebcrawler', async(event, cameraWebC) => {
     let C_voicePicIntro = await callSTT.cameraTTS('crawler', 4, cameraWebC['picIntro_camera']);
     cameraWebC['bIntroVoice'] = C_voicePicIntro;
 
-    event.reply('replyCameraWebC', cameraWebC);
+    event.reply.sender('replyCameraWebC', cameraWebC);
 })
 
 
