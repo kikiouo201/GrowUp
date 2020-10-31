@@ -140,7 +140,18 @@ if (identifyBtn) {
             console.log("picName_camera =>"+cameraWebcrawler['picName_camera'])
             console.log("picIntro_camera =>"+cameraWebcrawler['picIntro_camera'])
             ipcRenderer.send('addQAtoServer',cameraWebcrawler)
-
+            ipcRenderer.send('cameraWebcrawler', cameraWebcrawler);
+                ipcRenderer.once('replyCameraWebC', (event, cameraCraw) => {
+                    console.log('cameraCraw:' + cameraCraw['picName_cameraV'])
+                    let voiceAns = document.getElementById('AnsVoice');
+                    voiceAns.alt = cameraCraw['ansV'];
+                    let voiceCon = document.getElementById('ContentVoice');
+                    voiceCon.alt = cameraCraw['contentV'];
+                    let voicePicName = document.getElementById('picName');
+                    voicePicName.alt = cameraCraw['picName_cameraV']
+                    let voicePicExplain = document.getElementById('picExplain');
+                    voicePicExplain.alt = cameraCraw['picIntro_cameraV'];
+                })
 
             if (answer == undefined) {
                 document.getElementById('leadTxt').innerHTML = "辨識失敗!!";
@@ -153,20 +164,6 @@ if (identifyBtn) {
                 document.getElementById('leadTxt').innerHTML = "辨識成功!!";
                 document.getElementById('AnsImg').src = "./still-image.jpg"
                 QA_card.innerHTML = createQA(answer, explain, cameraPB['bookName'], cameraPB['bookImg'], cameraPB['bookIntro'])
-
-
-                ipcRenderer.send('cameraWebcrawler', cameraWebcrawler);
-                ipcRenderer.once('replyCameraWebC', (event, cameraCraw) => {
-                    console.log('cameraCraw:' + cameraCraw['picName_cameraV'])
-                    let voiceAns = document.getElementById('AnsVoice');
-                    voiceAns.alt = cameraCraw['ansV'];
-                    let voiceCon = document.getElementById('ContentVoice');
-                    voiceCon.alt = cameraCraw['contentV'];
-                    let voicePicName = document.getElementById('picName');
-                    voicePicName.alt = cameraCraw['picName_cameraV']
-                    let voicePicExplain = document.getElementById('picExplain');
-                    voicePicExplain.alt = cameraCraw['picIntro_cameraV'];
-                })
                
                   
                 
