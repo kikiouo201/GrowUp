@@ -447,10 +447,7 @@ ipcMain.on('crawlerShowWeb', async(event, args) => {
     page.on('colse', async() => {
         await browser.close();
     });
-    await page.exposeFunction('colseBrowser', () => {
-        page.emit('colse');
-
-    });
+    
     page.on('dialog', async dialog => {
         console.log(dialog.message());
         await dialog.dismiss();
@@ -471,10 +468,13 @@ ipcMain.on('crawlerShowWeb', async(event, args) => {
         })
     });
 
-
     await page.exposeFunction('colseBrowser', () => {
         page.emit('colse');
+
     });
+    // await page.exposeFunction('colseBrowser', () => {
+    //     page.emit('colse');
+    // });
     let currentScreen = await page.evaluate(() => {
         return {
             width: window.screen.availWidth,
@@ -491,7 +491,7 @@ ipcMain.on('crawlerShowWeb', async(event, args) => {
             document.querySelector('.fp-ui').click()
         }, 2000);
 
-        // document.querySelector('.fp-fullscreen').onclick = () => window.colseBrowser();
+        document.querySelector('.fp-fullscreen').onclick = () => window.colseBrowser();
 
         function css(el, styles) {
             for (var property in styles)
