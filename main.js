@@ -699,32 +699,32 @@ ipcMain.on('reply-homework',(event,data) =>{
 ipcMain.on('call-alertIcon',(event,data)=>{
     api.Question.showPastQuestion(1, (req) => {
         console.log("123456");
-        // const freq = JSON.parse(JSON.stringify(req));
-        // let dt = new Date();
-        // let Camtotalfreq = 0;
-        // let Spetotalfreq = 0;
-        // let AllData = {
-        //     "Camtotalfreq": Camtotalfreq,
-        //     "Spetotalfreq": Spetotalfreq, 
-        // }
+        const freq = JSON.parse(JSON.stringify(req));
+        let dt = new Date();
+        let Camtotalfreq = 0;
+        let Spetotalfreq = 0;
+        let AllData = {
+            "Camtotalfreq": Camtotalfreq,
+            "Spetotalfreq": Spetotalfreq, 
+        }
 
-        // for (i = (Object.keys(freq.content).length - 1); i >= 0; i--) {
+        for (i = (Object.keys(freq.content).length - 1); i >= 0; i--) {
     
-        //     if (freq.content[i].created_at.substring(6, 7) == (dt.getMonth() + 1) || freq.content[i].created_at.substring(5, 7) == (dt.getMonth() + 1) & freq.content[i].created_at.substring(8, 10) == dt.getDate() || freq.content[i].created_at.substring(9, 10) == dt.getDate()) {
+            if (freq.content[i].created_at.substring(6, 7) == (dt.getMonth() + 1) || freq.content[i].created_at.substring(5, 7) == (dt.getMonth() + 1) & freq.content[i].created_at.substring(8, 10) == dt.getDate() || freq.content[i].created_at.substring(9, 10) == dt.getDate()) {
 
-        //         if (freq.content[i].category == "語音") {
-        //             // console.log("speechdata =>"+freq.content[i].created_at.substring(9, 10))
-        //             Spetotalfreq++
-        //         } else {
+                if (freq.content[i].category == "語音") {
+                    // console.log("speechdata =>"+freq.content[i].created_at.substring(9, 10))
+                    Spetotalfreq++
+                } else {
 
-        //             Camtotalfreq++
-        //         }
+                    Camtotalfreq++
+                }
 
-        //     }
+            }
 
-        // }
+        }
 
-        // event.sender.send('reply-alertIcon',AllData);
+        event.sender.send('reply-alertIcon',AllData);
     })
 })
 
