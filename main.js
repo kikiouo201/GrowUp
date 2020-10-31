@@ -182,15 +182,15 @@ ipcMain.on('open-mjpg-streamer', async(event, arg) => {
 })
 ipcMain.on('close-mjpg-streamer', async(event, arg) => {
     // let command = './mjpg_streamer -i "./input_uvc.so -y -n" -o "./output_http.so -w ./www"';
-        let command = 'killall mjpg_streamer'
-        shell.exec(command, (code, std, err) => {
-            console.log('Exit code:', code);
-            console.log('Program output:', std);
-            console.log('Program stderr:', err);
-        })
-        setTimeout(() => {
-            event.sender.send('reply-close-mjpg-streamer')
-        }, 2000);
+    let command = 'killall mjpg_streamer'
+    shell.exec(command, (code, std, err) => {
+        console.log('Exit code:', code);
+        console.log('Program output:', std);
+        console.log('Program stderr:', err);
+    })
+    setTimeout(() => {
+        event.sender.send('reply-close-mjpg-streamer')
+    }, 2000);
 
 })
 
@@ -209,18 +209,18 @@ ipcMain.on('captrue', async(event, args) => {
     const image = await stillCamera.takeImage();
 
     fs.writeFileSync("still-image.jpg", image);
-    if(IsNetwork == true){
+    if (IsNetwork == true) {
         setTimeout(() => {
             event.sender.send('reply-mainjsfunction-captrue')
         }, 2000);
-        
-    }else{
+
+    } else {
         setTimeout(() => {
             event.sender.send('reply-writeDead')
         }, 2000);
-       
+
     }
-    
+
 })
 
 
@@ -348,7 +348,7 @@ ipcMain.on('camera-searchPictureBook', async(event, keyword) => {
             // await findFBook.setDefaultNavigationTimeout(10000);
         await findFBookName.evaluate(node => node.innerText).then((value) => {
             Answer = value;
-            console.log(value);
+            // console.log(value);
         });
         const findFBookPic = await page.$('.pic')
         const picURL = await findFBookPic.$eval('img', src => src.getAttribute('src'))
@@ -361,7 +361,7 @@ ipcMain.on('camera-searchPictureBook', async(event, keyword) => {
         PBook['bookName'] = Answer;
         PBook['bookImg'] = picURL;
         PBook['bookIntro'] = findBookIntro;
-       
+
 
 
 
@@ -377,16 +377,21 @@ ipcMain.on('camera-searchPictureBook', async(event, keyword) => {
 })
 
 ipcMain.on('addQAtoServer', async(event, arg) => {
+<<<<<<< HEAD
     api.Question.addQa(1,arg['ans'],arg['content'], "./still-image.jpg", arg['ans'], "影像辨識", (event) => {
         console.log("addQAtoServercallback=" + JSON.stringify(event));
+=======
+    api.Question.addQa(1, arg['ans'], arg['content'], "./still-image.jpg", arg['ans'], "影像辨識", (event) => {
+        console.log("callback=" + JSON.stringify(event));
+>>>>>>> 09286a43b728b854b6217da96360065bd544d38d
     });
 })
 
 ipcMain.on('sendWriteDeadtoServer', async(event, arg) => {
     console.log("no!!!!!!")
-        api.Question.addQa(1, "蘋果", "落業喬木。葉軟形，邊緣有細尖鋸齒。果實球形，味美，可食，也可製酒。", "./still-image.jpg", "蘋果", "影像辨識", (event) => {
-            console.log("callback=" + JSON.stringify(event));
-        });
+    api.Question.addQa(1, "蘋果", "落業喬木。葉軟形，邊緣有細尖鋸齒。果實球形，味美，可食，也可製酒。", "./still-image.jpg", "蘋果", "影像辨識", (event) => {
+        console.log("callback=" + JSON.stringify(event));
+    });
 })
 
 
@@ -449,7 +454,7 @@ ipcMain.on('crawlerShowWeb', async(event, args) => {
     page.on('colse', async() => {
         await browser.close();
     });
-    
+
     page.on('dialog', async dialog => {
         console.log(dialog.message());
         await dialog.dismiss();
@@ -536,24 +541,6 @@ ipcMain.on('crawlerGetDate', async(event, args) => {
 
     await browser.close();
 })
-
-
-
-ipcMain.on('callSTT-start', async(event, args) => {
-    // let STTtext = await callSTT.quickStart();
-    if (args.toString().trim() == 'ㄅ') {
-        console.log("ㄅ")
-        var audio = player.play('./TTS/mp3/bpm/b.mp3', function(err) {
-            if (err) throw err;
-            console.log("Audio finished");
-        })
-        audio.kill()
-    }
-    console.log("success call STT-API =) " + args.toString())
-        //array.forEach(label => console.log("vis="+label.description));
-        // event.sender.send('reply-mainjsfunction', array)
-})
-
 
 ipcMain.on('callMagicCard', (event, arg) => {
     console.log("success call Magic Card")
@@ -654,7 +641,7 @@ function goodConvert(event, totValue) {
 
 ipcMain.on('call-frequency', (event, arg) => {
     console.log("success call call-frequency")
-    if(IsNetwork == true){
+    if (IsNetwork == true) {
         api.Question.showPastQuestion(1, (req) => {
             const freq = JSON.parse(JSON.stringify(req));
             let Cameratotalfreq = 0;
@@ -665,34 +652,34 @@ ipcMain.on('call-frequency', (event, arg) => {
             console.log("speechlength =>" + (Object.keys(freq.content).length - 1))
                 // console.log("speechmonth =>" + freq.content[90].created_at.substring(5, 7))
             for (i = (Object.keys(freq.content).length - 1); i >= 0; i--) {
-    
+
                 if (freq.content[i].created_at.substring(6, 7) == (dt.getMonth() + 1) || freq.content[i].created_at.substring(5, 7) == (dt.getMonth() + 1) & freq.content[i].created_at.substring(8, 10) == dt.getDate() || freq.content[i].created_at.substring(9, 10) == dt.getDate()) {
-    
+
                     if (freq.content[i].category == "語音") {
                         // console.log("speechdata =>"+freq.content[i].created_at.substring(9, 10))
                         Speechtotalfreq++
                     } else {
-    
+
                         Cameratotalfreq++
                     }
-    
+
                 }
-    
+
             }
-    
-    
-    
+
+
+
             var CamerapercentColor = Math.round(Cameratotalfreq / 3 * 100);
             if (CamerapercentColor > 100) {
                 CamerapercentColor = 100;
             }
-    
-    
+
+
             var SpeechpercentColor = Math.round(Speechtotalfreq / 3 * 100);
             if (SpeechpercentColor > 100) {
                 SpeechpercentColor = 100;
             }
-    
+
             console.log("Speechtotalfreq =>" + Speechtotalfreq)
             console.log("Cameratotalfreq =>" + Cameratotalfreq)
             let AllData = {
@@ -704,10 +691,10 @@ ipcMain.on('call-frequency', (event, arg) => {
             event.sender.send('reply-frequency', AllData);
             // console.log("data =>"+ Object.keys(freq.content).length)
         })
-    }else{
+    } else {
         event.sender.send('reply-deadfrequency');
     }
-    
+
 
 })
 ipcMain.on('reply-homework',(event,data) =>{
@@ -761,40 +748,6 @@ ipcMain.on('levelIsPass', (event, arg) => {
     }
 })
 
-// ipcMain.on('call-speechfrequency',(event,arg) =>{
-//     console.log("success call call-speechfrequency")
-//     api.Question.showPastQuestion(1,(req)=>{
-//         const speechfreq = JSON.parse(JSON.stringify(req));
-//         let totalfreq =0;
-//         let dt = new Date();
-//         // console.log("data =>"+JSON.stringify(req))
-//         for( i = (Object.keys(speechfreq.content).length-1); i >=0; i--){
-
-//             if( speechfreq.content[i].created_at.substring(7, 7) == dt.getMonth() && speechfreq.content[i].created_at.substring(10, 10) == dt.getDate()){
-
-//                 if(speechfreq.content[i].category == "語音"){
-//                     totalfreq++
-//                 }
-
-//             }
-
-//         }
-//         let percentColor = Math.round(totalfreq / 3 * 100);
-//        if(percentColor>100){
-//             percentColor = 100;
-//        }else{
-//             percentColor = Math.round(totalfreq / 3 * 100);
-//        }
-//         console.log("total =>"+totalfreq)
-//         console.log("percentColor =>"+percentColor)
-//         let speechAllData = {
-//             "totalfreq": totalfreq,
-//             "percentColor": percentColor
-//         }
-//         event.sender.send('reply-speechfrequency', speechAllData);
-//         // console.log("data =>"+ Object.keys(freq.content).length)
-//     })
-// })
 ipcMain.on('STT_Question', async(event, q_text, click_num) => {
     let STT_Q = await callSTT.quickStart('crawler', 1, q_text, click_num);
 
@@ -806,8 +759,8 @@ ipcMain.on('serchImgURL', async(event, keyword) => {
     console.log('Catch ImgURL');
 
     const browser = await puppeteer.launch({
-        executablePath: '/usr/bin/chromium-browser',
-        // executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
+        // executablePath: '/usr/bin/chromium-browser',
+        executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
         args: ['--disable-infobars', '--no-default-browser-check', '--start-fullscreen', '--start-maximized' /*,'--no-startup-window'*/ ],
         ignoreDefaultArgs: ['--enable-automation'],
         headless: true
@@ -828,8 +781,8 @@ ipcMain.on('serchImgURL', async(event, keyword) => {
 ipcMain.on('searchAnswer', async(event, keyword, click_num) => {
     console.log('Catch Answer');
     const browser = await puppeteer.launch({
-        executablePath: '/usr/bin/chromium-browser',
-        // executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
+        // executablePath: '/usr/bin/chromium-browser',
+        executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
         args: ['--disable-infobars', '--no-default-browser-check', '--start-fullscreen', '--start-maximized' /*,'--no-startup-window'*/ ],
         ignoreDefaultArgs: ['--enable-automation'],
         headless: true
@@ -865,8 +818,8 @@ ipcMain.on('searchAnswer', async(event, keyword, click_num) => {
 ipcMain.on('searchPictureBook', async(event, keyword, click_num) => {
     console.log('Catch picturebook');
     const browser = await puppeteer.launch({
-        executablePath: '/usr/bin/chromium-browser',
-        // executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
+        // executablePath: '/usr/bin/chromium-browser',
+        executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
         args: ['--disable-infobars', '--no-default-browser-check' /*, '--start-fullscreen', '--start-maximized' ,'--no-startup-window'*/ ],
         ignoreDefaultArgs: ['--enable-automation'],
         headless: true
@@ -903,7 +856,7 @@ ipcMain.on('searchPictureBook', async(event, keyword, click_num) => {
             // await findFBook.setDefaultNavigationTimeout(10000);
         await findFBookName.evaluate(node => node.innerText).then((value) => {
             Answer = value;
-            console.log(value);
+            // console.log("value==X" + value);
         });
         const findFBookPic = await page.$('.pic')
         const picURL = await findFBookPic.$eval('img', src => src.getAttribute('src'))
@@ -912,7 +865,7 @@ ipcMain.on('searchPictureBook', async(event, keyword, click_num) => {
         // 動畫第一本絕對位置
         // const findBookIntro = await page.$eval('#main > div > div.row > div > div.wood_bg > div > article > div:nth-child(4) > div:nth-child(1) > div > section > a > p', a => a.textContent.trim())
         const findBookIntro = await page.$eval('p', al => al.textContent.trim())
-        await console.log("findBookIntro:" + findBookIntro)
+            // await console.log("findBookIntro:XX" + findBookIntro)
         PBook['bookName'] = Answer;
         PBook['bookImg'] = picURL;
         PBook['bookIntro'] = findBookIntro;
@@ -957,7 +910,7 @@ ipcMain.on('searchPictureBook', async(event, keyword, click_num) => {
 // })
 
 ipcMain.on('presetAnsPBook', async(event, prePic) => {
-    console.log("prePic[Question]" + prePic['data']['Question'] + ",prePic[i] " + prePic['i'])
+    // console.log("prePic[Question]" + prePic['data']['Question'] + ",prePic[i] " + prePic['i'])
     let preset = [{
             'Question': prePic['data']['Question'],
             'Answer': "動物名。哺乳綱食肉目貓科。多分布於印度及非洲一帶。身長約二、三公尺，頭圓肩闊，四肢強健，有鉤爪，尾細長。雄獅頭至頸部有鬣，雌獅體型較小，無鬣。營社會生活。以大型草食性動物為主食。",

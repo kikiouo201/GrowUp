@@ -28,6 +28,8 @@ const app = {
        // if (sendQueues.has(event)) throw new Error('Regist duplicate event in this application.');
         sendQueues.set(event, json);
       });
+      router.workQueues.clear();
+      router.sendQueues.clear();
     
       sendMes(); 
     },
