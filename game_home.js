@@ -6,7 +6,7 @@ const currentEx = document.getElementById("currentEx");
 const SSU = new SpeechSynthesisUtterance();
 
 ipcRenderer.send('callGoodRegard');
-// ipcRenderer.send('call-frequency')
+ipcRenderer.send('call-frequency')
 // ipcRenderer.on('replyGoodregardValue', (event, data) => {
 //     console.log("data = " + JSON.stringify(data))
 

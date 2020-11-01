@@ -38,6 +38,8 @@ var player = require('play-sound')(opts = {})
 // be closed automatically when the JavaScript object is garbage collected.
 let win = null;
 let IsNetwork = true;
+let askhomework = false;
+let camehomework = false;
 //true 有網路
 //false 無網路，資料寫死
 let childGoodBabyValue = 220;
@@ -313,8 +315,8 @@ ipcMain.on('cameraWebcrawler', async(event, cameraWebC) => {
 ipcMain.on('camera-searchPictureBook', async(event, keyword) => {
     console.log('Catch picturebook');
     const browser = await puppeteer.launch({
-        executablePath: '/usr/bin/chromium-browser',
-        // executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
+        // executablePath: '/usr/bin/chromium-browser',
+        executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
         args: ['--disable-infobars', '--no-default-browser-check' /*, '--start-fullscreen', '--start-maximized' ,'--no-startup-window'*/ ],
         ignoreDefaultArgs: ['--enable-automation'],
         headless: true
@@ -637,8 +639,8 @@ ipcMain.on('call-frequency', (event, arg) => {
     if (IsNetwork == true) {
         api.Question.showPastQuestion(1, (req) => {
             const freq = JSON.parse(JSON.stringify(req));
-            var Cameratotalfreq = 0;
-            var Speechtotalfreq = 0;
+            let Cameratotalfreq = 0;
+            let Speechtotalfreq = 0;
             let dt = new Date();
             console.log("Date =>" + dt.getDate())
             console.log("month =>" + dt.getMonth() + 1)
@@ -689,6 +691,41 @@ ipcMain.on('call-frequency', (event, arg) => {
     }
 
 
+})
+ipcMain.on('reply-homework',(event,data) =>{
+    askhomework = data['ask'];
+    camerahomework = data['camera'];
+})
+ipcMain.on('call-alertIcon',(event,data)=>{
+    api.Question.showPastQuestion(1, (req) => {
+        console.log("123456");
+        const freq = JSON.parse(JSON.stringify(req));
+        let dt = new Date();
+        let Camtotalfreq = 0;
+        let Spetotalfreq = 0;
+        let AllData = {
+            "Camtotalfreq": Camtotalfreq,
+            "Spetotalfreq": Spetotalfreq, 
+        }
+
+        for (i = (Object.keys(freq.content).length - 1); i >= 0; i--) {
+    
+            if (freq.content[i].created_at.substring(6, 7) == (dt.getMonth() + 1) || freq.content[i].created_at.substring(5, 7) == (dt.getMonth() + 1) & freq.content[i].created_at.substring(8, 10) == dt.getDate() || freq.content[i].created_at.substring(9, 10) == dt.getDate()) {
+
+                if (freq.content[i].category == "語音") {
+                    // console.log("speechdata =>"+freq.content[i].created_at.substring(9, 10))
+                    Spetotalfreq++
+                } else {
+
+                    Camtotalfreq++
+                }
+
+            }
+
+        }
+
+        event.sender.send('reply-alertIcon',AllData);
+    })
 })
 
 ipcMain.on('levelIsPass', (event, arg) => {
@@ -941,7 +978,7 @@ ipcMain.on('pictureBookTTS', async(event, picBookTTS, num) => {
 ipcMain.on('uploadAPI', async(event, APIdata) => {
     // api.Question.addQa
     api.Question.addQa(1, APIdata['Question'], APIdata['Answer'], APIdata['Answer_pic'], APIdata['keyWord'].trim(), "語音", (event) => {
-        console.log("callback=" + JSON.stringify(event));
+        console.log("uploadAPIcallback=" + JSON.stringify(event));
     });
 
 })

@@ -139,7 +139,7 @@ if (identifyBtn) {
             }
             console.log("picName_camera =>"+cameraWebcrawler['picName_camera'])
             console.log("picIntro_camera =>"+cameraWebcrawler['picIntro_camera'])
-            ipcRenderer.send('addQAtoServer',cameraWebcrawler)
+            ipcRenderer.send('addQAtoServer',cameraWebcrawler);
             ipcRenderer.send('cameraWebcrawler', cameraWebcrawler);
                 ipcRenderer.once('replyCameraWebC', (event, cameraCraw) => {
                     console.log('cameraCraw:' + cameraCraw['picName_cameraV'])
