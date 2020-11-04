@@ -255,7 +255,7 @@ if (identifyBtn) {
                 stream.style.display = "none";
                 document.getElementById('leadTxt').innerHTML = "辨識成功!!";
                 document.getElementById('AnsImg').src = "./still-image.jpg"
-                QA_card.innerHTML = createQA(answer, explain, "香蕉的秘密",cameraPB['bookName'], cameraPB['bookImg'], cameraPB['bookIntro'])
+                QA_card.innerHTML = createQA(answer, explain, cameraPB['bookName'], cameraPB['bookImg'], cameraPB['bookIntro'])
             } else {
                 ShowVisibility.style.display = "block";
                 ImgVisibility.style.display = "block";
