@@ -37,7 +37,7 @@ var player = require('play-sound')(opts = {})
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let win = null;
-let IsNetwork = true;
+let IsNetwork = false;
 let askhomework = false;
 let camehomework = false;
 //true 有網路
@@ -51,7 +51,7 @@ function createWindow() {
     // 创建浏览器窗口。
     win = new BrowserWindow({
         icon: path.join(__dirname, 'icons/raspberry_icon.png'),
-        fullscreen: false,
+        fullscreen: true,
         webSecurity: false,
         blinkFeatures: 'Touch',
         webPreferences: {
