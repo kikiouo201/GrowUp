@@ -262,16 +262,8 @@ if (identifyBtn) {
                 stream.style.display = "none";
                 document.getElementById('leadTxt').innerHTML = "辨識成功!!";
                 document.getElementById('AnsImg').src = "./still-image.jpg"
-                QA_card.innerHTML = createQA(answer, explain, cameraPB['bookName'], cameraPB['bookImg'], cameraPB['bookIntro'])
+                QA_card.innerHTML = createQA(answer, explain, "查無此書目", "查無此書目", "查無此書目")
 
-                ipcRenderer.send('cameraWebcrawler', cameraWebcrawler);
-                ipcRenderer.once('replyCameraWebC', (event, cameraCraw) => {
-                    console.log('cameraCraw:' + cameraCraw['ans'])
-                    let voiceAns = document.getElementById('AnsVoice');
-                    voiceAns.alt = cameraCraw['ansV'];
-                    let voiceCon = document.getElementById('ContentVoice');
-                    voiceCon.alt = cameraCraw['contentV'];
-                })
             }
         })
 
