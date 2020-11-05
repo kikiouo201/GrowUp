@@ -372,7 +372,8 @@ ipcMain.on('camera-searchPictureBook', async(event, keyword) => {
         // PBook['bookName'] = '查無此書目';
         // let STTbName = await callSTT.quickStart('crawlerNoBook', 3, PBook['bookName'], click_num);
         // PBook['bNameVoice'] = STTbName;
-        event.sender.send('cameraReplyPbook', PBook)
+
+        event.sender.send('cameraReplyPbook', e)
     }
 })
 
