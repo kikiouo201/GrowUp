@@ -17,13 +17,19 @@ ipcRenderer.on('replyMagicCard', (event, data) => {
         if (data.content[i].ispass == 0 && i < 37) {
             // console.log(data.content[i].id + " name : " + data.content[i].level_name);
             if (data.content[i].level_name == bpm[i].alt) {
-                // console.log("log:" + bpm[i].alt)
+                // console.log("bpm level : " + data.content[i].level_name + " card " + bpm[i].alt);
                 // bpm[i].parentNode = "file:///C:/Users/mcuim/Desktop/Raspberry/2020_07_06/GrowUp/view/game/drawzhuyin.html?id=t"
                 // console.log("img:" + bpm[i].parentNode.getAttribute('alt'))
                 let lockBPM = bpm[i].alt;
                 let bpmAlt = levelName[lockBPM];
                 bpm[i].src = `./image/magicCard/chineseAlphabet/${bpmAlt}_lock.png`;
                 // console.log("src:" + bpm[i].src)
+            }
+        } else if (data.content[i].ispass == 1 && i < 37) {
+            if (data.content[i].level_name == bpm[i].alt) {
+                let lockBPM = bpm[i].alt;
+                let bpmAlt = levelName[lockBPM];
+                bpm[i].src = `./image/magicCard/chineseAlphabet/${bpmAlt}.png`;
             }
         }
 
@@ -40,6 +46,15 @@ ipcRenderer.on('replyMagicCard', (event, data) => {
                         // console.log("src:" + number[n].src)
                 }
             }
+        } else if (data.content[i].ispass == 1 && i > 36 && i < 47) {
+            for (n = 0; n < 10; n++) {
+                if (data.content[i].level_name == number[n].alt) {
+                    // console.log("number level : " + data.content[i].level_name + " card " + number[n].alt);
+                    let lock012 = number[n].alt;
+                    let numAlt = levelName[lock012];
+                    number[n].src = `./image/magicCard/012/${lock012}.png`
+                }
+            }
         }
 
         // abc
@@ -54,6 +69,14 @@ ipcRenderer.on('replyMagicCard', (event, data) => {
                     let abcAlt = levelName[lockABC];
                     abc[n].src = `./image/magicCard/mixABC/${abcAlt}_lock.png`;
                     // console.log("src:" + abc[n].src)
+                }
+            }
+        } else if (data.content[i].ispass == 1 && i > 46 && i < 73) {
+            for (n = 0; n < 26; n++) {
+                if (data.content[i].level_name == abc[n].alt) {
+                    let lockABC = abc[n].alt;
+                    let abcAlt = levelName[lockABC];
+                    abc[n].src = `./image/magicCard/mixABC/${abcAlt}.png`;
                 }
             }
         }
