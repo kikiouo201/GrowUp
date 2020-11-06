@@ -251,8 +251,8 @@ body {
     width: 36px;
     height: 36px;
     position: absolute;
-    right: 0px;
-    top: 23%;
+    right: -3%;
+    top: 43%;
     cursor: pointer;
     float: right;
     margin-top: 5px;
@@ -267,8 +267,8 @@ body {
     width: 36px;
     height: 36px;
     position: absolute;
-    right: 0px;
-    top: 46%;
+    right: -3%;
+    top: 88%;
     cursor: pointer;
     float: right;
     margin-top: 5px;
@@ -280,8 +280,8 @@ body {
     width: 36px;
     height: 36px;
     position: absolute;
-    right: 0px;
-    top: 58%;
+    right: 20%;
+    top: 165%;
     cursor: pointer;
     float: right;
     margin-top: 5px;
@@ -293,8 +293,8 @@ body {
     width: 36px;
     height: 36px;
     position: absolute;
-    right: 0px;
-    top: 94%;
+    right: 20%;
+    top: 260%;
     cursor: pointer;
     float: right;
     margin-top: 5px;

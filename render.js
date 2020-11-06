@@ -10,8 +10,8 @@ let ImgVisibility = document.querySelector('#AnsImg');
 let stream = document.querySelector('#stream');
 let QA_card = document.getElementById("QA_card")
 
-const createQA = (text1, text2, bookName, bookImg, bookExplain) => `
-                                            <div class="card text-white  mb-3" style="background-color: #92337eba;">
+const createQA = (text1, text2) => `
+                                            <div class="card text-white" style="background-color: #92337eba;">
                                                 <div class="card-body" style="margin-top: 30px;">
                                                 <img class="collect_LeftTop" onclick="mute()" src="image/character/muted.png">
                                                     <div style="margin-left: 5px;">
@@ -33,13 +33,47 @@ const createQA = (text1, text2, bookName, bookImg, bookExplain) => `
                                                     <p class="contentlink">相關繪本連結：</p>
                                                     <p class="book_css">${bookName}</p>
                                                     <img class="picture_Name" onclick="cameraPlay(this)" id="picName" src="icons/speaker.png"/>
-                                                    <img id="bookImg" src="${bookImg}" style="margin-left: 25%; padding: 10px;" width="180" height="153" alt="蘋果甜蜜蜜">
+                                                    <img id="bookImg" src="${bookImg}" style="margin-left: 25%; padding: 10px;" width="180" height="153">
                                                     <p id="bookExplain" style="display: inline-block; margin-left: 20px; margin-right: 40px; font-size: 18pt;">${bookExplain}</p>
                                                     <img class="picture_Explain" onclick="cameraPlay(this)" id="picExplain" src="icons/speaker.png" />
                                                 </div>
                                             
 
                                             </div>`
+const createQA2 = (text1, text2) => ` <div class="card text-white" style="background-color: #92337eba; margin-bottom: 0px">
+                                                <div class="card-body" style="margin-top: 30px;">
+                                                <img class="collect_LeftTop" onclick="mute()" src="image/character/muted.png">
+                                                    <div style="margin-left: 5px;">
+                                                        <img id="AnsImg" src="./still-image.jpg">
+                                                    </div>
+                                                    <div style="float:left; display: block; text-align: left;">
+                                                        <p id="Ans" class="card-text card_A" style="float: left;">答案：</p>
+                                                        <p id="AnsTxt" class="card-text card_A" style="margin-left: 0px;margin-bottom: 0px;">${text1}</p>
+                                                        <img class="speaker_Que" onclick="cameraPlay(this)" id="AnsVoice" src="icons/speaker.png" />
+                                                    </div>
+
+                                                    <div style="float:left; display: block; text-align: left;">
+                                                        <p id="explain" class="card-text card_A" style="float: left;">敘述：</p>
+                                                        <p id="explainTxt" class="card-text card_A" style="margin-left: 0px;">${text2}</p>
+                                                        <img class="speaker_Ans" onclick="cameraPlay(this)" id="ContentVoice" src="icons/speaker.png" />
+                                                    </div>
+                                                </div>
+
+                                            </div>`
+const createPbook = (bookName,bookImg,bookExplain) =>`<div class="card-header contentCss" id="QA_num_" style="background-color: #92337eba; height: auto">
+                                                        <p class="contentlink" style="color: white;">相關繪本連結：</p>
+                                                        <p class="book_css" >${bookName}</p>
+                                                        <img class="picture_Name" onclick="cameraPlay(this)" id="picName" src="icons/speaker.png"/>
+                                                        <img id="bookImg" src="${bookImg}" style="margin-left: 25%; padding: 10px;" width="180" height="153">
+                                                        <p id="bookExplain" style="display: inline-block; margin-left: 20px; margin-right: 40px; font-size: 18pt; color: white;">${bookExplain}</p>
+                                                        <img class="picture_Explain" onclick="cameraPlay(this)" id="picExplain" src="icons/speaker.png" />
+                                                      </div>`
+
+const createdeadPbook = (bookName) =>`<div class="card-header contentCss" id="QA_num_" style="background-color: #f8f9fa24; height: auto">
+                        <p class="contentlink">相關繪本連結：</p>
+                        <p class="book_css">${bookName}</p>
+                        <img class="picture_Name" onclick="cameraPlay(this)" id="picName" src="icons/speaker.png"/>
+                    </div>`
 
 
 let identifyBtn = document.querySelector('#identify');
@@ -123,6 +157,12 @@ if (identifyBtn) {
         ipcRenderer.on('reply-webcrawlerfunction', (event, data) => {
             console.log("webcrawlerfunction", data);
             explain = data;
+            let QAjson = {
+                'answer':answer,
+                'content': explain
+            }
+            QA_card.innerHTML = createQA2(answer, explain)
+            // ipcRenderer.send('addQAtoServer',QAjson);
         })
 
         ipcRenderer.on('cameraReplyPbook', (event, cameraPB) => {
@@ -139,7 +179,7 @@ if (identifyBtn) {
             }
             console.log("picName_camera =>"+cameraWebcrawler['picName_camera'])
             console.log("picIntro_camera =>"+cameraWebcrawler['picIntro_camera'])
-            ipcRenderer.send('addQAtoServer',cameraWebcrawler);
+           
             ipcRenderer.send('cameraWebcrawler', cameraWebcrawler);
                 ipcRenderer.once('replyCameraWebC', (event, cameraCraw) => {
                     console.log('cameraCraw:' + cameraCraw['picName_cameraV'])
@@ -163,7 +203,7 @@ if (identifyBtn) {
 
                 document.getElementById('leadTxt').innerHTML = "辨識成功!!";
                 document.getElementById('AnsImg').src = "./still-image.jpg"
-                QA_card.innerHTML = createQA(answer, explain, cameraPB['bookName'], cameraPB['bookImg'], cameraPB['bookIntro'])
+                QA_card.innerHTML += createPbook(cameraPB['bookName'], cameraPB['bookImg'], cameraPB['bookIntro'])
                
                   
                 
@@ -173,24 +213,16 @@ if (identifyBtn) {
                 stream.style.display = "none";
                 document.getElementById('leadTxt').innerHTML = "辨識成功!!";
                 document.getElementById('AnsImg').src = "./still-image.jpg"
-                QA_card.innerHTML = createQA(answer, explain, cameraPB['bookName'], cameraPB['bookImg'], cameraPB['bookIntro'])
+                QA_card.innerHTML += createPbook(cameraPB['bookName'], cameraPB['bookImg'], cameraPB['bookIntro'])
 
-            } else if (answer == "螢幕") {
-                ShowVisibility.style.display = "block";
-                ImgVisibility.style.display = "block";
-                stream.style.display = "none";
-                document.getElementById('leadTxt').innerHTML = "辨識成功!!";
-                document.getElementById('AnsImg').src = "./still-image.jpg"
-                QA_card.innerHTML = createQA(answer, explain, "查無此書目", "查無此書目", "查無此書目")
-
-            } else if (answer == "椅子") {
+            }  else if (answer == "椅子") {
 
                 ShowVisibility.style.display = "block";
                 ImgVisibility.style.display = "block";
                 stream.style.display = "none";
                 document.getElementById('leadTxt').innerHTML = "辨識成功!!";
                 document.getElementById('AnsImg').src = "./still-image.jpg"
-                QA_card.innerHTML = createQA(answer, explain, cameraPB['bookName'], cameraPB['bookImg'], cameraPB['bookIntro'])
+                QA_card.innerHTML += createPbook(cameraPB['bookName'], cameraPB['bookImg'], cameraPB['bookIntro'])
 
             } else if (answer == "水壺") {
 
@@ -199,72 +231,49 @@ if (identifyBtn) {
                 stream.style.display = "none";
                 document.getElementById('leadTxt').innerHTML = "辨識成功!!";
                 document.getElementById('AnsImg').src = "./still-image.jpg"
-                QA_card.innerHTML = createQA(answer, explain, cameraPB['bookName'], cameraPB['bookImg'], cameraPB['bookIntro'])
+                QA_card.innerHTML += createPbook(cameraPB['bookName'], cameraPB['bookImg'], cameraPB['bookIntro'])
 
-            } else if (answer == "剛筆") {
-
-                ShowVisibility.style.display = "block";
-                ImgVisibility.style.display = "block";
-                stream.style.display = "none";
-                document.getElementById('leadTxt').innerHTML = "辨識成功!!";
-                document.getElementById('AnsImg').src = "./still-image.jpg"
-                QA_card.innerHTML = createQA(answer, explain, "查無此書目", "查無此書目", "查無此書目")
-
-            } else if (answer == "筆記本") {
+            }  else if (answer == "筆記本") {
 
                 ShowVisibility.style.display = "block";
                 ImgVisibility.style.display = "block";
                 stream.style.display = "none";
                 document.getElementById('leadTxt').innerHTML = "辨識成功!!";
                 document.getElementById('AnsImg').src = "./still-image.jpg"
-                QA_card.innerHTML = createQA(answer, explain, cameraPB['bookName'], cameraPB['bookImg'], cameraPB['bookIntro'])
-            } else if (answer == "滑鼠") {
+                QA_card.innerHTML += createPbook(cameraPB['bookName'], cameraPB['bookImg'], cameraPB['bookIntro'])
+            }  else if (answer == "手機") {
 
                 ShowVisibility.style.display = "block";
                 ImgVisibility.style.display = "block";
                 stream.style.display = "none";
                 document.getElementById('leadTxt').innerHTML = "辨識成功!!";
                 document.getElementById('AnsImg').src = "./still-image.jpg"
-                QA_card.innerHTML = createQA(answer, explain, "查無此書目", "查無此書目", "查無此書目")
-            } else if (answer == "手機") {
-
-                ShowVisibility.style.display = "block";
-                ImgVisibility.style.display = "block";
-                stream.style.display = "none";
-                document.getElementById('leadTxt').innerHTML = "辨識成功!!";
-                document.getElementById('AnsImg').src = "./still-image.jpg"
-                QA_card.innerHTML = createQA(answer, explain, cameraPB['bookName'], cameraPB['bookImg'], cameraPB['bookIntro'])
-            } else if (answer == "筆記本電腦") {
-
-                ShowVisibility.style.display = "block";
-                ImgVisibility.style.display = "block";
-                stream.style.display = "none";
-                document.getElementById('leadTxt').innerHTML = "辨識成功!!";
-                document.getElementById('AnsImg').src = "./still-image.jpg"
-                QA_card.innerHTML = createQA(answer, explain, "查無此書目", "查無此書目", "查無此書目")
-            } else if (answer == "眼鏡") {
-                ShowVisibility.style.display = "block";
-                ImgVisibility.style.display = "block";
-                stream.style.display = "none";
-                document.getElementById('leadTxt').innerHTML = "辨識成功!!";
-                document.getElementById('AnsImg').src = "./still-image.jpg"
-                QA_card.innerHTML = createQA(answer, explain, "查無此書目", "查無此書目", "查無此書目")
+                QA_card.innerHTML += createPbook(cameraPB['bookName'], cameraPB['bookImg'], cameraPB['bookIntro'])
             } else if (answer == "香蕉") {
                 ShowVisibility.style.display = "block";
                 ImgVisibility.style.display = "block";
                 stream.style.display = "none";
                 document.getElementById('leadTxt').innerHTML = "辨識成功!!";
                 document.getElementById('AnsImg').src = "./still-image.jpg"
-                QA_card.innerHTML = createQA(answer, explain, cameraPB['bookName'], cameraPB['bookImg'], cameraPB['bookIntro'])
+                QA_card.innerHTML += createPbook(cameraPB['bookName'], cameraPB['bookImg'], cameraPB['bookIntro'])
             } else {
                 ShowVisibility.style.display = "block";
                 ImgVisibility.style.display = "block";
                 stream.style.display = "none";
                 document.getElementById('leadTxt').innerHTML = "辨識成功!!";
                 document.getElementById('AnsImg').src = "./still-image.jpg"
-                QA_card.innerHTML = createQA(answer, explain, "查無此書目", "查無此書目", "查無此書目")
+                QA_card.innerHTML += createPbook(cameraPB['bookName'], cameraPB['bookImg'], cameraPB['bookIntro'])
 
             }
+        })
+
+        ipcRenderer.on('cameraReplynoPbook',(event,cameraPB) =>{
+                ShowVisibility.style.display = "block";
+                ImgVisibility.style.display = "block";
+                stream.style.display = "none";
+                document.getElementById('leadTxt').innerHTML = "辨識成功!!";
+                document.getElementById('AnsImg').src = "./still-image.jpg"
+                QA_card.innerHTML += createdeadPbook(cameraPB['bookName'])
         })
 
 
