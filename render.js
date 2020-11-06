@@ -10,7 +10,7 @@ let ImgVisibility = document.querySelector('#AnsImg');
 let stream = document.querySelector('#stream');
 let QA_card = document.getElementById("QA_card")
 
-const createQA = (text1, text2) => `
+const createQA = (text1, text2,bookName,bookImg,bookExplain) => `
                                             <div class="card text-white" style="background-color: #92337eba;">
                                                 <div class="card-body" style="margin-top: 30px;">
                                                 <img class="collect_LeftTop" onclick="mute()" src="image/character/muted.png">
