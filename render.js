@@ -162,7 +162,7 @@ if (identifyBtn) {
                 'content': explain
             }
             QA_card.innerHTML = createQA2(answer, explain)
-            // ipcRenderer.send('addQAtoServer',QAjson);
+            ipcRenderer.send('addQAtoServer',QAjson);
         })
 
         ipcRenderer.on('cameraReplyPbook', (event, cameraPB) => {
