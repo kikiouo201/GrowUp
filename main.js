@@ -369,6 +369,13 @@ ipcMain.on('camera-searchPictureBook', async(event, keyword) => {
 
     } catch (e) {
         console.log('an expection on page.evaluate ', e);
+        let PBook = {
+            "bookName": "",
+            "bookImg": "",
+            "bookIntro": "",
+            "bNameVoice": "",
+            "bIntroVoice": ""
+        };
         PBook['bookName'] = '查無此書目';
         // let STTbName = await callSTT.quickStart('crawlerNoBook', 3, PBook['bookName'], click_num);
         // PBook['bNameVoice'] = STTbName;
@@ -378,7 +385,7 @@ ipcMain.on('camera-searchPictureBook', async(event, keyword) => {
 })
 
 ipcMain.on('addQAtoServer', async(event, arg) => {
-    api.Question.addQa(1, arg['ans'], arg['content'], "./still-image.jpg", arg['ans'], "影像辨識", (event) => {
+    api.Question.addQa(1, arg['answer'], arg['content'], "./still-image.jpg", arg['answer'], "影像辨識", (event) => {
         console.log("callback=" + JSON.stringify(event));
     });
 })
