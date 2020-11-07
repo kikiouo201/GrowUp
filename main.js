@@ -37,7 +37,7 @@ var player = require('play-sound')(opts = {})
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let win = null;
-let IsNetwork = false;
+let IsNetwork = true;
 let askhomework = false;
 let camehomework = false;
 //true 有網路
@@ -380,7 +380,7 @@ ipcMain.on('camera-searchPictureBook', async(event, keyword) => {
         // let STTbName = await callSTT.quickStart('crawlerNoBook', 3, PBook['bookName'], click_num);
         // PBook['bNameVoice'] = STTbName;
 
-        event.sender.send('cameraReplynoPbook',PBook)
+        event.sender.send('cameraReplynoPbook', PBook)
     }
 })
 
