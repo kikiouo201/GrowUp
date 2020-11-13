@@ -69,7 +69,7 @@ const createPbook = (bookName,bookImg,bookExplain) =>`<div class="card-header co
                                                         <img class="picture_Explain" onclick="cameraPlay(this)" id="picExplain" src="icons/speaker.png" />
                                                       </div>`
 
-const createdeadPbook = (bookName) =>`<div class="card-header contentCss" id="QA_num_" style="background-color: #f8f9fa24; height: auto">
+const createdeadPbook = (bookName) =>`<div class="card-header contentCss" id="QA_num_" style="background-color: #92337eba; height: auto">
                         <p class="contentlink">相關繪本連結：</p>
                         <p class="book_css">${bookName}</p>
                         <img class="picture_Name" onclick="cameraPlay(this)" id="picName" src="icons/speaker.png"/>
@@ -82,8 +82,8 @@ let identifyBtn = document.querySelector('#identify');
 var answer, explain;
 if (identifyBtn) {
     identifyBtn.addEventListener('click', () => {
-        ipcRenderer.send('close-mjpg-streamer')
-            // ipcRenderer.send('vision')
+        // ipcRenderer.send('close-mjpg-streamer')
+            ipcRenderer.send('vision')
             // ipcRenderer.send('captrue');
             // ipcRenderer.send('call-writeDead')
         ipcRenderer.on('reply-close-mjpg-streamer', (event, data) => {
@@ -156,12 +156,16 @@ if (identifyBtn) {
 
         ipcRenderer.on('reply-webcrawlerfunction', (event, data) => {
             console.log("webcrawlerfunction", data);
+            ShowVisibility.style.display = "block";
+            ImgVisibility.style.display = "block";
+            stream.style.display = "none";
             explain = data;
             let QAjson = {
                 'answer':answer,
                 'content': explain
             }
             QA_card.innerHTML = createQA2(answer, explain)
+            document.getElementById('leadTxt').innerHTML = "辨識成功!!";
             ipcRenderer.send('addQAtoServer',QAjson);
         })
 
@@ -197,70 +201,42 @@ if (identifyBtn) {
                 document.getElementById('leadTxt').innerHTML = "辨識失敗!!";
                 document.getElementById('explainTxt').innerHTML = "";
             } else if (answer == "蘋果") {
-                ShowVisibility.style.display = "block";
-                ImgVisibility.style.display = "block";
-                stream.style.display = "none";
 
-                document.getElementById('leadTxt').innerHTML = "辨識成功!!";
                 document.getElementById('AnsImg').src = "./still-image.jpg"
-                QA_card.innerHTML += createPbook(cameraPB['bookName'], cameraPB['bookImg'], cameraPB['bookIntro'])
-               
-                  
-                
+                QA_card.innerHTML += createPbook(cameraPB['bookName'], cameraPB['bookImg'], cameraPB['bookIntro'])   
+
             } else if (answer == "西瓜") {
-                ShowVisibility.style.display = "block";
-                ImgVisibility.style.display = "block";
-                stream.style.display = "none";
-                document.getElementById('leadTxt').innerHTML = "辨識成功!!";
+
                 document.getElementById('AnsImg').src = "./still-image.jpg"
                 QA_card.innerHTML += createPbook(cameraPB['bookName'], cameraPB['bookImg'], cameraPB['bookIntro'])
 
             }  else if (answer == "椅子") {
 
-                ShowVisibility.style.display = "block";
-                ImgVisibility.style.display = "block";
-                stream.style.display = "none";
-                document.getElementById('leadTxt').innerHTML = "辨識成功!!";
                 document.getElementById('AnsImg').src = "./still-image.jpg"
                 QA_card.innerHTML += createPbook(cameraPB['bookName'], cameraPB['bookImg'], cameraPB['bookIntro'])
 
             } else if (answer == "水壺") {
 
-                ShowVisibility.style.display = "block";
-                ImgVisibility.style.display = "block";
-                stream.style.display = "none";
-                document.getElementById('leadTxt').innerHTML = "辨識成功!!";
                 document.getElementById('AnsImg').src = "./still-image.jpg"
                 QA_card.innerHTML += createPbook(cameraPB['bookName'], cameraPB['bookImg'], cameraPB['bookIntro'])
 
             }  else if (answer == "筆記本") {
 
-                ShowVisibility.style.display = "block";
-                ImgVisibility.style.display = "block";
-                stream.style.display = "none";
-                document.getElementById('leadTxt').innerHTML = "辨識成功!!";
                 document.getElementById('AnsImg').src = "./still-image.jpg"
                 QA_card.innerHTML += createPbook(cameraPB['bookName'], cameraPB['bookImg'], cameraPB['bookIntro'])
+
             }  else if (answer == "手機") {
 
-                ShowVisibility.style.display = "block";
-                ImgVisibility.style.display = "block";
-                stream.style.display = "none";
-                document.getElementById('leadTxt').innerHTML = "辨識成功!!";
                 document.getElementById('AnsImg').src = "./still-image.jpg"
                 QA_card.innerHTML += createPbook(cameraPB['bookName'], cameraPB['bookImg'], cameraPB['bookIntro'])
+
             } else if (answer == "香蕉") {
-                ShowVisibility.style.display = "block";
-                ImgVisibility.style.display = "block";
-                stream.style.display = "none";
-                document.getElementById('leadTxt').innerHTML = "辨識成功!!";
+
                 document.getElementById('AnsImg').src = "./still-image.jpg"
                 QA_card.innerHTML += createPbook(cameraPB['bookName'], cameraPB['bookImg'], cameraPB['bookIntro'])
+
             } else {
-                ShowVisibility.style.display = "block";
-                ImgVisibility.style.display = "block";
-                stream.style.display = "none";
-                document.getElementById('leadTxt').innerHTML = "辨識成功!!";
+
                 document.getElementById('AnsImg').src = "./still-image.jpg"
                 QA_card.innerHTML += createPbook(cameraPB['bookName'], cameraPB['bookImg'], cameraPB['bookIntro'])
 
