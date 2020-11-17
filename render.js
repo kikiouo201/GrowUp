@@ -159,6 +159,7 @@ if (identifyBtn) {
             ShowVisibility.style.display = "block";
             ImgVisibility.style.display = "block";
             stream.style.display = "none";
+            document.getElementById('AnsImg').src = "./still-image.jpg"
             explain = data;
             let QAjson = {
                 'answer':answer,
@@ -202,42 +203,34 @@ if (identifyBtn) {
                 document.getElementById('explainTxt').innerHTML = "";
             } else if (answer == "蘋果") {
 
-                document.getElementById('AnsImg').src = "./still-image.jpg"
                 QA_card.innerHTML += createPbook(cameraPB['bookName'], cameraPB['bookImg'], cameraPB['bookIntro'])   
 
             } else if (answer == "西瓜") {
 
-                document.getElementById('AnsImg').src = "./still-image.jpg"
                 QA_card.innerHTML += createPbook(cameraPB['bookName'], cameraPB['bookImg'], cameraPB['bookIntro'])
 
             }  else if (answer == "椅子") {
 
-                document.getElementById('AnsImg').src = "./still-image.jpg"
                 QA_card.innerHTML += createPbook(cameraPB['bookName'], cameraPB['bookImg'], cameraPB['bookIntro'])
 
             } else if (answer == "水壺") {
 
-                document.getElementById('AnsImg').src = "./still-image.jpg"
                 QA_card.innerHTML += createPbook(cameraPB['bookName'], cameraPB['bookImg'], cameraPB['bookIntro'])
 
             }  else if (answer == "筆記本") {
 
-                document.getElementById('AnsImg').src = "./still-image.jpg"
                 QA_card.innerHTML += createPbook(cameraPB['bookName'], cameraPB['bookImg'], cameraPB['bookIntro'])
 
             }  else if (answer == "手機") {
 
-                document.getElementById('AnsImg').src = "./still-image.jpg"
                 QA_card.innerHTML += createPbook(cameraPB['bookName'], cameraPB['bookImg'], cameraPB['bookIntro'])
 
             } else if (answer == "香蕉") {
 
-                document.getElementById('AnsImg').src = "./still-image.jpg"
                 QA_card.innerHTML += createPbook(cameraPB['bookName'], cameraPB['bookImg'], cameraPB['bookIntro'])
 
             } else {
 
-                document.getElementById('AnsImg').src = "./still-image.jpg"
                 QA_card.innerHTML += createPbook(cameraPB['bookName'], cameraPB['bookImg'], cameraPB['bookIntro'])
 
             }
