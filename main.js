@@ -242,7 +242,7 @@ ipcMain.on('vision-start', async(event, args) => {
 
 
 
-ipcMain.on('crawler', (event, args) => {
+ipcMain.on('crawler', async (event, args) => {
     // let webcrawler = await callCrawler.webcrawler();
     //  console.log(`webcrawler=${webcrawler}`)
     console.log("call-crawler")
@@ -253,7 +253,7 @@ ipcMain.on('crawler', (event, args) => {
         const url = 'https://www.moedict.tw/' + data + '#gsc.tab=0'
 
         console.log(url)
-        request(url, (err, res, body) => {
+        request(url, async (err, res, body) => {
 
             if (!err && res.statusCode == 200) {
                 const $ = cheerio.load(body);
