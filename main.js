@@ -829,8 +829,9 @@ ipcMain.on('searchAnswer', async(event, keyword, click_num) => {
         Ans['ansVoice'] = await STT_A;
 
         await event.reply('replyAnswer', Ans)
-        await browser.close();
     });
+    await browser.close();
+
 })
 
 ipcMain.on('searchPictureBook', async(event, keyword, click_num) => {
@@ -871,7 +872,7 @@ ipcMain.on('searchPictureBook', async(event, keyword, click_num) => {
                 timeout: 5000
             })
         } catch (e) {
-            console.log('an expection on page.evaluate ', e);
+            console.log('NoPicBook Err:' + e + " TheEND");
             PBook['bookName'] = '查無此書目';
             let STTbName = await callSTT.quickStart('crawlerNoBook', 3, PBook['bookName'], click_num);
             PBook['bNameVoice'] = STTbName;
@@ -879,34 +880,36 @@ ipcMain.on('searchPictureBook', async(event, keyword, click_num) => {
             event.reply('replyNoPbook', 'error', PBook)
             await browser.close();
         }
+        if (findFBookDIV !== null) {
+            const findFBookName = await page.$('#main > div > div.row > div > div.wood_bg > div > article > div:nth-child(4) > div:nth-child(1) > div > section > h2 > a')
+                // await findFBook.setDefaultNavigationTimeout(10000);
+            await findFBookName.evaluate(node => node.innerText).then((value) => {
+                Answer = value;
+                // console.log("value==X" + value);
+            });
+            const findFBookPic = await page.$('.pic')
+            const picURL = await findFBookPic.$eval('img', src => src.getAttribute('src'))
+            await console.log("picURL:" + picURL)
 
-        const findFBookName = await page.$('#main > div > div.row > div > div.wood_bg > div > article > div:nth-child(4) > div:nth-child(1) > div > section > h2 > a')
-            // await findFBook.setDefaultNavigationTimeout(10000);
-        await findFBookName.evaluate(node => node.innerText).then((value) => {
-            Answer = value;
-            // console.log("value==X" + value);
-        });
-        const findFBookPic = await page.$('.pic')
-        const picURL = await findFBookPic.$eval('img', src => src.getAttribute('src'))
-        await console.log("picURL:" + picURL)
+            // 動畫第一本絕對位置
+            // const findBookIntro = await page.$eval('#main > div > div.row > div > div.wood_bg > div > article > div:nth-child(4) > div:nth-child(1) > div > section > a > p', a => a.textContent.trim())
+            const findBookIntro = await page.$eval('p', al => al.textContent.trim())
+                // await console.log("findBookIntro:XX" + findBookIntro)
+            PBook['bookName'] = Answer;
+            PBook['bookImg'] = picURL;
+            PBook['bookIntro'] = findBookIntro;
+            let STTbName = await callSTT.quickStart('crawler', 3, PBook['bookName'], click_num);
+            PBook['bNameVoice'] = STTbName;
 
-        // 動畫第一本絕對位置
-        // const findBookIntro = await page.$eval('#main > div > div.row > div > div.wood_bg > div > article > div:nth-child(4) > div:nth-child(1) > div > section > a > p', a => a.textContent.trim())
-        const findBookIntro = await page.$eval('p', al => al.textContent.trim())
-            // await console.log("findBookIntro:XX" + findBookIntro)
-        PBook['bookName'] = Answer;
-        PBook['bookImg'] = picURL;
-        PBook['bookIntro'] = findBookIntro;
-        let STTbName = await callSTT.quickStart('crawler', 3, PBook['bookName'], click_num);
-        PBook['bNameVoice'] = STTbName;
+            let STTbIntro = await callSTT.quickStart('crawler', 4, PBook['bookIntro'], click_num);
+            PBook['bIntroVoice'] = STTbIntro;
 
-        let STTbIntro = await callSTT.quickStart('crawler', 4, PBook['bookIntro'], click_num);
-        PBook['bIntroVoice'] = STTbIntro;
+            // console.log("PBook['bookName']:" + PBook['bookName'] + " PBook['bookImg']:" + PBook['bookImg'] + " PBook['bookIntro']" + PBook['bookIntro'])
 
-        // console.log("PBook['bookName']:" + PBook['bookName'] + " PBook['bookImg']:" + PBook['bookImg'] + " PBook['bookIntro']" + PBook['bookIntro'])
+            await event.reply('replyPbook', PBook)
+            await browser.close();
 
-        await event.reply('replyPbook', PBook)
-        await browser.close();
+        }
     } catch (e) {
         console.log('an expection on page.evaluate ', e);
         PBook['bookName'] = '查無此書目';
