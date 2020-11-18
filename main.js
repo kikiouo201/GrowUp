@@ -775,11 +775,11 @@ ipcMain.on('serchImgURL', async(event, keyword) => {
     console.log('Catch ImgURL');
 
     const browser = await puppeteer.launch({
-        executablePath: '/usr/bin/chromium-browser',
-        // executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
+        // executablePath: '/usr/bin/chromium-browser',
+        executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
         args: ['--disable-infobars', '--no-default-browser-check', '--start-fullscreen', '--start-maximized' /*,'--no-startup-window'*/ ],
         ignoreDefaultArgs: ['--enable-automation'],
-        headless: true
+        headless: false
     });
     const page = await browser.newPage();
 
@@ -789,7 +789,7 @@ ipcMain.on('serchImgURL', async(event, keyword) => {
 
     // await console.log("Imgsrc:" + ImgSrc)
     // browser.close();
-    event.reply('replyImgURL', ImgSrc)
+    await event.reply('replyImgURL', ImgSrc)
     await browser.close()
 
 })
@@ -798,11 +798,11 @@ ipcMain.on('serchImgURL', async(event, keyword) => {
 ipcMain.on('searchAnswer', async(event, keyword, click_num) => {
     console.log('Catch Answer');
     const browser = await puppeteer.launch({
-        executablePath: '/usr/bin/chromium-browser',
-        // executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
+        // executablePath: '/usr/bin/chromium-browser',
+        executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
         args: ['--disable-infobars', '--no-default-browser-check', '--start-fullscreen', '--start-maximized' /*,'--no-startup-window'*/ ],
         ignoreDefaultArgs: ['--enable-automation'],
-        headless: true
+        headless: false
     });
     const page = await browser.newPage();
     if (keyword.toString().trim().includes('子')) {
@@ -837,11 +837,11 @@ ipcMain.on('searchAnswer', async(event, keyword, click_num) => {
 ipcMain.on('searchPictureBook', async(event, keyword, click_num) => {
     console.log('Catch picturebook');
     const browser = await puppeteer.launch({
-        executablePath: '/usr/bin/chromium-browser',
-        // executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
+        // executablePath: '/usr/bin/chromium-browser',
+        executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
         args: ['--disable-infobars', '--no-default-browser-check' /*, '--start-fullscreen', '--start-maximized' ,'--no-startup-window'*/ ],
         ignoreDefaultArgs: ['--enable-automation'],
-        headless: true
+        headless: false
     });
 
     let PBook = {
@@ -877,7 +877,7 @@ ipcMain.on('searchPictureBook', async(event, keyword, click_num) => {
             let STTbName = await callSTT.quickStart('crawlerNoBook', 3, PBook['bookName'], click_num);
             PBook['bNameVoice'] = STTbName;
 
-            event.reply('replyNoPbook', 'error', PBook)
+            await event.reply('replyNoPbook', 'error', PBook)
             await browser.close();
         }
         if (findFBookDIV !== null) {
@@ -1002,7 +1002,7 @@ ipcMain.on('presetAnsPBook', async(event, prePic) => {
     let pbIntrovoice = await callSTT.quickStart('pre', 4, preset[prePic['i']]['pbookIntro'], prePic['click_num']);
     preset[prePic['i']]['pbIntro_voice'] = pbIntrovoice;
 
-    event.reply('replyPresetAnsPBook', preset[prePic['i']]);
+    await event.reply('replyPresetAnsPBook', preset[prePic['i']]);
 })
 
 
