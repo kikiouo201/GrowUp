@@ -783,7 +783,7 @@ ipcMain.on('serchImgURL', async(event, keyword) => {
     });
     const page = await browser.newPage();
 
-    await page.goto("https:\/\/www.google.com.tw/search?q=" + keyword + "&tbm=isch&ved=2ahUKEwj2p87NgdDrAhXOzIsBHc45DzQQ2-cCegQIABAA&oq=ppo;l&gs_lcp=CgNpbWcQAzoFCAAQsQM6AggAOgQIABATUMj_AViuhwJg_YwCaABwAHgAgAGBAYgBtAaSAQM1LjSYAQCgAQGqAQtnd3Mtd2l6LWltZ8ABAQ&sclient=img&ei=nXdSX7blMM6Zr7wPzvO8oAM&bih=577&biw=1034&hl=zh-TW");
+    await page.goto("https:\/\/www.google.com.tw/search?q=" + keyword + "&tbm=isch&ved=2ahUKEwii497y-IvtAhWSZ94KHevqBagQ2-cCegQIABAA&oq=李子&gs_lcp=CgNpbWcQAzIFCAAQsQMyAggAMgIIADICCAAyAggAMgIIADICCAAyAggAMgIIADICCABQ4R1YvSlghjVoAHAAeACAAbwCiAHxB5IBBzAuMS4xLjKYAQCgAQGqAQtnd3Mtd2l6LWltZ8ABAQ&sclient=img&ei=av-0X6KGIpLP-Qbr1ZfACg&bih=625&biw=1366&hl=zh-TW");
 
     const ImgSrc = await page.$eval('.rg_i', imgs => imgs.getAttribute('src'));
 
