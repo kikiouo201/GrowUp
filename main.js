@@ -257,11 +257,16 @@ ipcMain.on('crawler', (event, args) => {
 
             if (!err && res.statusCode == 200) {
                 const $ = cheerio.load(body);
-                let def = $('.def')
-                output = def.find('a').text()
+                // let def = $('.def')
+                // output = def.find('a').text()
+
+                await $('.def').each(function(i, elem) {
+                    output[i] = $(this).text();
+                });
+
             }
             //console.log(output);
-            event.sender.send('reply-webcrawlerfunction', output);
+            event.sender.send('reply-webcrawlerfunction', output[0]);
             console.log(output);
 
         })
@@ -797,40 +802,79 @@ ipcMain.on('serchImgURL', async(event, keyword) => {
 
 ipcMain.on('searchAnswer', async(event, keyword, click_num) => {
     console.log('Catch Answer');
-    const browser = await puppeteer.launch({
-        executablePath: '/usr/bin/chromium-browser',
-        // executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
-        args: ['--disable-infobars', '--no-default-browser-check', '--start-fullscreen', '--start-maximized' /*,'--no-startup-window'*/ ],
-        ignoreDefaultArgs: ['--enable-automation'],
-        headless: false
-    });
-    const page = await browser.newPage();
-    // if (keyword.toString().trim().includes('子')) {
-    //     // await console.log("kw:" + keyword.substring(0, keyword.toString().trim().length - 1))
-    //     keyword = keyword.substring(0, keyword.toString().trim().length - 1);
-    await page.goto("https://www.moedict.tw/" + keyword);
-    // }
-    // if (keyword.toString().trim().includes('陶瓷')) {
-    //     await page.goto("https://www.moedict.tw/" + keyword + "器");
-    // } else {
-    //     await page.goto("https://www.moedict.tw/" + keyword);
-    //     // await console.log("kw:" + keyword.substring(0, 1))
-    // }
-    // let Ans = await {
-    //     "ansText": "",
-    //     "ansVoice": ""
-    // };
-    // const def = await page.$$('.def')
-    //     // await console.log("def:" + def[0]);
-    // const test = await def[0].evaluate(node => node.innerText).then(async(value) => {
-    //     // await console.log("ERROR?->" + test);
-    //     Ans['ansText'] = await value;
-    //     let STT_A = await callSTT.quickStart('crawler', 2, value, click_num);
-    //     Ans['ansVoice'] = await STT_A;
+    let Ans = {
+        "ansText": "",
+        "ansVoice": ""
+    };
+    let output = [];
+    if (keyword.toString().trim().includes('子')) {
+        console.log('QuQ Pudding')
+            // await console.log("kw:" + keyword.substring(0, keyword.toString().trim().length - 1))
+        keyword = await keyword.substring(0, keyword.toString().trim().length - 1);
+        const data = await encodeURI(keyword)
+        await console.log(data)
+        const url = await 'https://www.moedict.tw/' + data + '#gsc.tab=0'
 
-    //     await event.reply('replyAnswer', Ans)
-    // });
-    // await browser.close();
+        console.log(url)
+        await request(url, async(err, res, body) => {
+
+            if (!err && res.statusCode == 200) {
+                const $ = await cheerio.load(body);
+                // let def = await $('.def')
+                // console.log(def)
+                await $('.def').each(function(i, elem) {
+                    output[i] = $(this).text();
+                });
+
+                // output = await def.toString()
+                // let def = await $('.def')[0];
+                // output = await evaluate(def => element.textContent, def);
+
+            }
+            //console.log(output);
+
+            Ans['ansText'] = await output[0];
+            let STT_A = await callSTT.quickStart('crawler', 2, output[0], click_num);
+            Ans['ansVoice'] = await STT_A;
+            await event.sender.send('replyAnswer', Ans);
+            await console.log(output);
+
+        })
+    } else {
+        console.log('QuQ Pudding2')
+
+        const data = await encodeURI(keyword)
+        await console.log(data)
+        const url = await 'https://www.moedict.tw/' + data + '#gsc.tab=0'
+
+        await console.log(url)
+        request(url, async(err, res, body) => {
+
+            if (!err && res.statusCode == 200) {
+                const $ = await cheerio.load(body);
+                let def = await $('.def')[0].contents().first()
+                    // console.log(def)
+
+                // output = await def.text()
+                // let def = await $('.def')[0];
+                // output = await page.evaluate(def => element.textContent, def);
+                // output = await def.text()
+
+                await $('.def').each(function(i, elem) {
+                    output[i] = $(this).text();
+                });
+
+            }
+            //console.log(output);
+
+            Ans['ansText'] = await output[0];
+            let STT_A = await callSTT.quickStart('crawler', 2, output[0], click_num);
+            Ans['ansVoice'] = await STT_A;
+            await event.sender.send('replyAnswer', Ans);
+            await console.log(output);
+
+        })
+    }
 
 })
 
