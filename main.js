@@ -779,7 +779,7 @@ ipcMain.on('serchImgURL', async(event, keyword) => {
         // executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
         args: ['--disable-infobars', '--no-default-browser-check', '--start-fullscreen', '--start-maximized' /*,'--no-startup-window'*/ ],
         ignoreDefaultArgs: ['--enable-automation'],
-        headless: false
+        headless: true
     });
     const page = await browser.newPage();
 
@@ -805,32 +805,32 @@ ipcMain.on('searchAnswer', async(event, keyword, click_num) => {
         headless: false
     });
     const page = await browser.newPage();
-    if (keyword.toString().trim().includes('子')) {
-        // await console.log("kw:" + keyword.substring(0, keyword.toString().trim().length - 1))
-        keyword = keyword.substring(0, keyword.toString().trim().length - 1);
-        await page.goto("https://www.moedict.tw/" + keyword);
-    }
-    if (keyword.toString().trim().includes('陶瓷')) {
-        await page.goto("https://www.moedict.tw/" + keyword + "器");
-    } else {
-        await page.goto("https://www.moedict.tw/" + keyword);
-        // await console.log("kw:" + keyword.substring(0, 1))
-    }
-    let Ans = await {
-        "ansText": "",
-        "ansVoice": ""
-    };
-    const def = await page.$$('.def')
-        // await console.log("def:" + def[0]);
-    const test = await def[0].evaluate(node => node.innerText).then(async(value) => {
-        // await console.log("ERROR?->" + test);
-        Ans['ansText'] = await value;
-        let STT_A = await callSTT.quickStart('crawler', 2, value, click_num);
-        Ans['ansVoice'] = await STT_A;
+    // if (keyword.toString().trim().includes('子')) {
+    //     // await console.log("kw:" + keyword.substring(0, keyword.toString().trim().length - 1))
+    //     keyword = keyword.substring(0, keyword.toString().trim().length - 1);
+    await page.goto("https://www.moedict.tw/" + keyword);
+    // }
+    // if (keyword.toString().trim().includes('陶瓷')) {
+    //     await page.goto("https://www.moedict.tw/" + keyword + "器");
+    // } else {
+    //     await page.goto("https://www.moedict.tw/" + keyword);
+    //     // await console.log("kw:" + keyword.substring(0, 1))
+    // }
+    // let Ans = await {
+    //     "ansText": "",
+    //     "ansVoice": ""
+    // };
+    // const def = await page.$$('.def')
+    //     // await console.log("def:" + def[0]);
+    // const test = await def[0].evaluate(node => node.innerText).then(async(value) => {
+    //     // await console.log("ERROR?->" + test);
+    //     Ans['ansText'] = await value;
+    //     let STT_A = await callSTT.quickStart('crawler', 2, value, click_num);
+    //     Ans['ansVoice'] = await STT_A;
 
-        await event.reply('replyAnswer', Ans)
-    });
-    await browser.close();
+    //     await event.reply('replyAnswer', Ans)
+    // });
+    // await browser.close();
 
 })
 
@@ -841,7 +841,7 @@ ipcMain.on('searchPictureBook', async(event, keyword, click_num) => {
         // executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
         args: ['--disable-infobars', '--no-default-browser-check' /*, '--start-fullscreen', '--start-maximized' ,'--no-startup-window'*/ ],
         ignoreDefaultArgs: ['--enable-automation'],
-        headless: false
+        headless: true
     });
 
     let PBook = {
