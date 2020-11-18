@@ -226,11 +226,13 @@ ipcMain.on('captrue', async(event, args) => {
 
 
 ipcMain.on('vision', (event, args) => {
+    console.log("call-vision")
     event.sender.send('reply-visionready')
 })
 let visionAnswer;
 ipcMain.on('vision-start', async(event, args) => {
     let array = await callVis.start();
+    console.log("start-vision")
     // let cameraSTT_Ans = await callSTT.cameraTTS('crawlerR', 1, array);
 
     visionAnswer = array
@@ -243,7 +245,7 @@ ipcMain.on('vision-start', async(event, args) => {
 ipcMain.on('crawler', (event, args) => {
     // let webcrawler = await callCrawler.webcrawler();
     //  console.log(`webcrawler=${webcrawler}`)
-
+    console.log("call-crawler")
 
     if (explainJSON[0][args] == undefined) {
         const data = encodeURI(args)

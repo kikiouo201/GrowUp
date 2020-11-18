@@ -88,7 +88,9 @@ if (identifyBtn) {
             // ipcRenderer.send('call-writeDead')
         ipcRenderer.on('reply-close-mjpg-streamer', (event, data) => {
             document.getElementById('leadTxt').innerHTML = "拍照中。。。";
-
+            ShowVisibility.style.display = "none";
+            ImgVisibility.style.display = "none";
+            stream.style.display = "block";
             console.log('ready');
             ipcRenderer.send('captrue');
         })
