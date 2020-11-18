@@ -822,7 +822,7 @@ ipcMain.on('searchAnswer', async(event, keyword, click_num) => {
     const def = await page.$$('.def')
         // await console.log("def:" + def[0]);
     const test = await def[0].evaluate(node => node.innerText).then(async(value) => {
-        // await console.log(value);
+        // await console.log("ERROR?->" + test);
         Ans['ansText'] = await value;
         let STT_A = await callSTT.quickStart('crawler', 2, value, click_num);
         Ans['ansVoice'] = await STT_A;
@@ -864,9 +864,19 @@ ipcMain.on('searchPictureBook', async(event, keyword, click_num) => {
 
 
         // 動畫類的第一本書，之後判斷沒有的話，無書目
-        const findFBookDIV = await page.waitForSelector('#main > div > div.row > div > div.wood_bg > div > article > div:nth-child(4) > div:nth-child(1) > div > section', {
-            timeout: 1000
-        })
+        try {
+            const findFBookDIV = await page.waitForSelector('#main > div > div.row > div > div.wood_bg > div > article > div:nth-child(4) > div:nth-child(1) > div > section', {
+                timeout: 5000
+            })
+        } catch (e) {
+            console.log('an expection on page.evaluate ', e);
+            PBook['bookName'] = '查無此書目';
+            let STTbName = await callSTT.quickStart('crawlerNoBook', 3, PBook['bookName'], click_num);
+            PBook['bNameVoice'] = STTbName;
+
+            event.reply('replyNoPbook', 'error', PBook)
+            await browser.close();
+        }
 
         const findFBookName = await page.$('#main > div > div.row > div > div.wood_bg > div > article > div:nth-child(4) > div:nth-child(1) > div > section > h2 > a')
             // await findFBook.setDefaultNavigationTimeout(10000);
@@ -894,7 +904,7 @@ ipcMain.on('searchPictureBook', async(event, keyword, click_num) => {
         // console.log("PBook['bookName']:" + PBook['bookName'] + " PBook['bookImg']:" + PBook['bookImg'] + " PBook['bookIntro']" + PBook['bookIntro'])
 
         event.reply('replyPbook', PBook)
-
+        await browser.close();
     } catch (e) {
         console.log('an expection on page.evaluate ', e);
         PBook['bookName'] = '查無此書目';
@@ -902,6 +912,8 @@ ipcMain.on('searchPictureBook', async(event, keyword, click_num) => {
         PBook['bNameVoice'] = STTbName;
 
         event.reply('replyNoPbook', 'error', PBook)
+        await browser.close();
+
     }
 })
 
