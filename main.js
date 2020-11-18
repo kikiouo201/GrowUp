@@ -233,7 +233,7 @@ let visionAnswer;
 ipcMain.on('vision-start', async(event, args) => {
     let array = await callVis.start();
     console.log("start-vision")
-    // let cameraSTT_Ans = await callSTT.cameraTTS('crawlerR', 1, array);
+        // let cameraSTT_Ans = await callSTT.cameraTTS('crawlerR', 1, array);
 
     visionAnswer = array
         //array.forEach(label => console.log("vis="+label.description));
@@ -790,6 +790,7 @@ ipcMain.on('serchImgURL', async(event, keyword) => {
     // await console.log("Imgsrc:" + ImgSrc)
     // browser.close();
     event.reply('replyImgURL', ImgSrc)
+    await browser.close()
 
 })
 
@@ -828,6 +829,7 @@ ipcMain.on('searchAnswer', async(event, keyword, click_num) => {
         Ans['ansVoice'] = await STT_A;
 
         await event.reply('replyAnswer', Ans)
+        await browser.close();
     });
 })
 
@@ -903,7 +905,7 @@ ipcMain.on('searchPictureBook', async(event, keyword, click_num) => {
 
         // console.log("PBook['bookName']:" + PBook['bookName'] + " PBook['bookImg']:" + PBook['bookImg'] + " PBook['bookIntro']" + PBook['bookIntro'])
 
-        event.reply('replyPbook', PBook)
+        await event.reply('replyPbook', PBook)
         await browser.close();
     } catch (e) {
         console.log('an expection on page.evaluate ', e);
@@ -911,7 +913,7 @@ ipcMain.on('searchPictureBook', async(event, keyword, click_num) => {
         let STTbName = await callSTT.quickStart('crawlerNoBook', 3, PBook['bookName'], click_num);
         PBook['bNameVoice'] = STTbName;
 
-        event.reply('replyNoPbook', 'error', PBook)
+        await event.reply('replyNoPbook', 'error', PBook)
         await browser.close();
 
     }
