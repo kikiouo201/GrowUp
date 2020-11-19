@@ -511,7 +511,7 @@ ipcMain.on('crawlerShowWeb', async(event, args) => {
         setTimeout(() => {
 
             document.querySelector('.fp-fullscreen').onclick = () => window.colseBrowser();
-        }, 10000);
+        }, 20000);
 
     });
 })
