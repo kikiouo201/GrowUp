@@ -506,9 +506,9 @@ ipcMain.on('crawlerShowWeb', async(event, args) => {
 
         setTimeout(() => {
             document.querySelector('.fp-ui').click()
+            document.querySelector('.fp-fullscreen').onclick = () => window.colseBrowser();
         }, 3000);
 
-        document.querySelector('.fp-fullscreen').onclick = () => window.colseBrowser();
     });
 })
 
