@@ -502,16 +502,16 @@ ipcMain.on('crawlerShowWeb', async(event, args) => {
     // await page.setViewport(currentScreen);
     await page.goto(args);
     await page.evaluate(() => {
-        // document.querySelector('.fp-fullscreen').click();
+        document.querySelector('.fp-fullscreen').click();
 
         setTimeout(() => {
             document.querySelector('.fp-ui').click()
-            document.querySelector('.fp-fullscreen').click();
+            // document.querySelector('.fp-fullscreen').click();
         }, 3000);
         setTimeout(() => {
 
             document.querySelector('.fp-fullscreen').onclick = () => window.colseBrowser();
-        }, 8000);
+        }, 10000);
 
     });
 })
