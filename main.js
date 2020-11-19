@@ -852,7 +852,7 @@ ipcMain.on('searchAnswer', async(event, keyword, click_num) => {
 
             if (!err && res.statusCode == 200) {
                 const $ = await cheerio.load(body);
-                let def = await $('.def')[0].contents().first()
+                // let def = await $('.def')[0].contents().first()
                     // console.log(def)
 
                 // output = await def.text()
