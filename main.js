@@ -251,7 +251,7 @@ ipcMain.on('crawler', async (event, args) => {
         const data = encodeURI(args)
         console.log(data)
         const url = 'https://www.moedict.tw/' + data + '#gsc.tab=0'
-
+        let output = [];
         console.log(url)
         request(url, async (err, res, body) => {
 
