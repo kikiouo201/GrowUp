@@ -454,7 +454,7 @@ ipcMain.on('crawlerShowWeb', async(event, args) => {
         executablePath: '/usr/bin/chromium-browser',
         // executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
 
-        args: ['--disable-infobars', '--no-default-browser-check', '--start-fullscreen', '--start-maximized' /*,'--no-startup-window'*/ ],
+        args: ['--start-fullscreen','--disable-infobars', '--no-default-browser-check'/*, '--start-maximized' ,'--no-startup-window'*/ ],
         ignoreDefaultArgs: ['--enable-automation'],
         headless: false
     });
@@ -492,14 +492,14 @@ ipcMain.on('crawlerShowWeb', async(event, args) => {
     // await page.exposeFunction('colseBrowser', () => {
     //     page.emit('colse');
     // });
-    let currentScreen = await page.evaluate(() => {
-        return {
-            width: window.screen.availWidth,
-            height: window.screen.availHeight,
-        };
-    });
-    //設定預設網頁頁面大小
-    await page.setViewport(currentScreen);
+    // let currentScreen = await page.evaluate(() => {
+    //     return {
+    //         width: window.screen.availWidth,
+    //         height: window.screen.availHeight,
+    //     };
+    // });
+    // //設定預設網頁頁面大小
+    // await page.setViewport(currentScreen);
     await page.goto(args);
     await page.evaluate(() => {
         // document.querySelector('.fp-fullscreen').click();
@@ -510,10 +510,6 @@ ipcMain.on('crawlerShowWeb', async(event, args) => {
 
         document.querySelector('.fp-fullscreen').onclick = () => window.colseBrowser();
 
-        function css(el, styles) {
-            for (var property in styles)
-                el.style[property] = styles[property];
-        }
     });
 })
 
