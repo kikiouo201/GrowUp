@@ -1,5 +1,7 @@
-const iconRegion = document.getElementById("iconDiv")
+const iconRegion = document.querySelector('#iconDiv')
 const iconDiv = document.querySelector('.iconDiv')
+const featureDIV = document.querySelector("#FeatureIcon")
+const mapIconDIV = document.querySelector("#MapIcon")
 
 function RegionIcon(featureIcon) {
 
@@ -464,7 +466,7 @@ function RegionIcon(featureIcon) {
 }
 
 function returnBMap() {
-    // const featureDIV = document.getElementById("feature")
+    console.log(featureDIV)
     featureDIV.style.display = "none";
     console.log(featureDIV.style.display)
     mapIconDIV.style.display = "block";

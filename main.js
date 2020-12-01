@@ -233,7 +233,7 @@ let visionAnswer;
 ipcMain.on('vision-start', async(event, args) => {
     let array = await callVis.start();
     console.log("start-vision")
-    // let cameraSTT_Ans = await callSTT.cameraTTS('crawlerR', 1, array);
+        // let cameraSTT_Ans = await callSTT.cameraTTS('crawlerR', 1, array);
 
     visionAnswer = array
         //array.forEach(label => console.log("vis="+label.description));
@@ -242,7 +242,7 @@ ipcMain.on('vision-start', async(event, args) => {
 
 
 
-ipcMain.on('crawler', (event, args) => {
+ipcMain.on('crawler', async (event, args) => {
     // let webcrawler = await callCrawler.webcrawler();
     //  console.log(`webcrawler=${webcrawler}`)
     console.log("call-crawler")
@@ -251,17 +251,22 @@ ipcMain.on('crawler', (event, args) => {
         const data = encodeURI(args)
         console.log(data)
         const url = 'https://www.moedict.tw/' + data + '#gsc.tab=0'
-
+        let output = [];
         console.log(url)
-        request(url, (err, res, body) => {
+        request(url, async (err, res, body) => {
 
             if (!err && res.statusCode == 200) {
                 const $ = cheerio.load(body);
-                let def = $('.def')
-                output = def.find('a').text()
+                // let def = $('.def')
+                // output = def.find('a').text()
+
+                await $('.def').each(function(i, elem) {
+                    output[i] = $(this).text();
+                });
+
             }
             //console.log(output);
-            event.sender.send('reply-webcrawlerfunction', output);
+            event.sender.send('reply-webcrawlerfunction', output[0]);
             console.log(output);
 
         })
@@ -449,7 +454,7 @@ ipcMain.on('crawlerShowWeb', async(event, args) => {
         executablePath: '/usr/bin/chromium-browser',
         // executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
 
-        args: ['--disable-infobars', '--no-default-browser-check', '--start-fullscreen', '--start-maximized' /*,'--no-startup-window'*/ ],
+        args: ['--start-fullscreen','--disable-infobars', '--no-default-browser-check'/*, '--start-maximized' ,'--no-startup-window'*/ ],
         ignoreDefaultArgs: ['--enable-automation'],
         headless: false
     });
@@ -487,28 +492,27 @@ ipcMain.on('crawlerShowWeb', async(event, args) => {
     // await page.exposeFunction('colseBrowser', () => {
     //     page.emit('colse');
     // });
-    let currentScreen = await page.evaluate(() => {
-        return {
-            width: window.screen.availWidth,
-            height: window.screen.availHeight,
-        };
-    });
-    //設定預設網頁頁面大小
-    await page.setViewport(currentScreen);
+    // let currentScreen = await page.evaluate(() => {
+    //     return {
+    //         width: window.screen.availWidth,
+    //         height: window.screen.availHeight,
+    //     };
+    // });
+    // //設定預設網頁頁面大小
+    // await page.setViewport(currentScreen);
     await page.goto(args);
     await page.evaluate(() => {
-        // document.querySelector('.fp-fullscreen').click();
+        document.querySelector('.fp-fullscreen').click();
 
         setTimeout(() => {
             document.querySelector('.fp-ui').click()
-        }, 2000);
+            // document.querySelector('.fp-fullscreen').click();
+        }, 3000);
+        setTimeout(() => {
 
-        document.querySelector('.fp-fullscreen').onclick = () => window.colseBrowser();
+            document.querySelector('.fp-fullscreen').onclick = () => window.colseBrowser();
+        }, 20000);
 
-        function css(el, styles) {
-            for (var property in styles)
-                el.style[property] = styles[property];
-        }
     });
 })
 
@@ -783,52 +787,94 @@ ipcMain.on('serchImgURL', async(event, keyword) => {
     });
     const page = await browser.newPage();
 
-    await page.goto("https:\/\/www.google.com.tw/search?q=" + keyword + "&tbm=isch&ved=2ahUKEwj2p87NgdDrAhXOzIsBHc45DzQQ2-cCegQIABAA&oq=ppo;l&gs_lcp=CgNpbWcQAzoFCAAQsQM6AggAOgQIABATUMj_AViuhwJg_YwCaABwAHgAgAGBAYgBtAaSAQM1LjSYAQCgAQGqAQtnd3Mtd2l6LWltZ8ABAQ&sclient=img&ei=nXdSX7blMM6Zr7wPzvO8oAM&bih=577&biw=1034&hl=zh-TW");
+    await page.goto("https:\/\/www.google.com.tw/search?q=" + keyword + "&tbm=isch&ved=2ahUKEwii497y-IvtAhWSZ94KHevqBagQ2-cCegQIABAA&oq=李子&gs_lcp=CgNpbWcQAzIFCAAQsQMyAggAMgIIADICCAAyAggAMgIIADICCAAyAggAMgIIADICCABQ4R1YvSlghjVoAHAAeACAAbwCiAHxB5IBBzAuMS4xLjKYAQCgAQGqAQtnd3Mtd2l6LWltZ8ABAQ&sclient=img&ei=av-0X6KGIpLP-Qbr1ZfACg&bih=625&biw=1366&hl=zh-TW");
 
     const ImgSrc = await page.$eval('.rg_i', imgs => imgs.getAttribute('src'));
 
     // await console.log("Imgsrc:" + ImgSrc)
     // browser.close();
-    event.reply('replyImgURL', ImgSrc)
+    await event.reply('replyImgURL', ImgSrc)
+    await browser.close()
 
 })
 
 
 ipcMain.on('searchAnswer', async(event, keyword, click_num) => {
     console.log('Catch Answer');
-    const browser = await puppeteer.launch({
-        executablePath: '/usr/bin/chromium-browser',
-        // executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
-        args: ['--disable-infobars', '--no-default-browser-check', '--start-fullscreen', '--start-maximized' /*,'--no-startup-window'*/ ],
-        ignoreDefaultArgs: ['--enable-automation'],
-        headless: true
-    });
-    const page = await browser.newPage();
-    if (keyword.toString().trim().includes('子')) {
-        // await console.log("kw:" + keyword.substring(0, keyword.toString().trim().length - 1))
-        keyword = keyword.substring(0, keyword.toString().trim().length - 1);
-        await page.goto("https://www.moedict.tw/" + keyword);
-    }
-    if (keyword.toString().trim().includes('陶瓷')) {
-        await page.goto("https://www.moedict.tw/" + keyword + "器");
-    } else {
-        await page.goto("https://www.moedict.tw/" + keyword);
-        // await console.log("kw:" + keyword.substring(0, 1))
-    }
-    let Ans = await {
+    let Ans = {
         "ansText": "",
         "ansVoice": ""
     };
-    const def = await page.$$('.def')
-        // await console.log("def:" + def[0]);
-    const test = await def[0].evaluate(node => node.innerText).then(async(value) => {
-        // await console.log(value);
-        Ans['ansText'] = await value;
-        let STT_A = await callSTT.quickStart('crawler', 2, value, click_num);
-        Ans['ansVoice'] = await STT_A;
+    let output = [];
+    if (keyword.toString().trim().includes('子')) {
+        console.log('QuQ Pudding')
+            // await console.log("kw:" + keyword.substring(0, keyword.toString().trim().length - 1))
+        keyword = await keyword.substring(0, keyword.toString().trim().length - 1);
+        const data = await encodeURI(keyword)
+        await console.log(data)
+        const url = await 'https://www.moedict.tw/' + data + '#gsc.tab=0'
 
-        await event.reply('replyAnswer', Ans)
-    });
+        console.log(url)
+        await request(url, async(err, res, body) => {
+
+            if (!err && res.statusCode == 200) {
+                const $ = await cheerio.load(body);
+                // let def = await $('.def')
+                // console.log(def)
+                await $('.def').each(function(i, elem) {
+                    output[i] = $(this).text();
+                });
+
+                // output = await def.toString()
+                // let def = await $('.def')[0];
+                // output = await evaluate(def => element.textContent, def);
+
+            }
+            //console.log(output);
+
+            Ans['ansText'] = await output[0];
+            let STT_A = await callSTT.quickStart('crawler', 2, output[0], click_num);
+            Ans['ansVoice'] = await STT_A;
+            await event.sender.send('replyAnswer', Ans);
+            await console.log(output);
+
+        })
+    } else {
+        console.log('QuQ Pudding2')
+
+        const data = await encodeURI(keyword)
+        await console.log(data)
+        const url = await 'https://www.moedict.tw/' + data + '#gsc.tab=0'
+
+        await console.log(url)
+        request(url, async(err, res, body) => {
+
+            if (!err && res.statusCode == 200) {
+                const $ = await cheerio.load(body);
+                // let def = await $('.def')[0].contents().first()
+                    // console.log(def)
+
+                // output = await def.text()
+                // let def = await $('.def')[0];
+                // output = await page.evaluate(def => element.textContent, def);
+                // output = await def.text()
+
+                await $('.def').each(function(i, elem) {
+                    output[i] = $(this).text();
+                });
+
+            }
+            //console.log(output);
+
+            Ans['ansText'] = await output[0];
+            let STT_A = await callSTT.quickStart('crawler', 2, output[0], click_num);
+            Ans['ansVoice'] = await STT_A;
+            await event.sender.send('replyAnswer', Ans);
+            await console.log(output);
+
+        })
+    }
+
 })
 
 ipcMain.on('searchPictureBook', async(event, keyword, click_num) => {
@@ -864,44 +910,58 @@ ipcMain.on('searchPictureBook', async(event, keyword, click_num) => {
 
 
         // 動畫類的第一本書，之後判斷沒有的話，無書目
-        const findFBookDIV = await page.waitForSelector('#main > div > div.row > div > div.wood_bg > div > article > div:nth-child(4) > div:nth-child(1) > div > section', {
-            timeout: 1000
-        })
+        try {
+            const findFBookDIV = await page.waitForSelector('#main > div > div.row > div > div.wood_bg > div > article > div:nth-child(4) > div:nth-child(1) > div > section', {
+                timeout: 5000
+            })
+        } catch (e) {
+            console.log('NoPicBook Err:' + e + " TheEND");
+            PBook['bookName'] = '查無此書目';
+            let STTbName = await callSTT.quickStart('crawlerNoBook', 3, PBook['bookName'], click_num);
+            PBook['bNameVoice'] = STTbName;
 
-        const findFBookName = await page.$('#main > div > div.row > div > div.wood_bg > div > article > div:nth-child(4) > div:nth-child(1) > div > section > h2 > a')
-            // await findFBook.setDefaultNavigationTimeout(10000);
-        await findFBookName.evaluate(node => node.innerText).then((value) => {
-            Answer = value;
-            // console.log("value==X" + value);
-        });
-        const findFBookPic = await page.$('.pic')
-        const picURL = await findFBookPic.$eval('img', src => src.getAttribute('src'))
-        await console.log("picURL:" + picURL)
+            await event.reply('replyNoPbook', 'error', PBook)
+            await browser.close();
+        }
+        if (findFBookDIV !== null) {
+            const findFBookName = await page.$('#main > div > div.row > div > div.wood_bg > div > article > div:nth-child(4) > div:nth-child(1) > div > section > h2 > a')
+                // await findFBook.setDefaultNavigationTimeout(10000);
+            await findFBookName.evaluate(node => node.innerText).then((value) => {
+                Answer = value;
+                // console.log("value==X" + value);
+            });
+            const findFBookPic = await page.$('.pic')
+            const picURL = await findFBookPic.$eval('img', src => src.getAttribute('src'))
+            await console.log("picURL:" + picURL)
 
-        // 動畫第一本絕對位置
-        // const findBookIntro = await page.$eval('#main > div > div.row > div > div.wood_bg > div > article > div:nth-child(4) > div:nth-child(1) > div > section > a > p', a => a.textContent.trim())
-        const findBookIntro = await page.$eval('p', al => al.textContent.trim())
-            // await console.log("findBookIntro:XX" + findBookIntro)
-        PBook['bookName'] = Answer;
-        PBook['bookImg'] = picURL;
-        PBook['bookIntro'] = findBookIntro;
-        let STTbName = await callSTT.quickStart('crawler', 3, PBook['bookName'], click_num);
-        PBook['bNameVoice'] = STTbName;
+            // 動畫第一本絕對位置
+            // const findBookIntro = await page.$eval('#main > div > div.row > div > div.wood_bg > div > article > div:nth-child(4) > div:nth-child(1) > div > section > a > p', a => a.textContent.trim())
+            const findBookIntro = await page.$eval('p', al => al.textContent.trim())
+                // await console.log("findBookIntro:XX" + findBookIntro)
+            PBook['bookName'] = Answer;
+            PBook['bookImg'] = picURL;
+            PBook['bookIntro'] = findBookIntro;
+            let STTbName = await callSTT.quickStart('crawler', 3, PBook['bookName'], click_num);
+            PBook['bNameVoice'] = STTbName;
 
-        let STTbIntro = await callSTT.quickStart('crawler', 4, PBook['bookIntro'], click_num);
-        PBook['bIntroVoice'] = STTbIntro;
+            let STTbIntro = await callSTT.quickStart('crawler', 4, PBook['bookIntro'], click_num);
+            PBook['bIntroVoice'] = STTbIntro;
 
-        // console.log("PBook['bookName']:" + PBook['bookName'] + " PBook['bookImg']:" + PBook['bookImg'] + " PBook['bookIntro']" + PBook['bookIntro'])
+            // console.log("PBook['bookName']:" + PBook['bookName'] + " PBook['bookImg']:" + PBook['bookImg'] + " PBook['bookIntro']" + PBook['bookIntro'])
 
-        event.reply('replyPbook', PBook)
+            await event.reply('replyPbook', PBook)
+            await browser.close();
 
+        }
     } catch (e) {
         console.log('an expection on page.evaluate ', e);
         PBook['bookName'] = '查無此書目';
         let STTbName = await callSTT.quickStart('crawlerNoBook', 3, PBook['bookName'], click_num);
         PBook['bNameVoice'] = STTbName;
 
-        event.reply('replyNoPbook', 'error', PBook)
+        await event.reply('replyNoPbook', 'error', PBook)
+        await browser.close();
+
     }
 })
 
@@ -985,7 +1045,7 @@ ipcMain.on('presetAnsPBook', async(event, prePic) => {
     let pbIntrovoice = await callSTT.quickStart('pre', 4, preset[prePic['i']]['pbookIntro'], prePic['click_num']);
     preset[prePic['i']]['pbIntro_voice'] = pbIntrovoice;
 
-    event.reply('replyPresetAnsPBook', preset[prePic['i']]);
+    await event.reply('replyPresetAnsPBook', preset[prePic['i']]);
 })
 
 
