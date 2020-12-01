@@ -82,8 +82,8 @@ let identifyBtn = document.querySelector('#identify');
 var answer, explain;
 if (identifyBtn) {
     identifyBtn.addEventListener('click', () => {
-        ipcRenderer.send('close-mjpg-streamer')
-            // ipcRenderer.send('vision')
+        // ipcRenderer.send('close-mjpg-streamer')
+            ipcRenderer.send('vision')
             // ipcRenderer.send('captrue');
             // ipcRenderer.send('call-writeDead')
         ipcRenderer.on('reply-close-mjpg-streamer', (event, data) => {
@@ -130,10 +130,10 @@ if (identifyBtn) {
 
             document.getElementById('leadTxt').innerHTML = "辨識成功!!";
             document.getElementById('AnsImg').src = "./still-image.jpg"
-            QA_card.innerHTML = createQA("蘋果", "落業喬木。葉軟形，邊緣有細尖鋸齒。果實球形，味美，可食，也可製酒。", "環遊世界做蘋果派", "https://children.moc.gov.tw/resource/animate_image/6850.jpg", "要怎樣認識「國家」呢？每一個國家總有不同的、具代表性的文物、景物、建築或美食，在環遊世界一周後，可以帶回的東西，會是不同的明信片、紀念品，還有好吃特產呢")
+            QA_card.innerHTML = createQA("蘋果", "植物名。薔薇科蘋果屬，落葉小喬木。葉卵形或橢圓形，先端尖或短，邊緣有細銳鋸齒。花淡紅色，萼有細毛。", "環遊世界做蘋果派", "https://children.moc.gov.tw/resource/animate_image/6850.jpg", "要怎樣認識「國家」呢？每一個國家總有不同的、具代表性的文物、景物、建築或美食，在環遊世界一周後，可以帶回的東西，會是不同的明信片、紀念品，還有好吃特產呢")
             let cameraPreset = {
                 'ans': '蘋果',
-                'content': '落業喬木。葉軟形，邊緣有細尖鋸齒。果實球形，味美，可食，也可製酒。',
+                'content': '植物名。薔薇科蘋果屬，落葉小喬木。葉卵形或橢圓形，先端尖或短，邊緣有細銳鋸齒。花淡紅色，萼有細毛。',
                 'picName_camera': '環遊世界做蘋果派',
                 'picIntro_camera': '要怎樣認識「國家」呢？每一個國家總有不同的、具代表性的文物、景物、建築或美食，在環遊世界一周後，可以帶回的東西，會是不同的明信片、紀念品，還有好吃特產呢',
                 'ansV': '',
