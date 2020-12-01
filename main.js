@@ -37,7 +37,7 @@ var player = require('play-sound')(opts = {})
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let win = null;
-let IsNetwork = true;
+let IsNetwork = false;
 let askhomework = false;
 let camehomework = false;
 //true 有網路
@@ -215,9 +215,8 @@ ipcMain.on('captrue', async(event, args) => {
         }, 2000);
 
     } else {
-        setTimeout(() => {
+
             event.sender.send('reply-writeDead')
-        }, 2000);
 
     }
 
