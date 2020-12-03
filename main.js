@@ -37,7 +37,7 @@ var player = require('play-sound')(opts = {})
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let win = null;
-let IsNetwork = false;
+let IsNetwork = true;
 let askhomework = false;
 let camehomework = false;
 //true 有網路
@@ -216,7 +216,7 @@ ipcMain.on('captrue', async(event, args) => {
 
     } else {
 
-            event.sender.send('reply-writeDead')
+        event.sender.send('reply-writeDead')
 
     }
 
@@ -241,7 +241,7 @@ ipcMain.on('vision-start', async(event, args) => {
 
 
 
-ipcMain.on('crawler', async (event, args) => {
+ipcMain.on('crawler', async(event, args) => {
     // let webcrawler = await callCrawler.webcrawler();
     //  console.log(`webcrawler=${webcrawler}`)
     console.log("call-crawler")
@@ -252,7 +252,7 @@ ipcMain.on('crawler', async (event, args) => {
         const url = 'https://www.moedict.tw/' + data + '#gsc.tab=0'
         let output = [];
         console.log(url)
-        request(url, async (err, res, body) => {
+        request(url, async(err, res, body) => {
 
             if (!err && res.statusCode == 200) {
                 const $ = cheerio.load(body);
@@ -453,7 +453,7 @@ ipcMain.on('crawlerShowWeb', async(event, args) => {
         executablePath: '/usr/bin/chromium-browser',
         // executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
 
-        args: ['--start-fullscreen','--disable-infobars', '--no-default-browser-check'/*, '--start-maximized' ,'--no-startup-window'*/ ],
+        args: ['--start-fullscreen', '--disable-infobars', '--no-default-browser-check' /*, '--start-maximized' ,'--no-startup-window'*/ ],
         ignoreDefaultArgs: ['--enable-automation'],
         headless: false
     });
@@ -505,7 +505,7 @@ ipcMain.on('crawlerShowWeb', async(event, args) => {
 
         setTimeout(() => {
             document.querySelector('.fp-ui').click()
-            // document.querySelector('.fp-fullscreen').click();
+                // document.querySelector('.fp-fullscreen').click();
         }, 3000);
         setTimeout(() => {
 
@@ -851,7 +851,7 @@ ipcMain.on('searchAnswer', async(event, keyword, click_num) => {
             if (!err && res.statusCode == 200) {
                 const $ = await cheerio.load(body);
                 // let def = await $('.def')[0].contents().first()
-                    // console.log(def)
+                // console.log(def)
 
                 // output = await def.text()
                 // let def = await $('.def')[0];
