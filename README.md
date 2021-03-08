@@ -38,8 +38,8 @@ AI隨問隨答模組利用AI語音辨識與影像辨識結合爬蟲技術和國�
 
 
 ## 系統
-GrowUp學習趣（孩童版）： https://github.com/kikiouo201/GrowUp
-GrowUp學習趣（家長版）： https://github.com/AppleFinn/GrowUp_app
-GrowUp學習趣（後端）： https://github.com/kikiouo201/Growup-Server
-GrowUp學習趣（後端-孩童版）： https://github.com/kikiouo201/Growup-Children
-GrowUp學習趣（後端-家長版）： https://github.com/kikiouo201/Growup-Parent
+* GrowUp學習趣（孩童版）： https://github.com/kikiouo201/GrowUp
+* GrowUp學習趣（家長版）： https://github.com/AppleFinn/GrowUp_app
+* GrowUp學習趣（後端）： https://github.com/kikiouo201/Growup-Server
+* GrowUp學習趣（後端-孩童版）： https://github.com/kikiouo201/Growup-Children
+* GrowUp學習趣（後端-家長版）： https://github.com/kikiouo201/Growup-Parent
