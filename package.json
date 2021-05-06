@@ -27,7 +27,7 @@
     "git": "^0.1.5",
     "google-geolocation": "^1.0.2",
     "iconv-lite": "^0.5.2",
-    "json": "^9.0.6",
+    "json": "^10.0.0",
     "pi-camera-connect": "^0.3.0",
     "pi-wifi": "^1.2.0",
     "play-sound": "^1.1.3",
