@@ -22,7 +22,7 @@
     "encoding": "^0.1.13",
     "equals": "^1.0.5",
     "event-stream": "^4.0.1",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "fs": "0.0.1-security",
     "git": "^0.1.5",
     "google-geolocation": "^1.0.2",
